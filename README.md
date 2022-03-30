@@ -1,6 +1,6 @@
 # Game Design In Construct 3
  
- This repository takes construct 3 tutorials available from www.construct.net modifies, restructures, comments project code to be easier to read and better in line with a High School game design course. This repository requires a paid construct 3 license. 
+ This repository takes construct 3 tutorials available from www.construct.net (that use CC licenses) modifies, restructures, comments project code to be easier to read and better in line with a High School game design course. This repository requires a paid construct 3 license. 
 
 # How to use this Repository
 
