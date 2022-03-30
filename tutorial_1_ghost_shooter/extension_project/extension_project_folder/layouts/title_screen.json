@@ -165,8 +165,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 213,
-						"y": 213,
+						"x": 223,
+						"y": 244,
 						"width": 176.12678333431091,
 						"height": 53,
 						"originX": 0,
@@ -177,6 +177,229 @@
 							1,
 							1
 						]
+					}
+				},
+				{
+					"type": "Player",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 24,
+					"instanceVariables": {},
+					"behaviors": {
+						"8Direction": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 500,
+								"directions": "dir-8",
+								"set-angle": "smooth",
+								"default-controls": true,
+								"enabled": true
+							}
+						},
+						"BoundToLayout": {
+							"properties": {
+								"bound-by": "edge"
+							}
+						},
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 116,
+						"y": 176,
+						"width": 101,
+						"height": 101,
+						"originX": 0.504951,
+						"originY": 0.504951,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RedMonster",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 25,
+					"instanceVariables": {
+						"health": 20
+					},
+					"behaviors": {
+						"Movement": {
+							"properties": {
+								"speed": 50,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 86,
+						"y": 504,
+						"width": 240.9764450290184,
+						"height": 173.09575628844985,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.403978725187267,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "GreenMonster",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 26,
+					"instanceVariables": {
+						"health": 5
+					},
+					"behaviors": {
+						"Movement": {
+							"properties": {
+								"speed": 80,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 525,
+						"y": 203,
+						"width": 142,
+						"height": 102,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.192960576505083,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Bullet",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 27,
+					"instanceVariables": {},
+					"behaviors": {
+						"DestroyOutsideLayout": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 600,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 331,
+						"y": 195,
+						"width": 25,
+						"height": 12,
+						"originX": 0.52,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.25398742841728106,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "UI_text",
+					"properties": {
+						"text": "Music: https://www.bensound.com",
+						"enable-bbcode": false,
+						"font": "Arial",
+						"size": 14.25,
+						"line-height": 0,
+						"bold": true,
+						"italic": true,
+						"color": [
+							1,
+							1,
+							1,
+							0
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 28,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 312,
+						"y": 456,
+						"width": 636,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
 					}
 				}
 			],

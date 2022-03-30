@@ -2,6 +2,80 @@
 	"name": "title_screen_event",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "current_song_time",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "where in the main background track is the song starting",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 947942293701758
+		},
+		{
+			"eventType": "comment",
+			"text": "stops the monsters from moving around the title screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 517123050556000
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "RedMonster",
+					"sid": 955891113335593,
+					"behaviorType": "Movement",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "GreenMonster",
+					"sid": 399610568532922,
+					"behaviorType": "Movement",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Bullet",
+					"sid": 483430798739643,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 284482853704645,
+					"parameters": {
+						"audio-file": "bensound-evolution",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"main_backdrop\""
+					}
+				},
+				{
+					"id": "seek-to",
+					"objectClass": "Audio",
+					"sid": 579382711020838,
+					"parameters": {
+						"tag": "\"main_backdrop\"",
+						"position": "current_song_time"
+					}
+				}
+			],
+			"sid": 245370342752235
+		},
+		{
 			"eventType": "comment",
 			"text": "start the game screen, reset the score and initial monster speed"
 		},
@@ -39,6 +113,46 @@
 					"sid": 364371068423700,
 					"parameters": {
 						"layout": "Layout 1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "RedMonster",
+					"sid": 172089905655797,
+					"behaviorType": "Movement",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "GreenMonster",
+					"sid": 993794818061284,
+					"behaviorType": "Movement",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Bullet",
+					"sid": 277070410069171,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Tells layout 1 where the current song is started, so it can seek to the correct song point"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 421751372958245,
+					"parameters": {
+						"variable": "current_song_time",
+						"value": "Audio.CurrentTime"
 					}
 				}
 			],

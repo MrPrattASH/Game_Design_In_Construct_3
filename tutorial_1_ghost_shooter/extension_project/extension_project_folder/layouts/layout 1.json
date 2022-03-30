@@ -727,7 +727,7 @@
 				{
 					"type": "GameOverText",
 					"properties": {
-						"text": "Game Over!  Returning to the title screen...",
+						"text": "Game Over!  Returning to the title screen",
 						"enable-bbcode": false,
 						"font": "Arial",
 						"size": 24,

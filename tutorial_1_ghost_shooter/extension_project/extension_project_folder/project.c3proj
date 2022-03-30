@@ -55,6 +55,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -117,7 +125,8 @@
 			"Keyboard",
 			"RedMonster",
 			"Text",
-			"Button"
+			"Button",
+			"Audio"
 		],
 		"subfolders": []
 	},
@@ -151,7 +160,13 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "bensound-evolution.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 141813698668891
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

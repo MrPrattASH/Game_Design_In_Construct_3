@@ -54,6 +54,19 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"type": "comment",
+					"text": "Pulls current song time from title screen"
+				},
+				{
+					"id": "seek-to",
+					"objectClass": "Audio",
+					"sid": 629250291421203,
+					"parameters": {
+						"tag": "\"main_backdrop\"",
+						"position": "current_song_time"
+					}
 				}
 			],
 			"sid": 772074008680643
@@ -757,7 +770,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Kill the player if a monster comes too close!\n\nSend the player back to the title screen"
+					"text": "Kill the player if a monster comes too close!\n\nAdd expanding periods to signify changes\n\nSend the player back to the title screen"
 				},
 				{
 					"eventType": "block",
@@ -786,11 +799,60 @@
 							}
 						},
 						{
+							"id": "append-text",
+							"objectClass": "GameOverText",
+							"sid": 300173649729042,
+							"parameters": {
+								"text": "\".\""
+							}
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 525087402416799,
+							"sid": 761005467643621,
 							"parameters": {
-								"seconds": "3"
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "GameOverText",
+							"sid": 173742740605856,
+							"parameters": {
+								"text": "\" .\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 889123679749406,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "append-text",
+							"objectClass": "GameOverText",
+							"sid": 819493124564261,
+							"parameters": {
+								"text": "\" .\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 969391934576741,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 799534646179408,
+							"parameters": {
+								"variable": "current_song_time",
+								"value": "Audio.CurrentTime"
 							}
 						},
 						{
