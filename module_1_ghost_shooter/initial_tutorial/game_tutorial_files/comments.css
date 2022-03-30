@@ -1,0 +1,657 @@
+﻿/* Main wrapper */
+.comments {
+}
+
+/* Top level comments tree */
+.comments ul.tree {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 5px;
+}
+.comments ul.tree li.comment {
+    background: #f8f8f8;
+    margin-right: 5px;
+}
+.comments ul.tree li {
+    padding: 0;
+    margin: 0;
+}
+
+.comments li.points {
+    font-weight: 500;
+}
+
+/* Sub tree */
+.comments ul.subTree {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 8px;
+}
+
+/* Colouring of comment bgs */
+.comments ul.subTree > li.comment {
+    background: #fff;
+}
+.comments ul.subTree.even > li.comment {
+    background: #f8f8f8;
+}
+
+/* Error response */
+.comments xmp.err {
+    margin: 0;
+    font-size: 0.85rem;
+    border: 1px solid #c0c0c0;
+    padding: 5px;white-space: pre-wrap;
+    line-height: 100%;
+    margin-top: 3px;
+}
+
+/* Comment wrapper */
+li.comment {
+    padding-left: 8px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* Inner comment wrapper */
+.commentInner {
+    position: relative;
+    padding-left: 32px;
+}
+
+/* Top bar */
+.comments ul.topBar {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 100%;
+    margin-bottom: 3px;
+    color: #888;
+}
+.comments ul.topBar li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 0.9rem;
+    line-height: 130%;
+    vertical-align: middle;
+}
+.comments ul.topBar li a {
+    font-weight: 500;
+}
+.comments ul.topBar li:last-child {
+    margin-right: 0;
+}
+.comments ul.topBar li.childCount {
+    display: none;
+    font-style: italic;
+}
+.comments ul.topBar li.commentAvatarWrap {
+    position: relative;
+}
+.comments ul.topBar li.commentAvatarWrap img {
+    display: block;
+    border-radius: 50%;
+}
+
+/* Context link */
+.comments li.contextLink a {
+    color: #f85753 !important;
+    font-weight: 500;
+}
+
+/* User group */
+.comments .topBar .authorGroup {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #fff;
+    line-height: 100%;
+    border-radius: 3px;
+}
+.comments .topBar .authorGroup span {
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+}
+.comments .topBar .authorGroup span.groupName {
+    padding: 0 5px;
+    font-weight: 500;
+}
+.comments .topBar .authorGroup span.sublabel{
+    background: #fff;
+    display: inline-block;
+    margin: 1px;
+    padding: 0 3px;
+    margin-left: -2px;
+}
+
+/* Shrink/expand */
+.comments .shrinkExpand a:last-child {
+    display: none;
+}
+.comments .shrinkExpand a {
+    font-family: Arial;
+    font-weight: bold !important;
+}
+.comments .shrinkExpand a span {
+    margin: 0 3px;
+}
+.comments .shrinkExpand a:last-child span {
+    margin: 0 1px;
+}
+
+/* Comment controls */
+.comments ul.controls {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 100%;
+    margin-bottom: 5px;
+}
+.comments ul.controls li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+    margin-right: 3px;
+    line-height: 100%;
+}
+.comments ul.controls li:last-child {
+    margin-right: 0;
+}
+.comments ul.controls li a {
+    color: #888;
+    font-weight: 500;
+}
+.comments ul.controls li span.reportLink span.txt {
+    color: #888;
+    font-weight: 500;
+}
+
+/* Online marker */
+.comments span.onlineMarker {
+    background: #7df972;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    vertical-align: top;
+    display: inline-block;
+}
+
+/* Vote control */
+.comments li.commentVoteWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.comments .commentVoteWrap img {
+    width: 22px;
+    height: 22px;
+}
+.comments .commentVoteWrap span.score {
+    display: none;
+}
+
+li.comment textarea {
+    padding: 5px;
+    font-size: 0.9rem;
+    height: 100px;
+}
+
+/* Content */
+li.comment div.text {
+    line-height: 130%;
+    padding: 0;
+    padding-bottom: 8px;
+    font-size: 1.2rem;
+    word-wrap:break-word;
+    padding-right: 25px;
+    max-width: 725px;
+}
+li.comment div.replyFormWrap, li.comment div.editFormWrap {
+    max-width: 725px;
+}
+
+/* Pending edit */
+li.comment div.editFormWrap.pendingEdit a.cancelButton {
+    display: none;
+}
+li.comment div.editFormWrap.pendingEdit a.editButton {
+    background: transparent;
+    color: #333;
+    padding: 0;
+}
+li.comment div.editFormWrap.pendingEdit a.editButton:after {
+    content: "Saving...";
+}
+
+li.comment div.replyFormWrap a.replyButton, li.comment div.editFormWrap a {
+    padding: 5px 10px;
+    font-size: 1rem;
+    text-transform: none;
+    line-height: 100%;
+    position: relative;
+    top: -10px;
+    z-index: 2;
+}
+li.comment div.editFormWrap a.cancelButton {
+    margin-left: 5px;
+}
+li.comment div.editFormWrap a.editButton:after {
+    content: "Save changes";
+}
+li.comment div.replyFormWrap a.replyButton.submitting {
+    color: #333;
+    background: transparent;
+    padding: 0;
+    font-size: 0.9rem;
+}
+li.comment div.replyFormWrap a.replyButton.submitting:hover {
+    text-decoration: none;
+}
+li.comment div.replyFormWrap .replyError, li.comment div.editFormWrap .editError {
+    font-size: 0.85rem;
+    padding: 3px 10px;
+    background: #f97572;
+    color: white;
+    margin-bottom: -3px;
+    z-index: 2;
+}
+
+/* More comments link */
+.comments .loadMoreWrap {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #888;
+    line-height: 100%;
+    display: block;
+    padding-top: 7px !important;
+}
+.comments .loadMoreWrap a {
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Continue conv link */
+.comments div.continueConversationWrap a {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.comments div.continueConversationWrap span {
+    background: #f85753;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 50%;
+    font-size: 0.85rem;
+}
+
+/* Linking to original conversation */
+.goToConversationWrap {
+    background: #f9dc72;
+    color: #78672a;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+}
+
+.comments .conversationControls ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comments .conversationControls ul li {
+    margin: 0 !important;
+    min-width: 50%;
+    max-width: 50%;
+}
+.comments .conversationControls ul li:last-child {
+    float:none;
+    text-align: right;
+    line-height:100%;
+    font-size: 1rem;
+}
+
+/* Comment order */
+.comments .conversationControls {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 5px;
+
+}
+.comments .conversationControls .commentOrderChooser {
+    padding: 5px;
+    font-size: 0.8rem;
+}
+.comments .conversationControls input[type=submit]{
+    padding: 7px 20px;
+    font-size: 0.8rem;
+}
+.comments input[type=submit].hidden {
+    position: absolute;
+    left: -10000px;
+}
+
+/* Deletion */
+.comments li.comment > .commentInner > div > .hideable > div > ul.controls a.undelete {
+    display: none;
+}
+.comments li.comment.deleted > .commentInner > div > .hideable > div > ul.controls a.undelete {
+    display: inline;
+}
+.comments li.comment.deleted > .commentInner > div > .hideable > div > ul.controls a.delete {
+    display: none;
+}
+
+/* Deleted style */
+.comments li.comment.deleted > .commentInner > div > .hideable > div > .text {
+    color: #c0c0c0;
+    font-size: 1rem;
+    max-height: 45px;
+    overflow-y: auto;
+    margin-bottom: 8px;
+}
+.comments li.comment.deleted  > .commentInner > div > ul.topBar {
+    opacity: 0.5;
+}
+.comments li.comment.deleted  > .commentInner > div > ul.topBar > li.commentVoteWrap {
+    display: none !important;
+}
+.comments li.comment.deleted .text span.deletedNotice {
+    font-style: italic;
+}
+.comments li.comment.deleted .text {
+    padding-bottom: 0;
+    margin-bottom: 5px !important;
+}
+
+/* Comment bordering */
+.comments li.comment {
+    border: 1px solid #efefef;
+}
+.comments li.comment + li.comment {
+    margin-top: 5px;
+}
+
+/* Rich markup styles */
+.comments li.comment .text p {
+    font-size: 1.2rem;
+    margin: 9px 0;
+    line-height: 130%;
+}
+.comments li.comment .text p {
+    font-size: 1.2rem;
+    margin: 9px 0;
+}
+.comments li.comment .text ol, .comments li.comment .text ul {
+    position: relative;
+    padding-left: 20px;
+}
+.comments li.comment .text ul {
+    list-style: disc;
+}
+.comments li.comment .text blockquote {
+    margin: 0;
+    border-left: 5px solid #aad1ff;
+    margin-left: 12px;
+    background: #ecf4ff;
+    border-radius: 3px;
+    padding: 5px 16px;
+    padding-left: 48px;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+}
+.comments li.comment .text kbd {
+    background: #efefef;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 2px 0px 2px #c4c4c4;
+    -moz-box-shadow: 0px 2px 0px 2px #c4c4c4;
+    box-shadow: 0px 2px 0px 2px #c4c4c4;
+    padding: 4px 8px;
+    line-height: 100%;
+    text-shadow: 1px 0 0 #fff;
+    font-weight: 500;
+    border-bottom: 1px solid #d7d7d7;
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    margin: 0 2px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 780px) { 
+    li.comment div.text {
+        margin-left: -8px;
+        padding-right: 10px;
+    }
+    li.comment div.text p {
+        font-size: 1rem !important;
+    }
+    .comments ul.controls {
+        margin-left: -8px;
+    }
+    .comments .loadMoreWrap {
+        margin-left: -8px;
+    }
+    .comments li.commentVoteWrap {
+        position: static;
+    }
+    .comments li.commentVoteWrap a.downvote, .comments li.commentVoteWrap a.upvote {
+        display: inline-block;
+    }
+    .comments ul.topBar {
+        margin-left: -8px;
+    }
+    .comments ul.topBar li {
+        vertical-align: middle;
+    }
+    .comments li.commentVoteWrap .voteWrapper {
+        position: relative;
+        top: 3px;
+    }
+    .comments li.comment .text blockquote {
+        margin-left: 0;
+        padding-left: 32px;
+        background-size: 32px 32px;
+    }
+    .commentInner {
+        padding-left: 8px;
+    }
+}
+
+.commentNotice {
+    background: #f9dc72;
+    color: #78672a;
+    font-size: 1.1rem;
+    padding: 12px;
+    padding-left: 65px;
+    position: relative;
+    line-height: 110%;
+    -webkit-border-top-left-radius: 122px;
+    -webkit-border-bottom-left-radius: 122px;
+    -moz-border-radius-topleft: 122px;
+    -moz-border-radius-bottomleft: 122px;
+    border-top-left-radius: 122px;
+    border-bottom-left-radius: 122px;
+}
+.commentNotice.noUser {
+    margin-bottom: 8px;
+}
+.commentPig {
+    border-radius: 50%;
+    height: 56px;
+    width: 56px;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -12px;
+}
+.topLevelCommentForm {
+    max-width: 500px;
+}
+.topLevelCommentForm .submitCommentWrap {
+    position: relative;
+}
+.topLevelCommentForm .notification {
+    padding: 6px;
+    margin-top: -6px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 1px;
+}
+.topLevelCommentForm a.formattingHelp {
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 100%;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+    .topLevelCommentForm .markupEditorWrap ul.controls {
+        display: none;
+        align-items: center;
+    }
+        .topLevelCommentForm .markupEditorWrap ul.controls li a {
+            min-width: 22px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            background: #f85753;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+        }
+.topLevelCommentForm .markupEditorWrap ul.controls li.vgap {
+    width: 3px;
+}
+.topLevelCommentForm textarea {
+    margin: 0;
+    margin-bottom: -6px;
+    height: 100px;
+}
+.topLevelCommentForm input[type=submit] {
+    padding: 5px 10px;
+    font-size: 1rem;
+    text-transform: none;
+}
+.comments h2.commentCount {
+    margin: 0;
+    padding: 0;
+    font-size: 1.15rem;
+    line-height: 100%;
+}
+
+@media (max-width: 450px) {
+    .comments li.comment .text blockquote {
+        margin-left: 0;
+        padding-left: 12px;
+        background-position: -10000px -10000px;
+    }
+    .commentPig {
+        left: -5px;
+    }
+}
+
+/* Edit count */
+li.comment span.editCount {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    line-height: 17px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 50%;
+    background: #efefef;
+}
+li.comment span.editCount:hover {
+    cursor: pointer;
+    background: #c0c0c0;
+    color: #fff;
+}
+
+/* Highlighted comment */
+li.comment.highlighted {
+    background: rgba(255, 244, 183, 0.5) !important;
+    border-left: 5px solid rgb(255, 225, 58);
+}
+
+/* Username reference */
+li.comment .usernameReference {
+    display: inline-block;
+    background: #efefef;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 1rem;
+    padding: 1px 5px;
+    position: relative;
+    padding-left: 18px;
+}
+li.comment .usernameReference:before {
+    content: '@';
+    font-size: 0.8rem;
+    opacity: 0.5;
+    position: absolute;
+    left: 5px;
+}
+li.comment a.usernameReference {
+    padding-left: 0;
+    -webkit-border-radius: 12px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius: 12px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-radius: 12px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+li.comment a.usernameReference:before {
+    display: none;
+}
+li.comment .usernameReference img {
+    display: block;
+    border-radius: 50%;
+    float: left;
+    margin-right: 4px;
+}
+li.comment a.usernameReference.self {
+    background: #f85753;
+    color: 	#fff !important;
+    font-weight: 500;
+    padding-right: 8px;
+}
+
+/* Medals */
+.comments li.comment img.c3Medal {
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    border-radius: 0;
+}
+
+.commentsDisabled {
+    border: 2px solid #ff9c99;
+    border-radius: 3px;
+    background: rgba(248, 87, 83, 0.1);
+    padding:0 0;
+    text-align: center;
+}
+.commentsDisabled  p{
+    font-size: 1rem;
+    line-height: 100%;
+    margin: 5px 0;
+}
+.commentsDisabled img {
+    display: inline-block;
+    vertical-align: middle;
+}

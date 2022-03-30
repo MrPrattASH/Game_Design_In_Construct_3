@@ -1,0 +1,51 @@
+﻿.paginationWrap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+.paginationWrap ul li {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+.paginationWrap ul li a {
+    display: block;
+    border-radius: 3px;
+    color: #333;
+    background: #fff;
+    min-width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 5px;
+}
+.paginationWrap ul li a:hover, .paginationWrap ul li a.selected {
+    background: #f85753;
+    color: #fff;
+    text-decoration: none;
+}
+.paginationWrap ul li img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+}
+.paginationWrap ul li a.next, .paginationWrap ul li a.prev {
+    background: transparent;
+    opacity: 0.5;
+}
+.paginationWrap ul li a.next:hover, .paginationWrap ul li a.prev:hover {
+    opacity: 1;
+}
+.paginationWrap ul li a.dots {
+    background: transparent;
+    color: #434343;
+}
+.paginationWrap ul li a.dots:hover {
+    color: #434343;
+    cursor: default;
+}

@@ -1,0 +1,103 @@
+﻿.usernameLink {
+    display: flex;
+    align-items:center;
+    line-height: 100%;
+
+}
+.usernameLink .avCol {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+}
+.usernameLink .detailCol {
+    flex-shrink: 1;
+    flex-grow: 1;
+}
+
+/* Avatar */
+.usernameLink .avatarWrap {
+    display: inline-block;
+    background: #fff;
+    padding: 1px;
+    border: 2px solid #efefef;
+    position: relative;
+    border-radius: 3px;
+}
+.usernameLink .avatarWrap img {
+    display: block;
+    border-radius: 3px;
+}
+
+/* Username link */
+.usernameLink .usernameTextWrap {
+    font-size: 1.15rem;
+    line-height: 100% !important;
+}
+.usernameLink .usernameTextWrap a:hover {
+    text-decoration: none;
+}
+.usernameLink .usernameTextWrap a:hover > span:first-child {
+    text-decoration: underline;
+}
+.usernameLink .usernameTextWrap a > span:first-child {
+    margin-right: 5px;
+}
+
+/* Extra link */
+.usernameLink .extraLine {
+    color: #6a737c;
+    font-size: 0.9rem;
+    line-height: 100%;
+    padding-top: 3px;
+    display: flex;
+}
+
+/* Medals/info */
+.usernameLink .avatarWrap span.c3Medal {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background: #FFCC00;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+.usernameLink .avatarWrap span.online {
+    position: absolute;
+    left: -2px;
+    bottom: -2px;
+    background:#7df972;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: onlineBlinker 1s linear infinite;
+}
+
+/* Group */
+.usernameLink .group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    background: #c0c0c0;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 3px;
+    font-size: 0.68rem;
+    text-align: center;
+    padding: 2px 4px;
+    line-height: 120%;
+    position: relative;
+    top: -2px;
+}
+.usernameLink .group .groupName {
+    padding: 0 4px;
+    flex-grow: 1;
+}
+.usernameLink .group .groupLabel {
+    background: #fff;
+    color: #c0c0c0;
+    padding: 0 4px;
+    margin: 0;
+    flex-grow: 1;
+}

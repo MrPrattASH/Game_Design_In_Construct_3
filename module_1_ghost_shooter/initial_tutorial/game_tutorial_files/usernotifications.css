@@ -1,0 +1,407 @@
+﻿.unHeading {
+    text-align: center;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    padding: 0 16px;
+}
+.unHeading h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.unHeading .h2Tag {
+    margin-bottom: 8px;
+}
+.viewNotificationsWrap {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+ul.notificationList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #efefef;
+}
+ul.notificationList li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #efefef;
+    padding: 16px;
+    display: flex;
+    border-left: 8px solid #efefef;
+}
+
+    ul.notificationList li > div:first-child {
+        max-width: 64px;
+        min-width: 64px;
+        text-align: center;
+    }
+
+        ul.notificationList li > div:first-child img.animated {
+            animation: tada 1s linear infinite;
+        }
+
+    ul.notificationList li > div:last-child {
+        flex: 1;
+        padding-left: 24px;
+    }
+
+    ul.notificationList li:last-child {
+        border-bottom: 0;
+    }
+
+    ul.notificationList li.unread {
+        border-left: 8px solid #ec008c;
+    }
+
+    ul.notificationList li .parentCat {
+        display: block;
+        font-weight: 500;
+        line-height: 100%;
+        font-size: 0.75rem;
+        margin-bottom: 2px;
+        font-style: italic;
+    }
+    ul.notificationList li .notificationTitle {
+        font-size: 1.15rem;
+        font-weight: 500;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        line-height: 120%;
+    }
+    ul.notificationList .notificationDate {
+        font-size: 0.85rem;
+        font-weight: normal;
+        color: #666;
+        font-style: italic;
+        line-height: 100%;
+        white-space: nowrap;
+    }
+    ul.notificationList .titleContainer {
+        display: flex;
+    }
+ul.notificationList .titleContainer > div:first-child {
+    display: none;
+}
+ul.notificationList .titleContainer > div:nth-child(2) {
+    flex: 1;
+}
+ul.notificationList .titleContainer > div:nth-child(3) {
+    display: flex;
+    align-items: flex-start;
+    max-width: 32px !important;
+}
+ul.notificationList .titleContainer img {
+    max-width: 34px;
+    min-width: 34px;
+}
+ul.notificationList li .notificationTitle > div:last-child {
+
+    line-height: 150%;
+}
+
+    ul.notificationList .discountPercent {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 500;
+        background: #ec008c;
+        color: #fff;
+        line-height: 100%;
+        border-radius: 3px;
+        padding: 3px 8px;
+        margin-right: 5px;
+    }
+    ul.notificationList li .notificationTitle > a {
+        line-height: 120%;
+    }
+
+    ul.notificationList li .notificationContent p {
+        line-height: 120%;
+        font-size: 1rem;
+        margin: 7px 0;
+    }
+    ul.notificationList span.idQuote {
+        background: #efefef;
+        border-radius: 3px;
+        font-size: 0.85rem;
+        padding: 2px 5px;
+        font-weight: 500;
+    }
+
+    ul.notificationList li .notificationContent p:first-child {
+        margin-top: 0;
+    }
+
+        ul.notificationList li .notificationContent p:last-child {
+            margin-bottom: 0;
+        }
+
+    ul.notificationList .excerpt {
+        border: 1px solid #efefef;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        padding: 8px;
+        width: 100%;
+        position: relative;
+        padding-left: 32px;
+        line-height: 120%;
+        word-break: break-word;
+    }
+
+    ul.notificationList .excerptAvWrap {
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        border: 1px solid #efefef;
+        padding: 2px;
+        background: #fff;
+        display: flex;
+        position: absolute;
+        left: -14px;
+        top: 50%;
+        margin-top: -19px;
+    }
+
+        ul.notificationList .excerptAvWrap img {
+            display: block;
+            border-radius: 50%;
+        }
+
+    ul.notificationList a {
+        color: #ec008c;
+    }
+
+    .notificationButton {
+        border-radius: 16px;
+        border: 1px solid #ec008c;
+        color: #ec008c;
+        font-weight: 500;
+        padding: 5px 10px;
+        font-size: 0.85rem;
+        display: inline-block;
+        margin-top: 10px;
+        line-height: 100%;
+    }
+
+        .notificationButton:hover {
+            border: 1px solid #ec008c;
+            background: #ec008c;
+            color: #fff;
+            text-decoration: none;
+        }
+
+    .viewNotificationsWrap .paginationWrap {
+        margin: 5px 0;
+    }
+
+        .viewNotificationsWrap .paginationWrap ul li a:hover, .viewNotificationsWrap .paginationWrap ul li a.selected {
+            background: #ec008c;
+        }
+
+    .founderSigs {
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+    }
+
+    .founderWrap {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        padding: 2px;
+        border: 1px solid #efefef;
+        display: inline-block;
+        background: #fff;
+        position: relative;
+        z-index: 1;
+    }
+
+        .founderWrap img {
+            border-radius: 50%;
+            display: block;
+        }
+
+    .founderSigs .founderWrap:last-child {
+        margin-left: -20px;
+        z-index: 0;
+    }
+
+    .founderSigs > div:last-child {
+        font-style: italic;
+        font-size: 1rem;
+        padding-left: 20px;
+        line-height: 100%;
+    }
+
+        .founderSigs > div:last-child span {
+            display: block;
+        }
+
+            .founderSigs > div:last-child span:first-child {
+                font-weight: 500;
+            }
+
+
+ul.notificationList .shareLink {
+    display: flex;
+    align-items: center;
+}
+ul.notificationList .shareLink > div:first-child {
+    min-width: 26px;
+    max-width: 26px;
+    margin-right: 8px;
+}
+ul.notificationList .shareLink > div:first-child img {
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+    ul.notificationList .shareLink > div:last-child {
+        line-height: 100%;
+        font-size: 1rem;
+    }
+@media screen and (max-width: 450px) {
+    ul.notificationList li {
+        flex-direction: column;
+    }
+    ul.notificationList li > div:first-child {
+        display: none;
+    }
+    ul.notificationList li > div:last-child {
+        padding-left: 0;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .unHeading {
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+    .founderSigs {
+        flex-direction: column;
+    }
+
+    .founderSigs > div:last-child {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    ul.notificationList .titleContainer > div:first-child {
+        display: block;
+        padding-right: 16px;
+    }
+    ul.notificationList .notificationDate {
+        display: none;
+    }
+}
+@media screen and (max-width: 360px) {
+
+    h1 {
+        line-height: 120%;
+        font-size: 2rem;
+    }
+}
+
+.notificationPopper .founderSigs {
+    flex-direction: column;
+}
+.notificationPopper .founderSigs > div:last-child {
+    padding-left: 0;
+    text-align: left;
+}
+
+.notificationPopper ul.notificationList li {
+    flex-direction: column;
+}
+.notificationPopper ul.notificationList li > div:first-child {
+        display: none;
+    }
+.notificationPopper ul.notificationList li > div:last-child {
+        padding-left: 0;
+    }
+.notificationPopper ul.notificationList .titleContainer > div:first-child {
+    display: block;
+    padding-right: 16px;
+}
+.notificationPopper ul.notificationList .notificationDate {
+    display: none;
+}
+
+
+p.communityGuidelinesWarning {
+    background: #f58886;
+    color: white;
+    border-radius: 3px;
+    font-weight: 500;
+    font-style: italic;
+    padding: 5px 10px;
+    font-size: 0.85rem !important;
+    line-height: 110% !important;
+}
+p.communityGuidelinesWarning a {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+a.notificationSubMenu {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    margin-left: 16px;
+    position: relative;
+}
+a.notificationSubMenu span {
+    display: block;
+    background: #c0c0c0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    margin-right: 2px;
+    transition: all 200ms;
+}
+    a.notificationSubMenu.selected span {
+        background: #ec008c;
+    }
+a.notificationSubMenu span:last-child {
+    margin-right: 0;
+}
+    a.notificationSubMenu .sMenu {
+        position: absolute;
+        right: 0;
+        top: 16px;
+        background: #f8f8f8;
+        border: 1px solid #efefef;
+        border-radius: 3px;
+        z-index: 3;
+        -webkit-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.55);
+        -moz-box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.55);
+        box-shadow: 0px 3px 12px -4px rgba(0,0,0,0.55);
+    }
+a.notificationSubMenu .sMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a.notificationSubMenu .sMenu ul li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+a.notificationSubMenu .sMenu ul a {
+    display: block;
+    font-size: 1rem;
+    line-height: 120%;
+    white-space: nowrap !important;
+    font-weight: 500;
+    padding: 3px 10px;
+    width: 100%;
+}
+    a.notificationSubMenu .sMenu ul a:hover {
+        background: #ec008c;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 3px;
+    }

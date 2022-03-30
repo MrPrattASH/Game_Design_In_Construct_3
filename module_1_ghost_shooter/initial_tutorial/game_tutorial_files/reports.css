@@ -1,0 +1,285 @@
+﻿span.reportLink {
+    display: inline-flex;
+    line-height: 100%;
+    align-items: center;
+    position: relative;
+}
+span.reportLink span.txt {
+    color: #f85753;
+    user-select: none;
+}
+span.reportLink span.reportedTxt {
+    display: none;
+    color: #f9a772;
+    font-weight: 500;
+}
+span.reportLink:hover {
+    text-decoration: none;
+}
+span.reportLink:hover span.txt {
+    text-decoration: underline;
+    cursor: pointer;
+}
+span.reportLink.reported span.txt {
+    display: none;
+}
+span.reportLink.reported span.reportedTxt {
+    display: inline;
+}
+
+
+
+span.reportLink span.activeReportCount {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    background: #f85753;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.75rem;
+    margin-left: 5px;
+}
+span.reportLink span.activeReportCount.zero {
+    background: #efefef;
+    color: #c0c0c0;
+}
+span.reportLink:hover span.activeReportCount {
+    text-decoration: none !important;
+}
+
+.reportPop {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 0;
+    width: 420px;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    box-shadow: 0 5px 10px 2px rgba(0,0,0,0.08);
+    z-index: 8;
+    display: block;
+}
+.reportLink.right .reportPop {
+    left: auto;
+    right: 0;
+}
+
+.reportPop span.arrow {
+    background: #fff;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    top: -11px;
+    left: 7px;
+    border-top: 1px solid #efefef;
+    border-right: 1px solid #efefef;
+    z-index: 4;
+}
+.reportLink.right .reportPop span.arrow {
+    left: auto;
+    right: 30px;
+}
+
+.reportPop .innerForm {
+    overflow-y: auto !important;
+    max-height: 100% !important;
+    position: relative !important;
+    z-index: 3 !important;
+}
+.reportPop h3 {
+    display: block !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 20px !important;
+    font-family: 'Roboto', Arial, sans-serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 10px !important;
+}
+.reportPop p {
+    font-size: 1.15rem !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 20px !important;
+    margin-bottom: 20px !important;
+    line-height: 110% !important;
+    text-align: left !important;
+    font-weight: 200 !important;
+}
+.reportPop ul.reasons {
+    margin: 0 !important;
+    padding: 0 20px !important;
+    list-style: none !important;
+}
+.reportPop ul.reasons li {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    margin-bottom: 15px !important;
+    font-size: 1.15rem !important;
+    text-align: left !important;
+}
+.reportPop label {
+    line-height: 100% !important;
+    font-size: 1.15rem !important;
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+}
+.reportPop label span {
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+}
+.reportPop ul.reasons input[type=radio] {
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    margin-right: 15px !important;
+}
+.reportPop button {
+    margin-bottom: 20px !important;
+}
+.reportPop button:hover {
+    cursor: pointer !important;
+}
+.reportPop .additionalInfoWrap {
+    padding: 0 20px !important;
+    margin-bottom: 15px !important;
+    text-align: left !important;
+}
+.reportPop input[type=text] {
+    padding: 5px !important;
+}
+#ReportPopWrap {
+    display: none;
+}
+
+.sortMenu {
+    border: 1px solid #efefef;
+    list-style: none;
+    display: inline-block;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+.sortMenu li {
+    display: inline-block;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid #efefef;
+}
+.sortMenu li:last-child {
+    border-right: 0;
+}
+.sortMenu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 100%;
+    padding: 8px 15px;
+}
+.sortMenu li a:hover {
+    background: #f6f6f6;
+    text-decoration: none;
+}
+.sortMenu li.selected a {
+    background: #f6f6f6;
+    color: #3b4045;
+}
+.sortMenu li.selected a:hover {
+    text-decoration: none;
+}
+
+.innerCount {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #3b4045;
+    line-height: 100%;
+    margin-left: 5px;
+}
+.viewReports h1 {
+    color: #3b3b3b;
+}
+.reportReasonCountWrap {
+    background: #efefef;
+    padding: 5px;
+    margin-top: 10px;
+}
+.reportReasonCountWrap ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.reportReasonCountWrap ul li {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    margin-right: 5px;
+    justify-content: center;
+}
+.reportReasonCountWrap ul li:last-child {
+    margin-right: 0;
+}
+.reportReasonCountWrap .countWrap {
+    background: #ffffff;
+    border: 1px solid #c0c0c0;
+    padding: 12px;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    line-height: 100%;
+    max-width: 100px;
+}
+.reportReasonCountWrap .countWrap span {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 8px;
+}
+ul.extraInfo li {
+    display: block;
+    width: 100%;
+    background: red;
+}
+.reportViewWrap table, .reportViewWrap table tr, .reportViewWrap table td {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.reportViewWrap table thead td {
+    background: #c0c0c0;
+    color: #3b3b3b;
+    font-weight: 500;
+}
+a.closeLink, .reportViewWrap tfoot td a {
+    display: inline-block;
+
+    border-radius: 3px;
+    font-weight: 500;
+    background: #f85753;
+    color: #fff;
+    margin: 3px;
+    padding: 3px 10px;
+}
+.reportViewWrap tfoot td a {
+    width: auto;
+}
+.reportViewWrap td.extraInfo {
+    max-width: 350px;
+    overflow: auto;
+    white-space: nowrap;
+}
+.reportViewWrap tfoot td {
+    text-align: right;
+}

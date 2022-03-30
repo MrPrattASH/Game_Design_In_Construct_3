@@ -1,0 +1,41 @@
+﻿.favouriteWrap {
+    display: inline-block;
+    text-align: center;
+    line-height: 100%;
+    white-space: nowrap;
+    border-radius: 3px;
+}
+.favouriteWrap a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.favouriteWrap span.countWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    color: #c0c0c0;
+    margin-top: -5px;
+}
+.favouriteWrap span.countWrapper span {
+    margin-right: 3px;
+}
+
+.favouriteWrap .favHover {
+    display: none;
+}
+
+.favouriteWrap:hover .favUnhover {
+    display: none;
+}
+.favouriteWrap:hover .favHover {
+    display: block;
+}
+.favouriteWrap.favourited span {
+    color: #333;
+}
+.favouriteWrap img {
+    display: block;
+}

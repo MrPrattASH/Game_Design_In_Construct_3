@@ -1,0 +1,437 @@
+﻿/* MOBILE MENU */
+/* MOBILE MENU */
+.mobileMenu {
+    overflow-y: auto;
+    text-align: center;
+}
+.mobileMenu a.try {
+    display: block;
+    background: #28f0d2;
+    text-decoration: none;
+    text-align: center;
+    color: #3b4045;
+    font-weight: 500;
+    padding: 5px 0;
+    margin-bottom: 30px;
+}
+.mobileMenu a.try:hover {
+    background: #f85753;
+    color: #fff;
+}
+.mobileMenu ul {
+    list-style: none;
+    display: inline-block;
+    margin:0 auto;
+}
+.mobileMenu ul li {
+    margin: 0 !important;
+    text-align: left !important;
+}
+.mobileMenu ul ul {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.mobileMenu ul li a {
+    color: #8296a5;
+    font-size: 1rem;
+}
+.mobileMenu ul ul li.selected a {
+    color: #f85753;
+    font-weight: 400;
+}
+.mobileMenu ul li a.tl {
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: 'HalisR-Bold', 'Roboto', Arial, sans-serif;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+}
+.mobileMenu ul {
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 1500px) {
+
+    .octoCol .col:first-child {
+        display: none;
+    }
+    .octoCol .col:last-child {
+        padding-bottom: 200px;
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+        background: #fff;
+        text-align: center;
+    }
+    .octoCol .col:last-child span.preH1 {
+        text-align: center !important;
+    }
+
+}
+@media screen and (max-width: 714px) {
+    .octoCol .col:last-child {
+        padding-bottom: 150px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .octoCol .col:last-child {
+        padding-bottom: 100px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .octoCol .col:last-child {
+        padding-bottom: 50px;
+    }
+}
+/**************
+Responsive
+***************/
+    @media screen and (max-width: 1300px) {
+
+        .topMenu .mainMenu ul.controls li.mobileMenu.noticeWrap {
+            position: relative;
+            text-align: center;
+            margin-left: 17px;
+        }
+        .topMenu .mainMenu ul.controls a.notifications {
+            display: none;
+        }
+        .topMenu .mainMenu ul.controls li.mobileMenu a.notifications {
+            border-radius: 3px;
+            display: inline-block;
+            margin: 0 auto;
+            position: static;
+            right: auto;
+            width: 32px;
+            height: 32px;
+            line-height: 32px;
+            margin-top: 20px;
+        }
+        .homepage .pigTxt {
+            display: none;
+        }
+        .homepage .pigTxt2 {
+            display: block;
+            width: 100%;
+            padding: 32px;
+        }
+        .homepage .rocketPig {
+            display: block;
+            margin-bottom: -120px;
+        }
+        .homepage h1 {
+            margin-top: 0;
+        }
+        .topMenu .subMenu {
+            height: 8px;
+        }
+        .topMenu .subMenu ul {
+            display: none;
+        }
+
+        .topMenu .mainMenu ul.nav {
+            display: none;
+        }
+
+        .topMenu .mainMenu ul.controls li.mobileMenu {
+            display: inline-block;
+        }
+
+        .bodyWrapper {
+            padding-top: 80px;
+        }
+
+        #UserMenuSwitch:checked ~ div.userMenu {
+            right: 72px;
+        }
+
+        #UserMenuSwitch:checked ~ div.userMenu {
+            display: none;
+        }
+
+        #MobileMenuSwitch:checked ~ div.mobileMenu {
+            display: block;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            z-index: 10000;
+            background-color: rgba(39, 44, 49, 0.97);
+            width: 100%;
+            height: calc(100% - 72px);
+        }
+    }
+
+    @media screen and (max-width: 550px) {
+    .homepage .rocketPig {
+    display: block;
+    margin-bottom: -100px;
+}
+        .topMenu a.logo img:last-child {
+            display: none;
+        }
+
+        .mobileMenu {
+            text-align: left;
+        }
+
+            .mobileMenu ul li a.tl {
+                font-size: 1.5rem;
+            }
+
+            .mobileMenu a.try {
+                margin-bottom: 0px;
+            }
+    }
+
+    @media screen and (max-width: 430px) {
+
+        div.mainMenu li.login a, div.mainMenu li.register a {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+            padding: 0 10px !important;
+        }
+
+        div.mainMenu li.login a {
+            margin-right: 5px !important;
+        }
+
+        #UserMenuSwitch:checked ~ div.userMenu {
+            right: 5%;
+            left: 5%;
+            width: 90%;
+        }
+
+        /* CONTENT */
+        .content {
+            padding: 0;
+        }
+
+        .singleCol {
+            padding: 0 8px;
+            padding-bottom: 30px;
+        }
+
+        /* GLOBAL */
+        p, li {
+            font-size: 1.05rem;
+            line-height: 1.7rem;
+            word-wrap: break-word;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            margin: 15px 0;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .highlightedAnswer h2 {
+            margin-top: 0;
+        }
+        h3 {
+            margin-top: 12px;
+            font-size: 1.3rem;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+            h1.big {
+                font-size: 3rem;
+                margin-top: 0;
+            }
+
+        span.preH1 {
+            margin-top: 30px;
+            font-size: 1.35rem;
+        }
+
+        .spacer {
+            height: 24px;
+        }
+
+        span.hDescription {
+            font-size: 1.3rem;
+        }
+
+        a.bigButton {
+            width: 100%;
+            text-align: center;
+        }
+
+            a.bigButton ~ a.bigButton {
+                margin-top: 5px;
+            }
+
+        span.bigInfo {
+            padding-top: 15px;
+            display: block;
+        }
+
+        /* Breakout */
+        .singleCol.wider.breakout {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .singleCol.wider ~ .singleCol.wider.breakout {
+            margin-top: -28px;
+        }
+
+        /* OTHER */
+        p.featureSubD {
+            margin-bottom: 20px;
+            padding: 0 15px;
+        }
+
+        /* C3 */
+        .featuresListWrap {
+            padding-left: 0;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+            .featuresListWrap .contentReveal {
+                padding-left: 0;
+            }
+
+            .featuresListWrap h3 {
+                margin-top: 0;
+            }
+
+            .featuresListWrap a.hiddenMenuRevealer {
+                position: relative;
+                width: 100%;
+                display: block;
+                margin-top: 10px;
+            }
+
+                .featuresListWrap a.hiddenMenuRevealer span.expander {
+                    width: 32px;
+                    height: 32px;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                .featuresListWrap a.hiddenMenuRevealer h3 {
+                    padding-left: 46px;
+                    font-size: 1.25rem;
+                }
+
+
+        /* Homepage */
+        .homepage span.preH1 {
+            text-align: center !important;
+            margin-top: 15px;
+        }
+
+        /* Releases */
+        .releaseDetails a.bigButton {
+            padding: 16px 0 !important;
+            width: 100%;
+        }
+
+        .latestRelease h2 {
+            font-size: 1.6rem !important;
+            margin-bottom: 7px;
+        }
+
+        div.latestRelease {
+            margin-bottom: 15px;
+        }
+
+        div.changelogTotals div.total {
+            width: 100%;
+            margin-right: 0 !important;
+        }
+
+            div.changelogTotals div.total div {
+                margin-right: 0 !important;
+            }
+
+            div.changelogTotals div.total h3 {
+                font-size: 1.7rem;
+                margin-top: 10px;
+            }
+
+
+        /* Changelogs */
+        .changelogColWrapper ul {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .changelogCategory {
+            width: 100%;
+        }
+
+        .changelogList h2 {
+            text-align: left;
+        }
+
+        /* Cols */
+        .twoCol div.col:last-child {
+            padding-top: 25px;
+        }
+
+        /* Social share */
+        ul.socialShare li {
+            padding: 0;
+        }
+
+            ul.socialShare li img {
+                width: 50px;
+                height: 50px;
+            }
+
+        .socialShareWrap h3 {
+            padding: 0 35px;
+            padding-bottom: 10px;
+        }
+
+        /* Region */
+        .regionContent h3 {
+            position: absolute;
+            top: 3px;
+            left: 24px;
+            margin: 0 !important;
+            height: 56px;
+            line-height: 56px;
+        }
+
+        .regionContent .countriesWrapper li {
+            margin: 0;
+        }
+
+            .regionContent .countriesWrapper li a {
+                padding: 2px 0 !important;
+            }
+
+        p.detectedRegion {
+            margin-bottom: 0;
+            padding: 0 0 10px 0 !important;
+        }
+
+        .betaNotice {
+            height: 40px;
+            padding-top: 4px;
+        }
+
+            .betaNotice span {
+                font-size: 0.8rem;
+                line-height: 120%;
+            }
+
+            .betaNotice a {
+                display: block;
+            }
+    }
+

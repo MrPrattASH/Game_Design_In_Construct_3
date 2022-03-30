@@ -1,0 +1,191 @@
+﻿.regionContent {
+    background-color: #eef5fc;
+    color: #3b4045;
+    max-height: 90%;
+    min-height:400px;
+    width: 70%;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.regionContent p.detectedRegion {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Close bar */
+.regionContent div.closeBar {
+    text-align: right;
+}
+.regionContent div.closeBar a {
+    display: inline-block;
+    height: 56px;
+    width: 56px;
+    text-align: center;
+    line-height: 56px;
+}
+.regionContent div.closeBar a img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.regionContent div.closeBar a img:last-child {
+    display: none;
+}
+.regionContent div.closeBar a:hover img:last-child {
+    display: inline-block;
+}
+.regionContent div.closeBar a:hover img:first-child {
+    display: none;
+}
+.regionContent div.closeBar a:hover {
+    background: #A8BAC7;
+}
+
+/* Countries wrapper */
+.regionContent div.countriesWrapper {
+    overflow: auto;
+    max-height: 50%;
+    min-height: 10%;
+    flex-grow: 1;
+}
+
+/* Continent menu */
+.regionContent ul.continentMenu {
+    list-style: none;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+}
+.regionContent ul.continentMenu li {
+    display: inline-block;
+    margin: 0;
+}
+.regionContent ul.continentMenu li a {
+    color: #8296a5;
+    min-height:15px;
+    max-height:56px;
+   font-weight: 500;
+    padding: 0 32px;
+    display: block;
+    border-bottom: 3px solid #D4DDE3;
+}
+.regionContent ul.continentMenu li a:hover {
+    background: #E5EDF5;
+    text-decoration: none;
+}
+.regionContent ul.continentMenu li.selected a {
+    border-bottom: 4px solid #000;
+    color: #000;
+}
+
+/* Countries list */
+.regionContent .countryColWrapper {
+    -moz-column-width: 300px;
+    -webkit-column-width: 300px;
+    column-width: 320px;
+    padding: 32px;
+}
+.regionContent .countryColWrapper ul
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.regionContent .countryColWrapper ul li:first-child
+{
+    margin-top:0;
+}
+
+.regionContent .countryColWrapper ul li a {
+    display: block;
+    padding: 16px;
+    width: 100%;
+    min-height: 15px;
+    max-height: 56px;
+}
+
+.regionContent .countryColWrapper ul li.selected a {
+    background: #f85753;
+    color: white;
+}
+
+.regionContent h3 {
+    text-align: center;
+    margin: 32px 0;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.35rem;
+}
+.regionContent p {
+    color: #8296a5;
+    padding: 32px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.regionContent a {
+    color: #f85753;
+}
+.regionContent img.spinner {
+    margin: 0 auto;
+}
+.regionContent img.spinner ~ p {
+    padding-top: 0;
+}
+
+
+@media screen and (max-width: 700px) {
+    .regionContent {
+        height: 94%;
+        width: 94%;
+        top: 3%;
+        left: 3%;
+    }
+    .regionContent ul.continentMenu li a {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 8px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .regionContent {
+        height: 94%;
+        width: 94%;
+        top: 3%;
+        left: 3%;
+    }
+    .regionContent ul.continentMenu {
+        width: 100%;
+        padding: 0 32px;
+    }
+    .regionContent ul.continentMenu li {
+        display: block;
+    }
+    .regionContent ul.continentMenu li a {
+        border-bottom: 0;
+    }
+    .regionContent ul.continentMenu li.selected a {
+        border-bottom: 0;
+        background: #a8bac7;
+        color: #fff;
+    }
+}
+@media screen and (max-height: 500px) {
+    .regionContent h3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding-left: 32px;
+        height: 56px;
+        line-height: 56px;
+    }
+    .regionContent ul.continentMenu li a {
+        height: 32px;
+        line-height: 32px;
+        padding: 0 8px;
+    }
+}

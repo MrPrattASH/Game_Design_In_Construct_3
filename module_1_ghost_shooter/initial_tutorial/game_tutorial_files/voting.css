@@ -1,0 +1,36 @@
+﻿.voteWrapper {
+    font-size: 0;
+    text-align: center;
+    display: inline-block;
+    line-height: 100%;
+}
+.voteWrapper a {
+    display: block;
+}
+.voteWrapper img.selected {
+    display: none;
+}
+.voteWrapper a:hover img.selected {
+    display: inline;
+}
+.voteWrapper a:hover img.unselected {
+    display: none;
+}
+.voteWrapper span.score {
+    font-size: 2rem;
+    display: block;
+    padding: 15px 0;
+}
+
+.voteWrapper.upvoted a.upvote img.selected {
+    display: inline;
+}
+.voteWrapper.upvoted a.upvote img.unselected {
+    display: none;
+}
+.voteWrapper.downvoted a.downvote img.selected {
+    display: inline;
+}
+.voteWrapper.downvoted a.downvote img.unselected {
+    display: none;
+}

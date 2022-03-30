@@ -1,0 +1,24 @@
+﻿.notification {
+    background: #efefef;
+    margin-bottom: 8px;
+    padding: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+.notification.error {
+    background: #f97572;
+    color: white;
+}
+.notification.error a {
+    color: white;
+    text-decoration: underline;
+}
+
+.notification.warning {
+    background: #f9dc72;
+    color: #78672a;
+}
+.notification.success {
+    background: #7df972;
+    color: #377931;
+}
