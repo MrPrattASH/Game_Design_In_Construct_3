@@ -1,0 +1,812 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Original code take from : https://www.construct.net/en/tutorials/beginners-guide-construct-1/page-9\nCredit to @Ashley & @Tom from the Construct3 team\n\nCoding and comments modified by @BroganPratt for educational use"
+		},
+		{
+			"eventType": "variable",
+			"name": "MonsterSpeed",
+			"type": "number",
+			"initialValue": "80",
+			"comment": "The speed that monsters spawn initially with",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 366059842267578
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "the main game player score",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 124521753860944
+		},
+		{
+			"eventType": "comment",
+			"text": "Start monsters at a random angle."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 440540846891912
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "GreenMonster",
+					"sid": 731458007524144,
+					"parameters": {
+						"angle": "random(360)"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "GameOverText",
+					"sid": 769154193216466,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 772074008680643
+		},
+		{
+			"eventType": "comment",
+			"text": "Every tick (game \"time\", not literal second)\n1. Point the player towards the mouse\n2. change the text to display the correct score"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 103847617945822
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Player",
+					"sid": 634145666098561,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "UI_text",
+					"sid": 781622005956403,
+					"parameters": {
+						"text": "\"Score: \" & Score & newline & \"Use arrow keys to move and click to shoot!\""
+					}
+				}
+			],
+			"sid": 714743478425692
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Monsters",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Green Monster",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Every 3 seconds, spawn a new monster off to the right of the layout, increase speed by 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 246923832054458,
+									"parameters": {
+										"interval-seconds": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 383007913538709,
+									"parameters": {
+										"variable": "MonsterSpeed",
+										"value": "5"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 487519007591956,
+									"parameters": {
+										"object-to-create": "GreenMonster",
+										"layer": "\"Main\"",
+										"x": "1500",
+										"y": "random(1024)",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "GreenMonster",
+									"sid": 206881554103063,
+									"behaviorType": "Movement",
+									"parameters": {
+										"speed": "MonsterSpeed"
+									}
+								}
+							],
+							"sid": 650671326370972
+						},
+						{
+							"eventType": "comment",
+							"text": "If a bullet hits a monster, create an explosion and damage the monster.\nAlso increase the speed monsters are spawning at."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 638172028179224,
+									"parameters": {
+										"object": "GreenMonster"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Bullet",
+									"sid": 981627991501865,
+									"parameters": {
+										"object": "Explosion",
+										"layer": "\"Main\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Explosion",
+									"sid": 478657258974311,
+									"parameters": {
+										"angle": "random(360)"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "GreenMonster",
+									"sid": 451099875916799,
+									"parameters": {
+										"instance-variable": "health",
+										"value": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 620271002959495
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 162669823305582,
+									"parameters": {
+										"variable": "MonsterSpeed",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 145407928439759,
+									"parameters": {
+										"variable": "Score",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 976832611175624
+						},
+						{
+							"eventType": "comment",
+							"text": "When a monster runs out of health (5 hits), destroy it and give some score points depending on how fast it was."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "GreenMonster",
+									"sid": 804144102309005,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "GreenMonster",
+									"sid": 488339119068397
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "GreenMonster",
+									"sid": 986506179657031,
+									"parameters": {
+										"object": "Explosion",
+										"layer": "\"Main\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Explosion",
+									"sid": 306062490091981,
+									"parameters": {
+										"angle": "random(360)"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 252150320565113,
+									"parameters": {
+										"variable": "Score",
+										"value": "GreenMonster.Movement.Speed"
+									}
+								}
+							],
+							"sid": 572852433907514
+						},
+						{
+							"eventType": "comment",
+							"text": "If a monster is within 200 pixels of the player, make it start rotating towards them."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 323453003090799,
+									"parameters": {
+										"object": "GreenMonster"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 672969463921345,
+									"parameters": {
+										"first-value": "distance(Player.X, Player.Y, GreenMonster.X, GreenMonster.Y)",
+										"comparison": 2,
+										"second-value": "200"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-toward-position",
+									"objectClass": "GreenMonster",
+									"sid": 205654900509756,
+									"parameters": {
+										"degrees": "1",
+										"x": "Player.X",
+										"y": "Player.Y"
+									}
+								}
+							],
+							"sid": 916779019180156
+						},
+						{
+							"eventType": "comment",
+							"text": "\"Binds\" the monsters to the layout to stop monsters wandering off the layout."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "GreenMonster",
+									"sid": 972391547344015
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "GreenMonster",
+									"sid": 287779810086807,
+									"parameters": {
+										"x": "Player.X",
+										"y": "Player.Y"
+									}
+								}
+							],
+							"sid": 601446108085802
+						}
+					],
+					"sid": 294483773586816
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Red Monster",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Every 10 seconds, spawn a new mega monster off to the right of the layout, but reduce speed by 20"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 343148216045318,
+									"parameters": {
+										"interval-seconds": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 369474637992023,
+									"parameters": {
+										"variable": "MonsterSpeed",
+										"value": "5"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 369445394685940,
+									"parameters": {
+										"object-to-create": "RedMonster",
+										"layer": "\"Main\"",
+										"x": "1500",
+										"y": "random(1024)",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "RedMonster",
+									"sid": 836438146037082,
+									"behaviorType": "Movement",
+									"parameters": {
+										"speed": "MonsterSpeed-20"
+									}
+								}
+							],
+							"sid": 388003935412518
+						},
+						{
+							"eventType": "comment",
+							"text": "If a bullet hits a monster, create an explosion and damage the monster.\nAlso increase the speed monsters are spawning at."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Bullet",
+									"sid": 264129733983406,
+									"parameters": {
+										"object": "RedMonster"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Bullet",
+									"sid": 942554811691499,
+									"parameters": {
+										"object": "Explosion",
+										"layer": "\"Main\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Explosion",
+									"sid": 985802347079541,
+									"parameters": {
+										"angle": "random(360)"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "RedMonster",
+									"sid": 635690122858054,
+									"parameters": {
+										"instance-variable": "health",
+										"value": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 533579526536565
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 655583438993778,
+									"parameters": {
+										"variable": "MonsterSpeed",
+										"value": "5"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 559018458019113,
+									"parameters": {
+										"variable": "Score",
+										"value": "10"
+									}
+								}
+							],
+							"sid": 630535928377791
+						},
+						{
+							"eventType": "comment",
+							"text": "When a monster runs out of health (5 hits), destroy it and give some score points depending on how fast it was."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RedMonster",
+									"sid": 785098204405711,
+									"parameters": {
+										"instance-variable": "health",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "RedMonster",
+									"sid": 123884207807312
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "RedMonster",
+									"sid": 446924263757778,
+									"parameters": {
+										"object": "Explosion",
+										"layer": "\"Main\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Explosion",
+									"sid": 963602032177636,
+									"parameters": {
+										"angle": "random(360)"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 429383859983106,
+									"parameters": {
+										"variable": "Score",
+										"value": "RedMonster.Movement.Speed"
+									}
+								}
+							],
+							"sid": 400472263899236
+						},
+						{
+							"eventType": "comment",
+							"text": "If a monster is within 500 pixels of the player, make it start rotating towards them."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 876355846833086,
+									"parameters": {
+										"object": "RedMonster"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 229669002015368,
+									"parameters": {
+										"first-value": "distance(Player.X, Player.Y, GreenMonster.X, GreenMonster.Y)",
+										"comparison": 2,
+										"second-value": "200"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "rotate-toward-position",
+									"objectClass": "RedMonster",
+									"sid": 426827368674678,
+									"parameters": {
+										"degrees": "1",
+										"x": "Player.X",
+										"y": "Player.Y"
+									}
+								}
+							],
+							"sid": 887547677263268
+						},
+						{
+							"eventType": "comment",
+							"text": "\"Binds\" the monsters to the layout to stop monsters wandering off the layout."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "RedMonster",
+									"sid": 823294249163877
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "RedMonster",
+									"sid": 816747777586835,
+									"parameters": {
+										"x": "Player.X",
+										"y": "Player.Y"
+									}
+								}
+							],
+							"sid": 474504581354867
+						}
+					],
+					"sid": 671370592595802
+				}
+			],
+			"sid": 276101471194186
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player & Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Controls",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Shoot a bullet on left click."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 504180658630467,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 515366279974873,
+									"parameters": {
+										"object": "Bullet",
+										"layer": "\"Main\"",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 887639236102042
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 791330110657204,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 234073346215113,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 756444638693980
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 972063899659834,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 132854708115259,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 835901910652215
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 747773101775183,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 167529948623083,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 116899382822942
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 502188455328779,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 775572745047634,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 266650603611964
+						}
+					],
+					"sid": 895984878941848
+				},
+				{
+					"eventType": "comment",
+					"text": "Kill the player if a monster comes too close!\n\nSend the player back to the title screen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 664111395479674,
+							"parameters": {
+								"object": "GreenMonster"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Player",
+							"sid": 578558336638663
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "GameOverText",
+							"sid": 142382410609262,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 525087402416799,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 359560078497170,
+							"parameters": {
+								"layout": "title_screen"
+							}
+						}
+					],
+					"sid": 227917574917661
+				}
+			],
+			"sid": 981608252998878
+		}
+	],
+	"sid": 226908219882659
+}

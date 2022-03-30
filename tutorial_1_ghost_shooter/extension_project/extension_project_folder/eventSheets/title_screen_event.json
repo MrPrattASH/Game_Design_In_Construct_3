@@ -1,0 +1,49 @@
+{
+	"name": "title_screen_event",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "start the game screen, reset the score and initial monster speed"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 158214609864296
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 876202115079606,
+					"parameters": {
+						"variable": "MonsterSpeed",
+						"value": "80"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 386891659754834,
+					"parameters": {
+						"variable": "Score",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 364371068423700,
+					"parameters": {
+						"layout": "Layout 1"
+					}
+				}
+			],
+			"sid": 264524976856350
+		}
+	],
+	"sid": 675923196615108
+}
