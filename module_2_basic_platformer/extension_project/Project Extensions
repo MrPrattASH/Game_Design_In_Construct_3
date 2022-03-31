@@ -1,0 +1,7 @@
+# Project Extension ideas
+
+- add a "health" or "lives" instance variable to the player
+- make the player's animation change to "bounce" after jumping off of an enemy
+- make a "game over" screen
+- change how the playerbox platform "jump" parameters interact, adding in double jump, etc. 
+- edit the levels "tilemap" to create more enemys, more platforms, or environmental hazards like lava or poison pits
