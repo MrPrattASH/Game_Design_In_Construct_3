@@ -110,7 +110,9 @@
 			"music_credit",
 			"Audio",
 			"hp_text",
-			"gameOverText"
+			"gameOverText",
+			"Spikes",
+			"SpikeTilemapClone"
 		],
 		"subfolders": []
 	},

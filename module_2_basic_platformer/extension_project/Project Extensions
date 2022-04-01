@@ -2,6 +2,8 @@
 
 - add a "health" or "lives" instance variable to the player
 - make the player's animation change to "bounce" after jumping off of an enemy
-- make a "game over" screen
+- make a "game over" screen/condition
 - change how the playerbox platform "jump" parameters interact, adding in double jump, etc. 
-- edit the levels "tilemap" to create more enemys, more platforms, or environmental hazards like lava or poison pits
+- add a new "hazards" layer and add a clone of the tilemap to create more enemys, more platforms, or environmental hazards like lava or poison pits. Add in hotboxes for each of these environmental actions. 
+- add background music (into the "music" folder)
+- add sound effects for the gem collect or jumps (into the "sounds" folder)

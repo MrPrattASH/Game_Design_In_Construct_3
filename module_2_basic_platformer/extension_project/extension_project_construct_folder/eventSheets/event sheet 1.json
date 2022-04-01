@@ -466,10 +466,6 @@
 							]
 						},
 						{
-							"eventType": "comment",
-							"text": "Otherwise, have the PlayerAnim flash for a second. This could be here that you handle health management for your player if you want to add it to your game"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -480,115 +476,11 @@
 							],
 							"actions": [
 								{
-									"id": "flash",
-									"objectClass": "PlayerAnim",
-									"sid": 926688443476359,
-									"behaviorType": "Flash",
-									"parameters": {
-										"on-time": "0.1",
-										"off-time": "0.1",
-										"duration": "1.0"
-									}
-								},
-								{
-									"type": "comment",
-									"text": "Update player's health, and display the new health on the HUD layer"
-								},
-								{
-									"id": "subtract-from-instvar",
-									"objectClass": "PlayerBox",
-									"sid": 279968253608422,
-									"parameters": {
-										"instance-variable": "Health",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "hp_text",
-									"sid": 102524673650323,
-									"parameters": {
-										"text": "\"Health: \" & str(PlayerBox.Health)"
-									}
-								},
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 476216540688644,
-									"parameters": {
-										"audio-file": "Blastwave_FX_CryFemale_SFXB.2022",
-										"loop": "not-looping",
-										"volume": "0",
-										"tag-optional": "\"cry\""
-									}
+									"callFunction": "player_take_damage",
+									"sid": 847732911527173
 								}
 							],
-							"sid": 209328634242421,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "if the player is dead, destroy both the artwork and the hitbox itself. also Display the game over text"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "PlayerBox",
-											"sid": 979961762600268,
-											"parameters": {
-												"instance-variable": "Health",
-												"comparison": 3,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "PlayerAnim",
-											"sid": 655859821611064
-										},
-										{
-											"id": "destroy",
-											"objectClass": "PlayerBox",
-											"sid": 815389866685647
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "gameOverText",
-											"sid": 435321969301451,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 406327100989005
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 601398207633074,
-											"parameters": {
-												"seconds": "2"
-											}
-										},
-										{
-											"id": "stop",
-											"objectClass": "Audio",
-											"sid": 580625332074260,
-											"parameters": {
-												"tag": "\"cry\""
-											}
-										}
-									],
-									"sid": 572037439829256
-								}
-							]
+							"sid": 209328634242421
 						}
 					]
 				},
@@ -643,7 +535,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Enemies",
+			"title": "Enemy Behaviour",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -793,6 +685,142 @@
 				}
 			],
 			"sid": 222569353751422
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SpecialTileMap Hitboxes",
+			"description": "unique behaviours for specific tilemap features",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "remove health from the player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 849669115859237,
+							"parameters": {
+								"object": "Spikes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "player_take_damage",
+							"sid": 424630593021204
+						}
+					],
+					"sid": 193890065142190
+				}
+			],
+			"sid": 545443386243009
+		},
+		{
+			"eventType": "comment",
+			"text": "have the PlayerAnim flash for a second. Then, subtract 1 from health and check if the player is dead. If they are, destroy"
+		},
+		{
+			"functionName": "player_take_damage",
+			"functionDescription": "subtract health from player or destroy",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "PlayerAnim",
+					"sid": 718081072596444,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "1.0"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Update player's health, and display the new health on the HUD layer"
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "PlayerBox",
+					"sid": 194880127223637,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "hp_text",
+					"sid": 510529708909394,
+					"parameters": {
+						"text": "\"Health: \" & str(PlayerBox.Health)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 271979382468091,
+					"parameters": {
+						"audio-file": "Blastwave_FX_CryFemale_SFXB.2022",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"cry\""
+					}
+				}
+			],
+			"sid": 933138493133946,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "if the player is dead, destroy both the artwork and the hitbox itself. also Display the game over text"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox",
+							"sid": 486354336626955,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "PlayerAnim",
+							"sid": 656667134419799
+						},
+						{
+							"id": "destroy",
+							"objectClass": "PlayerBox",
+							"sid": 665870541933112
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "gameOverText",
+							"sid": 793883442371201,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 336442007718966
+				}
+			]
 		}
 	],
 	"sid": 139311760672095
