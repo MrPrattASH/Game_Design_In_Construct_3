@@ -1,0 +1,1145 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Original tutorial taken from: \nhttps://www.construct.net/en/tutorials/platformer-game-2329\n\nCredit to construct 3 team members: @Kyatric, @Ashley, @Tom\n\nslight commenting changes & extensions were made by @BroganPratt to better align with High School curricular goals. "
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 761469075664940
+		},
+		{
+			"eventType": "variable",
+			"name": "control_scheme",
+			"type": "string",
+			"initialValue": "keyboard",
+			"comment": "keyboard or touch",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 172783968024471
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 202267428982959
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 305833598392960,
+					"parameters": {
+						"audio-file": "bensound-dreams",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"background\""
+					}
+				}
+			],
+			"sid": 463039000066891
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Every tick of execution (60 FPS = 60 times in a second) the actions are executed.\nHere we position the PlayerAnim object to the object PlayerBox's position. The PlayerBox is the \"hitbox\" that the other game pieces interact with, while the \"PlayerAnim\" is the artwork that sits on top of the hitbox. \nWe also have our txtScore object displaying the value of the Score global variable."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 633674518974393
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "PlayerAnim",
+							"sid": 750366818675508,
+							"parameters": {
+								"object": "PlayerBox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txtScore",
+							"sid": 178251763777476,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 220350709480750
+				},
+				{
+					"eventType": "comment",
+					"text": "When pressing the left or right key of the keyboard or touch control, we mirror (or not) the PlayerAnim object in order to have the animation facing the correct direction."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 727474870702857,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 556477404703534,
+							"parameters": {
+								"key": 65
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 654431138231315,
+							"parameters": {
+								"object": "LeftArrow"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "PlayerAnim",
+							"sid": 226153253560423,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 614059646124724,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 104913481357692,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 907420886860124,
+							"parameters": {
+								"key": 68
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 361038293277983,
+							"parameters": {
+								"object": "RightArrow"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "PlayerAnim",
+							"sid": 991720859176926,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 172169328167677,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Some events in relation with the state of the Platform behavior, setting the appropriate animation in the PlayerAnim object."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "PlayerBox",
+							"sid": 181898799669063,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim",
+							"sid": 425218397744434,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 949532111097342
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "PlayerBox",
+							"sid": 315587669820448,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim",
+							"sid": 543162064821378,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 456794596863138
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "PlayerBox",
+							"sid": 767556532518681,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim",
+							"sid": 136087296305749,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 847548857513595,
+							"parameters": {
+								"audio-file": "zapsplat_cartoon_boing_spring_jump_17682",
+								"loop": "not-looping",
+								"volume": "-5",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 164544161865729,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "PlayerBox",
+							"sid": 273898761398297,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim",
+							"sid": 157607832199462,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 533334889953985
+				},
+				{
+					"eventType": "comment",
+					"text": "This is for if the player is \"jumping\" back up after falling on an enemy. \nonce the player is falling back down (a positive Y velocity) reset their animation to fall. \n\nThis cannot be in the \"On fall\" event as after hitting an enemy, despite resetting the Y vector to Negative, the platform behaviour still treats the playerbox as \"falling\" and not jumping, so we must compare the velocity of the playerbox rather than being triggered by an event"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "PlayerAnim",
+							"sid": 747306663690254,
+							"parameters": {
+								"animation": "\"jump\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 150740044773307,
+							"parameters": {
+								"first-value": "PlayerBox.Platform.VectorY",
+								"comparison": 5,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim",
+							"sid": 505720237187161,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 836250494328307
+				},
+				{
+					"eventType": "comment",
+					"text": "When the Platform behavior lands..."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "PlayerBox",
+							"sid": 922180934486134,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 438078928470153,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "...play the [i]walk[/i] animation if the behavior is in moving state"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "PlayerBox",
+									"sid": 480230252019186,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "PlayerAnim",
+									"sid": 235950000509219,
+									"parameters": {
+										"animation": "\"walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 910659655646678
+						},
+						{
+							"eventType": "comment",
+							"text": "...play the [i]idle[/i] animation if the behavior is not in moving state"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "PlayerBox",
+									"sid": 112122984922931,
+									"behaviorType": "Platform",
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "PlayerAnim",
+									"sid": 745600386460710,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 891074705036911
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "When the PlayerBox collides with an Enemy..."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 357447300380257,
+							"parameters": {
+								"object": "Enemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 603331871451199,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "The Platform behavior is in falling state and the PlayerBox Y position is currently less (above) the Enemy Y position -> Destroy the Enemy and bounce PlayerBox up"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-falling",
+									"objectClass": "PlayerBox",
+									"sid": 844782636590856,
+									"behaviorType": "Platform"
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "PlayerBox",
+									"sid": 193086680108953,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "Enemy.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemy",
+									"sid": 463010540750107
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 488344503803345,
+									"parameters": {
+										"audio-file": "zapsplat_fantasy_giant_male_sigh_groan_003_14512",
+										"loop": "not-looping",
+										"volume": "-5",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "PlayerBox",
+									"sid": 151827318961461,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "-550"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Set proper animation for jumping"
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "PlayerAnim",
+									"sid": 555375573309923,
+									"parameters": {
+										"animation": "\"jump\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 245693042408483,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "PlayerAnim",
+											"sid": 748910381400755,
+											"parameters": {
+												"animation": "\"jump\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "PlayerAnim",
+											"sid": 338373088423073,
+											"parameters": {
+												"animation": "\"fall\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 570549093564666
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 637320435213847
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "player_take_damage",
+									"sid": 847732911527173
+								}
+							],
+							"sid": 209328634242421
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "When PlayerBox collides with a Pickup, destroy it and add 10 points to the Score global variable."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 669229218834860,
+							"parameters": {
+								"object": "Pickup"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Pickup",
+							"sid": 930597266830459
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 191719026241429,
+							"parameters": {
+								"variable": "Score",
+								"value": "10"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 663764762416460,
+							"parameters": {
+								"audio-file": "zapsplat_fantasy_magic_wand_ping_single_fairy_001_80468",
+								"loop": "not-looping",
+								"volume": "-5",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 713105041864831
+				}
+			],
+			"sid": 915611612963541
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Behaviour",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "According to the value of the instance variable [i]Action[/i] in the Enemy object, we simulate controls in order to move the Enemy either to the left or to the right.\nThis is a kind of AI for your enemies."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 414100025921340,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy",
+							"sid": 224342368938694,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemy",
+							"sid": 469836389693058,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 930934338807411
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 960302253805477,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy",
+							"sid": 710371028267251,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemy",
+							"sid": 724674007814561,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 274595481154746
+				},
+				{
+					"eventType": "comment",
+					"text": "When an Enemy collides with an EdgeMarker, change its direction (the value of the [i]Action[/i] instance variable) accordingly."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy",
+							"sid": 364094514487045,
+							"parameters": {
+								"object": "EdgeMarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 734400488496863,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 435385824417803,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 340628807250789,
+									"parameters": {
+										"instance-variable": "Action",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 109371644568576
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 964142974343899
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 731165280430993,
+									"parameters": {
+										"instance-variable": "Action",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 159501458865444
+						}
+					]
+				}
+			],
+			"sid": 222569353751422
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SpecialTileMap Hitboxes",
+			"description": "unique behaviours for specific tilemap features",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "remove health from the player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 849669115859237,
+							"parameters": {
+								"object": "Spikes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "player_take_damage",
+							"sid": 424630593021204
+						}
+					],
+					"sid": 193890065142190
+				}
+			],
+			"sid": 545443386243009
+		},
+		{
+			"eventType": "comment",
+			"text": "have the PlayerAnim flash for a second. Then, subtract 1 from health and check if the player is dead. If they are, destroy"
+		},
+		{
+			"functionName": "player_take_damage",
+			"functionDescription": "subtract health from player or destroy",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "PlayerAnim",
+					"sid": 718081072596444,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "1.0"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Update player's health, and display the new health on the HUD layer"
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "PlayerBox",
+					"sid": 194880127223637,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "hp_text",
+					"sid": 510529708909394,
+					"parameters": {
+						"text": "\"Health: \" & str(PlayerBox.Health)"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 271979382468091,
+					"parameters": {
+						"audio-file": "Blastwave_FX_CryFemale_SFXB.2022",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"cry\""
+					}
+				}
+			],
+			"sid": 933138493133946,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "if the player is dead, destroy both the artwork and the hitbox itself. also Display the game over text"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox",
+							"sid": 486354336626955,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "PlayerAnim",
+							"sid": 656667134419799
+						},
+						{
+							"id": "destroy",
+							"objectClass": "PlayerBox",
+							"sid": 665870541933112
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "gameOverText",
+							"sid": 793883442371201,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 336442007718966
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Alternative Control Schemes",
+			"description": "swap between touch & keyboard controls. Supports alternative keyboard inputs. \n\nWill disable/enable the type of control based on the player's first initial tap of the screen. When the player \"touches to start\", it will register either a mouse click, or \"touch\" on a touch screen, then select the correct control scheme",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Deactivate player controls initially, so that the player can't move around the screen before control scheme has been chosen. \n\nonce chosen, disable and hide any groups/layers associated with the alternate control scheme, as well as the control scheme switcher"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Initial Control Scheme Set",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 503953345080789
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "PlayerBox",
+									"sid": 890708851890139,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 433318889614156
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-start",
+									"objectClass": "Touch",
+									"sid": 675553801404404
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 700303115293739,
+									"parameters": {
+										"layer": "\"control_scheme_swap\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 959590709630518,
+									"parameters": {
+										"variable": "control_scheme",
+										"value": "\"touch\""
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 812601316476446,
+									"parameters": {
+										"layer": "\"touch_controls\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 921476697632127,
+									"parameters": {
+										"group-name": "\"Initial Control Scheme Set\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "PlayerBox",
+									"sid": 870408131450995,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 655271188391964
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 145865572695964
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 264139311031936,
+									"parameters": {
+										"layer": "\"control_scheme_swap\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 262873350609045,
+									"parameters": {
+										"variable": "control_scheme",
+										"value": "\"keyboard\""
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 374979103030736,
+									"parameters": {
+										"layer": "\"touch_controls\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 833423116891378,
+									"parameters": {
+										"group-name": "\"Initial Control Scheme Set\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "PlayerBox",
+									"sid": 550950077701217,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 565019779763585
+						}
+					],
+					"sid": 190946345703110
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Alternative Controls",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 248632703346948,
+									"parameters": {
+										"object": "Jump"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 335826119878888,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "PlayerBox",
+									"sid": 784976795889817,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 677119692221129,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 101130365772459,
+									"parameters": {
+										"object": "RightArrow"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 947489263069323,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "PlayerBox",
+									"sid": 440895323313692,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 337737987141273,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-touching-object",
+									"objectClass": "Touch",
+									"sid": 707243564754822,
+									"parameters": {
+										"object": "LeftArrow"
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 333359602552725,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "PlayerBox",
+									"sid": 682081755134289,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 720110848598908,
+							"isOrBlock": true
+						}
+					],
+					"sid": 286655806462093
+				}
+			],
+			"sid": 758555755532051
+		}
+	],
+	"sid": 139311760672095
+}
