@@ -576,6 +576,14 @@
 							}
 						},
 						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 873936381989785,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
 							"id": "is-button-down",
 							"objectClass": "Gamepad",
 							"sid": 386311289589246,
@@ -1710,6 +1718,117 @@
 										}
 									],
 									"sid": 263430536326416
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Asteroid",
+									"sid": 502188920128012,
+									"parameters": {
+										"object": "Bullet"
+									}
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 554376444112555,
+									"parameters": {
+										"value": "Bullet.ZElevation",
+										"lower-bound": "Asteroid.ZElevation-asteroid_collision_margin",
+										"upper-bound": "Asteroid.ZElevation+asteroid_collision_margin"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 117473101457239
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Asteroid",
+									"sid": 245483077806341,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Asteroid",
+									"sid": 581691680752781,
+									"parameters": {
+										"animation": "\"collision\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 259815871118165,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Asteroid",
+											"sid": 668668133458286,
+											"parameters": {
+												"instance-variable": "Health",
+												"comparison": 3,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Asteroid",
+											"sid": 227442339544050,
+											"parameters": {
+												"object": "BigExplosion",
+												"layer": "\"Ship\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Asteroid",
+											"sid": 472033764349614
+										}
+									],
+									"sid": 428910338284271
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text",
+											"sid": 225768473321651,
+											"parameters": {
+												"instance-variable": "FontID",
+												"comparison": 0,
+												"value": "\"Health\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 356102647416502,
+											"parameters": {
+												"text": "\"Health: \" & str(Ship.Health)"
+											}
+										}
+									],
+									"sid": 849060086139799
 								}
 							]
 						}
