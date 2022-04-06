@@ -324,7 +324,7 @@
 					},
 					"uid": 12,
 					"instanceVariables": {
-						"Speed": 0
+						"Speed": 1
 					},
 					"behaviors": {},
 					"world": {

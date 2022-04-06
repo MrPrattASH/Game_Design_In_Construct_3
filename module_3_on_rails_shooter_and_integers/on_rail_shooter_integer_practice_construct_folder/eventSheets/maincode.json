@@ -1533,56 +1533,6 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Restart",
-			"description": "Debug tool",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "Force the game to be restarted. This is just a debug tool, it's not really part of the game."
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 508479565212417,
-							"parameters": {
-								"key": 82
-							}
-						},
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 280411373101961,
-							"parameters": {
-								"gamepad": "0",
-								"button": "start-menu"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 415626185785743
-						},
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 856112539258398
-						}
-					],
-					"sid": 466359950361455,
-					"isOrBlock": true
-				}
-			],
-			"sid": 251803380830911
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "Asteroid Extension & Random Integer Practice",
 			"description": "Challenge entry here\n\nUsing a similar spawning effect to the \"Starfield_effect\" group, can you create asteroid \"obstacles\" for the player ship to avoid? You'll need to use random integers to solve this. ",
 			"isActiveOnStart": true,
@@ -1715,11 +1665,105 @@
 										"animation": "\"collision\"",
 										"from": "beginning"
 									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Asteroid",
+									"sid": 233611528680593,
+									"parameters": {
+										"object": "BigExplosion",
+										"layer": "\"Ship\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Asteroid",
+									"sid": 440894509448111
 								}
 							],
-							"sid": 762879056369714
+							"sid": 762879056369714,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text",
+											"sid": 354659670409313,
+											"parameters": {
+												"instance-variable": "FontID",
+												"comparison": 0,
+												"value": "\"Health\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Text",
+											"sid": 942504001169324,
+											"parameters": {
+												"text": "\"Health: \" & str(Ship.Health)"
+											}
+										}
+									],
+									"sid": 263430536326416
+								}
+							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Ship",
+							"sid": 379228776887066,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Ship",
+							"sid": 414416535018489
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 350741700358617,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 454279057165645,
+							"parameters": {
+								"group-name": "\"Ship\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 813670625865667
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 476077918831528
+						}
+					],
+					"sid": 615045975589662
 				}
 			],
 			"sid": 703677530361462,

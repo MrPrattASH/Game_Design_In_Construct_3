@@ -200,10 +200,10 @@
 						}
 					},
 					"world": {
-						"x": 0,
+						"x": 32,
 						"y": 0,
-						"width": 320,
-						"height": 32,
+						"width": 240,
+						"height": 24,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -261,6 +261,63 @@
 						"y": 56,
 						"width": 320,
 						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Health: 10",
+						"enable-bbcode": true,
+						"character-width": 11,
+						"character-height": 16,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£<>%",
+						"spacing-data": "[[5,\" \"],[4,\"!'|\"],[5,\"`\"],[6,\"Iil1.,;:\\\"()[]\"],[7,\"j°\"],[8,\"ABCDEFGHJKLMNOPRSTUVWXYZabcdefghkmnopqrstuvwxyz023456789?-_#&\\/@+=*$£<>%\"],[9,\"Q~\"]]",
+						"scale": 1,
+						"character-spacing": -2,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 19,
+					"instanceVariables": {
+						"FontID": "Health"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						},
+						"Flash": {
+							"properties": {}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 0,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 32,
+						"y": 16,
+						"width": 240,
+						"height": 24,
 						"originX": 0,
 						"originY": 0,
 						"color": [
