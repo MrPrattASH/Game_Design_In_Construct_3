@@ -1,0 +1,1735 @@
+{
+	"name": "MainCode",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Original code made by Viridino Studios (@ViridinoStudios) & adapted by Brogan Pratt\n\nMateus Ferreira - Programmer\nTwitter: @BonzerKitten\nE-mail: ferreiramoreiramateus@gmail.com\n\nWesley Andrade - Artist\nTwitter: @andrart7\nE-mail: wesleymatos1989@gmail.com\n\nMade with the support of patrons on https://www.patreon.com/viridinostudios"
+		},
+		{
+			"eventType": "comment",
+			"text": "Project settings."
+		},
+		{
+			"eventType": "comment",
+			"text": "The max and min distance an object can be before it's destroyed."
+		},
+		{
+			"eventType": "variable",
+			"name": "NEARCLIPPING",
+			"type": "number",
+			"initialValue": "128",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 470404255361397
+		},
+		{
+			"eventType": "variable",
+			"name": "FARCLIPPING",
+			"type": "number",
+			"initialValue": "-512",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 875759504027355
+		},
+		{
+			"eventType": "comment",
+			"text": "Delta time multiplied by the target frame rate (60), useful for creating consistent and frame rate independent movement."
+		},
+		{
+			"eventType": "variable",
+			"name": "Delta",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 946932188873382
+		},
+		{
+			"eventType": "comment",
+			"text": "\"Toggleable\" variables used store the player input."
+		},
+		{
+			"eventType": "variable",
+			"name": "InputLeft",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 480678323866921
+		},
+		{
+			"eventType": "variable",
+			"name": "InputRight",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 471268466721194
+		},
+		{
+			"eventType": "variable",
+			"name": "InputUp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 718832393400421
+		},
+		{
+			"eventType": "variable",
+			"name": "InputDown",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 862877310326283
+		},
+		{
+			"eventType": "variable",
+			"name": "InputShoot",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 533742928789528
+		},
+		{
+			"eventType": "variable",
+			"name": "HorizontalAxis",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 636929297760212
+		},
+		{
+			"eventType": "variable",
+			"name": "VerticalAxis",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 548672950048690
+		},
+		{
+			"eventType": "comment",
+			"text": "How many target the player has destroyed."
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 629497235077723
+		},
+		{
+			"eventType": "variable",
+			"name": "Variable1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 359628193609643
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "System",
+			"description": "Movement controls and z elevation master",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Calculate the delta variation by multiplying dt by 60 (target frame rate)."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 170872845879514
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Calculate delta."
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 532159286421571,
+							"parameters": {
+								"variable": "Delta",
+								"value": "60*dt"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Bound all entities to the layout by constantly clamping their positions based on the layout size."
+						},
+						{
+							"id": "set-position",
+							"objectClass": "AllObjects",
+							"sid": 904126379806837,
+							"parameters": {
+								"x": "clamp(Self.X, 0+Self.Width/2, LayoutWidth-Self.Width/2)",
+								"y": "clamp(Self.Y, 0+Self.Height/2, LayoutHeight-Self.Height/2)"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Move each object based on its own speed value."
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "AllObjects",
+							"sid": 384221456161058,
+							"parameters": {
+								"z": "Self.ZElevation+Self.Speed*Delta"
+							}
+						}
+					],
+					"sid": 607417701296867
+				},
+				{
+					"eventType": "comment",
+					"text": "Destroy any object that's outside the far and near clipping planes."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "AllObjects",
+							"sid": 294949002157671,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 4,
+								"z-elevation": "NearClipping"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "AllObjects",
+							"sid": 968792762172908,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 2,
+								"z-elevation": "FarClipping"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "AllObjects",
+							"sid": 549965479777109
+						}
+					],
+					"sid": 831200798265162,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "movement_controls",
+					"description": "Receive and store the input from the player",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Left key input."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 864465474584688,
+									"parameters": {
+										"key": 37
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 715924655449192,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 176328042049674,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-left"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 310466952097667,
+									"parameters": {
+										"variable": "InputLeft",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 357010331507467,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 801006842869953
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 555375313733409,
+									"parameters": {
+										"variable": "InputLeft",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 684085928461947
+						},
+						{
+							"eventType": "comment",
+							"text": "Right key input."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 907771691418971,
+									"parameters": {
+										"key": 39
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 634742415974959,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 633423671846685,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-right"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 301328882504632,
+									"parameters": {
+										"variable": "InputRight",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 493693640612597,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 977322728706606
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 698502100744726,
+									"parameters": {
+										"variable": "InputRight",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 196595282567621
+						},
+						{
+							"eventType": "comment",
+							"text": "Up key input."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 812350268794269,
+									"parameters": {
+										"key": 38
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 998992381341829,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 289986313866821,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-up"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 805730633766063,
+									"parameters": {
+										"variable": "InputUp",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 424563934107878,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 358654718719712
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 393883166256073,
+									"parameters": {
+										"variable": "InputUp",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 315951913344519
+						},
+						{
+							"eventType": "comment",
+							"text": "Down key input."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 845148320286753,
+									"parameters": {
+										"key": 40
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 375031498788812,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 944493767434535,
+									"parameters": {
+										"gamepad": "0",
+										"button": "d-pad-down"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 649451999353861,
+									"parameters": {
+										"variable": "InputDown",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 499308226085780,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 113328753014118
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 688490659664732,
+									"parameters": {
+										"variable": "InputDown",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 599225293493009
+						},
+						{
+							"eventType": "comment",
+							"text": "Calculate both horizontal and vertical axis by combining the direction input previously received from the player."
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 555768051391449,
+									"parameters": {
+										"variable": "HorizontalAxis",
+										"value": "InputLeft+InputRight"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 570177015558330,
+									"parameters": {
+										"variable": "VerticalAxis",
+										"value": "InputUp+InputDown"
+									}
+								}
+							],
+							"sid": 462459597897302
+						}
+					],
+					"sid": 780719075692616
+				},
+				{
+					"eventType": "comment",
+					"text": "Shoot key input."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 372612052587957,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 386311289589246,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 425939931508361,
+							"parameters": {
+								"variable": "InputShoot",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 617889551897259,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 615118622561708
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 599997821525093,
+							"parameters": {
+								"variable": "InputShoot",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 339300722869973
+				}
+			],
+			"sid": 167839443960878
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Starfield_effect",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Spawn a new star every 0.01 seconds that moves towards the camera to create a starfield effect.\n\n320 is the width of the viewport/layout\n180 is the height of the viewport/layout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 616656928781806,
+							"parameters": {
+								"interval-seconds": "0.01"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 694787700688536,
+							"parameters": {
+								"object-to-create": "Star",
+								"layer": "\"Sky\"",
+								"x": "random(0, 320)",
+								"y": "random(0, 180)",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Star",
+							"sid": 375130680385797,
+							"parameters": {
+								"instance-variable": "Speed",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 882761019295509
+				}
+			],
+			"sid": 834148450986322
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ship",
+			"description": "player effects, and movement taken from system",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Setup the ship wing trails."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Ship",
+							"sid": 364968306007007
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Spawn and pin the left wing trail."
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Ship",
+							"sid": 605070467688020,
+							"parameters": {
+								"object": "WingTrail",
+								"layer": "\"Ship\"",
+								"image-point": "\"LeftWing\"",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "WingTrail",
+							"sid": 280473975577725,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Ship",
+								"image-point": "\"LeftWing\"",
+								"angle": false,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Spawn and pin the right wing trail."
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Ship",
+							"sid": 199335990410208,
+							"parameters": {
+								"object": "WingTrail",
+								"layer": "\"Ship\"",
+								"image-point": "\"RightWing\"",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "WingTrail",
+							"sid": 187647919789755,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Ship",
+								"image-point": "\"RightWing\"",
+								"angle": false,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 322651747050694
+				},
+				{
+					"eventType": "comment",
+					"text": "Move the ship based on the horizontal and vertical axis."
+				},
+				{
+					"eventType": "comment",
+					"text": "Move the ship left."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 300786224865423,
+							"parameters": {
+								"variable": "HorizontalAxis",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Ship",
+							"sid": 856413732292792,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Lerp both camera and ship angles."
+						},
+						{
+							"callFunction": "LerpAngle",
+							"sid": 511893583713871,
+							"parameters": [
+								"-30",
+								"0.025"
+							]
+						}
+					],
+					"sid": 725695333551054
+				},
+				{
+					"eventType": "comment",
+					"text": "Move the ship right."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 844028475910364,
+							"parameters": {
+								"variable": "HorizontalAxis",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Ship",
+							"sid": 723579302614014,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Lerp both camera and ship angles."
+						},
+						{
+							"callFunction": "LerpAngle",
+							"sid": 868775371921738,
+							"parameters": [
+								"30",
+								"0.025"
+							]
+						}
+					],
+					"sid": 950696767084462
+				},
+				{
+					"eventType": "comment",
+					"text": "Move the ship up."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 273872256562530,
+							"parameters": {
+								"variable": "VerticalAxis",
+								"comparison": 0,
+								"value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Ship",
+							"sid": 721648831456404,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 661614616858535
+				},
+				{
+					"eventType": "comment",
+					"text": "Move the ship down."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 794554182740608,
+							"parameters": {
+								"variable": "VerticalAxis",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Ship",
+							"sid": 619911713882738,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 275652631133383
+				},
+				{
+					"eventType": "comment",
+					"text": "Reset the camera angle if there's no horizontal input."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 624983976314786,
+							"parameters": {
+								"variable": "HorizontalAxis",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "LerpAngle",
+							"sid": 235564075523259,
+							"parameters": [
+								"0",
+								"0.05"
+							]
+						}
+					],
+					"sid": 824756109134446
+				},
+				{
+					"eventType": "comment",
+					"text": "Lerp both camera and ship angles."
+				},
+				{
+					"functionName": "LerpAngle",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "CameraAngle",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 717881096398749
+						},
+						{
+							"name": "AnimationSpeed",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 106787948540347
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "Ship",
+							"sid": 584831493470994,
+							"parameters": {
+								"angle": "anglelerp(Self.Angle, CameraAngle, AnimationSpeed*Delta)"
+							}
+						},
+						{
+							"id": "set-layout-angle",
+							"objectClass": "System",
+							"sid": 709425273199411,
+							"parameters": {
+								"angle": "anglelerp(LayoutAngle, (CameraAngle/4)*-1, AnimationSpeed*Delta)"
+							}
+						}
+					],
+					"sid": 116663855276045
+				},
+				{
+					"eventType": "comment",
+					"text": "Shoot a bullet from each gun on the ship (left and right) after a small delay/cooldown of 0.1 seconds."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 583209491413574,
+							"parameters": {
+								"variable": "InputShoot",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "Ship",
+							"sid": 745841012772183,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Shoot\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Ship",
+							"sid": 206358594721497,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.1",
+								"type": "once",
+								"tag": "\"Shoot\""
+							}
+						}
+					],
+					"sid": 529105716788044
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Ship",
+							"sid": 405965634081843,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Shoot\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Ship",
+							"sid": 776860019431221,
+							"parameters": {
+								"object": "Bullet",
+								"layer": "\"Ship\"",
+								"image-point": "\"LeftGun\"",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Ship",
+							"sid": 980553696936331,
+							"parameters": {
+								"object": "Bullet",
+								"layer": "\"Ship\"",
+								"image-point": "\"RightGun\"",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 800726571628179
+				},
+				{
+					"eventType": "comment",
+					"text": "Set the bullet speed, so it moves towards the enemy targets."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Bullet",
+							"sid": 518377064187098
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Bullet",
+							"sid": 872895670880818,
+							"parameters": {
+								"instance-variable": "Speed",
+								"value": "-8"
+							}
+						}
+					],
+					"sid": 918974563793023
+				}
+			],
+			"sid": 392963172396319
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Target",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "The distance at which the bullets can hit a target in the distance"
+				},
+				{
+					"eventType": "variable",
+					"name": "TARGETSPAWNMARGIN",
+					"type": "number",
+					"initialValue": "32",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 781135873866421
+				},
+				{
+					"eventType": "variable",
+					"name": "COLLISIONMARGIN",
+					"type": "number",
+					"initialValue": "8",
+					"comment": "",
+					"isStatic": true,
+					"isConstant": true,
+					"sid": 523016378178989
+				},
+				{
+					"eventType": "comment",
+					"text": "If there are no targets on the screen, create a new one."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 935263213577178,
+							"parameters": {
+								"first-value": "Target.Count",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Spawn a new target in random position, but with a clamped position, so it's not out of reach for the ship guns."
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 758301392365116,
+							"parameters": {
+								"object-to-create": "Target",
+								"layer": "\"Ship\"",
+								"x": "random(0+TargetSpawnMargin, 320-TargetSpawnMargin)",
+								"y": "random(0+TargetSpawnMargin, 180-TargetSpawnMargin)",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Animate the target Z elevation, so it look like it's coming from a far distance."
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Target",
+							"sid": 107115762823355,
+							"parameters": {
+								"z": "FarClipping"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Target",
+							"sid": 865221450798861,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Intro\"",
+								"property": "offsetZElevation",
+								"end-value": "-96",
+								"time": "1",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Also spawn a hint/sight on top of the target, which is also animated, but from the opposite direction."
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Hint",
+							"sid": 275591451480456,
+							"parameters": {
+								"x": "160",
+								"y": "90"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "Hint",
+							"sid": 503269609002209,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"Position\"",
+								"property": "position",
+								"end-x": "Target.X",
+								"end-y": "Target.Y",
+								"time": "0.5",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Hint",
+							"sid": 647483495243244,
+							"parameters": {
+								"z": "NearClipping"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Hint",
+							"sid": 293255549997094,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"ZElevation\"",
+								"property": "offsetZElevation",
+								"end-value": "-96",
+								"time": "0.5",
+								"ease": "easeoutsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 300932127591988
+				},
+				{
+					"eventType": "comment",
+					"text": "Check if each bullet is close enough to a target for it to be considered a \"collision\" and deal damage to the target."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 143491006972361,
+							"parameters": {
+								"object": "Bullet"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 370648046200262,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Bullet",
+									"sid": 862176133699415,
+									"parameters": {
+										"object": "Target"
+									}
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 892028403914872,
+									"parameters": {
+										"value": "Target.ZElevation",
+										"lower-bound": "Bullet.ZElevation-CollisionMargin",
+										"upper-bound": "Bullet.ZElevation+CollisionMargin"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Destroy the bullet and spawn a small hit animaiton."
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Bullet",
+									"sid": 546830613507253
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Bullet",
+									"sid": 702813613215896,
+									"parameters": {
+										"object": "SmallHit",
+										"layer": "\"Ship\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Snap the hit object and pin it to the target."
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "SmallHit",
+									"sid": 344121094102284,
+									"parameters": {
+										"z": "Bullet.ZElevation"
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "SmallHit",
+									"sid": 154910965031902,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "Target",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": true
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Reduce the target heath."
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Target",
+									"sid": 524027325191435,
+									"parameters": {
+										"instance-variable": "Heath",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 931021053702263
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Destroy the hit object after it's done to avoid CPU and memory overloads."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "SmallHit",
+							"sid": 826198680367377,
+							"parameters": {
+								"animation": "\"Default\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "SmallHit",
+							"sid": 360015158874677
+						}
+					],
+					"sid": 254586950849329
+				},
+				{
+					"eventType": "comment",
+					"text": "Destroy the target if its heath (instance variable) reach a value equal or lower than zero."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Target",
+							"sid": 539551573045040,
+							"parameters": {
+								"instance-variable": "Heath",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Spawn a big explosion animation."
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Target",
+							"sid": 957559767323412,
+							"parameters": {
+								"object": "BigExplosion",
+								"layer": "\"Ship\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "BigExplosion",
+							"sid": 158106513705449,
+							"parameters": {
+								"z": "Target.ZElevation"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "BigExplosion",
+							"sid": 472486104553670,
+							"parameters": {
+								"angle": "45"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Destroy the target and add 100 score."
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Target",
+							"sid": 450630290578807
+						},
+						{
+							"callFunction": "AddToScore",
+							"sid": 659362751610683,
+							"parameters": [
+								"100"
+							]
+						}
+					],
+					"sid": 449179859431937
+				}
+			],
+			"sid": 221063287935091
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Score",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Add a specific value to the current score."
+				},
+				{
+					"functionName": "AddToScore",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "NewScore",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 765731959873141
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 439665626384478,
+							"parameters": {
+								"variable": "Score",
+								"value": "NewScore"
+							}
+						}
+					],
+					"sid": 592257325383630,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Update the HUD font with the new score. (Each Text object has an instance variable telling which text object we're looking at. in this case, we want to change the text with instance variable \"score\")"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 735468333913168,
+									"parameters": {
+										"object": "Text",
+										"expression": "Text.FontID",
+										"comparison": 0,
+										"value": "\"Score\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 284885395087268,
+									"parameters": {
+										"text": "\"Score: \"&Score"
+									}
+								}
+							],
+							"sid": 829351310114265
+						}
+					]
+				}
+			],
+			"sid": 909403204390581
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Restart",
+			"description": "Debug tool",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Force the game to be restarted. This is just a debug tool, it's not really part of the game."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 508479565212417,
+							"parameters": {
+								"key": 82
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 280411373101961,
+							"parameters": {
+								"gamepad": "0",
+								"button": "start-menu"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 415626185785743
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 856112539258398
+						}
+					],
+					"sid": 466359950361455,
+					"isOrBlock": true
+				}
+			],
+			"sid": 251803380830911
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Asteroid Extension & Random Integer Practice",
+			"description": "Challenge entry here\n\nUsing a similar spawning effect to the \"Starfield_effect\" group, can you create asteroid \"obstacles\" for the player ship to avoid? You'll need to use random integers to solve this. ",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "1. Spawn an asteroid sprite on the ship layer every random seconds (random(Low,High))\n- random accepts arguments as integers (0,-5,32, etc) and floating integers (0.12, -3.4932) \n- You'll want to create the asteroid inside the viewport/layout size (320x180). However, you'll also want to make sure the ship is capable of colliding with the asteroid, so you'll need to \"clamp\" (constrain) the asteroid to smaller than this margin. \n\n2. Set the instance variable \"speed\" (an integer) of the asteroid to a random number range. test how fast it runs. \n3. Set the Z elevation of the asteroid to spawn \"out in the distance\" at a -100 Z elevation"
+				},
+				{
+					"eventType": "variable",
+					"name": "asteroid_spawn_margin",
+					"type": "number",
+					"initialValue": "45",
+					"comment": "a distance margin int variable used to constrain the spawn location of asteroids",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 736636736489374
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 279960769948980,
+							"parameters": {
+								"interval-seconds": "random(0.8,2)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 457199386837382,
+							"parameters": {
+								"object-to-create": "Asteroid",
+								"layer": "\"Ship\"",
+								"x": "random(asteroid_spawn_margin,320-asteroid_spawn_margin)",
+								"y": "random(asteroid_spawn_margin,180-asteroid_spawn_margin)",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Asteroid",
+							"sid": 789688051667787,
+							"parameters": {
+								"z": "-90"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Asteroid",
+							"sid": 462148718971879,
+							"parameters": {
+								"instance-variable": "Speed",
+								"value": "random(0.1,0.5)"
+							}
+						}
+					],
+					"sid": 219023901183184
+				},
+				{
+					"eventType": "variable",
+					"name": "asteroid_collision_margin",
+					"type": "number",
+					"initialValue": "3",
+					"comment": "because we are playing with Z elevation, we need to have a \"margin\" or range of \"z\" elevations to check collisions inside.",
+					"isStatic": false,
+					"isConstant": true,
+					"sid": 394678019235394
+				},
+				{
+					"eventType": "comment",
+					"text": "4. Add in a collision event for the ship and the asteroid in a \"For Each Asteroid\" loop. (Similar to the \"bullets\" in the target code group)\n- We'll need to have an AND block here to check both:\n    -overlapping sprites ship and asteroid\n    -Compare 2 values. the Z elevation of the ship, and the z elevation of the asteroid (with a range +/- the \n    asteroid_collision_margin)\n5. On collision, reduce ship's health by 1 and play the ship's \"collision\" animation"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 988638166479047,
+							"parameters": {
+								"object": "Asteroid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 947354008953307,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Asteroid",
+									"sid": 604929920816815,
+									"parameters": {
+										"object": "Ship"
+									}
+								},
+								{
+									"id": "is-between-values",
+									"objectClass": "System",
+									"sid": 880705576622755,
+									"parameters": {
+										"value": "ship.ZElevation",
+										"lower-bound": "Asteroid.ZElevation-asteroid_collision_margin",
+										"upper-bound": "Asteroid.ZElevation+asteroid_collision_margin"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Ship",
+									"sid": 248663810555962,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Ship",
+									"sid": 805266454072701,
+									"parameters": {
+										"animation": "\"collision\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 762879056369714
+						}
+					]
+				}
+			],
+			"sid": 703677530361462,
+			"background-color": [
+				0.00784313725490196,
+				0.47843137254901963,
+				0,
+				1
+			]
+		}
+	],
+	"sid": 709657994451558
+}
