@@ -25,3 +25,6 @@ Each Module folder includes:
 3. extension_project
 - .c3p file for testing the final extension project created
 - a construct 3 "folder project". This needs to be opened in construct 3 as a "local folder" by selecting the folder "X_construct_folder" file.
+
+
+As of Apr 6, 2022, this project is still in development. 
