@@ -3,8 +3,9 @@ This tutorial will step you through working with integers, and random integers, 
 
 ## 1. Spawn an asteroid sprite on the ship layer every random seconds 
 
-### The Random Method
+##### The Random Method
 > (random(LowValue,HighValue))
+> <img width="197" alt="Screen Shot 2022-04-08 at 08 34 01" src="https://user-images.githubusercontent.com/101632496/162378077-818f2a1c-48fc-4ac5-8eae-2189540461b7.png">
 - accepts arguments as integers (0,-5,32, etc) and floating integers (0.12, -3.4932) 
 
 1. in the main event sheet, every few seconds **Create** the asteroid sprite at a random location inside the viewport/layout size (320x180).
