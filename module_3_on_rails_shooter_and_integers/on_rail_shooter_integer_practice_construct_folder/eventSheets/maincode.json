@@ -136,16 +136,6 @@
 			"sid": 629497235077723
 		},
 		{
-			"eventType": "variable",
-			"name": "Variable1",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 359628193609643
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "System",
@@ -558,7 +548,13 @@
 							"sid": 462459597897302
 						}
 					],
-					"sid": 780719075692616
+					"sid": 780719075692616,
+					"background-color": [
+						1,
+						0.9215686274509803,
+						0.4,
+						1
+					]
 				},
 				{
 					"eventType": "comment",
@@ -630,7 +626,13 @@
 					"sid": 339300722869973
 				}
 			],
-			"sid": 167839443960878
+			"sid": 167839443960878,
+			"background-color": [
+				1,
+				0.9215686274509803,
+				0.4,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -681,7 +683,13 @@
 					"sid": 882761019295509
 				}
 			],
-			"sid": 834148450986322
+			"sid": 834148450986322,
+			"background-color": [
+				1,
+				0.9215686274509803,
+				0.4,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -1104,7 +1112,13 @@
 					"sid": 918974563793023
 				}
 			],
-			"sid": 392963172396319
+			"sid": 392963172396319,
+			"background-color": [
+				1,
+				0.9215686274509803,
+				0.4,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -1459,7 +1473,13 @@
 					"sid": 449179859431937
 				}
 			],
-			"sid": 221063287935091
+			"sid": 221063287935091,
+			"background-color": [
+				1,
+				0.9215686274509803,
+				0.4,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -1536,353 +1556,46 @@
 					]
 				}
 			],
-			"sid": 909403204390581
+			"sid": 909403204390581,
+			"background-color": [
+				1,
+				0.9215686274509803,
+				0.4,
+				1
+			]
 		},
 		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Asteroid Extension & Random Integer Practice",
-			"description": "Challenge entry here\n\nUsing a similar spawning effect to the \"Starfield_effect\" group, can you create asteroid \"obstacles\" for the player ship to avoid? You'll need to use random integers to solve this. ",
+			"description": "Challenge entry here",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "comment",
-					"text": "1. Spawn an asteroid sprite on the ship layer every random seconds (random(Low,High))\n- random accepts arguments as integers (0,-5,32, etc) and floating integers (0.12, -3.4932) \n- You'll want to create the asteroid inside the viewport/layout size (320x180). However, you'll also want to make sure the ship is capable of colliding with the asteroid, so you'll need to \"clamp\" (constrain) the asteroid to smaller than this margin. \n\n2. Set the instance variable \"speed\" (an integer) of the asteroid to a random number range. test how fast it runs. \n3. Set the Z elevation of the asteroid to spawn \"out in the distance\" at a -100 Z elevation"
-				},
 				{
 					"eventType": "variable",
 					"name": "asteroid_spawn_margin",
 					"type": "number",
 					"initialValue": "45",
 					"comment": "a distance margin int variable used to constrain the spawn location of asteroids",
-					"isStatic": false,
+					"isStatic": true,
 					"isConstant": true,
 					"sid": 736636736489374
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 279960769948980,
-							"parameters": {
-								"interval-seconds": "random(0.8,2)"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 457199386837382,
-							"parameters": {
-								"object-to-create": "Asteroid",
-								"layer": "\"Ship\"",
-								"x": "random(asteroid_spawn_margin,320-asteroid_spawn_margin)",
-								"y": "random(asteroid_spawn_margin,180-asteroid_spawn_margin)",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-z-elevation",
-							"objectClass": "Asteroid",
-							"sid": 789688051667787,
-							"parameters": {
-								"z": "-90"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Asteroid",
-							"sid": 462148718971879,
-							"parameters": {
-								"instance-variable": "Speed",
-								"value": "random(0.1,0.5)"
-							}
-						}
-					],
-					"sid": 219023901183184
 				},
 				{
 					"eventType": "variable",
 					"name": "asteroid_collision_margin",
 					"type": "number",
 					"initialValue": "3",
-					"comment": "because we are playing with Z elevation, we need to have a \"margin\" or range of \"z\" elevations to check collisions inside.",
-					"isStatic": false,
+					"comment": "because we are playing with Z elevation, we need to have a \"margin\" or range of \"z\" elevations to check collisions inside. In this case, any object that is within 6 Z axis \"units\" will count as a collision",
+					"isStatic": true,
 					"isConstant": true,
-					"sid": 394678019235394
-				},
-				{
-					"eventType": "comment",
-					"text": "4. Add in a collision event for the ship and the asteroid in a \"For Each Asteroid\" loop. (Similar to the \"bullets\" in the target code group)\n- We'll need to have an AND block here to check both:\n    -overlapping sprites ship and asteroid\n    -Compare 2 values. the Z elevation of the ship, and the z elevation of the asteroid (with a range +/- the \n    asteroid_collision_margin)\n5. On collision, reduce ship's health by 1 and play the ship's \"collision\" animation"
+					"sid": 681187563901885
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 988638166479047,
-							"parameters": {
-								"object": "Asteroid"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [],
-					"sid": 947354008953307,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Asteroid",
-									"sid": 604929920816815,
-									"parameters": {
-										"object": "Ship"
-									}
-								},
-								{
-									"id": "is-between-values",
-									"objectClass": "System",
-									"sid": 880705576622755,
-									"parameters": {
-										"value": "ship.ZElevation",
-										"lower-bound": "Asteroid.ZElevation-asteroid_collision_margin",
-										"upper-bound": "Asteroid.ZElevation+asteroid_collision_margin"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "subtract-from-instvar",
-									"objectClass": "Ship",
-									"sid": 248663810555962,
-									"parameters": {
-										"instance-variable": "Health",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Ship",
-									"sid": 805266454072701,
-									"parameters": {
-										"animation": "\"collision\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Asteroid",
-									"sid": 233611528680593,
-									"parameters": {
-										"object": "BigExplosion",
-										"layer": "\"Ship\"",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Asteroid",
-									"sid": 440894509448111
-								}
-							],
-							"sid": 762879056369714,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text",
-											"sid": 354659670409313,
-											"parameters": {
-												"instance-variable": "FontID",
-												"comparison": 0,
-												"value": "\"Health\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "Text",
-											"sid": 942504001169324,
-											"parameters": {
-												"text": "\"Health: \" & str(Ship.Health)"
-											}
-										}
-									],
-									"sid": 263430536326416
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Asteroid",
-									"sid": 502188920128012,
-									"parameters": {
-										"object": "Bullet"
-									}
-								},
-								{
-									"id": "is-between-values",
-									"objectClass": "System",
-									"sid": 554376444112555,
-									"parameters": {
-										"value": "Bullet.ZElevation",
-										"lower-bound": "Asteroid.ZElevation-asteroid_collision_margin",
-										"upper-bound": "Asteroid.ZElevation+asteroid_collision_margin"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Bullet",
-									"sid": 117473101457239
-								},
-								{
-									"id": "subtract-from-instvar",
-									"objectClass": "Asteroid",
-									"sid": 245483077806341,
-									"parameters": {
-										"instance-variable": "Health",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Asteroid",
-									"sid": 581691680752781,
-									"parameters": {
-										"animation": "\"collision\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 259815871118165,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Asteroid",
-											"sid": 668668133458286,
-											"parameters": {
-												"instance-variable": "Health",
-												"comparison": 3,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Asteroid",
-											"sid": 227442339544050,
-											"parameters": {
-												"object": "BigExplosion",
-												"layer": "\"Ship\"",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Asteroid",
-											"sid": 472033764349614
-										}
-									],
-									"sid": 428910338284271
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text",
-											"sid": 225768473321651,
-											"parameters": {
-												"instance-variable": "FontID",
-												"comparison": 0,
-												"value": "\"Health\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "Text",
-											"sid": 356102647416502,
-											"parameters": {
-												"text": "\"Health: \" & str(Ship.Health)"
-											}
-										}
-									],
-									"sid": 849060086139799
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Ship",
-							"sid": 379228776887066,
-							"parameters": {
-								"instance-variable": "Health",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Ship",
-							"sid": 414416535018489
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 350741700358617,
-							"parameters": {
-								"seconds": "1.0"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 454279057165645,
-							"parameters": {
-								"group-name": "\"Ship\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 813670625865667
-						},
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 476077918831528
-						}
-					],
-					"sid": 615045975589662
+					"sid": 219023901183184
 				}
 			],
 			"sid": 703677530361462,
