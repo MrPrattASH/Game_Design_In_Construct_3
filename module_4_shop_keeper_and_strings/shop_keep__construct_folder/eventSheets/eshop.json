@@ -422,15 +422,6 @@
 									"id": "destroy",
 									"objectClass": "Dialogue_Arrow",
 									"sid": 950346650929567
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 208834076027379,
-									"parameters": {
-										"group-name": "\"Player Controls & Animations\"",
-										"state": "activated"
-									}
 								}
 							],
 							"sid": 691632781698762
