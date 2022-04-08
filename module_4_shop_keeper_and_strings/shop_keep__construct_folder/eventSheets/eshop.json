@@ -1,0 +1,608 @@
+{
+	"name": "eShop",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Player & Enemies"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 839475013035894
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_Mask",
+					"sid": 512378791035717,
+					"parameters": {
+						"animation": "\"Idle_\" & Self.Direction",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 885345502548792,
+					"parameters": {
+						"audio-file": "JojosHut",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"Jojos Hut\""
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Spawn an intro dialogue box, with a special \"choose\" string"
+				},
+				{
+					"callFunction": "dialogue_box",
+					"sid": 940985451424182,
+					"parameters": [
+						"\"If you dare challange the demon, take the dungeon key to your left. Else, come back with some gems!\" & choose( \"Are you hunting for a bargain? 'Cause I've got one for you! Kekeke.\" , \"I've got plenty of wares...not that they served the last guy any well! Kekeke.\", \"You drop it, I sell it! Kekeke!\" )"
+					]
+				}
+			],
+			"sid": 196031825563700
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Controls & Animations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 402657157176940
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Player_Mask",
+							"sid": 155772993200690,
+							"parameters": {
+								"x": "Player_Base.X",
+								"y": "Player_Base.Y"
+							}
+						}
+					],
+					"sid": 748255918328662
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 191572851432116,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 368013200999259,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_Base",
+							"sid": 795425428262883,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Mask",
+							"sid": 487897886071844,
+							"parameters": {
+								"instance-variable": "Walking",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Mask",
+							"sid": 948110380675283,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Up\""
+							}
+						}
+					],
+					"sid": 474708631785934,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 230547037555389,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 176536791175144,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_Base",
+							"sid": 156858548930220,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Mask",
+							"sid": 514254258322281,
+							"parameters": {
+								"instance-variable": "Walking",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Mask",
+							"sid": 985166249797765,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Down\""
+							}
+						}
+					],
+					"sid": 747022274146425,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 610287648207838,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 650809420102808,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_Base",
+							"sid": 477984953732602,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Mask",
+							"sid": 508120707458647,
+							"parameters": {
+								"instance-variable": "Walking",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Mask",
+							"sid": 690389022663631,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Right\""
+							}
+						}
+					],
+					"sid": 762879295012134,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 809910907646333,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 793236420942613,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player_Base",
+							"sid": 529177462322353,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Mask",
+							"sid": 723655031952497,
+							"parameters": {
+								"instance-variable": "Walking",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Mask",
+							"sid": 989793681446016,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Left\""
+							}
+						}
+					],
+					"sid": 197044120974130,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player_Base",
+							"sid": 203866197987828,
+							"behaviorType": "8Direction",
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Mask",
+							"sid": 363612271254361,
+							"parameters": {
+								"instance-variable": "Walking",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 314170852714390
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Mask",
+							"sid": 959514061788055,
+							"parameters": {
+								"instance-variable": "Walking"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Mask",
+							"sid": 605764970898281,
+							"parameters": {
+								"animation": "\"Idle_\" & Self.Direction",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 285676836255862
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 995339329669089
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Mask",
+							"sid": 786221360818172,
+							"parameters": {
+								"animation": "\"Walk_\" & Self.Direction",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 770735161418430
+				}
+			],
+			"sid": 985652766068535,
+			"background-color": [
+				0.9882352941176471,
+				1,
+				0.30196078431372547,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Dialogues",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Open/Close a dialogue box"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 616936615541791,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [],
+					"sid": 896281659576209,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 137288714217333,
+									"parameters": {
+										"first-value": "DialogueBox.Count",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "DialogueBox",
+									"sid": 450866802267585
+								},
+								{
+									"id": "destroy",
+									"objectClass": "SpriteFont_Dialogue",
+									"sid": 720772840174176
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Dialogue_Arrow",
+									"sid": 950346650929567
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 208834076027379,
+									"parameters": {
+										"group-name": "\"Player Controls & Animations\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 691632781698762
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "dialogue_trigger",
+									"sid": 861407867849462,
+									"parameters": {
+										"instance-variable": "Event"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "dialogue_box",
+									"sid": 229602882555955,
+									"parameters": [
+										"dialogue_trigger.Line"
+									]
+								}
+							],
+							"sid": 979961397837322
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "dialogue_trigger",
+							"sid": 342360590445168,
+							"parameters": {
+								"object": "Player_Base"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 132344100015175,
+							"parameters": {
+								"object-to-create": "Item_Arrow",
+								"layer": "\"Objects\"",
+								"x": "dialogue_trigger.X",
+								"y": "dialogue_trigger.Y-30",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "dialogue_trigger",
+							"sid": 740911733244092,
+							"parameters": {
+								"instance-variable": "Event",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 883356017734374
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "dialogue_trigger",
+							"sid": 368300324711477,
+							"parameters": {
+								"object": "Player_Base"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Item_Arrow",
+							"sid": 392194663834971
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "dialogue_trigger",
+							"sid": 460785227540641,
+							"parameters": {
+								"instance-variable": "Event",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 837703166678933
+				},
+				{
+					"functionName": "dialogue_box",
+					"functionDescription": "display a dialog box, pulling data from the instance variables of the character",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "line",
+							"type": "string",
+							"initialValue": "please replace me with real text",
+							"comment": "",
+							"sid": 503043709954714
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 405286317044539,
+							"parameters": {
+								"object-to-create": "DialogueBox",
+								"layer": "\"Dialogue\"",
+								"x": "57",
+								"y": "122",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 704874067218930,
+							"parameters": {
+								"object-to-create": "Dialogue_Arrow",
+								"layer": "\"Dialogue\"",
+								"x": "DialogueBox.BBoxRight - 8",
+								"y": "DialogueBox.BBoxBottom - 6",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 564537118987939,
+							"parameters": {
+								"object-to-create": "SpriteFont_Dialogue",
+								"layer": "\"Dialogue\"",
+								"x": "DialogueBox.X + 4",
+								"y": "DialogueBox.Y + 4",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont_Dialogue",
+							"sid": 428856808137716,
+							"parameters": {
+								"text": "line"
+							}
+						}
+					],
+					"sid": 450259423990784
+				}
+			],
+			"sid": 826736847142313,
+			"background-color": [
+				0.4392156862745098,
+				0.9176470588235294,
+				0.3411764705882353,
+				1
+			]
+		}
+	],
+	"sid": 387105426428866
+}
