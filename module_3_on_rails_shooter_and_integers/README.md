@@ -2,7 +2,7 @@
 This tutorial will step you through working with integers, and random integers, in the context of a Z axis "on rails" shooter, similar to those that you see in arcades. Take a look at the finished .c3p file before getting started, to see what you'll be making. 
 
 **Note**
-- All Red code-groups you will not need to edit. 
+- All yellow code-groups you will not need to edit. They provide base functionality, and are not necessary to modify. 
 
 ## 1. Spawn an asteroid sprite on the ship layer every random seconds 
 
@@ -33,3 +33,11 @@ This tutorial will step you through working with integers, and random integers, 
 ## 3. Destroy the ship on enough contacts with asteroids. 
 1. On collision, subtract 1 from the ship's *instance variable* "health" 
 2. Set the ship's animation to play "collision" from the beginning. 
+
+
+# Extension Ideas
+- Add a health instance variable to the asteroids, and make the "bullet" object destroy them?
+*Hint*- Take a look at the "Target" code group, "For each bullet" 
+- Make the asteroid create an object "Big explosion" explode on impact
+- Add a new text object to the HUD, and make it display the ship's health (you may need to use  ("Append" +  str(instance variable)) to turn the integer  variable into a string variable to be able to be displayed 
+- Add a different kind of enemy to randomly spawn like the asteroid. 
