@@ -8,12 +8,12 @@ This tutorial will step you through working with integers, and random integers, 
 - accepts arguments as integers (0,-5,32, etc) and floating integers (0.12, -3.4932) 
 
 1. in the main event sheet, every few seconds **Create** the asteroid sprite at a random location inside the viewport/layout size (320x180).
-- Hint: you'll also want to make sure the ship is capable of colliding with the asteroid, so you'll need to "clamp" (constrain) the asteroid to smaller than this margin. (*Example, if the width is 320, create the X location randomly between 0+margin of error, and 320-margin of error*)
+ - Hint: you'll also want to make sure the ship is capable of colliding with the asteroid, so you'll need to "clamp" (constrain) the asteroid to smaller than this margin. (*Example, if the width is 320, create the X location randomly between 0+margin of error, and 320-margin of error*)
+2. Set the instance variable of the asteroid, "speed" (*integer*,) to a random number range. Run the program to test how fast it runs. Adjust speed as needed.   
+3. Set the Z elevation of the asteroid to spawn "out in the distance" at the bottom of our main layour at a -100 Z elevation. 
 
-2. Set the instance variable of the asteroid "speed" (*integer*) of the asteroid to a random number range. Run the program to test how fast it runs. Adjust speed as needed, or randomly in a range. 
-
-3. Set the Z elevation of the asteroid to spawn "out in the distance" at a -100 Z elevation
-4. Add in a collision event for the ship and the asteroid in a "For Each Asteroid" loop. (Similar to the "bullets" in the target code group)
+## 2. Make the ship take damage when colliding with an asteroid
+1. Add in a collision event for the ship and the asteroid in a "For Each Asteroid" loop. (Similar to the "bullets" in the target code group). 
 - We'll need to have an AND block here to check both:
     -overlapping sprites ship and asteroid
     -Compare 2 values. the Z elevation of the ship, and the z elevation of the asteroid (with a range +/- the 
