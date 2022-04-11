@@ -59,17 +59,20 @@ to produce a dialogue event with the text "Hellow Adventurer!" displayed. Using 
 - Set the text of Sprite_font_dialogue to "line" (the parameter used at the start of the function. 
 
 ## 3. Create a new event "on space pressed" that includes 2 sub events. 
-1. The first sub event
-- Using System.count, check how many dialogue boxes are on screen. If there are any on screen, this means we want to close the dialogue. 
-
-![Screen Shot 2022-04-08 at 15 55 44](https://user-images.githubusercontent.com/101632496/162450359-89caa7d1-fc67-49e9-bf17-524ed6b88835.png)
-- If the above sub-event condition is true, destroy the DialogueBox, SpriteFont_Dialogue, and Dialogue_arrow
-
-2. the 2nd sub event
-- This uses a bool variable, which we'll get into next project. Essentially, if the player is overlapping a dialogue trigger box while space is pressed, we should call the dialogue_box function. However, we will pass the instance variable from the current "dialogue_trigger" in as the argument. This means that the text written inside the instance variable for the dialogue trigger will be displayed in our event. 
+###### 1. the first sub event - Creating a dialogue box
+- This uses a bool variable, which we'll get into more during the next module. Essentially, if the player is overlapping a dialogue trigger box while space is pressed, we should call the dialogue_box function. 
+- When we call the dialogue_box function, we will pass the instance variable from the current "dialogue_trigger" in as the argument. This means that the text written inside the instance variable for the dialogue trigger will be displayed in our event. 
 
 ![Screen Shot 2022-04-08 at 15 57 49](https://user-images.githubusercontent.com/101632496/162450786-87eb8c28-110f-4cde-bb91-2d00d2c5b013.png)
 
+###### 2. The second sub event - destroying any open dialogue boxes
+- Add an "else" to the subcondition above. This means that if the if the above sub-event condition is *not* true (ie, the player is not standing on a dialogue trigger), destroy the DialogueBox, SpriteFont_Dialogue, and Dialogue_arrow. 
+
+![Screen Shot 2022-04-11 at 15 23 01](https://user-images.githubusercontent.com/101632496/162748733-f7f1a1cc-e87e-4634-ab64-3acce677174c.png)
 
 
+# Extension ideas
 
+- Add in more dialogue triggers with new characters. Create new instances of the dialogue trigger, and drag in pre-made assets from the "enemies" project folder
+- How might you add a new instance variable (perhaps a dialogue "counter") to the code to create a multi-line dialogue, so the character the player is speaking to speaks twice? 
+- How might you use the "random" method we learned about last module, to make an NPC display a random dialogue line for the player? 
