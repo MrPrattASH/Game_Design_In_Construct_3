@@ -75,4 +75,5 @@ to produce a dialogue event with the text "Hellow Adventurer!" displayed. Using 
 
 - Add in more dialogue triggers with new characters. Create new instances of the dialogue trigger, and drag in pre-made assets from the "enemies" project folder
 - How might you add a new instance variable (perhaps a dialogue "counter") to the code to create a multi-line dialogue, so the character the player is speaking to speaks twice? 
-- How might you use the "random" method we learned about last module, to make an NPC display a random dialogue line for the player? 
+- How might you use the "random" method we learned about last module, to make an NPC display a random dialogue line for the player? You may want to look into a method of random called "choose" when it comes to text based tags. <img width="333" alt="Screen Shot 2022-04-12 at 14 02 02" src="https://user-images.githubusercontent.com/101632496/162958303-2530cd7a-7df3-4412-bfc0-966febdb576c.png">
+
