@@ -397,42 +397,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 137288714217333,
-									"parameters": {
-										"first-value": "DialogueBox.Count",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "DialogueBox",
-									"sid": 450866802267585
-								},
-								{
-									"id": "destroy",
-									"objectClass": "SpriteFont_Dialogue",
-									"sid": 720772840174176
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Dialogue_Arrow",
-									"sid": 950346650929567
-								}
-							],
-							"sid": 691632781698762
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "dialogue_trigger",
-									"sid": 861407867849462,
+									"sid": 414160462569752,
 									"parameters": {
 										"instance-variable": "Event"
 									}
@@ -441,13 +408,41 @@
 							"actions": [
 								{
 									"callFunction": "dialogue_box",
-									"sid": 229602882555955,
+									"sid": 709817609258663,
 									"parameters": [
 										"dialogue_trigger.Line"
 									]
 								}
 							],
-							"sid": 979961397837322
+							"sid": 735823091981044
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 254785482138589
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "DialogueBox",
+									"sid": 282187797168421
+								},
+								{
+									"id": "destroy",
+									"objectClass": "SpriteFont_Dialogue",
+									"sid": 181758829810705
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Dialogue_Arrow",
+									"sid": 580375595171477
+								}
+							],
+							"sid": 449177595858910
 						}
 					],
 					"isOrBlock": true
