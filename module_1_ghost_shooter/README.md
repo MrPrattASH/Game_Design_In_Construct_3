@@ -20,4 +20,4 @@ Each project/tutorial has a few goals in mind. Read over what you're going to le
 7. What an *Instance Variable* is
 
 ## Self-Assessment Test:
-Complete this after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScafM2fw528oKAJlLuv1ZZ_7NqdZL1YbIra-dG8WFHZHOlKUQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
