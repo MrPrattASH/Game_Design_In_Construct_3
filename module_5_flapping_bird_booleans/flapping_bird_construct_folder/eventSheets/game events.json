@@ -7,16 +7,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "SecondsPerObstacle",
-			"type": "number",
-			"initialValue": "1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 1617386090584892
-		},
-		{
-			"eventType": "variable",
 			"name": "JumpStrength",
 			"type": "number",
 			"initialValue": "500",
@@ -309,16 +299,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 608662677623928,
-							"parameters": {
-								"interval-seconds": "SECONDSPEROBSTACLE"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "create-object",
@@ -472,14 +453,6 @@
 							"parameters": {
 								"x": "TiledBackground.X -SCROLLSPEED * dt"
 							}
-						},
-						{
-							"id": "set-x",
-							"objectClass": "FoodSprite",
-							"sid": 599557197654212,
-							"parameters": {
-								"x": "FoodSprite.X - SCROLLSPEED * dt"
-							}
 						}
 					],
 					"sid": 1385689931601852
@@ -531,28 +504,6 @@
 						}
 					],
 					"sid": 7423873857133321
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-x",
-							"objectClass": "FoodSprite",
-							"sid": 551113771045382,
-							"parameters": {
-								"comparison": 3,
-								"x-co-ordinate": "-50"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "FoodSprite",
-							"sid": 901031871222743
-						}
-					],
-					"sid": 607010135019325
 				}
 			],
 			"sid": 2217707378612145,
@@ -580,135 +531,92 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Bird",
-							"sid": 757324953032301,
+							"sid": 317273256630305,
 							"parameters": {
-								"object": "FoodSprite"
+								"object": "TiledBackground2"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "FoodSprite",
-							"sid": 108146467723144,
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 225187251861687,
 							"parameters": {
-								"instance-variable": "IsEaten",
-								"value": "true"
+								"layout": "\"Start\""
 							}
 						}
 					],
-					"sid": 281740702291686
+					"sid": 273066905718133
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-boolean-instance-variable-set",
+							"id": "is-overlapping-another-object",
 							"objectClass": "Bird",
-							"sid": 179382274702843,
+							"sid": 111816308935546,
 							"parameters": {
-								"instance-variable": "Invincible"
-							},
-							"isInverted": true
+								"object": "TopPipe"
+							}
 						}
 					],
-					"actions": [],
-					"sid": 520047928517139,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Bird",
-									"sid": 453607201890754,
-									"parameters": {
-										"object": "TiledBackground2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout-by-name",
-									"objectClass": "System",
-									"sid": 283918812524039,
-									"parameters": {
-										"layout": "\"Start\""
-									}
-								}
-							],
-							"sid": 752888570910890
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Bird",
-									"sid": 312037352982790,
-									"parameters": {
-										"object": "TopPipe"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 502372192746034,
-									"parameters": {
-										"layout": "Start"
-									}
-								}
-							],
-							"sid": 845152848574152
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Bird",
-									"sid": 835802618780029,
-									"parameters": {
-										"object": "BottomPipe"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 337116390696052,
-									"parameters": {
-										"layout": "Start"
-									}
-								}
-							],
-							"sid": 571345595649162
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-outside-layout",
-									"objectClass": "Bird",
-									"sid": 486190213614440
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 374656651351107,
-									"parameters": {
-										"layout": "Start"
-									}
-								}
-							],
-							"sid": 111277215440097
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 845438098622413,
+							"parameters": {
+								"layout": "Start"
+							}
 						}
-					]
+					],
+					"sid": 150552530232081
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Bird",
+							"sid": 491598152787618,
+							"parameters": {
+								"object": "BottomPipe"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 489438459372044,
+							"parameters": {
+								"layout": "Start"
+							}
+						}
+					],
+					"sid": 882513035600699
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Bird",
+							"sid": 396924802793812
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 737916881736218,
+							"parameters": {
+								"layout": "Start"
+							}
+						}
+					],
+					"sid": 430171814809309
 				}
 			],
 			"sid": 991508571897493,
@@ -729,330 +637,6 @@
 				{
 					"eventType": "comment",
 					"text": "At regular intervals, create new food powerups for the bird to collect. \n\nThese may be extra score, invincibility, slow time, etc. "
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 831996417580716,
-							"parameters": {
-								"interval-seconds": "SecondsPerPowerUp"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 141457370260212,
-							"parameters": {
-								"object-to-create": "FoodSprite",
-								"layer": "0",
-								"x": "440",
-								"y": "random(60, 350)",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "FoodSprite",
-							"sid": 496360895036142,
-							"parameters": {
-								"animation": "choose(\"Apple\",\"Banana\",\"Ham\")",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 783860328563183,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-animation-playing",
-									"objectClass": "FoodSprite",
-									"sid": 487672616051688,
-									"parameters": {
-										"animation": "\"Apple\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "FoodSprite",
-									"sid": 597312719242322,
-									"parameters": {
-										"instance-variable": "PowerUpType",
-										"value": "\"invincibility\""
-									}
-								}
-							],
-							"sid": 267391691425171
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-animation-playing",
-									"objectClass": "FoodSprite",
-									"sid": 462526842300262,
-									"parameters": {
-										"animation": "\"Banana\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "FoodSprite",
-									"sid": 848386280162399,
-									"parameters": {
-										"instance-variable": "PowerUpType",
-										"value": "\"ExtraScore\""
-									}
-								}
-							],
-							"sid": 867579394545712
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-animation-playing",
-									"objectClass": "FoodSprite",
-									"sid": 924739599279390,
-									"parameters": {
-										"animation": "\"Ham\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "FoodSprite",
-									"sid": 834155493680793,
-									"parameters": {
-										"instance-variable": "PowerUpType",
-										"value": "\"SlowTime\""
-									}
-								}
-							],
-							"sid": 462000809687158
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Trigger various powerup events"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "FoodSprite",
-							"sid": 606938449866878,
-							"parameters": {
-								"instance-variable": "IsEaten"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 774721818115442,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "toggle bird invincible bool, don't allow collisions to kill the bird"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "FoodSprite",
-									"sid": 693210248029580,
-									"parameters": {
-										"instance-variable": "PowerUpType",
-										"comparison": 0,
-										"value": "\"invincibility\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Bird",
-									"sid": 628691561876068,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "2",
-										"type": "once",
-										"tag": "\"Invincible\""
-									}
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "Bird",
-									"sid": 325958014445170,
-									"parameters": {
-										"instance-variable": "Invincible",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 624573703136972
-						},
-						{
-							"eventType": "comment",
-							"text": "reduce in-game time scale"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "FoodSprite",
-									"sid": 627345855680707,
-									"parameters": {
-										"instance-variable": "PowerUpType",
-										"comparison": 0,
-										"value": "\"SlowTime\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "start-timer",
-									"objectClass": "Bird",
-									"sid": 694596345605985,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "2",
-										"type": "once",
-										"tag": "\"SlowTime\""
-									}
-								},
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 687843124227958,
-									"parameters": {
-										"time-scale": ".5"
-									}
-								}
-							],
-							"sid": 817884060253285
-						},
-						{
-							"eventType": "comment",
-							"text": "Add additional score"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "FoodSprite",
-									"sid": 248377669111707,
-									"parameters": {
-										"instance-variable": "PowerUpType",
-										"comparison": 0,
-										"value": "\"ExtraScore\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 470762720042839,
-									"parameters": {
-										"variable": "Score",
-										"value": "5"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "ScoreText",
-									"sid": 141559550667318,
-									"parameters": {
-										"text": "Score"
-									}
-								}
-							],
-							"sid": 873609635427715
-						},
-						{
-							"eventType": "comment",
-							"text": "destroy food after triggering powerup event"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "FoodSprite",
-									"sid": 166292130294488
-								}
-							],
-							"sid": 610791439650575
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "Bird",
-							"sid": 747911412290037,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"Invincible\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Bird",
-							"sid": 635457003064792,
-							"parameters": {
-								"instance-variable": "Invincible",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 343244935594805
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "Bird",
-							"sid": 690838316343615,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"SlowTime\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 986310548215874,
-							"parameters": {
-								"time-scale": "1"
-							}
-						}
-					],
-					"sid": 155257214947184
 				}
 			],
 			"sid": 298653776108631,
