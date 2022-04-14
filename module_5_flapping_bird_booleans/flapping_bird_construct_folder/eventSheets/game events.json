@@ -588,11 +588,12 @@
 					],
 					"actions": [
 						{
-							"id": "toggle-boolean-instvar",
+							"id": "set-boolean-instvar",
 							"objectClass": "FoodSprite",
-							"sid": 635107646315859,
+							"sid": 108146467723144,
 							"parameters": {
-								"instance-variable": "IsEaten"
+								"instance-variable": "IsEaten",
+								"value": "true"
 							}
 						}
 					],
@@ -746,7 +747,6 @@
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 141457370260212,
-							"breakpoint": true,
 							"parameters": {
 								"object-to-create": "FoodSprite",
 								"layer": "0",
