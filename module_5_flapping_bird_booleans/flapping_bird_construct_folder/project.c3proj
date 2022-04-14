@@ -1,11 +1,19 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 28503,
-	"name": "Golf Template",
+	"name": "Flapping bird template",
 	"runtime": "c3",
 	"useWorker": "auto",
 	"bundleAddons": false,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
 		{
 			"type": "plugin",
 			"id": "Touch",
@@ -16,8 +24,8 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Tilemap",
-			"name": "Tilemap",
+			"id": "Keyboard",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
@@ -32,6 +40,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r285.3",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -40,71 +56,49 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Particles",
-			"name": "Particles",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Spritefont2",
-			"name": "Sprite font",
+			"id": "Text",
+			"name": "Text",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Bullet",
-			"name": "Bullet",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "destroy",
-			"name": "Destroy outside layout",
-			"author": "Scirra",
-			"version": "r285.3",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Fade",
-			"name": "Fade",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r285.3",
 			"bundled": false
 		}
 	],
-	"uniqueId": "8iozzm2noka",
+	"uniqueId": "o25lx2z8x3w",
 	"objectTypes": {
 		"items": [
-			"Ground",
-			"Ball",
-			"cursor_icon",
-			"DistanceRuler",
-			"Sky",
-			"Flag",
-			"Trail",
-			"Confetti",
-			"TriggerZone",
-			"Tutorial"
+			"Bird",
+			"ButtonPlay",
+			"TiledBackground",
+			"TiledBackground2",
+			"Background",
+			"BottomPipe",
+			"TopPipe",
+			"ScoreText",
+			"Sprite",
+			"FoodSprite"
 		],
 		"subfolders": [
 			{
 				"items": [
-					"Touch"
+					"Browser",
+					"Touch",
+					"Keyboard"
 				],
 				"subfolders": [],
 				"name": "System"
@@ -112,36 +106,23 @@
 		]
 	},
 	"autosaveData": null,
-	"containers": [
-		{
-			"members": [
-				"cursor_icon",
-				"DistanceRuler"
-			],
-			"selectMode": "normal"
-		},
-		{
-			"members": [
-				"Ball",
-				"Trail"
-			],
-			"selectMode": "normal"
-		}
-	],
+	"containers": [],
 	"families": {
 		"items": [],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"MainLevel",
+			"Start",
+			"Game",
 			"ObjectRepository"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"MainCode"
+			"Game events",
+			"Start events"
 		],
 		"subfolders": []
 	},
@@ -169,9 +150,9 @@
 		"icon": {
 			"items": [
 				{
-					"name": "icon-256.png",
+					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 920719716159656,
+					"sid": 353329385341399,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -179,23 +160,15 @@
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 125752055886917,
+					"sid": 210804642747897,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
 				},
 				{
-					"name": "loading-logo.png",
+					"name": "icon-114.png",
 					"type": "image/png",
-					"sid": 437858970877788,
-					"icon-info": {
-						"purpose": "loading-logo"
-					}
-				},
-				{
-					"name": "icon-64.png",
-					"type": "image/png",
-					"sid": 810551275494270,
+					"sid": 779387547010360,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -203,25 +176,25 @@
 				{
 					"name": "icon-128.png",
 					"type": "image/png",
-					"sid": 981274532639534,
+					"sid": 506086548414225,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
 				},
 				{
-					"name": "icon-512.png",
+					"name": "icon-256.png",
 					"type": "image/png",
-					"sid": 790860382434766,
+					"sid": 680440988387402,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
 				},
 				{
-					"name": "icon-16.png",
+					"name": "loading-logo.png",
 					"type": "image/png",
-					"sid": 585709232488189,
+					"sid": 897795880600131,
 					"icon-info": {
-						"purpose": "app-icon"
+						"purpose": "loading-logo"
 					}
 				}
 			],
@@ -246,14 +219,14 @@
 		"version": "1.0.0.0",
 		"author": "",
 		"authorEmail": "",
-		"authorWebsite": "",
+		"authorWebsite": "http://",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
@@ -274,23 +247,23 @@
 			1,
 			0
 		],
-		"orientations": "any",
+		"orientations": "portrait",
 		"webgpu": "auto",
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
-		"sampling": "nearest",
+		"sampling": "trilinear",
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https"
 	},
-	"viewportWidth": 640,
-	"viewportHeight": 360,
+	"viewportWidth": 400,
+	"viewportHeight": 500,
 	"firstLayout": null
 }
