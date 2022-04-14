@@ -38,13 +38,6 @@
 				{
 					"type": "comment",
 					"text": "Spawn an intro dialogue box, with a special \"choose\" string"
-				},
-				{
-					"callFunction": "dialogue_box",
-					"sid": 940985451424182,
-					"parameters": [
-						"\"If you dare challange the demon, take the dungeon key to your left. Else, come back with some gems!\" & choose( \"Are you hunting for a bargain? 'Cause I've got one for you! Kekeke.\" , \"I've got plenty of wares...not that they served the last guy any well! Kekeke.\", \"You drop it, I sell it! Kekeke!\" )"
-					]
 				}
 			],
 			"sid": 196031825563700
@@ -405,15 +398,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"callFunction": "dialogue_box",
-									"sid": 709817609258663,
-									"parameters": [
-										"dialogue_trigger.Line"
-									]
-								}
-							],
+							"actions": [],
 							"sid": 735823091981044
 						},
 						{
@@ -425,23 +410,7 @@
 									"sid": 254785482138589
 								}
 							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "DialogueBox",
-									"sid": 282187797168421
-								},
-								{
-									"id": "destroy",
-									"objectClass": "SpriteFont_Dialogue",
-									"sid": 181758829810705
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Dialogue_Arrow",
-									"sid": 580375595171477
-								}
-							],
+							"actions": [],
 							"sid": 449177595858910
 						}
 					],
@@ -514,71 +483,6 @@
 						}
 					],
 					"sid": 837703166678933
-				},
-				{
-					"functionName": "dialogue_box",
-					"functionDescription": "display a dialog box, pulling data from the instance variables of the character",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "line",
-							"type": "string",
-							"initialValue": "please replace me with real text",
-							"comment": "",
-							"sid": 503043709954714
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 405286317044539,
-							"parameters": {
-								"object-to-create": "DialogueBox",
-								"layer": "\"Dialogue\"",
-								"x": "57",
-								"y": "122",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 704874067218930,
-							"parameters": {
-								"object-to-create": "Dialogue_Arrow",
-								"layer": "\"Dialogue\"",
-								"x": "DialogueBox.BBoxRight - 8",
-								"y": "DialogueBox.BBoxBottom - 6",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 564537118987939,
-							"parameters": {
-								"object-to-create": "SpriteFont_Dialogue",
-								"layer": "\"Dialogue\"",
-								"x": "DialogueBox.X + 4",
-								"y": "DialogueBox.Y + 4",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "SpriteFont_Dialogue",
-							"sid": 428856808137716,
-							"parameters": {
-								"text": "line"
-							}
-						}
-					],
-					"sid": 450259423990784
 				}
 			],
 			"sid": 826736847142313,
