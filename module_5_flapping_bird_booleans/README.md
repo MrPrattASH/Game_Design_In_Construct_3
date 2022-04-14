@@ -4,17 +4,25 @@ This tutorial will teach you about boolean variables, their differences from int
 
 As always, play through the example .c3p finished file to get an idea of what you'll be creating. (click for control)
 
+## By the end of this tutorial you should know:
+1. What a *Boolean or Bool* is
+2. How to use the *Timer* Behaviour 
+3. How to upload custom sprite artwork
+4. The importance of optimized and cropped artwork for sprites
+5. How to create custom animations for sprites
+6. How to use Boolean variables to control in game events like invincibility power-ups. 
+
 ## Boolean Variables
 
 Last tutorial we learned that an **string or "str"** is a text variable. In contrast, a **boolean or "bool"** is like a "switch"; Booleans are either **True** or **False**. For Example, let's assume we have a sprite with an instance variable *invincibility* set as a Bool: 
 > 
-> if invincibility == true:
+> Condition: invincibility == true:
 > 
->     player takes no damage
+> Action: player takes no damage
 >   
-> if invincibility == false:
+> Conditition: invincibility == false:
 > 
->     player  -1 from health
+> Actiion: player  -1 from health
 
 As you can see, booleans are incredibly useful for game design, as they allow for conditions to be true, or false, and events to happen based on these boolean variables. They could relate to:
 - player is moving
@@ -53,31 +61,88 @@ Now that we have our sprite, we need to spawn it in the layout during the game a
 3. inside this event, create object *FoodSprite* on layer 0 at an X value of the right edge of our layout and a random Y value inside our layout (layout size is 400 x 500). This Y value will control how high/low the object spawns. 
 <img width="344" alt="Screen Shot 2022-04-14 at 13 15 03" src="https://user-images.githubusercontent.com/101632496/163380175-ce81ab8a-af47-4d1d-9774-f956a5ebdda2.png">
 4. set the animation of the created *FoodSprite* to a fruit of your choice. 
-5. Create a new sub-event to check FoodSprite > Is animation "YourFruit" playing. If true, set the foodsprite instance variable *PowerUpType* to "invincibility". 
+5. Create a new sub-event to check FoodSprite > Is animation "YourFruit" playing. If true, set the foodsprite instance variable *PowerUpType* to "Invincibility". 
 <img width="604" alt="Screen Shot 2022-04-14 at 13 22 11" src="https://user-images.githubusercontent.com/101632496/163381144-4d767dcc-caa9-4715-aa94-18fd01a013fe.png">
 
 ## 3. Making the Powerup move 
 
 Now that the powerup is spawning, we need to make sure it moves across the screen, similar to the pipes and ground. We want to move the sprite on *delta time* not on physical in game seconds. This is a **critical** distinction. If your game has frame rate drops, events that run every second will skip frames and may spawn in erratic places. Having events that run on *delta time* or *dt* run in line with frames that are running, even if frames are dropped, so the event will trigger as intended. You should use delta time when moving sprites around the layout, whereas you may use in-game seconds to control spawning events. 
 
-1. In the *Background* code group, find the "EveryTick" event and add a new action for the FoodSprite. Set FoodSprite.X to FoodSprite.X - SCROLLSPEED * dt
+1. In the *Background* code group, ad a new action to the "EveryTick" condition. 
+
+> Condition: EveryTick
+> 
+> Action: Set FoodSprite.X to FoodSprite.X - SCROLLSPEED * dt
 <img width="615" alt="Screen Shot 2022-04-14 at 13 26 09" src="https://user-images.githubusercontent.com/101632496/163381747-d04e296d-1ffe-45de-9900-02bf9d9ec151.png">
-2. Create a new event, checking FoodSprite X <50, destroy the food sprite. *This stops us from having a million spare food sprites floating outside the layout and slowing down our game*. You'll notice the code is clearly borrowed from a different event...  
+2. Create a new event to stop the game from having a million spare food sprites floating outside the layout and slowing down our game. You'll notice the code is clearly borrowed from a different event...  
+
+> Condition: FoodSprite X <50
+> 
+> Action: Destroy  food sprite.
 <img width="618" alt="Screen Shot 2022-04-14 at 13 29 30" src="https://user-images.githubusercontent.com/101632496/163382228-e64761c0-d6ad-4290-be65-6e7da0e3eabe.png">
+3. preview your game. does your food spawn and move accross the screen as you'd expect? 
 
 ## 4. Checking bird and food collisions
 
 We need the bird to collide with the food, and tell that specific food instance that it's instance bool, IsEaten, is now true. 
 
-1. In the collisions code-group, create a new event If Bird is overlapping FoodSprite, FoodSprite > set bool IsEaten > True
-<img width="616" alt="Screen Shot 2022-04-14 at 13 31 29" src="https://user-images.githubusercontent.com/101632496/163382470-6b018cb0-ed81-422d-a668-77c83a226815.png">
+1. In the collisions code-group, create a new event:
 
-## 5. 
+> Condition: Bird is overlapping FoodSprite
+> 
+> Action: FoodSprite > set bool IsEaten > True
+<img width="616" alt="Screen Shot 2022-04-14 at 13 31 29" src="https://user-images.githubusercontent.com/101632496/163382470-6b018cb0-ed81-422d-a668-77c83a226815.png">
+2. Right click on this event, set a break-point on this event. 
+3. Debug your game: when the bird collides, does the food sprite instance set it's bool instance variable to true? 
+4. remove the break-point. 
+
+## 5. Trigger a powerup event
+
+So far we've created the sprite, set the sprite's instance variable *PowerUpType* upon creation, made the sprite move across the screen, and now we need to actually make the power-up do something in game. First, we'll trigger the bird's invincibility bool, then we'll set the bird to avoid any collisions if this invincibility bool is True. 
+
+1. in the Power-Ups code-group, create a new event under our previous event.
+ 
+> Condition: FoodSprite > Instance Bool > Is Eaten
+<img width="614" alt="Screen Shot 2022-04-14 at 13 36 34" src="https://user-images.githubusercontent.com/101632496/163383176-ab7ed48a-114b-4e58-a1f0-50aad0243db8.png">
+2. Add a sub event
+
+> Condition: FoodSprite Instance variable PowerUpType = "Invincibility":
+> 
+> Action: Bird > start Timer "Invincible" for 2 seconds (once)
+> 
+> Action: Bird > set instance bool "Invincible" > True
+<img width="603" alt="Screen Shot 2022-04-14 at 13 40 39" src="https://user-images.githubusercontent.com/101632496/163383673-83cfb117-b83e-4867-9953-2cb17634b3f0.png">
+3.  Add a new event under the previous 2 events that checks when the timer is finished
+
+> Condition: Bird > On Timer "Invincible" 
+> 
+> Action: Bird > Set instance bool "Invincible" > False
+<img width="619" alt="Screen Shot 2022-04-14 at 13 43 35" src="https://user-images.githubusercontent.com/101632496/163384037-79f1a7ba-7c5d-41b1-a206-6c1873af1b3c.png">
+4. debug your game. (you may consider adding a breakpoint here) When your bird touches the foodsprite, is it's invinsibility instance bool true? Does it become false after 2 sec?
+5. in the Collisions code-group, add a new event. You can right click, select *invert* to create a NOT condition. 
+
+> Condition: Bird instance bool NOT invincible
+6. Make all current collision events a sub-event of this inverted condition. Now our bird only registers a collision event if it's not invincible. 
+<img width="633" alt="Screen Shot 2022-04-14 at 13 47 25" src="https://user-images.githubusercontent.com/101632496/163384585-be6870fe-41ae-4f2b-b279-0228ac0e86e3.png">
 
 # Extension ideas
 
-- When we spawn the FoodSprite in the power-ups code-group, can you randomly *choose* which animation is displayed? 
--     > random(low,high)    
-- the random method is useful for ints 
--     > choose("Frank", "fred", "george")     
-- the choose method is useful for strs as well as ints
+If you're stuck, look at the completed .c3p file for a way of solving these extensions. 
+
+- When we spawn the FoodSprite in the power-ups code-group, can you randomly *choose* which animation is displayed to show either an apple, banana, or ham? 
+
+> random(low,high)    
+the random method is useful for ints 
+
+> choose("Frank", "fred", "george")     
+the choose method is useful for strs as well as ints
+
+- When a FoodSprite spawns, can you create a new powerup? How might you use the str instance variable PowerUpType to modify what happens? 
+    - New power up idea: Make the banana add 5 to the score, and update the score text
+-  Using what you know with an invincibility timer and event, New power up idea: Make the ham slow down time for a few seconds. (You may find this action useful)
+
+    - > Action: Set time scale to 0.5 
+<img width="617" alt="Screen Shot 2022-04-14 at 14 05 16" src="https://user-images.githubusercontent.com/101632496/163387132-ebfea667-4dd2-46c6-8600-fbb14b07322f.png">
+
+## Self-Assessment Quiz:
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScafM2fw528oKAJlLuv1ZZ_7NqdZL1YbIra-dG8WFHZHOlKUQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*. 
