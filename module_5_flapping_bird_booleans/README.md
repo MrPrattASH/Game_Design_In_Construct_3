@@ -35,7 +35,7 @@ and so much more. Booleans and events will be used extensively in your games, an
 # Boolean variables and Powerups/Collectables
 As with the last module, you don't need to change anything in the yellow code-group, only the green code. 
 
-## 1. Creating a FoodSprite
+## 1. Creating a FoodSprite & Optimizing Artwork for your Game
 
 We first need to create our powerup, and all associated instance variables. 
 
