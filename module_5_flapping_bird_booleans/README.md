@@ -11,6 +11,7 @@ As always, play through the example .c3p finished file to get an idea of what yo
 4. The importance of optimized and cropped artwork for sprites
 5. How to create custom animations for sprites
 6. How to use Boolean variables to control in game events like invincibility power-ups. 
+7. The importance of using optimized artwork for game performance
 
 ## Boolean Variables
 
