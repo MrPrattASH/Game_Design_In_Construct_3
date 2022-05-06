@@ -11,7 +11,7 @@ This tutorial will teach you about string variables, their differences from inte
 6. How to destroy specific object instances using instance variables
 
 ## Self-Assessment Quiz:
-Complete [this self-assessment quiz](www) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSeixlqST6KOlDjHdqWhwDH4oNY91zj1Z909mxjOlCg3ZhO9_Q/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
 
 ## String Variables
 
