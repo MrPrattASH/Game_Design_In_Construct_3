@@ -7,10 +7,10 @@ Testing and Re-testing projects again and again is a key part of the design cycl
 ## By the end of this tutorial you should know:
 1. What the debugger tool is
 2. Why it's important to use, often moreso than the "preview layout"
-3. How to discover individual UID's of different instances of an object
-4. How to change variables while the game is running in debugger mode
-5. How to view game performance summaries
-6. How to use a "breakpoints" to isolate a specific problem area of your code
+3. How to view game performance summaries
+4. How to use a "breakpoints" to isolate a specific problem area of your code
+5. Discover an instance's individual *UID* 
+6. How to change variables & ingame values while the game is running in debugger mode 
 
 # Tutorial
 The tutorial below is taken from the main documentation, and various sub articles [here](https://www.construct.net/en/make-games/manuals/construct-3/interface/debugger). It has been modified and reduced to better fit the scope of this course. 
@@ -67,6 +67,22 @@ When paused on a breakpoint, the debugger can be used as normal to inspect or ed
 
 ## Using breakpoints
 Breakpoints can be incredibly useful to learn more about how your own events work and to help track down problems. They may take some getting used to in order to get the most out of them, but once familiar they can be indispensable.
+
+## Unique ID's (UID) and instances
+Remember back to Module 1, we created insances, or new clones, of monster. How does construct 3 handle these? We can easily see in the debugger's *Inspector Panel*, under "Monster", we presently have 18 instances (0-17) of the monster, with 18 different Unique ID's (UID). 
+<img width="1280" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135132-79fb3c3e-c7fa-4291-901b-01a88e5e397b.png">
+
+Looking down, we can see I am currently selected on UID 3, and the main screen highlights the selected instance in a red-stroked yellow box. We can also see all the associated instance variables with each UID, in this case, our UID 3 monster's health is at 5. 
+<img width="1280" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135432-ecf2a15f-0236-42e6-b734-c8739e962787.png">
+
+## Changing variables in the debugger
+If in the inspector panel, we select an object, we can see all the associated properties affecting that object or UID. 
+- **Common**: Name of object, and UID's
+- **Layout**: Layout properties, like X/Y position, angle, visibility, etc. 
+- **Instance Variables**: The current value of the selected UID's instance variable. 
+
+Interestingly, we can even *change instance variables in game!* If we click on the health, we can change our monster's health, speed, etc. Keep in mind, this only affects the debugger game, *it will not change any programmed values in your event sheets*. 
+<img width="1271" alt="Screen Shot 2022-05-06 at 14 56 05" src="https://user-images.githubusercontent.com/101632496/167135661-3080fba9-18d6-4e5d-9b16-f0c50a4c4206.png">
 
 ## Self-Assessment Quiz:
 Before completing the assessment, be sure that you have used the debugger in practice, including breakpoints. Then, complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScBMJgb1rgnqrYWe8pwdTAy8vE1WIkLTrQ4JDMoapOb1FYYHQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
