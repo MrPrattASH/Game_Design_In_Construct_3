@@ -12,6 +12,9 @@ As always, play through the example .c3p finished file to get an idea of what yo
 5. How to create custom animations for sprites
 6. How to use Boolean variables to control in game events like invincibility power-ups. 
 
+## Self-Assessment Quiz:
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScFE0QglHzTDoQNCJ7IBRePG-g_yIlFhuELbYWb1EApbqQ6eQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*. 
+
 ## Boolean Variables
 
 Last tutorial we learned that an **string or "str"** is a text variable. In contrast, a **boolean or "bool"** is like a "switch"; Booleans are either **True** or **False**. For Example, let's assume we have a sprite with an instance variable *invincibility* set as a Bool: 
@@ -22,7 +25,7 @@ Last tutorial we learned that an **string or "str"** is a text variable. In cont
 >   
 > Conditition: invincibility == false:
 > 
-> Actiion: player  -1 from health
+> Action: player  -1 from health
 
 As you can see, booleans are incredibly useful for game design, as they allow for conditions to be true, or false, and events to happen based on these boolean variables. They could relate to:
 - player is moving
@@ -144,5 +147,4 @@ the choose method is useful for strs as well as ints
     - > Action: Set time scale to 0.5 
 <img width="617" alt="Screen Shot 2022-04-14 at 14 05 16" src="https://user-images.githubusercontent.com/101632496/163387132-ebfea667-4dd2-46c6-8600-fbb14b07322f.png">
 
-## Self-Assessment Quiz:
-Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScafM2fw528oKAJlLuv1ZZ_7NqdZL1YbIra-dG8WFHZHOlKUQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*. 
+
