@@ -1,6 +1,18 @@
 # Integers, Random Integers, & Their Use in Game Design
 This tutorial will step you through working with integers, and random integers, in the context of a Z axis "on rails" shooter, similar to those that you see in arcades. Take a look at the finished .c3p file before getting started, to see what you'll be making. 
 
+## By the end of this tutorial you should know:
+1. What an *Integer* or *Int* variable is
+2. How to use math operators (+ - x ÷) in a program
+3. what the random method is
+4. How to use a "for each" loop to create events that affect a single instance of an object, without affecting ALL instances of that object. 
+5. What Z-elevation is, and how to use it to create "depth of field" effects in games
+
+## Self-Assessment Quiz:
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSciZ8X4YwRXcpctolKlWReQ4L98nBoUl7X5tSjIMLQWtOcF_A/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+
+# Tutorial
+
 **Note**
 - All yellow code-groups you will not need to edit. They provide base functionality, and are not necessary to modify. 
 
@@ -10,7 +22,7 @@ This tutorial will step you through working with integers, and random integers, 
 > (random(LowValue,HighValue))
 > 
 <img width="197" alt="Screen Shot 2022-04-08 at 08 34 01" src="https://user-images.githubusercontent.com/101632496/162378077-818f2a1c-48fc-4ac5-8eae-2189540461b7.png">
-- accepts arguments as integers (0,-5,32, etc) and floating integers (0.12, -3.4932) 
+- accepts arguments as integers (0,-5,32, etc) and floats (or a "floating" number) (0.12, -3.4932) 
 
 1. in the main event sheet, every few seconds **Create object** asteroid sprite at a random location inside the viewport/layout size (320x180).
  - *Hint*: you'll also want to make sure the ship is capable of colliding with the asteroid, so you'll need to "clamp" (constrain) the asteroid to smaller than this margin. (*Example, if the width is 320, create the X location randomly between 0+margin of error, and 320-margin of error*)

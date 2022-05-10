@@ -1,6 +1,17 @@
 # String Variables, String Concatenation, and Basic Dialogue Triggers
 
-This tutorial will teach you about string variables, their differences from integers, and how to create basic, single dialogue events in the context of a shop keeper presenting different items to your character. As always, play through the example .c3p finished file to get an idea of what you'll be creating. (WASD and Space for controls). 
+This tutorial will teach you about string variables, their differences from integers and floats, and how to create basic, single dialogue events in the context of a shop keeper presenting different items to your character. As always, play through the example .c3p finished file to get an idea of what you'll be creating. (WASD and Space for controls). 
+
+## By the end of this tutorial you should know:
+1. What a *string* or *str* variable is
+2. How to add strings together, and how this is different from adding ints and floats
+3. why "1" + "1" = "11", not "2"
+4. How to make functions "dynamic" by giving them information from their environment (parameters) 
+5. How to create a simple dialogue trigger
+6. How to destroy specific object instances using instance variables
+
+## Self-Assessment Quiz:
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSeixlqST6KOlDjHdqWhwDH4oNY91zj1Z909mxjOlCg3ZhO9_Q/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
 
 ## String Variables
 
