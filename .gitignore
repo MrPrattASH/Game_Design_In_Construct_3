@@ -1,2 +1,2 @@
 *.uistate.json
-*.DS_Store
+**/.DS_Store
