@@ -16,10 +16,14 @@ You will find the official documentation for construct 3 [here](https://www.cons
 
 - **Behaviour Reference:** Provides a reference of all the official behaviors (typically "sprite" behaviours: Bullet, scroll to, 8-direction movement, Bound to Layout etc, we learned about these in Module 1). Each has an overview of its use, a list of its properties, and a detailed list of the actions, conditions and expressions specific to that behavior. This can be useful for figuring out what a behaviour is capable of, and not capable of. 
 - **Plugin Reference:** Provides a reference of all the official plugins ("system" objects in layouts:  Keyboard, Text, Button, etc). Each has an overview of its use, a list of its properties, and a detailed list of the actions, conditions and expressions specific to that plugin. This can be useful for figuring out how to change text properties, change button appearances, etc. 
-- **System Reference** It provides features to access the runtime engine, and utilities that are useful for most projects. Split into 3 categories
-    - System Conditions: These are the initial "if condition is true" sections in code. These can check angles, global/local variables, loops, layers, instances, save/load games, and time. 
-    - System Actions: if condition is true, you need to choose actions to carry out. Things like impacting layers or changing layouts, creating or destorying objects, changing the game's timescale (slow-mo or hyper-speed) 
-    - System Expressions: the "math" inside the actions. Things like checking X,Y coordinates of objects, a lot of mathematics algorithms (most commondly used for our course would be ceil, distance, floor, lerp, round, random). This reference is useful to solving what math equation might help you, or discovering how construct parses the "random" method itself.  
+- **System Reference:** It provides features to access the runtime engine, and utilities that are useful for most projects. Split into 3 categories
+    - *System Conditions:* These are the initial "if condition is true" sections in code. These can check angles, global/local variables, loops, layers, instances, save/load games, and time. 
+    - <img width="309" alt="Screen Shot 2022-05-11 at 10 18 28" src="https://user-images.githubusercontent.com/101632496/167802578-4f7b2cf5-b0dc-4a7b-a909-a30132f02741.png">
+    - *System Actions:* if condition is true, you need to choose actions to carry out. Things like impacting layers or changing layouts, creating or destorying objects, changing the game's timescale (slow-mo or hyper-speed) 
+    - ![Screen Shot 2022-05-11 at 08 32 31](https://user-images.githubusercontent.com/101632496/167802425-3d7da685-60b4-4796-a48e-0700d3093201.png)
+    - *System Expressions:* the "math" inside the actions. Things like checking X,Y coordinates of objects, a lot of mathematics algorithms (most commondly used for our course would be ceil, distance, floor, lerp, round, random). This reference is useful to solving what math equation might help you, or discovering how construct parses the "random" method itself.  
+    - <img width="753" alt="Screen Shot 2022-05-11 at 10 19 23" src="https://user-images.githubusercontent.com/101632496/167802757-694d4f7e-010a-463c-b5cd-c3603c557c0c.png">
+
 
 ## Documentation Scavenger Hunt
 To better discover how to use the manual, we're going to do a scavenger hunt of the manual to find some of the more common conditions, actions, and expressions that we will use throughout this course. Remember, there is a search function inside the manual, though sometimes you may need to visit the relevant sections of the manual if you forget keywords. 
