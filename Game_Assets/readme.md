@@ -10,7 +10,7 @@ CC provides a large variety of licenses, and each license tells you what you can
 With that said, here are a few different game asset resources for you to use. 
 
 ## [Kenny.nl](https://kenney.nl/)
-A fantastic site with lots of 2D, 3D, and character sprite assets. Also made here at home in the Netherlands! All content is free, though donations for "asset packs" are of course accepted, though not required. 
+A fantastic site with lots of 2D, 3D, isometric, and character sprite assets. Also made here at home in the Netherlands! All content is free, though donations for "asset packs" are of course accepted, though not required. Many assets can be combined using the tile map system object, or taken as individual sprites with the ability for various animation frames to be uploaded. 
 
 #### Licensing
 All content on Kenny.nl is under **CC0** content attribution [License here](https://creativecommons.org/publicdomain/zero/1.0/) 
