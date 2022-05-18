@@ -9,7 +9,7 @@ CC provides a large variety of licenses, and each license tells you what you can
 
 With that said, here are a few different game asset resources for you to use. 
 
-## [Kenny.nl](https://kenney.nl/)
+## [Kenny.nl](https://kenney.nl/) - Artwork & short Sound Effects
 A fantastic site with lots of 2D, 3D, isometric, and character sprite assets. Also made here at home in the Netherlands! All content is free, though donations for "asset packs" are of course accepted, though not required. Many assets can be combined using the tile map system object, or taken as individual sprites with the ability for various animation frames to be uploaded. 
 
 #### Licensing
@@ -19,3 +19,15 @@ All content on Kenny.nl is under **CC0** content attribution [License here](http
 ![Screen Shot 2022-05-18 at 10 26 02](https://user-images.githubusercontent.com/101632496/168993549-2fd93d37-6092-4f47-b199-3c1863e68235.png)
 ![Screen Shot 2022-05-18 at 10 26 31](https://user-images.githubusercontent.com/101632496/168993643-690aeefb-2d28-4077-938b-feda94735e30.png)
 ![Screen Shot 2022-05-18 at 10 26 43](https://user-images.githubusercontent.com/101632496/168993688-155486b0-ed74-4d2f-a4c2-3124679671e3.png)
+
+## [SilvermanSound](https://www.silvermansound.com/) - Looping Background Audio Tracks
+Great background music from multiple genres, rock, pop, rap, classical, etc. 
+
+#### Licensing
+Attribution is required if you have not purchased a license. [CC4.0, License Here](https://www.silvermansound.com/free-music/free-music-faqs)
+
+## [BenSound](https://www.bensound.com/) - Looping Background Audio Tracks
+Another excellent source for a large variety of backround music tracks. 
+
+#### Licensing
+Attribution is required if you have not purchased a license. [License Here]([https://www.silvermansound.com/free-music/free-music-faq](https://www.bensound.com/licensing)
