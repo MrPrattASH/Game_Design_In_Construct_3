@@ -30,4 +30,4 @@ Attribution is required if you have not purchased a license. [CC4.0, License Her
 Another excellent source for a large variety of backround music tracks. 
 
 #### Licensing
-Attribution is required if you have not purchased a license. [License Here]([https://www.silvermansound.com/free-music/free-music-faq](https://www.bensound.com/licensing)
+Attribution is required if you have not purchased a license. [License Here](https://www.bensound.com/licensing)
