@@ -95,4 +95,4 @@ Following these rules should save you and your teammates time and frustration.
 That said, I’m sure these rules aren’t exhaustive and look forward to seeing suggested additions in (where else?) the comments.
 
 ## Self-Assessment Quiz:
-Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScafM2fw528oKAJlLuv1ZZ_7NqdZL1YbIra-dG8WFHZHOlKUQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSe-gp2r-hO95swxyoS1-yOJksn329CtunUSjMo_qGqnv_30Fw/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
