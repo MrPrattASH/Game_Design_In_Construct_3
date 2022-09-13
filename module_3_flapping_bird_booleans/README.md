@@ -95,6 +95,9 @@ In simpler terms, delta time runs with game frames, time runs on actual seconds.
 
 1. In the *Background* code group, add a new action to the "EveryTick" condition. 
 
+Note, "x" or "multiplication" is denoted by an "*" in code. So, 
+3x7 = 21, on a computer, would be written as 3*7 = 21
+
 > Condition: EveryTick
 > 
 > Action: Set FoodSprite.X to FoodSprite.X - SCROLLSPEED * dt
