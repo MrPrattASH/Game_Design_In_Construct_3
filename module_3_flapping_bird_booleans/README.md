@@ -91,7 +91,6 @@ This method accepts values as integers (0,-5,32, etc) and floats (or a "floating
 > FoodSprite > Is animation "YourFruit" playing. 
 
 If true, set the foodsprite instance variable *PowerUpType* to "Invincibility". 
-<img width="604" alt="Screen Shot 2022-04-14 at 13 22 11" src="https://user-images.githubusercontent.com/101632496/163381144-4d767dcc-caa9-4715-aa94-18fd01a013fe.png">
 
 <img width="829" alt="Screen Shot 2022-09-13 at 14 15 39" src="https://user-images.githubusercontent.com/101632496/189898432-90708464-9a30-4484-ba1b-435b667a62de.png">
 
