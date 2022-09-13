@@ -667,7 +667,8 @@
 								"layer": "\"Sky\"",
 								"x": "random(0, 320)",
 								"y": "random(0, 180)",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -964,6 +965,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1183,7 +1185,8 @@
 								"layer": "\"Ship\"",
 								"x": "random(0+TargetSpawnMargin, 320-TargetSpawnMargin)",
 								"y": "random(0+TargetSpawnMargin, 180-TargetSpawnMargin)",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -1497,6 +1500,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1571,26 +1575,6 @@
 			"description": "Challenge entry here",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "variable",
-					"name": "asteroid_spawn_margin",
-					"type": "number",
-					"initialValue": "45",
-					"comment": "a distance margin int variable used to constrain the spawn location of asteroids",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 736636736489374
-				},
-				{
-					"eventType": "variable",
-					"name": "asteroid_collision_margin",
-					"type": "number",
-					"initialValue": "3",
-					"comment": "because we are playing with Z elevation, we need to have a \"margin\" or range of \"z\" elevations to check collisions inside. In this case, any object that is within 6 Z axis \"units\" will count as a collision",
-					"isStatic": true,
-					"isConstant": true,
-					"sid": 681187563901885
-				},
 				{
 					"eventType": "block",
 					"conditions": [],
