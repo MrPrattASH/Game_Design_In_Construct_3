@@ -4,14 +4,15 @@ This tutorial will step you through working with integers, and random integers, 
 ## By the end of this tutorial you should know:
 1. What an *Integer* or *Int* variable is
 2. How to use math operators (+ - x ÷) in a program
-3. what the random method is
-4. How to use a "for each" loop to create events that affect a single instance of an object, without affecting ALL instances of that object. 
-5. What Z-elevation is, and how to use it to create "depth of field" effects in games
+3. How to use a "for each" loop to create events that affect a single instance of an object, without affecting ALL instances of that object. 
+4. What Z-elevation is, and how to use it to create "depth of field" effects in games
 
 ## Self-Assessment Quiz:
 Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSciZ8X4YwRXcpctolKlWReQ4L98nBoUl7X5tSjIMLQWtOcF_A/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
 
 # Tutorial
+
+In this tutorial, you'll be using a pre-made game as a base and building on top of it.  In the construct editor, please open the corresponding module's construct folder. 
 
 **Note**
 - All yellow code-groups you will not need to edit. They provide base functionality, and are not necessary to modify. 
