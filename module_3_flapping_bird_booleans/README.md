@@ -25,11 +25,11 @@ The player sprite has an instance variable called "inviciblity". It is a Boolean
 > 
 > Condition: invincibility bool is true:
 > 
-> Action: player takes no damage
+>     Action: player takes no damage
 >   
 > Conditition: invincibility bool is false:
 > 
-> Action: player  -1 from health
+>     Action: player  -1 from health
 
 In this case, if the player is currently invincible, they take no damage. If they are non-invincible, they take 1 damage. As you can see, booleans are incredibly useful for game design, as they allow for conditions to be true, or false, and events to happen based on these boolean variables. They could relate to:
 - player is moving
@@ -43,7 +43,10 @@ and so much more. Booleans and events will be used extensively in your games, an
 # Boolean variables and Powerups/Collectables 
 
 ## 1. Creating a FoodSprite & Optimizing Artwork for your Game
-In this tutorial, you'll be using a pre-made game as a base and building on top of it.  **In the construct editor**, please open this module's "construct folder". **Note** All yellow code-groups you will not need to edit. They provide base functionality, and are not necessary to modify. 
+**In this tutorial, you'll be using a pre-made game as a base and building on top of it.**  **In the construct editor**, please open this module's "construct folder". (You cloned this repo at the beginning of Learning Guide 0, and you stored it locally on your computer. Go back to GitHub desktop, Select the cloned repo, "Pull the origin" (to make sure you have up to date changes), then you can open the Game_Design_In_Construct_3 > module_3_flapping_bird_booleans > flapping_bird_construct_folder
+<img width="358" alt="Screen Shot 2022-09-13 at 11 43 18" src="https://user-images.githubusercontent.com/101632496/189897448-a93873eb-a3c8-43b1-a3ce-b74e2c85b7cc.png">
+
+**Note: I have broken this module into "code groups" by colour. All yellow code-groups you will not need to edit (but feel free to look at to discover how these games work "in the back end". They provide base functionality, and are not necessary to modify.  You will modify the code in green. **
 
 Now that we have the base-game open, we need to create our first powerup, with all associated instance variables. 
 
@@ -63,18 +66,23 @@ And now we have the powerup sprite created! But it hasn't done anything yet. Let
 
 ## 2. Spawning food powerups at random intervals
 
-Now that we have our sprite, we need to spawn it in the layout during the game at random time intervals. 
+Now that we have our sprite, we need to spawn it in the layout during the game at random time intervals. We're going to use a built in function to create random numbers for us, called the "random" method. 
 
 ##### The Random Method
 We will use this "random" method a LOT throughout this course to generate random numbers. Simply type "random(num1,num2)" inside any action parameter block, and you will get an output of a random number in between the 2 numbers you put in! Simple. 
 > (random(LowValue,HighValue))
 > 
 <img width="197" alt="Screen Shot 2022-04-08 at 08 34 01" src="https://user-images.githubusercontent.com/101632496/162378077-818f2a1c-48fc-4ac5-8eae-2189540461b7.png">
-- accepts arguments as integers (0,-5,32, etc) and floats (or a "floating" number) (0.12, -3.4932) 
+This method accepts values as integers (0,-5,32, etc) and floats (or a "floating" number) (0.12, -3.4932) 
 
-1. create a new integer *global variable* (righclick on the event sheet) called *SecondsPerPowerUp* and set it to 3.5 initially. You can change this later. We will use this variable to spawn powerups every SecondsPerPowerUp seconds, or in this case, every 3.5 seconds, we'll spawn a new power up. 
+
+1. create a new integer *global variable* (righclick on the event sheet) called *SecondsPerPowerUp* and set it to 3.5 initially. You can change this later. We will use this variable to spawn powerups every SecondsPerPowerUp seconds, or in this case, every 3.5 seconds, we'll spawn a new power up.
+<img width="856" alt="Screen Shot 2022-09-13 at 14 14 47" src="https://user-images.githubusercontent.com/101632496/189898281-68410784-1527-4595-a9f6-47fb6fcdcdbf.png">
+
 2. in the power-ups code group, create a new event 
 > system  > Every X seconds > Every *SecondsPerPowerUp* 
+<img width="276" alt="Screen Shot 2022-09-13 at 14 15 19" src="https://user-images.githubusercontent.com/101632496/189898366-18c67964-a314-435b-a1d4-44f742e1f3e6.png">
+
 
 3. As an action inside this event, create object *FoodSprite* on layer 0 at an X value of the right edge of our layout and a random Y value inside our layout (layout size is 400 x 500). This Y value will control how high/low the object spawns. We want the object to spawn on the far right side of our screen, and to be at a random height. 
 <img width="344" alt="Screen Shot 2022-04-14 at 13 15 03" src="https://user-images.githubusercontent.com/101632496/163380175-ce81ab8a-af47-4d1d-9774-f956a5ebdda2.png">
@@ -84,6 +92,8 @@ We will use this "random" method a LOT throughout this course to generate random
 
 If true, set the foodsprite instance variable *PowerUpType* to "Invincibility". 
 <img width="604" alt="Screen Shot 2022-04-14 at 13 22 11" src="https://user-images.githubusercontent.com/101632496/163381144-4d767dcc-caa9-4715-aa94-18fd01a013fe.png">
+
+<img width="829" alt="Screen Shot 2022-09-13 at 14 15 39" src="https://user-images.githubusercontent.com/101632496/189898432-90708464-9a30-4484-ba1b-435b667a62de.png">
 
 Test your game out. You should now notice that a powerup is spawing every 3.5 seconds on the far right edge of the screen. However, there is no movement yet. 
 
@@ -95,15 +105,15 @@ In simpler terms, delta time runs with game frames, time runs on actual seconds.
 
 1. In the *Background* code group, add a new action to the "EveryTick" condition. 
 
-Note, "x" or "multiplication" is denoted by an "*" in code. So, 
-3x7 = 21, on a computer, would be written as 3*7 = 21
+Note, "x" or "multiplication" is denoted by an asterisk (\*) in code. So, 
+3x7 = 21, on a computer, would be written as 3\*7 = 21
 
 > Condition: EveryTick
 > 
 > Action: Set FoodSprite.X to FoodSprite.X - SCROLLSPEED * dt
 <img width="615" alt="Screen Shot 2022-04-14 at 13 26 09" src="https://user-images.githubusercontent.com/101632496/163381747-d04e296d-1ffe-45de-9900-02bf9d9ec151.png">
 
-2. Now we have a problem. If we miss a piece of fruit, it will continue to float on forever outside of the layout. This will severly impact game performance over time. Let's make some code to destroy the fruit once it's off the layout. You'll notice the code is clearly borrowed from a different event...  
+2. Now we have a problem. If we miss a piece of fruit, it will continue to float on forever outside of the layout. This will severly impact game performance over time. Let's make some code to destroy the fruit once it's off the layout. In the same background code group, You'll notice the code is clearly borrowed from a different event...  
 
 > Condition: FoodSprite X <50
 > 
