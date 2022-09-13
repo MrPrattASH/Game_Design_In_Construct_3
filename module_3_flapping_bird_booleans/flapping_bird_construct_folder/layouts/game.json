@@ -45,9 +45,7 @@
 						"live-preview": false
 					},
 					"uid": 0,
-					"instanceVariables": {
-						"Invincible": false
-					},
+					"instanceVariables": {},
 					"behaviors": {
 						"Platform": {
 							"properties": {
@@ -62,9 +60,6 @@
 								"default-controls": true,
 								"enabled": true
 							}
-						},
-						"Timer": {
-							"properties": {}
 						}
 					},
 					"world": {

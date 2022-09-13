@@ -36,16 +36,6 @@
 			"sid": 1620992456180981
 		},
 		{
-			"eventType": "variable",
-			"name": "SecondsPerPowerUp",
-			"type": "number",
-			"initialValue": "3.5",
-			"comment": "how many seconds between powerups",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 669131623410398
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Start",
@@ -299,7 +289,16 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 921692849367350,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						}
+					],
 					"actions": [
 						{
 							"id": "create-object",
@@ -310,7 +309,8 @@
 								"layer": "0",
 								"x": "440",
 								"y": "random(50, -250)",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -322,7 +322,8 @@
 								"layer": "0",
 								"x": "440",
 								"y": "TopPipe.Y+ 750",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -653,38 +654,7 @@
 			"title": "Debug",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 787975735175857,
-							"parameters": {
-								"key": 81
-							}
-						},
-						{
-							"id": "is-in-preview",
-							"objectClass": "System",
-							"sid": 260294923444594
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Bird",
-							"sid": 506809475044244,
-							"parameters": {
-								"instance-variable": "Invincible",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 834165521343633
-				}
-			],
+			"children": [],
 			"sid": 488513406387847,
 			"background-color": [
 				0.5803921568627451,

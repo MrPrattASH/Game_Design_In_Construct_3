@@ -3,24 +3,12 @@
 	"plugin-id": "Sprite",
 	"sid": 7655953109634694,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "Invincible",
-			"type": "boolean",
-			"desc": "stops bird from ending game when colliding with objects",
-			"sid": 129923326245303
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Platform",
 			"name": "Platform",
 			"sid": 5178987554423825
-		},
-		{
-			"behaviorId": "Timer",
-			"name": "Timer",
-			"sid": 318671595508644
 		}
 	],
 	"effectTypes": [],
@@ -34,7 +22,7 @@
 						"originX": 0.515152,
 						"originY": 0.526316,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 0,
 						"collisionPoly": {
@@ -66,7 +54,7 @@
 						"originX": 0.515152,
 						"originY": 0.526316,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 1,
 						"collisionPoly": {
@@ -107,7 +95,7 @@
 						"originX": 0.515152,
 						"originY": 0.526316,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 7332107,
 						"collisionPoly": {
@@ -139,7 +127,7 @@
 						"originX": 0.515152,
 						"originY": 0.526316,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 2882912,
 						"collisionPoly": {

@@ -5,40 +5,7 @@
 			"name": "Layer 0",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "FoodSprite",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Ham",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 13,
-					"instanceVariables": {
-						"IsEaten": false,
-						"PowerUpType": "null"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 35,
-						"y": -4,
-						"width": 44.15289797963436,
-						"height": 32.72508909078782,
-						"originX": 0.5705882352941176,
-						"originY": -0.3412698412698413,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 478318269778710,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
