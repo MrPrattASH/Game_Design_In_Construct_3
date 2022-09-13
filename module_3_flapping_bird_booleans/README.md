@@ -43,7 +43,9 @@ and so much more. Booleans and events will be used extensively in your games, an
 # Boolean variables and Powerups/Collectables 
 
 ## 1. Creating a FoodSprite & Optimizing Artwork for your Game
-**In this tutorial, you'll be using a pre-made game as a base and building on top of it.**  **In the construct editor**, please open this module's "construct folder". (You cloned this repo at the beginning of Learning Guide 0, and you stored it locally on your computer. Go back to GitHub desktop, Select the cloned repo, "Pull the origin" (to make sure you have up to date changes), then you can open the Game_Design_In_Construct_3 > module_3_flapping_bird_booleans > flapping_bird_construct_folder
+**In this tutorial, you'll be using a pre-made game as a base and building on top of it.**  **In the construct editor**, please open this module's "construct folder". (You cloned this repo at the beginning of Learning Guide 0, and you stored it locally on your computer. Go back to GitHub desktop, Select the cloned repo, "Pull the origin" (to make sure you have up to date changes), then you can open the 
+Game_Design_In_Construct_3 > module_3_flapping_bird_booleans > flapping_bird_construct_folder
+
 <img width="358" alt="Screen Shot 2022-09-13 at 11 43 18" src="https://user-images.githubusercontent.com/101632496/189897448-a93873eb-a3c8-43b1-a3ce-b74e2c85b7cc.png">
 
 **Note: I have broken this module into "code groups" by colour. All yellow code-groups you will not need to edit (but feel free to look at to discover how these games work "in the back end". They provide base functionality, and are not necessary to modify.  You will modify the code in green. **
