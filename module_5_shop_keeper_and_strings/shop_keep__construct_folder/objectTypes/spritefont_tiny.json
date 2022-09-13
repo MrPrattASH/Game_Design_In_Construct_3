@@ -17,7 +17,7 @@
 		"originX": 0.6,
 		"originY": 0.45833333333333326,
 		"originalSource": "",
-		"exportFormat": "png",
+		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"imageSpriteId": 7,
 		"collisionPoly": {

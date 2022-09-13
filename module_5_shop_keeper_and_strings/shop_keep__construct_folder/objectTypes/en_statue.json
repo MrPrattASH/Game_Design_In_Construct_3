@@ -16,7 +16,7 @@
 						"originX": 0,
 						"originY": 0,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 240,
 						"collisionPoly": {
@@ -59,7 +59,7 @@
 						"originX": 0,
 						"originY": 0,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 239,
 						"collisionPoly": {
@@ -98,7 +98,7 @@
 						"originX": 0,
 						"originY": 0,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 233,
 						"collisionPoly": {
@@ -148,7 +148,7 @@
 						"originX": 0,
 						"originY": 0,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 238,
 						"collisionPoly": {

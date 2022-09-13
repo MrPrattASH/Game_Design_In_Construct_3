@@ -12,7 +12,7 @@
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "C:\\Users\\tokin\\Dropbox\\Demonoir\\Art\\Final Art\\tilemap_outside.png",
-		"exportFormat": "png",
+		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"imageSpriteId": 272,
 		"useCollisionPoly": true

@@ -154,6 +154,7 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -197,11 +198,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"ReplaceColor_Sword_1": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.6666666666666666,
@@ -219,6 +222,7 @@
 							}
 						},
 						"ReplaceColor_Sword_2": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.8156862745098039,
@@ -236,6 +240,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_1": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.0784313725490196,
@@ -253,6 +258,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_2": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.1411764705882353,
@@ -270,6 +276,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_3": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.1843137254901961,
@@ -287,6 +294,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_4": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.4117647058823529,
@@ -372,6 +380,7 @@
 								"deceleration": 3000,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -425,6 +434,7 @@
 								"deceleration": 300,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -468,6 +478,7 @@
 								"deceleration": 100,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -475,6 +486,7 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -547,6 +559,7 @@
 					"behaviors": {},
 					"effects": {
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -604,11 +617,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -700,6 +715,7 @@
 					},
 					"effects": {
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -840,6 +856,7 @@
 					},
 					"effects": {
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -1031,6 +1048,7 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1077,11 +1095,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									0.1568627450980392,
@@ -1140,6 +1160,7 @@
 								"deceleration": 500,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -1235,6 +1256,7 @@
 								"deceleration": 2000,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -1326,6 +1348,7 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1379,6 +1402,7 @@
 								"deceleration": 300,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -1463,6 +1487,7 @@
 								"deceleration": 300,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -1509,6 +1534,7 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1609,11 +1635,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -1672,6 +1700,7 @@
 								"deceleration": 1000,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}

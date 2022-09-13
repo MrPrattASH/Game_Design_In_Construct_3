@@ -35,7 +35,7 @@
 						"originX": 0,
 						"originY": 0,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 190,
 						"useCollisionPoly": true,

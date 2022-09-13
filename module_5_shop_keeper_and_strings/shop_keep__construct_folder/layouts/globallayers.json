@@ -417,11 +417,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -478,11 +480,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -539,11 +543,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -600,11 +606,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -662,11 +670,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -723,11 +733,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -784,11 +796,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -845,11 +859,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -906,11 +922,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -967,11 +985,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -1028,11 +1048,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"Tint": {
+							"isEnabled": true,
 							"parameters": {
 								"color": [
 									1,
@@ -1110,6 +1132,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1148,6 +1171,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1186,6 +1210,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1224,6 +1249,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1262,6 +1288,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -1300,6 +1327,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}

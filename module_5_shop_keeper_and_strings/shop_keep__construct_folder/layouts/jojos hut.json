@@ -212,6 +212,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -253,6 +254,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -294,6 +296,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -335,6 +338,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -376,6 +380,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -417,6 +422,7 @@
 					"behaviors": {},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
@@ -458,6 +464,7 @@
 								"deceleration": 3000,
 								"directions": "dir-8",
 								"set-angle": "no",
+								"allow-sliding": false,
 								"default-controls": false,
 								"enabled": true
 							}
@@ -501,11 +508,13 @@
 					},
 					"effects": {
 						"Brightness": {
+							"isEnabled": true,
 							"parameters": {
 								"brightness": 1
 							}
 						},
 						"ReplaceColor_Sword_1": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.6666666666666666,
@@ -523,6 +532,7 @@
 							}
 						},
 						"ReplaceColor_Sword_2": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.8156862745098039,
@@ -540,6 +550,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_1": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.0784313725490196,
@@ -557,6 +568,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_2": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.1411764705882353,
@@ -574,6 +586,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_3": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.1843137254901961,
@@ -591,6 +604,7 @@
 							}
 						},
 						"ReplaceColor_Cloak_4": {
+							"isEnabled": true,
 							"parameters": {
 								"source-color": [
 									0.4117647058823529,
@@ -615,39 +629,6 @@
 						"height": 48,
 						"originX": 0.5,
 						"originY": 0.833333,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "dialogue_trigger",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 40,
-					"instanceVariables": {
-						"character_name": "wizard",
-						"Event": false,
-						"Line": "Hi, I'm a Wizard!"
-					},
-					"behaviors": {},
-					"world": {
-						"x": 110,
-						"y": 123,
-						"width": 18,
-						"height": 18,
-						"originX": 0.5,
-						"originY": 0.5,
 						"color": [
 							1,
 							1,

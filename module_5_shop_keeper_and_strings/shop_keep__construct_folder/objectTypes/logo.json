@@ -16,7 +16,7 @@
 						"originX": 0.501577,
 						"originY": 0.5,
 						"originalSource": "C:\\Users\\tokin\\Dropbox\\Demonoir\\Art\\Final Art\\Logo_16bit.png",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 162,
 						"collisionPoly": {

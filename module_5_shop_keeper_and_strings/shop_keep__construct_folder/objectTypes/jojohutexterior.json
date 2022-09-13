@@ -16,7 +16,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "C:\\Users\\tokin\\Dropbox\\Demonoir\\Art\\Final Art\\shop_top.png",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 5,
 						"collisionPoly": {
@@ -48,7 +48,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "C:\\Users\\tokin\\Dropbox\\Demonoir\\Art\\Final Art\\shop_bottom.png",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 6,
 						"useCollisionPoly": true,

@@ -22,7 +22,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 148,
 						"collisionPoly": {
@@ -46,7 +46,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 149,
 						"collisionPoly": {
@@ -70,7 +70,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 150,
 						"collisionPoly": {
@@ -94,7 +94,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 151,
 						"collisionPoly": {
@@ -118,7 +118,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 152,
 						"collisionPoly": {
@@ -142,7 +142,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 153,
 						"collisionPoly": {
@@ -166,7 +166,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 154,
 						"collisionPoly": {
@@ -190,7 +190,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 155,
 						"collisionPoly": {
@@ -214,7 +214,7 @@
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
-						"exportFormat": "png",
+						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"imageSpriteId": 173,
 						"collisionPoly": {
