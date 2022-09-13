@@ -44,9 +44,10 @@ interestingly, when we treat numbers as string values, these two lines of code n
 > "1" + "1" = "11"
 
 # Strings for Basic Dialogues
-As with the last module, you don't need to change anything in the yellow code-group, only the green code. 
+In this tutorial, you'll be using a pre-made game as a base and building on top of it.  In the construct editor, please open the corresponding module's construct folder. As with the last module, you don't need to change anything in the yellow code-group, only the green code. 
 
 ## 1. Create a new instance of the sprite "dialogue trigger" on the Objects layer
+
 - place this sprite in front of a character. 
 - On this sprite's instance variables,
  - give the "character" string a name
