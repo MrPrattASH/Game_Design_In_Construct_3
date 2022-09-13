@@ -12,6 +12,7 @@ As always, play through the example .c3p finished file to get an idea of what yo
 5. How to create custom animations for sprites
 6. How to use Boolean variables to control in game events like invincibility power-ups. 
 7. The importance of using optimized artwork for game performance
+8. what the "random" method is
 
 ## Self-Assessment Quiz:
 Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScFE0QglHzTDoQNCJ7IBRePG-g_yIlFhuELbYWb1EApbqQ6eQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*. 
@@ -40,6 +41,7 @@ and so much more. Booleans and events will be used extensively in your games, an
 As with the last module, you don't need to change anything in the yellow code-group, only the green code. 
 
 ## 1. Creating a FoodSprite & Optimizing Artwork for your Game
+In this tutorial, you'll be using a pre-made game as a base and building on top of it.  In the construct editor, please open the corresponding module's construct folder. **Note** All yellow code-groups you will not need to edit. They provide base functionality, and are not necessary to modify.
 
 We first need to create our powerup, and all associated instance variables. 
 
@@ -59,6 +61,13 @@ We first need to create our powerup, and all associated instance variables.
 ## 2. Spawning food powerups at random intervals
 
 Now that we have our sprite, we need to spawn it in the layout during the game at random time intervals. 
+
+##### The Random Method
+We will use this "random" method a LOT throughout this course to generate random numbers. Simply type "random(num1,num2)" inside any action parameter block to use! Simple. 
+> (random(LowValue,HighValue))
+> 
+<img width="197" alt="Screen Shot 2022-04-08 at 08 34 01" src="https://user-images.githubusercontent.com/101632496/162378077-818f2a1c-48fc-4ac5-8eae-2189540461b7.png">
+- accepts arguments as integers (0,-5,32, etc) and floats (or a "floating" number) (0.12, -3.4932) 
 
 1. create a new int global variable (righclick on the event sheet) called *SecondsPerPowerUp* and set it to 3.5 initially. You can change this later. 
 2. in the power-ups code group, create a new system event > Every *SecondsPerPowerUp* seconds. 
@@ -136,10 +145,10 @@ If you're stuck, look at the completed .c3p file for a way of solving these exte
 - When we spawn the FoodSprite in the power-ups code-group, can you randomly *choose* which animation is displayed to show either an apple, banana, or ham? 
 
 > random(low,high)    
-the random method is useful for ints 
+the random method is useful for number variables (integers)
 
 > choose("Frank", "fred", "george")     
-the choose method is useful for strs as well as ints
+the choose method is useful for strings (word variables) as well as integer variables. 
 
 - When a FoodSprite spawns, can you create a new powerup? How might you use the str instance variable PowerUpType to modify what happens? 
     - New power up idea: Make the banana add 5 to the score, and update the score text
