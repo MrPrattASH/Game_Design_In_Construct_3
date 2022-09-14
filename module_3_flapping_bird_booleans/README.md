@@ -142,6 +142,10 @@ Now, we need the bird to be able to actually pick up the powerups! We need the b
 
 So far we've created the sprite, set the sprite's instance variable *PowerUpType* upon creation, and made the sprite move across the screen. Now we need to actually make the power-up do something in game. First, we'll trigger the bird's invincibility bool, then we'll set the bird to avoid any collisions if this invincibility bool is True. 
 
+Before you continue, select the bird sprite in the project panel, and add the "timer" behaviour to this sprite. 
+
+<img width="1280" alt="Screen Shot 2022-09-14 at 13 21 39" src="https://user-images.githubusercontent.com/101632496/190140998-07470573-7572-4392-8fae-6627937ab750.png">
+
 1. in the Power-Ups code-group, create a new event under our previous event above.
  
 > Condition: FoodSprite > Instance Bool > Is Eaten
