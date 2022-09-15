@@ -57,6 +57,7 @@ Let's get into actually building a game. **In the construct editor**, please ope
 ## 1. Creating a FoodSprite & Optimizing Artwork for your Game
 Now that we have the base-game open, go ahead and test the project to see it's functionality so far. It's a little dry... let's spice it up by adding in powerups. First, we need to create our first powerup, with all associated instance variables. 
 
+all code will be written inside the "Game Events" Event sheet. 
 1. Create a new sprite object called "FoodSprite". Add this sprite to the "Object Repository" layout. Re-size appropriately so that it's not too big, or too small inside the viewport window (the hatched rectangle on the layout). 
 2. Double-click the FoodSprite in the project folder, and create 3 animations for this sprite. label them Banana, Ham, and Apple respectively. 
 <img width="213" alt="Screen Shot 2022-04-14 at 13 05 50" src="https://user-images.githubusercontent.com/101632496/163378948-24126ac5-0843-4b80-9531-c05e02b8b009.png">
@@ -216,6 +217,7 @@ That's it! Test your game, and try to collect a piece of food. You should notice
 # Extension ideas
 
 These extensions are more of a "test" to see if you can apply your knowledge. If you're stuck, look at the completed .c3p file for a way of solving these extensions. 
+For all of these extensions, it is expected that you are writing code comments for what and why you are adding in new powerups. What do these lines of code that you create do in the game? Start practicing now, as I will be assessing your understanding of the code based on your code comments. 
 
 - When we spawn the FoodSprite in the power-ups code-group, can you randomly *choose* which animation is displayed to show either an apple, banana, or ham?
 
