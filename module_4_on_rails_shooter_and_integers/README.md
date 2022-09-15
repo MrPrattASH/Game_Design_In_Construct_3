@@ -90,7 +90,10 @@ debug your game, can you make your ship blow up if it hits too many asteroids?
 As before, any extension you add must be commented on what you are adding and why. 
 - Add a health instance variable to the asteroids. Can you then make the "bullet" object destroy the asteroids if it hits them enough times? (Think back to how you coded the monster health in ghost shooter) 
     - Take a look at the "Target" code group. Inside, there is a loop called "For each bullet".  see if you can mirror this in your own code, but instead of shecking for the target, check for the asteroid instead. 
+
+
 <img width="558" alt="Screen Shot 2022-09-15 at 09 26 07" src="https://user-images.githubusercontent.com/101632496/190341599-4e6156ee-ec53-49e2-a537-b17c9d7b7144.png">
+
 - Add in some animations. Make the asteroid create an object called "Big explosion" on impact with the ship, or when the asteroid is destroyed by bullets. 
 - Add a new text object to the HUD, and make it display the ship's health 
     -  Remember how you have been writing 
