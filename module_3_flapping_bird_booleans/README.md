@@ -146,7 +146,8 @@ division uses a "slash" character
 
 `> Condition: EveryTick
 > 
-> Action: Set FoodSprite.X to FoodSprite.X - SCROLLSPEED * dt`
+> Action: Set FoodSprite.X to FoodSprite.X - SCROLLSPEED * dt
+`
 <img width="615" alt="Screen Shot 2022-04-14 at 13 26 09" src="https://user-images.githubusercontent.com/101632496/163381747-d04e296d-1ffe-45de-9900-02bf9d9ec151.png">
 
 2. Debug your game. Notice how when fruits move off the screen, they never actually get destroyed in the debug property panels? Uh oh... If we miss a piece of fruit, it will continue to float on forever outside of the layout. This will severly impact game performance over time as we could have 1000+ floating infinite fruits on screen. Let's make some code to destroy the fruit once it's off the layout. In the same background code group, (You'll notice the code is clearly borrowed from a different event... )
@@ -168,6 +169,8 @@ Now, we have our powerup floating, but we need the bird to be able to actually p
 > 
 > Action: FoodSprite > set bool IsEaten > True
 <img width="616" alt="Screen Shot 2022-04-14 at 13 31 29" src="https://user-images.githubusercontent.com/101632496/163382470-6b018cb0-ed81-422d-a668-77c83a226815.png">
+
+Inside this event, destroy the food sprite. 
 2. Let's test out to see if this event actually triggers and changes our boolean. Right click on this event, set a break-point on this event. 
 3. Debug your game: when the bird collides with the food sprite, check the food sprite in the inspector panel. does the food sprite instance set it's bool instance variable to true? 
 4. You can now remove the break-point and continue. 
