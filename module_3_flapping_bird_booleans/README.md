@@ -53,6 +53,8 @@ Let's get into actually building a game. **In the construct editor**, please ope
 
 **Note: I have broken this module into "code groups" by colour. Instead of having all code in a massive line, I have split it up into groups that create similar outcomes of code, for example, all player controls are in one group, all collectables are in another. You do not have to edit any code inside a yellow code-group.  However, you are more than welcome to look at this code (in fact, it's encouraged) so that you can see how these games are created. The yellow blocks provide base functionality, and are not necessary to modify. Instead, for all code in these tutorials, You will modify the code in the green code-groups. **
 
+#Alternate Tutorial Video Option:
+If you would prefer to read the tutorial in text, continue. If you would prefer to follow along on this tutorial in video form, you can find the video recording [here](https://youtu.be/97Bca-r-ncs)
 
 ## 1. Creating a FoodSprite & Optimizing Artwork for your Game
 Now that we have the base-game open, go ahead and test the project to see it's functionality so far. It's a little dry... let's spice it up by adding in powerups. First, we need to create our first powerup, with all associated instance variables. 
