@@ -2,6 +2,8 @@
 
 This tutorial will teach you about string variables, their differences from booleans and integers(numbers), and how to create basic, single dialogue events in the context of a shop keeper presenting different items to your character. As always, play through the example .c3p finished file to get an idea of what you'll be creating. (WASD and Space for controls). 
 
+Note: As these tutorials progress further and further, I will be showing you *less* of exactly how to perform each task. You'll need to do some hunting and solving problems on your own to be able to complete some of these steps. 
+
 ## By the end of this tutorial you should know:
 1. What a *string* or *str* variable is
 2. How to add strings together, and how this is different from adding ints and floats
@@ -87,7 +89,7 @@ In the main event sheet, under the Dialogues group, make a new function. (A "fun
 This is a neat function. It allows us to trigger & create a dialogue box, and to have the text *dynamically update* depending on the character we are talking to. This is due to the "parameter" we call the function with. We call the function (or run it, but in programming we call this run command a "call". in this case, when we "call" the function, we pass it a parameter called "line" (our instance variable from the dialogue trigger sprite). Imagine we are making a phone call to this function, and the parameter we pass is what we say over the phone. For example, we could call the function with:
 > dialogue_box("Hello Adventurer!") 
 
-to produce a dialogue event with the text, "Hellow Adventurer!" displayed. Using one function for our dialogue events allows us to write the code once, and use it multiple times with different dialogues each time rather than needing to re-spawn a dialogue event each time. This is the beauty of functions, repeating code we can use for the same purpose, but with slightly different outcomes in the event itself. 
+to produce a dialogue event with the text, "Hello Adventurer!" displayed. Using one function for our dialogue events allows us to write the code once, and use it multiple times with different dialogues each time rather than needing to re-spawn a dialogue event each time. This is the beauty of functions, repeating code we can use for the same purpose, but with slightly different outcomes in the event itself. 
 
 - call the function "dialogue_box" 
 - add a "parameter" to accept a string (right click on the function after creation). This parameter is a peice of information we need to call the function with. 
@@ -116,9 +118,12 @@ Now we have a function set up to create a dialogue box with a flashing arrow, bu
 
 Try out your game now. Can you walk up to the character and speak to them? 
 
-# Extension ideas:
+# Extension Challenges:
 
+- Be sure your code is fully commented, in line with our 7 rules for code comments. 
+- This is your second assessed project. 
+- Add in a "Pickup" item somewhere on the main layout. Perhaps it is a coin for currency, or maybe an item your character will use later in a game, or a lost artifact from an NPC quest. (you'll need to find and upload your own custom sprite for this). Then, choose one of the NPC's. They should say 1 thing when the character speaks to them *prior* to picking up the item, and something different *after* picking up the item. Use your knowledge from past tutorials to create this. 
 - Add in more dialogue triggers with new characters. Create new instances of the dialogue trigger, and drag in pre-made assets from the "enemies" project folder
 - How might you add a new instance variable (perhaps a dialogue "counter") to the code to create a multi-line dialogue, so the character the player is speaking to displays two different dialogue events, one after another? 
-- How might you use the "random" method we learned about last module, to make an NPC display a random dialogue line for the player? You may want to look into a method of random called "choose" when it comes to text based tags. <img width="333" alt="Screen Shot 2022-04-12 at 14 02 02" src="https://user-images.githubusercontent.com/101632496/162958303-2530cd7a-7df3-4412-bfc0-966febdb576c.png">
+- How might you use the "random" or "choose" methods we learned about last module, to make an NPC display a random dialogue line for the player? <img width="333" alt="Screen Shot 2022-04-12 at 14 02 02" src="https://user-images.githubusercontent.com/101632496/162958303-2530cd7a-7df3-4412-bfc0-966febdb576c.png">
 
