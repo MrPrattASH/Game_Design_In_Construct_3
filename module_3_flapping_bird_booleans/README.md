@@ -6,7 +6,11 @@ This tutorial will teach you about:
 
 When completed with the tutorial, assess your knowledge using the self-assessment and go back over any content you did not understand. 
 
-First, before starting, play through the example .c3p finished file to get an idea of what you'll be creating (located in this repo that you cloned at the start of the unit). (left click is the only control you need to play). As you can see, you'll be adding "power-ups" to a flappy bird style game. 
+First, before starting, play through the example .c3p finished file to get an idea of what you'll be creating (located in this repo that you cloned at the start of the unit). (left click is the only control you need to play). As you can see, you'll be adding "power-ups" to a flappy bird style game.
+
+Not sure where to find the .c3p file? Clone this repo, (or use the repo you cloned in Learning Guide 0) and access both the .c3p project file and construct file folder from there. 
+
+The next 3 modules you will be working from a "base game" and remixing the project. I will also begin to "hold you hand less" as time goes on, expecting that you will use the skills you have learned from previous modules to "fill in the gaps" where I have not explained exactly what to do. 
 
 ## By the end of this tutorial you should know:
 1. What a *Boolean or Bool* is
@@ -34,7 +38,9 @@ The player sprite has an instance variable called "inviciblity". It is a Boolean
 > 
 >     Action: player  -1 from health
 
-In this case, if the player is currently invincible, they take no damage and If they are not, they take 1 damage. Wow! As you can see, booleans are incredibly useful for game design, as they allow for conditions to be true, or false, and events to happen based on these boolean variables. Imagine some ways you could use true/false logic for creating games. They could relate to:
+In this case, if the player is currently invincible, they take no damage and If they are not, they take 1 damage. Wow! As you can see, booleans are incredibly useful for game design, as they allow for conditions to be true, or false, and events to happen based on these boolean variables. 
+
+Imagine some ways you could use true/false logic for creating games. They could relate to:
 - player is moving (play animation, hit a speed powerup in a racing game)
 - player is stopped (player can now open their menu or backpack)
 - player is jumping (player can collect object only if they're in the air)
@@ -45,7 +51,8 @@ and so much more. Booleans and events will be used extensively in your games, in
 
 # Boolean variables and Powerups/Collectables 
 
-Let's get into actually building a game. **In the construct editor**, please open this module's "construct folder". (You cloned this repo at the beginning of Learning Guide 0, and you stored it locally on your computer. Go back to GitHub desktop, Select the cloned repo, "Pull the origin" (to make sure you have up to date changes, as this repo see's updates over time as I change the code inside), then you can open the folder below. 
+Let's get into actually building a game. **In the construct editor**, please open this module's "construct folder". (You cloned this repo at the beginning of Learning Guide 0, and you stored it locally on your computer. Go back to GitHub desktop, Select the cloned repo, "Pull the origin" (to make sure you have up to date changes, as this repo see's updates over time as I change the code inside), then you can open the folder below. Be sure to copy the construct project folder into your own game repo, and to not make a fork of this current repo. 
+Folder location:<img width="534" alt="Screen Shot 2022-09-29 at 13 11 45" src="https://user-images.githubusercontent.com/101632496/193016781-a57ebe2e-ce03-493f-ae3f-6252980f6a1a.png">
 
 (Game_Design_In_Construct_3 > module_3_flapping_bird_booleans > flapping_bird_construct_folder)
 
@@ -53,41 +60,42 @@ Let's get into actually building a game. **In the construct editor**, please ope
 
 **Note: I have broken this module into "code groups" by colour. Instead of having all code in a massive line, I have split it up into groups that create similar outcomes of code, for example, all player controls are in one group, all collectables are in another. You do not have to edit any code inside a yellow code-group.  However, you are more than welcome to look at this code (in fact, it's encouraged) so that you can see how these games are created. The yellow blocks provide base functionality, and are not necessary to modify. Instead, for all code in these tutorials, You will modify the code in the green code-groups. **
 
-#Alternate Tutorial Video Option:
-If you would prefer to read the tutorial in text, continue. If you would prefer to follow along on this tutorial in video form, you can find the video recording [here](https://youtu.be/97Bca-r-ncs)
+# Alternate Video Option:
+If you would prefer to follow along on this tutorial in video form, you can find the video recording [here](https://youtu.be/97Bca-r-ncs)
+
+# Main Tutorial
 
 ## 1. Creating a FoodSprite & Optimizing Artwork for your Game
-Now that we have the base-game open, go ahead and test the project to see it's functionality so far. It's a little dry... let's spice it up by adding in powerups. First, we need to create our first powerup, with all associated instance variables. 
+Now that we have the base-game open, go ahead and test the project to see it's functionality so far. It's a little dry... let's spice it up by adding in powerups. First, we need to create our first powerup sprite, with all associated instance variables. 
 
-all code will be written inside the "Game Events" Event sheet. 
-1. Create a new sprite object called "FoodSprite". Add this sprite to the "Object Repository" layout. Re-size appropriately so that it's not too big, or too small inside the viewport window (the hatched rectangle on the layout). 
-2. Double-click the FoodSprite in the project folder, and create 3 animations for this sprite. label them Banana, Ham, and Apple respectively. 
+1. Create a new sprite object called "FoodSprite". Add this sprite to the "Object Repository" layout. The "object repository" layout is a handy game design method you'll use in games from now on. This is a "holding place" for your sprite artwork. This allows us to create objects in an event sheet, but the object stays the correct size scaled against other sprites. In this layout, Re-size your sprite appropriately so that it's not too big, or too small inside the viewport window (the hatched rectangle on the layout). 
+2. Open this sprite in the animations editor (double click) and create 3 animations for this sprite. label them Banana, Ham, and Apple respectively. 
 <img width="213" alt="Screen Shot 2022-04-14 at 13 05 50" src="https://user-images.githubusercontent.com/101632496/163378948-24126ac5-0843-4b80-9531-c05e02b8b009.png">
 3. For each animation, upload the 4 png images using the folder button in the animations editor. You'll find the artwork inside the "game assets" folder from this GitHub module. 
 <img width="1280" alt="Screen Shot 2022-04-14 at 13 07 45" src="https://user-images.githubusercontent.com/101632496/163379189-aa643e31-ba82-4df0-9bb2-4a13ae82089e.png">
-4.  I've uploaded the artwork too large (something that will commonly happen to you when uploading your artwork) so we need to "crop" each animation. This will remove any "blank" transparent space on each photo, improving game performance. *If an uploaded artwork is 500x500 pixels, but the art itself is only on 100x100 pixels, we have almost 400x400 pixels that are transparent (see-through). Transparent pixels are still rendered by the game, slowing it down! So we Remove the whitespace by cropping, and this dramatically improves game performance*. 
+4.  I've uploaded the artwork too large (something that will commonly happen to you when uploading your artwork) so we need to "crop" each animation. This will remove any "blank" transparent space on each photo, improving game performance. *If an uploaded artwork is 500x500 pixels, but the art itself is only on 100x100 pixels, we have almost 400x400 pixels that are transparent (see-through). Transparent pixels are still rendered by the game, slowing it down and messing up hitboxes! So we Remove the whitespace by cropping, and this dramatically improves game performance*. 
 <img width="249" alt="Screen Shot 2022-04-14 at 13 09 42" src="https://user-images.githubusercontent.com/101632496/163379636-8c099dc9-c6ce-46d9-b031-9ef833666a2b.png">
 5. In the Animation Properties bar, set an appropriate speed for the animation, and set it to loop. This is up to you how quickly you want this animation to loop, use your creative eye to decide.  Right click on the animation name to select "preview" to watch your animation. Adjust settings at will. 
 <img width="321" alt="Screen Shot 2022-04-14 at 13 11 32" src="https://user-images.githubusercontent.com/101632496/163379725-36007f7a-855d-4d12-903c-34521b7276ed.png">
-6. Outside of the animation editor, our food sprite needs 2 new instance variables. Add in 
--  a string called *PowerUpType* (we'll use this to create various kinds of powerups later)
--  a boolean called *IsEaten* (we'll use this to signal to our game that it has been collected by the player)
+6. Exit the animation editor. Select the food sprite, and in the properties bar, we need to create 2 instance variables. Add in 
+-  a string variable called *PowerUpType* (we'll use this to distinguish various kinds of powerups, such as "score", "invincibility", "slow motion", etc)
+-  a boolean variable called *IsEaten* (we'll use this to signal to our game that our fruit has been contacted,overlapped, etc by the player bird)
 <img width="253" alt="Screen Shot 2022-04-14 at 13 23 30" src="https://user-images.githubusercontent.com/101632496/163381354-ffcb4d00-8ba1-4041-ba5f-b4e8d5e7aea1.png">
 
-The 2nd instance variable is known as a "boolean flag". It is a waving "flag" to tell our game or code that something has happened. We can "wave" the flag as True, or put the "flag down" as False. Essentially, it is going to be used as a calling card for things to happen in our game.  
+The 2nd instance variable is known as a "boolean flag". It is a waving "flag" to tell our game that some important event has happened. We can "wave" the flag as True, or put the "flag down" as False.
 
 Now we have the powerup sprite created and in our game, but it currently does not do anything yet. Let's add it into the level and add in some game logic so that it creates a true powerup... 
 
-We need to spawn it in the layout during the game at random Y coordinates (up and down) , similar to how the pipe "gaps" spawn into the game and move across the screen at random Y coordinates. To create this randomness, we're going to use a built in function to create random numbers for us, called the "random" method. A function is a piece of code that allows us to create more functionality to our game, in this case, randomness. 
+We need to spawn it in the layout during the game at random Y axis coordinates (up and down), similar to how the pipe "gaps" spawn into the game and move across the screen at random Y coordinates. To create this randomness in y axis placement, we're going to use a built in function to create random numbers for us, called the "random" method. 
 
-##### Using The Random Method
-We will use this "random" method a LOT throughout this course to generate random numbers. When we're inside of an action parameter, simply type
+##### Tutorial Pause: Using The Random Method
+Before continuing with our tutorial, let's take a look at a useful method/function for game design (A function is a piece of code that allows us to create more functionality to our game, in this case, randomness.), the random method. We will use this "random" method a LOT throughout this course to generate random numbers.  When we're inside of an action in construct 3, simply type
 `
 random(num1,num2) 
-#num 1 is the low value
-#num 2 is the high value
+#num 1 is the low value of the range
+#num 2 is the high value value of the range
 `
-This will produce an output of a random number in between the 2 numbers you put in! For example, if you wrote
+This will produce an output of a random number in the range between the 2 numbers you put in! For example, if you wrote
 
 `random(1,5)
 `
@@ -95,50 +103,53 @@ This will produce an output of a random number in between the 2 numbers you put 
 You could output either 1,2,3, or 4. (Note: the output is between the numbers, not including the second number).
 
 <img width="197" alt="Screen Shot 2022-04-08 at 08 34 01" src="https://user-images.githubusercontent.com/101632496/162378077-818f2a1c-48fc-4ac5-8eae-2189540461b7.png">
-This function allows you to enter values as integers (0,-5,32, etc) and floats (or a "floating" number) (0.12, -3.4932) 
+The above image is an example of what the random methof might look like when typed into the construct 3 editor. This function allows you to enter values as integers (0,-5,32, etc) and floats (or a "floating" number) (0.12, -3.4932) 
 
-## 2. Spawning food powerups at random Y coordinates
-Let's get this food sprite spawning at random Y coordinates, so that we need to fly up and down to catch the food. If we always spawned the food at the same Y coordinate, then the player would always know where in the level the powerup would be located, not so interesting! Randomness adds a challenge to our game. 
+## 2. Spawning food powerups at random Y axis coordinates
+Let's get this food sprite spawning at random Y axis coordinates, so that we need to fly up and down to catch the food. Otherwise, If we always spawned the food at the same Y coordinate, then the player would always know where in the level the powerup would be located, not so interesting! Randomness adds a challenge to our game. All of this code will be written inside the "Game Events" Event sheet, NOT the "start events" event sheet. 
 
-1. Create a new  *global variable* (integer) called *SecondsPerPowerUp* and set it to 3.5 initially. We will use this variable to spawn powerups every "SecondsPerPowerUp" seconds, or in this case, every 3.5 seconds, we'll spawn a new power up. 
+1. Create a new  *global variable* (integer/number) called *SecondsPerPowerUp* and set it to 3.5 initially. We will use this variable to spawn powerups every "X" seconds, or in this case, every "SecondsPerPowerUp" seconds (3.5), we'll spawn a new power up. 
 <img width="856" alt="Screen Shot 2022-09-13 at 14 14 47" src="https://user-images.githubusercontent.com/101632496/189898281-68410784-1527-4595-a9f6-47fb6fcdcdbf.png">
 
 2. In the power-ups code group, create a new event:
-> system  > Every X seconds > Every *SecondsPerPowerUp* 
+> System  > Every X seconds > Every *SecondsPerPowerUp* 
 <img width="276" alt="Screen Shot 2022-09-13 at 14 15 19" src="https://user-images.githubusercontent.com/101632496/189898366-18c67964-a314-435b-a1d4-44f742e1f3e6.png">
 
-3. Inside this event, make a new action:
+3. In the "Every SecondsPerPowerup Seconds" event, make a new action:
 `create object *FoodSprite* on layer 0 at X,Y
 `
-For the X value, we want to select a value on the the right edge of our layout. How do you know what to select as an appropriate value? Head to your layout, look at the bottom of your screen for Mouse: X,Y. You should notice that as you move your mouse around the layout, you get the current X or Y coordinates of your layout. Use this to decide where to place your X powerup. 
+For the X value, we want to select a value somewhere on the the right side/edge of our layout. How do you know what to type as an appropriate value? Head to your layout, look at the bottom of your screen for Mouse: X,Y. You should notice that as you move your mouse around the layout, you get the current X or Y coordinates of your layout. Use this new information to decide where to place your X powerup. 
 
 <img width="475" alt="Screen Shot 2022-09-14 at 21 46 25" src="https://user-images.githubusercontent.com/101632496/190248465-bd4f1933-66c7-44bc-89af-77a833db9dfb.png">
 
-For the Y value, we want to select a random Y value that is constrained inside our layout. This Y value will control how high/low the object spawns. We need to constrain this random(low,high) value inside of our layout, as if we choose Y values too large, the food would spawn outside of the layout, and our player could never grab it! Go to the layout and decide what to write inside the Y value: random(low,high) 
+For the Y value, we want to select a random Y value that is constrained inside our layout. This Y value will control how high/low the object spawns upon the Y axis. We need to constrain this random(low,high) value inside of our layout, as if we choose Y values too large, the food would spawn outside of the layout, and our player could never grab it! Go to the layout and decide what to write inside the Y value: random(low,high). Debug this spawning in game, and see if you are happy with where your fruit spawns inside your level. 
 
 <img width="344" alt="Screen Shot 2022-04-14 at 13 15 03" src="https://user-images.githubusercontent.com/101632496/163380175-ce81ab8a-af47-4d1d-9774-f956a5ebdda2.png">
 
 4. Inside the same event, set the animation of the created *FoodSprite* to a fruit of your choice. 
-5. Under this same event, create a new sub-event to this same, to check: 
+5. Create a new sub-event to the every X seconds event: 
+`
 > FoodSprite > Is animation "YourFruit" playing. 
-
-If true, set the foodsprite instance variable *PowerUpType* to "Invincibility". This will be used later to check what type of powerup our pickup is. It also means that we can create a single pickup sprite, with multiple animations, and have *different powerups associated with the same sprite*. This will save a lot of time coding later, as otherwise we would need to create a new sprite for each powerup in our game! 
+`
+6. and make the action in this sub event
+`
+Foodsprite > set instance variable *PowerUpType* to "Invincibility"
+`
+Obviously, this game would be boring if we only had 1 type of powerup. This line of code allows us to create a single powerup sprite, with multiple animations, and have *different powerups associated with the same sprite* by setting a new instance variable depending on which animation is currently playing. This will save a lot of time coding later, as otherwise we would need to create a new sprite for each powerup in our game! 
 
 <img width="829" alt="Screen Shot 2022-09-13 at 14 15 39" src="https://user-images.githubusercontent.com/101632496/189898432-90708464-9a30-4484-ba1b-435b667a62de.png">
 
-Debug your game and test your game out. You should now notice that a powerup is spawing every 3.5 seconds in a random Y location. If not, go back and check your X/Y values for creating the object. 
+Debug your game and test your game out. You should now notice that a powerup is spawing every 3.5 seconds in a random Y location. If not, go back and check your X/Y values for creating the object. However, you'll also likely notice that the powerup is not moving, and it doesn't make you invincible. Let's continue. 
 
 ## 3. Making the Powerup move 
 
-Now that the powerup is spawning, we need to make it move across the screen, similar to how the pipes and ground sprites move across the screen (sidebar, take a look at this code in the yellow code-block now to see how they move).
+Now that the powerup is spawning, we need to make it move across the screen, similar to how the pipes and ground sprites move across the screen (sidebar, take a look at this code in the yellow code-block now to see how they move). You've used bullet behaviour in the past to make a sprite move across the screen. In this tutorial, we're going to learn a new way of re-creating bullet behaviour. 
 
-However, we're going to learn a neat trick in game design to make our sprite move across the screen. We want to move the sprite on *delta time*, not on physical "in game seconds". This is a **critical** distinction. If your game has frame rate drops, events that run every second will skip frames and this means that your food may spawn in erratic places. Having events that run on *delta time* or *dt* (for short) run in line with frames that are running, even if frames are dropped, so the event will trigger as intended. You should use delta time when moving sprites around the layout, whereas you may use in-game seconds to control spawning events. 
+We want to move the sprite on *delta time*, not on physical "in game seconds". This is a **critical** distinction. If your game has frame rate drops, events that run every second will skip frames and this means that your food may spawn in erratic places. Having events that run on *delta time* or *dt* (for short) run in line with frames that are running, even if frames are dropped, so the event will trigger as intended. You should use delta time when moving sprites around the layout, whereas you may use in-game seconds to control spawning events. In short, delta time runs events with game frames, time runs on actual seconds and may skip dropped frames from lag. This can often be more reliable than using the bullet behaviour.
 
-In short, delta time runs events with game frames, time runs on actual seconds and may skip dropped frames from lag. 
-
-## Note, multiplying numbers and dividing in code
-multiplication in code is different that written. If we wanted to write 
-3x7 =21, we would use the letter "x". Not so in code. instead, we use an asterisk
+## Tutorial Pause: Multiplying numbers and dividing in code
+multiplication in code is different than when we multiply on paper. If we wanted to write 
+3x7 =21, we would use the letter "x". When we multiply in code we use an asterisk:
 ` 3 * 7 = 21`
 To denote multiplication. Similarly, in division, we would write
 ` 21 / 3 = 7`
