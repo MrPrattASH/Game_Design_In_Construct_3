@@ -67,7 +67,7 @@ In this tutorial, you'll be using a pre-made game as a base and building on top 
 Make a new sprite called "dialogue trigger". Give it 3 instance variables:
 - String called "character_name"
 - boolean called "Event"
-- strong called "line"
+- string called "line"
 
 Add this sprite "dialogue trigger" on the Objects layer. We'll use this as a "dialogue hitbox" for our player to collide into, similar to our player hitbox that we pin our player animation to, or the collision objects we use for making enemy sprites patrol back and forth. 
 
