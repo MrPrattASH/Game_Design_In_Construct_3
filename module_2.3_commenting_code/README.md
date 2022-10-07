@@ -93,6 +93,22 @@ I hope the above examples have shown that comments don’t excuse or fix bad cod
 Following these rules should save you and your teammates time and frustration. 
 
 That said, I’m sure these rules aren’t exhaustive and look forward to seeing suggested additions in (where else?) the comments.
+>
+
+
+# Adding Code Comments in Construct 3
+How do we add comments? Right click on any individual event, code group, individual action, etc: 
+
+<img width="558" alt="Screen Shot 2022-10-07 at 13 42 25" src="https://user-images.githubusercontent.com/101632496/194545667-c0664b6b-3135-4d3e-b89a-86acb759b9c4.png">
+
+Then, select
+>
+> Add + Add Comment
+>
+
+<img width="671" alt="Screen Shot 2022-10-07 at 13 42 02" src="https://user-images.githubusercontent.com/101632496/194545742-0d613bde-d950-411d-b9b0-f55689f57f56.png">
+
+
 
 ## Self-Assessment Quiz:
 Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSe-gp2r-hO95swxyoS1-yOJksn329CtunUSjMo_qGqnv_30Fw/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
