@@ -25,13 +25,31 @@ Below is a list different game asset resources for you to use. If you find other
 # [Kenny.nl](https://kenney.nl/) - Artwork & short Sound Effects
 A fantastic site with lots of 2D, 3D, isometric, and character sprite assets. Also made here at home in the Netherlands! All content is free, though donations for "asset packs" are of course accepted, though not required. Many assets can be combined using the tile map system object, or taken as individual sprites with the ability for various animation frames to be uploaded. 
 
-#### Licensing
-All content on Kenny.nl is under **CC0** content attribution [License here](https://creativecommons.org/publicdomain/zero/1.0/) 
-
 #### Sample Assets
 ![Screen Shot 2022-05-18 at 10 26 02](https://user-images.githubusercontent.com/101632496/168993549-2fd93d37-6092-4f47-b199-3c1863e68235.png)
 ![Screen Shot 2022-05-18 at 10 26 31](https://user-images.githubusercontent.com/101632496/168993643-690aeefb-2d28-4077-938b-feda94735e30.png)
 ![Screen Shot 2022-05-18 at 10 26 43](https://user-images.githubusercontent.com/101632496/168993688-155486b0-ed74-4d2f-a4c2-3124679671e3.png)
+
+#### Licensing
+All content on Kenny.nl is under **CC0** content attribution [License here](https://creativecommons.org/publicdomain/zero/1.0/) 
+
+
+
+
+# [Daniel Cook @ lostgarden](https://lostgarden.home.blog/tag/free-game-graphics/)
+A game developer & writer who offers up a lot of content online, in a variety of sources. It will take quite a bit of sourcing on your part, but quite high quality resources. They're all listed as blog posts, and don't include images in their titles, so you'll need to read descriptions. 
+- [My personal favorite group of assets on the site.](https://lostgarden.home.blog/2009/03/15/dancs-miraculously-flexible-game-prototyping-graphics-for-small-worlds/)
+
+#### Sample Assets
+![exteriortest-760306](https://user-images.githubusercontent.com/101632496/197395350-cafb77c1-2d94-4bac-8ac4-516889a8b6d9.jpeg)
+![interiortest-733612-710514](https://user-images.githubusercontent.com/101632496/197395354-dea3dd0d-a1b1-402e-b33f-00752291f4cc.jpeg)
+
+#### Licensing
+CC 3.0, Specific attribution [here](https://lostgarden.home.blog/2007/03/15/lost-garden-license/)
+
+
+
+
 
 # [GlitchTheGame](http://www.glitchthegame.com/public-domain-game-art/)
 An old MMORPG that has since closed down, but the developers have put ALL game artwork into the public domain, amazing! Sprites, Tilemaps, backdrops, items, overlaps, maps, and more.  
@@ -43,6 +61,9 @@ An old MMORPG that has since closed down, but the developers have put ALL game a
 #### Licensing
 All files are provided by Tiny Speck under the Creative Commons CC0 1.0 Universal License
 
+
+
+
 # [Sprite Lib](https://www.widgetworx.com/spritelib/)
 Lots of great pixel-art sprites for a variety of characters and scenes. 
 
@@ -53,6 +74,18 @@ Lots of great pixel-art sprites for a variety of characters and scenes.
 #### Licensing
 SpriteLib is officially under the terms of the Common Public License. 
 
+
+
+
+# [Backyard Ninja](http://www.dumbmanex.com/bynd_freestuff.html)
+Lots of sprite work, overlays, and characters. Made by a developer releasing their older content. 
+
+#### Sample Assets
+<img width="1012" alt="Screen Shot 2022-10-23 at 15 30 01" src="https://user-images.githubusercontent.com/101632496/197395185-7fc21d67-a44f-40e4-87e3-d1f0788b6cab.png">
+<img width="868" alt="Screen Shot 2022-10-23 at 15 30 06" src="https://user-images.githubusercontent.com/101632496/197395190-af59ef90-c3b4-4c0e-8991-fb579002ddf1.png">
+
+
+
 # [OpenGameArt.org](https://opengameart.org/) - Artwork & Short Sound Effects
 Lots of 2D, 3D, and various other assets for sprites or backdrops. Some are quality, others are quite novice. You can find gold on here, but it will take some sourcing. 
 
@@ -62,32 +95,7 @@ Lots of 2D, 3D, and various other assets for sprites or backdrops. Some are qual
 #### Licensing
 The licenses are mixed on this site depending on artwork. Some are CC1.0, others are CC4.0. Some are free, some are paid
 
-# [Backyard Ninja](http://www.dumbmanex.com/bynd_freestuff.html)
-Lots of sprite work, overlays, and characters. Made by a developer releasing their older content. 
 
-#### Sample Assets
-<img width="1012" alt="Screen Shot 2022-10-23 at 15 30 01" src="https://user-images.githubusercontent.com/101632496/197395185-7fc21d67-a44f-40e4-87e3-d1f0788b6cab.png">
-<img width="868" alt="Screen Shot 2022-10-23 at 15 30 06" src="https://user-images.githubusercontent.com/101632496/197395190-af59ef90-c3b4-4c0e-8991-fb579002ddf1.png">
-
-# [Daniel Cook](https://lostgarden.home.blog/tag/free-game-graphics/)
-A game developer & writer who offers up a lot of content online, in a variety of sources. It will take quite a bit of sourcing on your part, but quite high quality resources. They're all listed as blog posts, and don't include images in their titles, so you'll need to read descriptions
-
-#### Sample Assets
-![exteriortest-760306](https://user-images.githubusercontent.com/101632496/197395350-cafb77c1-2d94-4bac-8ac4-516889a8b6d9.jpeg)
-![interiortest-733612-710514](https://user-images.githubusercontent.com/101632496/197395354-dea3dd0d-a1b1-402e-b33f-00752291f4cc.jpeg)
-
-#### Licensing
-Varies depending on post. 
-
-
-# [Crateboy's Resources](https://crateboy.itch.io/crateboy-2007-2014)
-A good use of 8bit city tilemaps. The other parts may be mixed in quality, or to use Crateboy's words, "There is so much stuff in here, some of it is good, some of it is crap, you'll probably find something useful if you look hard enough!"
-
-#### Sample Assets
-![F9DO6V](https://user-images.githubusercontent.com/101632496/197394640-e2d03765-87a1-4b75-81b6-dc9406d1b9ed.png)
-
-#### Licensing
-No standard license attached. "you can do what you want with it as long as it's good in spirit, you don't try to pass it off as your own or try to sell the individual components of this kit." Be sure to mention his name if used! 
 
 # CC Resources - Audio
 
