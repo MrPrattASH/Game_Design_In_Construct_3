@@ -22,7 +22,7 @@ To discover what your usage rights are. You don't want to use someone else's har
 
 Below is a list different game asset resources for you to use. If you find other Creative Commons resources, please send me a message (or raise a Git Issue) to add your resource to this list. 
 
-## [Kenny.nl](https://kenney.nl/) - Artwork & short Sound Effects
+# [Kenny.nl](https://kenney.nl/) - Artwork & short Sound Effects
 A fantastic site with lots of 2D, 3D, isometric, and character sprite assets. Also made here at home in the Netherlands! All content is free, though donations for "asset packs" are of course accepted, though not required. Many assets can be combined using the tile map system object, or taken as individual sprites with the ability for various animation frames to be uploaded. 
 
 #### Licensing
@@ -40,11 +40,10 @@ An old MMORPG that has since closed down, but the developers have put ALL game a
 ![locations_firebog v1520324238](https://user-images.githubusercontent.com/101632496/197394980-c702b915-4433-4418-819b-7f0e2a4d7100.jpg)
 ![locations_ix v1520324238](https://user-images.githubusercontent.com/101632496/197394984-5d34717c-dede-458a-8e77-98a2c0159295.jpg)
 
-
 #### Licensing
 All files are provided by Tiny Speck under the Creative Commons CC0 1.0 Universal License
 
-## [Sprite Lib](https://www.widgetworx.com/spritelib/)
+# [Sprite Lib](https://www.widgetworx.com/spritelib/)
 Lots of great pixel-art sprites for a variety of characters and scenes. 
 
 #### Sample Assets
@@ -54,7 +53,7 @@ Lots of great pixel-art sprites for a variety of characters and scenes.
 #### Licensing
 SpriteLib is officially under the terms of the Common Public License. 
 
-## [OpenGameArt.org](https://opengameart.org/) - Artwork & Short Sound Effects
+# [OpenGameArt.org](https://opengameart.org/) - Artwork & Short Sound Effects
 Lots of 2D, 3D, and various other assets for sprites or backdrops. Some are quality, others are quite novice. You can find gold on here, but it will take some sourcing. 
 
 #### Sample Assets
@@ -62,6 +61,24 @@ Lots of 2D, 3D, and various other assets for sprites or backdrops. Some are qual
 
 #### Licensing
 The licenses are mixed on this site depending on artwork. Some are CC1.0, others are CC4.0. Some are free, some are paid
+
+# [Backyard Ninja](http://www.dumbmanex.com/bynd_freestuff.html)
+Lots of sprite work, overlays, and characters. Made by a developer releasing their older content. 
+
+#### Sample Assets
+<img width="1012" alt="Screen Shot 2022-10-23 at 15 30 01" src="https://user-images.githubusercontent.com/101632496/197395185-7fc21d67-a44f-40e4-87e3-d1f0788b6cab.png">
+<img width="868" alt="Screen Shot 2022-10-23 at 15 30 06" src="https://user-images.githubusercontent.com/101632496/197395190-af59ef90-c3b4-4c0e-8991-fb579002ddf1.png">
+
+# [Daniel Cook](https://lostgarden.home.blog/tag/free-game-graphics/)
+A game developer & writer who offers up a lot of content online, in a variety of sources. It will take quite a bit of sourcing on your part, but quite high quality resources. They're all listed as blog posts, and don't include images in their titles, so you'll need to read descriptions
+
+#### Sample Assets
+![exteriortest-760306](https://user-images.githubusercontent.com/101632496/197395350-cafb77c1-2d94-4bac-8ac4-516889a8b6d9.jpeg)
+![interiortest-733612-710514](https://user-images.githubusercontent.com/101632496/197395354-dea3dd0d-a1b1-402e-b33f-00752291f4cc.jpeg)
+
+#### Licensing
+Varies depending on post. 
+
 
 # [Crateboy's Resources](https://crateboy.itch.io/crateboy-2007-2014)
 A good use of 8bit city tilemaps. The other parts may be mixed in quality, or to use Crateboy's words, "There is so much stuff in here, some of it is good, some of it is crap, you'll probably find something useful if you look hard enough!"
