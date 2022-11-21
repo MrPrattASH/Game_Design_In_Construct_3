@@ -6,3 +6,4 @@ By the end of this module, you should be able to answer the following questions:
 * What is a Repository?
 * What is a Commit?
 * What is a Pull?
+* What is "Remote"?
