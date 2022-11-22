@@ -71,7 +71,9 @@ In the future, you'll be making many new games, and it will help to be able to s
 <img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203317380-2df1f044-3a58-4e60-8071-5585d1ab4e9d.png">
 
 Here, you'll be greeted with all your current commits. If you click inside one of the named versions, you'll be able to see how many changes have been made to the file itself. 
+
 <img width="500" alt="Screen Shot 2022-11-22 at 13 45 03" src="https://user-images.githubusercontent.com/101632496/203317456-440006f4-4ce7-4c1f-bfc4-565697219c1d.png">
+
 <img width="500" alt="Screen Shot 2022-11-22 at 13 45 27" src="https://user-images.githubusercontent.com/101632496/203317488-4236bb98-3a04-4670-a87b-af6263340402.png">
 
 Here we can see that I've changed some text on a readme.md file. In yours, you'll likely see whatever new game assets you've added inside. 
