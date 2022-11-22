@@ -35,21 +35,23 @@ Your readme.md is your main landing page for your Github folder, it tells the us
 1. Locate the repository's local folder on your computer via your finder, or in the menu bar, Repository > reveal in finder. Then, right click to open the README.md file with "text edit" (Open> Open with Text Edit) and write 
 ` This is my first initial change to a repository! I'll be using this repo to store all of my game design files
 `
-![image](https://user-images.githubusercontent.com/101632496/203297057-c9d19084-1bcb-45c5-9e75-3d897c8f240a.png)
+
+<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="(https://user-images.githubusercontent.com/101632496/203297057-c9d19084-1bcb-45c5-9e75-3d897c8f240a.png">
 
 2. Headback to the GitHub desktop app, and in your repo under the "Changes" column, you'll likely notice your new changes mentioned in green. This is a new addition to your codebase or folder since we last published this change to remote. 
-![Screen Shot 2022-11-22 at 12 00 50](https://user-images.githubusercontent.com/101632496/203297782-4b8621cb-631a-44d8-8de7-278b30d7baea.png)
+
+<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203297782-4b8621cb-631a-44d8-8de7-278b30d7baea.png">
 
 3. Presently this change is only on your computer. We need to "publish" this change to our remote server so that it is saved online. To do this, we need to add 2 things. 
 * Summary - a title for what changes you made since your last commit. In this current case, it's updating the README.md
 * Descrition - point form, detailed notes of what you've changed. In this case, we've added a greeting to our readme, and explained the purpose of our repo. 
 
-![Screen Shot 2022-11-22 at 12 00 50](https://user-images.githubusercontent.com/101632496/203299786-98f03d68-6565-427d-8738-837171106137.png)
+<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203299786-98f03d68-6565-427d-8738-837171106137.png">
 
 4. Press the blue button "commit to main/master". This commits it to our Github history, but not yet to remote. 
 5. Press "push Origin". This push is what sends our changes to the remote file server on Github. 
 
-![Screen Shot 2022-11-22 at 12 12 25](https://user-images.githubusercontent.com/101632496/203300030-6cd3fcc1-46be-412c-9b96-000251582222.png)
+<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203300030-6cd3fcc1-46be-412c-9b96-000251582222.png">
 
 6. View your repo on github. you should now see your readme.md has been updated with your changes, and all of your changes are now available online, great! 
 
@@ -66,11 +68,11 @@ Thats it, you now know how to commit and push changes to GitHub's remote server.
 ## Viewing your Github History
 In the future, you'll be making many new games, and it will help to be able to see your project history over time to see what changes have been made. On your repo online (Menu Bar > Repository > View on Github), click on the "commit history" button. 
 
-<img width="1034" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203317380-2df1f044-3a58-4e60-8071-5585d1ab4e9d.png">
+<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203317380-2df1f044-3a58-4e60-8071-5585d1ab4e9d.png">
 
 Here, you'll be greeted with all your current commits. If you click inside one of the named versions, you'll be able to see how many changes have been made to the file itself. 
-<img width="1401" alt="Screen Shot 2022-11-22 at 13 45 03" src="https://user-images.githubusercontent.com/101632496/203317456-440006f4-4ce7-4c1f-bfc4-565697219c1d.png">
-<img width="1400" alt="Screen Shot 2022-11-22 at 13 45 27" src="https://user-images.githubusercontent.com/101632496/203317488-4236bb98-3a04-4670-a87b-af6263340402.png">
+<img width="500" alt="Screen Shot 2022-11-22 at 13 45 03" src="https://user-images.githubusercontent.com/101632496/203317456-440006f4-4ce7-4c1f-bfc4-565697219c1d.png">
+<img width="500" alt="Screen Shot 2022-11-22 at 13 45 27" src="https://user-images.githubusercontent.com/101632496/203317488-4236bb98-3a04-4670-a87b-af6263340402.png">
 
 Here we can see that I've changed some text on a readme.md file. In yours, you'll likely see whatever new game assets you've added inside. 
 

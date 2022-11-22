@@ -13,20 +13,25 @@ This tutorial will show you how to both create, and navigate a repository.
 
 Head over to this courses' main Github repository ("repo" for short) [here](https://github.com/MrPrattASH/Game_Design_In_Construct_3). You'll be greated to a page that looks like this:
 
-<img width="1440" alt="Screen Shot 2022-11-21 at 15 44 12" src="https://user-images.githubusercontent.com/101632496/203083541-caee5593-666a-4303-bef4-ccb3235cab31.png">
+<img width="500" alt="Screen Shot 2022-11-21 at 15 44 12" src="https://user-images.githubusercontent.com/101632496/203083541-caee5593-666a-4303-bef4-ccb3235cab31.png">
 
 This section is our repo title. It will have UserName/RepoName in it's title. Coincidentally, this is also the URL for your repository! if you go to www.https://github.com/MrPrattASH/Game_Design_In_Construct_3 in your web browser, you'll also return back to this page. The main heading tab " <> code " is what we'll use for the majority of this course, we wont be using issues, branches, wikis, or pull requests. Though if you know how to use these features already, go ahead and use them to their fullest extents. 
-<img width="1405" alt="Screen Shot 2022-11-21 at 15 44 35" src="https://user-images.githubusercontent.com/101632496/203083615-c6c0b231-a272-4e45-afa0-89f8d66af916.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 44 35" src="https://user-images.githubusercontent.com/101632496/203083615-c6c0b231-a272-4e45-afa0-89f8d66af916.png">
 
 Further below, you will find the main file structure. This is what the folders look like on Github...
-<img width="994" alt="Screen Shot 2022-11-21 at 15 46 42" src="https://user-images.githubusercontent.com/101632496/203084115-06be594d-b75b-428e-9302-1be43728bc33.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 46 42" src="https://user-images.githubusercontent.com/101632496/203084115-06be594d-b75b-428e-9302-1be43728bc33.png">
 
 And this is what they look like on your computer. They look the same, eh? That's because what is on your computer is the same as what is on your online github repo. 
-<img width="922" alt="Screen Shot 2022-11-21 at 15 47 47" src="https://user-images.githubusercontent.com/101632496/203084366-90546ddc-b81f-4684-ad78-1037897f7103.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 47 47" src="https://user-images.githubusercontent.com/101632496/203084366-90546ddc-b81f-4684-ad78-1037897f7103.png">
 
 Go ahead and click into the LG0_using_github folder.  You should notice that these folders again, also look the same as on your computer. 
-<img width="1346" alt="Screen Shot 2022-11-21 at 15 49 45" src="https://user-images.githubusercontent.com/101632496/203084825-ee152609-1b3f-4d17-8fe0-fb3dc20e1ff5.png">
-<img width="535" alt="Screen Shot 2022-11-21 at 15 49 56" src="https://user-images.githubusercontent.com/101632496/203084865-a9ed4d05-2558-4ca1-908e-3a0e3052f82c.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 49 45" src="https://user-images.githubusercontent.com/101632496/203084825-ee152609-1b3f-4d17-8fe0-fb3dc20e1ff5.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 49 56" src="https://user-images.githubusercontent.com/101632496/203084865-a9ed4d05-2558-4ca1-908e-3a0e3052f82c.png">
 
 The difference being, GitHub's version is stored online, and can show a history of changes over time. You'll notice that most pages include a README.md file. That's the file you're currently reading right now, and it's the way that we can type instructions or documentation for our users in each various folder. It's not necessary for you to include a README.md in ever folder, though you will see one in this current repo because I've attached instructions on each assignment here. 
 
@@ -42,14 +47,18 @@ You're going to use this next repo for all course work, so don't lose it! First,
 * don't ignore any files (for now)
 * set your license to MIT
 * create your repo
-<img width="585" alt="Screen Shot 2022-11-21 at 15 54 23" src="https://user-images.githubusercontent.com/101632496/203085790-4087c308-e934-4a5d-99c3-27712bf339a9.png">
-<img width="401" alt="Screen Shot 2022-11-21 at 15 55 20" src="https://user-images.githubusercontent.com/101632496/203086050-8bcadb82-5378-4b44-a37b-01bb7961ce5e.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 54 23" src="https://user-images.githubusercontent.com/101632496/203085790-4087c308-e934-4a5d-99c3-27712bf339a9.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 55 20" src="https://user-images.githubusercontent.com/101632496/203086050-8bcadb82-5378-4b44-a37b-01bb7961ce5e.png">
 
 3. Ignore some files. In your repository settings (Repository > Repository Settings), add these 2 lines to the IgnoredFiles section:
 * *istate.json
 * **/.DS_Store
-<img width="653" alt="Screen Shot 2022-11-21 at 15 57 10" src="https://user-images.githubusercontent.com/101632496/203086448-90da3af4-21f1-437d-a601-3ec0e181a041.png">
-<img width="604" alt="Screen Shot 2022-11-21 at 15 57 40" src="https://user-images.githubusercontent.com/101632496/203086586-62ab3253-7564-42b5-a45d-43f1decee8fc.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 57 10" src="https://user-images.githubusercontent.com/101632496/203086448-90da3af4-21f1-437d-a601-3ec0e181a041.png">
+
+<img width="500" alt="Screen Shot 2022-11-21 at 15 57 40" src="https://user-images.githubusercontent.com/101632496/203086586-62ab3253-7564-42b5-a45d-43f1decee8fc.png">
 
 What are these files and why should we ignore them? Ignored files are essentially NOT uploaded to remote, but they DO stay on your computer. They're generally used for ignoring temporary files such as: 
 * .uistate.json is your User Interface setup in Construct 3. Things like the size of your browser page, what tabs you have open, etc. We don't want to update this everytime we save our code because these are temporary. 
@@ -58,6 +67,6 @@ What are these files and why should we ignore them? Ignored files are essentiall
 ## Pushing your Repo to "Remote"
 Presently, your repo only exists on your local computer in Documents > Game Design (or whatever local path you have presently set up). We now need to "publish" this repository through the menu at the top, or through the giant blue button, same deal. For now, Keep this code private. 
 
-![Screen Shot 2022-11-22 at 08 13 30](https://user-images.githubusercontent.com/101632496/203248945-f4787d85-51e5-4261-9906-7de360870dd3.png)
+<img width="500" alt="Screen Shot 2022-11-21 at 15 57 40" src="https://user-images.githubusercontent.com/101632496/203248945-f4787d85-51e5-4261-9906-7de360870dd3.png">
 
 You'll now notice that you can "view on Github". Click that, and you should notice your (blank) repo up on a website! If you added a description, you'll also see this in github remote now. 
