@@ -54,3 +54,10 @@ You're going to use this next repo for all course work, so don't lose it! First,
 What are these files and why should we ignore them? Ignored files are essentially NOT uploaded to remote, but they DO stay on your computer. They're generally used for ignoring temporary files such as: 
 * .uistate.json is your User Interface setup in Construct 3. Things like the size of your browser page, what tabs you have open, etc. We don't want to update this everytime we save our code because these are temporary. 
 * .DS_Store is a local macOS file that gets updated when folders were last accessed. It's a hidden file that says a date, and is not relevant to our repo.  
+
+## Pushing your Repo to "Remote"
+Presently, your repo only exists on your local computer in Documents > Game Design (or whatever local path you have presently set up). We now need to "publish" this repository through the menu at the top, or through the giant blue button, same deal. For now, Keep this code private. 
+
+![Screen Shot 2022-11-22 at 08 13 30](https://user-images.githubusercontent.com/101632496/203248945-f4787d85-51e5-4261-9906-7de360870dd3.png)
+
+You'll now notice that you can "view on Github". Click that, and you should notice your (blank) repo up on a website! If you added a description, you'll also see this in github remote now. 
