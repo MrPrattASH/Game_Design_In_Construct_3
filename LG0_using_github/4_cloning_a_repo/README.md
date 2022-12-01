@@ -36,10 +36,18 @@ We're now going to prepare your repo for the creation of your first game (the st
 
 <img width="500" alt="Screen Shot 2022-11-22 at 15 49 14" src="https://user-images.githubusercontent.com/101632496/203344414-29597a75-6893-479c-ad19-897350fc0ae2.png">
 
-From now on, everytime you begin to create a new game (of which you'll make several throughout the course of Game Design) you need to:
+
+# Final Thoughts
+A few things to keep in mind when considering how we will be using Github in this course:
+
+1. From now on, everytime you begin to create a new game (of which you'll make several throughout the course of Game Design) you need to:
 * make a top level folder with your game title
 * make 2 sub-folders. 
   * game assets
   * construct folder
 
 If you don't heed this warning, your files will be unorganized and you may overwrite/lose work accidentally. Follow this structure for the rest of the course. 
+
+2. At the end of every class when you are coding, you will need to make a commit and push to your git repo. Keep your push comments/descriptions short, and in point form. This creates a "save point" on your code, so you can go back in time and remove poor code if necessary. 
+3. You're welcome to use separate branches for your own repo/games as you wish (if you are aware of what branches are), though this is not necessary. 
+4. If you're working on a team/in partners, you should use branches to keep track of new features, as with multiple developers, things can get messy quickly. However, you won't be working with partners (or potentially, it is optional) until the final game project. 
