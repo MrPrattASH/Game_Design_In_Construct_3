@@ -1,7 +1,5 @@
 # Using Github Desktop
 
-If you prefer to learn learn via watching videos, This text based tutorial is also available in video format [here]().
-
 ## What is a "Repository"?
 A repository contains all of your project's files and each file's revision history. A repository is a folder on your computer where you can store all of your project files. However, the special thing about a Github repository is that we can see all changes to various files over time, and we can easily collaborate with partners on large projects. You're going to use a lot of repositories throughout this course, infact, you're currently accessing my repository for the course here! 
 
