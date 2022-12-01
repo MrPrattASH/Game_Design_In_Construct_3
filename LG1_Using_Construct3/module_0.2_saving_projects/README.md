@@ -20,15 +20,15 @@ For every game in this course, we'll save it as a Project Folder. The reason bei
 
 With your editor open, choose "Menu - Project - Save as - Save as Project Folder". Select the local path "Game 0 Siome Pig Game - construct folder" that you created in step 1. 
 
-![image](https://user-images.githubusercontent.com/101632496/205061433-7aafa119-20d0-4ff4-bdce-a8050b692141.png)
+<img width="500" alt="Screenshot 2022-12-01 at 14 03 20" src="https://user-images.githubusercontent.com/101632496/205061433-7aafa119-20d0-4ff4-bdce-a8050b692141.png">
 
 For security reasons you may sometimes see a permission prompt when construct 3 attempts to access your local files. Make sure you allow permission to ensure file access works. 
 
-![image](https://user-images.githubusercontent.com/101632496/205061753-0f6461de-ef0a-4c9f-84e1-5e5a9d143e95.png)
+<img width="500" alt="Screenshot 2022-12-01 at 14 03 20" src="https://user-images.githubusercontent.com/101632496/205061753-0f6461de-ef0a-4c9f-84e1-5e5a9d143e95.png">
 
 3. If you've done it correctly, it might look something like this: Where inside my main repo, I have a folder called "extension_project_construct_folder". I have saved my construct folder here, where you can see all my game files inside. 
 
-![image](https://user-images.githubusercontent.com/101632496/205061967-e7b18ce7-4912-4e0f-ab16-ce7304b6a1fa.png)
+<img width="500" alt="Screenshot 2022-12-01 at 14 03 20" src="https://user-images.githubusercontent.com/101632496/205061967-e7b18ce7-4912-4e0f-ab16-ce7304b6a1fa.png">
 
 If you open each sub-folder, you'll notice that:
 * in the "layouts" folder, you have "Layout 1". This is the corresponding file for your level layout/design for where exactly you placed your pig, apples, and platforms
@@ -39,9 +39,8 @@ If you open each sub-folder, you'll notice that:
 You can see how each folder holds a different part of your game structure. Later, you'll make games with multiple layouts (levels) and multiple event sheets, allowing you to collaborate with partners as each partner can work on 1 layout/event sheet at a time, without saving over one another's works. This wouldn't be possible if you only saved your game via files. 
 
 ## Opening Games
-1. After saving your construct game, close your editor.construct.net tab. Re-open it, and open your construct folder by selecting "Open - Construct folder". Select the local path where you stored your "construct folder". 
+1. After saving your construct game, close your editor.construct.net tab. Re-open it, and open your construct folder by selecting "Open - Construct folder". Select the local path where you stored your "construct folder". This is how you should open your games from now on as well. 
 
-![image](https://user-images.githubusercontent.com/101632496/205062964-dea170fc-1053-4fea-b987-c465cf4a46f1.png)
+<img width="500" alt="Screenshot 2022-12-01 at 14 03 20" src="https://user-images.githubusercontent.com/101632496/205062964-dea170fc-1053-4fea-b987-c465cf4a46f1.png">
 
-1. After saving your construct game, close your editor.construct.net tab. Re-open it, and open your construct folder by selecting "Open - Construct folder". Select the local path where you stored your "construct folder". 
 
