@@ -36,6 +36,11 @@ We're now going to prepare your repo for the creation of your first game (the st
 
 <img width="500" alt="Screen Shot 2022-11-22 at 15 49 14" src="https://user-images.githubusercontent.com/101632496/203344414-29597a75-6893-479c-ad19-897350fc0ae2.png">
 
+4. Make a Commit to your repo with a relavant title and description. Perhaps:
+Title: Game assets
+Description: Added sprite images for game #1
+
+5. Push your commit to remote. 
 
 # Final Thoughts
 A few things to keep in mind when considering how we will be using Github in this course:
