@@ -15,7 +15,7 @@ The construct 3 editor has its own built in tutorial/guide on how to use the con
 
 1. Head over to [editor.construct.net](https://editor.construct.net). Bookmark this page, as you'll use this page for every game. 
 
-2. Complete the built in tour and make a pig & apple eating game like the above gif.  
+2. Complete the built in tour and make a pig & apple eating game like the above gif.  While completing the tour, be sure to *read all pop up messages*. These explain why you're adding conditions, events, and behaviours to your game. If you skip these, you will miss fundamental understandings about how the game engine works. 
 
 <img width="500" alt="Screenshot 2022-12-01 at 10 09 44" src="https://user-images.githubusercontent.com/101632496/205057998-52559727-ae00-449d-be81-6cf7bba12035.png">
 
