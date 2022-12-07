@@ -84,7 +84,7 @@ Looking down, we can see I am currently selected on UID 3, and the main screen h
 
 <img width="500" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135432-ecf2a15f-0236-42e6-b734-c8739e962787.png">
 
-## Changing variables in the debugger
+## Changing variables in real time with the debugger
 If in the inspector panel, we select an object, we can see all the associated properties affecting that object or UID. 
 - **Common**: Name of object, and UID's
 - **Layout**: Layout properties, like X/Y position, angle, visibility, etc. 
@@ -93,3 +93,18 @@ If in the inspector panel, we select an object, we can see all the associated pr
 Interestingly, we can even *change instance variables in game!* If we click on the health, we can change our monster's health, speed, etc. Keep in mind, this only affects the debugger game, *it will not change any programmed values in your event sheets*. 
 
 <img width="500" alt="Screen Shot 2022-05-06 at 14 56 05" src="https://user-images.githubusercontent.com/101632496/167135661-3080fba9-18d6-4e5d-9b16-f0c50a4c4206.png"> 
+
+## Toggling Events on an Off
+Often times when you're programming, you'll need to debug and "search" for bugs in your code. Rather than deleting lines of code that you suspect are introducing a bug, it's more convenient to comment them out, or "toggle" a specific action disabled/enabled. 
+
+You can do this by right clicking on an event, toggle, disabled/enabled. This will strike through a code comment and stop it from running, while allowing you to enable it later on without having to delete code (in case you want to re-implement this code later)
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 25 29" src="https://user-images.githubusercontent.com/101632496/206167715-9b7ba7dc-4221-4950-a66d-1d4500368802.png">
+
+
+# Recap
+You have 3 main tools at your disposal using the debug window. 
+1. Inserting breakpoints can help you step through in-game logic and find sequencing errors (order of events)
+2. Toggling on/off events can help you to find errors without necessarily deleting code 
+3. Pausing and changing variables in game can allow you to test behaviours without needing to add in lines of code.
+
