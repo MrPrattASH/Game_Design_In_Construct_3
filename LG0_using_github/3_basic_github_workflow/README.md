@@ -33,10 +33,11 @@ Now it's your turn to practice using Github.
 Your readme.md is your main landing page for your Github folder, it tells the user what is happening inside each folder. You are actually currently reading the README.md for this current folder in this Github repo. Let's edit your readme.md to be more relevant to your repo. 
 
 1. Locate the repository's local folder on your computer via your finder, or in the menu bar, Repository > reveal in finder. Then, right click to open the README.md file with "text edit" (Open> Open with Text Edit) and write 
+
 ` This is my first initial change to a repository! I'll be using this repo to store all of my game design files
 `
 
-<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="(https://user-images.githubusercontent.com/101632496/203297057-c9d19084-1bcb-45c5-9e75-3d897c8f240a.png">
+<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203297057-c9d19084-1bcb-45c5-9e75-3d897c8f240a.png">
 
 2. Headback to the GitHub desktop app, and in your repo under the "Changes" column, you'll likely notice your new changes mentioned in green. This is a new addition to your codebase or folder since we last published this change to remote. 
 
