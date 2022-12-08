@@ -13,25 +13,12 @@ Up to this point, we've only made games that are controllable via computers, and
 # Tutorial
 This tutorial builds upon the platformer game you made in module 2.0. 
 
-### Alternative Keyboard Controls 
-By default, user-controlled movement behaviors use a standard set of controls, based around the arrow keys. To change these:
-
-1. Select your main player (in our case, the player box) and disable the Default controls property in the properties panel. This will stop your player from being able to be controlled using the arrow keys. 
-
-<img width="498" alt="Screenshot 2022-12-08 at 10 45 20" src="https://user-images.githubusercontent.com/101632496/206414525-7a4e2418-6882-43f1-abbb-e1e5fa51fcb5.png">
-
-2. In your event sheet, set up some events using the Simulate control action. The following events show how to use the W, A and D keys to control the Platform movement.
-
-![image](https://user-images.githubusercontent.com/101632496/206414681-e377205d-f513-4f99-8174-80d4972be361.png)
-
-**Note that the input events must be continually true, i.e. using "Key is *down*" and not "On key pressed".** If we selected "On Key Pressed", we would only simulate control for each individual press of the key, rather then holding down the key. 
-
-### Touch Screen Controls
-It's time to introduce you to a new skill: reading through someone else's programs (and code comments) to discover how features are implemented. This is a skill you will use ALL the time in game design (and coding in general). You notice how someone did something, and you want to be able to do that to, so you open their code and examine how they created it. Rather than teaching you step by step this time around, I'll give you hints on how to disect someone else's code. However, if you get stuck, please ask for help along the way. 
+## Touch Screen Controls
+It's time to introduce you to a new skill: reading through someone else's programs (and code comments) to discover how features are implemented. This is a skill you will use ALL the time in game design (and coding in general). You notice how someone did something, and you want to be able to do that to, so you open their code and examine how they created it. Rather than teaching you step by step this time around, I'll give you hints on how to disect someone else's code. However, if you get stuck, please ask for help along the way. You'll also notice that this game won't translate *perfectly* to your platformer. We're going to examine an 8 direction game, and it's up to you to know/discover how to adapt this to control a platformer game. 
 
 Your goal: Discover how to implement touch controls from the example, then implement these touch controls into your platformer game. 
 
-### The Construct 3 Example Browser
+## The Construct 3 Example Browser
 Construct 3 has an "example browser", a collection of fully commented games that you can build off of and remix for your own games. For now, I've selected an example for you to find and dissect, but we'll come back to letting you choose your own example game later. 
 
 1. navigate to [editor.construct.net](https://editor.construct.net) and select the example browser. 
@@ -50,10 +37,10 @@ Preview this game in 2 ways.
 * standard preview using your keyboard/mouse. You should notice you control the standard way as game #1. 
 * Use "Remote Preview". A QR code will launch on your screen. Scan this with your phone (or a partners) and play the game on your device. You should now have touch screen controls. (also, you can preview games on your phone! How cool is that?)
 
-<img width="712" alt="Screenshot 2022-12-08 at 11 08 55" src="https://user-images.githubusercontent.com/101632496/206419745-4efe67d9-b318-4b25-933e-ae1f3486112e.png">
+<img width="500" alt="Screenshot 2022-12-08 at 11 08 55" src="https://user-images.githubusercontent.com/101632496/206419745-4efe67d9-b318-4b25-933e-ae1f3486112e.png">
 
 
-### Dissecting & Examining Game Code
+# Dissecting & Examining Game Code
 1. When opening someone else's game, the first thing I do is open up all of the existing game layouts (or "level maps" so to speak). This game has 2 layouts: Game, Title. 
 
 While I have the layouts open, I'm looking for:
@@ -80,15 +67,32 @@ Through examining this event sheet, you should know:
 
 4. Now let's examine the "Game events" sheet. Through examining, you should know:
 * How the "touch controls" 0x0% Parralax layer "Touch controls" is shown/hidden, based on what the global string variable is set to. 
+    * Note: in the layer's properties panel, this layer is "initially invisible"
 * What "activating" a groups does. 
     * a code "group" is a section of code under the large header. On this event sheet there 2 groups: Desktop Controls, Mobile Controls. By setting a group deactivated, it turns OFF that code inside the group from running. 
 * How desktop controls are simulated using arrow keys or WASD with an OR condition block.
     * You can make a condition "OR" by right clicking on the condition/event, and selecting "Make OR Block" 
-* How a single "TouchControl" arrow sprite uses an instance variable to 
+    * **Note that the input events must be continually true, i.e. using "Key is *down*" and not "On key pressed".** If we selected "On Key Pressed", we would only simulate control for each individual press of the key, rather then holding down the key. 
+* How a touch input event "knows" which sprite is being touched
+* How a single "TouchControl" arrow sprite uses an instance variable to decide which arrow is currently being touched. 
 
+Before moving on, you should know 100% how these controls are implemented. If you're confussed and unsure how the code-logic works, ask for assistance. 
 
+# Putting Your New Skills to the Test:
+Now that you know how to examine a game's code, we can use this code/setup to add touch controls to our platformer game from module 2.0. In your platformer game you need to:
 
+1. Add a title screen layout/event sheet "menu screen". 
+2. Add a global string variable for ControlMethod
+3. Add the "touch" object to one of your layouts. 
+4. Add a "TouchControls" 0x0% Parallax layer to your game level layout
+5. Add a new sprite (arrow) and add a direction string instance variable
+6. Add in all relevant code for controlling:
+    * your player should move with WASD and arrow keys (right click an event, "make OR block"
+    * <img width="298" alt="Screenshot 2022-12-08 at 11 31 48" src="https://user-images.githubusercontent.com/101632496/206424394-a08fa098-9456-4b55-8b03-3453c99a8087.png">
+    * your player should move with touch controls, provided your user is using a touch screen device.
+    * Note: The example above uses 8-direction control. You'll need to adapt the actions to suit your game's needs.  
 
+After you're done, your game should dynamically show/hide touch screen controls, depending on what sort of device your player is using. Test your game in keyboard preview & remote preview to be sure your game functions as intended. 
 
 
 
