@@ -17,15 +17,3 @@ Each project/tutorial has a few goals in mind. Read over what you're going to le
 
 # Tutorial
 [Basic Platformer Tutorial on construct forums](https://www.construct.net/en/tutorials/platformer-game-2329)
-
-# Project Extension ideas
-- add a "health" or "lives" instance variable to the player
-- make the player's animation change to "bounce" after jumping off of an enemy
-- make a "game over" screen/condition
-- change how the playerbox platform "jump" parameters interact, adding in double jump, etc. 
-- add a new "hazards" layer and add a clone of the tilemap to create more enemys, more platforms, or environmental hazards like lava or poison pits. Add in hotboxes for each of these environmental actions. 
-- add background music (into the "music" folder)
-- add sound effects for the gem collect or jumps (into the "sounds" folder)
-
-## Self-Assessment Quiz:
-Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSdyViQ3Yj-XcGC0bqzyoytMWMSYTZXDtVWWeTfaIcgUdbfCIQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  

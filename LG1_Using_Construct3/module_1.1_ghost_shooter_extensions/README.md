@@ -3,7 +3,12 @@ Making games via a tutorial is OK, but it is so much more fun to make your own g
 
 ## Adding and Modding Extensions
 
-Below are a list of ideas you might try to add to your game to modify and make it your own. You must complete the mandatory extension, and choose at least 2 of the optional extensions. Below the list of ideas are "hint" instructions. This means that I won't tell you exactly how to complete the extension, but I will give you tips and hints for how to complete the task. All of these extension ideas build upon previous skills you learned back in the initial tutorial. It is suggested to take 1 class to complete these extensions. 
+Below are a list of ideas you might try to add to your game to modify and make it your own. You must:
+
+* complete the mandatory extension
+* choose at least 2 of the optional extensions. 
+
+Below the list of ideas are "hint" instructions. This means that I won't tell you exactly how to complete the extension, but I will give you tips and hints for how to complete the task. All of these extension ideas build upon previous skills you learned back in the initial tutorial. It is suggested to take 1 class to complete these extensions. 
 
 ### Mandatory Extension
 Add a "Start Screen" to your game. 
@@ -56,19 +61,21 @@ Add a "Start Screen" to your game.
 <img width="500" alt="Screenshot 2022-12-01 at 15 16 49" src="https://user-images.githubusercontent.com/101632496/205075652-c360a509-adad-47b6-8fd5-b67613f450b1.png">
 
 7. Preview the layout and test that your button click works. 
-8. Finally, let's modify the code on our main game event sheet. We want to send our player back to the menu screen upon death. At the very bottom of our main level event sheet:
+8. Finally, let's modify the code on our main game event sheet. We want to send our player back to the menu screen upon death, rather than restarting the level. 
+At the bottom of our main level event sheet:
 
 * make a  "Keyboard event - on key pressed - space"
-* as a 2nd condition to the *same event* (Right click, add another condition) "System - compare 2 values - "player.count" is equal to "0""
+* as a *2nd condition to the same event* (Right click, add another condition) "System - compare 2 values - "player.count" is equal to "0""
 * as an action of these 2 conditions "System - go to layout - start menu"
-
-<img width="500" alt="Screenshot 2022-12-01 at 15 20 26" src="https://user-images.githubusercontent.com/101632496/205076524-c959f903-f455-4843-9cd5-ab7b7eeadb56.png">
 
 <img width="500" alt="Screenshot 2022-12-01 at 15 21 44" src="https://user-images.githubusercontent.com/101632496/205076811-4645d6f9-65d7-4c06-b3b7-e1c735312b39.png">
 
+<img width="500" alt="Screenshot 2022-12-01 at 15 20 26" src="https://user-images.githubusercontent.com/101632496/205076524-c959f903-f455-4843-9cd5-ab7b7eeadb56.png">
+
 Notes on these conditions: 
-* We now have *2 conditions* that BOTH must be true in order for this event to happen. previously we had only been writing conditions that accept 1 event or condition. 
-* This second event "player.count" compares how many players exist presently. If we have 0 players, then when we press space, we'll restart the game. If a player exists (ie, we have not died yet), then pressing space does nothing.
+* We now have *2 conditions* in a single event. This means that BOTH conditions must be true in order for this event to happen. (Think of it like: condition 1 AND condition 2) previously we had only been writing conditions that accept 1 event or condition. 
+* This second event "player.count" counts how many player sprites exist presently (Hence, "Player.Count". This is called *dot notation*. Select the object you want, "Player", place a period, then construct 3 will give you a list of parameters that you can user for this object. In our case, count, but we could also use Player.X, Player.Y to get our current player's X/Y coordinates)
+If we have 0 players, when we press space, we'll restart the game. If a player exists (ie, we have not died yet), then pressing space does nothing because BOTH AND conditions are not true, meaning the game "skips" the actions inside this block. 
 
 
 

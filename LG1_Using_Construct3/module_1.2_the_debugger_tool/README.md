@@ -1,9 +1,6 @@
 # The Debugger Tool:
 Testing and Re-testing projects again and again is a key part of the design cycle, and a key part of game design. Today, we'll learn a useful tool for testing our games to help solve problems encountered in our code. We'll be using the finished ghost shooter game we made previously. As you follow through this tutorial, open up the debugger as you go, to see how these tools interact. 
 
-![Design Graphic Robotics (v6)](https://user-images.githubusercontent.com/101632496/167113578-27148558-321c-4544-832e-cb31d4121d2d.png) 
-
-
 ## By the end of this tutorial you should know:
 1. What the debugger tool is
 2. Why it's important to use, often moreso than the "preview layout"
@@ -19,12 +16,15 @@ The tutorial below is taken from the main documentation, and various sub article
 Bugs refer to software defects - things not working as you expected in your game or app. *Generally* speaking, bugs in your app are caused by a programmer error, i.e. *you*, and not the game engine being "buggy" itself. Debugging refers to the process of fixing these issues. Construct's debugger is a tool to help you find and fix bugs in your game.
 The debugger has three tabs: Inspect, CPU Profiler and GPU Profiler.
 
+Do not simply read this tutorial. Follow through with the steps in your ghost shooter game, open in a new window. We learn by *doing*, not by reading. 
+
 ## Running the debugger
-The debugger appears when you choose the Debug preview mode. This can be reached via the main toolbar, the main menu, the Project Bar or using the keyboard shortcut Ctrl + F5. The debugger works much like an ordinary preview, except that an extra panel appears alongside the game showing lots of information and some diagnostic tools.
-![Screen Shot 2022-05-06 at 12 33 07](https://user-images.githubusercontent.com/101632496/167115661-6b85d374-1a52-414f-8680-1ef3452a4707.png)
+The debugger appears when you choose the Debug preview mode. This can be reached via the main toolbar, the main menu, the Project Bar or using the keyboard shortcut CMD + F5. The debugger works much like an ordinary preview, except that an extra panel appears alongside the game showing lots of information and some diagnostic tools.
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 18 58" src="https://user-images.githubusercontent.com/101632496/167115661-6b85d374-1a52-414f-8680-1ef3452a4707.png">
 
 ## Main debugger commands
-Alongside the pop-out button are some other useful tools. They are as follows:
+Alongside the pop-out button are some other useful tools:
 
 - **Pause**: pause the game so it is no longer progressing. This is useful to spend a while inspecting some information at a particular moment.
 - **Step**: can only be used when paused. It advances the game by a single frame. This can be useful to inspect a moment frame-by-frame and watch how an event like a collision is handled.
@@ -45,20 +45,27 @@ Breakpoints are an advanced feature that allow you to pause execution of the eve
 
 ### Setting a Breakpoint
 Breakpoints can be toggled on and off for the selected event block, condition or action by right-clicking them and selecting Toggle breakpoint or pressing the F3 keyboard shortcut. Breakpoints can also be toggled while debugging. When a breakpoint is set on an event, condition or action, a breakpoint icon appears beside it.
-![image](https://user-images.githubusercontent.com/101632496/167116486-70928fe6-b090-4505-baa5-138eb69dad85.png)
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 18 58" src="https://user-images.githubusercontent.com/101632496/167116486-70928fe6-b090-4505-baa5-138eb69dad85.png">
 
 ### Pausing on a breakpoint
 When running the debugger, **the game will automatically pause just before it runs an event, condition or action with a breakpoint.**
 
+It's best if you run the debugger in a separate window, with your code eventsheet in the background. You'll notice that the line of code that is "broken" at, will be highlighted, allowing you to run code while your game is currently running.
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 18 58" src="https://user-images.githubusercontent.com/101632496/206165909-2f198675-b097-44e2-a931-a10925d87c61.png">
+
 For events, this means it pauses just before it tests the first condition. It is usually useful to place event breakpoints on sub-events, since they will only pause when the parent events have been run. When paused on a breakpoint, the event has a dashed outline and the icon changes to an arrow.
 
-![image](https://user-images.githubusercontent.com/101632496/167116632-f36ca268-1d40-4a21-ab76-47925b9af229.png)
+<img width="500" alt="Screenshot 2022-12-07 at 12 18 58" src="https://user-images.githubusercontent.com/101632496/167116632-f36ca268-1d40-4a21-ab76-47925b9af229.png">
 
 For conditions, this means it pauses **just before it tests the condition**. Since the condition has not yet been tested, the debugger does not know whether the condition will return true or false; you must resume execution to be able to tell. When paused on a condition, it is also indicated with a dashed outline, an arrow and also a changed background color.
-![image](https://user-images.githubusercontent.com/101632496/167116750-002dd152-45f2-4aa7-bbde-8be63e0ed157.png)
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 18 58" src="https://user-images.githubusercontent.com/101632496/167116750-002dd152-45f2-4aa7-bbde-8be63e0ed157.png">
 
 For actions, this means it pauses **just before the action runs**. Placing a breakpoint on the first action in an event is often more useful than placing a breakpoint on the event itself, since it will only pause when all the conditions have been met and before any actions have run, as opposed to just before it starts checking any conditions. When paused on an action, it is indicated similarly to a condition.
-![image](https://user-images.githubusercontent.com/101632496/167116833-dd15bc93-ca63-4ad0-9bd8-29d581ee173a.png)
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 18 58" src="https://user-images.githubusercontent.com/101632496/167116833-dd15bc93-ca63-4ad0-9bd8-29d581ee173a.png">
 
 ## You're at a breakpoint pause, now what?
 When paused on a breakpoint, the debugger can be used as normal to inspect or edit values. However the Pause and Step buttons change in to Continue and Next. 
@@ -70,19 +77,34 @@ Breakpoints can be incredibly useful to learn more about how your own events wor
 
 ## Unique ID's (UID) and instances
 Remember back to Module 1, we created insances, or new clones, of monster. How does construct 3 handle these? We can easily see in the debugger's *Inspector Panel*, under "Monster", we presently have 18 instances (0-17) of the monster, with 18 different Unique ID's (UID). 
-<img width="1280" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135132-79fb3c3e-c7fa-4291-901b-01a88e5e397b.png">
+
+<img width="500" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135132-79fb3c3e-c7fa-4291-901b-01a88e5e397b.png">
 
 Looking down, we can see I am currently selected on UID 3, and the main screen highlights the selected instance in a red-stroked yellow box. We can also see all the associated instance variables with each UID, in this case, our UID 3 monster's health is at 5. 
-<img width="1280" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135432-ecf2a15f-0236-42e6-b734-c8739e962787.png">
 
-## Changing variables in the debugger
+<img width="500" alt="Screen Shot 2022-05-06 at 14 48 47" src="https://user-images.githubusercontent.com/101632496/167135432-ecf2a15f-0236-42e6-b734-c8739e962787.png">
+
+## Changing variables in real time with the debugger
 If in the inspector panel, we select an object, we can see all the associated properties affecting that object or UID. 
 - **Common**: Name of object, and UID's
 - **Layout**: Layout properties, like X/Y position, angle, visibility, etc. 
 - **Instance Variables**: The current value of the selected UID's instance variable. 
 
 Interestingly, we can even *change instance variables in game!* If we click on the health, we can change our monster's health, speed, etc. Keep in mind, this only affects the debugger game, *it will not change any programmed values in your event sheets*. 
-<img width="1271" alt="Screen Shot 2022-05-06 at 14 56 05" src="https://user-images.githubusercontent.com/101632496/167135661-3080fba9-18d6-4e5d-9b16-f0c50a4c4206.png">
 
-## Self-Assessment Quiz:
-Before completing the assessment, be sure that you have used the debugger in practice, including breakpoints. Then, complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLScBMJgb1rgnqrYWe8pwdTAy8vE1WIkLTrQ4JDMoapOb1FYYHQ/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+<img width="500" alt="Screen Shot 2022-05-06 at 14 56 05" src="https://user-images.githubusercontent.com/101632496/167135661-3080fba9-18d6-4e5d-9b16-f0c50a4c4206.png"> 
+
+## Toggling Events on an Off
+Often times when you're programming, you'll need to debug and "search" for bugs in your code. Rather than deleting lines of code that you suspect are introducing a bug, it's more convenient to comment them out, or "toggle" a specific action disabled/enabled. 
+
+You can do this by right clicking on an event, toggle, disabled/enabled. This will strike through a code comment and stop it from running, while allowing you to enable it later on without having to delete code (in case you want to re-implement this code later)
+
+<img width="500" alt="Screenshot 2022-12-07 at 12 25 29" src="https://user-images.githubusercontent.com/101632496/206167715-9b7ba7dc-4221-4950-a66d-1d4500368802.png">
+
+
+# Recap
+You have 3 main tools at your disposal using the debug window. 
+1. Inserting breakpoints can help you step through in-game logic and find sequencing errors (order of events)
+2. Toggling on/off events can help you to find errors without necessarily deleting code 
+3. Pausing and changing variables in game can allow you to test behaviours without needing to add in lines of code.
+
