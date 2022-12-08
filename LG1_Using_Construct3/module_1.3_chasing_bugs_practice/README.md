@@ -3,7 +3,7 @@ Let's put your skills to the test. On this folder, I've uploaded a buggy version
 
 This tutorial is a practical experience in using the debugger. In construct 3, Open up this construct folder from this cloned repo back in LG0. (Local File Path: LG_1_Using_Construct_3 > module_1.3_Chasing_bugs > bug_construct_folder)
 
-INSERT SCREENSHOT HERE
+<img width="500" alt="Screenshot 2022-12-08 at 09 11 50" src="https://user-images.githubusercontent.com/101632496/206398791-d8f5ef90-1de1-4f87-9708-d62cfdf76564.png">
 
 
 Be sure to read through my code comments to see why wrote lines of code. Code comments are like "breadcrumbs" to let programmers know what/why things are happening in the game. 
