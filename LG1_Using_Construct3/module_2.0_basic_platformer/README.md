@@ -1,5 +1,8 @@
-# Knowledge Assessment:
-Each project/tutorial has a few goals in mind. Read over what you're going to learn about, complete the tutorial, then complete the self-assessment form. 
+# Making a Platformer Game
+We've all played platformers before. Mario, Banjo Kazooie, Jack and Daxter, and more. Let's make a simple 2D platformer, and learn about new ways of controlling games along the way. By the end of this tutorial, you'll have made a game like the following below. 
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/101632496/206400508-a9ed87a5-1428-4334-98db-a81a82116393.gif)
+
 
 ## By the end of this tutorial you should know:
 1. How to upload custom game assets
@@ -16,4 +19,6 @@ Each project/tutorial has a few goals in mind. Read over what you're going to le
     - Sine
 
 # Tutorial
+It's time to start working through text-based tutorials now. This tutorial builds upon skills you already have, and introduces some new behaviours. Suggested completion time: 2 clases. 
+
 [Basic Platformer Tutorial on construct forums](https://www.construct.net/en/tutorials/platformer-game-2329)
