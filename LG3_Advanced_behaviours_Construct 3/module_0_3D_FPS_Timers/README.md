@@ -1,7 +1,7 @@
 # Making a 3D FPS
 We're now going to explore a 3D styled game, a throwback to the days of Doom, if you've ever played. Construct 3's 3D engine capabilities are not near as powerful as it's 2D abilites, and even though it does have 3D capabilities, it is more of a "3D" game. In any case, we'll learn about a new example bare-bones game that you can build off of to make your own 3D FPS, and about timers, a generalized behaviour that we can apply to any of our games to make time-based events. By the end of this tutorial, you'll have made a game like the following below. 
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/101632496/206664084-95077525-08cc-4185-9096-8648fabbd169.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/101632496/206722585-b0bce2f4-7fb5-42a3-b357-dcde5bc15979.gif)
 
 
 ## By the end of this tutorial you should know:
@@ -20,11 +20,12 @@ We're going to build upon one of construct 3's "barebones templates" in the exam
 
 <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206669770-d39517f7-02bc-426f-9dd9-93580109b8a8.png">
 
-2. Uing the skills you learned in LG1 examining the alternative controls template game, examine how this game functions. (If you can't figure it out from comments, see the bottom header of this tutorial page called "First-Person Shooter Explained".) as a reminder:
+2. Using the skills you learned in LG1 examining the alternative controls template game, examine how this game functions. (If you can't figure it out from comments, talk to a peer beside you or ask your teacher for help) 
+as a reminder:
 * look at all game layouts first. discover where sprites/objects are placed. look what layers are present
 * See what object types/sprites exist in the project panel (right side)
 * look through all event sheets. Read through code comments & order of events to discover in-game logic. 
-* In this game specifially, toggle the code groups "3d camera" and "2D camera" enabled/disabled to see how 3D objects look in 2D form. (this means this can also be an "isometric" top down shooter as well!) 
+* In this game specifially, Preview the game in 2 ways. Toggle the code groups "3d camera" and "2D camera" enabled/disabled to see how 3D objects look in 2D form. (this means this can also be an "isometric" top down shooter as well!) 
 * Note, the player is controlled using the "car" behaviour, and the pigs use the "bullet" behaviour with "bounce off solid" enabled. 
 * Note: for this game comments, you'll want to open the animations editor of the "piggy billboard" object to discover what is meant by the comment: "we only want to see the right faces in first-person mode"
 * <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206670751-d84ff27a-d9c6-4f70-9f5e-a0a9e0a0c9ee.png">
@@ -47,15 +48,15 @@ Before moving on to this step, you should understand how the 3d camera object wo
 * ![Screenshot 2022-12-09 at 10 55 10](https://user-images.githubusercontent.com/101632496/206676263-a6b61ff1-2bfb-455e-81f0-56494d0afa58.png)
 * ![Screenshot 2022-12-09 at 10 55 15](https://user-images.githubusercontent.com/101632496/206676277-7828d95e-947b-46e6-8a09-b426c2fdc141.png)
 
-That already looks a lot better. 
+Close the animation editor and preview your game. That already looks a lot better. 
 
 ## Adding a "Super Bullet" 
-We'll now use the timer object to create a "super" bullet tomato in our game. Regularly, tomatoes only do 1HP of damage, but we want to create a pickup that gives us a super bullet, doing a full 5 points of damage capable of killing a pig in a single shot. Here's what we want to do in order:
+We'll now use the timer object to create a "super" bullet tomato in our game. Regularly, tomatoes only do 1HP of damage, but we want to create a pickup that gives us a super bullet, doing a full 5 points of damage capable of killing a pig in a single shot. When desiging & coding games, it's best if we break our goal up into steps that build upon one another. Here's the steps we want to break this task into, and the order in which to do so:
 * Create a "super tomato" pickup object, and a super tomato "bullet" object. 1 is the level pickup, the other the bullet that fires.
 * Once picked up the powerup, give the player a "super tomato" bullet, fired with the "V" key
 * Once fired, start a 3 second "cooldown" timer
 * after 3 seconds has passed/cooled down, give the player another super tomato
-* reate a "heads up display" layer to let the player know when their powerup is ready to fire again
+* create a "heads up display" layer to notify the player know when their powerup is ready to fire again
 
 
 ## Create a "super tomato" pickup object
@@ -64,9 +65,9 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 
 ![Screenshot 2022-12-09 at 11 10 40](https://user-images.githubusercontent.com/101632496/206678239-4c767a1e-be4f-49c9-8ea8-a45ec720d5e2.png)
 
-2. Rename this tomato to "SupertomatoPickup", then open it in the animations editor. Using the "paintbucket" tool, change the tomato's colour to something new, I'm choosing yellow. 
-* If you change the "tolerance" slider when using the paintbucket to something high, like 300+, you'll change the red colour AND red-ish colours in a single click. If the tolerance were set at "1", then only that exact shade of red gets replaced. 
-* be sure to change both the "back" and "right" animation frames
+2. Rename this tomato to "SupertomatoPickup", then open it in the animations editor. Using the "paintbucket" tool, change the tomato's red colour to something different ( I'm choosing yellow)
+* When you have the painbucket selected, there is a slider at the top of the animation editor called "tolerance" If you change the "tolerance" slider when using the paintbucket to something high, like 300+, you'll change the red colour AND red-ish colours in a single click. If the tolerance were set at "1", then only that exact shade of red gets replaced. 
+* be sure to change the colour of both the "back" and "right" animation frames
 
 3. Drag the supertomato somewhere on the layout for the player to pickup. 
 4. on the properties panel of the super tomato, remove the the destroy outside layout behaviour and bullet behaviour on the super tomato. 
@@ -88,6 +89,7 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 
 ![Screenshot 2022-12-09 at 11 42 55](https://user-images.githubusercontent.com/101632496/206684519-3dd843f0-bfbc-45b7-baf4-91278ee3f892.png)
 
+Great, now our player can pickup the object. Now we need to do something with this. 
 
 ## Making the Super tomato a "super bullet" 
 1. clone our super tomato sprite, call it "SuperTomatoBullet" and remove all behaviours. Then, re-add the bullet behaviour and the destroy outside layout behaviour. 
@@ -113,12 +115,12 @@ This will tell construct 3 the size we want for our bullet when it is spawned. I
 
 3. We now need to make our super tomato collide with our piggies. Again, we're going to copy/paste the events in line 10, and change their object from tomato to our super tomatobullet. However, we're going to change "add 1 to hitcount" to "add 5 to hitcount" instead, making our bullet deal 5x as much damage. 
 
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="(https://user-images.githubusercontent.com/101632496/206685045-403f5c52-31a1-4a7f-8c56-52d076578511.png">
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206685045-403f5c52-31a1-4a7f-8c56-52d076578511.png">
 
-### Adding the Super Bullet Timer
+### Adding the Super Bullet Cooldown Timer
 Now we've got a super-powered pickup! However, our player can use this all the time and spam the "V" key to kill piggies effortlessly. We only want the player to have this powerup once every 3 seconds. This is where the timer comes into play. 
 
-* The timer object creates a variable second timer based on an event. It could start the timer when a key is pressed, when an item spawns, when a player dies/collides with a different object, or any other innumerable ways. 
+* The timer object allows you to create a timer based on an event. The event could start the timer when a key is pressed, when an item spawns, when a player dies/collides with a different object, or any other innumerable ways. 
 * The timer object comes with a string (word) "tag" or "label"
 * Timers can be "once" or "regular", meaning they trigger their time and end, or trigger their time and restart their timer again forever. 
 * The timer has a "on timer -" tag"" event, that can cause something to happen when the timer is finished. 
@@ -140,9 +142,9 @@ What have we done here? Well, If the player presses V, AND the powerup was colle
 2. The player presses the V key, and because our bool is true and the timer is NOT running, it spawns a super bullet, and starts the 3second timer. 
 3. The player presses the V key again. because all 3 conditions are NOT true, (the timer is running!) the actions do not take place. 
 4. once 3 seconds elapses again, the player can now shoot their super bullet again. 
-
-## Making a 3D HUD
-We've already made HUDS before, but making a HUD in 3D is a little different. We're not going to add a text object to a HUD inform our player when our powerup is "charged" and ready to fire. 
+ 
+## Making a 3D HUD for Player Notifications
+We've already made HUDs before in previous games, but making a HUD in 3D is a little different. We're not going to add a text object to a HUD inform our player when our powerup is "charged" and ready to fire. 
 
 1. Back on our layout, add a HUD layer to the top of the layers:
 * set it's parallax to 0x0%. 
@@ -152,9 +154,9 @@ We've already made HUDS before, but making a HUD in 3D is a little different. We
 
 2. Add a new "text" object to this layer.
 * change the text size, colour, and font to something more readable.
-* Position it accordingly inside the "viewport" (the dashed line on the layout)
+* Position it accordingly inside the "viewport" (the dashed line on the layout with a red arrow pointing to it)
 
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206688003-0af1f1c1-9586-429d-9b44-61f8e56478b1.png">
+<img width="500" alt="Screenshot 2022-12-09 at 15 17 05" src="https://user-images.githubusercontent.com/101632496/206722203-bf702e63-8a14-4d53-91d8-a1255018ceb6.png">
 
 3. On our code, add a new player event and action:
 * Event: player > is timer running "SuperTomatoBullet"
@@ -171,3 +173,8 @@ While our timer is running, our text will be set to "charging", letting our play
 ![Screenshot 2022-12-09 at 12 09 30](https://user-images.githubusercontent.com/101632496/206689362-5a9ac8f9-696b-4b72-971f-b79c546938c5.png)
 
 The "on timer" event seems a little backwards. You would think this means when the timer starts, but this actually causes the event to happen when the timer ENDS. 
+
+5. Lastly, when we start the game, our text will currently show nothing until the player presses "v". On the super tomato pickup collision event, add in the action:
+* Action: Text > Set text to "Super Tomato Ready"
+
+and that's it! Preview out your game, you've now created a functional 3D Isometric First Person Shooter. 
