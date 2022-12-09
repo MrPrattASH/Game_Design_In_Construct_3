@@ -1,5 +1,9 @@
 > “Code Tells You How, Comments Tell You Why.” 
 
+Something that is going to happen to you a lot in programming is you will write code, come back to it later, and you'll struggle to figure out why or how in the world you completed your intended task. Proper documentation, or code comments, help solve this problem. From now on, you're going to write code comments to leave a trail of breadcrumbs for yourself, providing understanding for how your program works. Most programmers leave code comments until the end, but I can GUARANTEE you that you will regret leaving documentation to the end. There are more efficient ways to write code comments than others, let's get into 7 rules for writing good code comments. 
+
+From this point forward in the course, it is expected that your code be fully commented following these 7 guidelines. 
+
 ## By the end of this tutorial you should know:
 1. What is a comment?
 2. Why are comments important to make when programming? 
@@ -108,7 +112,4 @@ Then, select
 
 <img width="671" alt="Screen Shot 2022-10-07 at 13 42 02" src="https://user-images.githubusercontent.com/101632496/194545742-0d613bde-d950-411d-b9b0-f55689f57f56.png">
 
-
-
-## Self-Assessment Quiz:
-Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSe-gp2r-hO95swxyoS1-yOJksn329CtunUSjMo_qGqnv_30Fw/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+Now that we know what good comments look like, let's examine someone else's code & code comments to re-create their code in one of our games. 
