@@ -8,7 +8,7 @@ We're now going to explore a 3D styled game, a throwback to the days of Doom, if
 1. How a 3D object is presented in construct 3
 2. What a *timer* behaviour is
 3. How to use *timers* to create in-game, timebased powerup events
-4. What the "Sine" behaviour is, and how it can create floating back/forth objects. 
+4. What the *Sine* behaviour is, and how it can create floating back/forth objects. 
 
 
 # Tutorial
@@ -30,10 +30,10 @@ We're going to build upon one of construct 3's "barebones templates" in the exam
 * ![Screenshot 2022-12-09 at 10 33 00](https://user-images.githubusercontent.com/101632496/206670751-d84ff27a-d9c6-4f70-9f5e-a0a9e0a0c9ee.png)
 
 
-## Tutorial = Timers
-Before moving on to this step, you should understand how the 3d camera object works, and how the Piggy billboards always turn their right face to look at the player. 
+# Tutorial 
+Before moving on to this step, you should understand how the 3d camera object works, and how the Piggy billboards always turn their right face to look at the player. If you're still unsure how it all works on the inside, please come ask your teacher for an explanation. 
 
-### Changing the 3D shape
+## Changing the 3D shape
 
 1. First, let's make these 3dShape objects look a little more interesting. Inside this repo folder is a folder called "game_assets" (taken from Kenny.nl)(LG3 > mod 0 > game assets). Open the animations editor and replace all 6 billboards with the correct images.
 * You can drag and drop from your cloned repo into the animations editor
@@ -58,7 +58,7 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 * reate a "heads up display" layer to let the player know when their powerup is ready to fire again
 
 
-### Create a "super tomato" pickup object
+## Create a "super tomato" pickup object
 
 1. In the project panel, right click on the tomato and select clone.
 
@@ -89,18 +89,19 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 ![Screenshot 2022-12-09 at 11 42 55](https://user-images.githubusercontent.com/101632496/206684519-3dd843f0-bfbc-45b7-baf4-91278ee3f892.png)
 
 
-### Making the Super tomato a "super bullet" 
+## Making the Super tomato a "super bullet" 
 1. clone our super tomato sprite, call it "SuperTomatoBullet" and remove all behaviours. Then, re-add the bullet behaviour and the destroy outside layout behaviour. 
 
 2. We need to have a "placeholder" artwork on our game, otherwise our layout doesn't know what size to create our super bullet on spawn. Drag out our superbullet to the top left side, outside of the layout. Re-size the tomato to 40x40. 
 
 This will tell construct 3 the size we want for our bullet when it is spawned. If we didn't do this, and simply created an object without first sizing it outside of the layout, construct 3 would make our image at the ORIGINAL tomato size, which is 500px. That would be a HUGE bullet! 
+
 ![Screenshot 2022-12-09 at 11 29 10](https://user-images.githubusercontent.com/101632496/206681877-ae46c699-f259-4e59-93a8-d9d56a00153b.png)
 
 3. On the player, add the "timer" behaviour. This will allow us to create the cool-down event later. 
 4. Let's head back to the event sheet and add in some events, because right now we can pickup our tomato but it doesn't actually do anything. We need to tell the game what to do. 
 
-### Firing the Super Bullet
+## Firing the Super Bullet
 1. Add a new event with 2 conditions.:
 * Keyboard > on key pressed > "V"
 * System > Is Boolean Set > PowerupCollected
@@ -140,7 +141,33 @@ What have we done here? Well, If the player presses V, AND the powerup was colle
 3. The player presses the V key again. because all 3 conditions are NOT true, (the timer is running!) the actions do not take place. 
 4. once 3 seconds elapses again, the player can now shoot their super bullet again. 
 
+## Making a 3D HUD
+We've already made HUDS before, but making a HUD in 3D is a little different. We're not going to add a text object to a HUD inform our player when our powerup is "charged" and ready to fire. 
 
-# First-Person Shooter Explained
-Watch through [this video]() for a step by step walkthrough & further explanation of the code. 
-3D objects Animation Editor (from the viewpoint of the editor):
+1. Back on our layout, add a HUD layer to the top of the layers:
+* set it's parallax to 0x0%. 
+* Set Rendering mode to "2D". This will cause our HUD to follow along with our player like a "flat" object. 
+
+![Screenshot 2022-12-09 at 11 58 59](https://user-images.githubusercontent.com/101632496/206687665-c4533cef-f24f-476d-83d1-07c140a55f20.png)
+
+2. Add a new "text" object to this layer.
+* change the text size, colour, and font to something more readable.
+* Position it accordingly inside the "viewport" (the dashed line on the layout)
+
+![Screenshot 2022-12-09 at 12 01 10](https://user-images.githubusercontent.com/101632496/206688003-0af1f1c1-9586-429d-9b44-61f8e56478b1.png)
+
+3. On our code, add a new player event and action:
+* Event: player > is timer running "SuperTomatoBullet"
+* Action: Text > Set text to "Charging"
+
+![Screenshot 2022-12-09 at 12 04 51](https://user-images.githubusercontent.com/101632496/206688521-505aadda-12ca-4d1f-9a3d-875f21ed8bc1.png)
+
+While our timer is running, our text will be set to "charging", letting our player know that something happened once they picked up the powerup. (as it's obvious to us as game developers, but not to our player) 
+
+4. Add another event and action:
+* Event: Player > On timer "SuperTomatoBullet"
+* Action: Text > set text to "Super Tomato Ready"
+
+![Screenshot 2022-12-09 at 12 09 30](https://user-images.githubusercontent.com/101632496/206689362-5a9ac8f9-696b-4b72-971f-b79c546938c5.png)
+
+The "on timer" event seems a little backwards. You would think this means when the timer starts, but this actually causes the event to happen when the timer ENDS. 
