@@ -51,10 +51,12 @@ That already looks a lot better.
 
 ## Adding a "Super Bullet" 
 We'll now use the timer object to create a "super" bullet tomato in our game. Regularly, tomatoes only do 1HP of damage, but we want to create a pickup that gives us a super bullet, doing a full 5 points of damage capable of killing a pig in a single shot. Here's what we want to do in order:
-* Create a "super tomato" pickup object, and a super tomato "bullet" object. 1 is the level pickup, the other the bullet that fires. 
-* Once picked up, give the player a "super tomato" bullet, fired with the "V" key
+* Create a "super tomato" pickup object, and a super tomato "bullet" object. 1 is the level pickup, the other the bullet that fires.
+* Once picked up the powerup, give the player a "super tomato" bullet, fired with the "V" key
 * Once fired, start a 3 second "cooldown" timer
 * after 3 seconds has passed/cooled down, give the player another super tomato
+* reate a "heads up display" layer to let the player know when their powerup is ready to fire again
+
 
 ### Create a "super tomato" pickup object
 
@@ -79,18 +81,65 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 * ![Screenshot 2022-12-09 at 11 21 35](https://user-images.githubusercontent.com/101632496/206680413-59da91a5-32b9-4018-b41a-8d98f975fbf3.png)
 * ![Screenshot 2022-12-09 at 11 22 22](https://user-images.githubusercontent.com/101632496/206680488-af33ee96-fd07-4d03-a2c9-52aa03935a50.png)
 
-6. Add an event to our player: on collision with super tomato > set global boolean "PowerupCollected" > True
+6. Add an event to our player: 
+* Event: on collision with super tomato:
+* Action: set global boolean "PowerupCollected" > True
+* Action: destroy super tomato pickup
 
-![Screenshot 2022-12-09 at 11 25 07](https://user-images.githubusercontent.com/101632496/206681032-82bf1c83-06b0-4c13-85b0-d09f26ce1077.png)
+![Screenshot 2022-12-09 at 11 42 55](https://user-images.githubusercontent.com/101632496/206684519-3dd843f0-bfbc-45b7-baf4-91278ee3f892.png)
+
 
 ### Making the Super tomato a "super bullet" 
 1. clone our super tomato sprite, call it "SuperTomatoBullet" and remove all behaviours. Then, re-add the bullet behaviour and the destroy outside layout behaviour. 
 
-2. We need to have a "placeholder" artwork on our game, otherwise our layout doesn't know what size to create our super bullet on spawn. Drag out our superbullet to the top left side, outside of the layout. This will tell construct 3 the size we want for our bullet when it is spawned. If we didn't do this, and simply created an object without first sizing it outside of the layout, construct 3 would make our image at the ORIGINAL tomato size, which is 500px. That would be a HUGE bullet! 
+2. We need to have a "placeholder" artwork on our game, otherwise our layout doesn't know what size to create our super bullet on spawn. Drag out our superbullet to the top left side, outside of the layout. Re-size the tomato to 40x40. 
+
+This will tell construct 3 the size we want for our bullet when it is spawned. If we didn't do this, and simply created an object without first sizing it outside of the layout, construct 3 would make our image at the ORIGINAL tomato size, which is 500px. That would be a HUGE bullet! 
 ![Screenshot 2022-12-09 at 11 29 10](https://user-images.githubusercontent.com/101632496/206681877-ae46c699-f259-4e59-93a8-d9d56a00153b.png)
 
-3. On the player, add the "timer" behaviour. This will allow us to create the cool-down event. 
-4.  Let's head back to the event sheet and add in some events. 
+3. On the player, add the "timer" behaviour. This will allow us to create the cool-down event later. 
+4. Let's head back to the event sheet and add in some events, because right now we can pickup our tomato but it doesn't actually do anything. We need to tell the game what to do. 
+
+### Firing the Super Bullet
+1. Add a new event with 2 conditions.:
+* Keyboard > on key pressed > "V"
+* System > Is Boolean Set > PowerupCollected
+* ![Screenshot 2022-12-09 at 11 39 39](https://user-images.githubusercontent.com/101632496/206683951-658e3758-000b-4cbe-bdfc-03ef4649ad39.png)
+
+2. As actions, we're going to copy/paste the code from line 8, but instead replace the "Tomato" object with our "SuperTomatoBullet". Now, if we pickup the super tomato pickup, and press V, we should fire a super tomato. Test it out. 
+
+![Screenshot 2022-12-09 at 11 41 38](https://user-images.githubusercontent.com/101632496/206684282-f6f8eeb8-e4a4-4ca3-bc88-f7d04f3be6dc.png)
+
+3. We now need to make our super tomato collide with our piggies. Again, we're going to copy/paste the events in line 10, and change their object from tomato to our super tomatobullet. However, we're going to change "add 1 to hitcount" to "add 5 to hitcount" instead, making our bullet deal 5x as much damage. 
+
+![Screenshot 2022-12-09 at 11 45 32](https://user-images.githubusercontent.com/101632496/206685045-403f5c52-31a1-4a7f-8c56-52d076578511.png)
+
+### Adding the Super Bullet Timer
+Now we've got a super-powered pickup! However, our player can use this all the time and spam the "V" key to kill piggies effortlessly. We only want the player to have this powerup once every 3 seconds. This is where the timer comes into play. 
+
+* The timer object creates a variable second timer based on an event. It could start the timer when a key is pressed, when an item spawns, when a player dies/collides with a different object, or any other innumerable ways. 
+* The timer object comes with a string (word) "tag" or "label"
+* Timers can be "once" or "regular", meaning they trigger their time and end, or trigger their time and restart their timer again forever. 
+* The timer has a "on timer -" tag"" event, that can cause something to happen when the timer is finished. 
+
+1. on our "V" key pressed event, add an action
+* Action: "Start Timer" > Duration "3.0" > Once > Tag "SuperTomatoBullet"
+* Note: With string variables (pink words "between quotes") CaPiTaLs and SpElLiNg matter a LOT. "True" and "true" are 2 different string variables. Be sure you're spelling them correctly!
+
+![Screenshot 2022-12-09 at 11 51 11](https://user-images.githubusercontent.com/101632496/206686124-fb0e41ce-dabe-41c8-b3b7-eafb8ac308bc.png)
+
+2. Add another condition to this event:
+* Player > Timer > Is timer "SuperTomatoBullet" running
+* Right click on this condition, select "invert"
+
+![Screenshot 2022-12-09 at 11 52 14](https://user-images.githubusercontent.com/101632496/206686258-2c6af0e7-3958-4073-87cc-4b99dd24fe9f.png)
+
+What have we done here? Well, If the player presses V, AND the powerup was collected, AND the timer is currently NOT running, the game will spawn a super bullet. Try it out, you should notice that your game can only spawn a super bullet once every 3 seconds. Why? Let's step through the logic:
+1. The timer is not running, and the player has picked up the powerup, setting our global bool True. 
+2. The player presses the V key, and because our bool is true and the timer is NOT running, it spawns a super bullet, and starts the 3second timer. 
+3. The player presses the V key again. because all 3 conditions are NOT true, (the timer is running!) the actions do not take place. 
+4. once 3 seconds elapses again, the player can now shoot their super bullet again. 
+
 
 # First-Person Shooter Explained
 Watch through [this video]() for a step by step walkthrough & further explanation of the code. 
