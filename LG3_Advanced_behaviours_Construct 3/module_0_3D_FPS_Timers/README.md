@@ -18,7 +18,7 @@ We're going to build upon one of construct 3's "barebones templates" in the exam
 
 1. Navigate back to the example browser at [editor.construct.net](https://editor.construct.net) and select "barebones template" as a filter. Inside this filter, search for "FIRST-PERSON SHOOTER".
 
-![Screenshot 2022-12-09 at 10 27 44](https://user-images.githubusercontent.com/101632496/206669770-d39517f7-02bc-426f-9dd9-93580109b8a8.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206669770-d39517f7-02bc-426f-9dd9-93580109b8a8.png">
 
 2. Uing the skills you learned in LG1 examining the alternative controls template game, examine how this game functions. (If you can't figure it out from comments, see the bottom header of this tutorial page called "First-Person Shooter Explained".) as a reminder:
 * look at all game layouts first. discover where sprites/objects are placed. look what layers are present
@@ -27,7 +27,7 @@ We're going to build upon one of construct 3's "barebones templates" in the exam
 * In this game specifially, toggle the code groups "3d camera" and "2D camera" enabled/disabled to see how 3D objects look in 2D form. (this means this can also be an "isometric" top down shooter as well!) 
 * Note, the player is controlled using the "car" behaviour, and the pigs use the "bullet" behaviour with "bounce off solid" enabled. 
 * Note: for this game comments, you'll want to open the animations editor of the "piggy billboard" object to discover what is meant by the comment: "we only want to see the right faces in first-person mode"
-* ![Screenshot 2022-12-09 at 10 33 00](https://user-images.githubusercontent.com/101632496/206670751-d84ff27a-d9c6-4f70-9f5e-a0a9e0a0c9ee.png)
+* <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206670751-d84ff27a-d9c6-4f70-9f5e-a0a9e0a0c9ee.png">
 
 
 # Tutorial 
@@ -40,7 +40,7 @@ Before moving on to this step, you should understand how the 3d camera object wo
 * once all animations are uploaded, they'll be the wrong size. We need to crop all animations to remove the transparent space. 
 * From this
 * ![Screenshot 2022-12-09 at 10 54 13](https://user-images.githubusercontent.com/101632496/206675972-11e3dd41-3359-4b5a-b407-6937069d82d0.png)
-* ![Screenshot 2022-12-09 at 10 54 20](https://user-images.githubusercontent.com/101632496/206676000-e7dcb3f1-75f1-4d78-91ad-af53ca806bb4.png)
+* <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206676000-e7dcb3f1-75f1-4d78-91ad-af53ca806bb4.png">
 * to this
 * ![Screenshot 2022-12-09 at 10 54 39](https://user-images.githubusercontent.com/101632496/206676008-fa13c541-5652-4b6d-a516-cf60995b22f6.png)
 * We'll also need to correct the image point "origin" back to centre, or all of our sprites will shift down 100px. Select image point, right click > quick assign > middle. Then, right click again > apply to all animations. Whenever you upload custom artwork, be sure to crop and correct the origin image points, or things will "float" or drift to weird locations in your layout. 
@@ -78,7 +78,7 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 
 5. With our super pickup created, we now need to setup the code. We'll first add a global boolean variable (true/false) called "PowerupCollected". Set this initial value to false (unchecked = false, checked = true) 
 * on your event sheet, right click > add global variable. You need to do this at the Top or bottom of the event sheet, otherwise you'll create a local variable (for that group only to use) 
-* ![Screenshot 2022-12-09 at 11 21 35](https://user-images.githubusercontent.com/101632496/206680413-59da91a5-32b9-4018-b41a-8d98f975fbf3.png)
+* <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206680413-59da91a5-32b9-4018-b41a-8d98f975fbf3.png">
 * ![Screenshot 2022-12-09 at 11 22 22](https://user-images.githubusercontent.com/101632496/206680488-af33ee96-fd07-4d03-a2c9-52aa03935a50.png)
 
 6. Add an event to our player: 
@@ -96,7 +96,7 @@ We'll now use the timer object to create a "super" bullet tomato in our game. Re
 
 This will tell construct 3 the size we want for our bullet when it is spawned. If we didn't do this, and simply created an object without first sizing it outside of the layout, construct 3 would make our image at the ORIGINAL tomato size, which is 500px. That would be a HUGE bullet! 
 
-![Screenshot 2022-12-09 at 11 29 10](https://user-images.githubusercontent.com/101632496/206681877-ae46c699-f259-4e59-93a8-d9d56a00153b.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206681877-ae46c699-f259-4e59-93a8-d9d56a00153b.png">
 
 3. On the player, add the "timer" behaviour. This will allow us to create the cool-down event later. 
 4. Let's head back to the event sheet and add in some events, because right now we can pickup our tomato but it doesn't actually do anything. We need to tell the game what to do. 
@@ -109,11 +109,11 @@ This will tell construct 3 the size we want for our bullet when it is spawned. I
 
 2. As actions, we're going to copy/paste the code from line 8, but instead replace the "Tomato" object with our "SuperTomatoBullet". Now, if we pickup the super tomato pickup, and press V, we should fire a super tomato. Test it out. 
 
-![Screenshot 2022-12-09 at 11 41 38](https://user-images.githubusercontent.com/101632496/206684282-f6f8eeb8-e4a4-4ca3-bc88-f7d04f3be6dc.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206684282-f6f8eeb8-e4a4-4ca3-bc88-f7d04f3be6dc.png">
 
 3. We now need to make our super tomato collide with our piggies. Again, we're going to copy/paste the events in line 10, and change their object from tomato to our super tomatobullet. However, we're going to change "add 1 to hitcount" to "add 5 to hitcount" instead, making our bullet deal 5x as much damage. 
 
-![Screenshot 2022-12-09 at 11 45 32](https://user-images.githubusercontent.com/101632496/206685045-403f5c52-31a1-4a7f-8c56-52d076578511.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="(https://user-images.githubusercontent.com/101632496/206685045-403f5c52-31a1-4a7f-8c56-52d076578511.png">
 
 ### Adding the Super Bullet Timer
 Now we've got a super-powered pickup! However, our player can use this all the time and spam the "V" key to kill piggies effortlessly. We only want the player to have this powerup once every 3 seconds. This is where the timer comes into play. 
@@ -127,13 +127,13 @@ Now we've got a super-powered pickup! However, our player can use this all the t
 * Action: "Start Timer" > Duration "3.0" > Once > Tag "SuperTomatoBullet"
 * Note: With string variables (pink words "between quotes") CaPiTaLs and SpElLiNg matter a LOT. "True" and "true" are 2 different string variables. Be sure you're spelling them correctly!
 
-![Screenshot 2022-12-09 at 11 51 11](https://user-images.githubusercontent.com/101632496/206686124-fb0e41ce-dabe-41c8-b3b7-eafb8ac308bc.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206686124-fb0e41ce-dabe-41c8-b3b7-eafb8ac308bc.png">
 
 2. Add another condition to this event:
 * Player > Timer > Is timer "SuperTomatoBullet" running
 * Right click on this condition, select "invert"
 
-![Screenshot 2022-12-09 at 11 52 14](https://user-images.githubusercontent.com/101632496/206686258-2c6af0e7-3958-4073-87cc-4b99dd24fe9f.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206686258-2c6af0e7-3958-4073-87cc-4b99dd24fe9f.png">
 
 What have we done here? Well, If the player presses V, AND the powerup was collected, AND the timer is currently NOT running, the game will spawn a super bullet. Try it out, you should notice that your game can only spawn a super bullet once every 3 seconds. Why? Let's step through the logic:
 1. The timer is not running, and the player has picked up the powerup, setting our global bool True. 
@@ -154,7 +154,7 @@ We've already made HUDS before, but making a HUD in 3D is a little different. We
 * change the text size, colour, and font to something more readable.
 * Position it accordingly inside the "viewport" (the dashed line on the layout)
 
-![Screenshot 2022-12-09 at 12 01 10](https://user-images.githubusercontent.com/101632496/206688003-0af1f1c1-9586-429d-9b44-61f8e56478b1.png)
+<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206688003-0af1f1c1-9586-429d-9b44-61f8e56478b1.png">
 
 3. On our code, add a new player event and action:
 * Event: player > is timer running "SuperTomatoBullet"
