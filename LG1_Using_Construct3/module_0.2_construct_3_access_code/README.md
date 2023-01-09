@@ -17,6 +17,10 @@ As Construct 3 is a paid game engine, many of the features are "locked" away for
 
 ![image](https://user-images.githubusercontent.com/101632496/205065293-7df555c9-31ee-4149-9773-7b86f309e732.png)
 
+(Brightspace Game Design "Course Home", just under the activity feed) 
+<img width="500" alt="Screenshot 2023-01-09 at 13 49 23" src="https://user-images.githubusercontent.com/101632496/211311736-9e79d423-ab32-4ef2-bae9-9ab8587ebdc8.png">
+
+
 3. If the code is recognised as active, the user will have access to the full version of Construct 3.
 
 ![image](https://user-images.githubusercontent.com/101632496/205065385-c0518971-4bab-4e35-8966-d5ec18e4297d.png)
