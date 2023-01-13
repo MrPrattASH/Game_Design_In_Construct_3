@@ -1,35 +1,33 @@
-# Game Design In Construct 3
+# The Construct 3 Example Browser
+
+We've already taken a look at the example browser in a previous module, but now we're going to dive a little more deeply into it to see what sorts of games are possible in Construct 3. Later in this unit, you're going to be creating a mini, prototype game based off of modifying one of these examples. Use today as an exploratory hour to browse through as many types of games as possible to find an example that may interest you to build/modify. 
+
+## Today's Exploratory Task
+
+Your mini-game will be a remix of one of these games. Your task today is to find a game you'd like to modify. Stretch your horizons, your first choice is not always the best (maybe something more interesting exists, or maybe you don't know how the code works). 
+
+For each game you explore:
+1. Play through the game. See if the gameplay interests you.
+If interesting:
+    - Read through the code and code comments, see if you can understand how the game's logic functions. If you don't, ask a friend or a teacher to help. 
+    - If you can understand (mostly) how the game's logic works, make a note of this game as a potential candidate for your mini-game. 
+else:
+    - If both of the above conditions are false, move on to a different game to test. 
+    
+Try to play at least 5 games today. 
+
+## Finding Examples
+1. Navigate to [editor.construct.net](https://editor.construct.net) and select the example browser.
+![image](https://user-images.githubusercontent.com/101632496/212272872-3cb7146c-9da2-4fa8-83e1-6af8c7a77eb6.png)
+
+2. Look at the "filters" panel on the left. You'll want to conduct your search in 2 categories (independent search, not together)
+    - "Barebones Template"
+        - This is my preferred section for you to browse today. Examples are simpler and the code is easier to understand. The game is also a better fit for a *MINI* game. 
+    - "Reccomended"
+        - You may also look at this section, however, the games here are significantly more advanced to create and have much more complex code. While they may be fun to play, you also have to understand how they're programmed (by reading comments & code) in order to be able to modify them. *If you don't understand how the game functions, you should not choose this game to modify*. Consider this your warning. 
+    - Other tags
+        - You are more than welcome to browse other tags, but be warned, the code tends to be incredibly complex and is understandably not realistic for a mini game. 
+        
+3. Play through at least 5 different games. You have one hour to complete this task. 
  
 This repository takes construct 3 tutorials available from www.construct.net (that use CC licenses) modifies, restructures, comments project code to be easier to read and better in line with a High School game design course. This repository (likely) requires a paid construct 3 license. 
-
-# How to use this Repository
-
-The Module folders that are intended to be completed in sequential order. Inside each module:
-1. Download the game_assets folder (if included)
-2. Open the initial .c3p file in construct 3, and play through the game to see an example of a finished project. Some of your projects may turn out differently. 
-3. Begin with the "intial project tutorial" on the README.md for the module's page. Some projects require you to create a new blank project, other projects allow you to download the * *_Construct_Folder* as a starter project that you will build upon. 
-5. Open the www.construct.net tutorial, or follow the tutorial inside the README.md for the module. Follow through the steps in your  project. 
-6. When the tutorial is complete, open the "extension_project" folder (if included) and test the extension .c3p project. How might you extend functionality in your intial game? Use these suggested extensions as starting points for what to change in your own project. 
-7. Once completed the main module tutorial, complete the self assessment google form. The form will not grade for correct answers, due to text-validation errors. However, a correct answer is provided for you below. Self-assess; if your answers are incorrect, your knowledge is below what is required for the next module. Go back through and re-complete the sections of the module that are unclear to you. 
-
-# Repository Structure
-
-Each Module folder includes:
-1. A README.md
-- this includes either a tutorial hyperlink, or a built in tutorial. 
-- "By the end of this tutorial, you should know:" programing concepts you should be aware of before moving forward
-- a self-assessment google form on the tutorial's content. complete this after the tutorial 
-
-2. the intial tutorial project 
-- a .c3p file for testing the final project created
-- a construct 3 "folder project". This needs to be opened in construct 3 as a "local folder" by selecting the folder "X_construct_folder" file. 
-
-3. game_assets
-- all initial assets used (does not include extension project assets) 
-
-4. extension_project
-- .c3p file for testing the final extension project created
-- a construct 3 "folder project". This needs to be opened in construct 3 as a "local folder" by selecting the folder "X_construct_folder" file.
-
-
-As of Apr 25, 2022, this project is still in development. 
