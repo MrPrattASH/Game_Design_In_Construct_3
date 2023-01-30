@@ -14,7 +14,7 @@ Another great thing about Github is the ability to clone repos. Essentially, you
 
 4. Select a the game_design_tutorials local path for your cloned repo inside your Documents. 
 5. Select "clone". 
-6. Let's take a look at what you just cloned. You should now have access to all of these files in this current repo, locally on your computer. (Menu bar, Repository > Show in Finder). See if you can find a bullet, hero, monster, and explosion picture inside "LG1_Using_Construct3 > module_1.0_ghost_shooter > game_assets". You're going to need to copy/paste these files inside your repo. 
+6. Let's take a look at what you just cloned. You should now have access to all of these files in this current repo, locally on your computer. (Menu bar, Repository > Show in Finder). See if you can find a bullet, hero, monster, and explosion picture inside "LG1_Using_Construct3 > module_1.0_ghost_shooter > game_assets". Later in this module, you'll need to copy/paste these files inside your repo. Do not do this yet. 
 
 <img width="500" alt="Screen Shot 2022-11-22 at 15 41 04" src="https://user-images.githubusercontent.com/101632496/203342431-e80676cd-d1ea-46fd-b008-167f39137a67.png">
 
