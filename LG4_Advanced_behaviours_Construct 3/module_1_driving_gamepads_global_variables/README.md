@@ -1,182 +1,126 @@
-# Making a 3D FPS
-So far we've explored some *very* rudimentary Artificial Intelligence for our enemy sprites. If you remember back to our platformer game in Learning Guide 1, we simply 
-
-We're now going to explore a 3D styled game, a throwback to the days of Doom, if you've ever played. Construct 3's 3D engine capabilities are not near as powerful as it's 2D abilites, and even though it does have 3D capabilities, it is more of a "3D" game. In any case, we'll learn about a new example bare-bones game that you can build off of to make your own 3D FPS, and about timers, a generalized behaviour that we can apply to any of our games to make time-based events. By the end of this tutorial, you'll have made a game like the following below. 
-
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/101632496/206722585-b0bce2f4-7fb5-42a3-b357-dcde5bc15979.gif)
-
+# Advanced AI Enemies, Loops, Driving Cars, & Gamepad Control
+So far we've explored some *very* rudimentary Artificial Intelligence for our enemy sprites. If you remember back to our platformer game in Learning Guide 1, we simply created edge markers to make our enemies bounce back and forth. Now, we're going to give them some real brains. 
 
 ## By the end of this tutorial you should know:
-1. How a 3D object is presented in construct 3
-2. What a *timer* behaviour is
-3. How to use *timers* to create in-game, timebased powerup events
-4. What the *Sine* behaviour is, and how it can create floating back/forth objects. 
+1. What the *Pathfinding* behaviour is, and how to use it
+2. How to control a game using a Gamepad
+3. How to use a loop to repeat events in a gam
 
 
 # Tutorial
-We're going to build upon one of construct 3's "barebones templates" in the example browser today. 
+Again, we're going to build upon one of construct 3's "barebones templates" in the example browser today. Before moving forward, take a look at the finished game here to see what we're going to make.  
 
 ## Examining Pre-built Code
 
-1. Navigate back to the example browser at [editor.construct.net](https://editor.construct.net) and select "barebones template" as a filter. Inside this filter, search for "FIRST-PERSON SHOOTER".
+1. Navigate back to the example browser at [editor.construct.net](https://editor.construct.net) and select "barebones template" as a filter. Inside this filter, search for "DRIVING".
 
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206669770-d39517f7-02bc-426f-9dd9-93580109b8a8.png">
+<img width="258" alt="Screenshot 2023-03-20 at 15 19 44" src="https://user-images.githubusercontent.com/101632496/226368410-e2f1d923-207f-4eaa-add2-6c3a8a5db055.png">
 
 2. Using the skills you learned in LG1 examining the alternative controls template game, examine how this game functions. (If you can't figure it out from comments, talk to a peer beside you or ask your teacher for help) 
 as a reminder:
-* look at all game layouts first. discover where sprites/objects are placed. look what layers are present
+* look at all game layouts first. discover where sprites/objects are placed. look what layers are present. Particularly on the car, the "Car" behaviour and its properties. 
 * See what object types/sprites exist in the project panel (right side)
 * look through all event sheets. Read through code comments & order of events to discover in-game logic. 
-* In this game specifially, Preview the game in 2 ways. Toggle the code groups "3d camera" and "2D camera" enabled/disabled to see how 3D objects look in 2D form. (this means this can also be an "isometric" top down shooter as well!) 
-* Note, the player is controlled using the "car" behaviour, and the pigs use the "bullet" behaviour with "bounce off solid" enabled. 
-* Note: for this game comments, you'll want to open the animations editor of the "piggy billboard" object to discover what is meant by the comment: "we only want to see the right faces in first-person mode"
-* <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206670751-d84ff27a-d9c6-4f70-9f5e-a0a9e0a0c9ee.png">
+* While you don't need to understand *how* the camera effect works, you should know that this code makes your camera scale zoom in and out. 
 
 
 # Tutorial 
-Before moving on to this step, you should understand how the 3d camera object works, and how the Piggy billboards always turn their right face to look at the player. If you're still unsure how it all works on the inside, please come ask your teacher for an explanation. 
 
-## Changing the 3D shape
+## Making an AI Car Sprite
+In this sub-section we'll create our AI car sprite and set it up with all necessary behaviours/instance variables. 
 
-1. First, let's make these 3dShape objects look a little more interesting. Inside this repo folder is a folder called "game_assets" (taken from Kenny.nl)(LG3 > mod 0 > game assets). Open the animations editor and replace all 6 billboards with the correct images.
-* You can drag and drop from your cloned repo into the animations editor
-* once all animations are uploaded, they'll be the wrong size. We need to crop all animations to remove the transparent space. 
-* From this
-* ![Screenshot 2022-12-09 at 10 54 13](https://user-images.githubusercontent.com/101632496/206675972-11e3dd41-3359-4b5a-b407-6937069d82d0.png)
-* <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206676000-e7dcb3f1-75f1-4d78-91ad-af53ca806bb4.png">
-* to this
-* ![Screenshot 2022-12-09 at 10 54 39](https://user-images.githubusercontent.com/101632496/206676008-fa13c541-5652-4b6d-a516-cf60995b22f6.png)
-* We'll also need to correct the image point "origin" back to centre, or all of our sprites will shift down 100px. Select image point, right click > quick assign > middle. Then, right click again > apply to all animations. Whenever you upload custom artwork, be sure to crop and correct the origin image points, or things will "float" or drift to weird locations in your layout. 
-* ![Screenshot 2022-12-09 at 10 55 10](https://user-images.githubusercontent.com/101632496/206676263-a6b61ff1-2bfb-455e-81f0-56494d0afa58.png)
-* ![Screenshot 2022-12-09 at 10 55 15](https://user-images.githubusercontent.com/101632496/206676277-7828d95e-947b-46e6-8a09-b426c2fdc141.png)
+1. Right click on our car sprite and "Clone" it (duplicate it). Rename the sprite "AICar". 
 
-Close the animation editor and preview your game. That already looks a lot better. 
+<img width="389" alt="Screenshot 2023-03-20 at 15 22 07" src="https://user-images.githubusercontent.com/101632496/226369061-8f8668f2-f58f-416f-ab58-d31ddca42f74.png">
 
-## Adding a "Super Bullet" 
-We'll now use the timer object to create a "super" bullet tomato in our game. Regularly, tomatoes only do 1HP of damage, but we want to create a pickup that gives us a super bullet, doing a full 5 points of damage capable of killing a pig in a single shot. When desiging & coding games, it's best if we break our goal up into steps that build upon one another. Here's the steps we want to break this task into, and the order in which to do so:
-* Create a "super tomato" pickup object, and a super tomato "bullet" object. 1 is the level pickup, the other the bullet that fires.
-* Once picked up the powerup, give the player a "super tomato" bullet, fired with the "V" key
-* Once fired, start a 3 second "cooldown" timer
-* after 3 seconds has passed/cooled down, give the player another super tomato
-* create a "heads up display" layer to notify the player know when their powerup is ready to fire again
+2. On Our AI car, remove the car behaviour and add the "Pathfinding" behaviour. 
+3. On the regular car, disable to scroll-to behaviour, but leave it enabled on the AI car. We're going to want to follow the AI car around the screen as it moves around the path, and when the game is done we'll remove the scroll to behaviour from the AI car and re-enable it for our regular car. For now, it will help us with debugging. 
+
+<img width="277" alt="Screenshot 2023-03-20 at 15 24 01" src="https://user-images.githubusercontent.com/101632496/226369575-8a3eb5fd-8fb3-4051-9c5e-898367000be3.png">
+
+4. Give the AICar sprite 3 instance variables.
+- Number: LastCheckpointCrossed
+- Number: Laps
+- Number: PathFoundState
+
+5. Give the PlayerCar two instance variables.
+- Number: Laps
+- Number: LastCheckpointCrossed
+
+## Creating Waypoints/Checkpoints
+In this subsection, we'll set up our game to allow counting laps. 
+
+All racing games use waypoints/checkpoints throughout the level. Waypoints serve two purposes. 
+1. They serve as "checkpoints" for our AI to know where to go next. 
+2. They stop the player from cheating. Without checkpoints, the player could simply turn around and drive through the "finish line" to make a lap. Instead, we can check if the player has touched all the checkpoints, and if they have, allow the lap to "count". 
+
+1. Make a new layer and call this "Checkpoints".
+
+<img width="221" alt="Screenshot 2023-03-20 at 15 30 37" src="https://user-images.githubusercontent.com/101632496/226371395-cf27e163-a63c-4559-963f-12564c812259.png">
+
+2. Make a new sprite and call it "Checkpoint". Use the paint bucket tool to fill it in any generic colour, as this will be an invisible marker for game logic, similar to PlayerBox or EdgeMarker from earlier games. 
+3. Give the Checkpoint sprite 3 instance variables:
+- Number: Checkpoint
+- Boolean: IsFinishLine
+- Boolean: PlayerCrossed
+
+4. Add 4 checkpoints to the map and label their Checkpoint instance variables 1-4 respectively. The highest number should be your final checkpoint to be crossed. These will serve as our waypoints for both the player car and the AI car. 
+
+<img width="500" alt="Screenshot 2023-03-20 at 15 35 59" src="https://user-images.githubusercontent.com/101632496/226373010-2a73f414-f405-441b-8a49-1eb2c6dab084.png">
+
+5. Create a new sprite and call it "Finish Line". This will be our artwork sprite, no game logic will be applied to this object. Make this sprite a simple colour, or find a checkered flag png online as a placeholder artwork. Place this sprite slightly above the final checkpoint. 
+
+<img width="172" alt="Screenshot 2023-03-20 at 15 40 14" src="https://user-images.githubusercontent.com/101632496/226374167-3d33407a-6936-4ad4-93c0-cb96f68821b1.png">
+
+### Sub Tutorial: How Pathfinding Works
+Before we program our AI car to use pathfinding behaviour, it's helpful to know how pathfinding works. This next section is modified from the official construct 3 documentation [here](https://www.construct.net/en/make-games/manuals/construct-3/behavior-reference/pathfinding)
+
+The Pathfinding behavior uses the A* pathfinding algorithm (a well known algorithm for pathfinding, yes, there are multiple ways to find paths) to efficiently find a short path around obstacles.
+
+#### The pathfinding grid
+The pathfinding behavior works based on dividing the layout in to a *grid*. Pixel-perfect pathfinding can be extremely slow to process, dividing the layout in to square cells makes the pathfinding more efficient. In the behaviours properties panel of our AICar, you can change the cell size. The larger it is the more efficient pathfinding is. However setting a large cell size can cause problems: a cell can only be entirely obstacle or entirely free, and using large cells can close up small gaps. For example take the following arrangement of obstacles using a cell size of 32:
+
+![image](https://user-images.githubusercontent.com/101632496/226374775-ba7c14f8-6f99-46c8-ab37-0b9976be06d3.png)
+
+It appears that objects should be able to freely move around in between these objects. However if the cells that the pathfinding behavior marks as obstacle are highlighted in red, we see this:
+
+![image](https://user-images.githubusercontent.com/101632496/226375165-59075141-3955-4e1c-9c7e-5cbed7eaaf90.png)
+
+Some of the gaps have been closed off due to the cell size being relatively large compared to the size of the gap. This will make the pathfinding behavior route paths entirely around the obstacles, and never through them. We can help fix this by reducing the cell size to 20 (in our game, we'll use a cell size of 25):
+
+![image](https://user-images.githubusercontent.com/101632496/226375283-d459931f-87e8-4fa9-a6d7-336cf5ba3ba3.png)
+
+Now we can see that the Pathfinding behavior will be able to find routes between these obstacles. However, the smaller cell size will make the pathfinding more CPU intensive. Generally, try to use the largest cell size that does not cause problems navigating around obstacles.
+
+#### finding a path
+Calculating a path can take a long time, especially if the cell size is small. To prevent this reducing the game's framerate, the paths are calculated in the background. This means after using the Find path action, the resulting path *is not immediately available*. You must wait for the On path found event trigger to run.
+
+<img width="500" alt="Screenshot 2023-03-20 at 15 45 34" src="https://user-images.githubusercontent.com/101632496/226375682-0d5de883-360d-449d-bc30-2454e7cc8f1a.png">
+
+Only then can you move the object along the path. The game may continue to run for a fraction of a second in between Find path and On path found. 
+
+The result path is a sequence of "nodes" along the grid. The image below demonstrates a four-node path moving the Green triangle to the Blue circle.  (nodes 0 to 3).
+
+![image](https://user-images.githubusercontent.com/101632496/226375840-94a93601-f8a1-4909-bfcc-4a18d50cc717.png)
+
+Below we can see the same pathfinding behaviour in action, in real time, and through more complete terrain, similar to what your AICar will need to do. Any "Solid" object counts as an obstacle for your AICar.   
+
+![7f5pps](https://user-images.githubusercontent.com/101632496/226376471-aa7b39ad-af6e-4ba5-bced-d2cc508e44a0.gif)
+
+Note it may be impossible to find a path, such as trying to navigate to a destination inside a ring of obstacles. In this case, On failed to find path will be triggered instead of On path found. If you ask the pathfinding behavior to pathfind to a destination inside an obstacle, it will simply find the nearest clear cell and pathfind to there instead.
+
+## Using Pathfinding to Create an Advanced AI Car (Incorrectly) 
+We'll first incorrectly make our car move using the pathfinding behaviour to demonstrate a principal of pathfinding. Later, we'll clean this movement up. 
+
+1. In the properties panel on the AICar, match the perameters to those below. This means that the PlayerCar and the AICar will move at the exact same speed/accelleration. If you want things to move faster or slower, make sure you change both the PlayerCar's properties, and the AICar's properties. 
+
+<img width="388" alt="Screenshot 2023-03-20 at 15 49 42" src="https://user-images.githubusercontent.com/101632496/226377052-9204a0cc-ac60-42bc-89c1-6ffd974c51fe.png">
+
+2. It's time to make the AI car move, but a bit "choppy". 
 
 
-## Create a "super tomato" pickup object
 
-1. In the project panel, right click on the tomato and select clone.
 
-![Screenshot 2022-12-09 at 11 10 40](https://user-images.githubusercontent.com/101632496/206678239-4c767a1e-be4f-49c9-8ea8-a45ec720d5e2.png)
 
-2. Rename this tomato to "SupertomatoPickup", then open it in the animations editor. Using the "paintbucket" tool, change the tomato's red colour to something different ( I'm choosing yellow)
-* When you have the painbucket selected, there is a slider at the top of the animation editor called "tolerance" If you change the "tolerance" slider when using the paintbucket to something high, like 300+, you'll change the red colour AND red-ish colours in a single click. If the tolerance were set at "1", then only that exact shade of red gets replaced. 
-* be sure to change the colour of both the "back" and "right" animation frames
-
-3. Drag the supertomato somewhere on the layout for the player to pickup. 
-4. on the properties panel of the super tomato, remove the the destroy outside layout behaviour and bullet behaviour on the super tomato. 
-5. Add in the "sine" behaviour to the super tomato. (this will give our pickup a nice up/down bounce, like our gem in our platformer) Change the sine behaviour to:
-* movement: Z elevation (up/down in a 3d game)
-* period: 3 (time from start to finish up/down)
-* magnitude: 10 (pixels to move by)
-* everything else can be 0. 
-
-5. With our super pickup created, we now need to setup the code. We'll first add a global boolean variable (true/false) called "PowerupCollected". Set this initial value to false (unchecked = false, checked = true) 
-* on your event sheet, right click > add global variable. You need to do this at the Top or bottom of the event sheet, otherwise you'll create a local variable (for that group only to use) 
-* <img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206680413-59da91a5-32b9-4018-b41a-8d98f975fbf3.png">
-* ![Screenshot 2022-12-09 at 11 22 22](https://user-images.githubusercontent.com/101632496/206680488-af33ee96-fd07-4d03-a2c9-52aa03935a50.png)
-
-6. Add an event to our player: 
-* Event: on collision with super tomato:
-* Action: set global boolean "PowerupCollected" > True
-* Action: destroy super tomato pickup
-
-![Screenshot 2022-12-09 at 11 42 55](https://user-images.githubusercontent.com/101632496/206684519-3dd843f0-bfbc-45b7-baf4-91278ee3f892.png)
-
-Great, now our player can pickup the object. Now we need to do something with this. 
-
-## Making the Super tomato a "super bullet" 
-1. clone our super tomato sprite, call it "SuperTomatoBullet" and remove all behaviours. Then, re-add the bullet behaviour and the destroy outside layout behaviour. 
-
-2. We need to have a "placeholder" artwork on our game, otherwise our layout doesn't know what size to create our super bullet on spawn. Drag out our superbullet to the top left side, outside of the layout. Re-size the tomato to 40x40. 
-
-This will tell construct 3 the size we want for our bullet when it is spawned. If we didn't do this, and simply created an object without first sizing it outside of the layout, construct 3 would make our image at the ORIGINAL tomato size, which is 500px. That would be a HUGE bullet! 
-
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206681877-ae46c699-f259-4e59-93a8-d9d56a00153b.png">
-
-3. On the player, add the "timer" behaviour. This will allow us to create the cool-down event later. 
-4. Let's head back to the event sheet and add in some events, because right now we can pickup our tomato but it doesn't actually do anything. We need to tell the game what to do. 
-
-## Firing the Super Bullet
-1. Add a new event with 2 conditions.:
-* Keyboard > on key pressed > "V"
-* System > Is Boolean Set > PowerupCollected
-* ![Screenshot 2022-12-09 at 11 39 39](https://user-images.githubusercontent.com/101632496/206683951-658e3758-000b-4cbe-bdfc-03ef4649ad39.png)
-
-2. As actions, we're going to copy/paste the code from line 8, but instead replace the "Tomato" object with our "SuperTomatoBullet". Now, if we pickup the super tomato pickup, and press V, we should fire a super tomato. Test it out. 
-
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206684282-f6f8eeb8-e4a4-4ca3-bc88-f7d04f3be6dc.png">
-
-3. We now need to make our super tomato collide with our piggies. Again, we're going to copy/paste the events in line 10, and change their object from tomato to our super tomatobullet. However, we're going to change "add 1 to hitcount" to "add 5 to hitcount" instead, making our bullet deal 5x as much damage. 
-
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206685045-403f5c52-31a1-4a7f-8c56-52d076578511.png">
-
-### Adding the Super Bullet Cooldown Timer
-Now we've got a super-powered pickup! However, our player can use this all the time and spam the "V" key to kill piggies effortlessly. We only want the player to have this powerup once every 3 seconds. This is where the timer comes into play. 
-
-* The timer object allows you to create a timer based on an event. The event could start the timer when a key is pressed, when an item spawns, when a player dies/collides with a different object, or any other innumerable ways. 
-* The timer object comes with a string (word) "tag" or "label"
-* Timers can be "once" or "regular", meaning they trigger their time and end, or trigger their time and restart their timer again forever. 
-* The timer has a "on timer -" tag"" event, that can cause something to happen when the timer is finished. 
-
-1. on our "V" key pressed event, add an action
-* Action: "Start Timer" > Duration "3.0" > Once > Tag "SuperTomatoBullet"
-* Note: With string variables (pink words "between quotes") CaPiTaLs and SpElLiNg matter a LOT. "True" and "true" are 2 different string variables. Be sure you're spelling them correctly!
-
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206686124-fb0e41ce-dabe-41c8-b3b7-eafb8ac308bc.png">
-
-2. Add another condition to this event:
-* Player > Timer > Is timer "SuperTomatoBullet" running
-* Right click on this condition, select "invert"
-
-<img width="500" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/206686258-2c6af0e7-3958-4073-87cc-4b99dd24fe9f.png">
-
-What have we done here? Well, If the player presses V, AND the powerup was collected, AND the timer is currently NOT running, the game will spawn a super bullet. Try it out, you should notice that your game can only spawn a super bullet once every 3 seconds. Why? Let's step through the logic:
-1. The timer is not running, and the player has picked up the powerup, setting our global bool True. 
-2. The player presses the V key, and because our bool is true and the timer is NOT running, it spawns a super bullet, and starts the 3second timer. 
-3. The player presses the V key again. because all 3 conditions are NOT true, (the timer is running!) the actions do not take place. 
-4. once 3 seconds elapses again, the player can now shoot their super bullet again. 
- 
-## Making a 3D HUD for Player Notifications
-We've already made HUDs before in previous games, but making a HUD in 3D is a little different. We're not going to add a text object to a HUD inform our player when our powerup is "charged" and ready to fire. 
-
-1. Back on our layout, add a HUD layer to the top of the layers:
-* set it's parallax to 0x0%. 
-* Set Rendering mode to "2D". This will cause our HUD to follow along with our player like a "flat" object. 
-
-![Screenshot 2022-12-09 at 11 58 59](https://user-images.githubusercontent.com/101632496/206687665-c4533cef-f24f-476d-83d1-07c140a55f20.png)
-
-2. Add a new "text" object to this layer.
-* change the text size, colour, and font to something more readable.
-* Position it accordingly inside the "viewport" (the dashed line on the layout with a red arrow pointing to it)
-
-<img width="500" alt="Screenshot 2022-12-09 at 15 17 05" src="https://user-images.githubusercontent.com/101632496/206722203-bf702e63-8a14-4d53-91d8-a1255018ceb6.png">
-
-3. On our code, add a new player event and action:
-* Event: player > is timer running "SuperTomatoBullet"
-* Action: Text > Set text to "Charging"
-
-![Screenshot 2022-12-09 at 12 04 51](https://user-images.githubusercontent.com/101632496/206688521-505aadda-12ca-4d1f-9a3d-875f21ed8bc1.png)
-
-While our timer is running, our text will be set to "charging", letting our player know that something happened once they picked up the powerup. (as it's obvious to us as game developers, but not to our player) 
-
-4. Add another event and action:
-* Event: Player > On timer "SuperTomatoBullet"
-* Action: Text > set text to "Super Tomato Ready"
-
-![Screenshot 2022-12-09 at 12 09 30](https://user-images.githubusercontent.com/101632496/206689362-5a9ac8f9-696b-4b72-971f-b79c546938c5.png)
-
-The "on timer" event seems a little backwards. You would think this means when the timer starts, but this actually causes the event to happen when the timer ENDS. 
-
-5. Lastly, when we start the game, our text will currently show nothing until the player presses "v". On the super tomato pickup collision event, add in the action:
-* Action: Text > Set text to "Super Tomato Ready"
 
 and that's it! Preview out your game, you've now created a functional 3D Isometric First Person Shooter. 
