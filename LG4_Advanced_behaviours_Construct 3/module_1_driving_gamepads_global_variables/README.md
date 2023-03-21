@@ -43,9 +43,8 @@ In this sub-section we'll create our AI car sprite and set it up with all necess
 - Number: Laps
 - Number: PathFoundState
 
-5. Give the PlayerCar two instance variables.
+5. Give the PlayerCar one instance variables.
 - Number: Laps
-- Number: LastCheckpointCrossed
 
 ## Creating Waypoints/Checkpoints
 In this subsection, we'll set up our game to allow counting laps. 
@@ -110,17 +109,87 @@ Below we can see the same pathfinding behaviour in action, in real time, and thr
 Note it may be impossible to find a path, such as trying to navigate to a destination inside a ring of obstacles. In this case, On failed to find path will be triggered instead of On path found. If you ask the pathfinding behavior to pathfind to a destination inside an obstacle, it will simply find the nearest clear cell and pathfind to there instead.
 
 ## Using Pathfinding to Create an Advanced AI Car (Incorrectly) 
-We'll first incorrectly make our car move using the pathfinding behaviour to demonstrate a principal of pathfinding. Later, we'll clean this movement up. 
+Let's get our car moving. In the future, you might use this pathfinding behaviour to make a "homing" bullet, make enemies chase a player, or more...
 
 1. In the properties panel on the AICar, match the perameters to those below. This means that the PlayerCar and the AICar will move at the exact same speed/accelleration. If you want things to move faster or slower, make sure you change both the PlayerCar's properties, and the AICar's properties. 
 
 <img width="388" alt="Screenshot 2023-03-20 at 15 49 42" src="https://user-images.githubusercontent.com/101632496/226377052-9204a0cc-ac60-42bc-89c1-6ffd974c51fe.png">
 
-2. It's time to make the AI car move, but a bit "choppy". 
+2. Make a new event with 2 conditions
+- AIcar > Pathfound state = AICar.LastCheckpointCrossed
+- System > Pick by comparisson > 'Checkpoint object' CheckPoint.CheckPointNumber = AICar.LastCheckPointCrossed+1
+
+and 2 actions:
+AICar > Find Path to Checkpoint.X & Checkpoint.Y
+AICar > Add 1 to Pathfound State
+
+<img width="500" alt="Screenshot 2023-03-21 at 10 53 30" src="https://user-images.githubusercontent.com/101632496/226571589-66467da2-daa9-46f5-99d1-9afaf1e884b4.png">
+
+Let's explain what's happening here. The goal of this code is to find the path to take to the next checkpoint. First, we check 2 conditions
+1. That the AICar's "Pathfound" state is currently the previous path calculated. 
+2. That the checkpoint we are selecting is the NEXT checkpoint in line. 
+
+In order for our Pathfinding behaviour to be smooth, we actually have to calculate a path 1 step ahead of time. If we were to calculate the path from 1>2, and when we arrive at 2, calculate the path from 2>3, we would see that our car moves to #2, stops, calculated the next path, then accelerates again. Obviously, a car that starts and stops at every checkpoint is not ideal. So instead, we check "is the car moving in a current path state?" If yes, get the NEXT section of path waypoints to calculate, and calculate this path. So we're always calculating a path 1 waypoint ahead of where we are actually moving. Remember, calculating the path is Different from actually MOVING on the path. 
+
+3. add a sub event to this event. This will mean that If our car has passed all checkpoints, that we reset the AI back to it's first PathFoundState, checkpoint #0>1. At this point, we can now calculate paths in advance of when we actually move on them. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 10 58 48" src="https://user-images.githubusercontent.com/101632496/226572844-423748cf-4455-47a0-ac76-3b8c3a727bb4.png">
+
+4. Add a new event. When the game engine has found the correct path, tell the car to move along the path. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 11 00 05" src="https://user-images.githubusercontent.com/101632496/226573115-b005967c-709d-4f2f-9e61-579862aa96e4.png">
+
+5. Add a new event & sub event. This sets up logic for our pathfinding behaviour above in step #2. We set our car's last checkpoint crossed to the current checkpoint number that we just collided with, and If we are on the finishline checkpoint, reset our car's lastcheckpointCrossed back to 0 and add 1 to our lap counter. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 11 00 49" src="https://user-images.githubusercontent.com/101632496/226573294-fb3bdf3f-dda9-492a-8923-d21c7aded608.png">
+
+6. At this point, you've got a functioning, pathfinding car! Test out your layout in debug mode and watch the AI car's instance variables. You should see it's LastCheckpointCrossed variables, and laps variables change overtime as the car progresses throughout the level. 
 
 
+<img width="500" alt="Screenshot 2023-03-21 at 11 04 05" src="https://user-images.githubusercontent.com/101632496/226574079-cfb4afb3-d3d8-402f-aab8-d5781ed51556.png">
 
+## Stopping the Player Car from Cheating (With Loops!) 
+We're now going to stop our player car from being able to cheat as they drive around the map. Essentially, we want the player to have to cross every checkpoint in order for a lap to "count". 
 
+First, we should remove the Scrollto behaviour from our AICar, and re-enable the scrollto behaviour on our Car, so that we drive looking at our car rather than the AICar. 
 
+1. Make a new global number variable called "CheckpointsCrossed". We'll use this to tally how many checkpoints our car has crossed.
 
-and that's it! Preview out your game, you've now created a functional 3D Isometric First Person Shooter. 
+2. Add a new event. This will cause each individual checkpoint to set it's PlayerCrossed boolean variable to TRUE when the player collides with it. Notice, this will apply only to the checkpoint that was crossed. You can try it for yourself now. Test your game and drive your player car into one of the checkpoints while in debug. You should notice that ONLY the checkpoint you've crossed has it's PlayerCrossed boolean true, while the others remain false. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 11 14 27" src="https://user-images.githubusercontent.com/101632496/226576374-7c07ed3e-0152-4540-ac54-74ddfa8c612d.png">
+
+3. Add a sub event. Here is where we stop the player from actually cheating. First, we check every checkpoint object and see if it's playercrossed boolean is true using a "for each" loop. This will loop this block of code for as many checkpoints as we have, or repeat 4 times in our case. For every checkpoint, if this boolean is true (a player crossed it), then add 1 to our global checkpoints crossed variable. 
+
+After our loop has completed running, IF checkpointscrossed is greater than or equal to 4 (our total number of checkpoints), add 1 to the player laps count, and reset our global variable back to 0 to setup for the next lap. This code will not run if we have not crossed all 4 checkpoints. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 11 16 34" src="https://user-images.githubusercontent.com/101632496/226576838-fd2f7d5a-13b1-4bdf-838f-c2a3be48b88d.png">
+
+4. Lastly, we need to reset the game state for a new lap, because currently our checkpoints are still saying the player crossed them, even though we're at a new lap. As an additional subevent, for each checkpoint, reset it's PlayerCrossed boolean to False. Now we have a new clean slate map to drive around on. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 11 20 09" src="https://user-images.githubusercontent.com/101632496/226577663-f0aa7a29-5969-423a-ad83-8d4db1ab0636.png">
+
+That's it for the base game, we now have a player car that can drive, and a functioning AI car. You can debug your game and complete a few laps, you should notice both the player car and AI car's laps numbers counting up progressively. You'll also notice that we can use loops to repeat game logic events without needing to program in every individual sprite. How else might you use this in games? 
+
+# Using a Gamepad to control games
+Now let's get our car driving using a gamepad/controller. On the arcade cabinet, you'll have access to two logitech F310 controllers. 
+
+To make it work:
+* Disconnect F310 from Mac
+* Use an USB-A to USB-C adapter
+* On F310: switch X-input to D-input (small slider switch on the back of the controller) 
+* Hold **Logitech** button (in the middle)
+* Connect F310 to Mac via adapter, now you can release the Logitech button.
+
+Now you should be able to use your gamepad. [Shoutout to Gituser Jackblk for the tutorial](https://gist.github.com/jackblk/8138827afd986f30cf9d26647e8448e1)
+
+## Making the gamepad drive the car
+
+1. On your main layout, add the "Gamepad" object to your game. (Like adding a new sprite)
+2. Now we can simulate car controls just like we simulated controls for the WASD, or touch screen controls. It is possible to have multiple gamepads connected, so we'll use gamepad 0 for player 1, and gamepad 1 for player 2 (in future games)
+3. put in the following code to simulate controls. You may also choose to use the Dpad if you so wish. 
+
+<img width="500" alt="Screenshot 2023-03-21 at 11 38 40" src="https://user-images.githubusercontent.com/101632496/226582281-84335703-0cf0-4ff5-9e57-d7eb0a9d89f5.png">
+
+Simulating controls with an analog joystick is slightly different than a button press like WASD. Instead of a single On/OFF state from a button press, we actually send a range of values, from -100>100. See the chart below 
+
