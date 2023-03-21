@@ -190,7 +190,7 @@ Now you should be able to use your gamepad. [Shoutout to Gituser Jackblk for the
 
 Simulating controls with an analog joystick is slightly different than a button press like WASD. Instead of a single On/OFF state from a button press, we actually send a range of values, from -100>100. See the chart below for how these numbers relate to the gamepad. 
 
-![IMG_4730](https://user-images.githubusercontent.com/101632496/226596587-78531897-6cab-42ed-a024-5332f45e201e.jpeg)
+<img width="500" alt="Screenshot 2023-03-21 at 11 38 40" src="https://user-images.githubusercontent.com/101632496/226596587-78531897-6cab-42ed-a024-5332f45e201e.jpeg">
 
 3. Put in the following code to simulate controls. You may also choose to use the Dpad if you so wish. 
 
