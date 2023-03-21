@@ -1,0 +1,15 @@
+{
+	"name": "LapText",
+	"plugin-id": "Text",
+	"sid": 155908167558386,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 528823350234224
+		}
+	],
+	"effectTypes": []
+}

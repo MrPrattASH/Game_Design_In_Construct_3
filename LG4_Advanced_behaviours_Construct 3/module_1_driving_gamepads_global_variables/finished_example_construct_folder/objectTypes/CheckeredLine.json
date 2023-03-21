@@ -1,7 +1,7 @@
 {
-	"name": "FinishLine",
+	"name": "CheckeredLine",
 	"plugin-id": "Sprite",
-	"sid": 703169995353257,
+	"sid": 177942957812683,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,19 +11,31 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
+						"width": 802,
+						"height": 70,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": -2.7142857142857144,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7771926,
+						"imageSpriteId": 2441472,
+						"collisionPoly": {
+							"points": [
+								0.5,
+								0,
+								0.9588528678304239,
+								0,
+								0.5,
+								0.6897142857142853,
+								0.04114713216957606,
+								0
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 680893898287137,
+				"sid": 300127789780985,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

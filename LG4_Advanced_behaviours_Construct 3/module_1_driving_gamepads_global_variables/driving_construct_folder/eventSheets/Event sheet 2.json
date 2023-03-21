@@ -1,0 +1,132 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "The base models of this game have been modified by Brogan Pratt from the construct 3 starter projects section. "
+		},
+		{
+			"eventType": "variable",
+			"name": "winningPlayer2",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 708165072170200
+		},
+		{
+			"eventType": "variable",
+			"name": "CheckpointsPassed2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 619021215462082
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Car & Texts2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 567392118408190
+						}
+					],
+					"actions": [],
+					"sid": 690877952368354
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 372021301001349,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Check how many checkpoints the player has passed"
+						},
+						{
+							"eventType": "comment",
+							"text": "If our player has passed all 4 checkpoints, score a point (stops cheating) "
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 260567716129772,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "reset our checkpoints for cheating"
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 668662808747896
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AI Car2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Once the race has started, find the path to the next checkpoint. We need to check:\n- That the race is on/started \n- That the AI's current path found = it's recent checkpoint crossed\n- That the checkpoint we are selecting is the NEXT checkpoint in line\n\nThe pathfinding behaviour takes time to generate, so we need to generate the path ahead of time prior to moving along the path, otherwise our car would start/stop everytime it hits a checkpoint and needs to generate a new path"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 972750199124292
+						}
+					],
+					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 487254171557159
+						}
+					],
+					"sid": 679013582721565
+				}
+			],
+			"sid": 267129670965571
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 755160655694351,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 237666646061431
+						}
+					],
+					"sid": 424010823645307
+				}
+			]
+		}
+	],
+	"sid": 751267144423663
+}

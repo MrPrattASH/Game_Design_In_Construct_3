@@ -3,7 +3,22 @@
 	"plugin-id": "Sprite",
 	"sid": 681442133854936,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Laps",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 364634371350283
+		},
+		{
+			"name": "RecentCheckpointCrossed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 627975987856246
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Car",

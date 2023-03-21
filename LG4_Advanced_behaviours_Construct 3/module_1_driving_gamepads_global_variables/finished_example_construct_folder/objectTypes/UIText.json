@@ -1,0 +1,15 @@
+{
+	"name": "UIText",
+	"plugin-id": "Text",
+	"sid": 837468045415866,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 257638547533383
+		}
+	],
+	"effectTypes": []
+}

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 31702,
+	"savedWithRelease": 32703,
 	"name": "Driving template",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -8,18 +8,16 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "Sprite",
-			"name": "Sprite",
+			"id": "Keyboard",
+			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "TiledBg",
-			"name": "Tiled Background",
+			"id": "Sprite",
+			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -27,15 +25,20 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Keyboard",
-			"name": "Keyboard",
+			"id": "TiledBg",
+			"name": "Tiled Background",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
 			"bundled": false
 		},
 		{
@@ -43,23 +46,6 @@
 			"id": "Car",
 			"name": "Car",
 			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
-			"author": "Scirra",
-			"version": "r317.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
-			"author": "Scirra",
-			"version": "r317.2",
 			"bundled": false
 		},
 		{
@@ -67,7 +53,27 @@
 			"id": "Pathfinding",
 			"name": "Pathfinding",
 			"author": "Scirra",
-			"version": "r317.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
 			"bundled": false
 		}
 	],
@@ -77,12 +83,15 @@
 			"Car",
 			"Road",
 			"Barrier",
-			"Text",
 			"TiledBackground",
-			"FinishLine",
 			"AICar",
 			"Keyboard",
-			"CheckPoint"
+			"CheckPoint",
+			"StartingLight",
+			"UIText",
+			"LapText",
+			"CheckeredLine",
+			"Gamepad"
 		],
 		"subfolders": []
 	},
@@ -184,7 +193,9 @@
 		}
 	},
 	"timelines": {
-		"items": [],
+		"items": [
+			"Car AI Path"
+		],
 		"subfolders": [
 			{
 				"items": [],
@@ -235,6 +246,8 @@
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress-logo",
 		"preloadSounds": true,

@@ -10,6 +10,20 @@
 			"desc": "",
 			"show": true,
 			"sid": 254356597104636
+		},
+		{
+			"name": "Laps",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 364387839975853
+		},
+		{
+			"name": "PathFoundState",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 972360983063335
 		}
 	],
 	"behaviorTypes": [
@@ -17,11 +31,6 @@
 			"behaviorId": "Pathfinding",
 			"name": "Pathfinding",
 			"sid": 394670411850742
-		},
-		{
-			"behaviorId": "scrollto",
-			"name": "ScrollTo",
-			"sid": 189577926681251
 		}
 	],
 	"effectTypes": [],

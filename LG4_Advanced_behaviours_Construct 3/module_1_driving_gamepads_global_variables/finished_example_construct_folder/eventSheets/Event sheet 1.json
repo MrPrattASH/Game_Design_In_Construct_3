@@ -2,6 +2,10 @@
 	"name": "Event sheet 1",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "The base models of this game have been modified by Brogan Pratt from the construct 3 starter projects section. "
+		},
+		{
 			"eventType": "variable",
 			"name": "IntendedScale",
 			"type": "number",
@@ -12,67 +16,400 @@
 			"sid": 572126608654051
 		},
 		{
-			"eventType": "comment",
-			"text": "By having an intended scale and gradually moving the actual layer scale towards that value, we can create a smooth zoom based on the car's speed."
+			"eventType": "variable",
+			"name": "RaceOn",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 416476583786332
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 922557522809105
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 820227001208147,
-					"parameters": {
-						"variable": "IntendedScale",
-						"value": "1.2 - Car.Car.Speed / 1000"
-					}
-				},
-				{
-					"id": "set-layer-scale",
-					"objectClass": "System",
-					"sid": 576004371409389,
-					"parameters": {
-						"layer": "\"Game\"",
-						"scale": "lerp(LayerScale(\"Game\"), IntendedScale, 0.01)"
-					}
-				}
-			],
-			"sid": 745944581912985,
-			"disabled": true
+			"eventType": "variable",
+			"name": "winningPlayer",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 221084062918548
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 897077270576461,
-					"parameters": {
-						"key": 80
-					}
-				}
-			],
-			"actions": [],
-			"sid": 614403717134476,
+			"eventType": "group",
+			"disabled": false,
+			"title": "Start Animation",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "starting text"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 121851719026519
+						}
+					],
+					"actions": [
+						{
+							"id": "typewriter-text",
+							"objectClass": "UIText",
+							"sid": 859469159592434,
+							"parameters": {
+								"text": "\"Get Ready..............\"",
+								"duration": "3"
+							}
+						}
+					],
+					"sid": 875109934007819
+				},
+				{
+					"eventType": "comment",
+					"text": "Light animation happens at the start of the layout. Once complete, enable our cars to begin driving (handled by the \"RaceOn\" variable"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "StartingLight",
+							"sid": 332411765372557,
+							"parameters": {
+								"animation": "\"Start Animation\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 192042332808906,
+							"parameters": {
+								"variable": "RaceOn",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "StartingLight",
+							"sid": 244468855969411
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Car",
+							"sid": 489991027726648,
+							"behaviorType": "Car",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 859298057058167,
+							"parameters": {
+								"text": "\"Go!\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "set up our UItext to disappear after a few seconds"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "UIText",
+							"sid": 202894908575472,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "2",
+								"type": "once",
+								"tag": "\"go\""
+							}
+						}
+					],
+					"sid": 925385557016070
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "UIText",
+							"sid": 372900544121920,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"go\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 518796242036150,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 941910436190376
+				}
+			],
+			"sid": 946371846060160
+		},
+		{
+			"eventType": "variable",
+			"name": "CheckpointsPassed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 226903239887745
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Car & Texts",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Zoom in/out on the car slightly to make a cool following effect\n\nBy having an intended scale and gradually moving the actual layer scale towards that value, we can create a smooth zoom based on the car's speed."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 350592383046935
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 262064990674054,
+							"parameters": {
+								"variable": "IntendedScale",
+								"value": "1.2 - Car.Car.Speed / 1000"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 654593209819661,
+							"parameters": {
+								"layer": "\"Game\"",
+								"scale": "lerp(LayerScale(\"Game\"), IntendedScale, 0.01)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "LapText",
+							"sid": 241198208294467,
+							"parameters": {
+								"text": "\"Player Laps: \" & Car.Laps & newline & \"Computer Laps: \" & AICar.Laps"
+							}
+						}
+					],
+					"sid": 392347884786891
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Car",
+							"sid": 838266852709723,
+							"parameters": {
+								"object": "CheckPoint"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Car",
+							"sid": 501366343017895,
+							"parameters": {
+								"instance-variable": "RecentCheckpointCrossed",
+								"value": "CheckPoint.CheckPointNumber"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CheckPoint",
+							"sid": 500588595046176,
+							"parameters": {
+								"instance-variable": "PlayerCollided",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 963558575095285,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Check how many checkpoints the player has passed"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 788459914276820,
+									"parameters": {
+										"object": "CheckPoint"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "CheckPoint",
+									"sid": 423295237399693,
+									"parameters": {
+										"instance-variable": "PlayerCollided"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 712208768752290,
+									"parameters": {
+										"variable": "CheckpointsPassed",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 214390063163099
+						},
+						{
+							"eventType": "comment",
+							"text": "If our player has passed all 4 checkpoints, score a point (stops cheating from simply driving through the main checkpoint over again) "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 111582452824140,
+									"parameters": {
+										"variable": "CheckpointsPassed",
+										"comparison": 5,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Car",
+									"sid": 157351109057563,
+									"parameters": {
+										"instance-variable": "Laps",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 997155153458048,
+									"parameters": {
+										"variable": "CheckpointsPassed",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 324665875322782,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "reset our checkpoints for cheating. We must use a For Each loop to cause all of our checkpoints to reset their boolean variable"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 208795753059077,
+											"parameters": {
+												"object": "CheckPoint"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "CheckPoint",
+											"sid": 708929426633232,
+											"parameters": {
+												"instance-variable": "PlayerCollided",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 158371315042300
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 660858454201704
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AI Car",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Once the race has started, find the path to the next checkpoint. We need to check:\n- That the race is on/started \n- That the AI's current path found = it's recent checkpoint crossed\n- That the checkpoint we are selecting is the NEXT checkpoint in line\n\nThe pathfinding behaviour takes time to generate, so we need to generate the path ahead of time prior to moving along the path, otherwise our car would start/stop everytime it hits a checkpoint and needs to generate a new path"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 360501761812297,
+							"parameters": {
+								"variable": "RaceOn"
+							}
+						},
+						{
 							"id": "compare-instance-variable",
 							"objectClass": "AICar",
-							"sid": 810023570152845,
+							"sid": 320702453094563,
 							"parameters": {
-								"instance-variable": "RecentCheckPointCrossed",
+								"instance-variable": "PathFoundState",
 								"comparison": 0,
-								"value": "0"
+								"value": "AICar.RecentCheckPointCrossed"
+							}
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 994214575242428,
+							"parameters": {
+								"object": "CheckPoint",
+								"expression": "CheckPoint.CheckPointNumber",
+								"comparison": 0,
+								"value": "AICar.RecentCheckPointCrossed+1"
 							}
 						}
 					],
@@ -80,35 +417,403 @@
 						{
 							"id": "find-path",
 							"objectClass": "AICar",
-							"sid": 604268329192975,
+							"sid": 806901803014780,
 							"behaviorType": "Pathfinding",
 							"parameters": {
 								"x": "CheckPoint.X",
 								"y": "CheckPoint.Y"
 							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "AICar",
+							"sid": 755646605848624,
+							"parameters": {
+								"instance-variable": "PathFoundState",
+								"value": "1"
+							}
 						}
 					],
-					"sid": 780282001321604
+					"sid": 978753196444432,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If our car's path state is greater than the total number of checkpoints on the map, set it back to 0. "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AICar",
+									"sid": 166847500616937,
+									"parameters": {
+										"instance-variable": "PathFoundState",
+										"comparison": 5,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AICar",
+									"sid": 563462850161139,
+									"parameters": {
+										"instance-variable": "PathFoundState",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 207860286437144
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "The pathfinding behaviour takes time to solve. (0.5-1s) We need to move along once we have found our path. "
 				},
 				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
+					"conditions": [
 						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 282521084275356
-						},
-						{
-							"id": "move-along-path",
+							"id": "on-path-found",
 							"objectClass": "AICar",
-							"sid": 172992109163138,
+							"sid": 781269699389066,
 							"behaviorType": "Pathfinding"
 						}
 					],
-					"sid": 621326468294238
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "AICar",
+							"sid": 133995959229417,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 889295130996951
+				},
+				{
+					"eventType": "comment",
+					"text": "Setup logic to allow our car to generate the next path on line 8"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "AICar",
+							"sid": 967580404574651,
+							"parameters": {
+								"object": "CheckPoint"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "AICar",
+							"sid": 368816204715162,
+							"parameters": {
+								"instance-variable": "RecentCheckPointCrossed",
+								"value": "CheckPoint.CheckPointNumber"
+							}
+						}
+					],
+					"sid": 277702103769836,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If our AI has crossed all 4 checkpoints, count a lap. "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AICar",
+									"sid": 321259671042866,
+									"parameters": {
+										"instance-variable": "RecentCheckPointCrossed",
+										"comparison": 5,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "AICar",
+									"sid": 353786926336366,
+									"parameters": {
+										"instance-variable": "Laps",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AICar",
+									"sid": 784248661174318,
+									"parameters": {
+										"instance-variable": "RecentCheckPointCrossed",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 504397063498775
+						}
+					]
 				}
-			]
+			],
+			"sid": 443761855102544
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Win Conditions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Whichever player crosses the line first, sets the win text and changes the global variable, not allowing the other player to win."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 892994881806439,
+							"parameters": {
+								"first-value": "AICar.Laps",
+								"comparison": 5,
+								"second-value": "3"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 436147687042057,
+							"parameters": {
+								"variable": "winningPlayer",
+								"comparison": 0,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 814978192242810,
+							"parameters": {
+								"text": "\"Computer Wins!\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 117991716262492,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 570515442335068,
+							"parameters": {
+								"variable": "winningPlayer",
+								"value": "\"cpu\""
+							}
+						}
+					],
+					"sid": 981555545900262
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 417440841485858,
+							"parameters": {
+								"first-value": "Car.Laps",
+								"comparison": 5,
+								"second-value": "3"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 607880774032054,
+							"parameters": {
+								"variable": "winningPlayer",
+								"comparison": 0,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "UIText",
+							"sid": 564692754700600,
+							"parameters": {
+								"text": "\"Player Wins!\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "UIText",
+							"sid": 377723189557348,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 310502598438971,
+							"parameters": {
+								"variable": "winningPlayer",
+								"value": "\"player\""
+							}
+						}
+					],
+					"sid": 614913374885112
+				}
+			],
+			"sid": 637343192183160
+		},
+		{
+			"eventType": "comment",
+			"text": "Moving Left"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 879519049531550,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-x-axis",
+						"comparison": 3,
+						"value": "-10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Car",
+					"sid": 688972518586734,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "steer-left"
+					}
+				}
+			],
+			"sid": 800132012119342
+		},
+		{
+			"eventType": "comment",
+			"text": "Move Right"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 856659407398189,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-x-axis",
+						"comparison": 5,
+						"value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Car",
+					"sid": 385467566405106,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "steer-right"
+					}
+				}
+			],
+			"sid": 786088468617185
+		},
+		{
+			"eventType": "comment",
+			"text": "Pushing Up"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 913282451602890,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 3,
+						"value": "-10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Car",
+					"sid": 416982723994696,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "accelerate"
+					}
+				}
+			],
+			"sid": 497654402203998
+		},
+		{
+			"eventType": "comment",
+			"text": "Pulling Down"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-axis",
+					"objectClass": "Gamepad",
+					"sid": 621766724645351,
+					"parameters": {
+						"gamepad": "0",
+						"axis": "left-analog-y-axis",
+						"comparison": 5,
+						"value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Car",
+					"sid": 350242833923652,
+					"behaviorType": "Car",
+					"parameters": {
+						"control": "brake"
+					}
+				}
+			],
+			"sid": 296873207481685
 		}
 	],
 	"sid": 608560047694675
