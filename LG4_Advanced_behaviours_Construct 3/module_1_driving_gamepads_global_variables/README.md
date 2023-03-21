@@ -4,7 +4,7 @@ So far we've explored some *very* rudimentary Artificial Intelligence for our en
 ## By the end of this tutorial you should know:
 1. What the *Pathfinding* behaviour is, and how to use it
 2. How to control a game using a Gamepad
-3. How to use a loop to repeat events in a gam
+3. How to use a loop to repeat events in a game
 
 
 # Tutorial
@@ -187,9 +187,26 @@ Now you should be able to use your gamepad. [Shoutout to Gituser Jackblk for the
 
 1. On your main layout, add the "Gamepad" object to your game. (Like adding a new sprite)
 2. Now we can simulate car controls just like we simulated controls for the WASD, or touch screen controls. It is possible to have multiple gamepads connected, so we'll use gamepad 0 for player 1, and gamepad 1 for player 2 (in future games)
-3. put in the following code to simulate controls. You may also choose to use the Dpad if you so wish. 
+
+Simulating controls with an analog joystick is slightly different than a button press like WASD. Instead of a single On/OFF state from a button press, we actually send a range of values, from -100>100. See the chart below for how these numbers relate to the gamepad. 
+
+![IMG_4730](https://user-images.githubusercontent.com/101632496/226596587-78531897-6cab-42ed-a024-5332f45e201e.jpeg)
+
+3. Put in the following code to simulate controls. You may also choose to use the Dpad if you so wish. 
 
 <img width="500" alt="Screenshot 2023-03-21 at 11 38 40" src="https://user-images.githubusercontent.com/101632496/226582281-84335703-0cf0-4ff5-9e57-d7eb0a9d89f5.png">
 
-Simulating controls with an analog joystick is slightly different than a button press like WASD. Instead of a single On/OFF state from a button press, we actually send a range of values, from -100>100. See the chart below 
+A few things to note:
+- We want to keep a "deadpoint" in the centre of the controller, so we actually start our ranges about 10 +/- points in either direction. We do this because joysticks are not perfect. When a joystick is in the centre of the controller, it may be reading (x,y) 2,4, or -2,1. If we used our measurements as X axis <0, turn left, we risk making our driver move erraticaly, so instead we use a "deadpoint" or a large range where no ouputs are being sent to the game
+- The "X" axis controls the left/right steering movement
+- The "Y" axis controls the up/down accelerate/brake movement. 
+- Look at the code and see how the X/Y axis relate to the numbers on the gamepad image above
+
+That's it for gamepad logic. You can now make anygame control by a gamepad if you so wish. 
+
+# Extensions & Finished Game
+Take a look at the "finished_example" above for some ways on how you might extend 
+
+
+
 
