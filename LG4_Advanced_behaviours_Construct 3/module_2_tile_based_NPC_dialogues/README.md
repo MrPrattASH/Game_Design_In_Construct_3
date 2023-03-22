@@ -12,10 +12,10 @@ We're going back to the barebones example browser template. Open up the "Tile-Ba
 
 <img width="269" alt="Screenshot 2023-03-22 at 07 56 59" src="https://user-images.githubusercontent.com/101632496/226825406-baa0bf82-f2ca-4fdd-afdd-a046eccb8263.png">
 
-## Create a dialogue "trigger"
+## Create a Dialogue "Trigger" Hitbox
 Lets make a sprite that will notify our player that a conversation is possible, or a dialogue event (say reading a signpost) is actionable. 
 
-1. Make a new sprite called "dialogue trigger". This will be another invisible coloured box. Give it two instance variables:
+1. Make a new sprite called "dialogue trigger". This will be another invisible coloured box (a concept well known to you by now). Give it two instance variables:
 - boolean called "Event"
 - string called "line"
 
@@ -23,12 +23,34 @@ Lets make a sprite that will notify our player that a conversation is possible, 
 
 <img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226826974-b6036e0f-23ac-46e9-82e1-c7b5cc6e0c64.png">
 
-3. Add a new layer called "dialogues" and add this sprite to this layer. Maybe  We'll use this as a "dialogue hitbox" for our player to collide into, similar to our player hitbox that we pin our player animation to, or the collision objects we use for making enemy sprites patrol back and forth. 
+3. Add a new layer called "dialogue_events" and add this sprite to this layer. We'll use this as a "dialogue hitbox" for our player to collide into, similar to our player hitbox that we pin our player animation to, or the collision objects we use for making enemy sprites patrol back and forth. Go ahead and place this dialogue trigger somewhere interesting, maybe on a pile of rocks to show the player a "hidden item" exists here? 
 
-- place this sprite in front of a character in the shop. 
-- On this sprite's instance variables,(not the character's animation instance variable!)
- - give the "character" string a name
- - the "line" variable will be what we use for the characters dialogue line. 
+4. Make a new sprite called "Dialogue_Arrow". Make it a small arrow (16x16) (edit this in the properties panel on the left, dragging corners to resize wont work) and place this in the top left corner of our screen, outside of the layout. We need to create a "placeholder" sprite with the correct size before we spawn it on the map. If we were to not have this placeholder sprite, our arrow would spawn as a gigantic sprite and not the size we want. Be sure to crop your sprite after creating to remove the blank transparent space around your sprite. 
+
+<img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226847121-5e67f4ed-6b39-4187-9692-06c65f568908.png">
+
+5.This sprite will inform our player that an object is interactable. Make a new event for player box overlapping the dialogue trigger, and system create object. 
+
+<img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226847563-08ad7b3c-d0de-4202-afcb-11d58fef171e.png">
+
+Now, whenever our player overlaps the dialogue trigger, an "arrow" will pop up 1 tile space above the trigger, letting our player know that they can interact with something on this space. 
+
+6. Add an "else" condition to destroy our dialogue_arrow if the player is not overlapping a dialogue_trigger. 
+
+<img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226848142-abc5a87d-c697-4d9f-8df2-13d73b1edf25.png">
+
+Test out your game. You should walk over the dialogue trigger and an arrow should display. Once you walk away from the item, the arrow should disappear. 
+
+# Creating the Dialogue Box
+
+1. Create a new layer called Dialogues, and set the layer's paralax properties to 0x0%, similar to what you've done in the past to make a UI or HUD layer. 
+
+<img width="368" alt="Screenshot 2023-03-22 at 08 19 50" src="https://user-images.githubusercontent.com/101632496/226829364-d9e3091b-772d-4351-af7b-073c9322245f.png">
+
+2. Make two new sprites. 
+- One is a black background for our text called DialogueBox.  
+- The second is a text object for where our dialogue lines will be displayed
+
 
 ## Setting up Dialogues
 We need to inform the player that a dialogue is possible with a character on screen. We'll do this by adding in a collision event, so that when our player overlaps a dialogue box, we'll display a little triangle to hover over the player. Add these 2 events inside the Dialogues code group. 
