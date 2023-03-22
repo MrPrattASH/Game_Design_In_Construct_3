@@ -1,75 +1,29 @@
-# String Variables, String Concatenation, and Basic Dialogue Triggers
-
-This tutorial will teach you about string variables, their differences from booleans and integers(numbers), and how to create basic, single dialogue events in the context of a shop keeper presenting different items to your character. As always, play through the example .c3p finished file to get an idea of what you'll be creating. (WASD and Space for controls). 
-
-Note: As these tutorials progress further and further, I will be showing you *less* of exactly how to perform each task. You'll need to do some hunting and solving problems on your own to be able to complete some of these steps. 
+# Tile Based Movement, Functions, & Dialogues with NPC's. 
 
 ## By the end of this tutorial you should know:
-1. What a *string* or *str* variable is
-2. How to add strings together, and how this is different from adding ints and floats
-3. Why "1" + "1" = "11", not "2"
-4. How to make functions "dynamic" by giving them information from their environment (parameters) 
-5. How to create a simple dialogue trigger
-6. How to destroy specific object instances using instance variables
+1. How to write one line of code, and reuse it to accomplish the same task multiple times (or how "functions" work)
+2. How to create a simple dialogue trigger
+3. How to destroy specific object instances using instance variables
 
-## Self-Assessment Quiz:
-Complete [this self-assessment quiz](https://docs.google.com/forms/d/e/1FAIpQLSeixlqST6KOlDjHdqWhwDH4oNY91zj1Z909mxjOlCg3ZhO9_Q/viewform?usp=sf_link) after completing the tutorial. If after completing the self-assessment form, you find you are still missing content knowledge, go back through that section of the tutorial to solidify that knowledge *before moving on to the next module*.  
+# Using Strings to create Basic Dialogues
+We're going back to the barebones example browser template. Open up the "Tile-Based" game. Before moving on to the tutorial, be sure you understand how the game logic works:
+- How does tile based movement differ from 8 direction movement? Are diagonal movements possible? 
+- Why is one tilemap "solid" vs. one being the background? 
 
-## String Variables
+<img width="269" alt="Screenshot 2023-03-22 at 07 56 59" src="https://user-images.githubusercontent.com/101632496/226825406-baa0bf82-f2ca-4fdd-afdd-a046eccb8263.png">
 
-Last tutorial we learned that an **boolean or "bool"** is a true/false switch. In contrast, a string is a *word* or *text* variable. For example the below are all string variables ,
-> "one"
-> "word"
-> "this is an entire sentence"
-> "1"
-> "512432"
-> "False" 
-> "True
+## Create a dialogue "trigger"
+Lets make a sprite that will notify our player that a conversation is possible, or a dialogue event (say reading a signpost) is actionable. 
 
-
-anything that is in between the "double" quotations will be considered to be a string variable. For example:
-
-> Not
-> True
-> False
-> 1234
-> 0.431
-
-Are all not string variables. 
-
-This means that these two variables are different. 
-> 1 and "1"
-
-the integer *1* and the string *"1"*, are treated as two different things by the computer, despite the fact that they are both "numbers". the fact that it is inside double quotes means it is treated as a string, or "word" "1", rather than as a number. 
-
-## String Concatenation
-
-String concatenation is the process of joining strings together to one another. (basically, addition, but with string variables. )
-
-For example, in string concatenation we would join these two strings to become: (note the space in 1 of the examples, as spaces are not added for you)
-> "hello " + "world" = "hello world"
-> "hello" + "world" = "helloworld"
-
-interestingly, when we treat numbers as string values, these two lines of code now produce different outcomes:
-> adding integers, adds as one would expect
-> 
-> 1 + 1 = 2 
-
-
-> "adding" string numbers however, produces interesting results. 
-> 
-> "1" + "1" = "11"
-
-# Strings for Basic Dialogues
-In this tutorial, you'll be using a pre-made game as a base and building on top of it.  In the construct editor, please open the corresponding module's construct folder. As with the last module, you don't need to change anything in the yellow code-group, only the green code. 
-
-## 1. Create a dialogue trigger
-Make a new sprite called "dialogue trigger". Give it 3 instance variables:
-- String called "character_name"
+1. Make a new sprite called "dialogue trigger". This will be another invisible coloured box. Give it two instance variables:
 - boolean called "Event"
 - string called "line"
 
-Add this sprite "dialogue trigger" on the Objects layer. We'll use this as a "dialogue hitbox" for our player to collide into, similar to our player hitbox that we pin our player animation to, or the collision objects we use for making enemy sprites patrol back and forth. 
+2. Set the origin of this sprite (in the animations editor) to the top left. ALL objects in our tilebased game need to have a top left origin. If you don't set this, the tiles wont "align" on the grid properly, and they'll be offset. Resize this sprite to be our default tile size, 32x32, and make it not initially visible. 
+
+<img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226826974-b6036e0f-23ac-46e9-82e1-c7b5cc6e0c64.png">
+
+3. Add a new layer called "dialogues" and add this sprite to this layer. Maybe  We'll use this as a "dialogue hitbox" for our player to collide into, similar to our player hitbox that we pin our player animation to, or the collision objects we use for making enemy sprites patrol back and forth. 
 
 - place this sprite in front of a character in the shop. 
 - On this sprite's instance variables,(not the character's animation instance variable!)
