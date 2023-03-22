@@ -43,23 +43,27 @@ Test out your game. You should walk over the dialogue trigger and an arrow shoul
 
 # Creating the Dialogue Box
 
-1. Create a new layer called Dialogues, and set the layer's paralax properties to 0x0%, similar to what you've done in the past to make a UI or HUD layer. 
+1. Create a new layer called Dialogues, and set the layer's paralax properties to 0x0%, similar to what you've done in the past to make a UI or HUD layer. Additonally, set this layer's "initially visible" property to false. 
 
 <img width="368" alt="Screenshot 2023-03-22 at 08 19 50" src="https://user-images.githubusercontent.com/101632496/226829364-d9e3091b-772d-4351-af7b-073c9322245f.png">
 
-2. Make two new sprites. 
+2. Make two new sprites. Format them to your liking. You may see my example below. 
 - One is a black background for our text called DialogueBox.  
 - The second is a text object for where our dialogue lines will be displayed
 
+<img width="368" alt="Screenshot 2023-03-22 at 08 19 50" src="ttps://user-images.githubusercontent.com/101632496/226922048-df658e33-fc09-4ac2-b3b3-026a3e85ee3b.png">
 
-## Setting up Dialogues
-We need to inform the player that a dialogue is possible with a character on screen. We'll do this by adding in a collision event, so that when our player overlaps a dialogue box, we'll display a little triangle to hover over the player. Add these 2 events inside the Dialogues code group. 
+3. Before we make our dialog text spawn, we need to have our words that will show displayed. We're doing two things. 
+- Duplicate your dialogue_trigger and place this second one somewhere on your map
+- Write some text in the "line" instance variable on both triggers. be sure the text is different. 
+- 
+![Screenshot 2023-03-22 at 14 47 44](https://user-images.githubusercontent.com/101632496/226924360-f66d73c1-37e0-4a23-899d-027aec524164.png)
 
-<img width="827" alt="Screen Shot 2022-09-13 at 13 59 43" src="https://user-images.githubusercontent.com/101632496/189895333-aa2e7300-c917-4344-977e-a7c66ce82d72.png">
+![Screenshot 2023-03-22 at 14 47 52](https://user-images.githubusercontent.com/101632496/226924386-51d476f3-8337-48fb-ae8a-6e6a4d623f97.png)
 
-We've also toggled our "Event" local bool, we'll use this below to know which character we are talking to. 
+## Making a Reusable Dialogue Function
+Time to make our code reusable, in the form of a function. Essentially, we can write code once and have it create different outcomes. So we will write one function to display dialogyue, and from then on, all we need to do is write new lines and our dialogue displays automagically. 
 
-## 2. Dialogue Functions
 In the main event sheet, under the Dialogues group, make a new function. (A "function" is something we have seen before in other games. Basically, a function is a block of code that we can call and run as many times as we want in our code. It allows us to create 1 section of code, and use this multiple times over again, rather than needing to create new lines of code for every event. Handy!) 
 
 This is a neat function. It allows us to trigger & create a dialogue box, and to have the text *dynamically update* depending on the character we are talking to. This is due to the "parameter" we call the function with. We call the function (or run it, but in programming we call this run command a "call". in this case, when we "call" the function, we pass it a parameter called "line" (our instance variable from the dialogue trigger sprite). Imagine we are making a phone call to this function, and the parameter we pass is what we say over the phone. For example, we could call the function with:
