@@ -41,7 +41,7 @@ Now, whenever our player overlaps the dialogue trigger, an "arrow" will pop up 1
 
 <img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226848142-abc5a87d-c697-4d9f-8df2-13d73b1edf25.png">
 
-7. We also need a way of knowing which dialogue box is being interacted with at any point in time. We'll use our boolean varialbe to do this. (so that ONLY the dialogue trigger we are overlapping with will display it's "line" variable later in the code. 
+7. We also need a way of knowing which dialogue box is being interacted with at any point in time. We'll use our boolean varialbe to do this. (so that ONLY the dialogue trigger we are overlapping with will display it's "line".  
 
 <img width="500" alt="Screenshot 2023-03-23 at 08 01 40" src="https://user-images.githubusercontent.com/101632496/227127619-27d26078-ba90-461e-97b6-4cc2c5757fb6.png">
 
@@ -57,15 +57,13 @@ Test out your game. You should walk over the dialogue trigger and an arrow shoul
 - One is a black background for our text called DialogueBox.  
 - The second is a text object for where our dialogue lines will be displayed
 
-<img width="368" alt="Screenshot 2023-03-22 at 08 19 50" src="ttps://user-images.githubusercontent.com/101632496/226922048-df658e33-fc09-4ac2-b3b3-026a3e85ee3b.png">
+<img width="368" alt="Screenshot 2023-03-22 at 08 19 50" src="https://user-images.githubusercontent.com/101632496/226922048-df658e33-fc09-4ac2-b3b3-026a3e85ee3b.png">
 
 3. Before we make our dialog text spawn, we need to have our words that will show displayed. We're doing two things. 
 - Duplicate your dialogue_trigger and place this second one somewhere on your map
 - Write some text in the "line" instance variable on both triggers. be sure the text is different. 
-- 
-![Screenshot 2023-03-22 at 14 47 44](https://user-images.githubusercontent.com/101632496/226924360-f66d73c1-37e0-4a23-899d-027aec524164.png)
 
-![Screenshot 2023-03-22 at 14 47 52](https://user-images.githubusercontent.com/101632496/226924386-51d476f3-8337-48fb-ae8a-6e6a4d623f97.png)
+<img width="500" alt="Screenshot 2023-03-22 at 08 19 50" src="https://user-images.githubusercontent.com/101632496/226924360-f66d73c1-37e0-4a23-899d-027aec524164.png"><img width="500" alt="Screenshot 2023-03-22 at 08 19 50" src="https://user-images.githubusercontent.com/101632496/226924386-51d476f3-8337-48fb-ae8a-6e6a4d623f97.png">
 
 ## Making a Reusable Dialogue Function
 Time to make our code reusable, in the form of a function. Essentially, we can write code once and have it create different outcomes. So we will write one function to display dialogyue, and from then on, all we need to do is write new lines and our dialogue displays automagically.
@@ -88,6 +86,14 @@ to produce a dialogue event with the text, "Hello Adventurer!" displayed. Using 
 
 
 <img width="500" alt="Screenshot 2023-03-23 at 07 57 25" src="https://user-images.githubusercontent.com/101632496/227126815-03edfcd2-c195-43f7-a09c-11b23b7151f5.png">
+
+Note, when we display our text line, we are not displaying 
+
+> "line"
+
+This would cause our dialogue text to only ever display the string line! instead, we pass the *variable* line. No quotes. 
+
+>line
 
 <img width="500" alt="Screenshot 2023-03-23 at 07 57 11" src="https://user-images.githubusercontent.com/101632496/227126775-d6098cb2-d7a2-4e8d-b79a-c1c702ac93d1.png">
 
