@@ -9,6 +9,7 @@ We're now going to explore a 3D styled game, a throwback to the days of Doom, if
 2. What a *timer* behaviour is
 3. How to use *timers* to create in-game, timebased powerup events
 4. What the *Sine* behaviour is, and how it can create floating back/forth objects. 
+5. Optional: Making a HUD for a 3D game
 
 
 # Tutorial
@@ -143,8 +144,8 @@ What have we done here? Well, If the player presses V, AND the powerup was colle
 3. The player presses the V key again. because all 3 conditions are NOT true, (the timer is running!) the actions do not take place. 
 4. once 3 seconds elapses again, the player can now shoot their super bullet again. 
  
-## Making a 3D HUD for Player Notifications
-We've already made HUDs before in previous games, but making a HUD in 3D is a little different. We're not going to add a text object to a HUD inform our player when our powerup is "charged" and ready to fire. 
+# Optional: Making a 3D HUD for Player Notifications
+We've already made HUDs before in previous games, but making a HUD in 3D is a little different. We're going to add a text object to a HUD inform our player when our powerup is "charged" and ready to fire. 
 
 1. Back on our layout, add a HUD layer to the top of the layers:
 * set it's parallax to 0x0%. 
