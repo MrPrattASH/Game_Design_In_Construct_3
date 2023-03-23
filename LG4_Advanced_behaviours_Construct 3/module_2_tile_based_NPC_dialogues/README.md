@@ -5,6 +5,8 @@
 2. How to create a simple dialogue trigger
 3. How to destroy specific object instances using instance variables
 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/101632496/227128917-a2cf72a3-a5a4-4b78-9cbb-785abd4d2d1d.gif)
+
 # Using Strings to create Basic Dialogues
 We're going back to the barebones example browser template. Open up the "Tile-Based" game. Before moving on to the tutorial, be sure you understand how the game logic works:
 - How does tile based movement differ from 8 direction movement? Are diagonal movements possible? 
@@ -39,6 +41,10 @@ Now, whenever our player overlaps the dialogue trigger, an "arrow" will pop up 1
 
 <img width="600" alt="Screenshot 2023-03-22 at 08 05 58" src="https://user-images.githubusercontent.com/101632496/226848142-abc5a87d-c697-4d9f-8df2-13d73b1edf25.png">
 
+7. We also need a way of knowing which dialogue box is being interacted with at any point in time. We'll use our boolean varialbe to do this. (so that ONLY the dialogue trigger we are overlapping with will display it's "line" variable later in the code. 
+
+<img width="500" alt="Screenshot 2023-03-23 at 08 01 40" src="https://user-images.githubusercontent.com/101632496/227127619-27d26078-ba90-461e-97b6-4cc2c5757fb6.png">
+
 Test out your game. You should walk over the dialogue trigger and an arrow should display. Once you walk away from the item, the arrow should disappear. 
 
 # Creating the Dialogue Box
@@ -62,48 +68,41 @@ Test out your game. You should walk over the dialogue trigger and an arrow shoul
 ![Screenshot 2023-03-22 at 14 47 52](https://user-images.githubusercontent.com/101632496/226924386-51d476f3-8337-48fb-ae8a-6e6a4d623f97.png)
 
 ## Making a Reusable Dialogue Function
-Time to make our code reusable, in the form of a function. Essentially, we can write code once and have it create different outcomes. So we will write one function to display dialogyue, and from then on, all we need to do is write new lines and our dialogue displays automagically. 
+Time to make our code reusable, in the form of a function. Essentially, we can write code once and have it create different outcomes. So we will write one function to display dialogyue, and from then on, all we need to do is write new lines and our dialogue displays automagically.
 
-In the main event sheet, under the Dialogues group, make a new function. (A "function" is something we have seen before in other games. Basically, a function is a block of code that we can call and run as many times as we want in our code. It allows us to create 1 section of code, and use this multiple times over again, rather than needing to create new lines of code for every event. Handy!) 
+A "function" is something we have seen before in other games. Basically, a function is a block of code that we can call and run as many times as we want in our code. It allows us to create 1 section of code, and use this multiple times over again, rather than needing to create new lines of code for every event. Handy!
 
-This is a neat function. It allows us to trigger & create a dialogue box, and to have the text *dynamically update* depending on the character we are talking to. This is due to the "parameter" we call the function with. We call the function (or run it, but in programming we call this run command a "call". in this case, when we "call" the function, we pass it a parameter called "line" (our instance variable from the dialogue trigger sprite). Imagine we are making a phone call to this function, and the parameter we pass is what we say over the phone. For example, we could call the function with:
-> dialogue_box("Hello Adventurer!") 
+1. Make a new function by rightclicking, add new function called "Display_Dialogue". 
+
+<img width="328" alt="Screenshot 2023-03-23 at 07 49 16" src="https://user-images.githubusercontent.com/101632496/227125204-8d36af53-c1bd-4bbd-bdab-84ab2caabd66.png">
+
+2. Right click on the function and select "add parameter". Add a string parameter called "line". 
+<img width="500" alt="Screenshot 2023-03-23 at 07 50 46" src="https://user-images.githubusercontent.com/101632496/227125481-2364b3ce-2950-47ad-83a7-add4d969737f.png">
+
+Having a parameter will allow our dialogue text to *dynamically update* depending on the character we are talking to. This is due to the "parameter" we call the function with. We call the function (or run it, but in programming we call this run command a "call". When we "call" the function, we pass it an argument called "line". The argument we pass to the parameter (or the value we call our function with) will be our instance variable from the dialogue trigger sprite. Imagine we are making a phone call to this function, and the parameter we pass is what we say over the phone. For example, we could call the function with:
+> dialogue_box("Hello Adventurer!") (where "Hello Adventurer" is the value that the parameter "line" is assigned)
 
 to produce a dialogue event with the text, "Hello Adventurer!" displayed. Using one function for our dialogue events allows us to write the code once, and use it multiple times with different dialogues each time rather than needing to re-spawn a dialogue event each time. This is the beauty of functions, repeating code we can use for the same purpose, but with slightly different outcomes in the event itself. 
 
-- call the function "dialogue_box" 
-- add a "parameter" to accept a string (right click on the function after creation). This parameter is a peice of information we need to call the function with. 
+3. Add a few actions to the dialogue function. First, we show the dialogue layer, then we typewriter "line" in the UI text box. It may seem silly to make a function for such a small amount of code, but imagine you have 30 characters in your game. Is it more efficient to write "show dialogue layer, display text" for 30 characters? Or is it more efficient to simply call a "show dialogue function" with one argument? Functions save time! 
 
-![Screen Shot 2022-04-08 at 15 45 33](https://user-images.githubusercontent.com/101632496/162448314-a9857e19-79a7-48b0-af7a-e23543c60ef0.png)
 
-- inside the function, we need to first create an object "DialogueBox" sprite on the "Dialogue" layer. Choose the appropriate X/Y co-ordinates for the viewport. (312x240) 
-- create object "Dialogue_Arrow" sprite, and locate this sprite in the bottom right corner of the now spawned dialogue box. (You can use DialogueBox.BBoxRight for the X value and DialogueBox.BBoxBottom for the Y value
-- Create object "SpriteFont_Dialogue" and locate this inside the DialougeBox Sprite. You can use DialogueBox.X and DialogueBox.Y to spawn on the X/Y coordinates of this object. 
-- Set the text of Sprite_font_dialogue to "line" (the parameter used at the start of the function. 
+<img width="500" alt="Screenshot 2023-03-23 at 07 57 25" src="https://user-images.githubusercontent.com/101632496/227126815-03edfcd2-c195-43f7-a09c-11b23b7151f5.png">
 
-Now we have a function set up to create a dialogue box with a flashing arrow, but we havn't "called" or ran the function anywhere in the code. We can write functions, but in order to use them, we need to call them. Let's do this now. 
+<img width="500" alt="Screenshot 2023-03-23 at 07 57 11" src="https://user-images.githubusercontent.com/101632496/227126775-d6098cb2-d7a2-4e8d-b79a-c1c702ac93d1.png">
 
-## 3. Create a new event "Keyboard > on key pressed > space". We'll include 2 sub events inside this event: 
-###### 1. the first sub event - Creating a dialogue box
-- This uses a bool variable. If the player is overlapping a dialogue trigger box while space is pressed, we should call the dialogue_box function. 
-- When we call the dialogue_box function, we will pass the instance variable from the current "dialogue_trigger" in as the argument. This means that the text written inside the instance variable for the dialogue trigger will be displayed in our event. Dynamicaly updating text! 
-<img width="289" alt="Screen Shot 2022-09-13 at 14 02 50" src="https://user-images.githubusercontent.com/101632496/189895963-581b183b-9b54-45eb-b3b1-33957e2db630.png">
 
-![Screen Shot 2022-04-08 at 15 57 49](https://user-images.githubusercontent.com/101632496/162450786-87eb8c28-110f-4cde-bb91-2d00d2c5b013.png)
+## Make the Dialogue Box Display Dialogue
+Now we have a function set up to create a dialogue box with an arrow, but we havn't "called" or ran the function anywhere in the code. We can write functions, but in order to use them, we need to call them. Let's do this now. 
 
-###### 2. The second sub event - destroying any open dialogue boxes
-- Add an "else" to the subcondition above. This means that if the if the above sub-event condition is *not* true (ie, the player is not standing on a dialogue trigger), destroy the DialogueBox, SpriteFont_Dialogue, and Dialogue_arrow. We need this to be able to close our dialogue box when we are done talking to the character, otherwise it would stay around forever! 
+1. Create a new event for on space pressed. We'll use the space key to both show and hide dialogues. 
+- If our dialogue layer is currently showing and the player is pressing space, they want to "end" the dialogue and close it. 
+- If they're overlapping a dialogue trigger and want to talk to it, it should display the "line" from the correct dialogue trigger. (with the Dialogue_trigger.line argument, or rather, the line from the dialogue trigger we are currently overlapping) 
 
-![Screen Shot 2022-04-11 at 15 23 01](https://user-images.githubusercontent.com/101632496/162748733-f7f1a1cc-e87e-4634-ab64-3acce677174c.png)
+<img width="600" alt="Screenshot 2023-03-23 at 08 05 03" src="https://user-images.githubusercontent.com/101632496/227128217-8ccc8a1e-cb27-4103-8fe1-0ec621ba13fd.png">
 
-Try out your game now. Can you walk up to the character and speak to them? 
+Try out your game now. Can you walk up to the specific areas and speak to them? You should also notice that the text displays different dialogues each time. 
 
-# Extension Challenges:
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/101632496/227128917-a2cf72a3-a5a4-4b78-9cbb-785abd4d2d1d.gif)
 
-- Be sure your code is fully commented, in line with our 7 rules for code comments. 
-- This is your second assessed project. 
-- Add in a "Pickup" item somewhere on the main layout. Perhaps it is a coin for currency, or maybe an item your character will use later in a game, or a lost artifact from an NPC quest. (you'll need to find and upload your own custom sprite for this). Then, choose one of the NPC's. They should say 1 thing when the character speaks to them *prior* to picking up the item, and something different *after* picking up the item. Use your knowledge from past tutorials to create this. 
-- Add in more dialogue triggers with new characters. Create new instances of the dialogue trigger, and drag in pre-made assets from the "enemies" project folder
-- How might you add a new instance variable (perhaps a dialogue "counter") to the code to create a multi-line dialogue, so the character the player is speaking to displays two different dialogue events, one after another? 
-- How might you use the "random" or "choose" methods we learned about last module, to make an NPC display a random dialogue line for the player? <img width="333" alt="Screen Shot 2022-04-12 at 14 02 02" src="https://user-images.githubusercontent.com/101632496/162958303-2530cd7a-7df3-4412-bfc0-966febdb576c.png">
 
