@@ -1,10 +1,11 @@
-# Advanced AI Enemies, Loops, Driving Cars, & Gamepad Control
+# Advanced AI Enemies, Loops & Driving Cars
 So far we've explored some *very* rudimentary Artificial Intelligence for our enemy sprites. If you remember back to our platformer game in Learning Guide 1, we simply created edge markers to make our enemies bounce back and forth. Now, we're going to give them some real brains. 
 
 ## By the end of this tutorial you should know:
 1. What the *Pathfinding* behaviour is, and how to use it
-2. How to control a game using a Gamepad
-3. How to use a loop to repeat events in a game
+2. How to use a loop to repeat events in a game
+3. #Optional: How to control a game using a Gamepad
+
 
 
 # Tutorial
@@ -169,7 +170,7 @@ After our loop has completed running, IF "checkpointscrossed" is greater than or
 
 That's it for the base game, we now have a player car that can drive and a functioning smart AI car. You can debug your game and complete a few laps, you should notice both the player car and AI car's laps numbers counting up progressively. You'll also notice that we can use loops to repeat game logic events without needing to program in every individual sprite. How else might you use a loop in games? 
 
-# Using a Gamepad to control games
+#Optional Section: Using a Gamepad to control games
 Now let's get our car driving using a gamepad/controller. On the arcade cabinet final project, you'll have access to two logitech F310 controllers. 
 
 To make the gamepad work on an M1 mac:
@@ -206,6 +207,6 @@ A few things to note:
 That's it for gamepad logic. You can now make anygame control by a gamepad, if you so wish. 
 
 # Extensions & Finished Game
-Take a look at the "finished_example" above for some ways on how you might extend this game beyond what I've done here. 
+Take a look at the "finished_example" above for some ways on how you might extend this game beyond what I've done here. You are not required to complete extentions, though you may do so if you wish to further improve your programming abilities. 
 - Add a starting light animation that enables the car's driving behaviour, rather than starting the game instantly. 
 - Add a UI text that displays the player's current laps. 
