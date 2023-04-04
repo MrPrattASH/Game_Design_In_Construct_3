@@ -170,7 +170,7 @@ After our loop has completed running, IF "checkpointscrossed" is greater than or
 
 That's it for the base game, we now have a player car that can drive and a functioning smart AI car. You can debug your game and complete a few laps, you should notice both the player car and AI car's laps numbers counting up progressively. You'll also notice that we can use loops to repeat game logic events without needing to program in every individual sprite. How else might you use a loop in games? 
 
-#Optional Section: Using a Gamepad to control games
+# Optional Section: Using a Gamepad to control games
 Now let's get our car driving using a gamepad/controller. On the arcade cabinet final project, you'll have access to two logitech F310 controllers. 
 
 To make the gamepad work on an M1 mac:
