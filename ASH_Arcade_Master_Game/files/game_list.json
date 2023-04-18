@@ -1,0 +1,54 @@
+{
+    "c2array": true,
+    "size": [
+        4,
+        3,
+        1
+    ],
+    "data": [
+        [
+            [
+                "Game"
+            ],
+            [
+                "An Apple a Day"
+            ],
+            [
+                "2a"
+            ]
+        ],
+        [
+            [
+                "Description"
+            ],
+            [
+                "Keep that pescy doctor away in an endless runner game."
+            ],
+            [
+                "2b"
+            ]
+        ],
+        [
+            [
+                "Design Lead"
+            ],
+            [
+                "J. Galardi"
+            ],
+            [
+                "2c"
+            ]
+        ],
+        [
+            [
+                "Design Assistance"
+            ],
+            [
+                "I. Unadkat"
+            ],
+            [
+                "2d"
+            ]
+        ]
+    ]
+}

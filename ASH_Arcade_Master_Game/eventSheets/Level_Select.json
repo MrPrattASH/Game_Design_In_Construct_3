@@ -1,0 +1,311 @@
+{
+	"name": "Level_Select",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Reset Scale"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 777684323038589
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 849441741428092,
+					"parameters": {
+						"scale": "1.0"
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 105514424503590,
+					"parameters": {
+						"tag": "\"game_list\"",
+						"file": "game_list.json"
+					}
+				}
+			],
+			"sid": 434992527889426
+		},
+		{
+			"eventType": "variable",
+			"name": "cur_y",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Start at 1, adding to this index selects the next game",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 979492112056404
+		},
+		{
+			"eventType": "variable",
+			"name": "cur_x",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 121840730736763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 985787108533802,
+					"parameters": {
+						"tag": "\"game_list\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Games",
+					"sid": 246640311866775,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 807004129943208
+		},
+		{
+			"functionName": "Update_Game_List",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 196195498825744
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 148228404918197
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 237852630869663,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "game_descriptions",
+							"sid": 442188516193150,
+							"parameters": {
+								"instance-variable": "text_list",
+								"comparison": 0,
+								"value": "\"Game\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "game_descriptions",
+							"sid": 121264047290806,
+							"parameters": {
+								"text": "Games.At(x,y)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 782672265240942,
+							"parameters": {
+								"variable": "x",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 686476324066510
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "game_descriptions",
+							"sid": 326350380151693,
+							"parameters": {
+								"instance-variable": "text_list",
+								"comparison": 0,
+								"value": "\"Description\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "game_descriptions",
+							"sid": 367048496815306,
+							"parameters": {
+								"text": "Games.At(x,y)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 516172407307327,
+							"parameters": {
+								"variable": "x",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 763219272193304
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "game_descriptions",
+							"sid": 574407847620286,
+							"parameters": {
+								"instance-variable": "text_list",
+								"comparison": 0,
+								"value": "\"Design Lead\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "game_descriptions",
+							"sid": 760548351555048,
+							"parameters": {
+								"text": "Games.At(x,y)"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 602042862904634,
+							"parameters": {
+								"variable": "x",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 317341965167803
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "game_descriptions",
+							"sid": 104927589107839,
+							"parameters": {
+								"instance-variable": "text_list",
+								"comparison": 0,
+								"value": "\"Design Assistance\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "game_descriptions",
+							"sid": 988307240953531,
+							"parameters": {
+								"text": "Games.At(x,y)"
+							}
+						}
+					],
+					"sid": 760138306394388
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 494754832309824,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Update_Game_List",
+					"sid": 303121693748633,
+					"parameters": [
+						"cur_x",
+						"cur_y"
+					]
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 443487143672116,
+					"parameters": {
+						"variable": "cur_y",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 271285715105989,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Reset our games list back to the first item in the list. "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 671875157401509,
+							"parameters": {
+								"first-value": "cur_y",
+								"comparison": 4,
+								"second-value": "Games.Height"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 890355465202051,
+							"parameters": {
+								"variable": "cur_y",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 498334833263292
+				}
+			]
+		}
+	],
+	"sid": 627853210637674
+}

@@ -1,0 +1,17 @@
+{
+	"name": "ScoreText",
+	"plugin-id": "Text",
+	"sid": 857008203226301,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Score",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 581175666377676
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

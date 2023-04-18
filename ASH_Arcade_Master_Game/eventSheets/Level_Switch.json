@@ -1,0 +1,30 @@
+{
+	"name": "Level_Switch",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 511722679128226,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 453103185831476,
+					"parameters": {
+						"layout": "Level Select"
+					}
+				}
+			],
+			"sid": 838787792521665
+		}
+	],
+	"sid": 169493133145000
+}

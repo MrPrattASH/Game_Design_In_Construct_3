@@ -1,0 +1,61 @@
+{
+	"name": "Event sheet 3",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "StartBtn",
+					"sid": 654091751411038
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Restart game"
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 490664445066401,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 590922952367799
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 960781458549298
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 945272279592099,
+					"parameters": {
+						"text": "\"Patients Saved: \" & Score"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 941436228560021,
+					"parameters": {
+						"variable": "Score",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 408795237201661
+		}
+	],
+	"sid": 187203081242511
+}

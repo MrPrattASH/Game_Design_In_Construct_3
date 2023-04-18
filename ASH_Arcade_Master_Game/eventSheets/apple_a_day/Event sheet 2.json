@@ -1,0 +1,1255 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Lane1",
+			"type": "number",
+			"initialValue": "70",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 772641311399187
+		},
+		{
+			"eventType": "variable",
+			"name": "Lane2",
+			"type": "number",
+			"initialValue": "206",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 143604478069939
+		},
+		{
+			"eventType": "variable",
+			"name": "Lane3",
+			"type": "number",
+			"initialValue": "342",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 395898769133016
+		},
+		{
+			"eventType": "variable",
+			"name": "Touch_Start",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "X value at which the player begins touching the screen",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 727429405989163
+		},
+		{
+			"eventType": "variable",
+			"name": "Speed",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "interval between spawns and between items lowering, smaller is faster",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 589121897223923
+		},
+		{
+			"eventType": "variable",
+			"name": "Smoothness",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "How smoothly background and objects move, higher is smoother",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 564146511023396
+		},
+		{
+			"eventType": "variable",
+			"name": "GameEnabled",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 633500194969048
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 343449850606424
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 846430447893722
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Play main menu song"
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 807440472210682,
+					"parameters": {
+						"audio-file": "Playful - Loop - Ishan Unadkat ",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 597686587706400,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Show pop-up"
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 388142107918837,
+					"parameters": {
+						"layer": "\"Popup\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Reset time scale changes from last game"
+				},
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 531433603965516,
+					"parameters": {
+						"time-scale": "1"
+					}
+				}
+			],
+			"sid": 457841825034675
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 494041076571369,
+					"parameters": {
+						"object": "Exit"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 419172627519718,
+					"parameters": {
+						"layer": "\"Popup\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "StartBtn",
+					"sid": 448256332492174,
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartBtn",
+					"sid": 613874794923788,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Destroy apple in pop-up to not take instant damage"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Apple",
+					"sid": 796111129710928
+				}
+			],
+			"sid": 709089566678332
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "StartBtn",
+					"sid": 351805426134762
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Title",
+					"sid": 613067119114123,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "StartBtn",
+					"sid": 596766356243715,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Player_Static",
+					"sid": 459451169442677,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Player_Animation",
+					"sid": 323594446950282,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "toggle-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 117555449284790,
+					"parameters": {
+						"variable": "GameEnabled"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Fade into game music"
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 738655197415360,
+					"parameters": {
+						"tag": "\"\"",
+						"db": "-100",
+						"duration": "1",
+						"ending": "stop"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 897159266266768,
+					"parameters": {
+						"audio-file": "Soft Rock - Loop - Ishan Unadkat ",
+						"loop": "looping",
+						"volume": "-100",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 400322283883971,
+					"parameters": {
+						"tag": "\"\"",
+						"db": "0",
+						"duration": "1",
+						"ending": "keep-playing"
+					}
+				}
+			],
+			"sid": 652662792110179
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 590793996101425,
+					"parameters": {
+						"variable": "GameEnabled"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 855888394594814,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 956456250298036,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 493913199841066,
+							"parameters": {
+								"first-value": "PlayerBox.X",
+								"comparison": 4,
+								"second-value": "200"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Move 1 lane left"
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "PlayerBox",
+							"sid": 386841450652597,
+							"parameters": {
+								"angle": "180",
+								"distance": "136"
+							}
+						}
+					],
+					"sid": 492434753765604
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 176267606610761,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 742248211276267,
+							"parameters": {
+								"first-value": "PlayerBox.X",
+								"comparison": 2,
+								"second-value": "250"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Move 1 lane right"
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "PlayerBox",
+							"sid": 324621065065851,
+							"parameters": {
+								"angle": "0",
+								"distance": "136"
+							}
+						}
+					],
+					"sid": 953901219995488
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 812160676632285
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Store touch start X value into Touch_Start"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 805414102579668,
+							"parameters": {
+								"variable": "Touch_Start",
+								"value": "Touch.AbsoluteX"
+							}
+						}
+					],
+					"sid": 574275143791477
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 960666402701392
+						}
+					],
+					"actions": [],
+					"sid": 561183325868847,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 143395845763300,
+									"parameters": {
+										"variable": "Touch_Start",
+										"comparison": 4,
+										"value": "Touch.AbsoluteX"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 445639116506961,
+									"parameters": {
+										"first-value": "PlayerBox.X",
+										"comparison": 4,
+										"second-value": "200"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "If the end location of the touch is to the left of the start, move left"
+								},
+								{
+									"id": "move-at-angle",
+									"objectClass": "PlayerBox",
+									"sid": 454244532177848,
+									"parameters": {
+										"angle": "180",
+										"distance": "136"
+									}
+								}
+							],
+							"sid": 626085493973972
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 232346478254592,
+									"parameters": {
+										"variable": "Touch_Start",
+										"comparison": 2,
+										"value": "Touch.AbsoluteX"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 266032931527440,
+									"parameters": {
+										"first-value": "PlayerBox.X",
+										"comparison": 2,
+										"second-value": "250"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "If the end location of the touch is to the right of the start, move right"
+								},
+								{
+									"id": "move-at-angle",
+									"objectClass": "PlayerBox",
+									"sid": 254886806931789,
+									"parameters": {
+										"angle": "0",
+										"distance": "136"
+									}
+								}
+							],
+							"sid": 851278728551742
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 140792907916217
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Makes player sprite follow player box (which handles collision)"
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_Animation",
+							"sid": 334185742265862,
+							"parameters": {
+								"x": "PlayerBox.X",
+								"y": "PlayerBox.Y"
+							}
+						}
+					],
+					"sid": 387549944709558
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 643928440242014,
+							"parameters": {
+								"interval-seconds": "Speed * 2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Creates apples such that it is possible to move in-between them at all times"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 197100251479936,
+							"parameters": {
+								"object-to-create": "Apple",
+								"layer": "1",
+								"x": "choose(Lane1, Lane2, Lane3)",
+								"y": "-43.5",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Apple",
+							"sid": 459039698101739,
+							"parameters": {
+								"scale": "3"
+							}
+						}
+					],
+					"sid": 672344422427422,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 377870591854638,
+									"parameters": {
+										"first-value": "timescale",
+										"comparison": 2,
+										"second-value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Constantly increase speed up to 3x speed"
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 815146696999186,
+									"parameters": {
+										"time-scale": "roundToDp(timescale + 0.02, 2)"
+									}
+								}
+							],
+							"sid": 901023843598111
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 223750061822967,
+							"parameters": {
+								"interval-seconds": "Speed * 4"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 404616585848092,
+							"parameters": {
+								"variable": "Speed",
+								"comparison": 5,
+								"value": "0.25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 267523877770099,
+							"parameters": {
+								"variable": "Speed",
+								"value": "0.01"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 378762745476733,
+							"parameters": {
+								"variable": "Speed",
+								"value": "roundToDp(Speed, 2)"
+							}
+						}
+					],
+					"sid": 592505993079540,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 610056817946016,
+							"parameters": {
+								"interval-seconds": "Speed "
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 984278539619494,
+							"parameters": {
+								"first-value": "floor(random(4))",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "25% chance to spawn syringe every game \"frame\""
+						},
+						{
+							"callFunction": "SpawnSyringe",
+							"sid": 637508962506310
+						}
+					],
+					"sid": 490484297298878
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 420380589247670,
+							"parameters": {
+								"interval-seconds": "Speed/Smoothness"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Constantly move background so it looks like player is moving forward"
+						},
+						{
+							"id": "move-at-angle",
+							"objectClass": "TiledBackground",
+							"sid": 960456732330121,
+							"parameters": {
+								"angle": "90",
+								"distance": "80 / Smoothness"
+							}
+						}
+					],
+					"sid": 949532764737115,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 826797314831063,
+									"parameters": {
+										"object": "Syringe"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Move all syringes down"
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Syringe",
+									"sid": 744765510126663,
+									"parameters": {
+										"x": "Self.x",
+										"y": "Self.y + 80 / Smoothness"
+									}
+								}
+							],
+							"sid": 207559263556185,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "Syringe",
+											"sid": 352627437912416,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "Destroy all syringes not on screen"
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Syringe",
+											"sid": 367057334386557
+										}
+									],
+									"sid": 829486901561399
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 529815557934629,
+									"parameters": {
+										"object": "Apple"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Move all apples down"
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Apple",
+									"sid": 162735393152168,
+									"parameters": {
+										"x": "Self.x",
+										"y": "Self.y + 80 / Smoothness"
+									}
+								}
+							],
+							"sid": 254732866627362,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-screen",
+											"objectClass": "Apple",
+											"sid": 279787315172401,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"type": "comment",
+											"text": "Destroy all apples not on screen"
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Apple",
+											"sid": 679801087235099
+										}
+									],
+									"sid": 935295820138732
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "TiledBackground",
+									"sid": 787268950022263,
+									"parameters": {
+										"comparison": 5,
+										"y-co-ordinate": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Once scrolling background reaches bottom, return it to the top"
+								},
+								{
+									"id": "set-y",
+									"objectClass": "TiledBackground",
+									"sid": 434401943300969,
+									"parameters": {
+										"y": "-1028"
+									}
+								}
+							],
+							"sid": 231518940561395
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 990469822752773,
+							"parameters": {
+								"object": "Apple"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 621107101688208,
+							"disabled": true,
+							"parameters": {
+								"variable": "GameEnabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player_Static",
+							"sid": 141054751813459,
+							"disabled": true,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player_Animation",
+							"sid": 759084705025472,
+							"disabled": true,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 740397327697730,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 428853509775069,
+									"parameters": {
+										"object": "Heart"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "PlayerBox",
+									"sid": 528056392266671,
+									"parameters": {
+										"instance-variable": "Colliding"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Destroy heart furthest to the right"
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Heart",
+									"sid": 239635561707700
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "PlayerBox",
+									"sid": 376575903675976,
+									"parameters": {
+										"instance-variable": "Colliding",
+										"value": "true"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Make player flash"
+								},
+								{
+									"id": "flash",
+									"objectClass": "Player_Animation",
+									"sid": 933616968082972,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.2",
+										"off-time": "0.2",
+										"duration": "1"
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Slows time when hit"
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 115724742103137,
+									"parameters": {
+										"time-scale": "timescale - 0.2"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "PlayerBox",
+									"sid": 971425945175023,
+									"parameters": {
+										"instance-variable": "Life",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 197685416976470
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PlayerBox",
+									"sid": 350248897253513,
+									"parameters": {
+										"instance-variable": "Life",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"type": "comment",
+									"text": "Fade to Synth-wave music on one life"
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 821448211419866,
+									"parameters": {
+										"tag": "\"\"",
+										"db": "-100",
+										"duration": "1",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 970077114494582,
+									"parameters": {
+										"audio-file": "Synthwave - Loop - Ishan Unadkat ",
+										"loop": "looping",
+										"volume": "-100",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 343212249447294,
+									"parameters": {
+										"tag": "\"\"",
+										"db": "0",
+										"duration": "1",
+										"ending": "keep-playing"
+									}
+								}
+							],
+							"sid": 856411668943780
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PlayerBox",
+									"sid": 839185254747352,
+									"parameters": {
+										"instance-variable": "Life",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 769172703364484,
+									"parameters": {
+										"variable": "GameEnabled"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 634999743272737,
+									"parameters": {
+										"layout": "Game Over"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 597383548570032,
+									"parameters": {
+										"tag": "\"\""
+									}
+								}
+							],
+							"sid": 376319104550978
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 999718141472773
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "As soon as player exits apple, they are eligible to take damage again"
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "PlayerBox",
+							"sid": 920382033096809,
+							"parameters": {
+								"instance-variable": "Colliding",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 129247885270004
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PlayerBox",
+							"sid": 409266956035002,
+							"parameters": {
+								"object": "Syringe"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Destroy syringe, add one score, and update it"
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Syringe",
+							"sid": 387075057316386
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 921125220659778,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 391726516784493,
+							"parameters": {
+								"text": "Score"
+							}
+						}
+					],
+					"sid": 762321659786758
+				}
+			]
+		},
+		{
+			"functionName": "SpawnSyringe",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 201102896772591,
+					"parameters": {
+						"object-to-create": "Syringe",
+						"layer": "1",
+						"x": "choose(Lane1, Lane2, Lane3)",
+						"y": "-43.5",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Syringe",
+					"sid": 569925954932438,
+					"parameters": {
+						"width": "81",
+						"height": "81"
+					}
+				}
+			],
+			"sid": 427695905183422,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Syringe",
+							"sid": 647355500559523,
+							"parameters": {
+								"object": "Apple"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "If an apple and syringe were to spawn on each other, destroy the syringe to avoid sprite overlap"
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Syringe",
+							"sid": 924009629209933
+						},
+						{
+							"callFunction": "SpawnSyringe",
+							"sid": 499512862273482,
+							"disabled": true
+						}
+					],
+					"sid": 503398166541837
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Apple",
+					"sid": 374430390825082,
+					"parameters": {
+						"object": "Syringe"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "If an apple and syringe were to spawn on each other, destroy the syringe to avoid sprite overlap"
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Syringe",
+					"sid": 323230616141606
+				}
+			],
+			"sid": 975020617040507
+		},
+		{
+			"eventType": "comment",
+			"text": "# Exit Icon Popup Credit: [Mark James](http://www.famfamfam.com/) is licensed under                                                  [public domain](https://creativecommons.org/publicdomain/zero/1.0/)"
+		},
+		{
+			"eventType": "comment",
+			"text": "# Syringe Credit: [Various inventory 24 pixel icon set](https://opengameart.org/content/various-inventory-24-pixel-icon-set) by [OceansDream](https://www.deviantart.com/oceansdream/art/Pixel-Icons-available-for-use-121152370) is licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)"
+		},
+		{
+			"eventType": "comment",
+			"text": "# Floor Tile Credit: [Clean repeatable tile](https://opengameart.org/content/clean-repeatable-tile) by Jacob is licensed under [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)"
+		},
+		{
+			"eventType": "comment",
+			"text": "# All art made by myself (Player_Static, Player_Animation, Heart, X, Check) was made in                                               [Piskel](https://www.piskelapp.com/)"
+		},
+		{
+			"eventType": "comment",
+			"text": "# Music By Ishan Unadkat"
+		}
+	],
+	"sid": 954888250184516
+}

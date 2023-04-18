@@ -1,0 +1,15 @@
+#StartBtn {
+	border-radius: 0.5em;
+	transition: margin-top 0.1s, box-shadow 0.1s;
+	border-color: black;
+	background-color: red;
+	box-shadow: 0 0.2em #000;
+	color: white;
+	font-size: 1.5rem;
+}
+
+#StartBtn:active {
+	margin-top: 0.2em;
+	box-shadow: 0 0px #000;
+}
+

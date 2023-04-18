@@ -1,0 +1,391 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 33600,
+	"name": "Arcade_Master_Game",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "kgmbor4tj32",
+	"objectTypes": {
+		"items": [
+			"Text",
+			"Game_Image",
+			"Games",
+			"AJAX",
+			"game_descriptions"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"X",
+					"Title",
+					"TiledBackground",
+					"Text2",
+					"StartBtn",
+					"ScoreText",
+					"Popup",
+					"Heart",
+					"GUISyringe",
+					"GameOver",
+					"Exit",
+					"Check"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"Player_Animation",
+							"Player_Static",
+							"PlayerBox"
+						],
+						"subfolders": [],
+						"name": "Player"
+					},
+					{
+						"items": [
+							"Apple",
+							"Syringe"
+						],
+						"subfolders": [],
+						"name": "Items"
+					},
+					{
+						"items": [],
+						"subfolders": [],
+						"name": "Input"
+					}
+				],
+				"name": "Apple_A_Day"
+			},
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"Mouse",
+					"Touch"
+				],
+				"subfolders": [],
+				"name": "Globals"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Title Screen",
+			"Level Select"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Game",
+					"Game Over"
+				],
+				"subfolders": [],
+				"name": "Apple_a_day"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"Level_Select",
+			"Level_Switch"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Event sheet 2",
+					"Event sheet 3"
+				],
+				"subfolders": [],
+				"name": "apple_a_day"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "Playful - Loop - Ishan Unadkat .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 797691825225977,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Soft Rock - Loop - Ishan Unadkat .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 305546581461967,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Synthwave - Loop - Ishan Unadkat .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 249180666181622,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 849785259118470,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 908144886956664,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 644537095115560,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 421459549156630,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 845449006399088,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 815075933044975,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 715993773018400,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "file.css",
+					"type": "text/css",
+					"sid": 495043960664241,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				},
+				{
+					"name": "game_list.json",
+					"type": "application/json",
+					"sid": 545322294298066,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "folders"
+	},
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"firstLayout": null
+}

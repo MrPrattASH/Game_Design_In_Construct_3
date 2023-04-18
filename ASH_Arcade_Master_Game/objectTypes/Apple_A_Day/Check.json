@@ -1,0 +1,57 @@
+{
+	"name": "Check",
+	"plugin-id": "Sprite",
+	"sid": 484344271021036,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.3333333333333333,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7801076,
+						"collisionPoly": {
+							"points": [
+								0.5625,
+								0.4166666666666667,
+								0.5,
+								0.4583333333333333,
+								0.28125,
+								0.5833333333333333,
+								0.84375,
+								0.3333333333333333,
+								0.65625,
+								0.5416666666666666,
+								0.5,
+								0.7916666666666666,
+								0.15625,
+								0.75,
+								0.59375,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 620724395783520,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

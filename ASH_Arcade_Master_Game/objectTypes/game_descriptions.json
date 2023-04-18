@@ -1,0 +1,17 @@
+{
+	"name": "game_descriptions",
+	"plugin-id": "Text",
+	"sid": 550390120313968,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "text_list",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 400909517823207
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

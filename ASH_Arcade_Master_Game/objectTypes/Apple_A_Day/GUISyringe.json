@@ -1,0 +1,57 @@
+{
+	"name": "GUISyringe",
+	"plugin-id": "Sprite",
+	"sid": 655592979109048,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 21,
+						"height": 21,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8161536,
+						"collisionPoly": {
+							"points": [
+								0.047619047619047616,
+								0.047619047619047616,
+								0.47619047619047616,
+								0.38095238095238093,
+								0.47619047619047616,
+								0.42857142857142855,
+								0.5714285714285714,
+								0.47619047619047616,
+								0.9523809523809523,
+								0.9523809523809523,
+								0.47619047619047616,
+								0.5714285714285714,
+								0.42857142857142855,
+								0.47619047619047616,
+								0.38095238095238093,
+								0.47619047619047616
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 794394468111893,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
