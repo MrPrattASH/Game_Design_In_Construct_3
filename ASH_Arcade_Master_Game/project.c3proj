@@ -98,7 +98,8 @@
 			"Game_Image",
 			"Games",
 			"AJAX",
-			"game_descriptions"
+			"game_descriptions",
+			"Line"
 		],
 		"subfolders": [
 			{

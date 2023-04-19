@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 400909517823207
+		},
+		{
+			"name": "Game_num",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 228637730684167
 		}
 	],
 	"behaviorTypes": [],

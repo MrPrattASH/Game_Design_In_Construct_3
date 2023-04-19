@@ -10,6 +10,13 @@
 			"desc": "",
 			"show": true,
 			"sid": 969477587368050
+		},
+		{
+			"name": "Image_Num",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 577574116132216
 		}
 	],
 	"behaviorTypes": [],
@@ -32,7 +39,76 @@
 					}
 				],
 				"sid": 970578392744996,
-				"name": "Animation 1",
+				"name": "An Apple a Day",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6182208,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 199703343417624,
+				"name": "2a",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3406280,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 466514891803292,
+				"name": "3a",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4623150,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 876275934615507,
+				"name": "4a",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
