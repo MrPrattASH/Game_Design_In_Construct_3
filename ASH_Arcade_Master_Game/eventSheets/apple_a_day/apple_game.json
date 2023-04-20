@@ -1,11 +1,15 @@
 {
-	"name": "Event sheet 2",
+	"name": "apple_game",
 	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch"
+		},
 		{
 			"eventType": "variable",
 			"name": "Lane1",
 			"type": "number",
-			"initialValue": "70",
+			"initialValue": "812",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -15,7 +19,7 @@
 			"eventType": "variable",
 			"name": "Lane2",
 			"type": "number",
-			"initialValue": "206",
+			"initialValue": "950",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -25,21 +29,11 @@
 			"eventType": "variable",
 			"name": "Lane3",
 			"type": "number",
-			"initialValue": "342",
+			"initialValue": "1090",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 395898769133016
-		},
-		{
-			"eventType": "variable",
-			"name": "Touch_Start",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "X value at which the player begins touching the screen",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 727429405989163
 		},
 		{
 			"eventType": "variable",
@@ -96,6 +90,15 @@
 					"text": "Play main menu song"
 				},
 				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 416451590030298,
+					"disabled": true,
+					"parameters": {
+						"scale": "1.23"
+					}
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 807440472210682,
@@ -105,14 +108,6 @@
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 597686587706400,
-					"parameters": {
-						"seconds": "1.0"
 					}
 				},
 				{
@@ -139,19 +134,35 @@
 					"parameters": {
 						"time-scale": "1"
 					}
+				},
+				{
+					"callFunction": "Button_Flash",
+					"sid": 319960901676013
 				}
 			],
 			"sid": 457841825034675
 		},
 		{
+			"eventType": "comment",
+			"text": "Hide the initial popup"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-tap-object",
-					"objectClass": "Touch",
-					"sid": 494041076571369,
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 297599898167712,
 					"parameters": {
-						"object": "Exit"
+						"key": 90
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 857781380908762,
+					"parameters": {
+						"layer": "\"Popup\""
 					}
 				}
 			],
@@ -194,12 +205,37 @@
 			"sid": 709089566678332
 		},
 		{
+			"eventType": "comment",
+			"text": "start game"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-clicked",
-					"objectClass": "StartBtn",
-					"sid": 351805426134762
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 512917947252501,
+					"parameters": {
+						"key": 81
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 902332054470874,
+					"parameters": {
+						"layer": "\"Popup\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 276342076255368,
+					"parameters": {
+						"variable": "GameEnabled"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -236,11 +272,12 @@
 					}
 				},
 				{
-					"id": "toggle-boolean-eventvar",
+					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 117555449284790,
+					"sid": 355355670885652,
 					"parameters": {
-						"variable": "GameEnabled"
+						"variable": "GameEnabled",
+						"value": "true"
 					}
 				},
 				{
@@ -280,6 +317,11 @@
 						"duration": "1",
 						"ending": "keep-playing"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "arcade_buttons",
+					"sid": 736009544779633
 				}
 			],
 			"sid": 652662792110179
@@ -305,19 +347,19 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 956456250298036,
+							"sid": 402776205281447,
 							"parameters": {
-								"key": 37
+								"key": 65
 							}
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 493913199841066,
+							"sid": 773958131560685,
 							"parameters": {
 								"first-value": "PlayerBox.X",
 								"comparison": 4,
-								"second-value": "200"
+								"second-value": "850"
 							}
 						}
 					],
@@ -329,7 +371,7 @@
 						{
 							"id": "move-at-angle",
 							"objectClass": "PlayerBox",
-							"sid": 386841450652597,
+							"sid": 992715506035725,
 							"parameters": {
 								"angle": "180",
 								"distance": "136"
@@ -344,19 +386,19 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 176267606610761,
+							"sid": 378894872736109,
 							"parameters": {
-								"key": 39
+								"key": 68
 							}
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 742248211276267,
+							"sid": 753284206962354,
 							"parameters": {
 								"first-value": "PlayerBox.X",
 								"comparison": 2,
-								"second-value": "250"
+								"second-value": "1000"
 							}
 						}
 					],
@@ -376,128 +418,6 @@
 						}
 					],
 					"sid": 953901219995488
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-any-touch-start",
-							"objectClass": "Touch",
-							"sid": 812160676632285
-						}
-					],
-					"actions": [
-						{
-							"type": "comment",
-							"text": "Store touch start X value into Touch_Start"
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 805414102579668,
-							"parameters": {
-								"variable": "Touch_Start",
-								"value": "Touch.AbsoluteX"
-							}
-						}
-					],
-					"sid": 574275143791477
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-any-touch-end",
-							"objectClass": "Touch",
-							"sid": 960666402701392
-						}
-					],
-					"actions": [],
-					"sid": 561183325868847,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 143395845763300,
-									"parameters": {
-										"variable": "Touch_Start",
-										"comparison": 4,
-										"value": "Touch.AbsoluteX"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 445639116506961,
-									"parameters": {
-										"first-value": "PlayerBox.X",
-										"comparison": 4,
-										"second-value": "200"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "comment",
-									"text": "If the end location of the touch is to the left of the start, move left"
-								},
-								{
-									"id": "move-at-angle",
-									"objectClass": "PlayerBox",
-									"sid": 454244532177848,
-									"parameters": {
-										"angle": "180",
-										"distance": "136"
-									}
-								}
-							],
-							"sid": 626085493973972
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 232346478254592,
-									"parameters": {
-										"variable": "Touch_Start",
-										"comparison": 2,
-										"value": "Touch.AbsoluteX"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 266032931527440,
-									"parameters": {
-										"first-value": "PlayerBox.X",
-										"comparison": 2,
-										"second-value": "250"
-									}
-								}
-							],
-							"actions": [
-								{
-									"type": "comment",
-									"text": "If the end location of the touch is to the right of the start, move right"
-								},
-								{
-									"id": "move-at-angle",
-									"objectClass": "PlayerBox",
-									"sid": 254886806931789,
-									"parameters": {
-										"angle": "0",
-										"distance": "136"
-									}
-								}
-							],
-							"sid": 851278728551742
-						}
-					]
 				},
 				{
 					"eventType": "block",
@@ -531,9 +451,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 643928440242014,
+							"sid": 198890376628560,
 							"parameters": {
-								"interval-seconds": "Speed * 2"
+								"interval-seconds": "Speed * 2.5"
 							}
 						}
 					],
@@ -597,51 +517,6 @@
 							"sid": 901023843598111
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 223750061822967,
-							"parameters": {
-								"interval-seconds": "Speed * 4"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 404616585848092,
-							"parameters": {
-								"variable": "Speed",
-								"comparison": 5,
-								"value": "0.25"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 267523877770099,
-							"parameters": {
-								"variable": "Speed",
-								"value": "0.01"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 378762745476733,
-							"parameters": {
-								"variable": "Speed",
-								"value": "roundToDp(Speed, 2)"
-							}
-						}
-					],
-					"sid": 592505993079540,
-					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1039,11 +914,12 @@
 							],
 							"actions": [
 								{
-									"id": "toggle-boolean-eventvar",
+									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 769172703364484,
+									"sid": 512216115320765,
 									"parameters": {
-										"variable": "GameEnabled"
+										"variable": "GameEnabled",
+										"value": "false"
 									}
 								},
 								{

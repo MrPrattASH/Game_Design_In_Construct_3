@@ -99,7 +99,9 @@
 			"Games",
 			"AJAX",
 			"game_descriptions",
-			"Line"
+			"Line",
+			"Joystick",
+			"arcade_buttons"
 		],
 		"subfolders": [
 			{
@@ -169,7 +171,7 @@
 		"subfolders": [
 			{
 				"items": [
-					"Game",
+					"An Apple a Day",
 					"Game Over"
 				],
 				"subfolders": [],
@@ -185,8 +187,8 @@
 		"subfolders": [
 			{
 				"items": [
-					"Event sheet 2",
-					"Event sheet 3"
+					"apple_game",
+					"apple_gameover"
 				],
 				"subfolders": [],
 				"name": "apple_a_day"
@@ -388,5 +390,5 @@
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
-	"firstLayout": null
+	"firstLayout": "Level Select"
 }

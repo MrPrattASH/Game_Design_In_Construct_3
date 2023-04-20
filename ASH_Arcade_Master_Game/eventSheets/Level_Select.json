@@ -2,10 +2,6 @@
 	"name": "Level_Select",
 	"events": [
 		{
-			"eventType": "comment",
-			"text": "Reset Scale"
-		},
-		{
 			"eventType": "variable",
 			"name": "cur_y",
 			"type": "number",
@@ -14,16 +10,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 548615540454559
-		},
-		{
-			"eventType": "variable",
-			"name": "Cycling_list_up",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "used for arrow keys when calling the list to cycle up/down",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 260043634997428
 		},
 		{
 			"eventType": "block",
@@ -56,9 +42,18 @@
 						"tag": "\"game_list\"",
 						"file": "game_list.json"
 					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 969823511131807
 				}
 			],
 			"sid": 434992527889426
+		},
+		{
+			"eventType": "comment",
+			"text": "Update main lists upon load. "
 		},
 		{
 			"eventType": "block",
@@ -83,9 +78,9 @@
 				},
 				{
 					"callFunction": "Update_Game_Select_Lists",
-					"sid": 283744791666840,
+					"sid": 579221017069457,
 					"parameters": [
-						"0"
+						"cur_y"
 					]
 				}
 			],
@@ -112,16 +107,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 613761492376804,
-					"disabled": true,
-					"parameters": {
-						"variable": "Cycling_list_up",
-						"value": "true"
-					}
-				},
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
@@ -199,16 +184,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 412406071129446,
-					"disabled": true,
-					"parameters": {
-						"variable": "Cycling_list_up",
-						"value": "false"
-					}
-				},
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
@@ -621,6 +596,34 @@
 				}
 			],
 			"sid": 594312367329666
+		},
+		{
+			"eventType": "comment",
+			"text": "Level Select"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 922647126662606,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 694578289149322,
+					"parameters": {
+						"layout": "Games.At(0,cur_y)"
+					}
+				}
+			],
+			"sid": 755528430970378
 		}
 	],
 	"sid": 627853210637674
