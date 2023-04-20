@@ -1,0 +1,147 @@
+{
+	"name": "taco_menu_st",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch"
+		},
+		{
+			"eventType": "comment",
+			"text": "When the play button is clicked the button sound will play and lyout will go to the game layer to begin the game"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Play",
+					"sid": 298452860089852
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 627686834083403,
+					"parameters": {
+						"tag": "\"Mexican Song WL.webm\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 848442813103344,
+					"parameters": {
+						"layout": "Game Layer"
+					}
+				}
+			],
+			"sid": 953582528138154
+		},
+		{
+			"eventType": "comment",
+			"text": "Whenever the Leave button is clicked the button sound will play and you will be taken to the title screen"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Leave",
+					"sid": 420237590414255
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 794542363973831,
+					"parameters": {
+						"audio-file": "Clcik sfx",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 725650956992889,
+					"parameters": {
+						"layout": "Title Screen"
+					}
+				}
+			],
+			"sid": 385519188908087
+		},
+		{
+			"eventType": "comment",
+			"text": "When the restart button is clicked you will be taken to the game layer and the layout will restart at the beggining"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Restart",
+					"sid": 250632402222604
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 898226140348316,
+					"parameters": {
+						"audio-file": "Clcik sfx",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 601125008809103,
+					"parameters": {
+						"layout": "Game Layer"
+					}
+				}
+			],
+			"sid": 140258817838220
+		},
+		{
+			"eventType": "comment",
+			"text": "When the layout for the death and end screen starts the score that your had during the game will be displayed and all sound will stop"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 333318817876431
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 888317352323143,
+					"parameters": {
+						"text": "\"score: \" & Score"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 399682961483931
+				}
+			],
+			"sid": 864133667433955
+		}
+	],
+	"sid": 773000638028784
+}

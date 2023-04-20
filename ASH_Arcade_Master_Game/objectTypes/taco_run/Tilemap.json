@@ -1,0 +1,658 @@
+{
+	"name": "Tilemap",
+	"plugin-id": "Tilemap",
+	"sid": 656949638349013,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 900257226874914
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 288,
+		"height": 126,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 9044508,
+		"useCollisionPoly": true
+	},
+	"tile-collision-polys": {
+		"8": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"13": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"24": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"26": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"29": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"37": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"40": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"41": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"42": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"45": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"53": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"56": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"57": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"58": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"59": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"64": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"65": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"69": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"72": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"73": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"74": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"75": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"76": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"77": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"78": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"79": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"80": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"81": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"82": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"91": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"92": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"93": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"94": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"95": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"96": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"97": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"98": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"107": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"108": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"109": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"110": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		},
+		"111": {
+			"collisionPoly": {
+				"points": [
+					0,
+					0,
+					1,
+					0,
+					1,
+					1,
+					0,
+					1
+				]
+			},
+			"useCollisionPoly": false
+		}
+	}
+}

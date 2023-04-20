@@ -1,0 +1,1126 @@
+{
+	"name": "taco_game_st",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch"
+		},
+		{
+			"eventType": "variable",
+			"name": "Score2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 309460742348056
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "When the player collides with the death box his position will move to the x and y coordinates put in "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 436685095020042,
+							"parameters": {
+								"object": "Death"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 625483622527105,
+							"parameters": {
+								"layout": "Death Screen"
+							}
+						}
+					],
+					"sid": 774389778831609
+				},
+				{
+					"eventType": "comment",
+					"text": "Using the platform behavior the player can begin a certain animation depending on what action is being done"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "Player",
+							"sid": 138508160132387,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 680948791106572,
+							"parameters": {
+								"animation": "\"Walking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 304765229646844
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-jumping",
+							"objectClass": "Player",
+							"sid": 258145800233868,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 136233453485196,
+							"parameters": {
+								"animation": "\"Jumping\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 151935984039077
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "Player",
+							"sid": 383217706891363,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 948304545922446,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 982163287336470
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "Player",
+							"sid": 475638582478883,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 222083185361486,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 750464036793222
+				},
+				{
+					"eventType": "comment",
+					"text": "When the player comes into contact with one of the food sprites the sprite will be destroyed "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 939738464720799,
+							"parameters": {
+								"object": "Sprite"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite",
+							"sid": 701400223046318
+						}
+					],
+					"sid": 447248596442697
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 938199168606987,
+							"parameters": {
+								"object": "Sprite8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite8",
+							"sid": 396595985924361
+						}
+					],
+					"sid": 550708376009808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 756600294583573,
+							"parameters": {
+								"object": "Sprite3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite3",
+							"sid": 843900672705342
+						}
+					],
+					"sid": 602315213652685
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 295763968933962,
+							"parameters": {
+								"object": "Sprite10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite10",
+							"sid": 172277432709971
+						}
+					],
+					"sid": 133490032840713
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 742390251333182,
+							"parameters": {
+								"object": "Sprite2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite2",
+							"sid": 871275975835141
+						}
+					],
+					"sid": 409232029537822
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 236110647907648,
+							"parameters": {
+								"object": "Sprite11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite11",
+							"sid": 667653163630227
+						}
+					],
+					"sid": 953255255157938
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 663010871211330,
+							"parameters": {
+								"object": "Sprite5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite5",
+							"sid": 166827589010499
+						}
+					],
+					"sid": 884211733290593
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 234590739820198,
+							"parameters": {
+								"object": "Sprite4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite4",
+							"sid": 368566753664855
+						}
+					],
+					"sid": 741993201708741
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 302991524648751,
+							"parameters": {
+								"object": "Sprite6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite6",
+							"sid": 860820407447980
+						}
+					],
+					"sid": 905395064990506
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 213054996519062,
+							"parameters": {
+								"object": "Sprite12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Sprite12",
+							"sid": 372062615317850
+						}
+					],
+					"sid": 729647921825475
+				},
+				{
+					"eventType": "comment",
+					"text": "With the keyboard tool added you can change the direction in which the charecter is facing. The code below says that when the left mouse button is pressed the player will mirror, and face the other direction."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 806711368748461,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 187232775553307,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 773171277963665
+				},
+				{
+					"eventType": "comment",
+					"text": "this is almost the opposite of the code above, when the right mouse button is pressed the player will stop mirroring and go back to facing its original position."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 854151787135282,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Player",
+							"sid": 642196412062991,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 706842562288769
+				},
+				{
+					"eventType": "comment",
+					"text": "Every time a player touches an enemy it will deduct one point from the score at the top left and begin to flash at a certain duration and speed."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player",
+							"sid": 676074260961682,
+							"parameters": {
+								"object": "Enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 960714188910195,
+							"parameters": {
+								"variable": "Score",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 314157641311726,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Player",
+							"sid": 821258523778650,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.175",
+								"off-time": "0.175",
+								"duration": "0.5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 756796258569768,
+							"parameters": {
+								"audio-file": "spicy sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 538340220801053
+				},
+				{
+					"eventType": "comment",
+					"text": "Any time the left or right keys are pressed down the keyboard tool will detect this and trigger the walking sound"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 899624097184339,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "Audio",
+							"sid": 372337151066921,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 593943675536900,
+							"parameters": {
+								"audio-file": "Walking",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 890505338838291
+				},
+				{
+					"eventType": "comment",
+					"text": "Whenever anything else is happening besides the left and right arrrows being pressed down the sound will stop playing"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 188230945979625
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 658978433965270,
+							"parameters": {
+								"tag": "\"Walking\""
+							}
+						}
+					],
+					"sid": 586965881855478
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 809027016372233,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "Audio",
+							"sid": 186573251864347,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 599249701631984,
+							"parameters": {
+								"audio-file": "Walking",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 963562390140502
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 702150076185123
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 574060147524746,
+							"parameters": {
+								"tag": "\"Walking\""
+							}
+						}
+					],
+					"sid": 708733325938341
+				}
+			],
+			"sid": 714143127526235
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Food Sprite",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "All of this means that when the food sprite is destroyed it will trigger the score instance variable and add 1 point to the score at the top left of the screen."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite",
+							"sid": 992640314230002
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 224385878094059,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 475949313438001,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 114288723247396
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite10",
+							"sid": 861689592953056
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 691270557039277,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 893966893290511,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 349054939245074
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite11",
+							"sid": 323314938139176
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 174167047008493,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 209390083533901,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 401828681420124
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite2",
+							"sid": 626085838750076
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 636890054693195,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 700454892500250,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 101836756425851
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite3",
+							"sid": 264201007611031
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 268232698827549,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 662434403412927,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 113422870953335
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite4",
+							"sid": 329414736874507
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 530500691515891,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 928563721111038,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 374150399478358
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite5",
+							"sid": 685160500064150
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 449816347049199,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 769007738056741,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 174594314752249
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite6",
+							"sid": 276005045221732
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 759808928734960,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 967858469240867,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 737263642006138
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite8",
+							"sid": 546314418050042
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 430642849456906,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ScoreText",
+							"sid": 896115207463673,
+							"parameters": {
+								"text": "\"Score: \" & Score"
+							}
+						}
+					],
+					"sid": 608942285996071
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Sprite12",
+							"sid": 185994462213785
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 297414406502107,
+							"parameters": {
+								"layout": "End Screen"
+							}
+						}
+					],
+					"sid": 390443441141347
+				}
+			],
+			"sid": 442642431498186
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "when the enemy is facing left it will start to move left simulating the platform controls as if the left arrow is being pressed."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 137286064714983,
+							"parameters": {
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy",
+							"sid": 982797225734276,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemy",
+							"sid": 445388403781770,
+							"disabled": true,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 254280860319268
+				},
+				{
+					"eventType": "comment",
+					"text": "This means every time an enemy faces right it will start to move right as if the right arrow key is being pressed"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 532962818883700,
+							"parameters": {
+								"instance-variable": "action",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy",
+							"sid": 273412447615860,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemy",
+							"sid": 915234851124617,
+							"disabled": true,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 271760073033925
+				},
+				{
+					"eventType": "comment",
+					"text": "Every time the enemy comes in contact with the block(barrier) it will start to move in the other direction and will flip the way its facing."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy",
+							"sid": 292310609980881,
+							"parameters": {
+								"object": "Block"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 110983989447301,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 765742986297858,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 248328323766469,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 969694604900256
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 487362797750800
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 309023927291421,
+									"parameters": {
+										"instance-variable": "action",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 908513013904003
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Every time the game layer begins the enemy will start its size at the height and width put in"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 782923895222975
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "Enemy",
+							"sid": 546939862479363,
+							"parameters": {
+								"width": "12",
+								"height": "30"
+							}
+						}
+					],
+					"sid": 454816024365710
+				}
+			],
+			"sid": 962788746743713
+		},
+		{
+			"eventType": "comment",
+			"text": "When the game layer begins the music will start playing, and will loop itself throught the level."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 978932126569225
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 608520259994229,
+					"parameters": {
+						"audio-file": "Mexican Song WL",
+						"loop": "looping",
+						"volume": "-12",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 993895005254552
+		},
+		{
+			"eventType": "comment",
+			"text": "Credits: Kenney. Website: https://kenney.nl/assets/pixel-platformer-industrial-expansion. All items used in this game were public domaine"
+		}
+	],
+	"sid": 200588878211186
+}

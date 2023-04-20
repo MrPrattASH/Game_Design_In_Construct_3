@@ -1,0 +1,199 @@
+{
+	"name": "Death Screen",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Text2",
+					"properties": {
+						"text": "¡You Died!",
+						"enable-bbcode": true,
+						"font": "TACOM___",
+						"size": 37,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 164,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 60,
+						"y": 12,
+						"width": 279,
+						"height": 66,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ScoreText",
+					"properties": {
+						"text": "Score: 0",
+						"enable-bbcode": true,
+						"font": "advanced_pixel-7",
+						"size": 24,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 165,
+					"instanceVariables": {
+						"Score": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 168,
+						"y": 95,
+						"width": 83,
+						"height": 45,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Leave",
+					"properties": {
+						"type": "button",
+						"text": "Leave",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "Button"
+					},
+					"uid": 166,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 221,
+						"y": 171,
+						"width": 72,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "Restart",
+					"properties": {
+						"type": "button",
+						"text": "Restart",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"auto-font-size": true,
+						"checked": false,
+						"id": "",
+						"class": "Button"
+					},
+					"uid": 167,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 113,
+						"y": 171,
+						"width": 72,
+						"height": 24,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				}
+			],
+			"sid": 568076013660452,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 776391850746001,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 854,
+	"height": 480,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "taco_menu_st"
+}

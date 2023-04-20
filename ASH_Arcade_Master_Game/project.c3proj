@@ -71,6 +71,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
@@ -85,8 +92,29 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -154,6 +182,38 @@
 				],
 				"subfolders": [],
 				"name": "Globals"
+			},
+			{
+				"items": [
+					"Title2",
+					"Tilemap",
+					"TiledBackground2",
+					"Text3",
+					"Text4",
+					"Text5",
+					"Tacoman",
+					"Sprite8",
+					"Sprite7",
+					"Sprite6",
+					"Sprite5",
+					"Sprite4",
+					"Sprite3",
+					"Sprite2",
+					"Sprite12",
+					"Sprite11",
+					"Sprite10",
+					"Sprite",
+					"ScoreText2",
+					"Restart",
+					"Player",
+					"Play",
+					"Leave",
+					"Enemy",
+					"Death",
+					"Block"
+				],
+				"subfolders": [],
+				"name": "taco_run"
 			}
 		]
 	},
@@ -176,6 +236,17 @@
 				],
 				"subfolders": [],
 				"name": "Apple_a_day"
+			},
+			{
+				"items": [
+					"Taco Run",
+					"Game Layer",
+					"Sprite Sheet",
+					"End Screen",
+					"Death Screen"
+				],
+				"subfolders": [],
+				"name": "taco_run"
 			}
 		]
 	},
@@ -192,6 +263,14 @@
 				],
 				"subfolders": [],
 				"name": "apple_a_day"
+			},
+			{
+				"items": [
+					"taco_menu_st",
+					"taco_game_st"
+				],
+				"subfolders": [],
+				"name": "taco_run"
 			}
 		]
 	},
@@ -225,6 +304,38 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Walking.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 971325200384591,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "spicy sfx.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 853106337641185,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Clcik sfx.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 992586556110137,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Mexican Song WL.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 539621893966369,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -238,7 +349,24 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "advanced_pixel-7.ttf",
+					"type": "application/font-sfnt",
+					"sid": 280171275063284,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "TACOM___.TTF",
+					"type": "application/font-sfnt",
+					"sid": 926561510771207,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {
