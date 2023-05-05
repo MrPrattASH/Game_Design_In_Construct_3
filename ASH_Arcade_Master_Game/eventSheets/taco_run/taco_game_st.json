@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "Level_Switch"
+			"includeSheet": "Level_Switch_Button_funcs"
 		},
 		{
 			"eventType": "variable",
@@ -44,7 +44,7 @@
 							"objectClass": "System",
 							"sid": 625483622527105,
 							"parameters": {
-								"layout": "Death Screen"
+								"layout": "Death Screen_tr"
 							}
 						}
 					],
@@ -893,7 +893,7 @@
 							"objectClass": "System",
 							"sid": 297414406502107,
 							"parameters": {
-								"layout": "End Screen"
+								"layout": "End Screen_tr"
 							}
 						}
 					],
@@ -1112,6 +1112,23 @@
 						"volume": "-12",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 114882479604654,
+					"parameters": {
+						"scale": "3.4"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "ScoreText",
+					"sid": 335735313648244,
+					"parameters": {
+						"x": "ViewportLeft(\"HUD\")+20",
+						"y": "ViewportTop(\"HUD\")+50"
 					}
 				}
 			],

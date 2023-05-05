@@ -1,0 +1,56 @@
+{
+	"name": "Arm12",
+	"plugin-id": "Sprite",
+	"sid": 470434494075181,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 640,
+						"height": 160,
+						"originX": 0.12326388888888888,
+						"originY": 0.53125,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6156577,
+						"collisionPoly": {
+							"points": [
+								0.019469246031746032,
+								0,
+								0.980530753968254,
+								0,
+								0.980530753968254,
+								1,
+								0.019469246031746032,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9265625,
+								"y": 0.49375
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 926343014608366,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

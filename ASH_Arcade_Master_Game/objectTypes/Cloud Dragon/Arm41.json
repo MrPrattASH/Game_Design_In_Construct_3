@@ -1,0 +1,70 @@
+{
+	"name": "Arm41",
+	"plugin-id": "Sprite",
+	"sid": 552684856602814,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 753222484776396
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 620,
+						"height": 200,
+						"originX": 0.10438709677419354,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9908896,
+						"collisionPoly": {
+							"points": [
+								0.03225806451612903,
+								0.1,
+								0.5967741935483871,
+								0.05,
+								0.967741935483871,
+								0.65,
+								0.967741935483871,
+								0.5,
+								0.967741935483871,
+								0.3,
+								0.5967741935483871,
+								0.9,
+								0.03225806451612903,
+								0.85,
+								0.016129032258064516,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9806451612903225,
+								"y": 0.505
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 386877339252954,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,69 @@
+{
+	"name": "Oven_cd",
+	"plugin-id": "Sprite",
+	"sid": 349222444254102,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 302,
+						"height": 152,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4427580,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.9966887417218543,
+								0,
+								0.9966887417218543,
+								0.46710526315789475,
+								0.9966887417218543,
+								0.9276315789473685,
+								0.5,
+								0.9276315789473685,
+								0,
+								0.9276315789473685,
+								0,
+								0.46710526315789475
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 1,
+								"y": 1
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0,
+								"y": 1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 261232427601245,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

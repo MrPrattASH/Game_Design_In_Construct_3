@@ -1,0 +1,63 @@
+{
+	"name": "FAT_cd",
+	"plugin-id": "Sprite",
+	"sid": 152246612132495,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 765184106362761
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 4808,
+						"height": 402,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7010658,
+						"collisionPoly": {
+							"points": [
+								0.01788685524126456,
+								0.21393034825870647,
+								0.5,
+								0.05472636815920398,
+								0.9908485856905158,
+								0.10696517412935323,
+								0.9993760399334443,
+								0.5,
+								0.9908485856905158,
+								0.8905472636815921,
+								0.5,
+								0.9950248756218906,
+								0.01788685524126456,
+								0.7835820895522388,
+								0.00020798668885191348,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 381018216290076,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

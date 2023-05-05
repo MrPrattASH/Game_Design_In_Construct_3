@@ -1,0 +1,64 @@
+{
+	"name": "Sword_cd",
+	"plugin-id": "Sprite",
+	"sid": 381103625626015,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 84,
+						"height": 303,
+						"originX": 0.5,
+						"originY": 0.8881578947368421,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2917418,
+						"collisionPoly": {
+							"points": [
+								0.7380952380952381,
+								0.46710526315789475,
+								0.7380952380952381,
+								0.46710526315789475,
+								0.5,
+								0.9276315789473685,
+								0.5,
+								0.46710526315789475,
+								0.5,
+								0.46710526315789475,
+								0.5,
+								0.40131578947368424,
+								0.5,
+								0.006578947368421052,
+								0.7380952380952381,
+								0.40131578947368424
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 2.1547619047619047,
+								"y": 0.29042904290429045
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 548046787489551,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

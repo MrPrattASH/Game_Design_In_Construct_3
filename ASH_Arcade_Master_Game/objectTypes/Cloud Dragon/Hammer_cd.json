@@ -1,0 +1,70 @@
+{
+	"name": "Hammer_cd",
+	"plugin-id": "Sprite",
+	"sid": 993750006319706,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 482503408780981
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1600,
+						"height": 3600,
+						"originX": 0.93375,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4813931,
+						"collisionPoly": {
+							"points": [
+								0.0625,
+								0.9166666666666666,
+								0.0625,
+								0.4722222222222222,
+								0.125,
+								0.08333333333333337,
+								0.5,
+								0.05555555555555558,
+								0.8125,
+								0.08333333333333337,
+								0.875,
+								0.4722222222222222,
+								0.875,
+								0.9166666666666666,
+								0.5,
+								0.9722222222222222
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.51375,
+								"y": 0.9644444444444444
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 782649249748162,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

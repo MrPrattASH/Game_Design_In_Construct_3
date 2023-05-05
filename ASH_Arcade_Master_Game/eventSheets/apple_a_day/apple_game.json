@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "Level_Switch"
+			"includeSheet": "Level_Switch_Button_funcs"
 		},
 		{
 			"eventType": "variable",
@@ -927,7 +927,7 @@
 									"objectClass": "System",
 									"sid": 634999743272737,
 									"parameters": {
-										"layout": "Game Over"
+										"layout": "Game Over_ad"
 									}
 								},
 								{

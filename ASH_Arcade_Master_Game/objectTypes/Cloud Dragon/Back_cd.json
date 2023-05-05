@@ -1,0 +1,57 @@
+{
+	"name": "Back_cd",
+	"plugin-id": "Sprite",
+	"sid": 128807800965534,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 4525,
+						"height": 400,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6131625,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0.3125,
+								0.9832044198895028,
+								0.1875,
+								0.9666298342541436,
+								0.5,
+								0.9776795580110498,
+								0.7475,
+								0.5,
+								0.6225,
+								0.022099447513812154,
+								0.7475,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 684246659652515,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

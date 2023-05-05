@@ -1,0 +1,153 @@
+{
+	"name": "cd_title_screens_sh",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 115180908847948
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 700558354981602
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 394273291924527,
+					"parameters": {
+						"audio-file": "Home page_Videogame Music Loop_Kealy",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 758995142903285,
+					"parameters": {
+						"scale": ".31"
+					}
+				}
+			],
+			"sid": 289571632248449
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 779621506131066,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [],
+			"sid": 195378370282804,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 202627800572939,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"Start_cd\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 793947371802264
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 320665187428309,
+							"parameters": {
+								"audio-file": "Second Boss Fight_Music_Kealy",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 810818347128758,
+							"parameters": {
+								"layout": "Bossf1_cd"
+							}
+						}
+					],
+					"sid": 163503057183171
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 174056326937850
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 623301370153041,
+							"parameters": {
+								"layout": "Start_cd"
+							}
+						}
+					],
+					"sid": 378336913710140
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 469913589055136,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 772163052206489,
+					"parameters": {
+						"layout": "credit_cd"
+					}
+				}
+			],
+			"sid": 848917608282133
+		}
+	],
+	"sid": 349810658788050
+}

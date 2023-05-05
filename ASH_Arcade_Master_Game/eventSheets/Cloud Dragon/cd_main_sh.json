@@ -1,0 +1,5678 @@
+{
+	"name": "cd_main_sh",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movements",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 229912511467222
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "player_cd",
+							"sid": 660331084602204,
+							"parameters": {
+								"object": "playerbox_cd",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm11",
+							"sid": 992459146756988,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Blade_cd",
+							"sid": 587882170049515,
+							"parameters": {
+								"object": "Arm12",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm31",
+							"sid": 939100619394320,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "6"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm32",
+							"sid": 257700827570479,
+							"parameters": {
+								"object": "Arm31",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Oven_cd",
+							"sid": 294624206984442,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "3"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm12",
+							"sid": 419390665089636,
+							"parameters": {
+								"object": "Arm11",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm33",
+							"sid": 875753687066028,
+							"parameters": {
+								"object": "Arm32",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm21",
+							"sid": 432052691490641,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "2"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Drone_cd",
+							"sid": 225141579908138,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "5"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Puncharm_cd",
+							"sid": 914454896255063,
+							"parameters": {
+								"object": "Arm33",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Punch_cd",
+							"sid": 574967999160133,
+							"parameters": {
+								"object": "Puncharm_cd",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "bossSolid_cd",
+							"sid": 943120757808572,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "7"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm41",
+							"sid": 886914546236303,
+							"parameters": {
+								"object": "Bossbody_cd",
+								"image-point-optional": "4"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Arm42",
+							"sid": 779537760202246,
+							"parameters": {
+								"object": "Arm41",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Drill_cd",
+							"sid": 322324711766470,
+							"parameters": {
+								"object": "Arm42",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Hammer_cd",
+							"sid": 568259033549301,
+							"parameters": {
+								"object": "Arm21",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Sword_cd",
+							"sid": 202001034837708,
+							"parameters": {
+								"object": "player_cd",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 271581601747723,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Bossbody_cd",
+									"sid": 543750288921528,
+									"parameters": {
+										"instance-variable": "pistoarm"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Arm31",
+									"sid": 865090638428523,
+									"parameters": {
+										"x": "playerbox_cd.X",
+										"y": "playerbox_cd.Y"
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Arm32",
+									"sid": 180707727656143,
+									"parameters": {
+										"x": "playerbox_cd.Y",
+										"y": "playerbox_cd.X"
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Arm33",
+									"sid": 483682213995344,
+									"parameters": {
+										"x": "playerbox_cd.X",
+										"y": "playerbox_cd.Y"
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Puncharm_cd",
+									"sid": 133841322927614,
+									"parameters": {
+										"x": "playerbox_cd.X",
+										"y": "playerbox_cd.Y"
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Punch_cd",
+									"sid": 155625724529029,
+									"parameters": {
+										"x": "playerbox_cd.X",
+										"y": "playerbox_cd.Y"
+									}
+								}
+							],
+							"sid": 599446463903778
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Bossbody_cd",
+									"sid": 853848982551132,
+									"parameters": {
+										"instance-variable": "sawarm"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Arm12",
+									"sid": 703646391765781,
+									"parameters": {
+										"x": "playerbox_cd.X",
+										"y": "playerbox_cd.Y"
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Arm11",
+									"sid": 782106336754972,
+									"parameters": {
+										"x": "playerbox_cd.Y",
+										"y": "playerbox_cd.X"
+									}
+								}
+							],
+							"sid": 878142385068485
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Bossbody_cd",
+									"sid": 981563265619812,
+									"parameters": {
+										"instance-variable": "Firearm"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "Drill_cd",
+									"sid": 210680856702094,
+									"parameters": {
+										"x": "playerbox_cd.X",
+										"y": "playerbox_cd.Y"
+									}
+								}
+							],
+							"sid": 745513833907204
+						},
+						{
+							"eventType": "comment",
+							"text": "Basement of all the boss's body + arms, because it set position of all the arms (will also make 3 arms freeze)"
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "playerbox_cd",
+							"sid": 948883051398970,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player_cd",
+							"sid": 953351038621263,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 443263725911200
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "playerbox_cd",
+							"sid": 875389157128386,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player_cd",
+							"sid": 507895915167675,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 617333236404064
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "playerbox_cd",
+							"sid": 766663658105173,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player_cd",
+							"sid": 913378511383218,
+							"parameters": {
+								"animation": "\"Stand\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 631813150416542
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "playerbox_cd",
+							"sid": 348720750668406,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player_cd",
+							"sid": 354789113193855,
+							"parameters": {
+								"animation": "\"Stand\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 209993439988499,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "playerbox_cd",
+									"sid": 825064517634934,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_cd",
+									"sid": 210338938276962,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 895690148783414,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "switch the player (Platformer)'s animation when doing different moves (Jump, walk, stand)"
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 521966070250680,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "player_cd",
+							"sid": 938591826331557,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon_cd",
+							"sid": 980710304347812,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon2_cd",
+							"sid": 577407638828100,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon3_cd",
+							"sid": 821273619497114,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon4_cd",
+							"sid": 902059780147815,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Sword_cd",
+							"sid": 967626768149106,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Sword_cd",
+							"sid": 222844270493137,
+							"parameters": {
+								"angle": "315"
+							}
+						}
+					],
+					"sid": 571848667254234,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 881889295945151,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "player_cd",
+							"sid": 576196582137637,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon_cd",
+							"sid": 134705806741051,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon2_cd",
+							"sid": 314515526793450,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon3_cd",
+							"sid": 507036441430293,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Dragon4_cd",
+							"sid": 281878854695290,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Sword_cd",
+							"sid": 322661388995128,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Sword_cd",
+							"sid": 199363465381021,
+							"parameters": {
+								"angle": "45"
+							}
+						}
+					],
+					"sid": 987305816696127,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Mirror the player, sword and the final attack's animation"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 795339597758806,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "playerbox_cd",
+							"sid": 395531264733817,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 165959889012268
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 429552283754913,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "playerbox_cd",
+							"sid": 450809852024169,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 906303302116729
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 500490807395459,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "playerbox_cd",
+							"sid": 369316596687324,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 365453046779832,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If someone want to use wasd to let the player move, these codes are doing it (do not set press, DOWN!!!)"
+						}
+					]
+				}
+			],
+			"sid": 632784047212132
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Attack",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 526673778436078,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 354684766598283,
+							"parameters": {
+								"key": 69
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 155974962703497,
+							"parameters": {
+								"object-to-create": "Bullet_cd",
+								"layer": "\"Character\"",
+								"x": "playerbox_cd.ImagePointX(1)",
+								"y": "playerbox_cd.ImagePointy(1)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 442083645372432,
+							"parameters": {
+								"instance-variable": "EMP",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 941930073280482
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 262089718455004,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 146180702272934,
+							"parameters": {
+								"key": 67
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 314406764699026,
+							"parameters": {
+								"object-to-create": "Bullet_cd",
+								"layer": "\"Character\"",
+								"x": "playerbox_cd.ImagePointX(1)",
+								"y": "playerbox_cd.ImagePointy(1)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 309868551476986,
+							"parameters": {
+								"instance-variable": "EMP",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 770002917739956
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 905940278914887,
+							"parameters": {
+								"instance-variable": "EMP",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 807928238464362,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 177907214521766,
+									"parameters": {
+										"key": 81
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 467316165324774,
+									"parameters": {
+										"key": 69
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet_cd",
+									"sid": 310802131516050
+								}
+							],
+							"sid": 970123568344955
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 468988771473154,
+							"parameters": {
+								"instance-variable": "EMP",
+								"comparison": 2,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 503486975511453,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 177668225922713,
+									"parameters": {
+										"key": 90
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 768685511390848,
+									"parameters": {
+										"key": 67
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Bullet_cd",
+									"sid": 935213033677061
+								}
+							],
+							"sid": 816793568894368
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Bullet_cd",
+							"sid": 355060785474946
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 440432804368371
+						}
+					],
+					"sid": 404202657447773
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Bullet_cd",
+							"sid": 898483851748248
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Bullet_cd",
+							"sid": 406786873636862,
+							"parameters": {
+								"x": "Bossbody_cd.X",
+								"y": "Bossbody_cd.Y"
+							}
+						}
+					],
+					"sid": 644602752278446
+				},
+				{
+					"eventType": "comment",
+					"text": "Spawn EMP bullet that can freeze the boss's arm and set angle toward the boss (K and l are replaced Z+X)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 319067592376420,
+							"parameters": {
+								"key": 89
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "playerbox_cd",
+							"sid": 163807386907418,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"slss\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 490323776613926,
+							"parameters": {
+								"object-to-create": "Slash_cd",
+								"layer": "\"Ataack\"",
+								"x": "Sword_cd.ImagePointX(1)",
+								"y": "Sword_cd.ImagePointy(1)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 719915876266479
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Slash_cd",
+							"sid": 756437609834788
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 628234114025189,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.3",
+								"type": "once",
+								"tag": "\"slss\""
+							}
+						}
+					],
+					"sid": 511394084942747
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Slash_cd",
+							"sid": 361790250913652
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Slash_cd",
+							"sid": 245014563155483
+						}
+					],
+					"sid": 997824852793787
+				},
+				{
+					"eventType": "comment",
+					"text": "Create + destory basic slash (Slash). The timer is not let you press too fast."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 231049946394349,
+							"parameters": {
+								"object": "Arm11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 101282390382475,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 967519275497870,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 654074624359236
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 822398858257948,
+							"parameters": {
+								"object": "Arm12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 280466927389395,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 560033530869804,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 437412075432109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 116443301703403,
+							"parameters": {
+								"object": "Blade_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 617155603240075,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 821089286343388,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 679786675109095
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 751715893701718,
+							"parameters": {
+								"object": "Arm21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 596544476966033,
+							"parameters": {
+								"instance-variable": "Health2",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 659050101593219,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 247757160266829
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 507055867854942,
+							"parameters": {
+								"object": "Hammer_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 389684101766984,
+							"parameters": {
+								"instance-variable": "Health2",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 308977592011674,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 731375200892560
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 115069477134316,
+							"parameters": {
+								"object": "Arm31"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 879011602441025,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 763611172325076,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 441521240886875
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 469888862890286,
+							"parameters": {
+								"object": "Arm32"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 635182986741691,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 271527894698178,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 432047686374852
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 189517510890440,
+							"parameters": {
+								"object": "Arm33"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 586287825868001,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 294924535596048,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 714780409448251
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 910719183105481,
+							"parameters": {
+								"object": "Puncharm_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 651652870483304,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 382658621647703,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 931067750235280
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 887074193522388,
+							"parameters": {
+								"object": "Punch_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 222867253757588,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 721821769949936,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 221421252058122
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 580765555625287,
+							"parameters": {
+								"object": "Arm42"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 213768703229862,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 298642780020801,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 816388403028785
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 717857259593045,
+							"parameters": {
+								"object": "Arm41"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 469022797096976,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 796664825923671,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 383347624388187
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 711551666297006,
+							"parameters": {
+								"object": "Drill_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 948934096425074,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 269516796082117,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 110846735035129
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash_cd",
+							"sid": 882248027473894,
+							"parameters": {
+								"object": "Bossbody_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 881420460535146,
+							"parameters": {
+								"instance-variable": "arm1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 324073125100214,
+							"parameters": {
+								"instance-variable": "arm2"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 274824425724025,
+							"parameters": {
+								"instance-variable": "arm3"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 158704610752881,
+							"parameters": {
+								"instance-variable": "arm4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 464319580491668,
+							"parameters": {
+								"instance-variable": "Health5",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 546637372522617,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 138155392986855
+				},
+				{
+					"eventType": "comment",
+					"text": "Decide how many hp will the basic slash subtract from the boss, "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-mirrored",
+							"objectClass": "player_cd",
+							"sid": 833741618499493
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Slash_cd",
+							"sid": 426503209262054,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Slash2_cd",
+							"sid": 105521845049784,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 789713385114613
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-mirrored",
+							"objectClass": "player_cd",
+							"sid": 721820948050760,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "Slash_cd",
+							"sid": 820091932233410,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Slash2_cd",
+							"sid": 861433893668605,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 907677383972947
+				},
+				{
+					"eventType": "comment",
+					"text": "Mirror the animations of the slashes"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 534350271652941,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 532208525342349,
+							"parameters": {
+								"key": 81
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "playerbox_cd",
+							"sid": 386083849077816,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"sls\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 507549916987386,
+							"parameters": {
+								"object-to-create": "Slash2_cd",
+								"layer": "\"Ataack\"",
+								"x": "Sword_cd.ImagePointX(1)",
+								"y": "Sword_cd.ImagePointy(1)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 129343174311646
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Slash2_cd",
+							"sid": 905682068679611
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 343603834064273,
+							"parameters": {
+								"instance-variable": "Energy",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 917965177817686
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Slash2_cd",
+							"sid": 965976188088407
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 437687888122184,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5",
+								"type": "once",
+								"tag": "\"sls\""
+							}
+						}
+					],
+					"sid": 337327686063988
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Slash2_cd",
+							"sid": 317380511409058
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Slash2_cd",
+							"sid": 337516038320988
+						}
+					],
+					"sid": 541224028199977
+				},
+				{
+					"eventType": "comment",
+					"text": "Create and destory the stronger slash and add energy, the time is to not let you attack too fast"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 223663685844036,
+							"parameters": {
+								"object": "Arm11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 959056029716494,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 765742231164300,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 876423456545930
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 765799712650023,
+							"parameters": {
+								"object": "Arm12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 717918557028599,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 727050446952150,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 316893994481302
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 901068173058688,
+							"parameters": {
+								"object": "Blade_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 162981375763437,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 636109188249895,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 665706850255242
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 735672671820736,
+							"parameters": {
+								"object": "Arm21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 755750935662873,
+							"parameters": {
+								"instance-variable": "Health2",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 115251410612476,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 518704272986827
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 238435555317414,
+							"parameters": {
+								"object": "Hammer_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 202733871554558,
+							"parameters": {
+								"instance-variable": "Health2",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 825300437606678,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 698599419882239
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 643173668336288,
+							"parameters": {
+								"object": "Arm31"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 658133004189295,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 215852198254256,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 661505695037203
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 925899133758605,
+							"parameters": {
+								"object": "Arm32"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 426309486521375,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 509350893620398,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 619097221164186
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 453100300712340,
+							"parameters": {
+								"object": "Arm33"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 717607602253791,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 896502460113462,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 946898264285902
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 189729478119067,
+							"parameters": {
+								"object": "Puncharm_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 743903341061494,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 762650916082317,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 659648398977565
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 781312293890244,
+							"parameters": {
+								"object": "Punch_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 641680027486188,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 841907644729333,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 115808185772058
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 214359775203797,
+							"parameters": {
+								"object": "Arm42"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 963279825470605,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 134045801487656,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 256837903443639
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 642566726245102,
+							"parameters": {
+								"object": "Arm41"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 412620965489063,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 190826521659772,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 218110283200646
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 125824593603674,
+							"parameters": {
+								"object": "Drill_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 295693691435142,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 982525955395384,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 395951899143084
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Slash2_cd",
+							"sid": 742913760022604,
+							"parameters": {
+								"object": "Bossbody_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 248869703696235,
+							"parameters": {
+								"instance-variable": "arm1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 501604089279016,
+							"parameters": {
+								"instance-variable": "arm2"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 276409665063802,
+							"parameters": {
+								"instance-variable": "arm3"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 893636841213014,
+							"parameters": {
+								"instance-variable": "arm4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 977955996976399,
+							"parameters": {
+								"instance-variable": "Health5",
+								"value": "5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 401272034011596,
+							"parameters": {
+								"audio-file": "bing1",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 197223377269337
+				},
+				{
+					"eventType": "comment",
+					"text": "Show how many health will the stronger slash(slash2) damage the boss"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 984198683001883,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 606824776983769,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 436446309091939,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-distance",
+							"objectClass": "Dragon_cd",
+							"sid": 624080172237520,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "playerbox_cd",
+								"mode": "bar-style"
+							}
+						},
+						{
+							"id": "set-pin-distance",
+							"objectClass": "Dragon_cd",
+							"sid": 804579409423840,
+							"behaviorType": "Pin",
+							"parameters": {
+								"distance": "25"
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Dragon2_cd",
+							"sid": 472646130354553,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Dragon_cd",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Dragon3_cd",
+							"sid": 651490960175205,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Dragon2_cd",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Dragon4_cd",
+							"sid": 640497758557439,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Dragon3_cd",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 213919438392208,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "10",
+								"type": "once",
+								"tag": "\"HP\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 890317578109704,
+							"parameters": {
+								"instance-variable": "IV",
+								"value": "false"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 503605625232531,
+							"parameters": {
+								"instance-variable": "Energy",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 242955308568970
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 630387818876281,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 364635307337676,
+							"parameters": {
+								"key": 67
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 657178091264717,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-distance",
+							"objectClass": "Dragon_cd",
+							"sid": 436667304457178,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "playerbox_cd",
+								"mode": "bar-style"
+							}
+						},
+						{
+							"id": "set-pin-distance",
+							"objectClass": "Dragon_cd",
+							"sid": 855476985275953,
+							"behaviorType": "Pin",
+							"parameters": {
+								"distance": "25"
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Dragon2_cd",
+							"sid": 574060742859458,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Dragon_cd",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Dragon3_cd",
+							"sid": 759120673662577,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Dragon2_cd",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Dragon4_cd",
+							"sid": 970643577238666,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Dragon3_cd",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 836021721306429,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "10",
+								"type": "once",
+								"tag": "\"HP\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 385893290306231,
+							"parameters": {
+								"instance-variable": "IV",
+								"value": "false"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 862129084960422,
+							"parameters": {
+								"instance-variable": "Energy",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 373460518436900
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 682732066847524,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"HP\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 572214445283351,
+							"parameters": {
+								"instance-variable": "IV",
+								"value": "true"
+							}
+						},
+						{
+							"id": "unpin",
+							"objectClass": "Dragon_cd",
+							"sid": 394489830233318,
+							"behaviorType": "Pin"
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Dragon_cd",
+							"sid": 642692975953007,
+							"parameters": {
+								"object": "HP_cd",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 676888623598305
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "playerbox_cd",
+							"sid": 436069512932210,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bullet2_cd",
+							"sid": 460224630604977,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Lightning_cd",
+							"sid": 260918951841347,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Blade_cd",
+							"sid": 301077574238282,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Fire_cd",
+							"sid": 155532303241968,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 721518782025928
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 542336810766405,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Bullet2_cd",
+							"sid": 806569969712069,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Lightning_cd",
+							"sid": 417215165736259,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Blade_cd",
+							"sid": 558819721509996,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Fire_cd",
+							"sid": 731395069378457,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 783161242662645
+				},
+				{
+					"eventType": "comment",
+					"text": "Create and destory the final attack and pin it to the player, will also let the player became invinceble"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 630401568517789,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "playerbox_cd",
+							"sid": 715112260816077
+						},
+						{
+							"id": "destroy",
+							"objectClass": "player_cd",
+							"sid": 523114880058641
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Sword_cd",
+							"sid": 495456469054784
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 192369050339227,
+							"parameters": {
+								"layout": "LOSE_cd"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 289290869360327
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 589944441047887,
+							"parameters": {
+								"audio-file": "Home page_Videogame Music Loop_Kealy",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 264366112521982
+				},
+				{
+					"eventType": "comment",
+					"text": "Let the player lie and move to the lose layout"
+				}
+			],
+			"sid": 839873255920178
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Boss",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 267787031401486,
+							"parameters": {
+								"interval-seconds": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 730348840290175,
+							"parameters": {
+								"object-to-create": "Bullet2_cd",
+								"layer": "\"Character\"",
+								"x": "Drone_cd.ImagePointX(0)",
+								"y": "Drone_cd.ImagePointY(0)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 645630519795569
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Bullet2_cd",
+							"sid": 167932615228983
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Bullet2_cd",
+							"sid": 490840357788859,
+							"parameters": {
+								"x": "playerbox_cd.X",
+								"y": "playerbox_cd.Y"
+							}
+						}
+					],
+					"sid": 548109206937211
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Bullet2_cd",
+							"sid": 311219995970647
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet2_cd",
+							"sid": 438030099849133
+						}
+					],
+					"sid": 872675248497749
+				},
+				{
+					"eventType": "comment",
+					"text": "Create and destory bullet created by the boss"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "playerbox_cd",
+							"sid": 362844187734865,
+							"parameters": {
+								"object": "Blade_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "playerbox_cd",
+							"sid": 541253935497389,
+							"parameters": {
+								"instance-variable": "IV"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "playerbox_cd",
+							"sid": 465377018103337,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz1\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 249033073729567,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "player_cd",
+							"sid": 291319587946798,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.5"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 918902899793389,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"sid": 987773678713245
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "playerbox_cd",
+							"sid": 102244064546238,
+							"parameters": {
+								"object": "Fire_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "playerbox_cd",
+							"sid": 322075065088931,
+							"parameters": {
+								"instance-variable": "IV"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "playerbox_cd",
+							"sid": 715980096936686,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz4\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 824494658824816,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "player_cd",
+							"sid": 258604179933680,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.5"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 399915384725034,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"sid": 205369137029949
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "playerbox_cd",
+							"sid": 670338871330542,
+							"parameters": {
+								"object": "Bullet2_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "playerbox_cd",
+							"sid": 466901478240031,
+							"parameters": {
+								"instance-variable": "IV"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 507027679424463,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "player_cd",
+							"sid": 580876020868879,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.5"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 769270875704761,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"sid": 495507337654876
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "playerbox_cd",
+							"sid": 440690333344542,
+							"parameters": {
+								"object": "ov_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "playerbox_cd",
+							"sid": 888414463541570,
+							"parameters": {
+								"instance-variable": "IV"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 405103214507817,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "player_cd",
+							"sid": 887144429877302,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.5"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 822249718805059,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"sid": 949858857102730
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "playerbox_cd",
+							"sid": 886820702129008,
+							"parameters": {
+								"object": "Lightning_cd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "playerbox_cd",
+							"sid": 127352157732352,
+							"parameters": {
+								"instance-variable": "IV"
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "playerbox_cd",
+							"sid": 942410275047664,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 716149621516224,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "player_cd",
+							"sid": 251384799638505,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "2.0"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "playerbox_cd",
+							"sid": 127727895775999,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "2.0",
+								"type": "once",
+								"tag": "\"hit\""
+							}
+						}
+					],
+					"sid": 387179298253541
+				},
+				{
+					"eventType": "comment",
+					"text": "Make the boss's attack damage the player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 995304082933581,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Puncharm_cd",
+							"sid": 570487940608987,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Arm31",
+							"sid": 322980054693161,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 525247977279726,
+							"parameters": {
+								"instance-variable": "pistoarm",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 907467749639101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 854690646379240,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm11",
+							"sid": 403777098898418,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Blade_cd",
+							"sid": 405433473896878,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 221773186935606,
+							"parameters": {
+								"instance-variable": "sawarm",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 982047265774960
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 259927995860184,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz3\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm21",
+							"sid": 384664253153902,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Hammer_cd",
+							"sid": 138350436640143,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 823487542822519,
+							"parameters": {
+								"instance-variable": "hammerarm",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 226339788322429
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 231105100587496,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"frz4\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm41",
+							"sid": 135005453098359,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Arm42",
+							"sid": 863774818440953,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Drill_cd",
+							"sid": 870165058889336,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 520638881673573,
+							"parameters": {
+								"instance-variable": "Firearm",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 811511124810802
+				},
+				{
+					"eventType": "comment",
+					"text": "unfreeze each of the boss's arms"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 829452173883670,
+							"parameters": {
+								"object": "Arm31"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Puncharm_cd",
+							"sid": 782189979224597,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Arm31",
+							"sid": 725930485673838,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 817669428704004,
+							"parameters": {
+								"instance-variable": "pistoarm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 953894725597041,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 613709292559618
+						}
+					],
+					"sid": 958553712480812
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 120500998773602,
+							"parameters": {
+								"object": "Arm32"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Puncharm_cd",
+							"sid": 307364294391758,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Arm31",
+							"sid": 466848992088662,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 981665216775178,
+							"parameters": {
+								"instance-variable": "pistoarm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 106476835303778,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 393581059773798
+						}
+					],
+					"sid": 487834234536169
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 537786384286920,
+							"parameters": {
+								"object": "Arm11"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm11",
+							"sid": 328387450967706,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Blade_cd",
+							"sid": 488774278384543,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 350552100788691,
+							"parameters": {
+								"instance-variable": "sawarm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 610558583294642,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz2\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 880513085923656
+						}
+					],
+					"sid": 893620720734520
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 735529801390517,
+							"parameters": {
+								"object": "Arm12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm11",
+							"sid": 267127218637104,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Blade_cd",
+							"sid": 523729234241464,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 831082219965609,
+							"parameters": {
+								"instance-variable": "sawarm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 230234663893158,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz2\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 488500258639038
+						}
+					],
+					"sid": 557768585736842
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 556026228987884,
+							"parameters": {
+								"object": "Arm21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm21",
+							"sid": 221547685333263,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Hammer_cd",
+							"sid": 541409628435258,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 944935080852333,
+							"parameters": {
+								"instance-variable": "hammerarm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 919586170181815,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz3\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 506632883975825
+						}
+					],
+					"sid": 800778521897195
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 553581940634797,
+							"parameters": {
+								"object": "Hammer_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm21",
+							"sid": 699639297858069,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Hammer_cd",
+							"sid": 725770709720414,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 980664555446264,
+							"parameters": {
+								"instance-variable": "hammerarm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 793793373012363,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz3\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 955468010498447
+						}
+					],
+					"sid": 971687669273296
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 787707341219170,
+							"parameters": {
+								"object": "Arm42"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm41",
+							"sid": 749834482901811,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Arm42",
+							"sid": 618168647469716,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Drill_cd",
+							"sid": 153519018957898,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 779372569809181,
+							"parameters": {
+								"instance-variable": "Firearm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 775256106237943,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz4\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 456595732210475
+						}
+					],
+					"sid": 758791959947503
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_cd",
+							"sid": 304030661496298,
+							"parameters": {
+								"object": "Arm41"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "Arm41",
+							"sid": 736031787394019,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Arm42",
+							"sid": 998972080228799,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "Drill_cd",
+							"sid": 807609587134281,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 500224679223599,
+							"parameters": {
+								"instance-variable": "Firearm",
+								"value": "true"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 572473724667669,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.0",
+								"type": "once",
+								"tag": "\"frz4\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_cd",
+							"sid": 363137698354582
+						}
+					],
+					"sid": 839250562695712
+				},
+				{
+					"eventType": "comment",
+					"text": "breeze each of the boss's arms"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 425584363210363,
+							"parameters": {
+								"instance-variable": "Health1",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 945201743030627,
+							"parameters": {
+								"instance-variable": "Health1",
+								"comparison": 5,
+								"value": "-5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 757135462443630,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "2",
+								"type": "once",
+								"tag": "\"1\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 975262269546019,
+							"parameters": {
+								"instance-variable": "Health1",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 398719318474649,
+							"parameters": {
+								"instance-variable": "arm1",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 931754221413639
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 123543995863534,
+							"parameters": {
+								"instance-variable": "Health2",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 594975296598365,
+							"parameters": {
+								"instance-variable": "Health2",
+								"comparison": 5,
+								"value": "-5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 652308780009673,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"2\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 208422760920798,
+							"parameters": {
+								"instance-variable": "Health2",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 935235597649656,
+							"parameters": {
+								"instance-variable": "arm2",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 762414318388163
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 799681955159505,
+							"parameters": {
+								"instance-variable": "Health3",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 578776514174530,
+							"parameters": {
+								"instance-variable": "Health3",
+								"comparison": 5,
+								"value": "-5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 458035322093298,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"3\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 333418024614451,
+							"parameters": {
+								"instance-variable": "Health3",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 623528719228848,
+							"parameters": {
+								"instance-variable": "arm3",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 407920851418849
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 760388849180493,
+							"parameters": {
+								"instance-variable": "Health4",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 289583271125293,
+							"parameters": {
+								"instance-variable": "Health4",
+								"comparison": 5,
+								"value": "-5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 436708774858291,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"4\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 280791900458613,
+							"parameters": {
+								"instance-variable": "Health4",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 738846395916446,
+							"parameters": {
+								"instance-variable": "arm4",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 454277262906766
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 338316073239415,
+							"parameters": {
+								"instance-variable": "Health5",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Bossbody_cd",
+							"sid": 813451077695392,
+							"parameters": {
+								"instance-variable": "Health5",
+								"comparison": 5,
+								"value": "-5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 933856461915723,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"5\""
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 985430703027398,
+							"parameters": {
+								"instance-variable": "Health5",
+								"value": "10"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 926183860826359,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "2",
+								"type": "once",
+								"tag": "\"back\""
+							}
+						}
+					],
+					"sid": 627928224756154
+				},
+				{
+					"eventType": "comment",
+					"text": "destory each of the boss's arms and body"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 284962096039661,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm11",
+							"sid": 514994139659638,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm11",
+							"sid": 600665560889962,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm12",
+							"sid": 718408175561955,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm12",
+							"sid": 600698704248997,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 860460761933104,
+							"parameters": {
+								"instance-variable": "Oven",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Arm11",
+							"sid": 920162489454541
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Arm12",
+							"sid": 405369345338261
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Blade_cd",
+							"sid": 541028404746565
+						}
+					],
+					"sid": 461210286424009
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 794800476475039,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Arm21",
+							"sid": 529745131248789
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Hammer_cd",
+							"sid": 820400564949725
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm21",
+							"sid": 776095736131780,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Hammer_cd",
+							"sid": 307989030400609,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 959682823882086,
+							"parameters": {
+								"instance-variable": "Oven",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 400597226781290
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 129403856945680,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"3\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Arm31",
+							"sid": 186209725850522
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Arm32",
+							"sid": 823664119023451
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Arm33",
+							"sid": 492214896686266
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Puncharm_cd",
+							"sid": 195127751157155
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Punch_cd",
+							"sid": 368826048214204
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm31",
+							"sid": 479880111332247,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm32",
+							"sid": 518523773515568,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm33",
+							"sid": 414169781595174,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Puncharm_cd",
+							"sid": 206172279404021,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Punch_cd",
+							"sid": 377230042895330,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 230410585252781,
+							"parameters": {
+								"instance-variable": "Oven",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 921686771968006
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 313703935472510,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"4\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Arm41",
+							"sid": 208739092931550
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Arm42",
+							"sid": 665816708828990
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Drill_cd",
+							"sid": 494880398256259
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm41",
+							"sid": 582443479497078,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Arm42",
+							"sid": 166925614639783,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Drill_cd",
+							"sid": 929422946303083,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Bossbody_cd",
+							"sid": 929170161569785,
+							"parameters": {
+								"instance-variable": "Oven",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 871176079546037
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Bossbody_cd",
+							"sid": 597651729375064,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"5\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 797600810777925,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 541012399832854,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 877053219903542,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "3",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 170483623515485,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "4",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 114255832795694,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "5",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 235530862260688,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "6",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 294779514391750,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "7",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Bossbody_cd",
+							"sid": 962430016564206,
+							"parameters": {
+								"object": "Bomb_cd",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bossbody_cd",
+							"sid": 405090618448860
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Oven_cd",
+							"sid": 920860215102149
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Drone_cd",
+							"sid": 519337280371661
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "playerbox_cd",
+							"sid": 233195250888957,
+							"parameters": {
+								"instance-variable": "sd",
+								"value": "false"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 709897049544906,
+							"parameters": {
+								"layout": "WIN_cd"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 526430221499151
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 444350704498693,
+							"parameters": {
+								"audio-file": "Home page_Videogame Music Loop_Kealy",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 250665741983494
+				},
+				{
+					"eventType": "comment",
+					"text": "Create explosion when boss' arms were destory"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Hammer_cd",
+							"sid": 833259080336284,
+							"parameters": {
+								"object": "Ground_cd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Hammer_cd",
+							"sid": 425475555183360,
+							"parameters": {
+								"object": "Lightning_cd",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 693904623786470
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Lightning_cd",
+							"sid": 668793038456357,
+							"parameters": {
+								"animation": "\"1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Lightning_cd",
+							"sid": 351882985935065
+						}
+					],
+					"sid": 379908195199717
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 355238346985481
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Drill_cd",
+							"sid": 518094306879770,
+							"parameters": {
+								"object": "Fire_cd",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 723917697471127
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Fire_cd",
+							"sid": 725810319618483
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Fire_cd",
+							"sid": 770761453154872
+						}
+					],
+					"sid": 631930277182039
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "ov_cd",
+							"sid": 764359242264287
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ov_cd",
+							"sid": 309777890871335
+						}
+					],
+					"sid": 823973474706043
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 106420498976848,
+							"parameters": {
+								"interval-seconds": "7"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Bossbody_cd",
+							"sid": 462995743030660,
+							"parameters": {
+								"instance-variable": "Oven"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Oven_cd",
+							"sid": 459143657029462,
+							"parameters": {
+								"object": "ov_cd",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Oven_cd",
+							"sid": 441608391214696,
+							"parameters": {
+								"object": "ov_cd",
+								"layer": "1",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 679338646485924
+				},
+				{
+					"eventType": "comment",
+					"text": "Spawn and destory each of the boss' attacks"
+				}
+			],
+			"sid": 448378764934946
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Ground",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 524110139166736,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "2floor_cd",
+							"sid": 762534588527510,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "bossSolid_cd",
+							"sid": 541734898086972,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 571517676106962,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 909616086485655,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "2floor_cd",
+							"sid": 826304718631649,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "bossSolid_cd",
+							"sid": 982111018315761,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						}
+					],
+					"sid": 886445654728067,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "make the player jump off the the second floor"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 749254727441383,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 113695966731075,
+							"parameters": {
+								"animation": "\"6\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 209498878182158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 687835520798639,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 910775307081793,
+							"parameters": {
+								"animation": "\"5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 711982905886115
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 639699140802891,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 283393230863537,
+							"parameters": {
+								"animation": "\"4\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 571593054769372
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 773508752430000,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 137003493942280,
+							"parameters": {
+								"animation": "\"3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 938254521582175
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 803566300512126,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 247797947918846,
+							"parameters": {
+								"animation": "\"2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 328480392812850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 859224978039782,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 453719747956640,
+							"parameters": {
+								"animation": "\"1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 358383767337430
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 840409855809824,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HealthBar_cd",
+							"sid": 399824111726275,
+							"parameters": {
+								"animation": "\"0\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 524374916467365
+				},
+				{
+					"eventType": "comment",
+					"text": "these codes show how much health the player still have to the player (real)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 994134388322947,
+							"parameters": {
+								"instance-variable": "EMP",
+								"comparison": 5,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "EMP_cd",
+							"sid": 870764425914123,
+							"parameters": {
+								"animation": "\"3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 708407844675655
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 425976726174311,
+							"parameters": {
+								"instance-variable": "EMP",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "EMP_cd",
+							"sid": 775987107604153,
+							"parameters": {
+								"animation": "\"2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 908198401023302
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 839614832079063,
+							"parameters": {
+								"instance-variable": "EMP",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "EMP_cd",
+							"sid": 871559162987080,
+							"parameters": {
+								"animation": "\"1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 350699333497326
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 896993426648283,
+							"parameters": {
+								"instance-variable": "EMP",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "EMP_cd",
+							"sid": 554365765811287,
+							"parameters": {
+								"animation": "\"0\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 484962457937881
+				},
+				{
+					"eventType": "comment",
+					"text": "Show how much EMP bomb does the player still have to the player (Real)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 900883538755517,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 278143945567700,
+							"parameters": {
+								"animation": "\"10\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 272893101868461
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 100560115672472,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 496514470041651,
+							"parameters": {
+								"animation": "\"9\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 410893841987164
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 598097746230254,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 173617162779390,
+							"parameters": {
+								"animation": "\"8\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 774305009750336
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 278665119847016,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 736455829273355,
+							"parameters": {
+								"animation": "\"7\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 821970189144544
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 166279394972763,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 597799188275897,
+							"parameters": {
+								"animation": "\"6\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 592744233696946
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 381528429556329,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 228517174958676,
+							"parameters": {
+								"animation": "\"5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 481605111957393
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 505249189210445,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 874636392444404,
+							"parameters": {
+								"animation": "\"4\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 931658026758481
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 730470616718507,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 798441963867737,
+							"parameters": {
+								"animation": "\"3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 622929422912669
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 737247295244264,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 158529946597061,
+							"parameters": {
+								"animation": "\"2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 216214183763353
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 229357956048365,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 856366568429581,
+							"parameters": {
+								"animation": "\"1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 616751735554120
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "playerbox_cd",
+							"sid": 542973952794219,
+							"parameters": {
+								"instance-variable": "Energy",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Energy_cd",
+							"sid": 501206249436280,
+							"parameters": {
+								"animation": "\"0\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 290786506410370
+				},
+				{
+					"eventType": "comment",
+					"text": "Show how much energy bomb does the player still have to the player (Real)"
+				}
+			],
+			"sid": 120100559320768
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 688919563089382
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Sprite_cd1",
+					"sid": 927478781959925,
+					"parameters": {
+						"object": "Sprite2_cd2",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 347548700437337,
+					"parameters": {
+						"scale": ".31"
+					}
+				}
+			],
+			"sid": 731165341502399
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Sprite2_cd2",
+					"sid": 589099296759055
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 925944729029837
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 147865573908757,
+					"parameters": {
+						"audio-file": "Home page_Videogame Music Loop_Kealy",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 419980643741562
+		},
+		{
+			"eventType": "comment",
+			"text": "Stupid music generater (play music on each layput)"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 761356614850967,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 819736056542993
+				}
+			],
+			"sid": 259196809029984,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 720105951519474,
+					"parameters": {
+						"key": 71
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "playerbox_cd",
+					"sid": 728485140685884,
+					"parameters": {
+						"instance-variable": "Energy",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 764644124892771,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 957691061459836,
+					"parameters": {
+						"key": 189
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "playerbox_cd",
+					"sid": 962663624452650,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 970834642365199,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 971824906529275,
+					"parameters": {
+						"key": 187
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "playerbox_cd",
+					"sid": 183955561605020,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 732550301860053,
+			"disabled": true
+		},
+		{
+			"eventType": "comment",
+			"text": "DEBUG, rstart, add to health, and energy"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 611988501268767,
+					"parameters": {
+						"key": 16
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 571822505223477,
+					"parameters": {
+						"layout": "Start_cd"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 400492516135872
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 921903475147579,
+					"parameters": {
+						"audio-file": "Home page_Videogame Music Loop_Kealy",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 821212431073802,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 736012301427832
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "LOSE_cd",
+					"sid": 852274717576333,
+					"parameters": {
+						"animation": "choose(\"1\", \"2\", \"3\")",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 339626896862082
+		},
+		{
+			"eventType": "comment",
+			"text": "let you go to other layouts and generate different different lose lines + generate music"
+		}
+	],
+	"sid": 647634918470544
+}

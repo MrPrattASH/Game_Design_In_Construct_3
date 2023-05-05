@@ -1,0 +1,72 @@
+{
+	"name": "Level_Switch_Button_funcs",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 511722679128226,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 453103185831476,
+					"parameters": {
+						"layout": "Level Select_Master"
+					}
+				}
+			],
+			"sid": 838787792521665
+		},
+		{
+			"functionName": "Button_Flash",
+			"functionCopyPicked": false,
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "arcade_buttons",
+					"sid": 178949802175102,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": ".5",
+						"off-time": ".3",
+						"duration": "30"
+					}
+				}
+			],
+			"sid": 645496383715832
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 173036823854481
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Button_Flash",
+					"sid": 569837839048282
+				}
+			],
+			"sid": 224612529028109
+		}
+	],
+	"sid": 169493133145000
+}

@@ -1,0 +1,106 @@
+{
+	"name": "playerbox_cd",
+	"plugin-id": "Sprite",
+	"sid": 683554343925109,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 766269432338973
+		},
+		{
+			"name": "EMP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 167659679572551
+		},
+		{
+			"name": "Energy",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 631849010214346
+		},
+		{
+			"name": "IV",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 756071885513004
+		},
+		{
+			"name": "sd",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 618369758611095
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 684087795960821
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 481338385644125
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 239088896958963
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 417630590873223
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2973708,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Fire",
+								"x": 1.068,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0,
+								"y": 0.5
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 864153141448707,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

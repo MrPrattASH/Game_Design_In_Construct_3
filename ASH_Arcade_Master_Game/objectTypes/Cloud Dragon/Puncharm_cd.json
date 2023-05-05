@@ -1,0 +1,75 @@
+{
+	"name": "Puncharm_cd",
+	"plugin-id": "Sprite",
+	"sid": 485227416679890,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 355810034173518
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 599721526112131
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 640,
+						"height": 200,
+						"originX": 0.07375,
+						"originY": 0.5144,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2007862,
+						"collisionPoly": {
+							"points": [
+								0.109375,
+								0.35,
+								0.5,
+								0.25,
+								0.953125,
+								0.1,
+								0.96875,
+								0.5,
+								0.953125,
+								0.85,
+								0.5,
+								0.7,
+								0.109375,
+								0.6,
+								0.015625,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.98125,
+								"y": 0.49
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 450042329293737,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

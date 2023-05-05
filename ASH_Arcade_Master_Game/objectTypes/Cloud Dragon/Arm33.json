@@ -1,0 +1,80 @@
+{
+	"name": "Arm33",
+	"plugin-id": "Sprite",
+	"sid": 897935865190398,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 239300324159137
+		},
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 301605647544524
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 938380866327178
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 500,
+						"height": 180,
+						"originX": 0.08911999999999999,
+						"originY": 0.516,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2981114,
+						"collisionPoly": {
+							"points": [
+								0.04,
+								0.05555555555555555,
+								0.56,
+								0.05555555555555555,
+								0.92,
+								0.4444444444444444,
+								0.92,
+								0.5,
+								0.92,
+								0.5,
+								0.56,
+								0.8888888888888888,
+								0.04,
+								0.8888888888888888,
+								0.06,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.6463999999999999,
+								"y": 0.52
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 660523856790261,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

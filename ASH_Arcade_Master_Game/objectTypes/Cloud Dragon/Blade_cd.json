@@ -1,0 +1,63 @@
+{
+	"name": "Blade_cd",
+	"plugin-id": "Sprite",
+	"sid": 639225285428115,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 689444208818578
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 220,
+						"height": 220,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 178966,
+						"collisionPoly": {
+							"points": [
+								0.19016543351299509,
+								0.19016543351299509,
+								0.5,
+								0.061332319483259456,
+								0.8093809287615481,
+								0.19016543351299509,
+								0.9382140427912837,
+								0.5,
+								0.8093809287615481,
+								0.8093809287615481,
+								0.5,
+								0.9377604050658269,
+								0.19016543351299509,
+								0.8093809287615481,
+								0.06178595720871627,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 589876754163065,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

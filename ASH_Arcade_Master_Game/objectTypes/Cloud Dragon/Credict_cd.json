@@ -1,0 +1,53 @@
+{
+	"name": "Credict_cd",
+	"plugin-id": "Sprite",
+	"sid": 302465490510122,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1402,
+						"height": 302,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5028973,
+						"collisionPoly": {
+							"points": [
+								0.16119828815977177,
+								0.7483443708609272,
+								0.9629101283880172,
+								0.16887417218543047,
+								0.9629101283880172,
+								0.5,
+								0.9985734664764622,
+								0.9933774834437086,
+								0.16119828815977177,
+								0.24834437086092714,
+								0.0007132667617689016,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 860777925627098,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

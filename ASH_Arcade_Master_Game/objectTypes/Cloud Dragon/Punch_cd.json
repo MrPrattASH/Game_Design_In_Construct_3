@@ -1,0 +1,68 @@
+{
+	"name": "Punch_cd",
+	"plugin-id": "Sprite",
+	"sid": 501998147711044,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 820060391073954
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 238584536138312
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 560,
+						"originX": 0.8,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2653083,
+						"collisionPoly": {
+							"points": [
+								0.1,
+								0.9464285714285714,
+								0.1,
+								0.5,
+								0.1,
+								0.0714285714285714,
+								0.8,
+								0.0357142857142857,
+								0.8,
+								0.1785714285714286,
+								0.8,
+								0.5,
+								0.8,
+								0.8392857142857143,
+								0.8,
+								0.9821428571428571
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 412805205349709,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

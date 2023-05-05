@@ -1,0 +1,57 @@
+{
+	"name": "Drone_cd",
+	"plugin-id": "Sprite",
+	"sid": 545689892514546,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 800,
+						"height": 640,
+						"originX": 0.5,
+						"originY": 0.6164130088473887,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8326031,
+						"collisionPoly": {
+							"points": [
+								0.3011944239012016,
+								0.3713329902213073,
+								0.5,
+								0.015966963213489203,
+								0.6789250184889185,
+								0.3835869911526113,
+								0.8081486429531375,
+								0.6164130088473887,
+								0.7982083641481976,
+								0.9840330367865109,
+								0.5,
+								0.9840330367865109,
+								0.19185135704686246,
+								0.9840330367865109,
+								0.18191107824192254,
+								0.6164130088473887
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 938346545975795,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

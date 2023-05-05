@@ -1,0 +1,204 @@
+{
+	"name": "Bossbody_cd",
+	"plugin-id": "Sprite",
+	"sid": 276905268893417,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "pistoarm",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 288640581845813
+		},
+		{
+			"name": "sawarm",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 884011929113878
+		},
+		{
+			"name": "hammerarm",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 223590666573014
+		},
+		{
+			"name": "Firearm",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 287742676315819
+		},
+		{
+			"name": "Oven",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 644389628699676
+		},
+		{
+			"name": "Health1",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 255203009914920
+		},
+		{
+			"name": "Health2",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 473429617573228
+		},
+		{
+			"name": "Health3",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 762659252089985
+		},
+		{
+			"name": "Health4",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 464619863038455
+		},
+		{
+			"name": "arm1",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 466208048737732
+		},
+		{
+			"name": "arm2",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 404197422254572
+		},
+		{
+			"name": "arm3",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 248927869655590
+		},
+		{
+			"name": "arm4",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 792290195304644
+		},
+		{
+			"name": "Health5",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 863138597710419
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 314568222357684
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 775831717048003
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 350,
+						"height": 350,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6269342,
+						"collisionPoly": {
+							"points": [
+								0.02857142857142857,
+								0.02857142857142857,
+								0.5,
+								0,
+								0.9428571428571428,
+								0.02857142857142857,
+								0.9714285714285714,
+								0.5,
+								0.9428571428571428,
+								0.9428571428571428,
+								0.5,
+								0.9714285714285714,
+								0.02857142857142857,
+								0.9428571428571428,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Arm1",
+								"x": 0.112,
+								"y": 0.104
+							},
+							{
+								"name": "Arm2",
+								"x": 0.156,
+								"y": 0.688
+							},
+							{
+								"name": "Oven",
+								"x": 0.492,
+								"y": 0.756
+							},
+							{
+								"name": "Arm4",
+								"x": 0.9,
+								"y": 0.9
+							},
+							{
+								"name": "Drone",
+								"x": 0.504,
+								"y": -0.11942857142857136
+							},
+							{
+								"name": "Arm3",
+								"x": 0.876,
+								"y": 0.116
+							},
+							{
+								"name": "Solid Body",
+								"x": 0.5,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 714312716046324,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
