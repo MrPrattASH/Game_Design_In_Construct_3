@@ -1,0 +1,523 @@
+{
+	"name": "Start code_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Player logic_DOR"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 835031101854638
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 389557084324202
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 877487342232284,
+					"parameters": {
+						"audio-file": "bleeps-and-bloops-classic-arcade-game-116838",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Turorial\""
+					}
+				}
+			],
+			"sid": 354826337129176
+		},
+		{
+			"eventType": "comment",
+			"text": "Flips knight to make it look like the knight is facing the direction the player is going"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Intro Dialouge",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "TextBox_DOR",
+							"sid": 701026258239757,
+							"parameters": {
+								"object": "Knight_DOR"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "TextBox_DOR",
+							"sid": 848817605388546,
+							"parameters": {
+								"instance-variable": "Event",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 487097987692748
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 895172279462145
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "TextBox_DOR",
+							"sid": 329498347336383,
+							"parameters": {
+								"instance-variable": "Event",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 310214275513987
+				},
+				{
+					"eventType": "comment",
+					"text": "This creates the dialouge with the wizard"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 421202078179227,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [],
+					"sid": 444539413385886,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "TextBox_DOR",
+									"sid": 700913996069647,
+									"parameters": {
+										"instance-variable": "Event"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 514983334070928,
+									"parameters": {
+										"object-to-create": "DialougeBox_DOR",
+										"layer": "\"Sprites\"",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 370533647513932,
+									"parameters": {
+										"object-to-create": "Dialouge_DOR",
+										"layer": "\"Sprites\"",
+										"x": "0",
+										"y": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Dialouge_DOR",
+									"sid": 809386440213037,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "4.5",
+										"type": "once",
+										"tag": "\"1\""
+									}
+								}
+							],
+							"sid": 944522099179407
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 348980303903191,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Dialouge_DOR",
+							"sid": 535781059897988,
+							"parameters": {
+								"text": "\"The rules and instructions are to my right and left\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 198428668629429,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.5",
+								"type": "once",
+								"tag": "\"2\""
+							}
+						}
+					],
+					"sid": 290031078810169
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 369464063802802,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Dialouge_DOR",
+							"sid": 198820392597998,
+							"parameters": {
+								"text": "\"You, like me, have been put here to cleanse this place of evil\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 411809150478462,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "6.5",
+								"type": "once",
+								"tag": "\"3\""
+							}
+						}
+					],
+					"sid": 675603269971402
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 528692998881123,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"3\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Dialouge_DOR",
+							"sid": 304389747236051,
+							"parameters": {
+								"text": "\"We must clear this dungeon to escape\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 847412256227838,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5",
+								"type": "once",
+								"tag": "\"4\""
+							}
+						}
+					],
+					"sid": 159801082012774
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 900992451360711,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"4\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Dialouge_DOR",
+							"sid": 618327561984508,
+							"parameters": {
+								"text": "\"Before you set out, practice your skills on this captured ogers\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 269978091908942,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "7.2",
+								"type": "once",
+								"tag": "\"5\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BasicEnemy_DOR",
+							"sid": 499753863975701,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 112630884197468
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 832274789945011,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"5\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Dialouge_DOR",
+							"sid": 614170879761301,
+							"parameters": {
+								"text": "\"Farewell, I hope to see you again\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 712375114751751,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5.5",
+								"type": "once",
+								"tag": "\"6\""
+							}
+						}
+					],
+					"sid": 211543474134812
+				},
+				{
+					"eventType": "comment",
+					"text": "Gets rid of dialogue components and NPC"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Dialouge_DOR",
+							"sid": 134895364523688,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"6\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Dialouge_DOR",
+							"sid": 802198124433924
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Wizard_DOR",
+							"sid": 716163217640573
+						},
+						{
+							"id": "destroy",
+							"objectClass": "DialougeBox_DOR",
+							"sid": 228238999257930
+						}
+					],
+					"sid": 698471476655727
+				}
+			],
+			"sid": 860500159597194
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Dummy_DOR",
+					"sid": 129401643400273,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 593234102804189,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				}
+			],
+			"sid": 373024120739007
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Dummy_DOR",
+					"sid": 460091886262656,
+					"parameters": {
+						"object": "SWORD_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Dummy_DOR",
+					"sid": 898123755245588,
+					"parameters": {
+						"animation": "\"hurt\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Thank you HZGaming"
+				},
+				{
+					"id": "move-at-angle",
+					"objectClass": "Dummy_DOR",
+					"sid": 535073502859949,
+					"parameters": {
+						"angle": "SWORD_DOR.Angle",
+						"distance": "10"
+					}
+				}
+			],
+			"sid": 288936962281212
+		},
+		{
+			"eventType": "comment",
+			"text": "Return Dummy to Middle of box after pushing it to far"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Dummy_DOR",
+					"sid": 456336034765268,
+					"parameters": {
+						"object": "Wall_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Dummy_DOR",
+					"sid": 720702878647865,
+					"parameters": {
+						"x": "305",
+						"y": "168"
+					}
+				}
+			],
+			"sid": 698987826292797
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 265487622096062,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Knight_DOR",
+					"sid": 418053770976738,
+					"parameters": {
+						"object": "Hole_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 340080243324019,
+					"parameters": {
+						"layout": "level one_DOR"
+					}
+				}
+			],
+			"sid": 911307391450445
+		}
+	],
+	"sid": 499310870413420
+}

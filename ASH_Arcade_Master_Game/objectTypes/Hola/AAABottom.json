@@ -1,0 +1,61 @@
+{
+	"name": "AAABottom",
+	"plugin-id": "Sprite",
+	"sid": 242128229901440,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 622321166011513
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 582,
+						"height": 692,
+						"originX": 0.31958762886597936,
+						"originY": 0.125,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 899183,
+						"collisionPoly": {
+							"points": [
+								0.10481099656357389,
+								0.42052023121387283,
+								0.31958762886597936,
+								0.030346820809248554,
+								0.9106529209621993,
+								0.10260115606936417,
+								0.9278350515463918,
+								0.125,
+								0.9450171821305842,
+								0.17485549132947978,
+								0.31958762886597936,
+								0.8670520231213873,
+								0.12199312714776632,
+								0.125
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 689565414523590,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

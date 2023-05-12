@@ -1,0 +1,35 @@
+{
+	"name": "OBJ2",
+	"plugin-id": "Spritefont2",
+	"sid": 942042883120073,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "OBJ1",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 318533064778827
+		},
+		{
+			"name": "OBJ2",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 149818291976128
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 128,
+		"height": 256,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 4829054,
+		"useCollisionPoly": true
+	}
+}

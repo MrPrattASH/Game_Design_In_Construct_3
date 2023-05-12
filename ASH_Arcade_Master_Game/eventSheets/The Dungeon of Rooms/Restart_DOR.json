@@ -1,0 +1,193 @@
+{
+	"name": "Restart_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "variable",
+			"name": "curLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 154262607305755
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 675796682066486,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [],
+			"sid": 356257700682998,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 916899484439086,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 776600209013138,
+							"parameters": {
+								"layout": "level one_DOR"
+							}
+						}
+					],
+					"sid": 964104539401110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 592712183887170,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 960776399814545,
+							"parameters": {
+								"layout": "Level 2_DOR"
+							}
+						}
+					],
+					"sid": 680461587931551
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 719774077913630,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 627165577625946,
+							"parameters": {
+								"layout": "Level 3_DOR"
+							}
+						}
+					],
+					"sid": 908599091872674
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 452457213434213,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 799738172975231,
+							"parameters": {
+								"layout": "Level 4_DOR"
+							}
+						}
+					],
+					"sid": 968393219187079
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 388673578691285,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 858426031342033,
+							"parameters": {
+								"layout": "Level 5_DOR"
+							}
+						}
+					],
+					"sid": 912332996134896
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 217391385122729,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 288188865752843,
+							"parameters": {
+								"layout": "Level 6_DOR"
+							}
+						}
+					],
+					"sid": 879127260339628
+				}
+			]
+		}
+	],
+	"sid": 938025049851248
+}

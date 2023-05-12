@@ -1,0 +1,360 @@
+{
+	"name": "Player logic_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "comment",
+			"text": "Flips knight to make it look like the knight is facing the direction the player is going"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 821865798290670,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Knight_DOR",
+					"sid": 978735677914132,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 212590239102495
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 912712378615439,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Knight_DOR",
+					"sid": 827669669504908,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 706236992689978
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 747048181740786
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "SWORD_DOR",
+					"sid": 139204935291860,
+					"parameters": {
+						"x": "Knight_DOR.X + cos(cross_angle) * (cross_radius-190)",
+						"y": "Knight_DOR.Y + sin(cross_angle) * (cross_radius-190)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "SWORD_DOR",
+					"sid": 575386270688048,
+					"parameters": {
+						"angle": "cross_angle"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "HealthBar_DOR",
+					"sid": 536871136385622,
+					"parameters": {
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y-20"
+					}
+				}
+			],
+			"sid": 164572220830033
+		},
+		{
+			"eventType": "comment",
+			"text": "Reduces size of Health"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 931962777729909,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 0,
+						"value": "4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "HealthBar_DOR",
+					"sid": 685785749419659,
+					"parameters": {
+						"animation": "\"4\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 382348390093651
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 595468089076097,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "HealthBar_DOR",
+					"sid": 989166060101659,
+					"parameters": {
+						"animation": "\"3\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 391020011784556
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 271312714265669,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "HealthBar_DOR",
+					"sid": 271115999394303,
+					"parameters": {
+						"animation": "\"2\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 581486442250304
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 266733756093473,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "HealthBar_DOR",
+					"sid": 869891097527442,
+					"parameters": {
+						"animation": "\"1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 802685929550662
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 707245047249608,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Knight_DOR",
+					"sid": 675153204380367
+				}
+			],
+			"sid": 682643941362981
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Knight_DOR",
+					"sid": 984060789664506,
+					"parameters": {
+						"instance-variable": "Cleared"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Hole_DOR",
+					"sid": 648524108515973,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 608385349772046
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Knight_DOR",
+					"sid": 929335176030650
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 197802892303604,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 737985012571970,
+					"parameters": {
+						"layout": "Restart_DOR"
+					}
+				}
+			],
+			"sid": 392841496595378
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 567871424264582
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 559727320117026,
+					"parameters": {
+						"scale": "3.5"
+					}
+				}
+			],
+			"sid": 140579561009658
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 298287762655677,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 525122041154197,
+					"parameters": {
+						"variable": "cross_angle",
+						"value": "cross_angle - (cross_speed*2.25) %360 "
+					}
+				}
+			],
+			"sid": 527603744631704
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 167757279095403,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 135140824170584,
+					"parameters": {
+						"variable": "cross_angle",
+						"value": "cross_angle + (cross_speed*2.25) %360"
+					}
+				}
+			],
+			"sid": 961180755692428
+		}
+	],
+	"sid": 432200872035185
+}

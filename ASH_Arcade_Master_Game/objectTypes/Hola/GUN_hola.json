@@ -1,0 +1,44 @@
+{
+	"name": "GUN_hola",
+	"plugin-id": "Sprite",
+	"sid": 660397138198590,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 202,
+						"height": 200,
+						"originX": 0.2722772277227723,
+						"originY": 0.535,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8458365,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.905940594059406,
+								"y": 0.475
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 523050508977776,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

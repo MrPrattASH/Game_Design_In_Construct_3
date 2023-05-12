@@ -1,0 +1,53 @@
+{
+	"name": "Sprite4_DOR",
+	"plugin-id": "Sprite",
+	"sid": 352433611734645,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 512,
+						"height": 512,
+						"originX": 0.70703125,
+						"originY": 0.2890625,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4704052,
+						"collisionPoly": {
+							"points": [
+								0.03125,
+								0.03125,
+								0.5,
+								0.044921875,
+								0.955078125,
+								0.04296875,
+								0.744140625,
+								0.744140625,
+								0.5,
+								0.890625,
+								0.224609375,
+								0.7734375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 113692411445254,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

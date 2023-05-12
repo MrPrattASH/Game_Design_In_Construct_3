@@ -1,0 +1,986 @@
+{
+	"name": "Enemy Logic_DOR",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 812455618256006
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Keeps Healthbar onto Knight"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "HealthBar_DOR",
+					"sid": 587696958428470,
+					"parameters": {
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y-20"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Rotates Ranged enemy to the Knights position"
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "RangedEnemie_DOR",
+					"sid": 431408589876509,
+					"parameters": {
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Rotates Tele to the Knights position"
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Tele_DOR",
+					"sid": 462001732890760,
+					"parameters": {
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y"
+					}
+				}
+			],
+			"sid": 398565362337021
+		},
+		{
+			"eventType": "comment",
+			"text": "All actions apply to all instances of the Basic enemy in the layout"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 939169959084203,
+					"parameters": {
+						"object": "BasicEnemy_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-toward-position",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 491052387356774,
+					"parameters": {
+						"degrees": "1",
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y"
+					}
+				}
+			],
+			"sid": 847806571806022
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 261561146523684,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 765486242530140,
+					"parameters": {
+						"animation": "\"Death(Ogre)\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 608015120218805
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 906832146519323,
+					"parameters": {
+						"animation": "\"Death(Ogre)\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 377826271542570
+				}
+			],
+			"sid": 261552259750785
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 884060496311959
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 623714179398633,
+					"parameters": {
+						"instance-variable": "Kills",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 774655505048517
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 565852623024749,
+					"parameters": {
+						"object": "SWORD_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 761230523602894,
+					"parameters": {
+						"animation": "\"Hurt(Ogre)\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Thank you HZGaming for the code Idea"
+				},
+				{
+					"type": "comment",
+					"text": "Creates knockback affect for Basic enemy when hit"
+				},
+				{
+					"id": "move-at-angle",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 520311348169586,
+					"parameters": {
+						"angle": "SWORD_DOR.Angle",
+						"distance": "10"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 421179039639257,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				}
+			],
+			"sid": 384490753695167
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BasicEnemy_DOR",
+					"sid": 336372593820896,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 881893341808051,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 142728993720589,
+					"parameters": {
+						"audio-file": "Retro-8-bit-damage",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 859981636924351
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 973321786946635,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 429991870576443,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Delay",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 874046384081933
+				},
+				{
+					"eventType": "comment",
+					"text": "Triggers actions for all instances of Ranged enemies in the layout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 876716408139664,
+							"parameters": {
+								"object": "RangedEnemie_DOR"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Creates alternate firing affect"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 661304570037797,
+							"parameters": {
+								"variable": "Delay",
+								"value": "random(1.2)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 630444860154907,
+							"parameters": {
+								"seconds": "Delay"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 777753052262705,
+							"parameters": {
+								"object-to-create": "Spell_DOR",
+								"layer": "\"Sprites\"",
+								"x": "RangedEnemie_DOR.X",
+								"y": "RangedEnemie_DOR.Y",
+								"create-hierarchy": true,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Move to where the knight is at the exact moment this event triggers"
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "Spell_DOR",
+							"sid": 807312614200600,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Knight_DOR.X",
+								"y": "Knight_DOR.Y",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 924631108864694
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When spell reaches the knight or its position when the spell was shot destroy the spell"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-arrived",
+					"objectClass": "Spell_DOR",
+					"sid": 164830452064006,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Spell_DOR",
+					"sid": 960611131822090
+				}
+			],
+			"sid": 628034102671579
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Spell_DOR",
+					"sid": 830572796343630,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 644295709258346,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 749089051142929,
+					"parameters": {
+						"audio-file": "Retro-8-bit-damage",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Spell_DOR",
+					"sid": 765992203791443
+				}
+			],
+			"sid": 503858120173991
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Spell_DOR",
+					"sid": 121456257099070,
+					"parameters": {
+						"object": "SWORD_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Spell_DOR",
+					"sid": 169581113171721
+				}
+			],
+			"sid": 314490458667604
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "SWORD_DOR",
+					"sid": 159946166676924,
+					"parameters": {
+						"object": "RangedEnemie_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "RangedEnemie_DOR",
+					"sid": 488098972880379
+				}
+			],
+			"sid": 961503923668899
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "RangedEnemie_DOR",
+					"sid": 437039972843582
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 702666378185785,
+					"parameters": {
+						"instance-variable": "Kills",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 475322958016759
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 808325531635550,
+					"parameters": {
+						"interval-seconds": "3"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 329796296510762,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Delay",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 329166899400310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 985079015584628,
+							"parameters": {
+								"object": "Tele_DOR"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Creates alternate teleporting affect"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 947153093266725,
+							"parameters": {
+								"variable": "Delay",
+								"value": "random(1,5)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 478809967951531,
+							"parameters": {
+								"seconds": "Delay"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Tele_DOR",
+							"sid": 930407117564746,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.5"
+							}
+						}
+					],
+					"sid": 795361824998975
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-flash-ended",
+					"objectClass": "Tele_DOR",
+					"sid": 238785458799120,
+					"behaviorType": "Flash"
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "move to the player just enough so the player can still dodge"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Tele_DOR",
+					"sid": 194635848386455,
+					"parameters": {
+						"x": "SWORD_DOR.X-10",
+						"y": "SWORD_DOR.Y"
+					}
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Tele_DOR",
+					"sid": 139730166696821,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": ".5",
+						"type": "once",
+						"tag": "\"Immun\""
+					}
+				}
+			],
+			"sid": 515014935107826
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Tele_DOR",
+					"sid": 852550783908136,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 496890498232914,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-.5"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 936782614092634,
+					"parameters": {
+						"audio-file": "Retro-8-bit-damage",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 658863260115613
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "SWORD_DOR",
+					"sid": 167213394149601,
+					"parameters": {
+						"object": "Tele_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Tele_DOR",
+					"sid": 395776562850132,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Creates knock back effect"
+				},
+				{
+					"id": "move-at-angle",
+					"objectClass": "Tele_DOR",
+					"sid": 246362041587148,
+					"parameters": {
+						"angle": "SWORD_DOR.Angle",
+						"distance": "18"
+					}
+				}
+			],
+			"sid": 898247592172423
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Tele_DOR",
+					"sid": 188045512806020,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Tele_DOR",
+					"sid": 178654425446343
+				}
+			],
+			"sid": 390823892390838
+		},
+		{
+			"eventType": "comment",
+			"text": "Gives Tele a brief moment of invincibility "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-timer-running",
+					"objectClass": "Tele_DOR",
+					"sid": 114601352373370,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Immun\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Tele_DOR",
+					"sid": 579652422362517,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1000000000000000"
+					}
+				}
+			],
+			"sid": 888338108910895
+		},
+		{
+			"eventType": "comment",
+			"text": "Gets rid of Tele's invincibility"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Tele_DOR",
+					"sid": 402859213600262,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Immun\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Tele_DOR",
+					"sid": 473387911682966,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 500053840431432
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Tele_DOR",
+					"sid": 495027791854025
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 903960841558012,
+					"parameters": {
+						"instance-variable": "Kills",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 698122862558020
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 592418958710053,
+					"parameters": {
+						"object": "Golem_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-toward-position",
+					"objectClass": "Golem_DOR",
+					"sid": 475932811916642,
+					"parameters": {
+						"degrees": "360",
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y"
+					}
+				}
+			],
+			"sid": 877172567327915
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Golem_DOR",
+					"sid": 635079121297104,
+					"parameters": {
+						"object": "SWORD_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Golem_DOR",
+					"sid": 361009474795839,
+					"parameters": {
+						"animation": "\"Hurt\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Golem_DOR",
+					"sid": 534100813004169,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				}
+			],
+			"sid": 992071529679999
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Golem_DOR",
+					"sid": 501013216899235,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 705432998473938,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 762193648698013,
+					"parameters": {
+						"audio-file": "Retro-8-bit-damage",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 638788693080809
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Golem_DOR",
+					"sid": 820731505497742,
+					"parameters": {
+						"animation": "\"Hurt\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Golem_DOR",
+					"sid": 994578593689492,
+					"parameters": {
+						"animation": "\"Normal\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 264030818075313
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Golem_DOR",
+					"sid": 974429311799406,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Creates the fading away affect"
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "Golem_DOR",
+					"sid": 103995535820038,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Golem_DOR",
+					"sid": 725724974840237,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 104118187658933,
+					"parameters": {
+						"opacity": "75"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 636756711988229,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 511139481881561,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 381186277700354,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 955162301649145,
+					"parameters": {
+						"opacity": "25"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 709686815341355,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Golem_DOR",
+					"sid": 164261791147093
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 156548388230759,
+					"parameters": {
+						"layout": "Level 7_DOR"
+					}
+				}
+			],
+			"sid": 302513313526049
+		}
+	],
+	"sid": 222446413821325
+}

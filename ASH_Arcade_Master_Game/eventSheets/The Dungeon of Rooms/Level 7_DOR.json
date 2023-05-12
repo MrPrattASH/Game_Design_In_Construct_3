@@ -1,0 +1,34 @@
+{
+	"name": "Level 7_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 741741238554296,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 862956101847447,
+					"parameters": {
+						"layout": "start_unused_DOR"
+					}
+				}
+			],
+			"sid": 669588886759480
+		}
+	],
+	"sid": 414468428920790
+}

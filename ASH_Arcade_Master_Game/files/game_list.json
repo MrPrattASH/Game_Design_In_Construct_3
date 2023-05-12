@@ -1,8 +1,8 @@
 {
     "c2array": true,
     "size": [
-        4,
         5,
+        6,
         1
     ],
     "data": [
@@ -20,7 +20,10 @@
                 "Cloud Dragon"
             ],
             [
-                "4a"
+                "Hola"
+            ],
+            [
+                "The Dungeon of Rooms"
             ]
         ],
         [
@@ -28,16 +31,19 @@
                 "Description"
             ],
             [
-                "Keep that pescy doctor away in an endless runner game."
+                "As the protagonist of An Apple A Day, you play the role of a doctor who must dodge apples (the very thing that's supposed to keep you away) while collecting life-saving medicine, proving that sometimes even the best intentions can lead to some seriously challenging situations!"
             ],
             [
-                "That's a spicy Jalepeno! Who doesn't want to be a taco Jumping?"
+                "Taco Run is a fun and challenging platformer where players navigate an abandoned nuclear waste warehouse, avoid spicy hot sauce hazards, and collect various food items to create the ultimate taco masterpiece."
             ],
             [
-                "Only you can defeat the mecha-dragon in this megaman style boss fight"
+                "Cloud Dragon is an intense single room boss fight game in the style of Megaman, where players must battle a powerful dragon with lightning fast reflexes and strategic weapon choices."
             ],
             [
-                "4b"
+                "Hola 1 es un juego de disparos en primera persona donde los jugadores \nasumen el papel del Jefe Maestro, un supersoldado, que lucha contra una \nalianza alienígena llamada el Covenant para salvar a la humanidad y al \nuniverso."
+            ],
+            [
+                "The Dungeon of Rooms is a thrilling roguelike dungeon crawler where players must navigate through a labyrinth of challenging rooms, defeat a variety of enemies, and collect powerful loot to survive."
             ]
         ],
         [
@@ -54,7 +60,10 @@
                 "S. Zhuang"
             ],
             [
-                "4c"
+                "J. de Buck"
+            ],
+            [
+                "R. Ferris"
             ]
         ],
         [
@@ -71,7 +80,30 @@
                 "S. van Dalen"
             ],
             [
-                "4d"
+                "A. Rein"
+            ],
+            [
+                "J. Lee"
+            ]
+        ],
+        [
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
             ]
         ]
     ]

@@ -1,0 +1,23 @@
+{
+	"name": "Restart_DOR",
+	"plugin-id": "Text",
+	"sid": 335335431821760,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 220841823726040
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 676293177109307
+		}
+	],
+	"effectTypes": []
+}

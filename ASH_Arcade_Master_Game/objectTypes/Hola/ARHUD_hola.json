@@ -1,0 +1,49 @@
+{
+	"name": "ARHUD_hola",
+	"plugin-id": "Sprite",
+	"sid": 752123143333440,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 302,
+						"height": 121,
+						"originX": 0.5,
+						"originY": 0.9090909090909091,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5334533,
+						"collisionPoly": {
+							"points": [
+								0.0033112582781456954,
+								0,
+								0.9966887417218543,
+								0,
+								0.9966887417218543,
+								1,
+								0.0033112582781456954,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 846522891413144,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

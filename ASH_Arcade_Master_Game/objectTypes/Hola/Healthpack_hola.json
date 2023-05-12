@@ -1,0 +1,37 @@
+{
+	"name": "Healthpack_hola",
+	"plugin-id": "Sprite",
+	"sid": 285971128333737,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 111,
+						"height": 111,
+						"originX": 0.5045045045045045,
+						"originY": 0.24324324324324326,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 787715,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 100323074532475,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

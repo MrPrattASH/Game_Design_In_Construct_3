@@ -1,0 +1,509 @@
+{
+	"name": "level 6_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Enemy Logic_DOR"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Player logic_DOR"
+		},
+		{
+			"eventType": "comment",
+			"text": "Create the Warning box on the player every 3 seconds"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 766116641761546
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 804362774132696
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 356222752966398,
+					"parameters": {
+						"audio-file": "bossfight (2)",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Boss Fight\""
+					}
+				},
+				{
+					"type": "comment",
+					"text": "Creates fading in affect"
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "Golem_DOR",
+					"sid": 326426573176097,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Golem_DOR",
+					"sid": 732943787478597,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 275716267870285,
+					"parameters": {
+						"opacity": "25"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 989316441439061,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 758439583379635,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 668181220358227,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 296002538204341,
+					"parameters": {
+						"opacity": "75"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 901352916217107,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 492159370240411,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 994317841495057,
+					"parameters": {
+						"variable": "curLevel",
+						"value": "6"
+					}
+				}
+			],
+			"sid": 849499177993052
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-opacity",
+					"objectClass": "Golem_DOR",
+					"sid": 131323233903510,
+					"parameters": {
+						"comparison": 0,
+						"opacity": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "Golem_DOR",
+					"sid": 902198676635223,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "20"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "Golem_DOR",
+					"sid": 722703303736689,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				}
+			],
+			"sid": 318415891686666
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 555476189315601,
+					"parameters": {
+						"interval-seconds": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 426241976478138,
+					"parameters": {
+						"object-to-create": "WARNING_DOR",
+						"layer": "\"Sprites\"",
+						"x": "Knight_DOR.X",
+						"y": "Knight_DOR.Y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "WARNING_DOR",
+					"sid": 427994052122415,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "WARNING_DOR",
+					"sid": 701446951890915,
+					"parameters": {
+						"width": "45",
+						"height": "45"
+					}
+				}
+			],
+			"sid": 747830120937352
+		},
+		{
+			"eventType": "comment",
+			"text": "Creates the triple pillars after the warning box animation finishes"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "WARNING_DOR",
+					"sid": 213227015599298,
+					"parameters": {
+						"animation": "\"Animation 1\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 617860183816179,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Placement",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 267287966883052
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 108009236010315,
+							"parameters": {
+								"count": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Creates pillar with Placement offset"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 372673500974913,
+							"parameters": {
+								"object-to-create": "Pillar_DOR",
+								"layer": "\"Sprites\"",
+								"x": "WARNING_DOR.X-Placement",
+								"y": "WARNING_DOR.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Pillar_DOR",
+							"sid": 923674390986188,
+							"parameters": {
+								"animation": "\"Rise\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Pillar_DOR",
+							"sid": 395935815417822,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "2",
+								"type": "once",
+								"tag": "\"o\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Allows for each pillar to be side by side"
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 198554119320712,
+							"parameters": {
+								"variable": "Placement",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 145576861646874
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "WARNING_DOR",
+							"sid": 789841303280489
+						}
+					],
+					"sid": 887063888164836
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Pillar_DOR",
+					"sid": 309001934778849,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 341194942893704,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-1"
+					}
+				}
+			],
+			"sid": 906562129792191
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Pillar_DOR",
+					"sid": 621191593030509,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"o\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Pillar_DOR",
+					"sid": 274573084217457,
+					"parameters": {
+						"animation": "\"Fall\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Pillar_DOR",
+					"sid": 917202473553385
+				}
+			],
+			"sid": 359798669863944
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 979769324991535,
+					"parameters": {
+						"interval-seconds": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "warning2_DOR",
+					"sid": 315268632056884,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "warning2_DOR",
+					"sid": 311793910938518,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 239607131178480,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Create magma for every instance of Warning 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 141096416522707,
+							"parameters": {
+								"object": "warning2_DOR"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 950299046136131,
+							"parameters": {
+								"object-to-create": "Magma",
+								"layer": "\"Sprites\"",
+								"x": "warning2_DOR.X",
+								"y": "warning2_DOR.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 843303608788599
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "warning2_DOR",
+					"sid": 309120901862053,
+					"parameters": {
+						"animation": "\"Animation 1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "warning2_DOR",
+					"sid": 675628520808226,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 748841644353885
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Magma",
+					"sid": 677926388030595,
+					"parameters": {
+						"object": "Knight_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 954543377659558,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "-.5"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 573220220547270,
+					"parameters": {
+						"audio-file": "Retro-8-bit-damage",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 989346615993344
+		}
+	],
+	"sid": 699821874865218
+}

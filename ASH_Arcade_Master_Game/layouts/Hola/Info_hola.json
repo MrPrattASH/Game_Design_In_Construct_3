@@ -1,0 +1,358 @@
+{
+	"name": "Info_hola",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Text2_hola",
+					"properties": {
+						"text": "Controls:\nPlayer 1: Joystick- Movement\nPlayer 2: Joystick- Aim\nPlayer 2: Black - Fire weapon\n\nPlayer 1: Pink - weapon change \nPlayer 1: Blue - melee\nPlayer 1: Yellow- interact\n\nPlayer:\nEnergy shield- You are equipped with an energy \nshield that can protect you from damage it has\n 200 base health and can recharge if you are not \ngetting shot at. \nMelee- you are able to get close and hurt the enemies.\n\nWeapons:\nPistol max 8 ammo\nAR- 75 ammo\n\nHealth and ammo kits:\nMedkits and Ammo boxes can be found \nall around the map, but use it wisely as you only \nhave a limited amount.\n\n\n",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 29,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 641,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1,
+						"y": 2,
+						"width": 872.7024462830544,
+						"height": 1078.4431784378678,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text2_hola",
+					"properties": {
+						"text": "Enemies:\nThere are two types of enemy combatants\nElites - they are the strongest type, they are equipped\nWith an energy shield and a faster fire rate and speed.\nGrunts-  they are small and feeble and easy to kill alone, but when grouped with others they can be tough to beat. They are slower then the elites and have slower fire rate.\n\nEnvironment:\nIn this game trees, rocks and barricades will help you in order to block fire, the area is quite large and is easy to get lost in so be prepared.\n\nProgrammer - Justin de buck\nAudio- Alec rein and Justin de buck\nGraphics - Justin de buck and seb gomez\n\n\n\nReturn to Menu",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 29,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 642,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 894,
+						"y": 2,
+						"width": 929.39054343275,
+						"height": 1083.486384830926,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "arcade_buttons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "blue",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 823,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1252,
+						"y": 924,
+						"width": 142.49633246848492,
+						"height": 89.83464438230568,
+						"originX": 0.5,
+						"originY": 0.4827586206896553,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Joystick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 831,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 532,
+						"y": 48,
+						"width": 34.276404858701305,
+						"height": 74.08126211396733,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Joystick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 832,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 437,
+						"y": 89,
+						"width": 34.276404858701305,
+						"height": 74.08126211396733,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "arcade_buttons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "black",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 833,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 556,
+						"y": 156,
+						"width": 77.48154509629035,
+						"height": 49.689251746534026,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "arcade_buttons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "pink",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 834,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 602,
+						"y": 239,
+						"width": 78.32373580385872,
+						"height": 48.847061038965656,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "arcade_buttons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "blue",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 835,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 430,
+						"y": 290,
+						"width": 77.48154509629035,
+						"height": 48.847061038965656,
+						"originX": 0.5,
+						"originY": 0.4827586206896553,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "arcade_buttons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "yellow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 836,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 478,
+						"y": 343,
+						"width": 78.32373580385872,
+						"height": 48.847061038965656,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 327618767108194,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 648317469988347,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1929,
+	"height": 1080,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "Title_hola"
+}

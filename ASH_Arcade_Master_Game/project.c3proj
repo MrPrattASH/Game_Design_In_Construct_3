@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "AdvancedRandom",
+			"name": "Advanced Random",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Arr",
 			"name": "Array",
 			"author": "Scirra",
@@ -24,6 +31,13 @@
 			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -50,8 +64,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Sprite",
 			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -84,9 +112,23 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "progressbar",
+			"name": "Progress bar",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -99,8 +141,29 @@
 		},
 		{
 			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "MoveTo",
 			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -163,16 +226,7 @@
 	],
 	"uniqueId": "kgmbor4tj32",
 	"objectTypes": {
-		"items": [
-			"Text",
-			"Game_Image",
-			"Games",
-			"AJAX",
-			"game_descriptions",
-			"Line",
-			"Joystick",
-			"arcade_buttons"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -220,7 +274,15 @@
 					"Audio",
 					"Keyboard",
 					"Mouse",
-					"Touch"
+					"Touch",
+					"AJAX",
+					"arcade_buttons",
+					"game_descriptions",
+					"Game_Image",
+					"Games",
+					"Joystick",
+					"Line",
+					"Text"
 				],
 				"subfolders": [],
 				"name": "Globals"
@@ -314,6 +376,110 @@
 				],
 				"subfolders": [],
 				"name": "Cloud Dragon"
+			},
+			{
+				"items": [
+					"AAABottom",
+					"AAATop",
+					"AAATop2",
+					"ACTIVAT",
+					"Activation_hola",
+					"AdvancedRandom",
+					"Ammo_hola",
+					"ammoBox_hola",
+					"AmmoCounter_hola",
+					"ARBullet",
+					"ARHUD_hola",
+					"arrow_hola",
+					"Browser",
+					"Crosshair_hola",
+					"elitebox_hola",
+					"Enemybarricade",
+					"Enemybullet_hola",
+					"Enemycamp_hola",
+					"Exit_hola",
+					"Grunt_Box",
+					"GUN2_hola",
+					"GUN_hola",
+					"Healthicon_hola",
+					"Healthpack_hola",
+					"HP_hola",
+					"info_hola",
+					"MPART2",
+					"OBJ",
+					"OBJ2",
+					"Objectivetext_hola",
+					"Pistolbullet",
+					"PistolHUD",
+					"Player_Box_hola",
+					"Playericon_hola",
+					"Plight",
+					"ProgressBar",
+					"Shiedlicon",
+					"Shield_hola",
+					"Sprite2_hola",
+					"Sprite3_hola",
+					"Sprite4_hola",
+					"Sprite5_hola",
+					"Sprite6_hola",
+					"Sprite7_hola",
+					"Sprite_hola",
+					"SpriteFont2_hola",
+					"SpriteFont_hola",
+					"Start_hola",
+					"Text2_hola",
+					"Text3_hola",
+					"Text_hola",
+					"Tilemap2_hola",
+					"Tilemap3_hola",
+					"Tilemap4_hola",
+					"Tilemap_hola",
+					"Tree_hola",
+					"Tutorial_hola"
+				],
+				"subfolders": [],
+				"name": "Hola"
+			},
+			{
+				"items": [
+					"BasicEnemy_DOR",
+					"Button2_DOR",
+					"Button_DOR",
+					"Dialouge_DOR",
+					"DialougeBox_DOR",
+					"Dummy_DOR",
+					"Golem_DOR",
+					"HealthBar_DOR",
+					"Hole_DOR",
+					"Instructions_DOR",
+					"Knight_DOR",
+					"Magma",
+					"Name_DOR",
+					"Pillar_DOR",
+					"RangedEnemie_DOR",
+					"Restart_DOR",
+					"Rules_DOR",
+					"Spell_DOR",
+					"Sprite4_DOR",
+					"Sprite_DOR",
+					"SWORD_DOR",
+					"Tele_DOR",
+					"Text2_DOR",
+					"Text3_DOR",
+					"Text4_DOR",
+					"Text_DOR",
+					"TextBox_DOR",
+					"Tile1_DOR",
+					"Tile2_DOR",
+					"TiledBackground2_DOR",
+					"TiledBackground_DOR",
+					"Wall_DOR",
+					"warning2_DOR",
+					"WARNING_DOR",
+					"Wizard_DOR"
+				],
+				"subfolders": [],
+				"name": "The Dungeon of Rooms"
 			}
 		]
 	},
@@ -331,7 +497,7 @@
 		"subfolders": [
 			{
 				"items": [
-					"An Apple a Day_ad",
+					"An Apple a Day",
 					"Game Over_ad"
 				],
 				"subfolders": [],
@@ -339,7 +505,7 @@
 			},
 			{
 				"items": [
-					"Taco Run_tr",
+					"Taco Run",
 					"Game Layer_tr",
 					"Sprite Sheet_tr",
 					"End Screen_tr",
@@ -352,13 +518,40 @@
 				"items": [
 					"credit_cd",
 					"LOSE_cd",
-					"Start_cd",
+					"Cloud Dragon",
 					"WIN_cd",
 					"B_cd",
 					"Bossf1_cd"
 				],
 				"subfolders": [],
 				"name": "Cloud Dragon"
+			},
+			{
+				"items": [
+					"Title_hola",
+					"Start_hola",
+					"Part2_hola",
+					"Info_hola"
+				],
+				"subfolders": [],
+				"name": "Hola"
+			},
+			{
+				"items": [
+					"Restart_DOR",
+					"start_unused_DOR",
+					"Level 7_DOR",
+					"Level 6_DOR",
+					"Level 5_DOR",
+					"Level 4_DOR",
+					"Level 3_DOR",
+					"Level 2_DOR",
+					"The Dungeon of Rooms",
+					"Object bank_DOR",
+					"level one_DOR"
+				],
+				"subfolders": [],
+				"name": "The Dungeon of Rooms"
 			}
 		]
 	},
@@ -391,6 +584,34 @@
 				],
 				"subfolders": [],
 				"name": "Cloud Dragon"
+			},
+			{
+				"items": [
+					"Title_hola",
+					"Start_hola",
+					"Main_hola",
+					"player_events_hola"
+				],
+				"subfolders": [],
+				"name": "Hola"
+			},
+			{
+				"items": [
+					"start screeen_DOR",
+					"Start code_DOR",
+					"Restart_DOR",
+					"Player logic_DOR",
+					"Level One Code_DOR",
+					"Level 7_DOR",
+					"level 6_DOR",
+					"Level 5_DOR",
+					"Level 4_DOR",
+					"Level 3_DOR",
+					"Level 2_DOR",
+					"Enemy Logic_DOR"
+				],
+				"subfolders": [],
+				"name": "The Dungeon of Rooms"
 			}
 		]
 	},
@@ -429,6 +650,182 @@
 					"name": "bing1.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 548482747901272,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "walk.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 211382700436516,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 714941053407925,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 5.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 245511786916484,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 906276826469127,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 780029690773565,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 454401078106049,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (3).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 670266520173638,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (2).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 400126324264848,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (1).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 910048747620640,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (1) copy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 802456113850516,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Pistol.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 716671233118915,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "enemydeath.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 488157957804331,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Death 2-FX-Alex Rein.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 184483885546396,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "damage.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 162651296716278,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Rain.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 972106780719624,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Retro-8-bit-damage.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 631727047040413,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "startSound (4).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 310099288147412,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 2 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 899512730138698,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 1 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 420035592765548,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bossfight (2).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 154436680239297,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 3 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 580367798352243,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bleeps-and-bloops-classic-arcade-game-116838.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 214364616921652,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -485,6 +882,38 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Enemy Dialouge-FX-Alex Rein.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 529119159530659,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game design Main screem.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 214044030110750,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game design Main theme action.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 732915907466475,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game design Main theme.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 651268020409894,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -507,6 +936,14 @@
 					"name": "TACOM___.TTF",
 					"type": "application/font-sfnt",
 					"sid": 926561510771207,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Halo.ttf",
+					"type": "application/font-sfnt",
+					"sid": 989702855334331,
 					"file-info": {
 						"purpose": "none"
 					}

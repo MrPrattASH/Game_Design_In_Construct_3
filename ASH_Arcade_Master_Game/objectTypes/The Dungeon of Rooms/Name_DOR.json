@@ -1,0 +1,15 @@
+{
+	"name": "Name_DOR",
+	"plugin-id": "Text",
+	"sid": 756799908913241,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 892922365550280
+		}
+	],
+	"effectTypes": []
+}

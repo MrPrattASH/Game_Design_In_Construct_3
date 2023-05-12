@@ -2,6 +2,36 @@
 	"name": "Level_Switch_Button_funcs",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "cross_angle",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 530536601327692
+		},
+		{
+			"eventType": "variable",
+			"name": "cross_speed",
+			"type": "number",
+			"initialValue": "3.75",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 347303010450843
+		},
+		{
+			"eventType": "variable",
+			"name": "cross_radius",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 256895248001962
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -66,6 +96,10 @@
 				}
 			],
 			"sid": 224612529028109
+		},
+		{
+			"eventType": "comment",
+			"text": "TODO: Add a popup screen \"Are you sure you want to quit?\" , scaled to the current viewport size. "
 		}
 	],
 	"sid": 169493133145000

@@ -1,0 +1,268 @@
+{
+	"name": "HP_hola",
+	"plugin-id": "Sprite",
+	"sid": 971403623829213,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9320323,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 872163713319337,
+				"name": "Duplicate",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8301427,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 737083083588775,
+				"name": "dead",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9277084,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6515486,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 256711158967709,
+				"name": "HP-12.5",
+				"isLooping": true,
+				"isPingPong": true,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7197438,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6374191,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 140081629674417,
+				"name": "HP-25",
+				"isLooping": true,
+				"isPingPong": true,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 8
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5396723,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 189096608198934,
+				"name": "HP-37.5",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6051305,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 813449294180055,
+				"name": "HP-50",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 297467,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 165602764928814,
+				"name": "HP-62.5",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1317054,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 461647999269778,
+				"name": "HP-75",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1729985,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 789910340273658,
+				"name": "HP-87.5",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 182,
+						"height": 46,
+						"originX": 0.6758241758241759,
+						"originY": 1.5217391304347827,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6793775,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 499558024909708,
+				"name": "HP-100",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

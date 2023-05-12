@@ -1,0 +1,37 @@
+{
+	"name": "Sprite_hola",
+	"plugin-id": "Sprite",
+	"sid": 819630507540260,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 160,
+						"height": 120,
+						"originX": 36,
+						"originY": 302,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9289866,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 673539610735300,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

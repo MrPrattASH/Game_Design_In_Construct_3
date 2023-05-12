@@ -1,0 +1,55 @@
+{
+	"name": "start screeen_DOR",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 586570443588890,
+					"parameters": {
+						"key": 221
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 639189044073309,
+					"parameters": {
+						"layout": "The Dungeon of Rooms"
+					}
+				}
+			],
+			"sid": 836086743207048
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 933743765688873
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 399242338284437,
+					"parameters": {
+						"audio-file": "startSound (4)",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Start\""
+					}
+				}
+			],
+			"sid": 423442436268348
+		}
+	],
+	"sid": 241176916827498
+}

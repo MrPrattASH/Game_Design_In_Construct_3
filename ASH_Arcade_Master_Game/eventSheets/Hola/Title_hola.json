@@ -1,0 +1,138 @@
+{
+	"name": "Title_hola",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 205847913888857,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 191264267582836,
+					"parameters": {
+						"layout": "Start_hola"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 724897890786930
+				}
+			],
+			"sid": 825656617645070
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 428224922004025,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 181531390991913,
+					"parameters": {
+						"layout": "Info_hola"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 484553841210136
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ",
+					"sid": 842599642450101,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 673419373825991
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 937088057245544,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 837777719605784,
+					"parameters": {
+						"layout": "Title_hola"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 248676722594113
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "OBJ",
+					"sid": 753668378069280,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 621382113925614
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 850207300312628
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 638994937673423,
+					"parameters": {
+						"audio-file": "Game design Main screem",
+						"loop": "looping",
+						"volume": "30",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 743127795906352
+		}
+	],
+	"sid": 173007293177057
+}

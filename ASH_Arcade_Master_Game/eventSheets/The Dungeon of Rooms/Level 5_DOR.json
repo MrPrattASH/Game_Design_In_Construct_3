@@ -1,0 +1,149 @@
+{
+	"name": "Level 5_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Enemy Logic_DOR"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Player logic_DOR"
+		},
+		{
+			"eventType": "comment",
+			"text": "If all enemies on layout killed show the location of Hole"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 940127375440363,
+					"parameters": {
+						"instance-variable": "Kills",
+						"comparison": 0,
+						"value": "17"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 228083931266688,
+					"parameters": {
+						"instance-variable": "Cleared",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 151443737849933
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 406992899512597,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Knight_DOR",
+					"sid": 254112548255276,
+					"parameters": {
+						"object": "Hole_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 750229982804202,
+					"parameters": {
+						"layout": "Level 6_DOR"
+					}
+				}
+			],
+			"sid": 330791869033758
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Knight_DOR",
+					"sid": 869756822137456
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 158629652416381,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 299662660346218,
+					"parameters": {
+						"layout": "Restart_DOR"
+					}
+				}
+			],
+			"sid": 911933501979648
+		},
+		{
+			"eventType": "comment",
+			"text": "Play Backround Music"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 166639394483154
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 696284900734882
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 535763267936525,
+					"parameters": {
+						"audio-file": "Wave 3 Loop",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Level 5 backround\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 295171262399086,
+					"parameters": {
+						"variable": "curLevel",
+						"value": "5"
+					}
+				}
+			],
+			"sid": 592973121820584
+		}
+	],
+	"sid": 155506479660559
+}

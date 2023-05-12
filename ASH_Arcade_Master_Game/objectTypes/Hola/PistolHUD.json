@@ -1,0 +1,37 @@
+{
+	"name": "PistolHUD",
+	"plugin-id": "Sprite",
+	"sid": 167907930610996,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 199,
+						"height": 186,
+						"originX": 0.4020100502512563,
+						"originY": 0.34408602150537637,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3397630,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 239202700627042,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

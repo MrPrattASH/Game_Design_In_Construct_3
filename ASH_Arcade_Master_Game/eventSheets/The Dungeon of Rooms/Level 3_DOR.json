@@ -1,0 +1,120 @@
+{
+	"name": "Level 3_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Enemy Logic_DOR"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Player logic_DOR"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 812210889539149,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Knight_DOR",
+					"sid": 394185442175649,
+					"parameters": {
+						"object": "Hole_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 447662914121704,
+					"parameters": {
+						"layout": "Level 4_DOR"
+					}
+				}
+			],
+			"sid": 403815867914070
+		},
+		{
+			"eventType": "comment",
+			"text": "If all enemies on layout killed show the location of Hole"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 754553765630292,
+					"parameters": {
+						"instance-variable": "Kills",
+						"comparison": 0,
+						"value": "11"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 730727856946161,
+					"parameters": {
+						"instance-variable": "Cleared",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 364863458540805
+		},
+		{
+			"eventType": "comment",
+			"text": "Play Backround Music"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 590056797441370
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 233851363637137
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 601964566834705,
+					"parameters": {
+						"audio-file": "Wave 2 Loop",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Level 3 backround\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 267545758905636,
+					"parameters": {
+						"variable": "curLevel",
+						"value": "3"
+					}
+				}
+			],
+			"sid": 281687960491730
+		}
+	],
+	"sid": 544222212036635
+}

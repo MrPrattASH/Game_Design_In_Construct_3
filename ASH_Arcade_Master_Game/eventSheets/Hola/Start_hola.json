@@ -1,0 +1,4249 @@
+{
+	"name": "Start_hola",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "player_events_hola"
+		},
+		{
+			"eventType": "variable",
+			"name": "Enemies2",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 557408340557727
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Start2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 489331809166121
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Ammo_hola",
+							"sid": 374320568338145,
+							"parameters": {
+								"text": "Ammo_hola.AR"
+							}
+						}
+					],
+					"sid": 588006382830127
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 671277996710821,
+							"parameters": {
+								"object": "MPART2"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 270860172565683,
+							"parameters": {
+								"first-value": "Enemies",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 764453559705655
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 819275740578704,
+							"parameters": {
+								"layout": "Part2_hola"
+							}
+						}
+					],
+					"sid": 628892236213091
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 241287695342484
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 566074370927894,
+							"parameters": {
+								"audio-file": "Game design Main theme",
+								"loop": "looping",
+								"volume": "30",
+								"stereo-pan": "0",
+								"tag-optional": "\"Leave\""
+							}
+						}
+					],
+					"sid": 704812901748075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 833759885847524,
+							"parameters": {
+								"variable": "Enemies",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "arrow_hola",
+							"sid": 913624082981188,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 300040594292026
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Player_Box_hola",
+							"sid": 469036296196018
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 200683333781076
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 533754151683954,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 933788941623246
+						}
+					],
+					"sid": 980067462735124
+				}
+			],
+			"sid": 215109469612620,
+			"background-color": [
+				0.7490196078431373,
+				0.050980392156862744,
+				0.050980392156862744,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Shooting2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Playershoot2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "On key 1 pressed Toggle Pistol, AR and Ammotype- this is used later in the code "
+						},
+						{
+							"eventType": "comment",
+							"text": "If bullets collides with these objects they would be destroyed to simulate a solid object "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 244033251869572,
+									"parameters": {
+										"object": "Enemybarricade"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 614673854545623
+								}
+							],
+							"sid": 928063963088964
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 782664811805767,
+									"parameters": {
+										"object": "Enemybarricade"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 153884600301747
+								}
+							],
+							"sid": 302291883975339
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 635445707297023,
+									"parameters": {
+										"object": "Tree_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 336642565893357
+								}
+							],
+							"sid": 138235464409891
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 713881257916354,
+									"parameters": {
+										"object": "Tree_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 885255291639417
+								}
+							],
+							"sid": 381809633887523
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 402067061401300,
+									"parameters": {
+										"object": "Sprite4_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 441086652558959
+								}
+							],
+							"sid": 459271244679693
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 671253646947803,
+									"parameters": {
+										"object": "Sprite4_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 359184552984683
+								}
+							],
+							"sid": 868373723734695
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 909478279318103,
+									"parameters": {
+										"object": "Sprite5_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 247720088716750
+								}
+							],
+							"sid": 892987045684801
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 993556514861261,
+									"parameters": {
+										"object": "Sprite5_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 813709421832095
+								}
+							],
+							"sid": 777805922221467
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "ARBullet",
+									"sid": 756456182420828
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 160935520858592
+								}
+							],
+							"sid": 840093760885172
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "Pistolbullet",
+									"sid": 429211162247572
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 150310375036089
+								}
+							],
+							"sid": 144551351777899
+						},
+						{
+							"eventType": "comment",
+							"text": "if pistol ammo is less then zero set pistol to fasle and set the ammo display to 0"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Ammo_hola",
+									"sid": 680579933162890,
+									"parameters": {
+										"instance-variable": "Pistol",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 931628427857448,
+									"parameters": {
+										"instance-variable": "Pistol",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Ammo_hola",
+									"sid": 937915583403537,
+									"parameters": {
+										"instance-variable": "Pistol",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 224994010297754
+						},
+						{
+							"eventType": "comment",
+							"text": "if AR ammo is less then zero set AR to fasle and set the ammo display to 0"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Ammo_hola",
+									"sid": 233443933710456,
+									"parameters": {
+										"instance-variable": "AR",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 127197998313804,
+									"parameters": {
+										"instance-variable": "AR",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Ammo_hola",
+									"sid": 745915855479157,
+									"parameters": {
+										"instance-variable": "AR",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 499701651986260
+						},
+						{
+							"eventType": "comment",
+							"text": "In these line of codes it focuses on the enemies damage taken from the bullets from the player, the elite have a shield so there is a boolean to check if the elite has lost its shields by using a 3 second timer, if during the 3 seconds the elite has taken damage it will reset the timer "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 350147800561921,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 739163498418395,
+									"parameters": {
+										"instance-variable": "ShieldAct"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 481587666661063,
+									"parameters": {
+										"instance-variable": "Healthact"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 526874069120844
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 819518997798558,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "random(10,15)"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 651350873656508,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"EliteDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 389097784308623,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 521282584089476
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 641183648391229,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 774143550571982,
+									"parameters": {
+										"instance-variable": "ShieldAct"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 402909921842878,
+									"parameters": {
+										"instance-variable": "Healthact"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 817058965502748,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 261571841176119
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 265255474440064,
+									"parameters": {
+										"instance-variable": "BaseHP",
+										"value": "random(15,20)"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 989249084040851,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"EliteDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 665602713784925,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 955284410988483
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 168419636600545,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 107431039799866,
+									"parameters": {
+										"instance-variable": "ShieldAct"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 874711933841974,
+									"parameters": {
+										"instance-variable": "Healthact"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 642396949064521
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 924075143590045,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "random(13,15)"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 524045747098722,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"EliteDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 248515499015368,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 973016162402037
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 136759810335076,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 702615140070065,
+									"parameters": {
+										"instance-variable": "ShieldAct"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 879830663891044,
+									"parameters": {
+										"instance-variable": "Healthact"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 118327594957732,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 801535173810064
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 360662961555455,
+									"parameters": {
+										"instance-variable": "BaseHP",
+										"value": "random(15,17)"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 291510216590447,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"EliteDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 620343842199480,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 331419227471292
+						},
+						{
+							"eventType": "comment",
+							"text": "The damage done to the grunt from both pistol and AR less advanced then the elite as it does not have a shield "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Pistolbullet",
+									"sid": 601898337356166,
+									"parameters": {
+										"object": "Grunt_Box"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 513158955978228,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Grunt_Box",
+									"sid": 920420820034514,
+									"parameters": {
+										"instance-variable": "EHP",
+										"value": "random(15,17)"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Pistolbullet",
+									"sid": 646687006526666
+								}
+							],
+							"sid": 329525932511656
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "ARBullet",
+									"sid": 798603513479462,
+									"parameters": {
+										"object": "Grunt_Box"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 332387255263059,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "ARBullet",
+									"sid": 737940955614672
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Grunt_Box",
+									"sid": 585330990792890,
+									"parameters": {
+										"instance-variable": "EHP",
+										"value": "random(10,15)"
+									}
+								}
+							],
+							"sid": 940433862394368
+						}
+					],
+					"sid": 891947212671341
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemieshoot2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If the bullet comes in contact with these objects it will destroy the bullet to represent that it is hitting the object "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "Enemybullet_hola",
+									"sid": 956827274068411
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 120745044935170
+								}
+							],
+							"sid": 279968659059052
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemybullet_hola",
+									"sid": 989993907119397,
+									"parameters": {
+										"object": "Enemybarricade"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 666186561931796
+								}
+							],
+							"sid": 682143131958942
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemybullet_hola",
+									"sid": 880539327636159,
+									"parameters": {
+										"object": "Sprite4_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 895026564967725
+								}
+							],
+							"sid": 891206746084877
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemybullet_hola",
+									"sid": 143502888204824,
+									"parameters": {
+										"object": "Sprite5_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 408184932533831
+								}
+							],
+							"sid": 306155205079443
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemybullet_hola",
+									"sid": 104155655175402,
+									"parameters": {
+										"object": "Tree_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 270424045573423
+								}
+							],
+							"sid": 399446201891937
+						},
+						{
+							"eventType": "comment",
+							"text": "If player shield is less than or equal to 0 disable player shield and activate the health boolean"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Box_hola",
+									"sid": 589831214101552,
+									"parameters": {
+										"instance-variable": "PShield",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 962265303513191,
+									"parameters": {
+										"instance-variable": "ShieldActive",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 573372514681014,
+									"parameters": {
+										"instance-variable": "Healthactive",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 140467035209461
+						},
+						{
+							"eventType": "comment",
+							"text": "if the enemy bullet come into contact to player and shield is active the shield will take damage and recharge would be set to false (to prevent a momentary invincibility)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemybullet_hola",
+									"sid": 547599981967864,
+									"parameters": {
+										"object": "Player_Box_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Box_hola",
+									"sid": 647866561099903,
+									"parameters": {
+										"instance-variable": "Healthactive"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Box_hola",
+									"sid": 257479397895181,
+									"parameters": {
+										"instance-variable": "ShieldActive"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 652122124119967
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 689106215828807,
+									"parameters": {
+										"instance-variable": "PShield",
+										"value": "random(-25--50)"
+									}
+								},
+								{
+									"id": "signal",
+									"objectClass": "System",
+									"sid": 358580030625057,
+									"disabled": true,
+									"parameters": {
+										"tag": "\"ShieldSig\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 903446492487947,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"ShieldDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Shield_hola",
+									"sid": 322648791223558,
+									"parameters": {
+										"instance-variable": "Recharge",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 877018972580137
+						},
+						{
+							"eventType": "comment",
+							"text": "this is the same thing but without shields"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemybullet_hola",
+									"sid": 303025456337833,
+									"parameters": {
+										"object": "Player_Box_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Box_hola",
+									"sid": 881334750292394,
+									"parameters": {
+										"instance-variable": "Healthactive"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Box_hola",
+									"sid": 897834938496842,
+									"parameters": {
+										"instance-variable": "ShieldActive"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemybullet_hola",
+									"sid": 976474528743849
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 533754050503069,
+									"parameters": {
+										"instance-variable": "PHP",
+										"value": "random(15,20)"
+									}
+								}
+							],
+							"sid": 754004859543694
+						}
+					],
+					"sid": 431330029120812
+				}
+			],
+			"sid": 292647467842093,
+			"background-color": [
+				0.0196078431372549,
+				0.3803921568627451,
+				0.043137254901960784,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy 2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Elite2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "if the timer reached 3 the elite may begin recharging shields"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 176862425626853,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"EliteDelay\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 375177575419232,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 145573467736339
+						},
+						{
+							"eventType": "comment",
+							"text": "if elite has los of player the elite will move towards player and if a enemy barricade is in the way the elite will lose sight of player"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "elitebox_hola",
+									"sid": 953039430213428,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-obstacle",
+									"objectClass": "elitebox_hola",
+									"sid": 507768578597912,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"obstacle": "Enemybarricade"
+									}
+								},
+								{
+									"id": "rotate-toward-position",
+									"objectClass": "elitebox_hola",
+									"sid": 883819567774077,
+									"parameters": {
+										"degrees": "90",
+										"x": "Player_Box_hola.x",
+										"y": "Player_Box_hola.y"
+									}
+								},
+								{
+									"id": "move-to-position",
+									"objectClass": "elitebox_hola",
+									"sid": 565999618700269,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"x": "Player_Box_hola.x",
+										"y": "Player_Box_hola.y",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 331295825306934
+						},
+						{
+							"eventType": "comment",
+							"text": "this is the enemies shoot function if the elite has los it will spawn a bullet every 0.2 and play the audio "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "elitebox_hola",
+									"sid": 828566428183218,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 288905412011372,
+									"parameters": {
+										"interval-seconds": "0.3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "elitebox_hola",
+									"sid": 752623804567318,
+									"parameters": {
+										"object": "Enemybullet_hola",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 154837067249574,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 604798929067521,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 609911428156056
+						},
+						{
+							"eventType": "comment",
+							"text": "When the elite shield has reached 0 the damage will now be set on to the base health of the elite"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "elitebox_hola",
+									"sid": 690396946059691,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 799611490652400,
+									"parameters": {
+										"instance-variable": "ShieldAct",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 232901613361814,
+									"parameters": {
+										"instance-variable": "Healthact",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 940185852182222
+						},
+						{
+							"eventType": "comment",
+							"text": "when a elite dies a death sfx will play and a ammobox will spawn making it easier for player to get ammo- global variables will lose -1 to indicate that the player has romoved a enemy from the selected amount"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "elitebox_hola",
+									"sid": 141292753491073,
+									"parameters": {
+										"instance-variable": "BaseHP",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 955122369806923,
+									"parameters": {
+										"audio-file": "Death 2-FX-Alex Rein",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "elitebox_hola",
+									"sid": 718652196632224,
+									"parameters": {
+										"object": "ammoBox_hola",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "elitebox_hola",
+									"sid": 693985585750291
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 833337675233265,
+									"parameters": {
+										"variable": "Enemies",
+										"value": "1"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 484150728217831,
+									"parameters": {
+										"variable": "Enemiespart2",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 979720820618424
+						},
+						{
+							"eventType": "comment",
+							"text": "This is where the elite gets its shield recharged it will add 15 in under 0.4 seconds multiple times and then setting echarge falls and setting the damage to be on the shields"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 757171475600767,
+									"parameters": {
+										"instance-variable": "Echarge"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 333408083593815,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "15"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 734302149949370,
+									"parameters": {
+										"seconds": "0.4"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 331537018504871,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "15"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 786253826423479,
+									"parameters": {
+										"seconds": "0.4"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 397253470104589,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "15"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 971358242175960,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 880226584434674,
+									"parameters": {
+										"instance-variable": "ShieldAct",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 634676657495984,
+									"parameters": {
+										"instance-variable": "Healthact",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 824831258021659
+						},
+						{
+							"eventType": "comment",
+							"text": "to prevent overshields "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "elitebox_hola",
+									"sid": 549329237590197,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"comparison": 5,
+										"value": "200"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "elitebox_hola",
+									"sid": 641404565088789,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "200"
+									}
+								}
+							],
+							"sid": 567140637109617
+						},
+						{
+							"eventType": "comment",
+							"text": "if the enemy is not being damaged the timer can add up to 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 730938116090073,
+									"parameters": {
+										"interval-seconds": "2"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "elitebox_hola",
+									"sid": 675875227329038,
+									"parameters": {
+										"object": "ARBullet"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "elitebox_hola",
+									"sid": 414058589926072,
+									"parameters": {
+										"object": "Pistolbullet"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Box_hola",
+									"sid": 557281063175822,
+									"parameters": {
+										"instance-variable": "PShield",
+										"comparison": 2,
+										"value": "150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_Box_hola",
+									"sid": 711240058187210,
+									"parameters": {
+										"instance-variable": "Time",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 693645886789553
+						},
+						{
+							"eventType": "comment",
+							"text": "this is for the player- if the player is overlapping the enemy bullet the time will be reset so the shield can not activate recharge"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 841425190801106,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Box_hola",
+									"sid": 337226783518575,
+									"parameters": {
+										"object": "Enemybullet_hola"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Box_hola",
+									"sid": 247992640803317,
+									"parameters": {
+										"instance-variable": "PShield",
+										"comparison": 2,
+										"value": "150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Box_hola",
+									"sid": 313636542837874,
+									"parameters": {
+										"instance-variable": "Time",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 248954876064299
+						}
+					],
+					"sid": 279251892298047
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Grunt2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Grunt_Box",
+									"sid": 146631829438403,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-obstacle",
+									"objectClass": "Grunt_Box",
+									"sid": 461917891606374,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"obstacle": "Enemybarricade"
+									}
+								},
+								{
+									"id": "set-angle-toward-position",
+									"objectClass": "GUN_hola",
+									"sid": 824790076678037,
+									"parameters": {
+										"x": "Player_Box_hola.x",
+										"y": "Player_Box_hola.y"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "GUN_hola",
+									"sid": 897105808707165,
+									"parameters": {
+										"angle": "clamp(GUN_hola.Angle,90,270)"
+									}
+								},
+								{
+									"id": "move-to-position",
+									"objectClass": "Grunt_Box",
+									"sid": 669890688833013,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"x": "Player_Box_hola.x",
+										"y": "Player_Box_hola.y",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 753126240381936,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Grunt_Box",
+									"sid": 717055809513108,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 124420571928791,
+									"parameters": {
+										"interval-seconds": "0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "GUN_hola",
+									"sid": 717514693024081,
+									"parameters": {
+										"object": "Enemybullet_hola",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 263118344571322,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								}
+							],
+							"sid": 841090932783336,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "its exactly the same as the elite "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Grunt_Box",
+									"sid": 358567825263892,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-obstacle",
+									"objectClass": "Grunt_Box",
+									"sid": 943548555219636,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"obstacle": "Enemybarricade"
+									}
+								},
+								{
+									"id": "rotate-toward-position",
+									"objectClass": "Grunt_Box",
+									"sid": 511080213381975,
+									"parameters": {
+										"degrees": "180",
+										"x": "Player_Box_hola.x",
+										"y": "Player_Box_hola.y"
+									}
+								},
+								{
+									"id": "move-to-position",
+									"objectClass": "Grunt_Box",
+									"sid": 203454130495836,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"x": "Player_Box_hola.x",
+										"y": "Player_Box_hola.y",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 567513103884797
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Grunt_Box",
+									"sid": 151174152354254,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 885310092918460,
+									"parameters": {
+										"interval-seconds": "0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Grunt_Box",
+									"sid": 678535620086112,
+									"parameters": {
+										"object": "Enemybullet_hola",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 803256484967530,
+									"disabled": true,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 989558627118704,
+									"parameters": {
+										"audio-file": "sound (1)",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 652262664067238
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Grunt_Box",
+									"sid": 427478098343061,
+									"parameters": {
+										"instance-variable": "EHP",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 640420428011532,
+									"parameters": {
+										"audio-file": "enemydeath",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Grunt_Box",
+									"sid": 652274489308218
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 214192968591663,
+									"parameters": {
+										"variable": "Enemies",
+										"value": "1"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 419577046810098,
+									"parameters": {
+										"variable": "Enemiespart2",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 624478431616408
+						}
+					],
+					"sid": 820026597166080
+				},
+				{
+					"eventType": "comment",
+					"text": "this is for the battle music- when the player has been spotted by los battle music will begin playing using a global variable to start the main music back to exactly where it is "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "elitebox_hola",
+							"sid": 830746160768386,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Player_Box_hola",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 144548389040616,
+							"parameters": {
+								"tag": "\"Battle\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 900969980242184,
+							"parameters": {
+								"variable": "teamMusicStopTime",
+								"value": "Audio.CurrentTime"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 300033981680379
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 850180409172635,
+							"parameters": {
+								"audio-file": "Game design Main theme action",
+								"loop": "not-looping",
+								"volume": "30",
+								"stereo-pan": "0",
+								"tag-optional": "\"Battle\""
+							}
+						}
+					],
+					"sid": 329214962827868
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "Grunt_Box",
+							"sid": 231097764161207,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "Player_Box_hola",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 483029697225819,
+							"parameters": {
+								"tag": "\"Battle\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 936876389604379
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 130179773698661,
+							"parameters": {
+								"audio-file": "Game design Main theme action",
+								"loop": "not-looping",
+								"volume": "30",
+								"stereo-pan": "0",
+								"tag-optional": "\"Battle\""
+							}
+						}
+					],
+					"sid": 277092127721620
+				},
+				{
+					"eventType": "comment",
+					"text": "when the battle ended return to the main background sound to the exact second it was played"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-ended",
+							"objectClass": "Audio",
+							"sid": 926089834030934,
+							"parameters": {
+								"tag": "\"Battle\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 366705093362350,
+							"parameters": {
+								"audio-file": "Game design Main theme",
+								"loop": "looping",
+								"volume": "30",
+								"stereo-pan": "0",
+								"tag-optional": "\"main\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 618884693121859,
+							"parameters": {
+								"tag": "\"main\"",
+								"position": "teamMusicStopTime"
+							}
+						}
+					],
+					"sid": 953090701310598
+				}
+			],
+			"sid": 975091791612110,
+			"background-color": [
+				0.3333333333333333,
+				0.03529411764705882,
+				0.44313725490196076,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "HUD2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "this is a different text for the first part"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 824450973611726
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "OBJ",
+							"sid": 337835922800623,
+							"parameters": {
+								"text": "\"Eliminate Covenaunt Scout group:\" &Enemies"
+							}
+						}
+					],
+					"sid": 456997092699397
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Activation_hola",
+							"sid": 843869334943658,
+							"parameters": {
+								"instance-variable": "Change"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 193654585400508,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 399768240692874
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "OBJ",
+									"sid": 821606888409539,
+									"parameters": {
+										"text": "\"Eliminate all Covenant forces in the area:\" &Enemiespart2"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "OBJ2",
+									"sid": 292775127846845,
+									"parameters": {
+										"text": "\"Activate AAA gun :\" &AAA"
+									}
+								}
+							],
+							"sid": 329031501588105
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "this helps show how much ammo the player has by subtracting it from the counter"
+				}
+			],
+			"sid": 485071344361792,
+			"background-color": [
+				0.10196078431372549,
+				0.7568627450980392,
+				0.6470588235294118,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Enemies Movement2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "depending on which angle the player stands at the animation will change its angle to the right to make it look like its moving towards it "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 856881368737600,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "elitebox_hola",
+									"sid": 802554472190229,
+									"parameters": {
+										"instance-variable": "E_Angle",
+										"value": "((angle(Player_Box_hola.X,Player_Box_hola.Y,elitebox_hola.X,elitebox_hola.Y)+360)%360) - 180"
+									}
+								}
+							],
+							"sid": 597377389382261,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 216526094412876,
+											"parameters": {
+												"angle-1": "elitebox_hola.E_Angle",
+												"within": "45",
+												"angle-2": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "elitebox_hola",
+											"sid": 978191852136967,
+											"parameters": {
+												"animation": "\"UP\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 390028333261392
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 828933107434223,
+											"parameters": {
+												"angle-1": "elitebox_hola.E_Angle",
+												"within": "45",
+												"angle-2": "180"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "elitebox_hola",
+											"sid": 511894969952745,
+											"parameters": {
+												"animation": "\"LEFT\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 831194601346395
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 697811337888146,
+											"parameters": {
+												"angle-1": "elitebox_hola.E_Angle",
+												"within": "45",
+												"angle-2": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "elitebox_hola",
+											"sid": 721707568104833,
+											"parameters": {
+												"animation": "\"DOWN\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 224701966678023
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 198668287357595,
+											"parameters": {
+												"angle-1": "elitebox_hola.E_Angle",
+												"within": "45",
+												"angle-2": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "elitebox_hola",
+											"sid": 524254810977524,
+											"parameters": {
+												"animation": "\"RIGHT\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 221305022001737
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 138185073846085,
+									"parameters": {
+										"object": "Grunt_Box"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Grunt_Box",
+									"sid": 488831829798940,
+									"parameters": {
+										"instance-variable": "G_Angle",
+										"value": "((angle(Player_Box_hola.X,Player_Box_hola.Y,Grunt_Box.X,Grunt_Box.Y)+360)%360) - 180"
+									}
+								}
+							],
+							"sid": 810405366283829,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 274141906742994,
+											"parameters": {
+												"angle-1": "Grunt_Box.G_Angle",
+												"within": "45",
+												"angle-2": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Grunt_Box",
+											"sid": 915125763527780,
+											"parameters": {
+												"animation": "\"One\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 652296568903921
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 798927060080524,
+											"parameters": {
+												"angle-1": "Grunt_Box.G_Angle",
+												"within": "45",
+												"angle-2": "180"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Grunt_Box",
+											"sid": 608414842768361,
+											"parameters": {
+												"animation": "\"One\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 545530602635403
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 890701464921742,
+											"parameters": {
+												"angle-1": "Grunt_Box.G_Angle",
+												"within": "45",
+												"angle-2": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Grunt_Box",
+											"sid": 261171226537103,
+											"parameters": {
+												"animation": "\"One\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 777943611978027
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-within-angle",
+											"objectClass": "System",
+											"sid": 772281754674545,
+											"parameters": {
+												"angle-1": "Grunt_Box.G_Angle",
+												"within": "45",
+												"angle-2": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Grunt_Box",
+											"sid": 717408213281017,
+											"parameters": {
+												"animation": "\"One\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 209435600739706
+								}
+							]
+						}
+					],
+					"sid": 415106861072148
+				}
+			],
+			"sid": 648566743814413,
+			"background-color": [
+				0.7764705882352941,
+				0.08235294117647059,
+				0.7215686274509804,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "when the players base health reaches zero the player box will be destroyed"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Box_hola",
+							"sid": 436964953302117,
+							"parameters": {
+								"instance-variable": "PHP",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Player_Box_hola",
+							"sid": 608568556313768
+						}
+					],
+					"sid": 179055326473429
+				},
+				{
+					"eventType": "comment",
+					"text": "only in the final event if the player dies they would go to the end game screen "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 421519327869455,
+							"parameters": {
+								"variable": "FinalEvent"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 845784948834689,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "Player_Box_hola",
+									"sid": 904749271479877
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 847020156713430
+								},
+								{
+									"id": "set-layer-opacity",
+									"objectClass": "System",
+									"sid": 408172995573922,
+									"parameters": {
+										"layer": "6",
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 815970403326461,
+									"parameters": {
+										"seconds": "20"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 590274419584572,
+									"parameters": {
+										"layout": "Title_hola"
+									}
+								}
+							],
+							"sid": 375383498465981
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "if they are not in the final game the player will restart the layout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 458601407850849,
+							"parameters": {
+								"variable": "FinalEvent"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 600603889563714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "Player_Box_hola",
+									"sid": 472841448065652
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 585668989158613,
+									"parameters": {
+										"variable": "AAA",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 994549463876355,
+									"parameters": {
+										"variable": "Enemiespart2",
+										"value": "47"
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 269978759166103
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 777292633645874,
+									"parameters": {
+										"seconds": "5.0"
+									}
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 998862934925190
+								}
+							],
+							"sid": 898721750872915
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "when the timer reaches 3 seconds the players shields can recharge "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Player_Box_hola",
+							"sid": 326356089912188,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"ShieldDelay\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Shield_hola",
+							"sid": 220792215546048,
+							"parameters": {
+								"instance-variable": "Recharge",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 251631287395608
+				},
+				{
+					"eventType": "comment",
+					"text": "the code has been set up like this to simulate the recharge animation not for any other reasons"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Shield_hola",
+							"sid": 541098823177695,
+							"parameters": {
+								"instance-variable": "Recharge"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 285188380384957,
+							"parameters": {
+								"instance-variable": "PShield",
+								"value": "15"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 182102867995386,
+							"parameters": {
+								"seconds": "0.4"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 790793657353720,
+							"parameters": {
+								"instance-variable": "PShield",
+								"value": "15"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 991116170304750,
+							"parameters": {
+								"seconds": "0.4"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 473649398081974,
+							"parameters": {
+								"instance-variable": "PShield",
+								"value": "15"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Shield_hola",
+							"sid": 770055233885303,
+							"parameters": {
+								"instance-variable": "Recharge",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 874550377651525,
+							"parameters": {
+								"instance-variable": "ShieldActive",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 506721563127161,
+							"parameters": {
+								"instance-variable": "Healthactive",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 369453165686743
+				},
+				{
+					"eventType": "comment",
+					"text": "if it goes over 150 it will reset back to  150"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Box_hola",
+							"sid": 782152982301309,
+							"parameters": {
+								"instance-variable": "PShield",
+								"comparison": 5,
+								"value": "150"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Box_hola",
+							"sid": 792954050547019,
+							"parameters": {
+								"instance-variable": "PShield",
+								"value": "150"
+							}
+						}
+					],
+					"sid": 626360413456691
+				},
+				{
+					"eventType": "comment",
+					"text": "this is for the ui display depending on the health it will display it "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 614474890881493,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "-1000000000000000000000000000000000",
+								"upper-bound": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 268647047579494,
+							"parameters": {
+								"animation": "\"SHP-0\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 293446354961691,
+							"parameters": {
+								"animation": "\"Dep\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 419369401348459
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 238315186860953,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "0.1",
+								"upper-bound": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 488425158003400,
+							"parameters": {
+								"animation": "\"SHP-15\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 354778599822908,
+							"parameters": {
+								"animation": "\"Dep\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 289848581257428
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 138760811671527,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "15",
+								"upper-bound": "30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 951422427256408,
+							"parameters": {
+								"animation": "\"SHP-30\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 180188865234235,
+							"parameters": {
+								"animation": "\"Dep\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 782953463889829
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 576088573400633,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "30",
+								"upper-bound": "45"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 630489914740766,
+							"parameters": {
+								"animation": "\"SHP-45\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 259985547083167,
+							"parameters": {
+								"animation": "\"Dep\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 809557957584362
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 658591596511500,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "45",
+								"upper-bound": "60"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 892322541290710,
+							"parameters": {
+								"animation": "\"SHP-60\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 796490694221695,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 105285325006002
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 971206559832291,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "60",
+								"upper-bound": "75"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 688231368916894,
+							"parameters": {
+								"animation": "\"SHP-75\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 698442519825565,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 894124134961963
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 543083660704768,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "75",
+								"upper-bound": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 833337622944088,
+							"parameters": {
+								"animation": "\"SHP-90\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 349104974958960,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 383801588068822
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 431825589078303,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "90",
+								"upper-bound": "105"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 109311013472559,
+							"parameters": {
+								"animation": "\"SHP-105\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 496724369747770,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 159594409371564
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 369745616067228,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "105",
+								"upper-bound": "120"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 890472063471808,
+							"parameters": {
+								"animation": "\"SHP-120\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 533515353369793,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 613762908286062
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 695863015105472,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "120",
+								"upper-bound": "135"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 708325138105943,
+							"parameters": {
+								"animation": "\"SHP-135\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 592602078533334,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 868012676197057
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 391310516401130,
+							"parameters": {
+								"value": "Player_Box_hola.PShield",
+								"lower-bound": "135",
+								"upper-bound": "150"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Shield_hola",
+							"sid": 498544627739591,
+							"parameters": {
+								"animation": "\"SHP-150\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Shiedlicon",
+							"sid": 104627658211501,
+							"parameters": {
+								"animation": "\"Normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 361473787436440
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 108384248376048,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "-1000000000000000000000000",
+								"upper-bound": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 335576332853630,
+							"parameters": {
+								"animation": "\"Dead\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 443327236281301
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 449418918759646,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "0.1",
+								"upper-bound": "12.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 423614328757997,
+							"parameters": {
+								"animation": "\"HP-12.5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 740599154884415
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 915206751057082,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "12.5",
+								"upper-bound": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 207117226422394,
+							"parameters": {
+								"animation": "\"HP-25\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 100040596049686
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 696587695651177,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "25",
+								"upper-bound": "37.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 401646346231144,
+							"parameters": {
+								"animation": "\"HP-37.5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 626078155722978
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 128146046529875,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "37.5",
+								"upper-bound": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 300031449398700,
+							"parameters": {
+								"animation": "\"HP-50\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 660734822404192
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 574519215779539,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "50",
+								"upper-bound": "62.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 586671136521339,
+							"parameters": {
+								"animation": "\"HP-62.5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 123109938775519
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 121845792229370,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "62.5",
+								"upper-bound": "75"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 939016120083191,
+							"parameters": {
+								"animation": "\"HP-75\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 406067181063237
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 730493180874305,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "75",
+								"upper-bound": "87.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 400220797063742,
+							"parameters": {
+								"animation": "\"HP-87.5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 228355994690534
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-values",
+							"objectClass": "System",
+							"sid": 970574621531276,
+							"parameters": {
+								"value": "Player_Box_hola.PHP",
+								"lower-bound": "87.5",
+								"upper-bound": "100"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "HP_hola",
+							"sid": 262897363848468,
+							"parameters": {
+								"animation": "\"HP-100\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 555318574814363
+				}
+			],
+			"sid": 447881866432246,
+			"background-color": [
+				0.7372549019607844,
+				0.6196078431372549,
+				0.023529411764705882,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Misc items2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "When the player collides with the healthpack the player will receive 50 hp"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 617957546870642,
+							"parameters": {
+								"object": "Healthpack_hola"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Box_hola",
+							"sid": 373609866000418,
+							"parameters": {
+								"instance-variable": "PHP",
+								"comparison": 3,
+								"value": "87.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 730413154044009,
+							"parameters": {
+								"audio-file": "sound copy 5",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Healthpack_hola",
+							"sid": 554782646772922
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 670928972612118,
+							"parameters": {
+								"instance-variable": "PHP",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 966841870064425,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If the player health exceeds 100 the health would be set to 100 hp"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Box_hola",
+									"sid": 409710438416379,
+									"parameters": {
+										"instance-variable": "PHP",
+										"comparison": 4,
+										"value": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Box_hola",
+									"sid": 590883474079804,
+									"parameters": {
+										"instance-variable": "PHP",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 427878246519427
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 992251751720689,
+							"parameters": {
+								"object": "ammoBox_hola"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Ammo_hola",
+							"sid": 673752392064461,
+							"parameters": {
+								"instance-variable": "AR",
+								"comparison": 3,
+								"value": "74"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Ammo_hola",
+							"sid": 230358767381273,
+							"parameters": {
+								"instance-variable": "Ammotype"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 726543552671574,
+							"parameters": {
+								"audio-file": "sound (1) copy",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ammoBox_hola",
+							"sid": 532756736645763
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Ammo_hola",
+							"sid": 433780757391636,
+							"parameters": {
+								"instance-variable": "AR",
+								"value": "75"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 933813685368097,
+							"parameters": {
+								"instance-variable": "AR",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 544858082540714,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Ammo_hola",
+									"sid": 431256327874365,
+									"parameters": {
+										"instance-variable": "AR",
+										"comparison": 4,
+										"value": "75"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Ammo_hola",
+									"sid": 669247791616451,
+									"parameters": {
+										"instance-variable": "AR",
+										"value": "75"
+									}
+								}
+							],
+							"sid": 777740795263224
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 826296060391604,
+							"parameters": {
+								"object": "ammoBox_hola"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Ammo_hola",
+							"sid": 987650018024992,
+							"parameters": {
+								"instance-variable": "Pistol",
+								"comparison": 3,
+								"value": "7"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Ammo_hola",
+							"sid": 879652980183025,
+							"parameters": {
+								"instance-variable": "Ammotype"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 142429992734579,
+							"parameters": {
+								"audio-file": "sound (1) copy",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ammoBox_hola",
+							"sid": 819091598025470
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Ammo_hola",
+							"sid": 904758836912874,
+							"parameters": {
+								"instance-variable": "Pistol",
+								"value": "8"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 244609007895955,
+							"parameters": {
+								"instance-variable": "Pistol",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 755883865017792,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Ammo_hola",
+									"sid": 937525890021826,
+									"parameters": {
+										"instance-variable": "Pistol",
+										"comparison": 4,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Ammo_hola",
+									"sid": 301169426544524,
+									"parameters": {
+										"instance-variable": "Pistol",
+										"value": "8"
+									}
+								}
+							],
+							"sid": 390231292437326
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 861613736893118,
+							"parameters": {
+								"object": "Activation_hola"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Activation_hola",
+							"sid": 633804276415037,
+							"parameters": {
+								"instance-variable": "Activate",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 318987701373630,
+							"parameters": {
+								"object-to-create": "ACTIVAT",
+								"layer": "2",
+								"x": "Activation_hola.x",
+								"y": "Activation_hola.y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 806000382573792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 423260250858059,
+							"parameters": {
+								"object": "Activation_hola"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Activation_hola",
+							"sid": 930466665452526,
+							"parameters": {
+								"instance-variable": "Activate",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 832497784375648
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 410927614853891,
+							"parameters": {
+								"variable": "Enemiespart2",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "Activation_hola",
+							"sid": 519559843771326,
+							"parameters": {
+								"instance-variable": "Change"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "OBJ2",
+							"sid": 676114464501679
+						},
+						{
+							"id": "toggle-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 509191841180508,
+							"parameters": {
+								"variable": "FinalEvent"
+							}
+						}
+					],
+					"sid": 541192625877873,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Activation_hola",
+									"sid": 529895491068041,
+									"parameters": {
+										"instance-variable": "Change"
+									}
+								},
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 829628960033417
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "OBJ",
+									"sid": 728092152326209,
+									"parameters": {
+										"text": "\"Survive: ?!??!?!?!\" "
+									}
+								}
+							],
+							"sid": 262386229636605
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 366196140335848,
+							"parameters": {
+								"variable": "FinalEvent"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 265005141309091,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "elitebox_hola",
+									"sid": 232652180232114,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-object",
+									"objectClass": "elitebox_hola",
+									"sid": 361596298769295,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 964410437431098
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-los-to-object",
+									"objectClass": "Grunt_Box",
+									"sid": 332687155532998,
+									"behaviorType": "LineOfSight",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-object",
+									"objectClass": "elitebox_hola",
+									"sid": 994810415915314,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"object": "Player_Box_hola",
+										"image-point": "0",
+										"mode": "direct"
+									}
+								}
+							],
+							"sid": 883984686608439
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 815101723953254,
+									"parameters": {
+										"interval-seconds": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 106884811819018,
+									"parameters": {
+										"object-to-create": "elitebox_hola",
+										"layer": "2",
+										"x": "1000",
+										"y": "random(5000)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 117025899310559,
+									"parameters": {
+										"object-to-create": "Grunt_Box",
+										"layer": "2",
+										"x": "1000",
+										"y": "random(5000)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 629864868642733
+						}
+					]
+				}
+			],
+			"sid": 754583503781998,
+			"background-color": [
+				0.7294117647058823,
+				0.4470588235294118,
+				0.050980392156862744,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Melee2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "When the player presses Q and is overlapping the enemy - the player will deal 100 damage to targeted enemy"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 957742478096430,
+							"parameters": {
+								"key": 90
+							}
+						}
+					],
+					"actions": [],
+					"sid": 902677422519425,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Box_hola",
+									"sid": 441299368472121,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 314961431589012,
+									"parameters": {
+										"instance-variable": "ShieldAct"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 617558947599913,
+									"parameters": {
+										"instance-variable": "Healthact"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 359357198116888,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 833556487090124,
+									"parameters": {
+										"instance-variable": "BaseHP",
+										"value": "100"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 913342938268844,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"EliteDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 927364496538879,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 458416985762323,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								}
+							],
+							"sid": 519483329104798
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Box_hola",
+									"sid": 992622074079605,
+									"parameters": {
+										"object": "elitebox_hola"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 204299129818122,
+									"parameters": {
+										"instance-variable": "ShieldAct"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "elitebox_hola",
+									"sid": 677726114229331,
+									"parameters": {
+										"instance-variable": "Healthact"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 380451544584196,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 549486540447557,
+									"parameters": {
+										"instance-variable": "ShieldHP",
+										"value": "100"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "Player_Box_hola",
+									"sid": 788885521238116,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"EliteDelay\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "elitebox_hola",
+									"sid": 682037084658760,
+									"parameters": {
+										"instance-variable": "Echarge",
+										"value": "false"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 330771401022206,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								}
+							],
+							"sid": 257254312009789
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Box_hola",
+									"sid": 210179436261594,
+									"parameters": {
+										"object": "Grunt_Box"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 835660208020786,
+									"parameters": {
+										"audio-file": "sound copy 3",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Grunt_Box",
+									"sid": 467090833899710,
+									"parameters": {
+										"instance-variable": "EHP",
+										"value": "100"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 584738102578896,
+									"parameters": {
+										"seconds": "1.0"
+									}
+								}
+							],
+							"sid": 776377794942074
+						}
+					]
+				}
+			],
+			"sid": 296925393644933
+		}
+	],
+	"sid": 672990267043753
+}

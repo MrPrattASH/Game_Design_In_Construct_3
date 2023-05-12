@@ -1,0 +1,1069 @@
+{
+	"name": "player_events_hola",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 796695025834790
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 818652030488497,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 249371460947554,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Set HUD objects positions"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "OBJ",
+							"sid": 819254338774357,
+							"parameters": {
+								"x": "ViewportLeft(\"Hud\")",
+								"y": "ViewportTop(\"Hud\")+50"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Objectivetext_hola",
+							"sid": 221251344933147,
+							"parameters": {
+								"x": "ViewportLeft(\"Hud\")",
+								"y": "ViewportTop(\"Hud\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Shield_hola",
+							"sid": 832944864712003,
+							"parameters": {
+								"x": "ViewportRight(\"Hud\")-175",
+								"y": "ViewportTop(\"Hud\")+175"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Shiedlicon",
+							"sid": 213767382370847,
+							"parameters": {
+								"x": "Shield_hola.X-200",
+								"y": "Shield_hola.Y-100"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "HP_hola",
+							"sid": 636920612506075,
+							"parameters": {
+								"x": "ViewportRight(\"Hud\")-175",
+								"y": "ViewportTop(\"Hud\")+175"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Healthicon_hola",
+							"sid": 860225976626760,
+							"parameters": {
+								"x": "HP_hola.X-200",
+								"y": "HP_hola.Y-50"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "arrow_hola",
+							"sid": 958797417389509,
+							"parameters": {
+								"x": "ViewportLeft(\"Hud\")+200",
+								"y": "ViewportTop(\"Hud\")-50"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "AmmoCounter_hola",
+							"sid": 910591711226991,
+							"parameters": {
+								"x": "ViewportRight(\"Hud\")-200",
+								"y": "ViewportBottom(\"Hud\")-75"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "Ammo_hola",
+							"sid": 919462873097953,
+							"parameters": {
+								"object": "AmmoCounter_hola",
+								"image-point-optional": "1"
+							}
+						}
+					],
+					"sid": 950116063878850
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "when the player switches guns the boolean switch will toggle - if toggled the walking animation will have a AR instead of a pistol"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Box_hola",
+							"sid": 189946889475757,
+							"parameters": {
+								"instance-variable": "Switch"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 559738218552403,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-released",
+									"objectClass": "Keyboard",
+									"sid": 458596485479767
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 321995414276858,
+									"parameters": {
+										"animation": "\"ARIdle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 646537371312555
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 885355048221642,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 945593313241431,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 756131016145595,
+									"parameters": {
+										"animation": "\"ARA\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 181127710129411
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 163284436858967,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 273278307481588,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 201519921594300,
+									"parameters": {
+										"animation": "\"ARD\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 901884724830717
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 798973854383003,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 440294520089144,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 167157344268118,
+									"parameters": {
+										"animation": "\"ARS\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 843291904612576
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 357836621723325,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 621684712732823,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 958688516613891,
+									"parameters": {
+										"animation": "\"ARW\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 557851161194709
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Box_hola",
+							"sid": 160381761562734,
+							"parameters": {
+								"instance-variable": "Switch"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 482098443252043,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-released",
+									"objectClass": "Keyboard",
+									"sid": 408262234814066
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 534594890844024,
+									"parameters": {
+										"animation": "\"PistolIdle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 253383058877949
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 536668475715333,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 940013246726124,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 250719175422087,
+									"parameters": {
+										"animation": "\"PistolA\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 523170871735104
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 830938460585659,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 812230755685602,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 849013349270639,
+									"parameters": {
+										"animation": "\"PistolD\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 882678819657554
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 954259980291469,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 245852713036178,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 169634827657227,
+									"parameters": {
+										"animation": "\"PistolS\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 406077509255040
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 362574137204201,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player_Box_hola",
+									"sid": 192405321593652,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Playericon_hola",
+									"sid": 120854521452603,
+									"parameters": {
+										"animation": "\"ARW\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 249098233428984
+						}
+					]
+				}
+			],
+			"sid": 346171950507231,
+			"background-color": [
+				0.7764705882352941,
+				0.08235294117647059,
+				0.7215686274509804,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "player_shoot",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 890603260794506,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 503287923293537,
+							"parameters": {
+								"instance-variable": "Pistol"
+							}
+						},
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 303346862819372,
+							"parameters": {
+								"instance-variable": "AR"
+							}
+						},
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "Ammo_hola",
+							"sid": 898670109941092,
+							"parameters": {
+								"instance-variable": "Ammotype"
+							}
+						},
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "Player_Box_hola",
+							"sid": 395231850738715,
+							"parameters": {
+								"instance-variable": "Switch"
+							}
+						}
+					],
+					"sid": 990600453963719
+				},
+				{
+					"eventType": "comment",
+					"text": "On left mouse button clicked if Pistol is toggles Player will spawn Pistolbullet"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 134131346644213,
+							"parameters": {
+								"key": 89
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Box_hola",
+							"sid": 785196103709519,
+							"parameters": {
+								"instance-variable": "Pistol"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 768625207452439,
+							"parameters": {
+								"audio-file": "Pistol",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 154414228186388,
+							"parameters": {
+								"object": "Pistolbullet",
+								"layer": "\"Player\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 413965661853631
+				},
+				{
+					"eventType": "comment",
+					"text": "On left mouse button clicked if AR is toggles Player will spawn ARbullets every 0.1 seconds "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 948882819719479,
+							"parameters": {
+								"key": 89
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Box_hola",
+							"sid": 569756372923738,
+							"parameters": {
+								"instance-variable": "AR"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 504244282515156,
+							"parameters": {
+								"interval-seconds": "0.1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 189293096514332,
+							"parameters": {
+								"audio-file": "sound copy 4",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_Box_hola",
+							"sid": 993808847700696,
+							"parameters": {
+								"object": "ARBullet",
+								"layer": "\"Player\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 409560808337878
+				}
+			],
+			"sid": 191872211423859
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 941526225817205
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Crosshair_hola",
+					"sid": 377678844395617,
+					"parameters": {
+						"x": "Player_Box_hola.X + cos(cross_angle) * (cross_radius-50)",
+						"y": "Player_Box_hola.Y + sin(cross_angle) * (cross_radius-50)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "GUN_hola",
+					"sid": 214875936362848,
+					"disabled": true,
+					"parameters": {
+						"x": "Grunt_Box.x",
+						"y": "Grunt_Box.y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "GUN2_hola",
+					"sid": 856830078123988,
+					"disabled": true,
+					"parameters": {
+						"x": "elitebox_hola.x",
+						"y": "elitebox_hola.y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Plight",
+					"sid": 536720945141002,
+					"parameters": {
+						"x": "Player_Box_hola.x",
+						"y": "Player_Box_hola.y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Playericon_hola",
+					"sid": 985510745832464,
+					"parameters": {
+						"x": "Player_Box_hola.x",
+						"y": "Player_Box_hola.Y"
+					}
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Player_Box_hola",
+					"sid": 157013823172738,
+					"disabled": true,
+					"parameters": {
+						"x": "Mouse.x",
+						"y": "Mouse.y"
+					}
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "arrow_hola",
+					"sid": 663453643504217,
+					"parameters": {
+						"x": "MPART2.X",
+						"y": "MPART2.Y"
+					}
+				}
+			],
+			"sid": 629712654465482
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 793805459647489,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 860195555689583,
+					"parameters": {
+						"variable": "cross_angle",
+						"value": "cross_angle - cross_speed %360 "
+					}
+				}
+			],
+			"sid": 506446710706674
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 418197182541198,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 402891463113471,
+					"parameters": {
+						"variable": "cross_angle",
+						"value": "cross_angle + cross_speed %360"
+					}
+				}
+			],
+			"sid": 257965657242765
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "HUD_main",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "depending on what the weapon the player is using it will change the text and the icon to show how much ammo and what gun they are using \nTODO"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Ammo_hola",
+							"sid": 131038039613667,
+							"parameters": {
+								"instance-variable": "Ammotype"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Ammo_hola",
+							"sid": 408404540420803,
+							"parameters": {
+								"text": "Ammo_hola.AR"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ARHUD_hola",
+							"sid": 771760444699549,
+							"parameters": {
+								"x": "AmmoCounter_hola.X+150",
+								"y": "AmmoCounter_hola.Y+25"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PistolHUD",
+							"sid": 457347461188572,
+							"parameters": {
+								"x": "AmmoCounter_hola.X+50",
+								"y": "AmmoCounter_hola.Y-75"
+							}
+						}
+					],
+					"sid": 570547872684186,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 823396807392018
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Ammo_hola",
+									"sid": 191881293380277,
+									"parameters": {
+										"text": "Ammo_hola.AR"
+									}
+								}
+							],
+							"sid": 366639929583669
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Ammo_hola",
+							"sid": 769278033826944,
+							"parameters": {
+								"instance-variable": "Ammotype"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Ammo_hola",
+							"sid": 482731518946785,
+							"parameters": {
+								"text": "Ammo_hola.Pistol"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PistolHUD",
+							"sid": 742351778224815,
+							"parameters": {
+								"x": "AmmoCounter_hola.X+150",
+								"y": "AmmoCounter_hola.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ARHUD_hola",
+							"sid": 481417306132550,
+							"parameters": {
+								"x": "AmmoCounter_hola.X+50",
+								"y": "AmmoCounter_hola.Y-50"
+							}
+						}
+					],
+					"sid": 203694399596372,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 113590241405108
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Ammo_hola",
+									"sid": 724238075599058,
+									"parameters": {
+										"text": "Ammo_hola.Pistol"
+									}
+								}
+							],
+							"sid": 545961088997576
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ARBullet",
+							"sid": 812169785833056
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "ARBullet",
+							"sid": 817392474413280,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "cross_angle"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Ammo_hola",
+							"sid": 192613353828297,
+							"parameters": {
+								"instance-variable": "AR",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 363134771355057
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Pistolbullet",
+							"sid": 502086871154747
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "Pistolbullet",
+							"sid": 904652693878098,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "cross_angle"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Ammo_hola",
+							"sid": 951536138491658,
+							"parameters": {
+								"instance-variable": "Pistol",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 394860455393493
+				}
+			],
+			"sid": 551404316906798
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 935107177805349,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [],
+			"sid": 167103250296837,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Activation_hola",
+							"sid": 576872856206095,
+							"parameters": {
+								"instance-variable": "Activate"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "AAATop",
+							"sid": 994561952017346,
+							"parameters": {
+								"animation": "\"Activate\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 193555572041669,
+							"parameters": {
+								"audio-file": "sound copy",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 665757523410717,
+							"parameters": {
+								"variable": "AAA",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Activation_hola",
+							"sid": 946949960280015
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ACTIVAT",
+							"sid": 716020996111179
+						}
+					],
+					"sid": 795125136767987
+				}
+			]
+		}
+	],
+	"sid": 833731546757275
+}

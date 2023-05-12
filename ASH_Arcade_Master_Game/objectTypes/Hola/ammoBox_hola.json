@@ -1,0 +1,37 @@
+{
+	"name": "ammoBox_hola",
+	"plugin-id": "Sprite",
+	"sid": 848706134735178,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 178,
+						"height": 104,
+						"originX": 0.4887640449438202,
+						"originY": 0.7980769230769231,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3063316,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 615326568817880,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

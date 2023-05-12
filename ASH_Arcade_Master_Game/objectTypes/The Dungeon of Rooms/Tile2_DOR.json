@@ -1,0 +1,21 @@
+{
+	"name": "Tile2_DOR",
+	"plugin-id": "Tilemap",
+	"sid": 145704765138363,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 288,
+		"height": 240,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5401655,
+		"useCollisionPoly": true
+	},
+	"tile-collision-polys": {}
+}

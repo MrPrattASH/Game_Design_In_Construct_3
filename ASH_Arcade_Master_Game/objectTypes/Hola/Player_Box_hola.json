@@ -1,0 +1,134 @@
+{
+	"name": "Player_Box_hola",
+	"plugin-id": "Sprite",
+	"sid": 783608135474963,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "PHP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 224272502265044
+		},
+		{
+			"name": "PShield",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 800253340507170
+		},
+		{
+			"name": "ShieldActive",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 176963179873415
+		},
+		{
+			"name": "Healthactive",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 890036965430163
+		},
+		{
+			"name": "AR",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 250618920019906
+		},
+		{
+			"name": "Pistol",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 363578516955926
+		},
+		{
+			"name": "Time",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 281700528758620
+		},
+		{
+			"name": "DMGtaken",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 491040311806428
+		},
+		{
+			"name": "Switch",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 129210535623823
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 259986032724028
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 171561840076535
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 737824934372950
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 859768203739404
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 252,
+						"height": 252,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4380625,
+						"collisionPoly": {
+							"points": [
+								0.003968253968253968,
+								0.003968253968253968,
+								0.996031746031746,
+								0.003968253968253968,
+								0.996031746031746,
+								0.996031746031746,
+								0.003968253968253968,
+								0.996031746031746
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 507224416868025,
+				"name": "Player_box",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

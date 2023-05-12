@@ -1,0 +1,15 @@
+{
+	"name": "Dialouge_DOR",
+	"plugin-id": "Text",
+	"sid": 540232928536783,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 890337109955592
+		}
+	],
+	"effectTypes": []
+}

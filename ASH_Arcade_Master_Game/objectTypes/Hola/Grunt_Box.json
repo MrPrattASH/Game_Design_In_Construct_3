@@ -1,0 +1,92 @@
+{
+	"name": "Grunt_Box",
+	"plugin-id": "Sprite",
+	"sid": 598271996069505,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 721027062930740
+		},
+		{
+			"name": "EHP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 230327101308697
+		},
+		{
+			"name": "G_Angle",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 580237978028965
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 454512997006327
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 510746264472733
+		},
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 690245147361811
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 928158313401126
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 200,
+						"height": 287,
+						"originX": 0.15639589169000934,
+						"originY": 0.535795270489148,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7157564,
+						"collisionPoly": {
+							"points": [
+								0.03314659197012138,
+								0,
+								0.9668534080298786,
+								0,
+								0.9668534080298786,
+								1,
+								0.03314659197012138,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 488990195778875,
+				"name": "One",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

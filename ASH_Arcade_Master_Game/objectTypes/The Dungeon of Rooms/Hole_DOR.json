@@ -1,0 +1,61 @@
+{
+	"name": "Hole_DOR",
+	"plugin-id": "Sprite",
+	"sid": 142967456976125,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 772468743238401
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 19,
+						"height": 19,
+						"originX": 8.526315789473683,
+						"originY": 6,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5480818,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								0,
+								1,
+								1,
+								1,
+								1,
+								1,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 977508508751134,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

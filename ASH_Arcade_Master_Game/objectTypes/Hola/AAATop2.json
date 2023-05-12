@@ -1,0 +1,84 @@
+{
+	"name": "AAATop2",
+	"plugin-id": "Sprite",
+	"sid": 555183331239280,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 265772162888317
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 781,
+						"height": 603,
+						"originX": 0.17157490396927016,
+						"originY": 0.8250414593698175,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3969807,
+						"collisionPoly": {
+							"points": [
+								0.17157490396927016,
+								0,
+								0.9449423815620999,
+								0.3681592039800995,
+								0.586427656850192,
+								0.8250414593698175,
+								0.586427656850192,
+								0.8159203980099502,
+								0.17157490396927016,
+								0.9303482587064676,
+								0.03713188220230474,
+								0.45107794361525705,
+								0.11395646606914213,
+								0.8250414593698175
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 758821394317291,
+				"name": "Dead",
+				"isLooping": true,
+				"isPingPong": true,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4653273,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 474716904307240,
+				"name": "Stationary",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

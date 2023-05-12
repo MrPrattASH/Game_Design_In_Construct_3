@@ -1,0 +1,120 @@
+{
+	"name": "Level 2_DOR",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Enemy Logic_DOR"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Player logic_DOR"
+		},
+		{
+			"eventType": "comment",
+			"text": "Play Backround Music"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 646194648897398
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 341973308959424
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 963011870385233,
+					"parameters": {
+						"audio-file": "Wave 1 Loop",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Level 2 backround\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 740857432938482,
+					"parameters": {
+						"variable": "curLevel",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 468669589592757
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 705499428924265,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Knight_DOR",
+					"sid": 906715819251132,
+					"parameters": {
+						"object": "Hole_DOR"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 139245171626287,
+					"parameters": {
+						"layout": "Level 3_DOR"
+					}
+				}
+			],
+			"sid": 878662495259192
+		},
+		{
+			"eventType": "comment",
+			"text": "If all enemies on layout killed show the location of Hole"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Knight_DOR",
+					"sid": 917347055439114,
+					"parameters": {
+						"instance-variable": "Kills",
+						"comparison": 0,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Knight_DOR",
+					"sid": 974805574802568,
+					"parameters": {
+						"instance-variable": "Cleared",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 781543890851375
+		}
+	],
+	"sid": 202827926209746
+}

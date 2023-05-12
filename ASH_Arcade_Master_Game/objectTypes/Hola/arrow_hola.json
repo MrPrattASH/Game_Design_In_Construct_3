@@ -1,0 +1,61 @@
+{
+	"name": "arrow_hola",
+	"plugin-id": "Sprite",
+	"sid": 441055115158731,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 155,
+						"height": 70,
+						"originX": 0.5290322580645161,
+						"originY": 0.7285714285714285,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4331286,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 155,
+						"height": 70,
+						"originX": 0.5290322580645161,
+						"originY": 0.7285714285714285,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6947284,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 155,
+						"height": 70,
+						"originX": 0.5290322580645161,
+						"originY": 0.7285714285714285,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5503530,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 551088010753360,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
