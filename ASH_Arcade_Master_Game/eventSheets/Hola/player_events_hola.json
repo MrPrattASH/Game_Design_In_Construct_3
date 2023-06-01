@@ -10,16 +10,7 @@
 					"sid": 796695025834790
 				}
 			],
-			"actions": [
-				{
-					"id": "set-layout-scale",
-					"objectClass": "System",
-					"sid": 818652030488497,
-					"parameters": {
-						"scale": "2"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 249371460947554,
 			"children": [
 				{

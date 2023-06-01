@@ -2,7 +2,7 @@
     "c2array": true,
     "size": [
         5,
-        6,
+        5,
         1
     ],
     "data": [
@@ -12,9 +12,6 @@
             ],
             [
                 "An Apple a Day"
-            ],
-            [
-                "Taco Run"
             ],
             [
                 "Cloud Dragon"
@@ -34,9 +31,6 @@
                 "As the protagonist of An Apple A Day, you play the role of a doctor who must dodge apples (the very thing that's supposed to keep you away) while collecting life-saving medicine, proving that sometimes even the best intentions can lead to some seriously challenging situations!"
             ],
             [
-                "Taco Run is a fun and challenging platformer where players navigate an abandoned nuclear waste warehouse, avoid spicy hot sauce hazards, and collect various food items to create the ultimate taco masterpiece."
-            ],
-            [
                 "Cloud Dragon is an intense single room boss fight game in the style of Megaman, where players must battle a powerful dragon with lightning fast reflexes and strategic weapon choices."
             ],
             [
@@ -52,9 +46,6 @@
             ],
             [
                 "J. Galardi"
-            ],
-            [
-                "A. D'Souza & A. Venosta"
             ],
             [
                 "S. Zhuang"
@@ -74,9 +65,6 @@
                 "I. Unadkat"
             ],
             [
-                "W. Laroche"
-            ],
-            [
                 "S. van Dalen"
             ],
             [
@@ -87,9 +75,6 @@
             ]
         ],
         [
-            [
-                ""
-            ],
             [
                 ""
             ],

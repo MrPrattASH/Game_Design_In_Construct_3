@@ -31,8 +31,8 @@
 					"world": {
 						"x": -7,
 						"y": 0,
-						"width": 1934,
-						"height": 1120,
+						"width": 1293,
+						"height": 730,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -156,8 +156,8 @@
 						}
 					},
 					"world": {
-						"x": 476,
-						"y": 112,
+						"x": 118,
+						"y": 3,
 						"width": 995,
 						"height": 413,
 						"originX": 0,
@@ -189,8 +189,8 @@
 						}
 					},
 					"world": {
-						"x": 923,
-						"y": 687,
+						"x": 596,
+						"y": 510,
 						"width": 334.45407072381226,
 						"height": 214.48684970331436,
 						"originX": 0.5,
@@ -238,8 +238,8 @@
 	"sid": 239792209208875,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1920,
-	"height": 1080,
+	"width": 1280,
+	"height": 720,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

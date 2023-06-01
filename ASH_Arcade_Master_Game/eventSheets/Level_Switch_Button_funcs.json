@@ -47,9 +47,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 453103185831476,
+					"sid": 862426380469980,
 					"parameters": {
-						"layout": "Level Select_Master"
+						"layout": "Level Select"
 					}
 				}
 			],
@@ -93,6 +93,14 @@
 				{
 					"callFunction": "Button_Flash",
 					"sid": 569837839048282
+				},
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 375617110326971,
+					"parameters": {
+						"cursor-style": "none"
+					}
 				}
 			],
 			"sid": 224612529028109

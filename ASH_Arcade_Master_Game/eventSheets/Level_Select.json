@@ -22,6 +22,23 @@
 			],
 			"actions": [
 				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 630312705755661,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
+					}
+				},
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 110650991172113,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				},
+				{
 					"id": "reset-global-variables",
 					"objectClass": "System",
 					"sid": 365357883538697
@@ -92,17 +109,17 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 510161663304668,
+					"sid": 309095805775909,
 					"parameters": {
-						"key": 38
+						"key": 37
 					}
 				},
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 533073344128024,
+					"sid": 552880559921604,
 					"parameters": {
-						"key": 87
+						"key": 65
 					}
 				}
 			],
@@ -169,17 +186,17 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 237519250296039,
+					"sid": 967693550193900,
 					"parameters": {
-						"key": 40
+						"key": 39
 					}
 				},
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 857415375136268,
+					"sid": 306485225864564,
 					"parameters": {
-						"key": 83
+						"key": 68
 					}
 				}
 			],
@@ -278,7 +295,7 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 849107760224947,
+									"sid": 316810236733501,
 									"parameters": {
 										"name": "\"\"",
 										"start-index": "0",
@@ -434,6 +451,32 @@
 										"animation": "str(Games.At(0,y))",
 										"from": "beginning"
 									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Game_Image",
+									"sid": 989147398109613,
+									"parameters": {
+										"width": "Game_Image.Width/1.1",
+										"height": "Game_Image.Height/1.1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 278813515297441,
+									"parameters": {
+										"seconds": ".05"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Game_Image",
+									"sid": 431912671591179,
+									"parameters": {
+										"width": "Game_Image.Width*1.1",
+										"height": "Game_Image.Height*1.1"
+									}
 								}
 							],
 							"sid": 317285128044506
@@ -477,9 +520,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "game_descriptions",
-											"sid": 128071559332506,
+											"sid": 526678509036609,
 											"parameters": {
-												"text": "Games.At(x_index,y)"
+												"text": "uppercase(Games.At(x_index,y))"
 											}
 										},
 										{
@@ -510,11 +553,12 @@
 									],
 									"actions": [
 										{
-											"id": "set-text",
+											"id": "typewriter-text",
 											"objectClass": "game_descriptions",
-											"sid": 126125434488192,
+											"sid": 276316616852120,
 											"parameters": {
-												"text": "Games.At(x_index,y)"
+												"text": "Games.At(x_index,y)",
+												"duration": "1"
 											}
 										},
 										{
@@ -607,9 +651,9 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 922647126662606,
+					"sid": 306228021473978,
 					"parameters": {
-						"key": 81
+						"key": 27
 					}
 				}
 			],

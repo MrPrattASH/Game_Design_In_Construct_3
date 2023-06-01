@@ -491,8 +491,7 @@
 	},
 	"layouts": {
 		"items": [
-			"Title Screen",
-			"Level Select_Master"
+			"Level Select"
 		],
 		"subfolders": [
 			{
@@ -502,17 +501,6 @@
 				],
 				"subfolders": [],
 				"name": "An Apple a Day"
-			},
-			{
-				"items": [
-					"Taco Run",
-					"Game Layer_tr",
-					"Sprite Sheet_tr",
-					"End Screen_tr",
-					"Death Screen_tr"
-				],
-				"subfolders": [],
-				"name": "Taco Run"
 			},
 			{
 				"items": [
@@ -528,7 +516,7 @@
 			},
 			{
 				"items": [
-					"Title_hola",
+					"Hola",
 					"Start_hola",
 					"Part2_hola",
 					"Info_hola"
@@ -568,14 +556,6 @@
 				],
 				"subfolders": [],
 				"name": "apple_a_day"
-			},
-			{
-				"items": [
-					"taco_menu_st",
-					"taco_game_st"
-				],
-				"subfolders": [],
-				"name": "taco_run"
 			},
 			{
 				"items": [
@@ -789,46 +769,6 @@
 					"file-info": {
 						"purpose": "none"
 					}
-				},
-				{
-					"name": "Wave 2 Loop.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 899512730138698,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "Wave 1 Loop.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 420035592765548,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "bossfight (2).webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 154436680239297,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "Wave 3 Loop.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 580367798352243,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "bleeps-and-bloops-classic-arcade-game-116838.webm",
-					"type": "audio/webm; codecs=opus",
-					"sid": 214364616921652,
-					"file-info": {
-						"purpose": "none"
-					}
 				}
 			],
 			"subfolders": []
@@ -914,6 +854,46 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Wave 1 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 420035592765548,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 2 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 899512730138698,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 3 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 580367798352243,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bossfight (2).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 154436680239297,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bleeps-and-bloops-classic-arcade-game-116838.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 214364616921652,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -944,6 +924,14 @@
 					"name": "Halo.ttf",
 					"type": "application/font-sfnt",
 					"sid": 989702855334331,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Pixelmania.ttf",
+					"type": "application/font-sfnt",
+					"sid": 415457591232356,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -1058,7 +1046,7 @@
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",
-		"fullscreenQuality": "high",
+		"fullscreenQuality": "low",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,
@@ -1085,7 +1073,7 @@
 		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
-		"sampling": "trilinear",
+		"sampling": "bilinear",
 		"downscaling": "medium",
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
@@ -1099,7 +1087,7 @@
 		"autoReloadScriptsOnPreview": false,
 		"exportFileStructure": "folders"
 	},
-	"viewportWidth": 1920,
-	"viewportHeight": 1080,
-	"firstLayout": "Level Select_Master"
+	"viewportWidth": 1280,
+	"viewportHeight": 720,
+	"firstLayout": "Level Select"
 }

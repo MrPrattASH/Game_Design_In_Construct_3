@@ -12,7 +12,7 @@
 						"text": "Controls:\nPlayer 1: Joystick- Movement\nPlayer 2: Joystick- Aim\nPlayer 2: Black - Fire weapon\n\nPlayer 1: Pink - weapon change \nPlayer 1: Blue - melee\nPlayer 1: Yellow- interact\n\nPlayer:\nEnergy shield- You are equipped with an energy \nshield that can protect you from damage it has\n 200 base health and can recharge if you are not \ngetting shot at. \nMelee- you are able to get close and hurt the enemies.\n\nWeapons:\nPistol max 8 ammo\nAR- 75 ammo\n\nHealth and ammo kits:\nMedkits and Ammo boxes can be found \nall around the map, but use it wisely as you only \nhave a limited amount.\n\n\n",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 29,
+						"size": 16,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -33,8 +33,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1,
-						"y": 2,
+						"x": 18,
+						"y": 4,
 						"width": 872.7024462830544,
 						"height": 1078.4431784378678,
 						"originX": 0,
@@ -55,7 +55,7 @@
 						"text": "Enemies:\nThere are two types of enemy combatants\nElites - they are the strongest type, they are equipped\nWith an energy shield and a faster fire rate and speed.\nGrunts-  they are small and feeble and easy to kill alone, but when grouped with others they can be tough to beat. They are slower then the elites and have slower fire rate.\n\nEnvironment:\nIn this game trees, rocks and barricades will help you in order to block fire, the area is quite large and is easy to get lost in so be prepared.\n\nProgrammer - Justin de buck\nAudio- Alec rein and Justin de buck\nGraphics - Justin de buck and seb gomez\n\n\n\nReturn to Menu",
 						"enable-bbcode": true,
 						"font": "Arial",
-						"size": 29,
+						"size": 16,
 						"line-height": 0,
 						"bold": false,
 						"italic": false,
@@ -76,9 +76,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 894,
-						"y": 2,
-						"width": 929.39054343275,
+						"x": 601,
+						"y": 8,
+						"width": 665.39054343275,
 						"height": 1083.486384830926,
 						"originX": 0,
 						"originY": 0,
@@ -109,8 +109,8 @@
 						}
 					},
 					"world": {
-						"x": 1252,
-						"y": 924,
+						"x": 845,
+						"y": 499,
 						"width": 142.49633246848492,
 						"height": 89.83464438230568,
 						"originX": 0.5,
@@ -138,10 +138,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 532,
-						"y": 48,
-						"width": 34.276404858701305,
-						"height": 74.08126211396733,
+						"x": 336,
+						"y": 55,
+						"width": 21.91490819149205,
+						"height": 47.364478994515075,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -167,10 +167,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 437,
-						"y": 89,
-						"width": 34.276404858701305,
-						"height": 74.08126211396733,
+						"x": 308,
+						"y": 22,
+						"width": 21.91490819149205,
+						"height": 47.364478994515075,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -200,10 +200,10 @@
 						}
 					},
 					"world": {
-						"x": 556,
-						"y": 156,
-						"width": 77.48154509629035,
-						"height": 49.689251746534026,
+						"x": 332,
+						"y": 101,
+						"width": 58.01603813680752,
+						"height": 37.20593750077874,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -233,10 +233,10 @@
 						}
 					},
 					"world": {
-						"x": 602,
-						"y": 239,
-						"width": 78.32373580385872,
-						"height": 48.847061038965656,
+						"x": 355,
+						"y": 146,
+						"width": 58.53624469838672,
+						"height": 36.506475188241176,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -266,10 +266,10 @@
 						}
 					},
 					"world": {
-						"x": 430,
-						"y": 290,
-						"width": 77.48154509629035,
-						"height": 48.847061038965656,
+						"x": 265,
+						"y": 171,
+						"width": 57.81951356272189,
+						"height": 36.451432463455106,
 						"originX": 0.5,
 						"originY": 0.4827586206896553,
 						"color": [
@@ -299,10 +299,10 @@
 						}
 					},
 					"world": {
-						"x": 478,
-						"y": 343,
-						"width": 78.32373580385872,
-						"height": 48.847061038965656,
+						"x": 293,
+						"y": 206,
+						"width": 58.53624469838672,
+						"height": 36.506475188241176,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -348,8 +348,8 @@
 	"sid": 648317469988347,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1929,
-	"height": 1080,
+	"width": 1280,
+	"height": 720,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

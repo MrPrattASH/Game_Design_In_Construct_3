@@ -35,9 +35,9 @@
 				{
 					"id": "set-layout-scale",
 					"objectClass": "System",
-					"sid": 758995142903285,
+					"sid": 196128077850254,
 					"parameters": {
-						"scale": ".31"
+						"scale": ".21"
 					}
 				}
 			],
@@ -64,11 +64,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 202627800572939,
+							"sid": 381626357099171,
 							"parameters": {
 								"first-value": "LayoutName",
 								"comparison": 0,
-								"second-value": "\"Start_cd\""
+								"second-value": "\"Cloud Dragon\""
 							}
 						}
 					],

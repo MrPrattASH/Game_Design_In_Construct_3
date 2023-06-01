@@ -2,7 +2,7 @@
 	"name": "OBJ2",
 	"plugin-id": "Spritefont2",
 	"sid": 942042883120073,
-	"isGlobal": true,
+	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "OBJ1",

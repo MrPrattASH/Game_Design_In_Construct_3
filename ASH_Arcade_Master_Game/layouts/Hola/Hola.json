@@ -1,5 +1,5 @@
 {
-	"name": "Title_hola",
+	"name": "Hola",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -19,10 +19,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 965.947729166163,
-						"y": 540.7492603553266,
-						"width": 1930.895458332326,
-						"height": 1077.498520710653,
+						"x": 649.3898641825381,
+						"y": 364.1003228029169,
+						"width": 1297.7797283650762,
+						"height": 724.2006456058338,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -129,10 +129,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 12,
-						"y": 419,
-						"width": 1212.0089405222484,
-						"height": 324.02313816050923,
+						"x": 20,
+						"y": 6,
+						"width": 1102.831577551823,
+						"height": 294.8352414519892,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -172,10 +172,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 11,
-						"y": 720,
-						"width": 699.5020155607103,
-						"height": 187.00756294249638,
+						"x": 19,
+						"y": 307,
+						"width": 590.1348454778596,
+						"height": 157.76892246950644,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -215,10 +215,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 15,
-						"y": 855,
-						"width": 699.5020155607103,
-						"height": 187.00756294249638,
+						"x": 23,
+						"y": 442,
+						"width": 590.1348454778596,
+						"height": 157.76892246950644,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -248,10 +248,10 @@
 						}
 					},
 					"world": {
-						"x": 571,
-						"y": 802,
-						"width": 200.94050051137705,
-						"height": 128.86401663229614,
+						"x": 543,
+						"y": 366,
+						"width": 129.13873758963737,
+						"height": 82.81723388900657,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -281,10 +281,10 @@
 						}
 					},
 					"world": {
-						"x": 527,
-						"y": 948,
-						"width": 203.12463638650073,
-						"height": 126.67988075717247,
+						"x": 499,
+						"y": 512,
+						"width": 130.6551945448631,
+						"height": 81.4838847699146,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -330,8 +330,8 @@
 	"sid": 738143126600941,
 	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 1920,
-	"height": 1080,
+	"width": 1280,
+	"height": 720,
 	"unboundedScrolling": false,
 	"vpX": 0.5,
 	"vpY": 0.5,

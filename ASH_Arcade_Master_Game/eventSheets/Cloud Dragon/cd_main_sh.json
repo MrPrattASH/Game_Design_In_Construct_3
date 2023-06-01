@@ -5459,9 +5459,9 @@
 				{
 					"id": "set-layout-scale",
 					"objectClass": "System",
-					"sid": 347548700437337,
+					"sid": 635281950724464,
 					"parameters": {
-						"scale": ".31"
+						"scale": ".21"
 					}
 				}
 			],

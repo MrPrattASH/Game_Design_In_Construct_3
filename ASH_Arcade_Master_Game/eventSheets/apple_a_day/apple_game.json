@@ -9,7 +9,7 @@
 			"eventType": "variable",
 			"name": "Lane1",
 			"type": "number",
-			"initialValue": "812",
+			"initialValue": "430",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -19,7 +19,7 @@
 			"eventType": "variable",
 			"name": "Lane2",
 			"type": "number",
-			"initialValue": "950",
+			"initialValue": "570",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -29,7 +29,7 @@
 			"eventType": "variable",
 			"name": "Lane3",
 			"type": "number",
-			"initialValue": "1090",
+			"initialValue": "706",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
@@ -88,15 +88,6 @@
 				{
 					"type": "comment",
 					"text": "Play main menu song"
-				},
-				{
-					"id": "set-layout-scale",
-					"objectClass": "System",
-					"sid": 416451590030298,
-					"disabled": true,
-					"parameters": {
-						"scale": "1.23"
-					}
 				},
 				{
 					"id": "play",
@@ -347,19 +338,19 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 402776205281447,
+							"sid": 898734988380201,
 							"parameters": {
-								"key": 65
+								"key": 37
 							}
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 773958131560685,
+							"sid": 856776658921837,
 							"parameters": {
 								"first-value": "PlayerBox.X",
 								"comparison": 4,
-								"second-value": "850"
+								"second-value": "500"
 							}
 						}
 					],
@@ -386,19 +377,19 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 378894872736109,
+							"sid": 168293316639988,
 							"parameters": {
-								"key": 68
+								"key": 39
 							}
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 753284206962354,
+							"sid": 332128033666371,
 							"parameters": {
 								"first-value": "PlayerBox.X",
 								"comparison": 2,
-								"second-value": "1000"
+								"second-value": "700"
 							}
 						}
 					],
