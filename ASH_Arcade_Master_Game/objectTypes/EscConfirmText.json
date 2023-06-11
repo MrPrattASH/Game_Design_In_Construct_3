@@ -1,0 +1,23 @@
+{
+	"name": "EscConfirmText",
+	"plugin-id": "Text",
+	"sid": 790607242602644,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 720196134457327
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 790576626210323
+		}
+	],
+	"effectTypes": []
+}

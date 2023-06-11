@@ -12,6 +12,16 @@
 			"sid": 548615540454559
 		},
 		{
+			"eventType": "variable",
+			"name": "title_music_seek",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 943061809968092
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -39,34 +49,89 @@
 					}
 				},
 				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 365357883538697
-				},
-				{
-					"id": "set-layout-scale",
-					"objectClass": "System",
-					"sid": 849441741428092,
-					"parameters": {
-						"scale": "1.0"
-					}
-				},
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 105514424503590,
-					"parameters": {
-						"tag": "\"game_list\"",
-						"file": "game_list.json"
-					}
+					"type": "comment",
+					"text": "seek title music back to cur position"
 				},
 				{
 					"id": "stop-all",
 					"objectClass": "Audio",
-					"sid": 969823511131807
+					"sid": 149571837007936
 				}
 			],
-			"sid": 434992527889426
+			"sid": 434992527889426,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "if we're afk, set in a 90sec timer on the level_switch_buttons event sheet, don't start the music again. "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 881412921817302,
+							"parameters": {
+								"variable": "afk"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 330616789065890,
+							"parameters": {
+								"audio-file": "vhs-dreams",
+								"loop": "not-looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"Background_music_title\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 859951009851444,
+							"parameters": {
+								"tag": "\"Background_music_title\"",
+								"position": "title_music_seek"
+							}
+						}
+					],
+					"sid": 558587029743112
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 646279415408080
+						},
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 114977850577781,
+							"parameters": {
+								"scale": "1.0"
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 535968060641241,
+							"parameters": {
+								"tag": "\"game_list\"",
+								"file": "game_list.json"
+							}
+						}
+					],
+					"sid": 695423246863262
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -131,6 +196,18 @@
 					"parameters": {
 						"variable": "cur_y",
 						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 276210608901334,
+					"parameters": {
+						"audio-file": "Menu Up - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
 					}
 				}
 			],
@@ -209,6 +286,18 @@
 						"variable": "cur_y",
 						"value": "-1"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 256263088012110,
+					"parameters": {
+						"audio-file": "Menu Down - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 448401557354975,
@@ -270,10 +359,10 @@
 				},
 				{
 					"functionName": "Update_Game_Select_Lists",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -392,10 +481,10 @@
 				},
 				{
 					"functionName": "Update_Game_List",
-					"functionCopyPicked": false,
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -642,6 +731,152 @@
 			"sid": 594312367329666
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 518781503042273
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "reset afk"
+				}
+			],
+			"sid": 967015023176926,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 863252077890405,
+							"parameters": {
+								"variable": "afk"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 243389645281661,
+							"parameters": {
+								"variable": "afk",
+								"value": "false"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 386278694559906,
+							"parameters": {
+								"audio-file": "vhs-dreams",
+								"loop": "not-looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"Background_music_title\""
+							}
+						}
+					],
+					"sid": 407007097085967
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 816705526512800,
+							"parameters": {
+								"key": 27
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Game_Image",
+							"sid": 523239959155088,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "60",
+								"type": "once",
+								"tag": "\"Background_music_title\""
+							}
+						}
+					],
+					"sid": 866022504428135,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "if the timer was previously played, resume audio"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 875812274434149,
+									"parameters": {
+										"tag": "\"Background_music_title\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-paused",
+									"objectClass": "Audio",
+									"sid": 268844458748661,
+									"parameters": {
+										"tag": "\"Background_music_title\"",
+										"state": "resume"
+									}
+								}
+							],
+							"sid": 552751756596861
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "pause ingame music if no one has interacted for a while..."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Game_Image",
+					"sid": 666293578156377,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Background_music_title\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 885882018241499,
+					"parameters": {
+						"tag": "\"Background_music_title\"",
+						"state": "pause"
+					}
+				}
+			],
+			"sid": 101429969196061
+		},
+		{
 			"eventType": "comment",
 			"text": "Level Select"
 		},
@@ -659,6 +894,43 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 631512911644895,
+					"parameters": {
+						"variable": "title_music_seek",
+						"value": "Audio.CurrentTime"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 612061347788843,
+					"parameters": {
+						"audio-file": "Menu Confirm - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 824171696299132,
+					"parameters": {
+						"seconds": "0.75"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 246633578338788,
+					"parameters": {
+						"tag": "\"Background_music_title\""
+					}
+				},
+				{
 					"id": "go-to-layout-by-name",
 					"objectClass": "System",
 					"sid": 694578289149322,
@@ -668,6 +940,10 @@
 				}
 			],
 			"sid": 755528430970378
+		},
+		{
+			"eventType": "comment",
+			"text": "60s music timer for main menu. "
 		}
 	],
 	"sid": 627853210637674

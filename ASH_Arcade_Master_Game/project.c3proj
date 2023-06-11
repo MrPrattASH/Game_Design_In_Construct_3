@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 33600,
+	"savedWithRelease": 34402,
 	"name": "Arcade_Master_Game",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -226,7 +226,10 @@
 	],
 	"uniqueId": "kgmbor4tj32",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Main_Background_Bg",
+			"EscConfirmText"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -282,7 +285,8 @@
 					"Games",
 					"Joystick",
 					"Line",
-					"Text"
+					"Text",
+					"EscConfirmBackground"
 				],
 				"subfolders": [],
 				"name": "Globals"
@@ -769,6 +773,30 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Menu Confirm - FX - Alessia.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 675131162213355,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Menu Down - FX - Alessia.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 164797206151906,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Menu Up - FX - Alessia.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 977506860399575,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -894,6 +922,14 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "vhs-dreams.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 907048593021969,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -932,6 +968,22 @@
 					"name": "Pixelmania.ttf",
 					"type": "application/font-sfnt",
 					"sid": 415457591232356,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "nintendo-nes-font.ttf",
+					"type": "application/font-sfnt",
+					"sid": 792953658066059,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Eight-Bit Madness.ttf",
+					"type": "application/font-sfnt",
+					"sid": 688183094207193,
 					"file-info": {
 						"purpose": "none"
 					}

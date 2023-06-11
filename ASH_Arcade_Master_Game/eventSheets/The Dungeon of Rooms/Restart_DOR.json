@@ -36,6 +36,32 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
+							"sid": 437218110010586,
+							"parameters": {
+								"variable": "curLevel",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 211636701900062,
+							"parameters": {
+								"layout": "The Dungeon of Rooms"
+							}
+						}
+					],
+					"sid": 130170456361078
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
 							"sid": 916899484439086,
 							"parameters": {
 								"variable": "curLevel",

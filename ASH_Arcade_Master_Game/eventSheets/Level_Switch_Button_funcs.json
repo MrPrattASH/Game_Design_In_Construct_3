@@ -32,6 +32,79 @@
 			"sid": 256895248001962
 		},
 		{
+			"eventType": "variable",
+			"name": "afk_timer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "timer for afk function",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 888808393300962
+		},
+		{
+			"eventType": "variable",
+			"name": "afk",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 762039860885246
+		},
+		{
+			"eventType": "comment",
+			"text": "Escape confirm screen functions"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 617248421014475,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 386341812633861
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 630168754958430,
+					"parameters": {
+						"audio-file": "Menu Confirm - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 585154187086870,
+					"parameters": {
+						"seconds": "0.75"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 803895690975504,
+					"parameters": {
+						"layout": "Level Select"
+					}
+				}
+			],
+			"sid": 572000566358622
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -41,26 +114,438 @@
 					"parameters": {
 						"key": 27
 					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 197475592695303,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 1,
+						"second-value": "\"Level Select\""
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "go-to-layout",
+					"id": "set-time-scale",
 					"objectClass": "System",
-					"sid": 862426380469980,
+					"sid": 923608646260820,
 					"parameters": {
-						"layout": "Level Select"
+						"time-scale": "0"
 					}
 				}
 			],
-			"sid": 838787792521665
+			"sid": 838787792521665,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "player initially wants to change games"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "EscConfirmText",
+							"sid": 553161253989486,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "EscConfirmText",
+							"sid": 842006576894776,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "EscConfirmBackground",
+							"sid": 998422054065720,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 409628057073153,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "start \"yes\" flashing initially"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EscConfirmText",
+									"sid": 977176387809939,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"yes\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "EscConfirmText",
+									"sid": 897690253232390,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "10"
+									}
+								}
+							],
+							"sid": 517579471871684,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "if esc global layer is visible, the player has already selected "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 913986277727761
+						}
+					],
+					"actions": [],
+					"sid": 569549106425432,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "player wishes to return"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-flashing",
+									"objectClass": "EscConfirmText",
+									"sid": 729526599506136,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EscConfirmText",
+									"sid": 804096721179720,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"yes\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 766038137707104,
+									"parameters": {
+										"audio-file": "Menu Confirm - FX - Alessia",
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 980067795884160,
+									"parameters": {
+										"seconds": "0.75"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 587817524752517,
+									"parameters": {
+										"layout": "Level Select"
+									}
+								}
+							],
+							"sid": 940515216473906,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "player wishes to continue game"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 726870988943971
+								}
+							],
+							"actions": [
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 358622608124330,
+									"parameters": {
+										"time-scale": "1"
+									}
+								}
+							],
+							"sid": 714428583288530,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 498379371981817,
+									"parameters": {
+										"layer": "\"EscConfirm\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 587315877962368,
+							"disabled": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "While on escape screen, select appropriate "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "EscConfirmText",
+					"sid": 110810506847295
+				}
+			],
+			"actions": [],
+			"sid": 230522346288271,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 331132659602726,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 305721966494229,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 359211681413770,
+							"parameters": {
+								"audio-file": "Menu Up - FX - Alessia",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 732311138702556,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EscConfirmText",
+									"sid": 680561493429481,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"yes\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "EscConfirmText",
+									"sid": 358478011794654,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "10"
+									}
+								}
+							],
+							"sid": 830318961370613,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EscConfirmText",
+									"sid": 772257850007089,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"no\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-flashing",
+									"objectClass": "EscConfirmText",
+									"sid": 236800465244623,
+									"behaviorType": "Flash"
+								}
+							],
+							"sid": 311075296786418,
+							"disabled": true
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 539675007037769,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 710487100477225,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 374727801193261,
+							"parameters": {
+								"audio-file": "Menu Down - FX - Alessia",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 176031839449465,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EscConfirmText",
+									"sid": 787292251863946,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"yes\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-flashing",
+									"objectClass": "EscConfirmText",
+									"sid": 661620727669002,
+									"behaviorType": "Flash"
+								}
+							],
+							"sid": 244087653259697,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EscConfirmText",
+									"sid": 409145788131138,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"no\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "EscConfirmText",
+									"sid": 912636241390883,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "10"
+									}
+								}
+							],
+							"sid": 718608625632365,
+							"disabled": true
+						}
+					],
+					"isOrBlock": true
+				}
+			]
 		},
 		{
 			"functionName": "Button_Flash",
-			"functionCopyPicked": false,
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -101,13 +586,153 @@
 					"parameters": {
 						"cursor-style": "none"
 					}
+				},
+				{
+					"type": "comment",
+					"text": "restart afk timer"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 255643499344836,
+					"parameters": {
+						"variable": "afk_timer",
+						"value": "0"
+					}
 				}
 			],
-			"sid": 224612529028109
+			"sid": 224612529028109,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "set layer at top for esc quit functions"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "EscConfirmText",
+							"sid": 367077244457841,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "EscConfirmBackground",
+							"sid": 753461951873614,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "EscConfirmBackground",
+							"sid": 447649022492184
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "EscConfirmText",
+							"sid": 512665195019498
+						}
+					],
+					"sid": 771025846804902
+				}
+			]
 		},
 		{
-			"eventType": "comment",
-			"text": "TODO: Add a popup screen \"Are you sure you want to quit?\" , scaled to the current viewport size. "
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 195476841436088,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 165883003365209,
+					"parameters": {
+						"variable": "afk_timer",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 973313056289971,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "if a user is AFK for over 90s..."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 540132581529690,
+							"parameters": {
+								"variable": "afk_timer",
+								"comparison": 5,
+								"value": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 156560057005923,
+							"parameters": {
+								"variable": "afk",
+								"value": "true"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 105396382816584,
+							"parameters": {
+								"layout": "Level Select"
+							}
+						}
+					],
+					"sid": 686259104236990
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 843159327827706
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "reset our AFK timer"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 729254833575991,
+					"parameters": {
+						"variable": "afk_timer",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 182528215451746
 		}
 	],
 	"sid": 169493133145000
