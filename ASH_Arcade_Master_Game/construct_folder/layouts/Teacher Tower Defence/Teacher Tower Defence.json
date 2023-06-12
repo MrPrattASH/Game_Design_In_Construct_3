@@ -1,0 +1,497 @@
+{
+	"name": "Teacher Tower Defence",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "GrassMenu_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1817,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 398.507,
+						"y": 224.008,
+						"width": 480,
+						"height": 270,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DirtPathMenu_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1818,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 398.507,
+						"y": 224.008,
+						"width": 480,
+						"height": 270,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SecondHills_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1819,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 398.507,
+						"y": 224.008,
+						"width": 480,
+						"height": 270,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuPainter_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1820,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 518.507,
+						"y": 388.008,
+						"width": 128,
+						"height": 120,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuRoboticsTeacher_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1821,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 783.507,
+						"y": 349.008,
+						"width": 84,
+						"height": 72,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuRoboticsShadow_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1822,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 783.507,
+						"y": 349.008,
+						"width": 84,
+						"height": 72,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "FirstHills_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1823,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 398.507,
+						"y": 224.008,
+						"width": 480,
+						"height": 270,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuEnglishTeacher_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1824,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 568.507,
+						"y": 254.008,
+						"width": 52,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuPlayButton_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Unpressed",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1825,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 638.507,
+						"y": 385.008,
+						"width": 96,
+						"height": 33,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleTXT_ttd",
+					"properties": {
+						"text": "Teacher TD",
+						"enable-bbcode": true,
+						"font": "Press Start 2P",
+						"size": 24,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0.7137254901960784,
+							0.5372549019607843,
+							0.3843137254901961,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 1826,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 638.507,
+						"y": 319.008,
+						"width": 496.3898041033634,
+						"height": 70.49605566805758,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuEnglishShadow_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1827,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 568.507,
+						"y": 254.008,
+						"width": 52,
+						"height": 48,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "MenuPaintBrush_ttd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1828,
+					"instanceVariables": {},
+					"behaviors": {
+						"Rotate": {
+							"properties": {
+								"speed": 180,
+								"acceleration": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 517.507,
+						"y": 360.008,
+						"width": 10,
+						"height": 25,
+						"originX": 0.2,
+						"originY": 0.6,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 473487279301486,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "credits",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "CreditText_ttd",
+					"properties": {
+						"text": "Credits\nMUSIC: bart & congusbongus | opengameart.org\nART: Cup Nooble",
+						"enable-bbcode": true,
+						"font": "Press Start 2P",
+						"size": 8,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9529411764705882,
+							0.9019607843137255,
+							0.7607843137254902,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 1829,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 714.52,
+						"y": 414.331,
+						"width": 175.14273700275618,
+						"height": 81.92272718065439,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 190928081695015,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 827988084535529,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1280,
+	"height": 720,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "ttd_MenuEventSheet"
+}

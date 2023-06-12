@@ -1,0 +1,58 @@
+{
+	"name": "Shop_ttd",
+	"plugin-id": "Sprite",
+	"sid": 577281366258905,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 661767839630174
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 582608393149214
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 135,
+						"height": 1140,
+						"originX": 0.5,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 348035,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.6,
+								"y": 0.16666666666666646
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 198167471871565,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

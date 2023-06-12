@@ -1,0 +1,17 @@
+{
+	"name": "high_score",
+	"plugin-id": "Text",
+	"sid": 499699873711453,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 128523977521180
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

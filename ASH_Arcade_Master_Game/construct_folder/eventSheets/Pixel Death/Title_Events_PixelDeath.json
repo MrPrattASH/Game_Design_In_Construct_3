@@ -1,0 +1,143 @@
+{
+	"name": "Title_Events_PixelDeath",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 706151122920216,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 162255621314247,
+					"parameters": {
+						"layout": "Main Game_PixelDeath"
+					}
+				}
+			],
+			"sid": 510200243448201
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 757916121851481
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 303249010230444,
+					"parameters": {
+						"audio-file": "20J01m1_Obsidian001_AmbientLoop_WAV16bit",
+						"loop": "looping",
+						"volume": "10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 985159503398014,
+					"parameters": {
+						"scale": "1"
+					}
+				}
+			],
+			"sid": 514602253531231
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 242297069735096
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 432094068565667,
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 386286652092025
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 566819977388686
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "ArmoredGoliathT_PixelDeath",
+					"sid": 442282107540403,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "FledgelingT_PixelDeath",
+					"sid": 905849664615338,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 613206686956191
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 925391689452216,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 392633865753009,
+					"parameters": {
+						"layout": "Easter egg_PixelDeath"
+					}
+				}
+			],
+			"sid": 607655736610338
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 360296394198199
+}

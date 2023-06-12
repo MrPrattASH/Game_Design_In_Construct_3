@@ -1,0 +1,15 @@
+{
+	"name": "NoBuyText_ttd",
+	"plugin-id": "Text",
+	"sid": 242043022139725,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 844115171953290
+		}
+	],
+	"effectTypes": []
+}

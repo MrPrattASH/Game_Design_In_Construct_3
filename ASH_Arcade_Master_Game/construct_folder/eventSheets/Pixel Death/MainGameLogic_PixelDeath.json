@@ -1,0 +1,2686 @@
+{
+	"name": "MainGameLogic_PixelDeath",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "EnemyCount",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 975284713331178
+		},
+		{
+			"eventType": "variable",
+			"name": "CurrentRound",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 994251834829574
+		},
+		{
+			"eventType": "variable",
+			"name": "RoundOver",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 157390396344298
+		},
+		{
+			"eventType": "variable",
+			"name": "Waves",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 518460651515691
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "3D camera",
+			"description": "Enable this group to see the game from a first-person perspective.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "On the start of the game the 'RoundOver' boolean is set to true."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 693872054379334
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 361496024214066,
+							"parameters": {
+								"variable": "RoundOver",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 658213513845289
+				},
+				{
+					"eventType": "comment",
+					"text": "Always set a 3D camera parallel to the layout with the position and angle of the Player sprite."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 947466929837181
+						}
+					],
+					"actions": [
+						{
+							"id": "look-parallel-to-layout",
+							"objectClass": "3DCamera",
+							"sid": 323056647914397,
+							"parameters": {
+								"cam-x": "Player_PixelDeath.X",
+								"cam-y": "Player_PixelDeath.Y",
+								"cam-z": "10",
+								"look-angle": "Player_PixelDeath.Angle"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Waves_PixelDeath",
+							"sid": 310240177702096,
+							"parameters": {
+								"text": "\"Round: \" & Waves"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Enemy_Count_PixelDeath",
+							"sid": 236494295430434,
+							"parameters": {
+								"text": "\"Enemies: \" & EnemyCount"
+							}
+						}
+					],
+					"sid": 866452587433048
+				},
+				{
+					"eventType": "comment",
+					"text": "When 'EnemyCount' is equal to 0, the 'RoundOver' Boolean is set to true which then switches to on screen text. Then once 'Q' is pressed, 1 is added to global number 'CurrentRound' and when 'CurrentRound' is equal to the new number (e.g., 1+1 is 2) then the function will spawn a new 'EnemyType' and will play a new 'LoopCount' (which is the number of enemies in the round). The move to condition causes the bosses to move towards the player."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 525648495138200,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 560965070690676,
+							"parameters": {
+								"variable": "RoundOver"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 972359518334225,
+							"parameters": {
+								"variable": "CurrentRound",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 467557131281253,
+							"parameters": {
+								"variable": "Waves",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 585028852928325,
+							"parameters": {
+								"variable": "RoundOver",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 351576732809472,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 708909535382891,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 322430952129742,
+									"parameters": [
+										"5",
+										"\"imp\""
+									]
+								}
+							],
+							"sid": 331909349429868
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 787694276002176,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 838758139909938,
+									"parameters": [
+										"10",
+										"\"fledgling\""
+									]
+								}
+							],
+							"sid": 559727542251778
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 816713413630831,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 878619737581974,
+									"parameters": [
+										"1",
+										"\"Boss1\""
+									]
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 531687734303388,
+									"parameters": {
+										"audio-file": "zapsplat_horror_demonic_voice_male_deep_says_go_away_001_58803",
+										"loop": "not-looping",
+										"volume": "15",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 256248669006925
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 467241106366902,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 414930787330496,
+									"parameters": [
+										"10",
+										"\"goliath\""
+									]
+								}
+							],
+							"sid": 295391494616243
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 546527585330120,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 244629876227700,
+									"parameters": [
+										"5",
+										"\"goliath\""
+									]
+								}
+							],
+							"sid": 527540318398825
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 871594738378855,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 710226655057189,
+									"parameters": [
+										"10",
+										"\"imp\""
+									]
+								}
+							],
+							"sid": 196124961895261
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 198265758582068,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 344726780695256,
+									"parameters": [
+										"1",
+										"\"Boss2\""
+									]
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 298743644996085,
+									"parameters": {
+										"audio-file": "zapsplat_horror_demonic_voice_male_deep_says_leave_003_58810",
+										"loop": "not-looping",
+										"volume": "10",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 433286214071291
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 189518809678267,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 553396479964611,
+									"parameters": [
+										"2",
+										"\"skewer\""
+									]
+								}
+							],
+							"sid": 249461198105757
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 872466043497253,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 479399448359786,
+									"parameters": [
+										"10",
+										"\"skewer\""
+									]
+								}
+							],
+							"sid": 299883997081557
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 487221060405783,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 954132561646932,
+									"parameters": [
+										"10",
+										"\"goliath\""
+									]
+								}
+							],
+							"sid": 198005884342465
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 554308770241549,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 546195191160149,
+									"parameters": [
+										"5",
+										"\"skewer\""
+									]
+								}
+							],
+							"sid": 303100686233831
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 857105572831138,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 665771154209548,
+									"parameters": [
+										"10",
+										"\"goliath\""
+									]
+								}
+							],
+							"sid": 191711035306783
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 223063732473956,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 367537332707266,
+									"parameters": [
+										"10",
+										"\"skewer\""
+									]
+								}
+							],
+							"sid": 408972572549583
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 489457327021317,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 469980955112775,
+									"parameters": [
+										"5",
+										"\"imp\""
+									]
+								}
+							],
+							"sid": 922557080674852
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 796409791657374,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 179270002178558,
+									"parameters": [
+										"5",
+										"\"fledgling\""
+									]
+								}
+							],
+							"sid": 269433576252981
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 946419611665548,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 848724404350464,
+									"parameters": [
+										"5",
+										"\"goliath\""
+									]
+								}
+							],
+							"sid": 308109035363926
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 520902768524898,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 276467003278281,
+									"parameters": [
+										"10",
+										"\"skewer\""
+									]
+								}
+							],
+							"sid": 280439215809726
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 937958201835165,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "11"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 234407581282352,
+									"parameters": [
+										"1",
+										"\"Boss1\""
+									]
+								}
+							],
+							"sid": 999293682132211
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 746259327940561,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "11"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 166097551198070,
+									"parameters": [
+										"1",
+										"\"Boss2\""
+									]
+								}
+							],
+							"sid": 217751990649688
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 304736339059425,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "12"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 823020966710578,
+									"parameters": [
+										"1",
+										"\"Boss1\""
+									]
+								}
+							],
+							"sid": 893638559824056
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 926281634771626,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "12"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 609598072585572,
+									"parameters": [
+										"1",
+										"\"Boss2\""
+									]
+								}
+							],
+							"sid": 161563836394977
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 438352845468730,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "12"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 427929392563438,
+									"parameters": [
+										"5",
+										"\"goliath\""
+									]
+								}
+							],
+							"sid": 163709244221451
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 731069336573593,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "12"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 574978992804782,
+									"parameters": [
+										"5",
+										"\"skewer\""
+									]
+								}
+							],
+							"sid": 504226250257306
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 497611046018338,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "13"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "EnemySpawner",
+									"sid": 991367631605237,
+									"parameters": [
+										"1",
+										"\"Boss3\""
+									]
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 607370489412118,
+									"parameters": {
+										"audio-file": "zapsplat_horror_demonic_voice_male_deep_speaking_weird_language_58813",
+										"loop": "not-looping",
+										"volume": "20",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 522524638260511
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 900979065188380,
+									"parameters": {
+										"variable": "CurrentRound",
+										"comparison": 0,
+										"value": "14"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 648093666332020,
+									"parameters": {
+										"layout": "Victory Screen_PixelDeath"
+									}
+								}
+							],
+							"sid": 115766121006447
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Clawer_PixelDeath",
+							"sid": 486388983047485
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Clawer_PixelDeath",
+							"sid": 496438657894021,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Player_PixelDeath.X",
+								"y": "Player_PixelDeath.Y",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Clawer_PixelDeath",
+							"sid": 465241955866813,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "20"
+							}
+						}
+					],
+					"sid": 601723282824644
+				},
+				{
+					"eventType": "comment",
+					"text": "When overlord spawns it will follow the player, and every 3 seconds it will spawn a fire ball that damages the player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Overlord_PixelDeath",
+							"sid": 243970452653208
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Overlord_PixelDeath",
+							"sid": 961083879172495,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Player_PixelDeath.X",
+								"y": "Player_PixelDeath.Y",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Overlord_PixelDeath",
+							"sid": 696944556199380,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "15"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Overlord_PixelDeath",
+							"sid": 437166775226227,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"acceleration": "0"
+							}
+						}
+					],
+					"sid": 662903651234727,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 325466739737391,
+									"parameters": {
+										"interval-seconds": "3.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 373178933514854,
+									"parameters": {
+										"object-to-create": "Hellfirebullet_PixelDeath",
+										"layer": "\"Player\"",
+										"x": "Overlord_PixelDeath.X",
+										"y": "Overlord_PixelDeath.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 951458416274061,
+									"parameters": {
+										"z": "0"
+									}
+								}
+							],
+							"sid": 753213241321456
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 696215351986934
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-position",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 241473149196808,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"x": "Player_PixelDeath.X",
+										"y": "Player_PixelDeath.Y",
+										"mode": "direct"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 369690352669727,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "20"
+									}
+								}
+							],
+							"sid": 410982913643296
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 664571126336359,
+									"parameters": {
+										"object": "Player_PixelDeath"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 641463139647563
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Player_PixelDeath",
+									"sid": 360241318798975,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 353403690347268
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "When the Archdemon spawns it will follow the player and deploy 2 different types of file bullets."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Archdemon_PixelDeath",
+							"sid": 835618606429687
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Archdemon_PixelDeath",
+							"sid": 892313470622128,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Player_PixelDeath.X",
+								"y": "Player_PixelDeath.Y",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Archdemon_PixelDeath",
+							"sid": 779031422169921,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "15"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Archdemon_PixelDeath",
+							"sid": 670176631488964,
+							"behaviorType": "Bullet2",
+							"parameters": {
+								"acceleration": "0"
+							}
+						}
+					],
+					"sid": 583367236482005,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 868939266279604,
+									"parameters": {
+										"interval-seconds": "6.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 353134286501848,
+									"parameters": {
+										"object-to-create": "firebullet_PixelDeath",
+										"layer": "\"Player\"",
+										"x": "Archdemon_PixelDeath.X",
+										"y": "Archdemon_PixelDeath.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "firebullet_PixelDeath",
+									"sid": 582282894355210,
+									"parameters": {
+										"z": "0"
+									}
+								}
+							],
+							"sid": 565554030852591
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 234305845392783,
+									"parameters": {
+										"interval-seconds": "3.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 116593484732027,
+									"parameters": {
+										"object-to-create": "Hellfirebullet_PixelDeath",
+										"layer": "\"Player\"",
+										"x": "Archdemon_PixelDeath.X",
+										"y": "Archdemon_PixelDeath.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 223438166077299,
+									"parameters": {
+										"z": "0"
+									}
+								}
+							],
+							"sid": 566706619834208
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 816619315157277
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-position",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 925644196502322,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"x": "Player_PixelDeath.X",
+										"y": "Player_PixelDeath.Y",
+										"mode": "direct"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 297228238115382,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "20"
+									}
+								}
+							],
+							"sid": 704330913978296
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "firebullet_PixelDeath",
+									"sid": 410815098539588
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-position",
+									"objectClass": "firebullet_PixelDeath",
+									"sid": 747970164795050,
+									"behaviorType": "MoveTo",
+									"parameters": {
+										"x": "Player_PixelDeath.X",
+										"y": "Player_PixelDeath.Y",
+										"mode": "direct"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "firebullet_PixelDeath",
+									"sid": 809882071550463,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "25"
+									}
+								}
+							],
+							"sid": 489653100807221
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 958548359294972,
+									"parameters": {
+										"object": "Player_PixelDeath"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Hellfirebullet_PixelDeath",
+									"sid": 380706057232671
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Player_PixelDeath",
+									"sid": 874850467142291,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 208672285381891
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "firebullet_PixelDeath",
+									"sid": 858337963678544,
+									"parameters": {
+										"object": "Player_PixelDeath"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "firebullet_PixelDeath",
+									"sid": 699035558162326
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Player_PixelDeath",
+									"sid": 777576303812740,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 289367847102881
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "If round is over, the intermission will be visible, if not then intermission will be invisible"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 589815563731895,
+							"parameters": {
+								"variable": "RoundOver"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 475879809859857,
+							"parameters": {
+								"variable": "CurrentRound",
+								"comparison": 5,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Intermission_PixelDeath",
+							"sid": 879178258980197,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 818838678788948
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 812776192742246
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Intermission_PixelDeath",
+							"sid": 415582281536646,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 145136155370541
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Hellfirebullet_PixelDeath",
+							"sid": 997214010246995,
+							"parameters": {
+								"object": "Walls_PixelDeath"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Hellfirebullet_PixelDeath",
+							"sid": 193127595433890
+						}
+					],
+					"sid": 992899678414490
+				}
+			],
+			"sid": 671202314661515
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "2D camera",
+			"description": "Enable this group to see the game from a top-down 2D perspective.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "In 2D mode, just scroll to the player normally. Also set all the billboards to show their back faces instead of their right faces, to make it clearer what is going on."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 576321724220281
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-object",
+							"objectClass": "System",
+							"sid": 720692642196197,
+							"parameters": {
+								"object": "Player_PixelDeath"
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Goliath_PixelDeath",
+							"sid": 298186604150327,
+							"parameters": {
+								"face": "back",
+								"visible": true
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Goliath_PixelDeath",
+							"sid": 176265855617409,
+							"parameters": {
+								"face": "right",
+								"visible": false
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 514036738637942,
+							"parameters": {
+								"face": "back",
+								"visible": true
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 917338935174224,
+							"parameters": {
+								"face": "right",
+								"visible": false
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "PuffBillboard_PixelDeath",
+							"sid": 403018087227399,
+							"parameters": {
+								"face": "back",
+								"visible": true
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "PuffBillboard_PixelDeath",
+							"sid": 594380683106792,
+							"parameters": {
+								"face": "right",
+								"visible": false
+							}
+						}
+					],
+					"sid": 675638712885857,
+					"disabled": true
+				}
+			],
+			"sid": 692922017293163
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "General",
+			"description": "Event blocks that implement the gameplay regardless of the type of view.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "On start of layout the controls are visible, when q is pressed text goes invisible"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 659256079963113,
+							"parameters": {
+								"key": 90
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Controls_PixelDeath",
+							"sid": 341119449021001,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 752065236853088
+				},
+				{
+					"eventType": "comment",
+					"text": "Always make the enemy objects look towards the player, for a billboard style appearance."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 229377728376833
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 848769312994596,
+							"parameters": {
+								"x": "Player_PixelDeath.X",
+								"y": "Player_PixelDeath.Y"
+							}
+						}
+					],
+					"sid": 857996488139001
+				},
+				{
+					"eventType": "comment",
+					"text": "Shoot bullets when pressing spacebar. Note the bullet is also a 3D shape using just the right face for a billboard style appearance. It is also Z elevated slightly so it comes out just below the player's viewpoint."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 906520702174670,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_PixelDeath",
+							"sid": 437847952813917,
+							"parameters": {
+								"object": "Bullet_PixelDeath",
+								"layer": "\"Player\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 577932189226284,
+							"parameters": {
+								"degrees": "random(-1, 1)"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 968781096046314,
+							"parameters": {
+								"width": "5"
+							}
+						},
+						{
+							"id": "set-z-height",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 591876921209846,
+							"parameters": {
+								"z-height": "2"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 634787534137687,
+							"parameters": {
+								"z": "5"
+							}
+						}
+					],
+					"sid": 811491862439099
+				},
+				{
+					"eventType": "comment",
+					"text": "When a bullet collides with the scenery, destroy it."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 382745239721883,
+							"parameters": {
+								"object": "Walls_PixelDeath"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "Walls_PixelDeath",
+							"sid": 565709550794660,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 0,
+								"z-elevation": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 427396456306682
+						}
+					],
+					"sid": 980042429048093
+				},
+				{
+					"eventType": "comment",
+					"text": "When a bullet collides with a enemy, subtracts from health, make it flash, and destroy the bullet"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 694608921492737,
+							"parameters": {
+								"object": "Enemies_PixelDeath"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 251695293481390,
+							"parameters": {
+								"instance-variable": "EnemyHealth",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bullet_PixelDeath",
+							"sid": 560273244199334
+						},
+						{
+							"id": "flash",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 947868709304246,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.05",
+								"off-time": "0.05",
+								"duration": "0.4"
+							}
+						}
+					],
+					"sid": 405935260311020
+				},
+				{
+					"eventType": "comment",
+					"text": "If a enemy gets hit by a bullet a certain amount of times, destroy it and create a \"puff\" billboard in its place as a disappearing animation (the \"puff\" object has the Fade behavior so it fades out)."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 112410334154986,
+							"parameters": {
+								"instance-variable": "EnemyHealth",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 244043205048756,
+							"parameters": {
+								"object-to-create": "PuffBillboard_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "Enemies_PixelDeath.X",
+								"y": "Enemies_PixelDeath.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "PuffBillboard_PixelDeath",
+							"sid": 529635874028715,
+							"parameters": {
+								"z": "2"
+							}
+						},
+						{
+							"id": "set-z-height",
+							"objectClass": "PuffBillboard_PixelDeath",
+							"sid": 612724641395159,
+							"parameters": {
+								"z-height": "20"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "PuffBillboard_PixelDeath",
+							"sid": 191816467885785,
+							"parameters": {
+								"angle": "Enemies_PixelDeath.Angle"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 720095710773381
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 592510700293770,
+							"parameters": {
+								"variable": "EnemyCount",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 573029323022858,
+							"parameters": {
+								"audio-file": "zapsplat_human_male_man_angry_grunt_growl_frustrated_001_74260 (1)-[AudioTrimmer.com]",
+								"loop": "not-looping",
+								"volume": "5",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 796998622747482
+				}
+			],
+			"sid": 744678447957705
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_PixelDeath",
+							"sid": 930018397369632,
+							"parameters": {
+								"object": "Enemies_PixelDeath"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Player_PixelDeath",
+							"sid": 700556603161847,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 466252547593608,
+							"parameters": {
+								"audio-file": "zapsplat_horror_demonic_voice_male_grunt_001_58814",
+								"loop": "not-looping",
+								"volume": "10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 548508110937013
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_PixelDeath",
+							"sid": 601860207544925,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Player_PixelDeath",
+							"sid": 688163530826785
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 277819186235553,
+							"parameters": {
+								"layout": "Death Screen_PixelDeath"
+							}
+						}
+					],
+					"sid": 908331444229492
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_PixelDeath",
+							"sid": 323712396630547,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 614916818096335,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 776859884321635,
+									"parameters": {
+										"instance-variable": "Hearts",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 936931182095710,
+									"parameters": {
+										"animation": "\"Gone\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 406518137188983
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_PixelDeath",
+							"sid": 517022935795025,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 765990771587985,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 602894401770055,
+									"parameters": {
+										"instance-variable": "Hearts",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 654685797963793,
+									"parameters": {
+										"animation": "\"Gone\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 881362581206132
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_PixelDeath",
+							"sid": 282306925732983,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 869421018807551,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 662089879628028,
+									"parameters": {
+										"instance-variable": "Hearts",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 153682991377460,
+									"parameters": {
+										"animation": "\"Gone\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 483155347634161
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_PixelDeath",
+							"sid": 370205491930662,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 124060509697396,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 158582269981953,
+									"parameters": {
+										"instance-variable": "Hearts",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 951999648264549,
+									"parameters": {
+										"animation": "\"Gone\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Almostdead_PixelDeath",
+									"sid": 249477034228250,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 569981685017048
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_PixelDeath",
+							"sid": 255160213696608,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 733297631682746,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 719615211731412,
+									"parameters": {
+										"instance-variable": "Hearts",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Hearts_PixelDeath",
+									"sid": 358067648351270,
+									"parameters": {
+										"animation": "\"Gone\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 969202614522577
+						}
+					]
+				}
+			],
+			"sid": 482415529068641
+		},
+		{
+			"eventType": "comment",
+			"text": "The function has 2 parameters and uses both, \"EnemyType\" decides which enemy to spawn and the \"LoopCount\" chooses how many enemies to spawn."
+		},
+		{
+			"functionName": "EnemySpawner",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "LoopCount",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 103393349412366
+				},
+				{
+					"name": "EnemyType",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 420074295423778
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "repeat",
+					"objectClass": "System",
+					"sid": 127192891164814,
+					"parameters": {
+						"count": "LoopCount"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 751828136840054,
+					"parameters": {
+						"variable": "EnemyCount",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 399902846593822,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 566601345896870,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"goliath\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 478810547165796,
+							"parameters": {
+								"object-to-create": "Goliath_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(100,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Goliath_PixelDeath",
+							"sid": 194989921192882,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 719042625867633
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 713011010406314,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"fledgling\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 846186235091155,
+							"parameters": {
+								"object-to-create": "Fledgling_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(100,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Fledgling_PixelDeath",
+							"sid": 504896480127431,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 595098955739390
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 541555132555703,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"imp\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 481826863262522,
+							"parameters": {
+								"object-to-create": "IMP_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(100,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "IMP_PixelDeath",
+							"sid": 549590982414954,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 117486071202911
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 683608644946742,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"Boss1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 654490765861558,
+							"parameters": {
+								"object-to-create": "Overlord_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(100,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Overlord_PixelDeath",
+							"sid": 521309542406057,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 311044185179315
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 901503765125820,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"Boss2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 411779350675487,
+							"parameters": {
+								"object-to-create": "Clawer_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(100,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Clawer_PixelDeath",
+							"sid": 764005896694682,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 860572588153333
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 584888371731069,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"Boss3\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 463473538521406,
+							"parameters": {
+								"object-to-create": "Archdemon_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(100,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Archdemon_PixelDeath",
+							"sid": 513118760770013,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 799072807410044
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 377020571105128,
+							"parameters": {
+								"variable": "EnemyType",
+								"comparison": 0,
+								"value": "\"skewer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 765651535945408,
+							"parameters": {
+								"object-to-create": "Skewer_PixelDeath",
+								"layer": "\"Billboards\"",
+								"x": "random(20,1500)",
+								"y": "random(200,800)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-face-visible",
+							"objectClass": "Skewer_PixelDeath",
+							"sid": 930078573924900,
+							"parameters": {
+								"face": "back",
+								"visible": false
+							}
+						}
+					],
+					"sid": 531790347628874
+				},
+				{
+					"eventType": "comment",
+					"text": "enemy was spawned over the wall. "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 917078217884876,
+							"parameters": {
+								"object": "Enemies_PixelDeath"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-z-elevation",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 854381367985329,
+							"parameters": {
+								"z": "0"
+							}
+						}
+					],
+					"sid": 999437043439422,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Enemies_PixelDeath",
+									"sid": 531078918497773,
+									"parameters": {
+										"object": "Ground_PixelDeath"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 708049108489126,
+									"parameters": {
+										"variable": "LoopCount",
+										"value": "1"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 555273810614158,
+									"parameters": {
+										"variable": "EnemyCount",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 679065299359108
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Rounds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 259878225771965,
+							"parameters": {
+								"variable": "EnemyCount",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 936618274593869,
+							"parameters": {
+								"variable": "RoundOver",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 242112346137702
+				}
+			],
+			"sid": 617639091385758
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Audio",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "These events/actions is what allows the audio to be played"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 380988183560025,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 521747421136644,
+							"parameters": {
+								"audio-file": "weapon_gun_ak_47_C_42 (1) 2-[AudioTrimmer.com]",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 530903541579071
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemies_PixelDeath",
+							"sid": 987687741178980,
+							"parameters": {
+								"instance-variable": "EnemyHealth",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 259304827855033,
+							"parameters": {
+								"audio-file": "zapsplat_human_male_man_angry_grunt_growl_frustrated_001_74260 (1)-[AudioTrimmer.com]",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 350758528130255
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 270729993997666
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 263570667545014,
+							"parameters": {
+								"audio-file": "retro_metal",
+								"loop": "looping",
+								"volume": "10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 697943539539836
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 649865074982619
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 729911119006684
+						}
+					],
+					"sid": 186250730116977
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 436709548731903,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 103194431383696,
+							"parameters": {
+								"audio-file": "zapsplat_horror_demonic_voice_male_deep_says_die_001_58800",
+								"loop": "not-looping",
+								"volume": "10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 320409245030962
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 287871099279176,
+							"parameters": {
+								"key": 67
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 921230011246227,
+							"parameters": {
+								"audio-file": "zapsplat_horror_demonic_voice_male_deep_says_youre_going_to_hell_001_58811",
+								"loop": "not-looping",
+								"volume": "10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 606420095029732
+				}
+			],
+			"sid": 524387912069343
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 363997055609330
+}

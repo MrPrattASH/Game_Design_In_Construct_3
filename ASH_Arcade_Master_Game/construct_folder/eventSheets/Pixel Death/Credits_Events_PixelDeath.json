@@ -1,0 +1,80 @@
+{
+	"name": "Credits_Events_PixelDeath",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 381344095191899
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 344842646687817,
+					"parameters": {
+						"audio-file": "20J01m1_Obsidian001_AmbientLoop_WAV16bit",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 324536282286956
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 183386270894283
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 701319443328668,
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 457686134809138
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 438680262284560,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 297130128898170,
+					"parameters": {
+						"layout": "Pixelated Hell"
+					}
+				}
+			],
+			"sid": 499529117153024
+		}
+	],
+	"sid": 809140889592152
+}

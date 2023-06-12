@@ -1,0 +1,45 @@
+{
+	"name": "WindSpawner_ttd",
+	"plugin-id": "Sprite",
+	"sid": 659706858211794,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "WindType",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 809212152882920
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1201640,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 482536755408962,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,84 @@
+{
+	"name": "MenuPlayButton_ttd",
+	"plugin-id": "Sprite",
+	"sid": 509126386121200,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 33,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5524356,
+						"collisionPoly": {
+							"points": [
+								0.041666666666666664,
+								0,
+								1,
+								0,
+								1,
+								0.8484848484848485,
+								0.052083333333333336,
+								0.8484848484848485
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 703947638087554,
+				"name": "Unpressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 96,
+						"height": 33,
+						"originX": 0,
+						"originY": 0.030303030303030304,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2033689,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.9479166666666666,
+								0,
+								0.9479166666666666,
+								0.8484848484848485,
+								0,
+								0.8484848484848485
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 963441623346213,
+				"name": "Press",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

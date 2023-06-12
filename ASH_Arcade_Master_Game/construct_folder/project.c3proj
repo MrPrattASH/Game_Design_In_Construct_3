@@ -1,0 +1,1767 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 34402,
+	"name": "Arcade_Master_Game",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AdvancedRandom",
+			"name": "Advanced Random",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Camera3D",
+			"name": "3D camera",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Shape3D",
+			"name": "3D shape",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "progressbar",
+			"name": "Progress bar",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Car",
+			"name": "Car",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "TileMovement",
+			"name": "Tile movement",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Turret",
+			"name": "Turret",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "destroy",
+			"name": "Destroy outside layout",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowvertical",
+			"name": "Glow vertical",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "kgmbor4tj32",
+	"objectTypes": {
+		"items": [
+			"scroll_to_sprite_scaling"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"X",
+					"Title",
+					"TiledBackground",
+					"Text2",
+					"StartBtn",
+					"ScoreText",
+					"Popup",
+					"Heart",
+					"GUISyringe",
+					"GameOver",
+					"Exit",
+					"Check"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"Player_Animation",
+							"Player_Static",
+							"PlayerBox"
+						],
+						"subfolders": [],
+						"name": "Player"
+					},
+					{
+						"items": [
+							"Apple",
+							"Syringe"
+						],
+						"subfolders": [],
+						"name": "Items"
+					},
+					{
+						"items": [],
+						"subfolders": [],
+						"name": "Input"
+					}
+				],
+				"name": "Apple_A_Day"
+			},
+			{
+				"items": [
+					"Audio",
+					"Keyboard",
+					"Mouse",
+					"Touch",
+					"AJAX",
+					"arcade_buttons",
+					"game_descriptions",
+					"Game_Image",
+					"Games",
+					"Joystick",
+					"Line",
+					"Text",
+					"EscConfirmBackground",
+					"Button",
+					"EscConfirmText",
+					"high_score",
+					"high_scores",
+					"Main_Background_Bg"
+				],
+				"subfolders": [],
+				"name": "Globals"
+			},
+			{
+				"items": [
+					"WIN_cd",
+					"Wall_cd",
+					"Tilemap_cd",
+					"Text_cd1",
+					"Text3_cd3",
+					"Text2_cd2",
+					"Sword_cd",
+					"Sprite_cd1",
+					"Sprite4_cd4",
+					"Sprite3_cd3",
+					"Sprite2_cd2",
+					"Slash_cd",
+					"Slash2_cd",
+					"Puncharm_cd",
+					"Punch_cd",
+					"playerbox_cd",
+					"player_cd",
+					"Oven_cd",
+					"ov_cd",
+					"LOSE_cd",
+					"Lightning_cd",
+					"HP_cd",
+					"HealthBar_cd",
+					"Hammer_cd",
+					"Ground_cd",
+					"Fire_cd",
+					"FAT_cd",
+					"Energy_cd",
+					"EMP_cd",
+					"Drone_cd",
+					"Drill_cd",
+					"Dragon_cd",
+					"Dragon4_cd",
+					"Dragon3_cd",
+					"Dragon2_cd",
+					"Credict_cd",
+					"Bullet_cd",
+					"Bullet2_cd",
+					"bossSolid_cd",
+					"Bossbody_cd",
+					"Bomb_cd",
+					"Blade_cd",
+					"Back_cd",
+					"Arm42",
+					"Arm41",
+					"Arm33",
+					"Arm32",
+					"Arm31",
+					"Arm21",
+					"Arm12",
+					"Arm11",
+					"2floor_cd"
+				],
+				"subfolders": [],
+				"name": "Cloud Dragon"
+			},
+			{
+				"items": [
+					"AAABottom",
+					"AAATop",
+					"AAATop2",
+					"ACTIVAT",
+					"Activation_hola",
+					"AdvancedRandom",
+					"Ammo_hola",
+					"ammoBox_hola",
+					"AmmoCounter_hola",
+					"ARBullet",
+					"ARHUD_hola",
+					"arrow_hola",
+					"Browser",
+					"Crosshair_hola",
+					"elitebox_hola",
+					"Enemybarricade",
+					"Enemybullet_hola",
+					"Enemycamp_hola",
+					"Exit_hola",
+					"Grunt_Box",
+					"GUN2_hola",
+					"GUN_hola",
+					"Healthicon_hola",
+					"Healthpack_hola",
+					"HP_hola",
+					"info_hola",
+					"MPART2",
+					"OBJ",
+					"OBJ2",
+					"Objectivetext_hola",
+					"Pistolbullet",
+					"PistolHUD",
+					"Player_Box_hola",
+					"Playericon_hola",
+					"Plight",
+					"ProgressBar",
+					"Shiedlicon",
+					"Shield_hola",
+					"Sprite2_hola",
+					"Sprite3_hola",
+					"Sprite4_hola",
+					"Sprite5_hola",
+					"Sprite6_hola",
+					"Sprite7_hola",
+					"Sprite_hola",
+					"SpriteFont2_hola",
+					"SpriteFont_hola",
+					"Start_hola",
+					"Text2_hola",
+					"Text3_hola",
+					"Text_hola",
+					"Tilemap2_hola",
+					"Tilemap3_hola",
+					"Tilemap4_hola",
+					"Tilemap_hola",
+					"Tree_hola",
+					"Tutorial_hola"
+				],
+				"subfolders": [],
+				"name": "Hola"
+			},
+			{
+				"items": [
+					"BasicEnemy_DOR",
+					"Button2_DOR",
+					"Button_DOR",
+					"Dialouge_DOR",
+					"DialougeBox_DOR",
+					"Dummy_DOR",
+					"Golem_DOR",
+					"HealthBar_DOR",
+					"Hole_DOR",
+					"Instructions_DOR",
+					"Knight_DOR",
+					"Magma",
+					"Name_DOR",
+					"Pillar_DOR",
+					"RangedEnemie_DOR",
+					"Restart_DOR",
+					"Rules_DOR",
+					"Spell_DOR",
+					"Sprite4_DOR",
+					"Sprite_DOR",
+					"SWORD_DOR",
+					"Tele_DOR",
+					"Text2_DOR",
+					"Text3_DOR",
+					"Text4_DOR",
+					"Text_DOR",
+					"TextBox_DOR",
+					"Tile1_DOR",
+					"Tile2_DOR",
+					"TiledBackground2_DOR",
+					"TiledBackground_DOR",
+					"Wall_DOR",
+					"warning2_DOR",
+					"WARNING_DOR",
+					"Wizard_DOR"
+				],
+				"subfolders": [],
+				"name": "The Dungeon of Rooms"
+			},
+			{
+				"items": [
+					"Waves_PixelDeath",
+					"Walls_PixelDeath",
+					"Title_PixelDeath",
+					"TiledBackground_PixelDeath",
+					"Text_PixelDeath",
+					"Skewer_PixelDeath",
+					"SecretText_PixelDeath",
+					"Secret_PixelDeath",
+					"PuffBillboard_PixelDeath",
+					"Player_PixelDeath",
+					"Overlord_PixelDeath",
+					"Intermission_PixelDeath",
+					"IMP_PixelDeath",
+					"Hellfirebullet_PixelDeath",
+					"Hearts_PixelDeath",
+					"Ground_PixelDeath",
+					"Goliath_PixelDeath",
+					"Fledgling_PixelDeath",
+					"FledgelingT_PixelDeath",
+					"firebullet_PixelDeath",
+					"Enemy_Count_PixelDeath",
+					"DeathScreen_PixelDeath",
+					"Dead_text_PixelDeath",
+					"Credits_PixelDeath",
+					"Controls_PixelDeath",
+					"Clouds_PixelDeath",
+					"Clawer_PixelDeath",
+					"Bullet_PixelDeath",
+					"Bloodmoon_PixelDeath",
+					"ArmoredGoliathT_PixelDeath",
+					"ArchdemonD_PixelDeath",
+					"Archdemon_PixelDeath",
+					"Almostdead_PixelDeath",
+					"3DShape_PixelDeath",
+					"3DCamera"
+				],
+				"subfolders": [],
+				"name": "Pixel Death"
+			},
+			{
+				"items": [
+					"winnerTextSmesh_",
+					"titleSmesh_",
+					"TextSmesh_",
+					"startlayspriteSmesh_",
+					"staminaredSmesh_",
+					"staminapurpleSmesh_",
+					"RopesSmesh_",
+					"redhpbackSmesh_",
+					"redfighterSmesh_",
+					"purplehpbackSmesh_",
+					"purplefighterSmesh_",
+					"playqagainSmesh_",
+					"mainmenuSmesh_",
+					"madebySmesh_",
+					"KnockoutTextSmesh_",
+					"JoytsitckSmesh_",
+					"healthbarredSmesh_",
+					"healthbarpurpleSmesh_",
+					"cutoffSmesh_"
+				],
+				"subfolders": [],
+				"name": "Smesh"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"TileMover_ttd",
+							"TowerPlaceHitbox_ttd",
+							"OpenTile_ttd",
+							"FamilySprite_ttd"
+						],
+						"subfolders": [],
+						"name": "BuildTower"
+					},
+					{
+						"items": [],
+						"subfolders": [],
+						"name": "Control"
+					},
+					{
+						"items": [
+							"PaintSplash_ttd"
+						],
+						"subfolders": [],
+						"name": "DeathAnim"
+					},
+					{
+						"items": [
+							"Bush_ttd",
+							"Flowers1_ttd",
+							"Flowers2_ttd",
+							"Mushroom_ttd",
+							"RiverBorders_ttd",
+							"Tree_ttd",
+							"Water_ttd"
+						],
+						"subfolders": [],
+						"name": "Decor"
+					},
+					{
+						"items": [
+							"Enemy_ttd",
+							"EnemySpawner_ttd",
+							"EnemyTarget_ttd",
+							"Wall_ttd"
+						],
+						"subfolders": [],
+						"name": "EnemyLogic"
+					},
+					{
+						"items": [
+							"GameOverText_ttd",
+							"GameOverBox_ttd"
+						],
+						"subfolders": [],
+						"name": "GameOver"
+					},
+					{
+						"items": [
+							"MenuRoboticsShadow_ttd",
+							"MenuEnglishShadow_ttd",
+							"MenuPlayButton_ttd",
+							"TitleTXT_ttd",
+							"FirstHills_ttd",
+							"DirtPathMenu_ttd",
+							"CreditText_ttd",
+							"GrassMenu_ttd",
+							"MenuEnglishTeacher_ttd",
+							"MenuPaintBrush_ttd",
+							"MenuPainter_ttd",
+							"MenuRoboticsTeacher_ttd",
+							"SecondHills_ttd"
+						],
+						"subfolders": [],
+						"name": "Menu"
+					},
+					{
+						"items": [
+							"NoBuyText_ttd",
+							"NoBuyBox_ttd"
+						],
+						"subfolders": [],
+						"name": "NoBuyText"
+					},
+					{
+						"items": [
+							"NoPlaceBox_ttd",
+							"NoPlaceText_ttd"
+						],
+						"subfolders": [],
+						"name": "NoPlaceText"
+					},
+					{
+						"items": [
+							"Basketball_ttd",
+							"NumbersProjectile_ttd",
+							"PaintbrushProjectile_ttd",
+							"WrenchProjectile_ttd",
+							"BookProjectile_ttd"
+						],
+						"subfolders": [],
+						"name": "Projectiles"
+					},
+					{
+						"items": [
+							"RoundInfoBox_ttd",
+							"RoundInfoText_ttd"
+						],
+						"subfolders": [],
+						"name": "Rounds"
+					},
+					{
+						"items": [
+							"Money_ttd",
+							"AddMoney_ttd",
+							"Lives_ttd"
+						],
+						"subfolders": [],
+						"name": "Scoreboard"
+					},
+					{
+						"items": [
+							"BiologyShop_ttd",
+							"BiologyStats_ttd",
+							"BuyMenu_ttd",
+							"EnglishShop_ttd",
+							"EnglishStats_ttd",
+							"MathShop_ttd",
+							"MathStats_ttd",
+							"PainterShop_ttd",
+							"PainterStats_ttd",
+							"PEShop_ttd",
+							"PEStats_ttd",
+							"RoboticsStats_ttd",
+							"RoboticsShop_ttd",
+							"Shop_ttd",
+							"Text_ttd",
+							"RoboCostTXT_ttd",
+							"PECostTXT_ttd",
+							"MathCostTXT_ttd",
+							"ENGCostTXT_ttd",
+							"BioCostTxt_ttd",
+							"ArtCostTXT_ttd"
+						],
+						"subfolders": [],
+						"name": "Shop"
+					},
+					{
+						"items": [
+							"FrontText_ttd",
+							"FrontText2_ttd"
+						],
+						"subfolders": [],
+						"name": "StartNextRound"
+					},
+					{
+						"items": [
+							"BridgeTilemap_ttd",
+							"DirtTilemap_ttd",
+							"GrassTilemap_ttd",
+							"HillTilemap_ttd"
+						],
+						"subfolders": [],
+						"name": "Tilemaps"
+					},
+					{
+						"items": [
+							"Art_ttd",
+							"Biology_ttd",
+							"English_ttd",
+							"Math_ttd",
+							"PE_ttd",
+							"Robotics_ttd"
+						],
+						"subfolders": [],
+						"name": "Towers"
+					},
+					{
+						"items": [
+							"PETurret_ttd",
+							"ENGTurret_ttd",
+							"ROBOTurret_ttd",
+							"ARTTurret_ttd",
+							"BIOTurret_ttd",
+							"MATurret_ttd"
+						],
+						"subfolders": [],
+						"name": "Turrets"
+					},
+					{
+						"items": [
+							"Tutorial1_ttd",
+							"TutorialSlide1TXT_ttd",
+							"TutorialSlide1TXT2_ttd",
+							"TutorialSlide2Image_ttd",
+							"TutorialSlide2TXT_ttd",
+							"TutorialSlide3Image_ttd",
+							"TutorialSlide3TXT_ttd",
+							"TutorialSlide4TXT1_ttd",
+							"TutorialSlide4TXT2_ttd",
+							"TutorialSlideDisplay_ttd"
+						],
+						"subfolders": [],
+						"name": "Tutorial"
+					},
+					{
+						"items": [
+							"Wind1_ttd",
+							"Wind2_ttd",
+							"WindSpawner_ttd"
+						],
+						"subfolders": [],
+						"name": "Wind"
+					}
+				],
+				"name": "Teacher Tower Defence"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"Enemies_PixelDeath",
+			"OpenTiles_ttd",
+			"TowerMoving_ttd",
+			"Decore_ttd",
+			"Enemies_ttd",
+			"Projectiles_ttd",
+			"ShopFamily_ttd",
+			"Towers_ttd",
+			"Turrets_ttd",
+			"TutorialSlideTXT_ttd",
+			"TutorialSlideImage_ttd"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [],
+				"name": "Teacher Tower Defence"
+			}
+		]
+	},
+	"layouts": {
+		"items": [
+			"Level Select",
+			"High_Score_Screen"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"An Apple a Day",
+					"Game Over_ad"
+				],
+				"subfolders": [],
+				"name": "An Apple a Day"
+			},
+			{
+				"items": [
+					"credit_cd",
+					"LOSE_cd",
+					"Cloud Dragon",
+					"WIN_cd",
+					"B_cd",
+					"Bossf1_cd"
+				],
+				"subfolders": [],
+				"name": "Cloud Dragon"
+			},
+			{
+				"items": [
+					"Hola",
+					"Start_hola",
+					"Part2_hola",
+					"Info_hola"
+				],
+				"subfolders": [],
+				"name": "Hola"
+			},
+			{
+				"items": [
+					"Restart_DOR",
+					"start_unused_DOR",
+					"Level 7_DOR",
+					"Level 6_DOR",
+					"Level 5_DOR",
+					"Level 4_DOR",
+					"Level 3_DOR",
+					"Level 2_DOR",
+					"The Dungeon of Rooms",
+					"Object bank_DOR",
+					"level one_DOR"
+				],
+				"subfolders": [],
+				"name": "The Dungeon of Rooms"
+			},
+			{
+				"items": [
+					"Victory Screen_PixelDeath",
+					"Easter egg_PixelDeath",
+					"Map_PixelDeath",
+					"Pixelated Hell",
+					"Death Screen_PixelDeath",
+					"Credits_PixelDeath",
+					"Object Repo_PixelDeath",
+					"Main Game_PixelDeath"
+				],
+				"subfolders": [],
+				"name": "Pixel Death"
+			},
+			{
+				"items": [
+					"Smesh_gamelayout",
+					"Smesh_endlay",
+					"Smesh Simulator"
+				],
+				"subfolders": [],
+				"name": "Smesh"
+			},
+			{
+				"items": [
+					"ttd_Main",
+					"Teacher Tower Defence"
+				],
+				"subfolders": [],
+				"name": "Teacher Tower Defence"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [
+			"Level_Select_sh",
+			"Level_Switch_Button_funcs",
+			"High_Score_sh"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"apple_game",
+					"apple_gameover"
+				],
+				"subfolders": [],
+				"name": "apple_a_day"
+			},
+			{
+				"items": [
+					"cd_main_sh",
+					"cd_title_screens_sh"
+				],
+				"subfolders": [],
+				"name": "Cloud Dragon"
+			},
+			{
+				"items": [
+					"Title_hola",
+					"Start_hola",
+					"Main_hola",
+					"player_events_hola"
+				],
+				"subfolders": [],
+				"name": "Hola"
+			},
+			{
+				"items": [
+					"start screeen_DOR",
+					"Start code_DOR",
+					"Restart_DOR",
+					"Player logic_DOR",
+					"Level One Code_DOR",
+					"Level 7_DOR",
+					"level 6_DOR",
+					"Level 5_DOR",
+					"Level 4_DOR",
+					"Level 3_DOR",
+					"Level 2_DOR",
+					"Enemy Logic_DOR"
+				],
+				"subfolders": [],
+				"name": "The Dungeon of Rooms"
+			},
+			{
+				"items": [
+					"Credits_Events_PixelDeath",
+					"DeathScreen_Events_PixelDeath",
+					"Maingame_Events_PixelDeath",
+					"MainGameLogic_PixelDeath",
+					"Secret events_PixelDeath",
+					"Title_Events_PixelDeath",
+					"Victory events_PixelDeath"
+				],
+				"subfolders": [],
+				"name": "Pixel Death"
+			},
+			{
+				"items": [
+					"Smesh_startsheet",
+					"Smesh_Player_logic",
+					"Smesh_game sheet",
+					"Smesh_end event sjeet"
+				],
+				"subfolders": [],
+				"name": "Smesh"
+			},
+			{
+				"items": [
+					"ttd_MenuEventSheet",
+					"ttd_MainEventSheet"
+				],
+				"subfolders": [],
+				"name": "Teacher Tower Defence"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "Walking.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 971325200384591,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "spicy sfx.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 853106337641185,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Clcik sfx.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 992586556110137,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bing1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 548482747901272,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "walk.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 211382700436516,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 714941053407925,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 5.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 245511786916484,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 906276826469127,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 780029690773565,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound copy 2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 454401078106049,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (3).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 670266520173638,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (2).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 400126324264848,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (1).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 910048747620640,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound (1) copy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 802456113850516,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Pistol.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 716671233118915,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "enemydeath.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 488157957804331,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Death 2-FX-Alex Rein.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 184483885546396,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "damage.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 162651296716278,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Rain.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 972106780719624,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Retro-8-bit-damage.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 631727047040413,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "startSound (4).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 310099288147412,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Menu Confirm - FX - Alessia.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 675131162213355,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Menu Down - FX - Alessia.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 164797206151906,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Menu Up - FX - Alessia.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 977506860399575,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_human_male_man_angry_grunt_growl_frustrated_001_74260 (1)-[AudioTrimmer.com].webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 694799443875904,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_grunt_001_58814.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 393208484995342,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_deep_says_youre_going_to_hell_002_58812.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 238072762501496,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_deep_says_youre_going_to_hell_001_58811.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 837175052826882,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_deep_says_leave_003_58810.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 738718633694267,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_deep_says_go_away_001_58803.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 344509034600145,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_deep_says_die_001_58800.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 569389737365787,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "weapon_gun_ak_47_C_42 (1) 2-[AudioTrimmer.com].webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 324793405011700,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_ghost_evp_spirit_box_eerie_demonic_noises_glitchy_recorded_lo_fi_processed_58839.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 623083319720084,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Rick Roll Sound Effect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 231991371517564,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "zapsplat_horror_demonic_voice_male_deep_speaking_weird_language_58813.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 556567338833666,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "weapon_gun_ak_47_C_42 (1).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 348307505950742,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "glitch.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 341560855437369,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "retro_metal.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 201263414922316,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "20J01m1_Obsidian001_AmbientLoop_WAV16bit.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 561605003671976,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "jump and run - tropics.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 708417752870860,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "necromancers_tower.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 138286382247303,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MenuTheme.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 898117063848337,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "jump and run - tropics2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 656863668015650,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "necromancers_tower2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 777675835376235,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MenuTheme2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 820365811215228,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "Mexican Song WL.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 539621893966369,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Playful - Loop - Ishan Unadkat .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 797691825225977,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Soft Rock - Loop - Ishan Unadkat .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 305546581461967,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Synthwave - Loop - Ishan Unadkat .webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 249180666181622,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Second Boss Fight_Music_Kealy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 312960706791581,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Home page_Videogame Music Loop_Kealy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 602232618743944,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Enemy Dialouge-FX-Alex Rein.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 529119159530659,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game design Main screem.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 214044030110750,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game design Main theme action.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 732915907466475,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Game design Main theme.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 651268020409894,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 1 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 420035592765548,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 2 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 899512730138698,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wave 3 Loop.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 580367798352243,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bossfight (2).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 154436680239297,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bleeps-and-bloops-classic-arcade-game-116838.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 214364616921652,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "vhs-dreams.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 907048593021969,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Illuminate - Loop - Sem Hendriks.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 743388555443884,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "advanced_pixel-7.ttf",
+					"type": "application/font-sfnt",
+					"sid": 280171275063284,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "TACOM___.TTF",
+					"type": "application/font-sfnt",
+					"sid": 926561510771207,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Halo.ttf",
+					"type": "application/font-sfnt",
+					"sid": 989702855334331,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Pixelmania.ttf",
+					"type": "application/font-sfnt",
+					"sid": 415457591232356,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "nintendo-nes-font.ttf",
+					"type": "application/font-sfnt",
+					"sid": 792953658066059,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Eight-Bit Madness.ttf",
+					"type": "application/font-sfnt",
+					"sid": 688183094207193,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Pixel Emulator.otf",
+					"type": "application/font-sfnt",
+					"sid": 102382106167591,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Pepiacjm.ttf",
+					"type": "application/font-sfnt",
+					"sid": 343588758467702,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Lazer84.ttf",
+					"type": "application/font-sfnt",
+					"sid": 185383186222602,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ARCADECLASSIC.TTF",
+					"type": "application/font-sfnt",
+					"sid": 133782677909777,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 849785259118470,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 908144886956664,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 644537095115560,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 421459549156630,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 845449006399088,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 815075933044975,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 715993773018400,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "file.css",
+					"type": "text/css",
+					"sid": 495043960664241,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				},
+				{
+					"name": "game_list.json",
+					"type": "application/json",
+					"sid": 545322294298066,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "high_scores.json",
+					"type": "application/json",
+					"sid": 304090842276307,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1",
+			"Timeline 2"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "low",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "bilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false,
+		"exportFileStructure": "folders"
+	},
+	"viewportWidth": 1280,
+	"viewportHeight": 720,
+	"firstLayout": "Level Select"
+}

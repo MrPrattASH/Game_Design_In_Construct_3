@@ -1,0 +1,308 @@
+{
+	"name": "Smesh_endlay",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "cutoffSmesh_",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1282,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 671,
+						"y": 393.5,
+						"width": 887,
+						"height": 551.8424057556454,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "winnerTextSmesh_",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "ARCADECLASSIC",
+						"size": 21,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 1283,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 567,
+						"y": 237,
+						"width": 200,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "madebySmesh_",
+					"properties": {
+						"text": "EVERYTHING  MADE  BY  NIKITA  IASHAGASHVILI",
+						"enable-bbcode": true,
+						"font": "ARCADECLASSIC",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0.6666666666666666,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 1284,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 481,
+						"y": 493,
+						"width": 363,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "playqagainSmesh_",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1285,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 644,
+						"y": 335,
+						"width": 130,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "mainmenuSmesh_",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1286,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 645,
+						"y": 383,
+						"width": 128.13723603082252,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TextSmesh_",
+					"properties": {
+						"text": "PLAY AGAIN",
+						"enable-bbcode": true,
+						"font": "ARCADECLASSIC",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 1287,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 602,
+						"y": 323,
+						"width": 200,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TextSmesh_",
+					"properties": {
+						"text": "MAIN MENU",
+						"enable-bbcode": true,
+						"font": "ARCADECLASSIC",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 1288,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 606,
+						"y": 370,
+						"width": 200,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 953075405012523,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 507159318298218,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1280,
+	"height": 720,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "Smesh_end event sjeet"
+}

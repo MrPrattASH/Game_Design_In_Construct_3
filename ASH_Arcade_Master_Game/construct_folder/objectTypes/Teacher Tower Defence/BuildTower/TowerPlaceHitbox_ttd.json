@@ -1,0 +1,57 @@
+{
+	"name": "TowerPlaceHitbox_ttd",
+	"plugin-id": "Sprite",
+	"sid": 828815909542530,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1159159,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								1,
+								0,
+								1,
+								0.3333333333333333,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 949892867525022,
+				"name": "Idle",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			}
+		],
+		"subfolders": []
+	}
+}

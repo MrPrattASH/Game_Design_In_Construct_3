@@ -1,0 +1,72 @@
+{
+	"name": "PainterShop_ttd",
+	"plugin-id": "Sprite",
+	"sid": 263979454125830,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1656693,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3216486,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 263188873203879,
+				"name": "Painter",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 104,
+						"height": 98,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5865294,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 766638917544877,
+				"name": "UpgradePainter",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

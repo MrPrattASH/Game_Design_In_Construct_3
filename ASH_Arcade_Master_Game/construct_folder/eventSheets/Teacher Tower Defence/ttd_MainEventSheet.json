@@ -1,0 +1,6146 @@
+{
+	"name": "ttd_MainEventSheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "variable",
+			"name": "EnemySpawnTime",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 294786271361847
+		},
+		{
+			"eventType": "variable",
+			"name": "TowerMoving",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 955497208375798
+		},
+		{
+			"eventType": "variable",
+			"name": "LookForTile",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 899386463587149
+		},
+		{
+			"eventType": "variable",
+			"name": "TowerToMoveUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 748559357233687
+		},
+		{
+			"eventType": "variable",
+			"name": "EnemyHealth",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 486030928008696
+		},
+		{
+			"eventType": "variable",
+			"name": "TurretRange",
+			"type": "number",
+			"initialValue": "75",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 613943159166078
+		},
+		{
+			"eventType": "variable",
+			"name": "TurretToMoveUID",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 340345214162755
+		},
+		{
+			"eventType": "variable",
+			"name": "MoneyAmount",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 693913236383782
+		},
+		{
+			"eventType": "variable",
+			"name": "MoneyToAdd",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 532859602996644
+		},
+		{
+			"eventType": "variable",
+			"name": "shop",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 522037656878730
+		},
+		{
+			"eventType": "variable",
+			"name": "PETowerCost",
+			"type": "number",
+			"initialValue": "275",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 473804437791553
+		},
+		{
+			"eventType": "variable",
+			"name": "ENGTowerCost",
+			"type": "number",
+			"initialValue": "125",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 796922734650416
+		},
+		{
+			"eventType": "variable",
+			"name": "ROBOTowerCost",
+			"type": "number",
+			"initialValue": "175",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 649449446358708
+		},
+		{
+			"eventType": "variable",
+			"name": "ARTTowerCost",
+			"type": "number",
+			"initialValue": "225",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 760306686415725
+		},
+		{
+			"eventType": "variable",
+			"name": "BIOTowerCost",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 345574127248038
+		},
+		{
+			"eventType": "variable",
+			"name": "MATowerCost",
+			"type": "number",
+			"initialValue": "300",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 434353333566485
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerLives",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 677944433411552
+		},
+		{
+			"eventType": "variable",
+			"name": "PETurretRange",
+			"type": "number",
+			"initialValue": "999",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 507189195276208
+		},
+		{
+			"eventType": "variable",
+			"name": "ENGTurretRange",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 784068266725854
+		},
+		{
+			"eventType": "variable",
+			"name": "ROBOTurretRange",
+			"type": "number",
+			"initialValue": "68",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 384020706996277
+		},
+		{
+			"eventType": "variable",
+			"name": "ARTTurretRange",
+			"type": "number",
+			"initialValue": "50",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 652664205943632
+		},
+		{
+			"eventType": "variable",
+			"name": "DefaultProjectileSpeed",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 763142905651683
+		},
+		{
+			"eventType": "variable",
+			"name": "RoundNumber",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 496872527623983
+		},
+		{
+			"eventType": "variable",
+			"name": "RoundMultiplier",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 580531102054508
+		},
+		{
+			"eventType": "variable",
+			"name": "RoundOneEnemies",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 207019193500148
+		},
+		{
+			"eventType": "variable",
+			"name": "ShowRoundInfo",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 885451379842926
+		},
+		{
+			"eventType": "variable",
+			"name": "ShouldEnemiesSpawn",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 854433384711539
+		},
+		{
+			"eventType": "variable",
+			"name": "IsStartOfLayoutRound",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 606491830610572
+		},
+		{
+			"eventType": "variable",
+			"name": "NumberOfEnemiesTOSpawn",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 840049492815833
+		},
+		{
+			"eventType": "variable",
+			"name": "NumberOfEnemiesSPAWNED",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 213262511301867
+		},
+		{
+			"eventType": "variable",
+			"name": "EnemySpawnCapReached",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 325408971937557
+		},
+		{
+			"eventType": "variable",
+			"name": "HasShownRoundInfo",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 227668545462704
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopRoundMultiplier",
+			"type": "number",
+			"initialValue": "1.05",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 658188256285436
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopRoundNumber",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 154052556927778
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopEnemySpawnCapReached",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 943704148604000
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopNumberOfEnemiesSpawned",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 102184202634896
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopNumberOfEnemiesTOSpawn",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 796280915124079
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopEnemyHealth",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 635394555999111
+		},
+		{
+			"eventType": "variable",
+			"name": "ForLoopEnemySpawnTime",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 384314949075840
+		},
+		{
+			"eventType": "variable",
+			"name": "ShouldLoopContinue",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 543997214825884
+		},
+		{
+			"eventType": "variable",
+			"name": "ShouldCheckNumEnemies",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 147445125649361
+		},
+		{
+			"eventType": "variable",
+			"name": "PreviousTurretRange",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 590936457316997
+		},
+		{
+			"eventType": "variable",
+			"name": "debugdistance",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 172312831619617
+		},
+		{
+			"eventType": "variable",
+			"name": "GameOver",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 308617105195213
+		},
+		{
+			"eventType": "variable",
+			"name": "Tutorial",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 153667494235891
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Build Tower",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Show and move around the tile mover"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 437713340216484,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TileMover_ttd",
+							"sid": 171984413441694,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-solid-collision-filter",
+							"objectClass": "TileMover_ttd",
+							"sid": 889905052816660,
+							"parameters": {
+								"mode": "inclusive",
+								"tags": "\"\""
+							}
+						}
+					],
+					"sid": 271105580363928
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 656923485234591
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TileMover_ttd",
+							"sid": 746140508548574,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 516958207523290
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 873197049517097,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 457908392100021,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "TileMover_ttd",
+							"sid": 255781842699801,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 904590607860644
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 892048037854389,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 242061145359442,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "TileMover_ttd",
+							"sid": 784334312108079,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 223140233538140
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 498635783321320,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 963928376033908,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "TileMover_ttd",
+							"sid": 731837650554155,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 255651414538753
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 731586882477889,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 805126410815685,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "TileMover_ttd",
+							"sid": 404256514555400,
+							"behaviorType": "TileMovement",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 672420628956716
+				},
+				{
+					"eventType": "comment",
+					"text": "Keep the towers 'attatched' to tile mover"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 937247735199959
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 594790550003586,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Towers_ttd",
+							"sid": 308783716713920,
+							"parameters": {
+								"unique-id": "TowerToMoveUID"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Turrets_ttd",
+							"sid": 552035328057256,
+							"parameters": {
+								"unique-id": "TurretToMoveUID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Towers_ttd",
+							"sid": 385055651818114,
+							"parameters": {
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Turrets_ttd",
+							"sid": 102920886249847,
+							"parameters": {
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Turrets_ttd",
+							"sid": 331973603620621,
+							"behaviorType": "Turret",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "OpenTiles_ttd",
+							"sid": 444270516357439,
+							"breakpoint": true,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "TowerPlaceHitbox_ttd",
+							"sid": 620504579481828,
+							"parameters": {
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 14"
+							}
+						}
+					],
+					"sid": 824730326863428
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 474429338753540,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 140368392673676,
+							"parameters": {
+								"variable": "TowerMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 560146720373340,
+							"parameters": {
+								"variable": "LookForTile",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 836398150398890
+				},
+				{
+					"eventType": "comment",
+					"text": "Place the tower, destory the 'avaliable' tile, enable turret"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "TowerPlaceHitbox_ttd",
+							"sid": 971492976110066,
+							"parameters": {
+								"object": "OpenTile_ttd"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 229239934675561,
+							"parameters": {
+								"variable": "LookForTile"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "OpenTile_ttd",
+							"sid": 948900542323457
+						},
+						{
+							"id": "destroy",
+							"objectClass": "TowerMoving_ttd",
+							"sid": 714072655538201
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "OpenTiles_ttd",
+							"sid": 650084043231836,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 528573507276256,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 175129135023591,
+							"parameters": {
+								"variable": "LookForTile",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Turrets_ttd",
+							"sid": 997998646703692,
+							"behaviorType": "Turret",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-range",
+							"objectClass": "Turrets_ttd",
+							"sid": 575274507606715,
+							"behaviorType": "Turret",
+							"parameters": {
+								"range": "TurretRange"
+							}
+						},
+						{
+							"id": "add-object-to-target",
+							"objectClass": "Turrets_ttd",
+							"sid": 885829206702754,
+							"behaviorType": "Turret",
+							"parameters": {
+								"target": "Enemy_ttd"
+							}
+						}
+					],
+					"sid": 833416855157926,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Decore_ttd",
+									"sid": 271039818069367,
+									"parameters": {
+										"object": "OpenTile_ttd"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Decore_ttd",
+									"sid": 863516682064536
+								}
+							],
+							"sid": 867554453688431
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Show 'you may not place this here' text if you cannot place there"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "TowerPlaceHitbox_ttd",
+							"sid": 702171886671753,
+							"parameters": {
+								"object": "OpenTile_ttd"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 141008409387155,
+							"parameters": {
+								"variable": "LookForTile"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 253827467417421,
+							"parameters": {
+								"variable": "LookForTile",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoPlaceBox_ttd",
+							"sid": 173065229097930,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoPlaceText_ttd",
+							"sid": 872071388199357,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoPlaceBox_ttd",
+							"sid": 338637686262365,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoPlaceText_ttd",
+							"sid": 990239802454919,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 121422178045611
+				}
+			],
+			"sid": 711467145337037
+		},
+		{
+			"eventType": "comment",
+			"text": "will make this better if i have time (lets be real its never gonna happen)"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Buy Menu",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "English"
+				},
+				{
+					"eventType": "comment",
+					"text": "Close the Shop, create a turret"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 215508052257400,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 875662697370677,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 223417145297216,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 371983770923803,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 5,
+								"value": "ENGTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 464218557876730,
+							"parameters": {
+								"variable": "shop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 446140099979510,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 911982110906227,
+							"parameters": {
+								"object-name": "\"English_ttd\"",
+								"layer": "\"Towers\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 961201463764229,
+							"parameters": {
+								"variable": "TowerToMoveUID",
+								"value": "English_ttd.UID"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 708555847034740,
+							"parameters": {
+								"object-name": "\"ENGTurret_ttd\"",
+								"layer": "\"Turrets\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y +8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 250939310417634,
+							"parameters": {
+								"variable": "TurretToMoveUID",
+								"value": "ENGTurret_ttd.UID"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 825839630821718,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "ENGTowerCost"
+							}
+						}
+					],
+					"sid": 761811239966374
+				},
+				{
+					"eventType": "comment",
+					"text": "Show the 'you have no money text'"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 421907351451447,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 439448055748260,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 694468830328821,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 762498047827630,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 2,
+								"value": "ENGTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 645846897315795,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 774788450400363,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 326763265246255,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 528171751862334,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 342470440228164
+				},
+				{
+					"eventType": "comment",
+					"text": "Robotics"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 507802602867380,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 969583027728726,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 287483418525168,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 976585398999346,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 5,
+								"value": "ROBOTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 757309978096621,
+							"parameters": {
+								"variable": "shop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 444417624988428,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 856683671657130,
+							"parameters": {
+								"object-name": "\"Robotics_ttd\"",
+								"layer": "\"Towers\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 839116102968043,
+							"parameters": {
+								"variable": "TowerToMoveUID",
+								"value": "Robotics_ttd.UID"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 409182374248144,
+							"parameters": {
+								"object-name": "\"ROBOTurret_ttd\"",
+								"layer": "\"Turrets\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y +8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 987022866029135,
+							"parameters": {
+								"variable": "TurretToMoveUID",
+								"value": "ROBOTurret_ttd.UID"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 441299175261172,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "ROBOTowerCost"
+							}
+						}
+					],
+					"sid": 495168622000617
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 701526661198117,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 635646958144200,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 363986163052978,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 880107512572349,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 2,
+								"value": "ROBOTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 444697015863749,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 230341148678858,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 997329906423117,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 578728398260598,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 951425254468094
+				},
+				{
+					"eventType": "comment",
+					"text": "Art"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 945002523431246,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 184812281367993,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 239418358389187,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 800896495795921,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 5,
+								"value": "ARTTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 322341354120848,
+							"parameters": {
+								"variable": "shop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 555095767636483,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 791836453336481,
+							"parameters": {
+								"object-name": "\"Art_ttd\"",
+								"layer": "\"Towers\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 286145091398615,
+							"parameters": {
+								"variable": "TowerToMoveUID",
+								"value": "Art_ttd.UID"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 488883546730168,
+							"parameters": {
+								"object-name": "\"ARTTurret_ttd\"",
+								"layer": "\"Turrets\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y +8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 894680760893984,
+							"parameters": {
+								"variable": "TurretToMoveUID",
+								"value": "ARTTurret_ttd.UID"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 767652301586740,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "ARTTowerCost"
+							}
+						}
+					],
+					"sid": 983494374406816
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 835473116368398,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 678652936314114,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 664984668143845,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 706430834362253,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 2,
+								"value": "ARTTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 986710884504916,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 625248176010465,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 305305037255172,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 333043010095646,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 504125770684624
+				},
+				{
+					"eventType": "comment",
+					"text": "Biology doesnt really need a turret but i use it later for distance"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 948276338918038,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 938583496166507,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 714009218075805,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 416801597574531,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 5,
+								"value": "BIOTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 252456003744601,
+							"parameters": {
+								"variable": "shop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 940069669994632,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 885160780171052,
+							"parameters": {
+								"object-name": "\"Biology_ttd\"",
+								"layer": "\"Towers\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 888164460555799,
+							"parameters": {
+								"variable": "TowerToMoveUID",
+								"value": "Biology_ttd.UID"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 854841169542553,
+							"parameters": {
+								"object-name": "\"BIOTurret_ttd\"",
+								"layer": "\"Turrets\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y +8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 665056022715452,
+							"parameters": {
+								"variable": "TurretToMoveUID",
+								"value": "BIOTurret_ttd.UID"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 781964885473533,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "BIOTowerCost"
+							}
+						}
+					],
+					"sid": 197717879749080
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 217575830013537,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 892816971045189,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 270897701548984,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 905128944470442,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 2,
+								"value": "BIOTowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 269291295107857,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 996110879276137,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 492827570556905,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 236685301157110,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 735773656165890
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 875655514917171,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 235063129020723,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 364129795056786,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 139692999899162,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 5,
+								"value": "PETowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 252912318985061,
+							"parameters": {
+								"variable": "shop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 280600405699598,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 361499867158968,
+							"parameters": {
+								"object-name": "\"PE_ttd\"",
+								"layer": "\"Towers\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 268918083993767,
+							"parameters": {
+								"variable": "TowerToMoveUID",
+								"value": "PE_ttd.UID"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 468742685490417,
+							"parameters": {
+								"object-name": "\"PETurret_ttd\"",
+								"layer": "\"Turrets\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y +8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 567160139377002,
+							"parameters": {
+								"variable": "TurretToMoveUID",
+								"value": "PETurret_ttd.UID"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 946377705583520,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "PETowerCost"
+							}
+						}
+					],
+					"sid": 834551183708993
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 620762444444853,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 662301291074818,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 198587011667261,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 153827160016747,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 2,
+								"value": "PETowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 788997428687712,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 148904655618702,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 539998930041810,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 174753949174730,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 916192718392652
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 566266377016830,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 857373311048283,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "6"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 979221401709285,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 650564535714047,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 5,
+								"value": "MATowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 803491053124904,
+							"parameters": {
+								"variable": "shop",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 943539810577439,
+							"parameters": {
+								"variable": "TowerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 295143164559705,
+							"parameters": {
+								"object-name": "\"Math_ttd\"",
+								"layer": "\"Towers\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y + 8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 811964944855960,
+							"parameters": {
+								"variable": "TowerToMoveUID",
+								"value": "Math_ttd.UID"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 101324906556902,
+							"parameters": {
+								"object-name": "\"MATurret_ttd\"",
+								"layer": "\"Turrets\"",
+								"x": "TileMover_ttd.X + 12",
+								"y": "TileMover_ttd.Y +8",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 454529647737370,
+							"parameters": {
+								"variable": "TurretToMoveUID",
+								"value": "MATurret_ttd.UID"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 648730458279479,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "MATowerCost"
+							}
+						},
+						{
+							"id": "set-range",
+							"objectClass": "MATurret_ttd",
+							"sid": 173448402221078,
+							"behaviorType": "Turret",
+							"parameters": {
+								"range": "50"
+							}
+						}
+					],
+					"sid": 120798414553108
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 967558167370279,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 780938709717175,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "6"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 325946730579062,
+							"parameters": {
+								"variable": "shop"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 610904611684450,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"comparison": 2,
+								"value": "MATowerCost"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 873170856940003,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 859937164754534,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyBox_ttd",
+							"sid": 915077416915251,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "NoBuyText_ttd",
+							"sid": 206298391622440,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 698428729259467
+				}
+			],
+			"sid": 882727351964787
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Round Display Logic",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Make the 'press C to start next round' text blink"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 436317744887994,
+							"parameters": {
+								"interval-seconds": "0.7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "FrontText_ttd",
+							"sid": 526795598522033,
+							"parameters": {
+								"visibility": "toggle"
+							}
+						}
+					],
+					"sid": 206275631285966
+				},
+				{
+					"eventType": "comment",
+					"text": "This doesnt work for some reason, dont have time to fix it though"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 735850438561897,
+							"parameters": {
+								"variable": "ShowRoundInfo"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 838182741613292,
+							"parameters": {
+								"variable": "ShouldEnemiesSpawn"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 736850631534245,
+							"parameters": {
+								"variable": "HasShownRoundInfo"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 120905986955970,
+							"parameters": {
+								"variable": "HasShownRoundInfo",
+								"value": "true"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 358575866607300,
+							"parameters": {
+								"variable": "RoundNumber",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "RoundInfoText_ttd",
+							"sid": 966294880973894,
+							"parameters": {
+								"text": "\"Round Number \" & RoundNumber"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 635004876512229,
+							"parameters": {
+								"layer": "\"RoundDisplay\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 707114800173656,
+							"parameters": {
+								"layer": "\"Start Next Round\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "RoundInfoBox_ttd",
+							"sid": 887942412654795,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "RoundInfoText_ttd",
+							"sid": 785334434071777,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "RoundInfoBox_ttd",
+							"sid": 190047239343071,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "RoundInfoText_ttd",
+							"sid": 990837677981947,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 892740756824278
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 418523952379559,
+							"parameters": {
+								"variable": "ShowRoundInfo"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 899860599127100,
+							"parameters": {
+								"variable": "IsStartOfLayoutRound"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 373615919082870,
+							"parameters": {
+								"layer": "\"RoundDisplay\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 495853266897057,
+							"parameters": {
+								"layer": "\"Start Next Round\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 696074017933404
+				},
+				{
+					"eventType": "comment",
+					"text": "Play 'battle' music when player starts the round"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 595222031293072,
+							"parameters": {
+								"key": 67
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 483741707141753,
+							"parameters": {
+								"variable": "Tutorial"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 811595497188754,
+							"parameters": {
+								"variable": "GameOver"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 496136439487284,
+							"parameters": {
+								"variable": "ShouldEnemiesSpawn",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 947235005464191,
+							"parameters": {
+								"variable": "IsStartOfLayoutRound",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 772420949333055,
+							"parameters": {
+								"variable": "ShowRoundInfo",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 125005517845721
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 389022092660238,
+							"parameters": {
+								"audio-file": "necromancers_tower",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 829721652118719
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 490919392976897
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 374160839294475,
+							"parameters": {
+								"layer": "\"Start Next Round\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 972229841290572
+				}
+			],
+			"sid": 443405784067354
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Animations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "PE_ttd",
+							"sid": 763606074677709
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PE_ttd",
+							"sid": 514427309411543,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 655671699933333
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "PETurret_ttd",
+							"sid": 779627195437633,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PE_ttd",
+							"sid": 197139700919927,
+							"parameters": {
+								"object": "PETurret_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "PETurret_ttd",
+							"sid": 911394951609525,
+							"parameters": {
+								"object": "Basketball_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "PE_ttd",
+							"sid": 380998831972960,
+							"parameters": {
+								"animation": "\"Throw\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 807870178226246
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "English_ttd",
+							"sid": 203181797792055
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "English_ttd",
+							"sid": 155597490011830,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 471146823796958
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "ENGTurret_ttd",
+							"sid": 542876551018383,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "English_ttd",
+							"sid": 922789449103360,
+							"parameters": {
+								"object": "ENGTurret_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ENGTurret_ttd",
+							"sid": 934276497196256,
+							"parameters": {
+								"object": "BookProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "BookProjectile_ttd",
+							"sid": 844725077123050,
+							"parameters": {
+								"animation": "choose(\"Red\", \"Blue\", \"Green\", \"Yellow\")",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "English_ttd",
+							"sid": 984800661289725,
+							"parameters": {
+								"animation": "\"Throw\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 994272359050207
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Robotics_ttd",
+							"sid": 905613559533205
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Robotics_ttd",
+							"sid": 902698490244561,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 132633026540789
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "ROBOTurret_ttd",
+							"sid": 966507777942469,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Robotics_ttd",
+							"sid": 148855660461432,
+							"parameters": {
+								"object": "ROBOTurret_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ROBOTurret_ttd",
+							"sid": 316216975719822,
+							"parameters": {
+								"object": "WrenchProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Robotics_ttd",
+							"sid": 985490978952285,
+							"parameters": {
+								"animation": "\"Throw\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 962326087597312
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Art_ttd",
+							"sid": 940717312193005
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Art_ttd",
+							"sid": 951706554215792,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 218051781304023
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "ARTTurret_ttd",
+							"sid": 538877155713843,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Art_ttd",
+							"sid": 216068954522808,
+							"parameters": {
+								"object": "ARTTurret_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ARTTurret_ttd",
+							"sid": 751460563274620,
+							"parameters": {
+								"object": "PaintbrushProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Art_ttd",
+							"sid": 888249600030735,
+							"parameters": {
+								"animation": "\"Throw\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 554516718308800
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Math_ttd",
+							"sid": 728840368437764
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Math_ttd",
+							"sid": 436347943060083,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 133900828883084
+				},
+				{
+					"eventType": "comment",
+					"text": "probably THE worst way to do this, gets the job done though"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-shoot",
+							"objectClass": "MATurret_ttd",
+							"sid": 900462835271664,
+							"behaviorType": "Turret"
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Math_ttd",
+							"sid": 518850736760759,
+							"parameters": {
+								"object": "MATurret_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-predictive-aim",
+							"objectClass": "MATurret_ttd",
+							"sid": 928153290867370,
+							"behaviorType": "Turret",
+							"parameters": {
+								"predictive-aim": "disabled"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 882178213863653,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 412872371410860,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 599156932840748,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 588111102570377,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 851191498761469,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 651152383408327,
+							"parameters": {
+								"angle": "45"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 628838208853962,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 932094240620565,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 571960930906985,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 950336188339874,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 249312130450544,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 372771039361855,
+							"parameters": {
+								"angle": "135"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 756356807611800,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 500039148621017,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 115870025749650,
+							"parameters": {
+								"angle": "180"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 580707204536063,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 241969424553869,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 225238864570159,
+							"parameters": {
+								"angle": "225"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 557819191001633,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 149868599296081,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 532840898843980,
+							"parameters": {
+								"angle": "270"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 266061481686243,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 617030858623352,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 732051022408302,
+							"parameters": {
+								"angle": "315"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "MATurret_ttd",
+							"sid": 528463807565613,
+							"parameters": {
+								"object": "NumbersProjectile_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 802523802378543,
+							"parameters": {
+								"animation": "\"\" & round(random(1,10)) & \"\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "NumbersProjectile_ttd",
+							"sid": 446156644092752,
+							"parameters": {
+								"angle": "360"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Math_ttd",
+							"sid": 465877822241645,
+							"parameters": {
+								"animation": "\"Throw\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 191747197529111
+				},
+				{
+					"eventType": "comment",
+					"text": "The following code creates the bio enchant glint and gives a power up with it, disables it if the tower is moved out of range"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 592913862847006,
+							"parameters": {
+								"first-value": "distance(Towers_ttd.X, Towers_ttd.Y, BIOTurret_ttd.X, BIOTurret_ttd.Y)",
+								"comparison": 5,
+								"second-value": "40"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "BIOTurret_ttd",
+							"sid": 166530890044327,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Towers_ttd",
+							"sid": 291182859387519,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"GlowVertical\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Towers_ttd",
+							"sid": 158008016776013,
+							"parameters": {
+								"instance-variable": "HasBioBoost",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 756394764287862,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "i am going insane why does a for loop not work"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 531851572175576,
+							"parameters": {
+								"first-value": "distance(English_ttd.X, English_ttd.Y, BIOTurret_ttd.X, BIOTurret_ttd.Y)",
+								"comparison": 2,
+								"second-value": "40"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "BIOTurret_ttd",
+							"sid": 605912060560318
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "English_ttd",
+							"sid": 633318303663980,
+							"parameters": {
+								"instance-variable": "HasBioBoost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 498792418135238
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "English_ttd",
+							"sid": 113432097544493,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"GlowVertical\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "English_ttd",
+							"sid": 148011226529740,
+							"breakpoint": true,
+							"parameters": {
+								"instance-variable": "HasBioBoost",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 119996205003590
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 164340097346011,
+							"parameters": {
+								"first-value": "distance(Robotics_ttd.X, Robotics_ttd.Y, BIOTurret_ttd.X, BIOTurret_ttd.Y)",
+								"comparison": 2,
+								"second-value": "40"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "BIOTurret_ttd",
+							"sid": 111580443421748
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Robotics_ttd",
+							"sid": 242830529704880,
+							"parameters": {
+								"instance-variable": "HasBioBoost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 394622037434977
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Robotics_ttd",
+							"sid": 423218662959246,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"GlowVertical\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Robotics_ttd",
+							"sid": 673518940511957,
+							"breakpoint": true,
+							"parameters": {
+								"instance-variable": "HasBioBoost",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 895190279011867
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 978580128585746,
+							"parameters": {
+								"first-value": "distance(Art_ttd.X, Art_ttd.Y, BIOTurret_ttd.X, BIOTurret_ttd.Y)",
+								"comparison": 2,
+								"second-value": "40"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "BIOTurret_ttd",
+							"sid": 670516521987785
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Art_ttd",
+							"sid": 175143418219132,
+							"parameters": {
+								"instance-variable": "HasBioBoost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 649022877768600
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Art_ttd",
+							"sid": 845187567565206,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"GlowVertical\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Art_ttd",
+							"sid": 424780128847244,
+							"breakpoint": true,
+							"parameters": {
+								"instance-variable": "HasBioBoost",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 976139393295896
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "BIOTurret_ttd",
+							"sid": 805471070795789
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Biology_ttd",
+							"sid": 445988940477695,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"GlowVertical\""
+							}
+						}
+					],
+					"sid": 422149795218321
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 391995133912497,
+							"parameters": {
+								"first-value": "distance(Math_ttd.X, Math_ttd.Y, BIOTurret_ttd.X, BIOTurret_ttd.Y)",
+								"comparison": 2,
+								"second-value": "40"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "BIOTurret_ttd",
+							"sid": 594032378112787
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Math_ttd",
+							"sid": 252064794303091,
+							"parameters": {
+								"instance-variable": "HasBioBoost"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 507435774410636
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Math_ttd",
+							"sid": 832275635960756,
+							"parameters": {
+								"mode": "enable",
+								"effect": "\"GlowVertical\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Math_ttd",
+							"sid": 948473122426429,
+							"breakpoint": true,
+							"parameters": {
+								"instance-variable": "HasBioBoost",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 695168865961209
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Towers_ttd",
+							"sid": 249199594649319,
+							"parameters": {
+								"instance-variable": "HasBioBoost"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Turrets_ttd",
+							"sid": 504298489368449,
+							"parameters": {
+								"object": "Towers_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate-of-fire",
+							"objectClass": "Turrets_ttd",
+							"sid": 136670584570886,
+							"behaviorType": "Turret",
+							"parameters": {
+								"rate-of-fire": "1.4"
+							}
+						}
+					],
+					"sid": 114499206832068
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 605269153955337
+						}
+					],
+					"actions": [
+						{
+							"id": "set-rate-of-fire",
+							"objectClass": "Turrets_ttd",
+							"sid": 565338614306881,
+							"behaviorType": "Turret",
+							"parameters": {
+								"rate-of-fire": "1"
+							}
+						}
+					],
+					"sid": 795762609548566
+				}
+			],
+			"sid": 219131987814256
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Turrets",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Unfinished range work, only PE and english have different ranges"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 481247647068289
+						}
+					],
+					"actions": [
+						{
+							"id": "add-object-to-target",
+							"objectClass": "Turrets_ttd",
+							"sid": 309875819262971,
+							"behaviorType": "Turret",
+							"parameters": {
+								"target": "Enemy_ttd"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Turrets_ttd",
+							"sid": 240422049354027,
+							"behaviorType": "Turret",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Basketball_ttd",
+							"sid": 954834496674546,
+							"parameters": {
+								"instance-variable": "range",
+								"value": "PETurretRange"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BookProjectile_ttd",
+							"sid": 497311105835526,
+							"parameters": {
+								"instance-variable": "range",
+								"value": "ENGTurretRange"
+							}
+						}
+					],
+					"sid": 643666890442928
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 919304345885231
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Turrets_ttd",
+							"sid": 763434173301011,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Projectiles_ttd",
+							"sid": 640175652016723,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "Projectiles_ttd.speed"
+							}
+						},
+						{
+							"id": "set-range",
+							"objectClass": "PETurret_ttd",
+							"sid": 248192385747384,
+							"behaviorType": "Turret",
+							"parameters": {
+								"range": "PETurretRange"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Basketball_ttd",
+							"sid": 247601655046651,
+							"parameters": {
+								"instance-variable": "range",
+								"value": "PETurretRange"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BookProjectile_ttd",
+							"sid": 869994052217899,
+							"parameters": {
+								"instance-variable": "range",
+								"value": "ENGTurretRange"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Basketball_ttd",
+							"sid": 855487357012540,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "2000"
+							}
+						}
+					],
+					"sid": 619806190590808
+				},
+				{
+					"eventType": "comment",
+					"text": "Prevent bullets from flying everywhere"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-distance-travelled",
+							"objectClass": "Projectiles_ttd",
+							"sid": 932035406630242,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"comparison": 5,
+								"distance": "Projectiles_ttd.range"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Projectiles_ttd",
+							"sid": 847138493748219
+						}
+					],
+					"sid": 265634407423328
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "Projectiles_ttd",
+							"sid": 299964576782914
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Projectiles_ttd",
+							"sid": 155460763403361
+						}
+					],
+					"sid": 261806619898201
+				}
+			],
+			"sid": 521108354395198
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy & related",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Spawn enemy at desired location, pathfind to the end"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy_ttd",
+							"sid": 594008386691902,
+							"parameters": {
+								"object": "EnemyTarget_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy_ttd",
+							"sid": 556136307258358
+						}
+					],
+					"sid": 472613228364128
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 768261504856519
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "Enemy_ttd",
+							"sid": 455414924914953,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "EnemyTarget_ttd.X",
+								"y": "EnemyTarget_ttd.Y"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 780069003767700
+						},
+						{
+							"id": "move-along-path",
+							"objectClass": "Enemy_ttd",
+							"sid": 312279697547322,
+							"behaviorType": "Pathfinding"
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Projectiles_ttd",
+							"sid": 404710509381913,
+							"parameters": {
+								"instance-variable": "speed",
+								"value": "DefaultProjectileSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Projectiles_ttd",
+							"sid": 979261991726939,
+							"parameters": {
+								"instance-variable": "range",
+								"value": "150"
+							}
+						}
+					],
+					"sid": 902670600380423
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy_ttd",
+							"sid": 468406942576265,
+							"parameters": {
+								"object": "Projectiles_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemy_ttd",
+							"sid": 562918012796230,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Projectiles_ttd",
+							"sid": 478287444042245
+						}
+					],
+					"sid": 904837972009319
+				},
+				{
+					"eventType": "comment",
+					"text": "Slows down the enemy if hit from english"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy_ttd",
+							"sid": 345727030990950,
+							"parameters": {
+								"object": "BookProjectile_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "Enemy_ttd",
+							"sid": 730439501537090,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"speed": "40"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 984054164363704,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Enemy_ttd",
+							"sid": 637852991468637,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"speed": "75"
+							}
+						}
+					],
+					"sid": 445926256230385
+				},
+				{
+					"eventType": "comment",
+					"text": "Create the area damage effect"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy_ttd",
+							"sid": 936464331604055,
+							"parameters": {
+								"object": "PaintbrushProjectile_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Enemy_ttd",
+							"sid": 946565131285625,
+							"parameters": {
+								"object": "PaintSplash_ttd",
+								"layer": "\"Bullets\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "PaintSplash_ttd",
+							"sid": 432589343206563,
+							"parameters": {
+								"animation": "\"\" & round(random(1,3))",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "PaintSplash_ttd",
+							"sid": 164649739876399,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 267686343878122
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Enemy_ttd",
+							"sid": 435299146100756,
+							"parameters": {
+								"object": "PaintSplash_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemy_ttd",
+							"sid": 141355037623174,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 667319337178219
+				},
+				{
+					"eventType": "comment",
+					"text": "add money once enemy dies"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 957924324213493,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy_ttd",
+							"sid": 788178846564826
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 854090430773223,
+							"parameters": {
+								"variable": "MoneyAmount",
+								"value": "MoneyToAdd"
+							}
+						},
+						{
+							"id": "create-object-by-name",
+							"objectClass": "System",
+							"sid": 697087090827055,
+							"parameters": {
+								"object-name": "\"AddMoney_ttd\"",
+								"layer": "\"Scoreboard\"",
+								"x": "158",
+								"y": "4",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "AddMoney_ttd",
+							"sid": 707044652698531,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "-90"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "AddMoney_ttd",
+							"sid": 598400243827023,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "AddMoney_ttd",
+							"sid": 786791445372613,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 762259511364110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Enemy_ttd",
+							"sid": 144845478213686,
+							"isInverted": true
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 922959186415885,
+							"parameters": {
+								"first-value": "Enemy_ttd.X",
+								"comparison": 3,
+								"second-value": "100"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 697217601135771,
+							"breakpoint": true,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 771225140863599,
+							"parameters": {
+								"variable": "PlayerLives",
+								"value": "Enemy_ttd.Health"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Enemy_ttd",
+							"sid": 496451266022316
+						}
+					],
+					"sid": 105245782128009
+				},
+				{
+					"eventType": "comment",
+					"text": "If the total number of enemies that HAVE been spawned exceeds the total numnber of enemies that SHOULD be spawned, stop spawning enemies"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 848709455560470,
+							"parameters": {
+								"first-value": "NumberOfEnemiesSPAWNED",
+								"comparison": 5,
+								"second-value": "NumberOfEnemiesTOSpawn"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 443103359817698,
+							"parameters": {
+								"variable": "ShouldCheckNumEnemies"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 635461931021328,
+							"breakpoint": true,
+							"parameters": {
+								"variable": "EnemySpawnCapReached",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 852997230585035,
+							"parameters": {
+								"variable": "ShouldEnemiesSpawn",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 821305887641021,
+							"parameters": {
+								"variable": "NumberOfEnemiesSPAWNED",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 543317473792259,
+							"parameters": {
+								"variable": "ForLoopNumberOfEnemiesSpawned",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 118516723906723,
+							"parameters": {
+								"variable": "ForLoopRoundNumber",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 304558031091779,
+							"parameters": {
+								"variable": "ShouldLoopContinue",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 175012210799201,
+							"parameters": {
+								"variable": "ShouldCheckNumEnemies",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 558481426701999,
+							"parameters": {
+								"variable": "ForLoopEnemyHealth",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 836364143094440
+				},
+				{
+					"eventType": "comment",
+					"text": "Checks whether or not the desired number of a CERTAIN TYPE of enemy has reached is spawn cap, if so move onto the next type of enemy"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 605502377299364,
+							"parameters": {
+								"first-value": "ForLoopNumberOfEnemiesSpawned",
+								"comparison": 5,
+								"second-value": "ForLoopNumberOfEnemiesTOSpawn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 589388502263325,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnCapReached",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 778650588519272
+				},
+				{
+					"eventType": "comment",
+					"text": "Stop the loop from running and set some specific booleans after it stops"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 844464330770259,
+							"parameters": {
+								"first-value": "ForLoopRoundNumber",
+								"comparison": 5,
+								"second-value": "RoundNumber"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 148003138589756,
+							"parameters": {
+								"variable": "ShouldEnemiesSpawn"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 569303855870539,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnCapReached"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 652596629522883,
+							"parameters": {
+								"variable": "NumberOfEnemiesTOSpawn",
+								"value": "ForLoopNumberOfEnemiesTOSpawn"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 846507882910063,
+							"parameters": {
+								"variable": "ShouldCheckNumEnemies",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 966150128960167,
+							"parameters": {
+								"variable": "ShouldLoopContinue",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 249805851185794
+				},
+				{
+					"eventType": "comment",
+					"text": "Spawns multiple types of enemies in one round. Spawns easiest to hardest."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 555045228504655,
+							"parameters": {
+								"name": "\"enemy_from_round\"",
+								"start-index": "1",
+								"end-index": "RoundNumber+3"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 979011872256618,
+							"parameters": {
+								"variable": "ShouldEnemiesSpawn"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 119311065350578,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnCapReached"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 785918195901008,
+							"parameters": {
+								"variable": "ShouldLoopContinue"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 707782321943827,
+							"breakpoint": true,
+							"parameters": {
+								"variable": "ForLoopRoundNumber",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 475430782076324,
+							"parameters": {
+								"variable": "ForLoopEnemyHealth",
+								"value": "ForLoopEnemyHealth* 1.44"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 622127444750181,
+							"parameters": {
+								"variable": "ForLoopNumberOfEnemiesTOSpawn",
+								"value": "ForLoopNumberOfEnemiesTOSpawn * ForLoopRoundMultiplier"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 644750873630854,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnTime",
+								"value": "ForLoopEnemySpawnTime * 0.6"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 546096553014082,
+							"parameters": {
+								"variable": "MoneyToAdd",
+								"value": "ForLoopEnemyHealth * 2.5"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 315964314378070,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnCapReached",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 261589112603307
+				},
+				{
+					"eventType": "comment",
+					"text": "Main spawning mech, just cranks out enemies as its told with round-specific characteristics e.g. health"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 853750257076353,
+							"parameters": {
+								"interval-seconds": "EnemySpawnTime"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 979586493185582,
+							"parameters": {
+								"variable": "ShouldEnemiesSpawn"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 704266620318863,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnCapReached"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 261123370697151,
+							"parameters": {
+								"object-to-create": "Enemy_ttd",
+								"layer": "\"Enemy\"",
+								"x": "EnemySpawner_ttd.X",
+								"y": "EnemySpawner_ttd.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy_ttd",
+							"sid": 377159625201626,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "ForLoopEnemyHealth"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Enemy_ttd",
+							"sid": 637799348691620,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "add-obstacle",
+							"objectClass": "Enemy_ttd",
+							"sid": 417254239474346,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"obstacle": "Wall_ttd"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Enemy_ttd",
+							"sid": 942383984645843,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"speed": "60"
+							}
+						},
+						{
+							"id": "find-path",
+							"objectClass": "Enemy_ttd",
+							"sid": 329488554767162,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "EnemyTarget_ttd.X",
+								"y": "EnemyTarget_ttd.Y"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 984125684102634
+						},
+						{
+							"id": "move-along-path",
+							"objectClass": "Enemy_ttd",
+							"sid": 269805598384198,
+							"breakpoint": true,
+							"behaviorType": "Pathfinding"
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 183526297002700,
+							"parameters": {
+								"variable": "ForLoopNumberOfEnemiesSpawned",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 491873248676395,
+							"parameters": {
+								"variable": "NumberOfEnemiesSPAWNED",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 232332918091896
+				},
+				{
+					"eventType": "comment",
+					"text": "Once enemies stop spawning for that round, play some nice music and start the 'build' phase"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 560068910336158,
+							"parameters": {
+								"variable": "EnemySpawnCapReached"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 820336949044773,
+							"parameters": {
+								"first-value": "Enemy_ttd.Count",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 941521225122471,
+							"parameters": {
+								"variable": "EnemySpawnCapReached",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 604865218313641,
+							"parameters": {
+								"variable": "HasShownRoundInfo",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 878992043165132,
+							"parameters": {
+								"variable": "ShowRoundInfo",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 923418155974641,
+							"parameters": {
+								"variable": "ForLoopEnemySpawnCapReached",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 309058785052024,
+							"parameters": {
+								"variable": "ShouldLoopContinue",
+								"value": "true"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 656305904729263
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 567141789060047,
+							"parameters": {
+								"audio-file": "jump and run - tropics",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 955539697077051
+				}
+			],
+			"sid": 617487968813514
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scoreboard",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 666060239127155
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Money_ttd",
+							"sid": 705283581054881,
+							"parameters": {
+								"text": "\"Cash:\" & round(MoneyAmount)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "AddMoney_ttd",
+							"sid": 553925753723451,
+							"parameters": {
+								"text": "\"+\" & round(MoneyToAdd)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Lives_ttd",
+							"sid": 123921710314512,
+							"parameters": {
+								"text": "\"Lives:\" & PlayerLives"
+							}
+						}
+					],
+					"sid": 133535902871079
+				}
+			],
+			"sid": 915651205005053
+		},
+		{
+			"eventType": "comment",
+			"text": "Seb's shop code, moves up and down based on arrow key inputs, shows and hides shop"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Shop",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 436692031612213,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 113866107804806,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 4,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Shop_ttd",
+							"sid": 676301453289945,
+							"parameters": {
+								"instance-variable": "index",
+								"value": "Shop_ttd.index-1"
+							}
+						}
+					],
+					"sid": 223152171315335
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 629468365989069,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 981189160750441,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 2,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Shop_ttd",
+							"sid": 943579130367939,
+							"parameters": {
+								"instance-variable": "index",
+								"value": "Shop_ttd.index +1"
+							}
+						}
+					],
+					"sid": 520705676857431
+				},
+				{
+					"eventType": "comment",
+					"text": "English"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 973311924282658,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Shop_ttd",
+							"sid": 972516429366140,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "417",
+								"y": "75",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 808290494831944
+				},
+				{
+					"eventType": "comment",
+					"text": "Robotics"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 521573067458514,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Shop_ttd",
+							"sid": 321588480039189,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "417",
+								"y": "-115",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 872215699062269
+				},
+				{
+					"eventType": "comment",
+					"text": "Art"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 274197635108741,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Shop_ttd",
+							"sid": 799140326535812,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "417",
+								"y": "-305",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 336062653574396
+				},
+				{
+					"eventType": "comment",
+					"text": "Biology"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 421100589043433,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Shop_ttd",
+							"sid": 265187159891658,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "417",
+								"y": "-495",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 241702885127263
+				},
+				{
+					"eventType": "comment",
+					"text": "Basketball"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 163682609378975,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Shop_ttd",
+							"sid": 484373331195240,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "417",
+								"y": "-685",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 747412205639982
+				},
+				{
+					"eventType": "comment",
+					"text": "Math"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Shop_ttd",
+							"sid": 682055004717507,
+							"parameters": {
+								"instance-variable": "index",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "Shop_ttd",
+							"sid": 816102909426183,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "417",
+								"y": "-875",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 808017553354740
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 498940810970097
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Text_ttd",
+							"sid": 522250754949318,
+							"parameters": {
+								"text": "Shop_ttd.index"
+							}
+						}
+					],
+					"sid": 429381203012589
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 454821908743553
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "EnglishShop_ttd",
+							"sid": 463631963268005,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 55"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "EnglishStats_ttd",
+							"sid": 957854579340045,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 140"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "RoboticsShop_ttd",
+							"sid": 247217517586585,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 245"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "RoboticsStats_ttd",
+							"sid": 664309874494029,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 330"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PainterShop_ttd",
+							"sid": 531758261365324,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 435"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PainterStats_ttd",
+							"sid": 793421295905334,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 520"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "BiologyShop_ttd",
+							"sid": 925003817896295,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 625"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "BiologyStats_ttd",
+							"sid": 609086373595797,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 710"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PEShop_ttd",
+							"sid": 881983761094688,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 815"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PEStats_ttd",
+							"sid": 908505622011631,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 900"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "MathShop_ttd",
+							"sid": 373051829856434,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 1005"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "MathStats_ttd",
+							"sid": 720020993747003,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 1090"
+							}
+						}
+					],
+					"sid": 508083354212768
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 617554282958620,
+							"parameters": {
+								"key": 89
+							}
+						}
+					],
+					"actions": [],
+					"sid": 586872930162247,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 480028692273950,
+									"parameters": {
+										"variable": "shop"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 594832677696266,
+									"parameters": {
+										"variable": "shop",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 346354892062410
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 382966763988125
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 471020218548483,
+									"parameters": {
+										"variable": "shop",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 297725630822402
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 687237159261135,
+							"parameters": {
+								"variable": "shop"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "ShopFamily_ttd",
+							"sid": 410760696635080,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 848156431384988
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 921520052833732
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "ShopFamily_ttd",
+							"sid": 996261481722897,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Shop_ttd",
+							"sid": 258160845495831,
+							"parameters": {
+								"instance-variable": "index",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 845026167130796
+				}
+			],
+			"sid": 160617723478991
+		},
+		{
+			"eventType": "comment",
+			"text": "Seb's wind code, just spawns wind"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Wind",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 170447973110349,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "WindSpawner_ttd",
+							"sid": 269102146725262,
+							"parameters": {
+								"x": "random(0, 480)"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "WindSpawner_ttd",
+							"sid": 174181909152039,
+							"parameters": {
+								"y": "random(0, 270)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "WindSpawner_ttd",
+							"sid": 367733832521872,
+							"parameters": {
+								"instance-variable": "WindType",
+								"value": "choose(\"Wind1\", \"Wind2\")"
+							}
+						}
+					],
+					"sid": 578832203109306,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "WindSpawner_ttd",
+									"sid": 264224148540228,
+									"parameters": {
+										"instance-variable": "WindType",
+										"comparison": 0,
+										"value": "\"Wind1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "WindSpawner_ttd",
+									"sid": 101515480890601,
+									"parameters": {
+										"object": "Wind1_ttd",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 899204013816117,
+									"parameters": {
+										"seconds": "2.75"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Wind1_ttd",
+									"sid": 400155312708928
+								}
+							],
+							"sid": 910744326166939
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "WindSpawner_ttd",
+									"sid": 485291839914433,
+									"parameters": {
+										"instance-variable": "WindType",
+										"comparison": 0,
+										"value": "\"Wind2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "WindSpawner_ttd",
+									"sid": 985043386444072,
+									"parameters": {
+										"object": "Wind2_ttd",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 863796560263744,
+									"parameters": {
+										"seconds": "1.8"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Wind2_ttd",
+									"sid": 514400878422294
+								}
+							],
+							"sid": 993912986107334
+						}
+					]
+				}
+			],
+			"sid": 968697034052406
+		},
+		{
+			"eventType": "comment",
+			"text": "Changes appearance of student based on how much health they have"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Student Animations",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 187197943118207,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 590676336290786,
+							"parameters": {
+								"animation": "\"20\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 740675342860615
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 253937252606162,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "14"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 855692029764271,
+							"parameters": {
+								"animation": "\"14\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 633039929050872
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 304113572742413,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 107240076988630,
+							"parameters": {
+								"animation": "\"10\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 346063287124034
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 354954737483614,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 148544650714892,
+							"parameters": {
+								"animation": "\"7\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 861954872002233
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 735795709055613,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 144725001504750,
+							"parameters": {
+								"animation": "\"5\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 422604326823451
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 545815111316265,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 823483741183336,
+							"parameters": {
+								"animation": "\"4\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 372254359160590
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 771077659766468,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 471423190949622,
+							"parameters": {
+								"animation": "\"3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 343540441852317
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 450181566221711,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 460920002709089,
+							"parameters": {
+								"animation": "\"2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 573030290248764
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_ttd",
+							"sid": 448901733047928,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_ttd",
+							"sid": 557519308474891,
+							"parameters": {
+								"animation": "\"1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 708846971567921
+				}
+			],
+			"sid": 983647093913470
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 913889693712193
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 680950085041088
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 333172810031313,
+					"parameters": {
+						"audio-file": "jump and run - tropics",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 317337964839857,
+					"parameters": {
+						"scale": "2.7"
+					}
+				}
+			],
+			"sid": 451826575039827
+		},
+		{
+			"eventType": "comment",
+			"text": "Restart game once player dies"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Over",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 850928475223425,
+							"parameters": {
+								"first-value": "PlayerLives",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 501516084676086,
+							"parameters": {
+								"layer": "\"Game Over\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 859126362680183,
+							"parameters": {
+								"variable": "GameOver",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 621135395282544
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 337663160940795,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 330383560897241,
+							"parameters": {
+								"variable": "GameOver"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 898510659632893,
+							"parameters": {
+								"object": "Enemy_ttd"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 474604862534142,
+							"parameters": {
+								"object": "Towers_ttd"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 269686687964053,
+							"parameters": {
+								"layer": "\"Game Over\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 207919785846854
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Enemy_ttd",
+							"sid": 782522883472082
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Towers_ttd",
+							"sid": 379443388599163
+						}
+					],
+					"sid": 258843918768351
+				}
+			],
+			"sid": 169003024099038
+		},
+		{
+			"eventType": "comment",
+			"text": "Seb's tutorial code, goes through a slideshow that teaches the player how to paly"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Tutorial",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 808967265137754,
+							"parameters": {
+								"variable": "Tutorial"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Tutorial1_ttd",
+							"sid": 951905020576189,
+							"parameters": {
+								"instance-variable": "SlidesNumber",
+								"comparison": 3,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TutorialSlideChange",
+							"sid": 968154010357364
+						}
+					],
+					"sid": 563380139239324,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 875629769227188,
+									"parameters": {
+										"key": 90
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 514868995710830,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "TutorialSlideChange",
+									"sid": 535585559807020
+								}
+							],
+							"sid": 340237659480306
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 126758474101148,
+									"parameters": {
+										"key": 69
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 966806793014704,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 951361204326681,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "TutorialSlideChange",
+									"sid": 223184904179651
+								}
+							],
+							"sid": 322167532416015
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 145778794317535
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "End Tutorial",
+							"sid": 301000834920309
+						}
+					],
+					"sid": 877664990962679
+				},
+				{
+					"functionName": "TutorialSlideChange",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "TutorialSlideTXT_ttd",
+							"sid": 182912050962744,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TutorialSlideImage_ttd",
+							"sid": 169370734933523,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 208800193466551,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 771438642248516,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide1TXT_ttd",
+									"sid": 360467832179433,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide1TXT2_ttd",
+									"sid": 287191839776259,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TutorialSlideDisplay_ttd",
+									"sid": 594557434342348,
+									"parameters": {
+										"animation": "\"Slide 1\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 987382393631537
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 629119646315177,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide2Image_ttd",
+									"sid": 846217469710717,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide2TXT_ttd",
+									"sid": 686909372215851,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "TutorialSlideDisplay_ttd",
+									"sid": 131308285668928,
+									"parameters": {
+										"animation": "\"Slide 2\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 990293686606777
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 393270176273342,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TutorialSlideDisplay_ttd",
+									"sid": 833624203236371,
+									"parameters": {
+										"animation": "\"Slide 3\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide3TXT_ttd",
+									"sid": 909576846974400,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide3Image_ttd",
+									"sid": 830914235743737,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 491774093829101
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Tutorial1_ttd",
+									"sid": 827636948087725,
+									"parameters": {
+										"instance-variable": "SlidesNumber",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "TutorialSlideDisplay_ttd",
+									"sid": 674320785498910,
+									"parameters": {
+										"animation": "\"Slide 4\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide4TXT1_ttd",
+									"sid": 259619975270698,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "TutorialSlide4TXT2_ttd",
+									"sid": 913074947812816,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 202375064228976
+						}
+					]
+				},
+				{
+					"functionName": "End Tutorial",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 666918859728304,
+							"parameters": {
+								"variable": "Tutorial",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Tutorial1_ttd",
+							"sid": 310261084094394,
+							"parameters": {
+								"instance-variable": "SlidesNumber",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TutorialSlideTXT_ttd",
+							"sid": 109193787590729,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Tutorial1_ttd",
+							"sid": 307442430639562,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "TutorialSlideDisplay_ttd",
+							"sid": 846851724170492,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 391106282724330
+				}
+			],
+			"sid": 138625680822212
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BuyMenuCOSTCODE",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 615439685551528
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "ENGCostTXT_ttd",
+							"sid": 603935735958274,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "RoboCostTXT_ttd",
+							"sid": 685560743440336,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 205"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ArtCostTXT_ttd",
+							"sid": 950654030296255,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 395"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "BioCostTxt_ttd",
+							"sid": 142654807425498,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 585"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PECostTXT_ttd",
+							"sid": 871869679923995,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 775"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "MathCostTXT_ttd",
+							"sid": 112037098565769,
+							"parameters": {
+								"x": "420",
+								"y": "Shop_ttd.Y + 965"
+							}
+						}
+					],
+					"sid": 319934176349322
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 829950998552998,
+							"parameters": {
+								"variable": "shop"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "ENGCostTXT_ttd",
+							"sid": 504252661619744,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "RoboCostTXT_ttd",
+							"sid": 679752522194845,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ArtCostTXT_ttd",
+							"sid": 933303000519608,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PECostTXT_ttd",
+							"sid": 571776383190677,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BioCostTxt_ttd",
+							"sid": 693198729018459,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "MathCostTXT_ttd",
+							"sid": 518013262397295,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 325366663061726
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 219297466206081
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "ENGCostTXT_ttd",
+							"sid": 618211355935988,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "RoboCostTXT_ttd",
+							"sid": 447358647467147,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ArtCostTXT_ttd",
+							"sid": 136528505812623,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "PECostTXT_ttd",
+							"sid": 948323022179594,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "BioCostTxt_ttd",
+							"sid": 606315596493992,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "MathCostTXT_ttd",
+							"sid": 779766691965802,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 348466682969281
+				}
+			],
+			"sid": 480394624853880
+		}
+	],
+	"sid": 547706746623428
+}

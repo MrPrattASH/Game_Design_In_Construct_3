@@ -1,0 +1,108 @@
+{
+	"name": "Bullet_PixelDeath",
+	"plugin-id": "Shape3D",
+	"sid": 289437546793616,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 178272739700673
+		},
+		{
+			"behaviorId": "destroy",
+			"name": "DestroyOutsideLayout",
+			"sid": 608154774420012
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 70,
+						"originX": 1.46,
+						"originY": 0.5071428571428571,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2688265,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 91,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 692923,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 91,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7097129,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 50,
+						"height": 70,
+						"originX": 0.56,
+						"originY": 0.5142857142857142,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6517913,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 91,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7094223,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 91,
+						"height": 93,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7155016,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 238301916052287,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

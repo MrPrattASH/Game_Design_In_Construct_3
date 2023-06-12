@@ -1,0 +1,15 @@
+{
+	"name": "RoundInfoText_ttd",
+	"plugin-id": "Text",
+	"sid": 101766064253450,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 736660117598160
+		}
+	],
+	"effectTypes": []
+}

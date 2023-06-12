@@ -1,0 +1,45 @@
+{
+	"name": "healthbarredSmesh_",
+	"plugin-id": "Sprite",
+	"sid": 882498120993151,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "desiredwidth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 955931848549375
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9535278,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 632704161535583,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,57 @@
+{
+	"name": "Flowers1_ttd",
+	"plugin-id": "Sprite",
+	"sid": 691015956415402,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "FlowerAnimation",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 530373956336208
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 13,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9375382,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 13,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5574756,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 564199400582238,
+				"name": "Animation1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			}
+		],
+		"subfolders": []
+	}
+}

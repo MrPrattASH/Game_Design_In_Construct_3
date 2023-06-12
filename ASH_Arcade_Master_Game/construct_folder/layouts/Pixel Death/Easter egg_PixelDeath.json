@@ -1,0 +1,121 @@
+{
+	"name": "Easter egg_PixelDeath",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Secret_PixelDeath",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 647,
+						"y": 358,
+						"width": 855,
+						"height": 480,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "SecretText_PixelDeath",
+					"properties": {
+						"text": "You just got rick rolled... How?.. The instructions was to press to press the blue button, not the Black. You can return back to the main screen, but make sure you press the BLUE button this time.   ",
+						"enable-bbcode": true,
+						"font": "Pixel Emulator",
+						"size": 24,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9490196078431372,
+							0.027450980392156862,
+							0.027450980392156862,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 48,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 300,
+						"y": 203,
+						"width": 706,
+						"height": 425,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 661781005241675,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.0196078431372549,
+				0.0196078431372549,
+				0.0196078431372549,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 134434592227574,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1708,
+	"height": 960,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "Secret events_PixelDeath"
+}

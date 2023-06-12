@@ -1,0 +1,188 @@
+{
+	"name": "Smesh_end event sjeet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 876653646555241,
+					"parameters": {
+						"variable": "redhp",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "winnerTextSmesh_",
+					"sid": 420365044061868,
+					"parameters": {
+						"text": "\"PURPLE WINS\""
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "winnerTextSmesh_",
+					"sid": 222838432841848,
+					"parameters": {
+						"color": "rgb(191, 64, 191)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "winnerTextSmesh_",
+					"sid": 179533330551813,
+					"parameters": {
+						"x": "180",
+						"y": "5"
+					}
+				}
+			],
+			"sid": 718705383271549
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 418906803803129,
+					"parameters": {
+						"variable": "purplehp",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "winnerTextSmesh_",
+					"sid": 466510761417969,
+					"parameters": {
+						"text": "\"RED WINS\""
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "winnerTextSmesh_",
+					"sid": 978292116208058,
+					"parameters": {
+						"color": "rgb(255,0,0)\n"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "winnerTextSmesh_",
+					"sid": 685292952435999,
+					"parameters": {
+						"x": "198",
+						"y": "5"
+					}
+				}
+			],
+			"sid": 788963365913488
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 916002555404803,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 284391673432102,
+					"parameters": {
+						"key": 85
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 824633942345008,
+					"parameters": {
+						"layout": "Smesh_gamelayout"
+					}
+				}
+			],
+			"sid": 914836616396135,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 499566560744954,
+					"parameters": {
+						"key": 90
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 446658791204545,
+					"parameters": {
+						"key": 73
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 961286492012325,
+					"parameters": {
+						"layout": "Smesh Simulator"
+					}
+				}
+			],
+			"sid": 235551621701119,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 166344204326374
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 536639421624732,
+					"parameters": {
+						"scale": "2"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 148831239946741
+				}
+			],
+			"sid": 303363970684161
+		}
+	],
+	"sid": 704807990238762
+}

@@ -1,0 +1,642 @@
+{
+	"name": "Level Select",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Game_Image",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "An Apple a Day",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"instanceVariables": {
+						"game_title": "",
+						"Image_Num": 0
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 638,
+						"y": 296,
+						"width": 427.5006625632158,
+						"height": 427.5006625632158,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Game_Image",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "An Apple a Day",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 64,
+					"instanceVariables": {
+						"game_title": "",
+						"Image_Num": 1
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 183,
+						"y": 318,
+						"width": 177.96024301893272,
+						"height": 177.96024301893272,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Game_Image",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "An Apple a Day",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 70,
+					"instanceVariables": {
+						"game_title": "",
+						"Image_Num": 2
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1096.0014420363977,
+						"y": 319.99855796360225,
+						"width": 173.3645010088024,
+						"height": 173.3645010088024,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Joystick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 80,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 220,
+						"y": -166,
+						"width": 93,
+						"height": 201,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "arcade_buttons",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "blue",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 424,
+						"y": -191,
+						"width": 92,
+						"height": 58,
+						"originX": 0.5,
+						"originY": 0.4827586206896553,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 535013340654484,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Bg",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Main_Background_Bg",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 3,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1280,
+						"height": 720,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 427118919191606,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Text",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Text",
+					"properties": {
+						"text": "GAME\nDESIGN",
+						"enable-bbcode": true,
+						"font": "nintendo-nes-font",
+						"size": 13,
+						"line-height": 12,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 57,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 44,
+						"y": 508,
+						"width": 266.4057643562346,
+						"height": 77.46807500328138,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "game_descriptions",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "nintendo-nes-font",
+						"size": 30,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 59,
+					"instanceVariables": {
+						"text_list": "Game",
+						"Game_num": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 13,
+						"y": 48,
+						"width": 1253.9256137514471,
+						"height": 80.53501131787407,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "game_descriptions",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Eight-Bit Madness",
+						"size": 17,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 60,
+					"instanceVariables": {
+						"text_list": "Description",
+						"Game_num": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 384,
+						"y": 543,
+						"width": 507.72007815861673,
+						"height": 192.3283076943075,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "game_descriptions",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Eight-Bit Madness",
+						"size": 17,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 61,
+					"instanceVariables": {
+						"text_list": "Design Lead",
+						"Game_num": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 60,
+						"y": 592,
+						"width": 239,
+						"height": 126,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "game_descriptions",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Eight-Bit Madness",
+						"size": 17,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 62,
+					"instanceVariables": {
+						"text_list": "Design Assistance",
+						"Game_num": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 989,
+						"y": 592,
+						"width": 224,
+						"height": 126,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "SOUND\nDESIGN",
+						"enable-bbcode": true,
+						"font": "nintendo-nes-font",
+						"size": 13,
+						"line-height": 12,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 75,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 974,
+						"y": 516,
+						"width": 259.4057643562346,
+						"height": 87.46807500328138,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "game_descriptions",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Eight-Bit Madness",
+						"size": 17,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 1046,
+					"instanceVariables": {
+						"text_list": "Players_Gametype",
+						"Game_num": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 414,
+						"y": 506,
+						"width": 442.72007815861673,
+						"height": 36.32830769430751,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 981449629058351,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 860900491437456,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1280,
+	"height": 720,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "Level_Select_sh"
+}

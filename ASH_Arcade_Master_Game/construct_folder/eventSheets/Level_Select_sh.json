@@ -1,0 +1,1341 @@
+{
+	"name": "Level_Select_sh",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "cur_y",
+			"type": "number",
+			"initialValue": "7",
+			"comment": "Start at 1, adding to this index selects the next game",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 548615540454559
+		},
+		{
+			"eventType": "variable",
+			"name": "title_music_seek",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 943061809968092
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 777684323038589
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 630312705755661,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
+					}
+				},
+				{
+					"id": "set-cursor-style",
+					"objectClass": "Mouse",
+					"sid": 110650991172113,
+					"parameters": {
+						"cursor-style": "none"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "seek title music back to cur position"
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 149571837007936
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 385286778513112,
+					"parameters": {
+						"scale": "1.0"
+					}
+				}
+			],
+			"sid": 434992527889426,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 296390428316811,
+							"parameters": {
+								"variable": "afk"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 769176434903212,
+							"parameters": {
+								"audio-file": "vhs-dreams",
+								"loop": "not-looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"Background_music_title\""
+							}
+						},
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 989233194735061,
+							"parameters": {
+								"tag": "\"Background_music_title\"",
+								"position": "title_music_seek"
+							}
+						}
+					],
+					"sid": 119418058895109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 528360362731010,
+							"parameters": {
+								"first-value": "cur_y",
+								"comparison": 5,
+								"second-value": "Games.Height"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 448981366369806,
+							"parameters": {
+								"variable": "cur_y",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 800649227508783
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 384841735873698,
+							"parameters": {
+								"first-value": "cur_y",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 969281169090530,
+							"parameters": {
+								"variable": "cur_y",
+								"value": "Games.Height-1"
+							}
+						}
+					],
+					"sid": 369518202394942
+				},
+				{
+					"eventType": "comment",
+					"text": "if we're afk, set in a 90sec timer on the level_switch_buttons event sheet, don't start the music again. "
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 302270163856060,
+							"parameters": {
+								"tag": "\"game_list\"",
+								"file": "game_list.json"
+							}
+						}
+					],
+					"sid": 668396997424538
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Update main lists upon load. "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 985787108533802,
+					"parameters": {
+						"tag": "\"game_list\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Games",
+					"sid": 246640311866775,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"callFunction": "Update_Game_Select_Lists",
+					"sid": 579221017069457,
+					"parameters": [
+						"cur_y"
+					]
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "game_descriptions",
+					"sid": 612503734793837,
+					"parameters": {
+						"instance-variable": "Game_num",
+						"value": "cur_y"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 539235302131282
+				},
+				{
+					"type": "comment",
+					"text": "set from the update func call. "
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 895529322696102,
+					"parameters": {
+						"variable": "cur_y",
+						"value": "game_descriptions.Game_num"
+					}
+				}
+			],
+			"sid": 807004129943208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 309095805775909,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 552880559921604,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 690178743750528,
+					"parameters": {
+						"variable": "cur_y",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 276210608901334,
+					"parameters": {
+						"audio-file": "Menu Up - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 271285715105989,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 590147133988419,
+							"parameters": {
+								"first-value": "cur_y",
+								"comparison": 5,
+								"second-value": "Games.Height"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 586278409636037,
+							"parameters": {
+								"variable": "cur_y",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 692366386210894
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "Update_Game_Select_Lists",
+							"sid": 660889270145163,
+							"parameters": [
+								"cur_y"
+							]
+						}
+					],
+					"sid": 884667786840840
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 967693550193900,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 306485225864564,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 195393138168241,
+					"parameters": {
+						"variable": "cur_y",
+						"value": "-1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 256263088012110,
+					"parameters": {
+						"audio-file": "Menu Down - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 448401557354975,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 886804537870512,
+							"parameters": {
+								"first-value": "cur_y",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 534953129946813,
+							"parameters": {
+								"variable": "cur_y",
+								"value": "Games.Height-1"
+							}
+						}
+					],
+					"sid": 547930935066642
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "Update_Game_Select_Lists",
+							"sid": 661774915955560,
+							"parameters": [
+								"cur_y"
+							]
+						}
+					],
+					"sid": 510065396222744
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions (Lists)",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Loop through our Json game_list and update the 3 respective game images on the arcade. Index currently goes from bottom to top, rather than top to bottom, but functionally it makes no difference. "
+				},
+				{
+					"functionName": "Update_Game_Select_Lists",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "cur_y_index",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 605791954232646
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 220869797461360,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": ""
+						},
+						{
+							"eventType": "variable",
+							"name": "loop_num",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 216007718986605
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 506619782494561,
+									"parameters": {
+										"variable": "loop_num",
+										"value": "cur_y"
+									}
+								}
+							],
+							"sid": 103896946427628
+						},
+						{
+							"eventType": "comment",
+							"text": "Middle"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Game_Image",
+									"sid": 303737447818509,
+									"parameters": {
+										"instance-variable": "Image_Num",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Game_Image",
+									"sid": 117495894998411,
+									"parameters": {
+										"animation": "str(Games.At(0,cur_y))",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 131218183930834
+						},
+						{
+							"eventType": "comment",
+							"text": "Left"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Game_Image",
+									"sid": 826640659808680,
+									"parameters": {
+										"instance-variable": "Image_Num",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Game_Image",
+									"sid": 881224752857498,
+									"parameters": {
+										"animation": "str(Games.At(0,cur_y+1))",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 942925561031859,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 383362430867796,
+											"parameters": {
+												"first-value": "cur_y",
+												"comparison": 5,
+												"second-value": "Games.Height-1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Game_Image",
+											"sid": 377153703674116,
+											"parameters": {
+												"animation": "str(Games.At(0,1))",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 246148620040896
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 642988588983347,
+											"parameters": {
+												"first-value": "cur_y",
+												"comparison": 3,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Game_Image",
+											"sid": 602970736285954,
+											"parameters": {
+												"animation": "str(Games.At(0,Games.Height-1))",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 170388170745517
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Right"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Game_Image",
+									"sid": 375463173030210,
+									"parameters": {
+										"instance-variable": "Image_Num",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Game_Image",
+									"sid": 813278389319745,
+									"parameters": {
+										"animation": "str(Games.At(0,cur_y-1))",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 295169794817983,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 901082935939570,
+											"parameters": {
+												"first-value": "cur_y",
+												"comparison": 5,
+												"second-value": "Games.Height"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Game_Image",
+											"sid": 139451334762168,
+											"parameters": {
+												"animation": "str(Games.At(0,1))",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 901394151711151
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 387502759080258,
+											"parameters": {
+												"first-value": "cur_y",
+												"comparison": 3,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Game_Image",
+											"sid": 555901490003324,
+											"parameters": {
+												"animation": "str(Games.At(0,Games.Height-1))",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 100637136026032
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 316810236733501,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 698800880107656,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Game_Image",
+											"sid": 143589901102082,
+											"parameters": {
+												"instance-variable": "Image_Num",
+												"comparison": 0,
+												"value": "loopindex"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "Game_Image",
+											"sid": 661557216780142,
+											"parameters": {
+												"width": "Game_Image.Width/1.1",
+												"height": "Game_Image.Height/1.1"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 951870830479161,
+											"parameters": {
+												"seconds": ".05"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Game_Image",
+											"sid": 884046237524000,
+											"parameters": {
+												"width": "Game_Image.Width*1.1",
+												"height": "Game_Image.Height*1.1"
+											}
+										}
+									],
+									"sid": 733135561817936,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 918390169813308,
+											"parameters": {
+												"variable": "loop_num",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 529958269160102,
+									"disabled": true
+								},
+								{
+									"eventType": "comment",
+									"text": "Reset our games list back to the first item in the list. "
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 882000867415115,
+											"parameters": {
+												"first-value": "loop_num",
+												"comparison": 5,
+												"second-value": "Games.Height"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 627172530146750,
+											"parameters": {
+												"variable": "loop_num",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 336188751448280,
+									"disabled": true
+								},
+								{
+									"eventType": "comment",
+									"text": "Reset our games list back to the last item in the list. "
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 353083415398704,
+											"parameters": {
+												"first-value": "loop_num",
+												"comparison": 3,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 647308466897468,
+											"parameters": {
+												"variable": "loop_num",
+												"value": "Games.Height-1"
+											}
+										}
+									],
+									"sid": 484223623776792,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "Update_Game_List",
+									"sid": 324344243249930,
+									"parameters": [
+										"cur_y",
+										"loopindex"
+									]
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Game_Image",
+									"sid": 939351680859595,
+									"parameters": {
+										"width": "Game_Image.Width/1.1",
+										"height": "Game_Image.Height/1.1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 707126026295667,
+									"parameters": {
+										"seconds": ".05"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Game_Image",
+									"sid": 292267890186315,
+									"parameters": {
+										"width": "Game_Image.Width*1.1",
+										"height": "Game_Image.Height*1.1"
+									}
+								}
+							],
+							"sid": 857932275318912
+						}
+					]
+				},
+				{
+					"functionName": "Update_Game_List",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 148228404918197
+						},
+						{
+							"name": "list_num",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "Decide if we display the top of bottom game first",
+							"sid": 164092056914170
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 899597473547218,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "x_index",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 855471166095613
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Game_Image",
+									"sid": 523964043258065,
+									"parameters": {
+										"instance-variable": "Image_Num",
+										"comparison": 0,
+										"value": "list_num"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Game_Image",
+									"sid": 131178267782657,
+									"parameters": {
+										"animation": "str(Games.At(0,y))",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Game_Image",
+									"sid": 989147398109613,
+									"parameters": {
+										"width": "Game_Image.Width/1.1",
+										"height": "Game_Image.Height/1.1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 278813515297441,
+									"parameters": {
+										"seconds": ".05"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "Game_Image",
+									"sid": 431912671591179,
+									"parameters": {
+										"width": "Game_Image.Width*1.1",
+										"height": "Game_Image.Height*1.1"
+									}
+								}
+							],
+							"sid": 317285128044506,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "We have 2 games displayed on screen at a time. The top game has an index of 0, the bottom 1. This updates the correct text images based on what has been called. "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "game_descriptions",
+									"sid": 462618791099941,
+									"parameters": {
+										"instance-variable": "text_list",
+										"comparison": 0,
+										"value": "\"Game\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "game_descriptions",
+									"sid": 801404394624418,
+									"parameters": {
+										"text": "uppercase(Games.At(x_index,y))"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 234364254716566,
+									"parameters": {
+										"variable": "x_index",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 523847683502599
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "game_descriptions",
+									"sid": 478700811434322,
+									"parameters": {
+										"instance-variable": "text_list",
+										"comparison": 0,
+										"value": "\"Description\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "typewriter-text",
+									"objectClass": "game_descriptions",
+									"sid": 471023992684381,
+									"parameters": {
+										"text": "Games.At(x_index,y)",
+										"duration": "0.75"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 513475703978117,
+									"parameters": {
+										"variable": "x_index",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 120699616486619
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "game_descriptions",
+									"sid": 360219849491868,
+									"parameters": {
+										"instance-variable": "text_list",
+										"comparison": 0,
+										"value": "\"Design Lead\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "game_descriptions",
+									"sid": 825568725740426,
+									"parameters": {
+										"text": "Games.At(x_index,y)"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 437882293063797,
+									"parameters": {
+										"variable": "x_index",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 837819369813817
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "game_descriptions",
+									"sid": 343574563297266,
+									"parameters": {
+										"instance-variable": "text_list",
+										"comparison": 0,
+										"value": "\"Design Assistance\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "game_descriptions",
+									"sid": 394322525544908,
+									"parameters": {
+										"text": "Games.At(x_index,y)"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 954745337335754,
+									"parameters": {
+										"variable": "x_index",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 700686808178475
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "game_descriptions",
+									"sid": 199567455916480,
+									"parameters": {
+										"instance-variable": "text_list",
+										"comparison": 0,
+										"value": "\"Players_Gametype\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "game_descriptions",
+									"sid": 809315896258444,
+									"parameters": {
+										"text": "uppercase(Games.At(x_index,y))"
+									}
+								}
+							],
+							"sid": 908710259035322
+						}
+					]
+				}
+			],
+			"sid": 594312367329666
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 518781503042273
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "reset afk"
+				},
+				{
+					"id": "start-timer",
+					"objectClass": "Game_Image",
+					"sid": 233014162699677,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "60",
+						"type": "once",
+						"tag": "\"Background_music_title\""
+					}
+				}
+			],
+			"sid": 967015023176926,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 642827127614451,
+							"parameters": {
+								"tag": "\"Background_music_title\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 404180544758919,
+							"parameters": {
+								"audio-file": "vhs-dreams",
+								"loop": "not-looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"Background_music_title\""
+							}
+						}
+					],
+					"sid": 891141506130130,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 863252077890405,
+							"parameters": {
+								"variable": "afk"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 243389645281661,
+							"parameters": {
+								"variable": "afk",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 407007097085967,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "pause ingame music if no one has interacted for a while..."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "Game_Image",
+					"sid": 666293578156377,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"Background_music_title\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-paused",
+					"objectClass": "Audio",
+					"sid": 885882018241499,
+					"parameters": {
+						"tag": "\"Background_music_title\"",
+						"state": "pause"
+					}
+				}
+			],
+			"sid": 101429969196061
+		},
+		{
+			"eventType": "comment",
+			"text": "Level Select"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 306228021473978,
+					"parameters": {
+						"key": 27
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 631512911644895,
+					"parameters": {
+						"variable": "title_music_seek",
+						"value": "Audio.CurrentTime"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 612061347788843,
+					"parameters": {
+						"audio-file": "Menu Confirm - FX - Alessia",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 824171696299132,
+					"parameters": {
+						"seconds": "0.75"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 246633578338788,
+					"parameters": {
+						"tag": "\"Background_music_title\""
+					}
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 694578289149322,
+					"parameters": {
+						"layout": "Games.At(0,cur_y)"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "reset games for next play"
+				}
+			],
+			"sid": 755528430970378
+		},
+		{
+			"eventType": "comment",
+			"text": "60s music timer for main menu. "
+		}
+	],
+	"sid": 627853210637674
+}

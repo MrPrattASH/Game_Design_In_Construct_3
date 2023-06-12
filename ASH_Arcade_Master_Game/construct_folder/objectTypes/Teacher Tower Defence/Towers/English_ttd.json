@@ -1,0 +1,190 @@
+{
+	"name": "English_ttd",
+	"plugin-id": "Sprite",
+	"sid": 466142912722075,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Tower_UID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 804606506677217
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7654364,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								1,
+								0,
+								1,
+								0.3333333333333333,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 26,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1351640,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								1,
+								0,
+								1,
+								0.3333333333333333,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 757343123153628,
+				"name": "Idle",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3618721,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								1,
+								0,
+								1,
+								0.3333333333333333,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.5384615384615384,
+								"y": 0.125
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 956109278240781,
+				"name": "Throw",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 26,
+						"height": 24,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9724271,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								1,
+								0,
+								1,
+								0.3333333333333333,
+								1,
+								1,
+								0.5,
+								1,
+								0,
+								1,
+								0,
+								0.3333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 974381669492042,
+				"name": "TowerMoving",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

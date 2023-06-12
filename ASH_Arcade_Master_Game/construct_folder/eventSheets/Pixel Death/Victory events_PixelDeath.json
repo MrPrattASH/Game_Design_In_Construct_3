@@ -1,0 +1,104 @@
+{
+	"name": "Victory events_PixelDeath",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 721774617773319
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 656291354177926,
+					"parameters": {
+						"audio-file": "20J01m1_Obsidian001_AmbientLoop_WAV16bit",
+						"loop": "looping",
+						"volume": "10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 351330349974493
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 783443467359273
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 795265369584165,
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 398624841982409
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 512700667161155,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 498153267005390,
+					"parameters": {
+						"layout": "Pixelated Hell"
+					}
+				}
+			],
+			"sid": 603954172257353
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 702959987600028,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 842956192017245,
+					"parameters": {
+						"layout": "Credits_PixelDeath"
+					}
+				}
+			],
+			"sid": 865197369362681
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 909537298582064
+}

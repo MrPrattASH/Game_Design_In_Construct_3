@@ -1,0 +1,37 @@
+{
+	"name": "SecondHills_ttd",
+	"plugin-id": "Sprite",
+	"sid": 503277916517922,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 144,
+						"height": 81,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6557351,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 556528038560561,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

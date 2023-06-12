@@ -1,0 +1,106 @@
+{
+	"name": "TutorialSlideDisplay_ttd",
+	"plugin-id": "Sprite",
+	"sid": 885391644716903,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 58,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1975223,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 742722312262271,
+				"name": "Slide 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 58,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4942065,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 994018995224277,
+				"name": "Slide 2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 58,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1390793,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 490652798000954,
+				"name": "Slide 3",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 58,
+						"height": 9,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1558608,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 484480086719700,
+				"name": "Slide 4",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

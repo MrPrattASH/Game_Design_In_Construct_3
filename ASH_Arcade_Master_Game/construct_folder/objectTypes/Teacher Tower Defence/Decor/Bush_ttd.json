@@ -1,0 +1,57 @@
+{
+	"name": "Bush_ttd",
+	"plugin-id": "Sprite",
+	"sid": 207035186552976,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "BushAnimation",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 328975324943903
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 22,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6271731,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 22,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8684943,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 578156918925560,
+				"name": "Animation1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 1.5
+			}
+		],
+		"subfolders": []
+	}
+}

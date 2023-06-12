@@ -1,0 +1,49 @@
+{
+	"name": "GameOverBox_ttd",
+	"plugin-id": "Sprite",
+	"sid": 627170099704150,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 92,
+						"height": 29,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5928067,
+						"collisionPoly": {
+							"points": [
+								0.021739130434782608,
+								0.10344827586206896,
+								1,
+								0.13793103448275862,
+								1,
+								1,
+								0.03260869565217391,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 872799819496302,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,5249 @@
+{
+	"name": "Object Repo_PixelDeath",
+	"layers": [
+		{
+			"name": "Main",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "TiledBackground_PixelDeath",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 948,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -120,
+						"y": -140,
+						"width": 1708,
+						"height": 960,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Player_PixelDeath",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 949,
+					"instanceVariables": {
+						"Health": 5
+					},
+					"behaviors": {
+						"Car": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 999999,
+								"deceleration": 999999,
+								"steer-speed": 180,
+								"drift-recover": 999999,
+								"friction": 0.4,
+								"turn-while-stopped": true,
+								"set-angle": true,
+								"default-controls": true,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 183,
+						"y": 366,
+						"width": 19.44222209522357,
+						"height": 19.44222209522357,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 950,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 180,
+						"y": 160,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 951,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 260,
+						"y": 160,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 952,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 340,
+						"y": 160,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 953,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 420,
+						"y": 160,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 954,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 200,
+						"y": 580,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 955,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 280,
+						"y": 580,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 956,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 360,
+						"y": 580,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 957,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 440,
+						"y": 580,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 958,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 220,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 959,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 300,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 960,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 380,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 961,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 460,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 962,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1160,
+						"y": 500,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.8802353620920655,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 963,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1056,
+						"y": 533,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.3654347533357215,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 964,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 660,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 965,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 966,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 967,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 120,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 968,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 200,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 969,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 280,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 970,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 360,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 971,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 440,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 972,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 520,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 973,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 600,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 974,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 680,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 975,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 760,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 976,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 840,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 977,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 920,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 978,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 979,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 120,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 980,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 200,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 981,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 280,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 982,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 360,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 983,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 440,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 984,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 520,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 985,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 600,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 986,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 680,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 987,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 760,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 988,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 840,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 989,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 920,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 990,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 991,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 40,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 992,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 120,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 993,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 200,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 994,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 280,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 995,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 360,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 996,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 440,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 997,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 520,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 998,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 600,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 999,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 680,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1000,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 760,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1001,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 840,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1002,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 920,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1003,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1000,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1004,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1080,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1005,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1160,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1006,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1240,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1007,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1320,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1008,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1400,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1009,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1480,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1010,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1560,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1011,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1640,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1012,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": 1000,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1013,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": -40,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1014,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 40,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1015,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 120,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1016,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 200,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1017,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 280,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1018,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 360,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1019,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 440,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1020,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 520,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1021,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 600,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1022,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 680,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1023,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 760,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1024,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 840,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1025,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 920,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1026,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1000,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1027,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1080,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1028,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1160,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1029,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1240,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1030,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1320,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1031,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1400,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1032,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1480,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1033,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1560,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1034,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1640,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1035,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1720,
+						"y": -40,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1036,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 740,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1037,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 820,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1038,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1091,
+						"y": 444,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.345208497064151,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1039,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1340,
+						"y": 660,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1040,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1500,
+						"y": 660,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1041,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1260,
+						"y": 220,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.905465023759508,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1042,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1480,
+						"y": 120,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.905465023759508,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "PuffBillboard_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 20,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1043,
+					"instanceVariables": {
+						"HitCount": 0
+					},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 340,
+						"y": 440,
+						"width": 27.985742858505898,
+						"height": 40,
+						"originX": 0.5057471264367817,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Goliath_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 20,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1044,
+					"instanceVariables": {
+						"EnemyHealth": 5
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 100,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 499.3268563012429,
+						"y": 399.66927721453817,
+						"width": 25.8,
+						"height": 80,
+						"originX": 0.5064153969526864,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0274684634826663,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Skewer_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 10,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1045,
+					"instanceVariables": {
+						"EnemyHealth": 7
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 100,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 960,
+						"y": 440,
+						"width": 27.985742858505898,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0274684634826663,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1047,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1380,
+						"y": 660,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 80
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1048,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1460,
+						"y": 660,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 80
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1049,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1100,
+						"y": 500,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.345208497064151,
+						"zElevation": 80
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "prism",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1050,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1480,
+						"y": 120,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.912471747518513,
+						"zElevation": 80
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1051,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1260,
+						"y": 220,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.210291971040164,
+						"zElevation": 80
+					}
+				},
+				{
+					"type": "3DShape_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 80,
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1052,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 1420,
+						"y": 660,
+						"width": 80,
+						"height": 80,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 160
+					}
+				}
+			],
+			"sid": 750159777104751,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.8823529411764706,
+				0.9215686274509803,
+				0.996078431372549,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Billboards",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "Fledgling_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 12,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1053,
+					"instanceVariables": {
+						"EnemyHealth": 2
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 100,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 471.9059429712137,
+						"y": 345.849518654427,
+						"width": 27.985742858505898,
+						"height": 60,
+						"originX": 0.5074557315936626,
+						"originY": 0.336734693877551,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0274684634826663,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "IMP_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 15,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1054,
+					"instanceVariables": {
+						"EnemyHealth": 2
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 100,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 818.024750683239,
+						"y": 395.5903628605089,
+						"width": 27.985742858505898,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0274684634826663,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Overlord_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 35,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1055,
+					"instanceVariables": {
+						"EnemyHealth": 30
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 100,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 600,
+						"y": 160,
+						"width": 30,
+						"height": 110,
+						"originX": 0.5086845326551055,
+						"originY": 0.25835848123710636,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0274684634826663,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Clawer_PixelDeath",
+					"properties": {
+						"shape": "box",
+						"z-height": 40,
+						"initially-visible": true,
+						"face-back": true,
+						"face-front": false,
+						"face-left": false,
+						"face-right": true,
+						"face-top": false,
+						"face-bottom": false,
+						"z-tiling-factor": 8,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 1056,
+					"instanceVariables": {
+						"EnemyHealth": 50
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Bullet": {
+							"properties": {
+								"speed": 150,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": true,
+								"set-angle": false,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"MoveTo": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 744.7840209206472,
+						"y": 542.3504412616586,
+						"width": 80,
+						"height": 120,
+						"originX": 0.5,
+						"originY": 0.46697626418988647,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 2.0274684634826663,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 202498935174437,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "camera-distance",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 956385557648370,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 2000,
+	"height": 2000,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "MainGameLogic_PixelDeath"
+}

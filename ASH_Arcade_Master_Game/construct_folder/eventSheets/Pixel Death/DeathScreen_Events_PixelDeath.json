@@ -1,0 +1,126 @@
+{
+	"name": "DeathScreen_Events_PixelDeath",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 890550367495636,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 387321502733771,
+					"parameters": {
+						"layout": "Pixelated Hell"
+					}
+				}
+			],
+			"sid": 555024468874973
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 614296164507912
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 895780750836407,
+					"parameters": {
+						"audio-file": "20J01m1_Obsidian001_AmbientLoop_WAV16bit",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 277183007944465
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 971248133673644
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 720149277162184,
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 652353264748230
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 250976298614541
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "ArchdemonD_PixelDeath",
+					"sid": 332331349968563,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 703534339366763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 668356775682414,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 842867664966212,
+					"parameters": {
+						"layout": "Credits_PixelDeath"
+					}
+				}
+			],
+			"sid": 146293696113052
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 762034717483257
+}

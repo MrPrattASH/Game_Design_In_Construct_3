@@ -1,0 +1,20 @@
+{
+	"name": "AddMoney_ttd",
+	"plugin-id": "Text",
+	"sid": 765586683442673,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 266318922908880
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 742521168395798
+		}
+	],
+	"effectTypes": []
+}

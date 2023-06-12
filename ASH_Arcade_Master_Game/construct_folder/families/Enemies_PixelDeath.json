@@ -1,0 +1,36 @@
+{
+	"name": "Enemies_PixelDeath",
+	"plugin-id": "Shape3D",
+	"sid": 264537955189490,
+	"instanceVariables": [
+		{
+			"name": "EnemyHealth",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 571001987391759
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 626743740184972
+		},
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 984513481886200
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Goliath_PixelDeath",
+		"IMP_PixelDeath",
+		"Fledgling_PixelDeath",
+		"Overlord_PixelDeath",
+		"Clawer_PixelDeath",
+		"Skewer_PixelDeath",
+		"Archdemon_PixelDeath"
+	]
+}

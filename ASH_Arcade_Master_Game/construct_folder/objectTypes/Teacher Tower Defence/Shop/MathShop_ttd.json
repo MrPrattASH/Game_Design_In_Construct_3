@@ -1,0 +1,72 @@
+{
+	"name": "MathShop_ttd",
+	"plugin-id": "Sprite",
+	"sid": 810132889383839,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2026812,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 646629,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 619420268947469,
+				"name": "MathPurchase",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 74210,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 359075978516343,
+				"name": "MathUpgrade",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

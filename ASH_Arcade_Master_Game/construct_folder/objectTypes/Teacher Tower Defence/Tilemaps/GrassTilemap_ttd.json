@@ -1,0 +1,21 @@
+{
+	"name": "GrassTilemap_ttd",
+	"plugin-id": "Tilemap",
+	"sid": 820442187311635,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 176,
+		"height": 112,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8736615,
+		"useCollisionPoly": true
+	},
+	"tile-collision-polys": {}
+}

@@ -1,0 +1,95 @@
+{
+	"name": "Smesh_startsheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "smesh_back_music",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 665219921345591
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 681440024634514,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 984976941367031,
+					"parameters": {
+						"key": 85
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 502152679071254,
+					"parameters": {
+						"variable": "smesh_back_music",
+						"value": "Audio.CurrentTime"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 641144997532048,
+					"parameters": {
+						"layout": "Smesh_gamelayout"
+					}
+				}
+			],
+			"sid": 704207622098545,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 282726862387915
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 745085413524930,
+					"parameters": {
+						"scale": "2"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 857034799360726,
+					"parameters": {
+						"audio-file": "Illuminate - Loop - Sem Hendriks",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"smesh_back_music\""
+					}
+				}
+			],
+			"sid": 921227823603732
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 163404970547723
+}

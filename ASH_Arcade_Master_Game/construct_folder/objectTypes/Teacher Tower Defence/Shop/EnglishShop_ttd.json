@@ -1,0 +1,72 @@
+{
+	"name": "EnglishShop_ttd",
+	"plugin-id": "Sprite",
+	"sid": 659534699230167,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3665447,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3818352,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 707153670492492,
+				"name": "EnlighsPurchase",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 104,
+						"height": 99,
+						"originX": 0.5,
+						"originY": 0.5050505050505051,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9256866,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 987016560458234,
+				"name": "EnglishUpgrade",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

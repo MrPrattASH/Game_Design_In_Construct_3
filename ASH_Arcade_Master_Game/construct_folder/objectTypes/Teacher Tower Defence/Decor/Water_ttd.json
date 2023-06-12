@@ -1,0 +1,81 @@
+{
+	"name": "Water_ttd",
+	"plugin-id": "Sprite",
+	"sid": 154103153131376,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "WaterAnimation",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 336627677769817
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7043812,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6102980,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5009915,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 16,
+						"height": 16,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7689912,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 945069756939015,
+				"name": "Animation1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

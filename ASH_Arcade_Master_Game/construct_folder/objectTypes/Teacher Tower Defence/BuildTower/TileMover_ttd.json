@@ -1,0 +1,100 @@
+{
+	"name": "TileMover_ttd",
+	"plugin-id": "Sprite",
+	"sid": 326887074912472,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "TileMovement",
+			"name": "TileMovement",
+			"sid": 413232038588421
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 475675921335997
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.3125,
+						"originY": 0.296875,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 301837,
+						"collisionPoly": {
+							"points": [
+								0.296875,
+								0.2890625,
+								0.703125,
+								0.2890625,
+								0.703125,
+								0.2890625,
+								0.703125,
+								0.2890625,
+								0.703125,
+								0.7109375,
+								0.703125,
+								0.7109375,
+								0.296875,
+								0.7109375,
+								0.296875,
+								0.2890625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.3125,
+						"originY": 0.296875,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9110816,
+						"collisionPoly": {
+							"points": [
+								0.296875,
+								0.2890625,
+								0.703125,
+								0.2890625,
+								0.703125,
+								0.2890625,
+								0.703125,
+								0.2890625,
+								0.703125,
+								0.7109375,
+								0.703125,
+								0.7109375,
+								0.296875,
+								0.7109375,
+								0.296875,
+								0.2890625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 316370118071404,
+				"name": "Blink",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			}
+		],
+		"subfolders": []
+	}
+}

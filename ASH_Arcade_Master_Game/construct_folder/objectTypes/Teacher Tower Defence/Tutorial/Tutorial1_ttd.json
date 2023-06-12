@@ -1,0 +1,61 @@
+{
+	"name": "Tutorial1_ttd",
+	"plugin-id": "Sprite",
+	"sid": 460671801823548,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "SlidesNumber",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 195286432626307
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 299,
+						"height": 151,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8318473,
+						"collisionPoly": {
+							"points": [
+								0.04760660535117057,
+								0.047093451066961,
+								0.9490489130434783,
+								0.047093451066961,
+								0.9568875418060201,
+								0.7417218543046358,
+								0.9529682274247492,
+								1,
+								0.043687290969899664,
+								1,
+								0.03976797658862876,
+								0.7417218543046358
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 674367392371958,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

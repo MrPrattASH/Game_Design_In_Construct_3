@@ -1,0 +1,402 @@
+{
+	"name": "High_Score_sh",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "cur_game",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 777669474617787
+		},
+		{
+			"eventType": "variable",
+			"name": "test_key",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 385273237343850
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 235591371882052
+				}
+			],
+			"actions": [
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 490445878388679,
+					"parameters": {
+						"tag": "\"high_score\"",
+						"file": "high_scores.json"
+					}
+				},
+				{
+					"id": "load",
+					"objectClass": "System",
+					"sid": 267600760750141,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				}
+			],
+			"sid": 328354023528234
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 946748229086604,
+					"parameters": {
+						"tag": "\"high_score\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "high_scores",
+					"sid": 142223134573366,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 763467254937783,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "high_score",
+							"sid": 463620820109323,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"game_name\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "high_score",
+							"sid": 932410618114661,
+							"parameters": {
+								"text": "cur_game"
+							}
+						}
+					],
+					"sid": 449732983203148,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "high_score",
+							"sid": 636453189578918,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"Initials\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "high_score",
+							"sid": 498863852902544,
+							"parameters": {
+								"text": "high_scores.Get(\"An Apple a Day Name\")"
+							}
+						}
+					],
+					"sid": 342826285916124,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "high_score",
+							"sid": 476336352943174,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"Score\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "high_score",
+							"sid": 631731190898205,
+							"parameters": {
+								"text": "high_scores.Get(\"An Apple a Day Score\")"
+							}
+						}
+					],
+					"sid": 244788474360737,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 903259046653243,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-key",
+					"objectClass": "high_scores",
+					"sid": 404419696499568,
+					"disabled": true,
+					"parameters": {
+						"key": "\"An Apple a Day Name\"",
+						"value": "\"BBB\""
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "high_scores",
+					"sid": 415678431065454,
+					"disabled": true,
+					"parameters": {
+						"key": "\"An Apple a Day Score\"",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 345006979413195,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "high_score",
+							"sid": 763576513761412,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"Initials\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "high_score",
+							"sid": 365177341961493,
+							"parameters": {
+								"text": "high_scores.Get(\"An Apple a Day Name\")"
+							}
+						}
+					],
+					"sid": 260712765668702,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "high_score",
+							"sid": 658508582466850,
+							"parameters": {
+								"instance-variable": "name",
+								"comparison": 0,
+								"value": "\"Score\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "high_score",
+							"sid": 935958413695768,
+							"parameters": {
+								"text": "high_scores.Get(\"An Apple a Day Score\")"
+							}
+						}
+					],
+					"sid": 920764199084259,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 907046502182051,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "1",
+								"end-index": "5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 784526092076970,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "name_key",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 736129955594634
+						},
+						{
+							"eventType": "variable",
+							"name": "score_key",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 188081965611027
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 950065930080769,
+									"parameters": {
+										"variable": "name_key",
+										"value": "\"Name\" & \"i\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 405706772727536,
+									"parameters": {
+										"variable": "name_key",
+										"value": "\"Score\" & \"i\""
+									}
+								}
+							],
+							"sid": 844983297374389
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "high_score",
+									"sid": 979318027528998,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "name_key"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "high_score",
+									"sid": 729390875853181,
+									"parameters": {
+										"text": "high_scores.Get(str(cur_game & \" \" & name_key))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 977119200170741,
+									"parameters": {
+										"variable": "test_key",
+										"value": "high_scores.Get(str(cur_game & \" \" & name_key))"
+									}
+								}
+							],
+							"sid": 343585873473359
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "high_score",
+									"sid": 429879351233308,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "score_key"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "high_score",
+									"sid": 926305322267612,
+									"parameters": {
+										"text": "high_scores.Get(str(cur_game & \" \" & score_key))"
+									}
+								}
+							],
+							"sid": 531481820992210
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 255361241836477
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 219561604592236,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				}
+			],
+			"sid": 298954318852057
+		}
+	],
+	"sid": 453234132338650
+}

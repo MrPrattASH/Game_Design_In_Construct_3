@@ -1,0 +1,259 @@
+{
+	"name": "Maingame_Events_PixelDeath",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "3D camera2",
+			"description": "Enable this group to see the game from a first-person perspective.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "The piggy object's back faces are visible in the editor only to make them easier to select. We only want to see the right faces in first-person mode, so hide the back faces on startup."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 883858257071105
+						}
+					],
+					"actions": [],
+					"sid": 307159477759845
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 327911182203664
+						}
+					],
+					"actions": [],
+					"sid": 860699821968229
+				},
+				{
+					"eventType": "comment",
+					"text": "Always set a 3D camera parallel to the layout with the position and angle of the Player sprite."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 572006017624339
+						}
+					],
+					"actions": [],
+					"sid": 147448125374194
+				}
+			],
+			"sid": 776123335951204
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "2D camera2",
+			"description": "Enable this group to see the game from a top-down 2D perspective.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "In 2D mode, just scroll to the player normally. Also set all the billboards to show their back faces instead of their right faces, to make it clearer what is going on."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 308889309042360
+						}
+					],
+					"actions": [],
+					"sid": 538059576978810,
+					"disabled": true
+				}
+			],
+			"sid": 526688872402305
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "General2",
+			"description": "Event blocks that implement the gameplay regardless of the type of view.",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Always make the piggy objects look towards the player, for a billboard style appearance."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 155414899647486
+						}
+					],
+					"actions": [],
+					"sid": 321251029687612
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 736659316956342
+						}
+					],
+					"actions": [],
+					"sid": 286267288244710
+				},
+				{
+					"eventType": "comment",
+					"text": "Shoot tomatoes when pressing spacebar. Note the tomato is also a 3D shape using just the right face for a billboard style appearance. It is also Z elevated slightly so it comes out just below the player's viewpoint."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 811752205852567,
+							"parameters": {
+								"key": 32
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Adjust the tomato angle by a small random amount so they spread out a little rather than form a perfectly straight line."
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 362337818795104,
+							"parameters": {
+								"audio-file": "weapon_gun_ak_47_C_42 (1) 2-[AudioTrimmer.com]",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 818280793004420
+				},
+				{
+					"eventType": "comment",
+					"text": "When a tomato collides with the scenery, destroy it. Note we only want tomatoes to collide with 3D shapes on the ground - they should ignore ones raised up with Z elevation, so you can still shoot tomatoes through the archway. Therefore also check that the 3D shape it collided with has a Z elevation of 0."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "Walls_PixelDeath",
+							"sid": 410575227329428,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 0,
+								"z-elevation": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 229625632653447
+				},
+				{
+					"eventType": "comment",
+					"text": "When a tomato collides with a piggy, add to its hitcount, make it flash, and destroy the tomato."
+				},
+				{
+					"eventType": "comment",
+					"text": "If a piggy gets hit by a tomato 5 times, destroy it and create a \"puff\" billboard in its place as a disappearing animation (the \"puff\" object has the Fade behavior so it fades out)."
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 817113931307624,
+							"parameters": {
+								"audio-file": "zapsplat_human_male_man_angry_grunt_growl_frustrated_001_74260 (1)-[AudioTrimmer.com]",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 960349602160033
+				}
+			],
+			"sid": 783512437014360
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 128170683730633
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 661680876166521,
+					"parameters": {
+						"audio-file": "retro_metal",
+						"loop": "looping",
+						"volume": "10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 645099640177384
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 857462658720200
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 191027236142670,
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 692398205119375
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 404669274334897
+}

@@ -1,0 +1,354 @@
+{
+	"name": "Smesh_game sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "redhp",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 997414852982234
+		},
+		{
+			"eventType": "variable",
+			"name": "redstamina",
+			"type": "number",
+			"initialValue": "110",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 387155255622115
+		},
+		{
+			"eventType": "variable",
+			"name": "purplehp",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 255293993913530
+		},
+		{
+			"eventType": "variable",
+			"name": "purplestamina",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 886423917921594
+		},
+		{
+			"eventType": "variable",
+			"name": "purplestaminamax",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 887048606932241
+		},
+		{
+			"eventType": "variable",
+			"name": "redstaminamax",
+			"type": "number",
+			"initialValue": "110",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 744978368591885
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Smesh_Player_logic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 487641221000255,
+					"parameters": {
+						"variable": "redhp",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "redfighterSmesh_",
+					"sid": 793301690939584,
+					"parameters": {
+						"animation": "\"Dead\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "KnockoutTextSmesh_",
+					"sid": 627523459478525,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "purplefighterSmesh_",
+					"sid": 994529061707564,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 317979318570098,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 794276310722458,
+					"parameters": {
+						"layout": "Smesh_endlay"
+					}
+				}
+			],
+			"sid": 499437383899677,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 494458029408622,
+					"parameters": {
+						"variable": "purplehp",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "purplefighterSmesh_",
+					"sid": 984695707632131,
+					"parameters": {
+						"animation": "\"Dead\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "KnockoutTextSmesh_",
+					"sid": 432255317268951,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "redfighterSmesh_",
+					"sid": 812261125786352,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 725296180737505,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 868844826614353,
+					"parameters": {
+						"layout": "Smesh_endlay"
+					}
+				}
+			],
+			"sid": 153813281082991
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 909815157586664
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "staminaredSmesh_",
+					"sid": 956236044911102,
+					"parameters": {
+						"width": "redstamina"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "staminapurpleSmesh_",
+					"sid": 185113996065393,
+					"parameters": {
+						"width": "purplestamina"
+					}
+				}
+			],
+			"sid": 822105083267258,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 868502684786001,
+							"parameters": {
+								"variable": "redstamina",
+								"comparison": 2,
+								"value": "110"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 644456370634036,
+							"parameters": {
+								"variable": "redstamina",
+								"value": "0.4"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "staminaredSmesh_",
+							"sid": 417433628383145,
+							"parameters": {
+								"width": "redstamina"
+							}
+						}
+					],
+					"sid": 928422067956074
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 119779740876731,
+							"parameters": {
+								"variable": "purplestamina",
+								"comparison": 2,
+								"value": "150"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 785840973132338,
+							"parameters": {
+								"variable": "purplestamina",
+								"value": "0.4"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "staminapurpleSmesh_",
+							"sid": 123846946832702,
+							"parameters": {
+								"width": "purplestamina"
+							}
+						}
+					],
+					"sid": 610400134849745
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 118452968938291
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 932741829947564,
+					"parameters": {
+						"variable": "purplehp",
+						"value": "150"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 582959650185566,
+					"parameters": {
+						"variable": "redhp",
+						"value": "150"
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 494209409927814,
+					"parameters": {
+						"scale": "2.5"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 889206408782875,
+					"parameters": {
+						"audio-file": "Illuminate - Loop - Sem Hendriks",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"smesh_back_music\""
+					}
+				},
+				{
+					"id": "seek-to",
+					"objectClass": "Audio",
+					"sid": 571349042046695,
+					"parameters": {
+						"tag": "\"smesh_back_music\"",
+						"position": "48"
+					}
+				}
+			],
+			"sid": 893272245945688
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 568906942516802
+}
