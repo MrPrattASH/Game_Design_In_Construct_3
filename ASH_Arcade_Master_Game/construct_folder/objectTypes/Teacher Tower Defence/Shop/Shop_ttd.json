@@ -1,7 +1,7 @@
 {
-	"name": "Shop_ttd",
+	"name": "Shop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 577281366258905,
+	"sid": 357530511805427,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,14 +9,14 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 661767839630174
+			"sid": 342259601514281
 		}
 	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "MoveTo",
 			"name": "MoveTo",
-			"sid": 582608393149214
+			"sid": 720160462871811
 		}
 	],
 	"effectTypes": [],
@@ -32,7 +32,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 348035,
+						"imageSpriteId": 2709022,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -44,7 +44,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 198167471871565,
+				"sid": 186497262925217,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

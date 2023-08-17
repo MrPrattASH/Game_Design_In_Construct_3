@@ -35,15 +35,6 @@
 					"parameters": {
 						"color": "rgb(191, 64, 191)"
 					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "winnerTextSmesh_",
-					"sid": 179533330551813,
-					"parameters": {
-						"x": "180",
-						"y": "5"
-					}
 				}
 			],
 			"sid": 718705383271549
@@ -77,15 +68,6 @@
 					"sid": 978292116208058,
 					"parameters": {
 						"color": "rgb(255,0,0)\n"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "winnerTextSmesh_",
-					"sid": 685292952435999,
-					"parameters": {
-						"x": "198",
-						"y": "5"
 					}
 				}
 			],

@@ -1,0 +1,16 @@
+{
+	"name": "TutorialSlideTXT_TTD",
+	"plugin-id": "Text",
+	"sid": 849257609443013,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"TutorialSlide1TXT2_TTD",
+		"TutorialSlide1TXT_TTD",
+		"TutorialSlide2TXT_TTD",
+		"TutorialSlide3TXT_TTD",
+		"TutorialSlide4TXT2_TTD",
+		"TutorialSlide4TXT1_TTD"
+	]
+}

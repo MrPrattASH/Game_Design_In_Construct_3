@@ -1,7 +1,7 @@
 {
-	"name": "BiologyShop_ttd",
+	"name": "BiologyShop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 539795118776625,
+	"sid": 988226203999734,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1703853,
+						"imageSpriteId": 1931102,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7193584,
+						"imageSpriteId": 6815788,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 443439319484182,
+				"sid": 281882307559953,
 				"name": "BiologyPurchase",
 				"isLooping": true,
 				"isPingPong": false,
@@ -53,12 +53,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3765988,
+						"imageSpriteId": 8345741,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 326406336797368,
+				"sid": 277958610225980,
 				"name": "BiologyUpgrade",
 				"isLooping": false,
 				"isPingPong": false,

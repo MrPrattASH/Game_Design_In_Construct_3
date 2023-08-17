@@ -1,7 +1,7 @@
 {
-	"name": "FamilySprite_ttd",
+	"name": "FamilySprite_TTD",
 	"plugin-id": "Sprite",
-	"sid": 958577131274729,
+	"sid": 607939839571219,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4516612,
+						"imageSpriteId": 4800354,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 512278308981136,
+				"sid": 788807958869651,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

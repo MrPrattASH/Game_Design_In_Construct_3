@@ -1,0 +1,15 @@
+{
+	"name": "Decore_TTD",
+	"plugin-id": "Sprite",
+	"sid": 246852430643370,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Flowers2_TTD",
+		"Flowers1_TTD",
+		"Mushroom_TTD",
+		"Bush_TTD",
+		"Tree_TTD"
+	]
+}

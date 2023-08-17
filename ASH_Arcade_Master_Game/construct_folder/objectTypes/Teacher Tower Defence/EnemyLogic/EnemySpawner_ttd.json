@@ -1,7 +1,7 @@
 {
-	"name": "EnemySpawner_ttd",
+	"name": "EnemySpawner_TTD",
 	"plugin-id": "Sprite",
-	"sid": 816171604067223,
+	"sid": 704343980233422,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9530541,
+						"imageSpriteId": 3739433,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 149233758598555,
+				"sid": 641722590327199,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

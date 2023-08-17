@@ -1,7 +1,7 @@
 {
-	"name": "Tree_ttd",
+	"name": "Tree_TTD",
 	"plugin-id": "Sprite",
-	"sid": 710509337636791,
+	"sid": 881980739366062,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 652994279386326
+			"sid": 188600699529724
 		}
 	],
 	"behaviorTypes": [],
@@ -26,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8565254,
+						"imageSpriteId": 9436373,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -38,7 +38,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4462911,
+						"imageSpriteId": 7935740,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -50,12 +50,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6624282,
+						"imageSpriteId": 9296678,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 507591461805054,
+				"sid": 410551824002306,
 				"name": "Animation1",
 				"isLooping": true,
 				"isPingPong": true,

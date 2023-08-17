@@ -1,0 +1,12 @@
+{
+	"name": "TutorialSlideImage_TTD",
+	"plugin-id": "Sprite",
+	"sid": 570520897608640,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"TutorialSlide2Image_TTD",
+		"TutorialSlide3Image_TTD"
+	]
+}

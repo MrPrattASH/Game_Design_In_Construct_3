@@ -1,7 +1,7 @@
 {
-	"name": "MenuPainter_ttd",
+	"name": "MenuPainter_TTD",
 	"plugin-id": "Sprite",
-	"sid": 933557503753538,
+	"sid": 384390720663218,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8150280,
+						"imageSpriteId": 2358156,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2011438,
+						"imageSpriteId": 9528807,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 693139525538095,
+				"sid": 249848788098296,
 				"name": "Animation 1",
 				"isLooping": true,
 				"isPingPong": false,

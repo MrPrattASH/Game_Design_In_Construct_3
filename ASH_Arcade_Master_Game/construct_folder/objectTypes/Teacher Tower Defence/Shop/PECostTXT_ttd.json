@@ -1,7 +1,7 @@
 {
-	"name": "PECostTXT_ttd",
+	"name": "PECostTXT_TTD",
 	"plugin-id": "Sprite",
-	"sid": 869117469252271,
+	"sid": 623366049794603,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9164406,
+						"imageSpriteId": 9829287,
 						"collisionPoly": {
 							"points": [
 								0.05555555555555555,
@@ -35,7 +35,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 308359693242140,
+				"sid": 165154175411644,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

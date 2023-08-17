@@ -1,7 +1,7 @@
 {
-	"name": "MenuEnglishShadow_ttd",
+	"name": "MenuEnglishShadow_TTD",
 	"plugin-id": "Sprite",
-	"sid": 151278221101877,
+	"sid": 661412983083925,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3420506,
+						"imageSpriteId": 7890342,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9758641,
+						"imageSpriteId": 246169,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 240896065886563,
+				"sid": 177371728735458,
 				"name": "Animation 1",
 				"isLooping": true,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "MATurret_ttd",
+	"name": "MATurret_TTD",
 	"plugin-id": "Sprite",
-	"sid": 808750101832759,
+	"sid": 320165750332842,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "boolean",
 			"desc": "",
 			"show": true,
-			"sid": 351123744848429
+			"sid": 788027306767625
 		}
 	],
 	"behaviorTypes": [],
@@ -26,12 +26,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 710191,
+						"imageSpriteId": 1664380,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 420303592155176,
+				"sid": 249425930939817,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

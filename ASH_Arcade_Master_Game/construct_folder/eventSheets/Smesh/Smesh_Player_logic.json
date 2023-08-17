@@ -183,9 +183,9 @@
 				{
 					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 535765509813126,
+					"sid": 887001755005018,
 					"parameters": {
-						"key": 87
+						"key": 38
 					}
 				},
 				{
@@ -227,17 +227,17 @@
 				{
 					"id": "on-key-released",
 					"objectClass": "Keyboard",
-					"sid": 481796698230274,
+					"sid": 375371239030651,
 					"parameters": {
-						"key": 87
+						"key": 38
 					}
 				},
 				{
 					"id": "on-key-released",
 					"objectClass": "Keyboard",
-					"sid": 387089922541664,
+					"sid": 349389187426968,
 					"parameters": {
-						"key": 83
+						"key": 40
 					}
 				}
 			],
@@ -261,9 +261,9 @@
 				{
 					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 557563676637154,
+					"sid": 591295974209995,
 					"parameters": {
-						"key": 83
+						"key": 40
 					}
 				},
 				{
@@ -481,9 +481,9 @@
 				{
 					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 829966706865625,
+					"sid": 204751087527371,
 					"parameters": {
-						"key": 38
+						"key": 87
 					}
 				},
 				{
@@ -525,17 +525,17 @@
 				{
 					"id": "on-key-released",
 					"objectClass": "Keyboard",
-					"sid": 349213710917246,
+					"sid": 210805195425302,
 					"parameters": {
-						"key": 38
+						"key": 87
 					}
 				},
 				{
 					"id": "on-key-released",
 					"objectClass": "Keyboard",
-					"sid": 442589140093385,
+					"sid": 817304770476299,
 					"parameters": {
-						"key": 40
+						"key": 83
 					}
 				}
 			],
@@ -559,9 +559,9 @@
 				{
 					"id": "key-is-down",
 					"objectClass": "Keyboard",
-					"sid": 666940724283620,
+					"sid": 551884714484849,
 					"parameters": {
-						"key": 40
+						"key": 83
 					}
 				},
 				{

@@ -1,0 +1,11 @@
+{
+	"name": "TowerMoving_TTD",
+	"plugin-id": "Sprite",
+	"sid": 338383373794263,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"FamilySprite_TTD"
+	]
+}

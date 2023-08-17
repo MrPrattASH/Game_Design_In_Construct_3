@@ -1,7 +1,7 @@
 {
-	"name": "ARTTurret_ttd",
+	"name": "ARTTurret_TTD",
 	"plugin-id": "Sprite",
-	"sid": 576339618984923,
+	"sid": 101222257827150,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 382812,
+						"imageSpriteId": 7435260,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 334136290558584,
+				"sid": 463559185611916,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

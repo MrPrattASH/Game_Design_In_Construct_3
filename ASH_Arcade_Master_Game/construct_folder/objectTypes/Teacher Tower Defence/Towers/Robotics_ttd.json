@@ -1,7 +1,7 @@
 {
-	"name": "Robotics_ttd",
+	"name": "Robotics_TTD",
 	"plugin-id": "Sprite",
-	"sid": 936294414945508,
+	"sid": 184892522967903,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4600786,
+						"imageSpriteId": 2393530,
 						"collisionPoly": {
 							"points": [
 								0.045454545454545456,
@@ -57,7 +57,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9113903,
+						"imageSpriteId": 7142974,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -89,7 +89,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 208802952400878,
+				"sid": 606786613292377,
 				"name": "Idle",
 				"isLooping": true,
 				"isPingPong": false,
@@ -107,7 +107,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 280797,
+						"imageSpriteId": 3139860,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -146,7 +146,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 704166,
+						"imageSpriteId": 5277911,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -185,7 +185,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8316412,
+						"imageSpriteId": 8150911,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -224,7 +224,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5875575,
+						"imageSpriteId": 5655995,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -263,7 +263,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6734442,
+						"imageSpriteId": 2149059,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -295,7 +295,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 610496441885152,
+				"sid": 967392964350776,
 				"name": "Throw",
 				"isLooping": false,
 				"isPingPong": false,

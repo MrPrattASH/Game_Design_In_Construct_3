@@ -51,7 +51,7 @@
 							0,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
@@ -62,10 +62,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 567,
-						"y": 237,
+						"x": 545,
+						"y": 276,
 						"width": 200,
-						"height": 30,
+						"height": 36,
 						"originX": 0,
 						"originY": 0,
 						"color": [

@@ -1,7 +1,7 @@
 {
-	"name": "Bush_ttd",
+	"name": "Bush_TTD",
 	"plugin-id": "Sprite",
-	"sid": 207035186552976,
+	"sid": 451505609673409,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 328975324943903
+			"sid": 757407588879415
 		}
 	],
 	"behaviorTypes": [],
@@ -26,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6271731,
+						"imageSpriteId": 8834248,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -38,12 +38,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8684943,
+						"imageSpriteId": 4025627,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 578156918925560,
+				"sid": 592436090406192,
 				"name": "Animation1",
 				"isLooping": true,
 				"isPingPong": false,

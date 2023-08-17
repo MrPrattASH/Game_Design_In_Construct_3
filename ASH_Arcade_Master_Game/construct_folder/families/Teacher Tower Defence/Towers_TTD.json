@@ -1,0 +1,29 @@
+{
+	"name": "Towers_TTD",
+	"plugin-id": "Sprite",
+	"sid": 899985906812383,
+	"instanceVariables": [
+		{
+			"name": "HasBioBoost",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 808729736873364
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		}
+	],
+	"members": [
+		"English_TTD",
+		"Art_TTD",
+		"Biology_TTD",
+		"Math_TTD",
+		"PE_TTD",
+		"Robotics_TTD"
+	]
+}

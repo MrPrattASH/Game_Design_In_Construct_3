@@ -1,7 +1,7 @@
 {
-	"name": "PEStats_ttd",
+	"name": "PEStats_TTD",
 	"plugin-id": "Sprite",
-	"sid": 117850947848490,
+	"sid": 223444081405548,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1846908,
+						"imageSpriteId": 4010913,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 343558234205519,
+				"sid": 537525006648598,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

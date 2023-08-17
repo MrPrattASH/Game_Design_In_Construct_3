@@ -1,7 +1,7 @@
 {
-	"name": "ENGTurret_ttd",
+	"name": "ENGTurret_TTD",
 	"plugin-id": "Sprite",
-	"sid": 600439908091413,
+	"sid": 502095551035408,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2569444,
+						"imageSpriteId": 6083515,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 888914372115107,
+				"sid": 702083918509464,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

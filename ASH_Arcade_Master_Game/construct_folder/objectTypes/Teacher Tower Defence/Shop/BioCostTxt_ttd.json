@@ -1,7 +1,7 @@
 {
-	"name": "BioCostTxt_ttd",
+	"name": "BioCostTxt_TTD",
 	"plugin-id": "Sprite",
-	"sid": 227559702315894,
+	"sid": 331850361949977,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2720985,
+						"imageSpriteId": 7277019,
 						"collisionPoly": {
 							"points": [
 								0.05555555555555555,
@@ -35,7 +35,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 186530736753048,
+				"sid": 245990173497744,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

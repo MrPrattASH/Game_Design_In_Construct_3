@@ -1,7 +1,7 @@
 {
-	"name": "BookProjectile_ttd",
+	"name": "BookProjectile_TTD",
 	"plugin-id": "Sprite",
-	"sid": 888139319489842,
+	"sid": 921020826892644,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2681122,
+						"imageSpriteId": 1932144,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 120171618027257,
+				"sid": 488879267328579,
 				"name": "Blue",
 				"isLooping": false,
 				"isPingPong": false,
@@ -41,12 +41,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3229758,
+						"imageSpriteId": 301742,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 291241470070915,
+				"sid": 446008438877790,
 				"name": "Red",
 				"isLooping": false,
 				"isPingPong": false,
@@ -64,12 +64,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1782517,
+						"imageSpriteId": 2141271,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 639680563535654,
+				"sid": 258966651888332,
 				"name": "Green",
 				"isLooping": false,
 				"isPingPong": false,
@@ -87,12 +87,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4177494,
+						"imageSpriteId": 9782645,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 956977598266660,
+				"sid": 136421925674218,
 				"name": "Yellow",
 				"isLooping": false,
 				"isPingPong": false,

@@ -54,6 +54,11 @@
 					"parameters": {
 						"scale": "1"
 					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 587041080102968
 				}
 			],
 			"sid": 514602253531231

@@ -1,7 +1,7 @@
 {
-	"name": "Math_ttd",
+	"name": "Math_TTD",
 	"plugin-id": "Sprite",
-	"sid": 335493235786199,
+	"sid": 391008065669359,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2424621,
+						"imageSpriteId": 4129197,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -50,7 +50,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4856739,
+						"imageSpriteId": 3978308,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -75,7 +75,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 312748616399853,
+				"sid": 165734573058796,
 				"name": "Idle",
 				"isLooping": true,
 				"isPingPong": false,
@@ -93,7 +93,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3976773,
+						"imageSpriteId": 6561311,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -125,7 +125,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 844523,
+						"imageSpriteId": 2765204,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -150,7 +150,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 710134469691947,
+				"sid": 187237601195816,
 				"name": "Throw",
 				"isLooping": false,
 				"isPingPong": false,

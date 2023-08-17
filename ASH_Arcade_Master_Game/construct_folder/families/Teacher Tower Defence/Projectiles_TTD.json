@@ -1,0 +1,36 @@
+{
+	"name": "Projectiles_TTD",
+	"plugin-id": "Sprite",
+	"sid": 997170373165250,
+	"instanceVariables": [
+		{
+			"name": "range",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 351236926248576
+		},
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 938884130201412
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 134883292822975
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Basketball_TTD",
+		"PaintbrushProjectile_TTD",
+		"WrenchProjectile_TTD",
+		"BookProjectile_TTD",
+		"NumbersProjectile_TTD"
+	]
+}

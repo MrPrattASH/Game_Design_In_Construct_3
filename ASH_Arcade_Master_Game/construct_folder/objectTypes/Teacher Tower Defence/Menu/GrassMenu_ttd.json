@@ -1,7 +1,7 @@
 {
-	"name": "GrassMenu_ttd",
+	"name": "GrassMenu_TTD",
 	"plugin-id": "Sprite",
-	"sid": 787758879534932,
+	"sid": 807539849788508,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7539750,
+						"imageSpriteId": 2984386,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 865539414373223,
+				"sid": 292231953328417,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

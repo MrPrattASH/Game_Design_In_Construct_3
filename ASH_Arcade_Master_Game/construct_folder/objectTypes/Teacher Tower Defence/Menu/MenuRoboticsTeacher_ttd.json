@@ -1,7 +1,7 @@
 {
-	"name": "MenuRoboticsTeacher_ttd",
+	"name": "MenuRoboticsTeacher_TTD",
 	"plugin-id": "Sprite",
-	"sid": 645620710448163,
+	"sid": 876970103458913,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2882240,
+						"imageSpriteId": 151229,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6293572,
+						"imageSpriteId": 6782903,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 937656555873455,
+				"sid": 693754692534419,
 				"name": "Animation 1",
 				"isLooping": true,
 				"isPingPong": false,

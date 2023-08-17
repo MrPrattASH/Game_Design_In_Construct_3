@@ -1,0 +1,11 @@
+{
+	"name": "Enemies_TTD",
+	"plugin-id": "Sprite",
+	"sid": 710772053628897,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Enemy_TTD"
+	]
+}

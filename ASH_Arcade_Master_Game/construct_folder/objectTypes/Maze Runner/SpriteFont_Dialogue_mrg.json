@@ -1,0 +1,51 @@
+{
+	"name": "SpriteFont_Dialogue_mrg",
+	"plugin-id": "Spritefont2",
+	"sid": 801608434210418,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Tag",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 500361876335028
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 524834902110044
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "tint",
+			"name": "Tint"
+		}
+	],
+	"image": {
+		"width": 113,
+		"height": 67,
+		"originX": 0.5221238938053098,
+		"originY": 1.0298507462686566,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8781625,
+		"collisionPoly": {
+			"points": [
+				0.02654867256637168,
+				0.02985074626865669,
+				0.9911504424778761,
+				0.02985074626865669,
+				0.9911504424778761,
+				0.9850746268656717,
+				0.02654867256637168,
+				0.9850746268656717
+			]
+		},
+		"useCollisionPoly": true
+	}
+}

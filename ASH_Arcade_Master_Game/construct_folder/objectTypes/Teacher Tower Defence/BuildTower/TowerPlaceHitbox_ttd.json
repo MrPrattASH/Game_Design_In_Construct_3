@@ -1,7 +1,7 @@
 {
-	"name": "TowerPlaceHitbox_ttd",
+	"name": "TowerPlaceHitbox_TTD",
 	"plugin-id": "Sprite",
-	"sid": 828815909542530,
+	"sid": 772630989120305,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1159159,
+						"imageSpriteId": 6495923,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -43,7 +43,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 949892867525022,
+				"sid": 120765432790028,
 				"name": "Idle",
 				"isLooping": true,
 				"isPingPong": false,

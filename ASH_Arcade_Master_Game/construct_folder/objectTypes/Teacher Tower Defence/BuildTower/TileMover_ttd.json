@@ -1,19 +1,19 @@
 {
-	"name": "TileMover_ttd",
+	"name": "TileMover_TTD",
 	"plugin-id": "Sprite",
-	"sid": 326887074912472,
+	"sid": 886354329050032,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "TileMovement",
 			"name": "TileMovement",
-			"sid": 413232038588421
+			"sid": 186819828801972
 		},
 		{
 			"behaviorId": "bound",
 			"name": "BoundToLayout",
-			"sid": 475675921335997
+			"sid": 518428629714548
 		}
 	],
 	"effectTypes": [],
@@ -29,7 +29,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 301837,
+						"imageSpriteId": 1831551,
 						"collisionPoly": {
 							"points": [
 								0.296875,
@@ -61,7 +61,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9110816,
+						"imageSpriteId": 8175965,
 						"collisionPoly": {
 							"points": [
 								0.296875,
@@ -86,7 +86,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 316370118071404,
+				"sid": 956163066021567,
 				"name": "Blink",
 				"isLooping": true,
 				"isPingPong": false,

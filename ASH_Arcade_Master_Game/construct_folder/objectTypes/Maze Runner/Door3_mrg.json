@@ -1,0 +1,63 @@
+{
+	"name": "Door3_mrg",
+	"plugin-id": "Sprite",
+	"sid": 145384969582787,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 585191175770730
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 350,
+						"height": 614,
+						"originX": 0.4828571428571429,
+						"originY": 0.6270358306188925,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4161808,
+						"collisionPoly": {
+							"points": [
+								0.002857142857142857,
+								0.3534201954397394,
+								0.4828571428571429,
+								0.0016286644951140066,
+								0.9942857142857143,
+								0.3338762214983713,
+								0.9942857142857143,
+								0.6270358306188925,
+								1,
+								1,
+								0.4828571428571429,
+								0.996742671009772,
+								0.00008928571428571449,
+								1,
+								0.002857142857142857,
+								0.6270358306188925
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 385559243369329,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

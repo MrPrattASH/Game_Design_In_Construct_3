@@ -1,7 +1,7 @@
 {
-	"name": "RoboticsStats_ttd",
+	"name": "RoboticsStats_TTD",
 	"plugin-id": "Sprite",
-	"sid": 576565058136431,
+	"sid": 914467153134371,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2654977,
+						"imageSpriteId": 8400936,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 118295072167055,
+				"sid": 494724788443728,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

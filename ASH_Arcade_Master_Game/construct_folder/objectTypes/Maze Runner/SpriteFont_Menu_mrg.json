@@ -1,0 +1,62 @@
+{
+	"name": "SpriteFont_Menu_mrg",
+	"plugin-id": "Spritefont2",
+	"sid": 387677219286100,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Menu",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 769201212143142
+		},
+		{
+			"name": "Link_ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 882114701075199
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 992694543945920
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "brightness",
+			"name": "Brightness"
+		},
+		{
+			"effectId": "tint",
+			"name": "Tint"
+		}
+	],
+	"image": {
+		"width": 113,
+		"height": 67,
+		"originX": 0.5221238938053098,
+		"originY": 1.0298507462686566,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8939756,
+		"collisionPoly": {
+			"points": [
+				0.02654867256637168,
+				0.029850746268656716,
+				0.9911504424778761,
+				0.029850746268656716,
+				0.9911504424778761,
+				0.9850746268656717,
+				0.02654867256637168,
+				0.9850746268656717
+			]
+		},
+		"useCollisionPoly": true
+	}
+}

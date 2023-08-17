@@ -1,7 +1,7 @@
 {
-	"name": "MenuPlayButton_ttd",
+	"name": "MenuPlayButton_TTD",
 	"plugin-id": "Sprite",
-	"sid": 509126386121200,
+	"sid": 786766089055070,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5524356,
+						"imageSpriteId": 3135934,
 						"collisionPoly": {
 							"points": [
 								0.041666666666666664,
@@ -35,7 +35,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 703947638087554,
+				"sid": 468131315864412,
 				"name": "Unpressed",
 				"isLooping": false,
 				"isPingPong": false,
@@ -53,7 +53,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2033689,
+						"imageSpriteId": 6555164,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -70,7 +70,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 963441623346213,
+				"sid": 949053657663476,
 				"name": "Press",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,14 +1,14 @@
 {
-	"name": "NoPlaceText_ttd",
+	"name": "NoPlaceText_TTD",
 	"plugin-id": "Text",
-	"sid": 352870121705094,
+	"sid": 859286618193104,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Fade",
 			"name": "Fade",
-			"sid": 399643226385012
+			"sid": 106811105174297
 		}
 	],
 	"effectTypes": []

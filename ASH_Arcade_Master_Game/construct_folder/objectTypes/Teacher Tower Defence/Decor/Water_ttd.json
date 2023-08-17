@@ -1,7 +1,7 @@
 {
-	"name": "Water_ttd",
+	"name": "Water_TTD",
 	"plugin-id": "Sprite",
-	"sid": 154103153131376,
+	"sid": 885168879642514,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 336627677769817
+			"sid": 212803177039921
 		}
 	],
 	"behaviorTypes": [],
@@ -26,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7043812,
+						"imageSpriteId": 4831110,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -38,7 +38,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6102980,
+						"imageSpriteId": 7423694,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -50,7 +50,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5009915,
+						"imageSpriteId": 2326837,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -62,12 +62,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7689912,
+						"imageSpriteId": 5276297,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 945069756939015,
+				"sid": 904617373661899,
 				"name": "Animation1",
 				"isLooping": true,
 				"isPingPong": false,

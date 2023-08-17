@@ -1,7 +1,7 @@
 {
-	"name": "MathShop_ttd",
+	"name": "MathShop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 810132889383839,
+	"sid": 926167848584120,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2026812,
+						"imageSpriteId": 4360040,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 646629,
+						"imageSpriteId": 951114,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 619420268947469,
+				"sid": 416759260877451,
 				"name": "MathPurchase",
 				"isLooping": true,
 				"isPingPong": false,
@@ -53,12 +53,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 74210,
+						"imageSpriteId": 4559615,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 359075978516343,
+				"sid": 143123490673035,
 				"name": "MathUpgrade",
 				"isLooping": false,
 				"isPingPong": false,

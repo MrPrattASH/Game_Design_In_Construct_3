@@ -1,14 +1,14 @@
 {
-	"name": "RoundInfoBox_ttd",
+	"name": "RoundInfoBox_TTD",
 	"plugin-id": "Sprite",
-	"sid": 706200469253816,
+	"sid": 325253986819869,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Fade",
 			"name": "Fade",
-			"sid": 738459768486601
+			"sid": 595582152960403
 		}
 	],
 	"effectTypes": [],
@@ -24,7 +24,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1324030,
+						"imageSpriteId": 8560579,
 						"collisionPoly": {
 							"points": [
 								0.021739130434782608,
@@ -41,7 +41,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 625125400821140,
+				"sid": 126578485928737,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

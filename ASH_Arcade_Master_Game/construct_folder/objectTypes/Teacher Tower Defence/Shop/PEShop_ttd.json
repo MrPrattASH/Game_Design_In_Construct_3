@@ -1,7 +1,7 @@
 {
-	"name": "PEShop_ttd",
+	"name": "PEShop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 198873846338503,
+	"sid": 407906054633856,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1049944,
+						"imageSpriteId": 9230357,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6144601,
+						"imageSpriteId": 7494468,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 933497149741750,
+				"sid": 179117707586927,
 				"name": "PEPurchase",
 				"isLooping": true,
 				"isPingPong": false,
@@ -53,12 +53,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8203870,
+						"imageSpriteId": 5645683,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 531839394322304,
+				"sid": 754585821838976,
 				"name": "PEUpgrade",
 				"isLooping": false,
 				"isPingPong": false,

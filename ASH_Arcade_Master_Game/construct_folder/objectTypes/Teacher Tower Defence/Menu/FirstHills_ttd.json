@@ -1,7 +1,7 @@
 {
-	"name": "FirstHills_ttd",
+	"name": "FirstHills_TTD",
 	"plugin-id": "Sprite",
-	"sid": 833106912439679,
+	"sid": 955335255611153,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5495451,
+						"imageSpriteId": 1800927,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 630381241314567,
+				"sid": 593383902914125,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

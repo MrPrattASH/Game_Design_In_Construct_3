@@ -1,0 +1,63 @@
+{
+	"name": "boy_mrg",
+	"plugin-id": "Sprite",
+	"sid": 259482144586836,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 419375385984697
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 222,
+						"height": 322,
+						"originX": -0.7310505994716521,
+						"originY": 0.49489850962501725,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6051491,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.39261593946025924,
+								0,
+								0,
+								0,
+								0.1880507991307429,
+								0,
+								0.0014557453416149068,
+								1,
+								0,
+								1,
+								1,
+								0.000950168918918919,
+								0.9969914596273292,
+								0,
+								0.012883346273291928
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 725769018782019,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

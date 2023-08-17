@@ -1,14 +1,14 @@
 {
-	"name": "Wall_ttd",
+	"name": "Wall_TTD",
 	"plugin-id": "TiledBg",
-	"sid": 255439713678181,
+	"sid": 219852533814912,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 786438760574278
+			"sid": 162704025304166
 		}
 	],
 	"effectTypes": [],
@@ -20,7 +20,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6930806,
+		"imageSpriteId": 4744274,
 		"useCollisionPoly": true
 	}
 }

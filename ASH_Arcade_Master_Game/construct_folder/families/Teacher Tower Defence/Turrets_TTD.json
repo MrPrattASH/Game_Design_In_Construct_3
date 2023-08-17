@@ -1,0 +1,22 @@
+{
+	"name": "Turrets_TTD",
+	"plugin-id": "Sprite",
+	"sid": 414548341426216,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Turret",
+			"name": "Turret",
+			"sid": 133987036247973
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"PETurret_TTD",
+		"ENGTurret_TTD",
+		"ROBOTurret_TTD",
+		"ARTTurret_TTD",
+		"BIOTurret_TTD",
+		"MATurret_TTD"
+	]
+}

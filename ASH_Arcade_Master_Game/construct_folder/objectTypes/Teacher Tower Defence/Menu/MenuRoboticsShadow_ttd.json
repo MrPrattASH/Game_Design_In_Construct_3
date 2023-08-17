@@ -1,7 +1,7 @@
 {
-	"name": "MenuRoboticsShadow_ttd",
+	"name": "MenuRoboticsShadow_TTD",
 	"plugin-id": "Sprite",
-	"sid": 808078399221449,
+	"sid": 214068525075779,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7315553,
+						"imageSpriteId": 1642623,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7235171,
+						"imageSpriteId": 5652856,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 243895578541833,
+				"sid": 423129803635613,
 				"name": "Animation 1",
 				"isLooping": true,
 				"isPingPong": false,

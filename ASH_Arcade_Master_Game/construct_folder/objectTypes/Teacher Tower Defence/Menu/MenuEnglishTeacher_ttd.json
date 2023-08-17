@@ -1,7 +1,7 @@
 {
-	"name": "MenuEnglishTeacher_ttd",
+	"name": "MenuEnglishTeacher_TTD",
 	"plugin-id": "Sprite",
-	"sid": 872300989500545,
+	"sid": 183467886518864,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7549477,
+						"imageSpriteId": 6906132,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8940311,
+						"imageSpriteId": 1577311,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 373696586619819,
+				"sid": 983117033864225,
 				"name": "Animation 1",
 				"isLooping": true,
 				"isPingPong": false,

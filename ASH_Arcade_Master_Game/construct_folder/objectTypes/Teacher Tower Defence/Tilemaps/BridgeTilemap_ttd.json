@@ -1,7 +1,7 @@
 {
-	"name": "BridgeTilemap_ttd",
+	"name": "BridgeTilemap_TTD",
 	"plugin-id": "Tilemap",
-	"sid": 480038505158641,
+	"sid": 779985230758770,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3245198,
+		"imageSpriteId": 9098449,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {}

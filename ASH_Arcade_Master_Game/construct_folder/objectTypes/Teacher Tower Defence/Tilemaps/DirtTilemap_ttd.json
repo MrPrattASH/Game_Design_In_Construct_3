@@ -1,7 +1,7 @@
 {
-	"name": "DirtTilemap_ttd",
+	"name": "DirtTilemap_TTD",
 	"plugin-id": "Tilemap",
-	"sid": 675533602402044,
+	"sid": 391144161267898,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6046633,
+		"imageSpriteId": 7331201,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {}

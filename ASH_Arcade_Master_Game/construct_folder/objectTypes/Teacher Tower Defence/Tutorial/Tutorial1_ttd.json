@@ -1,7 +1,7 @@
 {
-	"name": "Tutorial1_ttd",
+	"name": "Tutorial1_TTD",
 	"plugin-id": "Sprite",
-	"sid": 460671801823548,
+	"sid": 527822763599072,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 195286432626307
+			"sid": 379381794523159
 		}
 	],
 	"behaviorTypes": [],
@@ -26,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8318473,
+						"imageSpriteId": 4619497,
 						"collisionPoly": {
 							"points": [
 								0.04760660535117057,
@@ -47,7 +47,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 674367392371958,
+				"sid": 832282895423179,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

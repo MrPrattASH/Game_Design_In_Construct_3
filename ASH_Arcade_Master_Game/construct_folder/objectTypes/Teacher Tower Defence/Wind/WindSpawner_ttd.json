@@ -1,7 +1,7 @@
 {
-	"name": "WindSpawner_ttd",
+	"name": "WindSpawner_TTD",
 	"plugin-id": "Sprite",
-	"sid": 659706858211794,
+	"sid": 938086351059393,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "string",
 			"desc": "",
 			"show": true,
-			"sid": 809212152882920
+			"sid": 612074681654530
 		}
 	],
 	"behaviorTypes": [],
@@ -26,12 +26,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1201640,
+						"imageSpriteId": 6618173,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 482536755408962,
+				"sid": 275860992648821,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "TutorialSlideDisplay_ttd",
+	"name": "TutorialSlideDisplay_TTD",
 	"plugin-id": "Sprite",
-	"sid": 885391644716903,
+	"sid": 879920652708184,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1975223,
+						"imageSpriteId": 9207275,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 742722312262271,
+				"sid": 800480117988725,
 				"name": "Slide 1",
 				"isLooping": false,
 				"isPingPong": false,
@@ -41,12 +41,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4942065,
+						"imageSpriteId": 9045725,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 994018995224277,
+				"sid": 875630711497966,
 				"name": "Slide 2",
 				"isLooping": false,
 				"isPingPong": false,
@@ -64,12 +64,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1390793,
+						"imageSpriteId": 8132421,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 490652798000954,
+				"sid": 214764916864285,
 				"name": "Slide 3",
 				"isLooping": false,
 				"isPingPong": false,
@@ -87,12 +87,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1558608,
+						"imageSpriteId": 8061203,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 484480086719700,
+				"sid": 773039679737693,
 				"name": "Slide 4",
 				"isLooping": false,
 				"isPingPong": false,

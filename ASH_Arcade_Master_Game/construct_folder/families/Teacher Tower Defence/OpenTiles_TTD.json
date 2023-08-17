@@ -1,0 +1,11 @@
+{
+	"name": "OpenTiles_TTD",
+	"plugin-id": "TiledBg",
+	"sid": 169034931942898,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"OpenTile_TTD"
+	]
+}

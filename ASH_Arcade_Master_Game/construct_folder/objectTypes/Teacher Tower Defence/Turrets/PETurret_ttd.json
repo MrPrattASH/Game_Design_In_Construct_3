@@ -1,7 +1,7 @@
 {
-	"name": "PETurret_ttd",
+	"name": "PETurret_TTD",
 	"plugin-id": "Sprite",
-	"sid": 108172474440766,
+	"sid": 870487819685924,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8049238,
+						"imageSpriteId": 1226856,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 107859072546727,
+				"sid": 461759271225207,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

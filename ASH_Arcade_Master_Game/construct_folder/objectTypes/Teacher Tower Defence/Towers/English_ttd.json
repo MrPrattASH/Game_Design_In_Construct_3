@@ -1,7 +1,7 @@
 {
-	"name": "English_ttd",
+	"name": "English_TTD",
 	"plugin-id": "Sprite",
-	"sid": 466142912722075,
+	"sid": 846831588692154,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 804606506677217
+			"sid": 687336431737861
 		}
 	],
 	"behaviorTypes": [],
@@ -26,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7654364,
+						"imageSpriteId": 1850871,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -58,7 +58,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1351640,
+						"imageSpriteId": 5715481,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -83,7 +83,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 757343123153628,
+				"sid": 693580635022525,
 				"name": "Idle",
 				"isLooping": true,
 				"isPingPong": false,
@@ -101,7 +101,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3618721,
+						"imageSpriteId": 2336618,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -133,7 +133,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 956109278240781,
+				"sid": 853464161789733,
 				"name": "Throw",
 				"isLooping": false,
 				"isPingPong": false,
@@ -151,7 +151,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9724271,
+						"imageSpriteId": 163399,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -176,7 +176,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 974381669492042,
+				"sid": 606470815740075,
 				"name": "TowerMoving",
 				"isLooping": false,
 				"isPingPong": false,

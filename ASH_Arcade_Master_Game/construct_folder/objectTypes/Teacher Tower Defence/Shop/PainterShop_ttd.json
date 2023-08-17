@@ -1,7 +1,7 @@
 {
-	"name": "PainterShop_ttd",
+	"name": "PainterShop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 263979454125830,
+	"sid": 379088165266962,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1656693,
+						"imageSpriteId": 2717933,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3216486,
+						"imageSpriteId": 7539889,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 263188873203879,
+				"sid": 811657796717578,
 				"name": "Painter",
 				"isLooping": true,
 				"isPingPong": false,
@@ -53,12 +53,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5865294,
+						"imageSpriteId": 9408764,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 766638917544877,
+				"sid": 711775190875575,
 				"name": "UpgradePainter",
 				"isLooping": false,
 				"isPingPong": false,

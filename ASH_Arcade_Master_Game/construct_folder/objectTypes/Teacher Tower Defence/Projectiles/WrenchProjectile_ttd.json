@@ -1,7 +1,7 @@
 {
-	"name": "WrenchProjectile_ttd",
+	"name": "WrenchProjectile_TTD",
 	"plugin-id": "Sprite",
-	"sid": 779503440591784,
+	"sid": 107220683602062,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6428758,
+						"imageSpriteId": 5650493,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 786792802791453,
+				"sid": 792767711537396,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

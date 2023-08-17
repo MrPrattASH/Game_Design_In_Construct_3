@@ -1,0 +1,24 @@
+{
+	"name": "ShopFamily_TTD",
+	"plugin-id": "Sprite",
+	"sid": 245327937495935,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"BiologyShop_TTD",
+		"BiologyStats_TTD",
+		"BuyMenu_TTD",
+		"EnglishShop_TTD",
+		"EnglishStats_TTD",
+		"MathShop_TTD",
+		"MathStats_TTD",
+		"PainterShop_TTD",
+		"PainterStats_TTD",
+		"PEShop_TTD",
+		"PEStats_TTD",
+		"RoboticsShop_TTD",
+		"RoboticsStats_TTD",
+		"Shop_TTD"
+	]
+}

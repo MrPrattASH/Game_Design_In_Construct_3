@@ -1,7 +1,7 @@
 {
-	"name": "OpenTile_ttd",
+	"name": "OpenTile_TTD",
 	"plugin-id": "TiledBg",
-	"sid": 683178254393102,
+	"sid": 811722228922216,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 6611605,
+		"imageSpriteId": 8354623,
 		"useCollisionPoly": true
 	}
 }

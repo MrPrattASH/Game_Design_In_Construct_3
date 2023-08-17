@@ -1,0 +1,1706 @@
+{
+	"name": "Event sheet_mrg",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Health",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 686142992725254
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "These lines of code are meat to allow the player to travel through the doors -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 410131834253041,
+							"parameters": {
+								"object": "Door1_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 848846083057295,
+							"parameters": {
+								"x": "52",
+								"y": "574"
+							}
+						}
+					],
+					"sid": 718443018443214
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 540701738636446,
+							"parameters": {
+								"object": "Door3_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 265862321009668,
+							"parameters": {
+								"x": "Door4_mrg.X",
+								"y": "Door4_mrg.Y-5"
+							}
+						}
+					],
+					"sid": 255409199568200
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 135283450781678,
+							"parameters": {
+								"object": "Door5_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 690219486555117,
+							"parameters": {
+								"x": "door6_mrg.X",
+								"y": "door6_mrg.Y-1"
+							}
+						}
+					],
+					"sid": 866722964190312
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 667034154282226,
+							"parameters": {
+								"object": "End_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 915372747777306,
+							"parameters": {
+								"layout": "Pre-Boss-Fight_mrg"
+							}
+						}
+					],
+					"sid": 414871246116540
+				},
+				{
+					"eventType": "comment",
+					"text": "This line opens the gate to the maze -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "DialogueBox_mrg",
+							"sid": 854820543913807
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "Entrance_mrg",
+							"sid": 190221254945551,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "2.0"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Entrance_mrg",
+							"sid": 665435825150592,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"Gate\""
+							}
+						}
+					],
+					"sid": 436866440102271
+				},
+				{
+					"eventType": "comment",
+					"text": "This line stops the gate from flashing and opens it -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "Entrance_mrg",
+							"sid": 918263024955562,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Gate\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Entrance_mrg",
+							"sid": 640699376389083
+						}
+					],
+					"sid": 184211621887365
+				},
+				{
+					"eventType": "comment",
+					"text": "Line 9-11 is used to open the gate to the boss room -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 110039288006731
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "End_mrg",
+							"sid": 947506663025094,
+							"parameters": {
+								"animation": "\"Closed\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 593490830372753,
+							"parameters": {
+								"scale": "3.5"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 338795277942941,
+							"parameters": {
+								"audio-file": "Smooth - Loop - Alon and Max",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 907756436386318
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 874449908138132,
+							"parameters": {
+								"object": "EndAnimStarter_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "End_mrg",
+							"sid": 695308920181181,
+							"parameters": {
+								"animation": "\"Opening\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 975005460596767
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "End_mrg",
+							"sid": 990770131549964,
+							"parameters": {
+								"animation": "\"Opening\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "End_mrg",
+							"sid": 599999937135084,
+							"parameters": {
+								"animation": "\"Open\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Barrier_mrg",
+							"sid": 813271658104691
+						},
+						{
+							"id": "destroy",
+							"objectClass": "EndAnimStarter_mrg",
+							"sid": 503269204596272
+						}
+					],
+					"sid": 145426074997269
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "DialogueBox_mrg",
+							"sid": 517053565475828
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Objective1_mrg",
+							"sid": 660864651819868
+						}
+					],
+					"sid": 757410012378478
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Objective1_mrg",
+							"sid": 404461792052520
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Objective2_mrg",
+							"sid": 871184666166288,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 504468242714929
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "gameOverText_mrg",
+							"sid": 599996731271638
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Objective2_mrg",
+							"sid": 579911929735709
+						}
+					],
+					"sid": 237281238686725
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 271515036950935
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "StartGame_mrg",
+							"sid": 470360244913247,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.8",
+								"off-time": "0.4",
+								"duration": "10000000.0"
+							}
+						}
+					],
+					"sid": 456252661375518
+				},
+				{
+					"eventType": "comment",
+					"text": "This line starts the game -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 926188272003634,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [],
+					"sid": 391789956339023,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-flashing",
+									"objectClass": "StartGame_mrg",
+									"sid": 860300846919587,
+									"behaviorType": "Flash"
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 771952968952331,
+									"parameters": {
+										"layout": "Maze_mrg"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "StartGame_mrg",
+									"sid": 661627787840546
+								}
+							],
+							"sid": 221200142595859
+						}
+					]
+				}
+			],
+			"sid": 319128652134781
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This is used to Connect the Player animations to the player -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 408453387907787
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 803058629708672,
+							"parameters": {
+								"object": "PlayerBox_mrg",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 629012251373272
+				},
+				{
+					"eventType": "comment",
+					"text": "To be honest this could have been easier but it said that we needed a function so i added one -Nic"
+				},
+				{
+					"functionName": "player_take_damage2",
+					"functionDescription": "subtract health from player or destroy",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 156881011112058,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Update player's health, and display the new health on the HUD layer -Nic"
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 903968410639744,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "hp_text_mrg",
+							"sid": 820260151142385,
+							"parameters": {
+								"text": "\"Health: \" & str(PlayerBox_mrg.Health)"
+							}
+						}
+					],
+					"sid": 676498500748426,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "if the player is dead, destroy both the artwork and the hitbox itself. also Display the game over text -Nic"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PlayerBox_mrg",
+									"sid": 158468035907637,
+									"parameters": {
+										"instance-variable": "Health",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "PlayerAnim_mrg",
+									"sid": 167196398715483
+								},
+								{
+									"id": "destroy",
+									"objectClass": "PlayerBox_mrg",
+									"sid": 229302264447184
+								},
+								{
+									"id": "set-progress",
+									"objectClass": "ProgressBar_mrg",
+									"sid": 458063149944815,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "gameOverText_mrg",
+									"sid": 926534473495442,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "ProgressBar_mrg",
+									"sid": 937138535360720
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Heart2_mrg",
+									"sid": 406376867000614
+								},
+								{
+									"id": "set-time-scale",
+									"objectClass": "System",
+									"sid": 944769616714531,
+									"parameters": {
+										"time-scale": "0"
+									}
+								}
+							],
+							"sid": 185709249797829
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "This enables the player to take DMG -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 972350974602524,
+							"parameters": {
+								"object": "Enemy_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "player_take_damage2",
+							"sid": 544959540640942
+						}
+					],
+					"sid": 138041785927887
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 580396343120263,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-progress",
+							"objectClass": "ProgressBar_mrg",
+							"sid": 490632464554896,
+							"parameters": {
+								"value": "66"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Heart1_mrg",
+							"sid": 373334892550640
+						}
+					],
+					"sid": 202876803296408
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 251217586054869,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-progress",
+							"objectClass": "ProgressBar_mrg",
+							"sid": 820861738641375,
+							"parameters": {
+								"value": "33"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Heart3_mrg",
+							"sid": 373485911899036
+						}
+					],
+					"sid": 596718916110107
+				},
+				{
+					"eventType": "comment",
+					"text": "The total abomination of madness that follows is an attempt of me to block double movement -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 101156984886746,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 822718493933385,
+							"parameters": {
+								"key": 38
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 359336360314015,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Left\""
+							}
+						}
+					],
+					"sid": 789198417451650
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 590014015251056,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 857923495554270,
+							"parameters": {
+								"key": 40
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 234941620278407,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Left\""
+							}
+						}
+					],
+					"sid": 355137251462550
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 784585790688692,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 243279885758695,
+							"parameters": {
+								"key": 38
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 811273743342631,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Right\""
+							}
+						}
+					],
+					"sid": 180066183703776
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 727762910740099,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 743174954265348,
+							"parameters": {
+								"key": 40
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 189166984170379,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Right\""
+							}
+						}
+					],
+					"sid": 282926202426779
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 599456767799860,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 125457614350475,
+							"parameters": {
+								"key": 37
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 171264617982481,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Up\""
+							}
+						}
+					],
+					"sid": 288589654366788
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 229004987935629,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 420882834068545,
+							"parameters": {
+								"key": 39
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 260279491816182,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Up\""
+							}
+						}
+					],
+					"sid": 697129030508192
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 486304145815039,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 502038997526312,
+							"parameters": {
+								"key": 39
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 462770371002220,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Down\""
+							}
+						}
+					],
+					"sid": 348807506565908
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 297104725285846,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 643222415496645,
+							"parameters": {
+								"key": 37
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 930453260725748,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Down\""
+							}
+						}
+					],
+					"sid": 771461182234158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "ProgressBar_mrg",
+							"sid": 122945122484209
+						}
+					],
+					"actions": [],
+					"sid": 310094729521225
+				},
+				{
+					"eventType": "comment",
+					"text": "The following lines enable the character to idle and not run on the spot -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 764611144880793,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 978357784849060,
+							"parameters": {
+								"instance-variable": "Idle",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 262246968296400,
+							"parameters": {
+								"animation": "\"Idel right\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 415304211032559
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 308009009144906,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 869338693382364,
+							"parameters": {
+								"animation": "\"Idel left\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 154460416691310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 820552811790720,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 145917603720550,
+							"parameters": {
+								"animation": "\"Idel up\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 163888585712970
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 375863261142028,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 716130928110472,
+							"parameters": {
+								"animation": "\"Idel down\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 615208074682656
+				},
+				{
+					"eventType": "comment",
+					"text": "These lines set the Animations based on the directions -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 429992270285447,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"Right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 506574939405371,
+							"parameters": {
+								"animation": "\"Right\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 293576352817605
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 197341596506537,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"Down\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 724671417267759,
+							"parameters": {
+								"animation": "\"Front\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 639403554509702
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 890788175702679,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"Left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 393604211175919,
+							"parameters": {
+								"animation": "\"Left\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 719920115686460
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 807395452814305,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"Up\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 519097019156083,
+							"parameters": {
+								"animation": "\"Back\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 673906035619139
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 993685137279301,
+							"parameters": {
+								"instance-variable": "Idle"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "PlayerBox_mrg",
+							"sid": 125841339572170,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Nothing\""
+							}
+						}
+					],
+					"sid": 870400831464183
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 366704385304218
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "PlayerAnim_mrg",
+							"sid": 239516297032587,
+							"parameters": {
+								"animation": "\"Idel down\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 165052266132125,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 598593959027043
+				}
+			],
+			"sid": 202813147271642
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "All of these lines give the main enemy the ability to move from edge marker to edge marker by switching direction on contact -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_mrg",
+							"sid": 435558247734790,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy_mrg",
+							"sid": 897526411557036,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_mrg",
+							"sid": 142261191480571,
+							"parameters": {
+								"animation": "\"Idle_Left\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 483638190687106
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_mrg",
+							"sid": 994700942054620,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"left\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy_mrg",
+							"sid": 633669409358636,
+							"parameters": {
+								"animation": "\"Idle_Right\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 912167147660698
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy_mrg",
+							"sid": 435835546737769,
+							"parameters": {
+								"instance-variable": "Action",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy_mrg",
+							"sid": 250325020334031,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 194021244829610
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy_mrg",
+							"sid": 826426942715811,
+							"parameters": {
+								"object": "EdgeMarker_mrg"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 556885501708918,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy_mrg",
+									"sid": 329918314458260,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy_mrg",
+									"sid": 530135105713571,
+									"parameters": {
+										"instance-variable": "Action",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 522022209666779
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 812131893172531
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy_mrg",
+									"sid": 655005598405254,
+									"parameters": {
+										"instance-variable": "Action",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 178306842197519
+						}
+					]
+				}
+			],
+			"sid": 715805168807140
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Dialogue",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This line destroys the dialog so that the gate can't be destroyed multiple times -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 838078694901018,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [],
+					"sid": 877690156442230,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "dialogue_trigger_mrg",
+									"sid": 836698100358822,
+									"parameters": {
+										"instance-variable": "Event"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "dialogue_box2",
+									"sid": 192627535646901,
+									"parameters": [
+										"dialogue_trigger_mrg.line"
+									]
+								},
+								{
+									"id": "destroy",
+									"objectClass": "dialogue_trigger_mrg",
+									"sid": 110373442444648
+								}
+							],
+							"sid": 328337200238500
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 884821997747453
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "DialogueBox_mrg",
+									"sid": 260089110732970
+								},
+								{
+									"id": "destroy",
+									"objectClass": "SpriteFont_Dialogue_mrg",
+									"sid": 291853471085523
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Dialogue_Arrow_mrg",
+									"sid": 187814045704242
+								}
+							],
+							"sid": 495003508993782
+						},
+						{
+							"eventType": "comment",
+							"text": "This is the code that will spawn the litter arrow idicator of which item you have selected and it also starts the dialogue -Nic"
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "dialogue_trigger_mrg",
+							"sid": 749008525966745,
+							"parameters": {
+								"object": "PlayerBox_mrg"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 179852505625799,
+							"parameters": {
+								"object-to-create": "Item_Arrow_mrg",
+								"layer": "\"Main maze\"",
+								"x": "135.5",
+								"y": "160",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "dialogue_trigger_mrg",
+							"sid": 876362945476161,
+							"parameters": {
+								"instance-variable": "Event",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 429841265844163
+				},
+				{
+					"eventType": "comment",
+					"text": "This deletes the arrow indicator and canceles the dialogue -Nic"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "dialogue_trigger_mrg",
+							"sid": 816329216290291,
+							"parameters": {
+								"object": "PlayerBox_mrg"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Item_Arrow_mrg",
+							"sid": 490688590364266
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "dialogue_trigger_mrg",
+							"sid": 830654026142475,
+							"parameters": {
+								"instance-variable": "Event",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 123027663597935
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Item_Arrow_mrg",
+							"sid": 645338624077582
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "Item_Arrow_mrg",
+							"sid": 925752578493169,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 814072672907797
+				},
+				{
+					"eventType": "comment",
+					"text": "This part of the code creates the black text box and the text itself, it also sets the spawn location to be at the top left -Nic"
+				},
+				{
+					"functionName": "dialogue_box2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "line",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 788274827095532
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 181511239311307,
+							"parameters": {
+								"object-to-create": "DialogueBox_mrg",
+								"layer": "\"Player\"",
+								"x": "PlayerAnim_mrg.X",
+								"y": "PlayerAnim_mrg.X",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 694282095362489,
+							"parameters": {
+								"object-to-create": "Dialogue_Arrow_mrg",
+								"layer": "\"Player\"",
+								"x": "DialogueBox_mrg.BBoxRight",
+								"y": "DialogueBox_mrg.BBoxBottom",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 488068079656627,
+							"parameters": {
+								"object-to-create": "SpriteFont_Dialogue_mrg",
+								"layer": "\"Player\"",
+								"x": "DialogueBox_mrg.X+2",
+								"y": "DialogueBox_mrg.Y+2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont_Dialogue_mrg",
+							"sid": 613342904652730,
+							"parameters": {
+								"text": "line"
+							}
+						}
+					],
+					"sid": 563554562616702
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "DialogueBox_mrg",
+							"sid": 736162517529405
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 508061077148368,
+							"parameters": {
+								"object-to-create": "dialogue_trigger_mrg",
+								"layer": "2",
+								"x": "137",
+								"y": "172",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "dialogue_trigger_mrg",
+							"sid": 472486648267209
+						}
+					],
+					"sid": 473594783172498
+				}
+			],
+			"sid": 315399394183651
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 508664247071732
+}

@@ -1,7 +1,7 @@
 {
-	"name": "DirtPathMenu_ttd",
+	"name": "DirtPathMenu_TTD",
 	"plugin-id": "Sprite",
-	"sid": 209697120584768,
+	"sid": 156028148451901,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2457330,
+						"imageSpriteId": 5802446,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 861729904907310,
+				"sid": 604450179970450,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

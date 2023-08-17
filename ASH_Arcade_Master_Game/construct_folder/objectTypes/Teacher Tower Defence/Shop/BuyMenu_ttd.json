@@ -1,7 +1,7 @@
 {
-	"name": "BuyMenu_ttd",
+	"name": "BuyMenu_TTD",
 	"plugin-id": "Sprite",
-	"sid": 449262060264777,
+	"sid": 808089691752320,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2530163,
+						"imageSpriteId": 7930087,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 390069609324763,
+				"sid": 593883431675989,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

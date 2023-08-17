@@ -1,14 +1,14 @@
 {
-	"name": "NoBuyBox_ttd",
+	"name": "NoBuyBox_TTD",
 	"plugin-id": "Sprite",
-	"sid": 178788976723823,
+	"sid": 997776901384148,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Fade",
 			"name": "Fade",
-			"sid": 891959304860459
+			"sid": 438848794931459
 		}
 	],
 	"effectTypes": [],
@@ -24,7 +24,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5167178,
+						"imageSpriteId": 6161891,
 						"collisionPoly": {
 							"points": [
 								0.021739130434782608,
@@ -41,7 +41,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 639698869424771,
+				"sid": 637030425623024,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

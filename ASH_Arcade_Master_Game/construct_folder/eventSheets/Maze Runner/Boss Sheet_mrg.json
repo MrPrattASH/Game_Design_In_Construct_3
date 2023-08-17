@@ -1,0 +1,832 @@
+{
+	"name": "Boss Sheet_mrg",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Synchronizes the player boxes to the player animations -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 797551000829643
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 751031379225943,
+					"parameters": {
+						"object": "PlayerBoxBossFight_mrg",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Sprite12_mrg",
+					"sid": 282591663663197,
+					"parameters": {
+						"object": "BossBox_mrg",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "DmgIndicator_mrg",
+					"sid": 251826354561664,
+					"parameters": {
+						"object": "PlayerBoxBossFight_mrg",
+						"image-point-optional": "0"
+					}
+				}
+			],
+			"sid": 522425877352916
+		},
+		{
+			"eventType": "comment",
+			"text": "Line 2-3 Allow the character to walk and line 4-5 set the idle animations when he is not moving -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 774445888032848,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 536800800763798,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 765854281530410,
+					"parameters": {
+						"animation": "\"Walk_Right\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 730152029810818,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 583562582268214
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 731829287414929,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 199679943087630,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 168022365849080,
+					"parameters": {
+						"animation": "\"Walk_Left\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 180787649504470,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 611301566203909
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 605731235329753,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 179530614420590,
+					"parameters": {
+						"animation": "\"Idle_Right\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 392018586636094
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 760703182366181,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 968808866850259,
+					"parameters": {
+						"animation": "\"Idle_Left\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 530067173208167
+		},
+		{
+			"eventType": "comment",
+			"text": "This Allows the the player to rebound of the head of the boss and then it takes of a health point -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 536457043199323,
+					"parameters": {
+						"object": "BossBox_mrg"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "BossBox_mrg",
+					"sid": 562139717580464,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 0,
+						"value": "0"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 268151576519618,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "PlayerBoxBossFight_mrg",
+							"sid": 420358313798077,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "PlayerBoxBossFight_mrg",
+							"sid": 328693645999181,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "-250"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "BossBox_mrg",
+							"sid": 544963641733331,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "Sprite12_mrg",
+							"sid": 438761284238698,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.5"
+							}
+						}
+					],
+					"sid": 136248082487617,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 827409502062787
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Jump -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 422343020220076,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 505607418824396,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				}
+			],
+			"sid": 350253847235899
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 831773935910342
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "BossBox_mrg",
+					"sid": 262214855041633,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "\"Left\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 451816906810097,
+					"parameters": {
+						"scale": "3.5"
+					}
+				}
+			],
+			"sid": 844186457558008
+		},
+		{
+			"eventType": "comment",
+			"text": "Line 11-15 use a really similar system as the regular enemies by switching directions on contact with the boss edge marker -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "BossBox_mrg",
+					"sid": 947735281362136,
+					"parameters": {
+						"instance-variable": "Direction",
+						"comparison": 0,
+						"value": "\"Left\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite12_mrg",
+					"sid": 752104340543950,
+					"parameters": {
+						"animation": "\"Idle left\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "BossBox_mrg",
+					"sid": 766275370345780,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 585511258063315
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "BossBox_mrg",
+					"sid": 270610568774643,
+					"parameters": {
+						"instance-variable": "Direction",
+						"comparison": 0,
+						"value": "\"Right\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite12_mrg",
+					"sid": 155753137530426,
+					"parameters": {
+						"animation": "\"Idle right\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "BossBox_mrg",
+					"sid": 383694602633676,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 850197878957491
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "BossBox_mrg",
+					"sid": 576886620207118,
+					"parameters": {
+						"object": "EdgeMarkerBoss_mrg"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 824886807325135,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "BossBox_mrg",
+							"sid": 972500076080229,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"Right\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BossBox_mrg",
+							"sid": 950740924985954,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Right\""
+							}
+						}
+					],
+					"sid": 603077502141225
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 113594906475673
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "BossBox_mrg",
+							"sid": 166401564875071,
+							"parameters": {
+								"instance-variable": "Direction",
+								"value": "\"Left\""
+							}
+						}
+					],
+					"sid": 711330449812400
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "By using the health instance variable of the Boss, I set the health bar to equal Current health of the boss times 10 -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 614507640558812
+				}
+			],
+			"actions": [
+				{
+					"id": "set-progress",
+					"objectClass": "ProgressBar2_mrg",
+					"sid": 118364719677185,
+					"parameters": {
+						"value": "BossBox_mrg.Health*10"
+					}
+				}
+			],
+			"sid": 875888305848355
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-progress",
+					"objectClass": "ProgressBar2_mrg",
+					"sid": 492859153748993,
+					"parameters": {
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "BossBox_mrg",
+					"sid": 820965375302236,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "BossBox_mrg",
+					"sid": 142790200466595,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "\"Die\""
+					}
+				}
+			],
+			"sid": 712037313319906
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "BossBox_mrg",
+					"sid": 326194616095208,
+					"parameters": {
+						"instance-variable": "Direction",
+						"comparison": 0,
+						"value": "\"Die\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Sprite12_mrg",
+					"sid": 635846181030534,
+					"parameters": {
+						"animation": "\"Animation 2\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 734049053885190
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Sprite12_mrg",
+					"sid": 151685032347654,
+					"parameters": {
+						"animation": "\"Animation 2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 603151338097243,
+					"parameters": {
+						"layout": "Winning screen_mrg"
+					}
+				}
+			],
+			"sid": 647792426429424
+		},
+		{
+			"eventType": "comment",
+			"text": "Subtracts one health from the boss -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Sprite12_mrg",
+					"sid": 698854140057862,
+					"parameters": {
+						"object": "DmgIndicator_mrg"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "BossBox_mrg",
+					"sid": 296494646288821,
+					"parameters": {
+						"instance-variable": "Direction",
+						"comparison": 0,
+						"value": "\"Die\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 680043166401574,
+					"parameters": {
+						"instance-variable": "Health",
+						"value": "1"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "PlayerAnim_mrg",
+					"sid": 504776569535638,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "1.0"
+					}
+				}
+			],
+			"sid": 930072476213622
+		},
+		{
+			"eventType": "comment",
+			"text": "Kills the boss -Nic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 758979946115421,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 848853544088650,
+					"parameters": {
+						"time-scale": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "gameOverText_mrg",
+					"sid": 560782260192458,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_AnimBossfight_mrg",
+					"sid": 828035326440475,
+					"parameters": {
+						"animation": "\"Death\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Sprite12_mrg",
+					"sid": 817038444475376
+				},
+				{
+					"id": "destroy",
+					"objectClass": "ProgressBar2_mrg",
+					"sid": 145618582388326
+				}
+			],
+			"sid": 665910264486239
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 554422460724822
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "EnterRoom_mrg",
+					"sid": 986987774451628,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.3",
+						"off-time": "0.2",
+						"duration": "1000000000000000"
+					}
+				}
+			],
+			"sid": 580014500113595
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 440474466533213,
+					"parameters": {
+						"key": 81
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 500548901165591,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 0,
+						"second-value": "\"Boss Arena_mrg\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 830021715910609,
+					"parameters": {
+						"layout": "Boss Arena_mrg"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 514758767745467,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 801118858485195,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "BossBox_mrg",
+					"sid": 394408232935406,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 938059140013978
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 265838147083561
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 456170508132534,
+					"parameters": {
+						"audio-file": "bossfight (2)",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "BossBox_mrg",
+					"sid": 290319694761424,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 197669856373458,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "BossBox_mrg",
+					"sid": 165900277274814,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "150"
+					}
+				}
+			],
+			"sid": 400917450367659
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 587638810087380
+}

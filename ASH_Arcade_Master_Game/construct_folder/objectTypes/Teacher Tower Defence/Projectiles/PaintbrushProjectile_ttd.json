@@ -1,7 +1,7 @@
 {
-	"name": "PaintbrushProjectile_ttd",
+	"name": "PaintbrushProjectile_TTD",
 	"plugin-id": "Sprite",
-	"sid": 166412488193893,
+	"sid": 838716153334301,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7613332,
+						"imageSpriteId": 562800,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 239556283279259,
+				"sid": 137099243244755,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

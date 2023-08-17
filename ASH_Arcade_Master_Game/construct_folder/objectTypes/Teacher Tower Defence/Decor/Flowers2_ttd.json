@@ -1,7 +1,7 @@
 {
-	"name": "Flowers2_ttd",
+	"name": "Flowers2_TTD",
 	"plugin-id": "Sprite",
-	"sid": 614475357682826,
+	"sid": 504507229550168,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,7 +9,7 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 468458452137653
+			"sid": 882844387721829
 		}
 	],
 	"behaviorTypes": [],
@@ -26,7 +26,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9465759,
+						"imageSpriteId": 8826051,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -38,12 +38,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1011500,
+						"imageSpriteId": 6034542,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 376994221285349,
+				"sid": 639053028779944,
 				"name": "Animation1",
 				"isLooping": true,
 				"isPingPong": false,

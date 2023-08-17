@@ -1,0 +1,15 @@
+{
+	"name": "EnterRoom_mrg",
+	"plugin-id": "Text",
+	"sid": 999749149588409,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 762690373502030
+		}
+	],
+	"effectTypes": []
+}

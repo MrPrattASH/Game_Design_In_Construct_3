@@ -1,14 +1,14 @@
 {
-	"name": "MenuPaintBrush_ttd",
+	"name": "MenuPaintBrush_TTD",
 	"plugin-id": "Sprite",
-	"sid": 699266147799785,
+	"sid": 851359251551240,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Rotate",
 			"name": "Rotate",
-			"sid": 236773557110436
+			"sid": 975162025127456
 		}
 	],
 	"effectTypes": [],
@@ -24,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5693209,
+						"imageSpriteId": 2291025,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 499871677317206,
+				"sid": 761302843492136,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
@@ -47,7 +47,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1553385,
+						"imageSpriteId": 2249071,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -59,7 +59,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1684432,
+						"imageSpriteId": 247327,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -71,7 +71,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5198881,
+						"imageSpriteId": 9393435,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -83,7 +83,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2001415,
+						"imageSpriteId": 4163516,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -95,7 +95,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2851358,
+						"imageSpriteId": 6566857,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -107,12 +107,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5731779,
+						"imageSpriteId": 3322551,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 337438964964079,
+				"sid": 657476683717656,
 				"name": "Animation 2",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "Mushroom_ttd",
+	"name": "Mushroom_TTD",
 	"plugin-id": "Sprite",
-	"sid": 948495420277891,
+	"sid": 938618361278658,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9914303,
+						"imageSpriteId": 2926159,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 777902,
+						"imageSpriteId": 1167329,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 380939536767167,
+				"sid": 979333429572758,
 				"name": "Animation1",
 				"isLooping": true,
 				"isPingPong": false,

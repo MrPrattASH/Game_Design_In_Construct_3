@@ -1,7 +1,7 @@
 {
-	"name": "PE_ttd",
+	"name": "PE_TTD",
 	"plugin-id": "Sprite",
-	"sid": 174037727791862,
+	"sid": 329567863382061,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2615187,
+						"imageSpriteId": 813905,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -50,7 +50,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3289860,
+						"imageSpriteId": 8265226,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -75,7 +75,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 557302452893346,
+				"sid": 233824378010432,
 				"name": "Idle",
 				"isLooping": true,
 				"isPingPong": false,
@@ -93,7 +93,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 851472,
+						"imageSpriteId": 5555580,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -125,7 +125,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 567098027920072,
+				"sid": 700268382763359,
 				"name": "Throw",
 				"isLooping": false,
 				"isPingPong": false,

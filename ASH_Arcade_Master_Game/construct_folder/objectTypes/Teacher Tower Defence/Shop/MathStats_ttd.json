@@ -1,7 +1,7 @@
 {
-	"name": "MathStats_ttd",
+	"name": "MathStats_TTD",
 	"plugin-id": "Sprite",
-	"sid": 636407367637757,
+	"sid": 464251290243261,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9656628,
+						"imageSpriteId": 3925588,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 603752295291230,
+				"sid": 296628790163765,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

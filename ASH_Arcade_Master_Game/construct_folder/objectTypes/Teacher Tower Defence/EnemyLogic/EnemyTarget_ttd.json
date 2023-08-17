@@ -1,7 +1,7 @@
 {
-	"name": "EnemyTarget_ttd",
+	"name": "EnemyTarget_TTD",
 	"plugin-id": "Sprite",
-	"sid": 124667362857829,
+	"sid": 203477287280810,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6009888,
+						"imageSpriteId": 1539098,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 311751507968044,
+				"sid": 885525528883445,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

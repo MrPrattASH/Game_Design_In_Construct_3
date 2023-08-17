@@ -1,14 +1,14 @@
 {
-	"name": "NoPlaceBox_ttd",
+	"name": "NoPlaceBox_TTD",
 	"plugin-id": "Sprite",
-	"sid": 316135057852075,
+	"sid": 382674777569761,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Fade",
 			"name": "Fade",
-			"sid": 363789455249547
+			"sid": 132197378581488
 		}
 	],
 	"effectTypes": [],
@@ -24,7 +24,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2468029,
+						"imageSpriteId": 7322993,
 						"collisionPoly": {
 							"points": [
 								0.021739130434782608,
@@ -41,7 +41,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 572277233919717,
+				"sid": 917780867609997,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "BIOTurret_ttd",
+	"name": "BIOTurret_TTD",
 	"plugin-id": "Sprite",
-	"sid": 855370251482106,
+	"sid": 929298127264088,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5368474,
+						"imageSpriteId": 9985203,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 244424886270686,
+				"sid": 308425990026603,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

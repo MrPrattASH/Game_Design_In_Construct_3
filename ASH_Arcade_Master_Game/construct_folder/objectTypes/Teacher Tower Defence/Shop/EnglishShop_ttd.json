@@ -1,7 +1,7 @@
 {
-	"name": "EnglishShop_ttd",
+	"name": "EnglishShop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 659534699230167,
+	"sid": 387643869803695,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3665447,
+						"imageSpriteId": 1480567,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3818352,
+						"imageSpriteId": 1184900,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 707153670492492,
+				"sid": 709075845979381,
 				"name": "EnlighsPurchase",
 				"isLooping": true,
 				"isPingPong": false,
@@ -53,12 +53,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9256866,
+						"imageSpriteId": 3357224,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 987016560458234,
+				"sid": 605860578309771,
 				"name": "EnglishUpgrade",
 				"isLooping": false,
 				"isPingPong": false,

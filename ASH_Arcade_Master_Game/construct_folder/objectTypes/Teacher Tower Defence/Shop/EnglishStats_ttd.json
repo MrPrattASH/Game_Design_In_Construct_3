@@ -1,7 +1,7 @@
 {
-	"name": "EnglishStats_ttd",
+	"name": "EnglishStats_TTD",
 	"plugin-id": "Sprite",
-	"sid": 483190259984068,
+	"sid": 108016743238207,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1195220,
+						"imageSpriteId": 4915985,
 						"collisionPoly": {
 							"points": [
 								0,
@@ -35,7 +35,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 721053629591170,
+				"sid": 687850603762559,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1,7 +1,7 @@
 {
-	"name": "RiverBorders_ttd",
+	"name": "RiverBorders_TTD",
 	"plugin-id": "Tilemap",
-	"sid": 678721492488018,
+	"sid": 295423195463738,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -14,7 +14,7 @@
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"imageSpriteId": 3278313,
+		"imageSpriteId": 4963230,
 		"useCollisionPoly": true
 	},
 	"tile-collision-polys": {}

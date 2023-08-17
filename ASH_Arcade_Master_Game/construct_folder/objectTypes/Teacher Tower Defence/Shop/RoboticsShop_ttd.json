@@ -1,7 +1,7 @@
 {
-	"name": "RoboticsShop_ttd",
+	"name": "RoboticsShop_TTD",
 	"plugin-id": "Sprite",
-	"sid": 817818999310684,
+	"sid": 300055931496981,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7657286,
+						"imageSpriteId": 7366035,
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -30,12 +30,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6662574,
+						"imageSpriteId": 6219701,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 690998914994331,
+				"sid": 615255052080428,
 				"name": "RoboticsPurchase",
 				"isLooping": true,
 				"isPingPong": false,
@@ -53,12 +53,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1057702,
+						"imageSpriteId": 4770802,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 280968255651124,
+				"sid": 211677324985841,
 				"name": "RoboticsUpgrade",
 				"isLooping": false,
 				"isPingPong": false,

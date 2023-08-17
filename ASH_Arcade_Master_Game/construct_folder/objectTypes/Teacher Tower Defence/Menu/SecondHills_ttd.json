@@ -1,7 +1,7 @@
 {
-	"name": "SecondHills_ttd",
+	"name": "SecondHills_TTD",
 	"plugin-id": "Sprite",
-	"sid": 503277916517922,
+	"sid": 292887653528839,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6557351,
+						"imageSpriteId": 7951772,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 556528038560561,
+				"sid": 873702549280620,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

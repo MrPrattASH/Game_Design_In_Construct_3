@@ -1,7 +1,7 @@
 {
-	"name": "RoboCostTXT_ttd",
+	"name": "RoboCostTXT_TTD",
 	"plugin-id": "Sprite",
-	"sid": 994203193355764,
+	"sid": 670562160732277,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 874095,
+						"imageSpriteId": 8519486,
 						"collisionPoly": {
 							"points": [
 								0.05555555555555555,
@@ -35,7 +35,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 477890971056652,
+				"sid": 156468828378661,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

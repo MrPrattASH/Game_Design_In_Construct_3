@@ -1,0 +1,344 @@
+{
+	"name": "MenuEventSheet_TTD",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "variable",
+			"name": "Transition",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 678293058506013
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BigWind",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Wind spawner, spawns 1 wind out of two random wind animations (same as in the main event sheet)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 445570909616127,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "WindSpawner_TTD",
+							"sid": 866884882019513,
+							"parameters": {
+								"x": "random(0, 480)"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "WindSpawner_TTD",
+							"sid": 411274702226153,
+							"parameters": {
+								"y": "random(0, 270)"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "WindSpawner_TTD",
+							"sid": 846473980855529,
+							"parameters": {
+								"instance-variable": "WindType",
+								"value": "choose(\"Wind1\", \"Wind2\")"
+							}
+						}
+					],
+					"sid": 479467516019851,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "WindSpawner_TTD",
+									"sid": 626483527900065,
+									"parameters": {
+										"instance-variable": "WindType",
+										"comparison": 0,
+										"value": "\"Wind1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "WindSpawner_TTD",
+									"sid": 629833428534121,
+									"parameters": {
+										"object": "Wind1_TTD",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 884373623396853,
+									"parameters": {
+										"seconds": "2.75"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Wind1_TTD",
+									"sid": 897701648445391
+								}
+							],
+							"sid": 529015008355044
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "WindSpawner_TTD",
+									"sid": 196504261494184,
+									"parameters": {
+										"instance-variable": "WindType",
+										"comparison": 0,
+										"value": "\"Wind2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "WindSpawner_TTD",
+									"sid": 165926468585385,
+									"parameters": {
+										"object": "Wind2_TTD",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 136855579988597,
+									"parameters": {
+										"seconds": "1.8"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Wind2_TTD",
+									"sid": 761593366160674
+								}
+							],
+							"sid": 324593551288912
+						}
+					]
+				}
+			],
+			"sid": 527227311587336
+		},
+		{
+			"eventType": "comment",
+			"text": "Increase paint brush in size while it spins (rotating is a behaviour)"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 736481836293963,
+					"parameters": {
+						"variable": "Transition"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "MenuPaintBrush_TTD",
+					"sid": 749302454473446,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 419841704360630,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 669220173051935
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "MenuPaintBrush_TTD",
+							"sid": 574752745037230,
+							"parameters": {
+								"width": "1.03*(Self.Width)",
+								"height": "1.03*(Self.Height)"
+							}
+						}
+					],
+					"sid": 965805579132805
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 233986321220261
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "MenuPaintBrush_TTD",
+					"sid": 843719796291872,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 640679577939816
+		},
+		{
+			"eventType": "comment",
+			"text": "when any key is pressed, the transition starts"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 167394542363095
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "TitleTXT_TTD",
+					"sid": 326503049878618,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 894710141401754,
+					"parameters": {
+						"variable": "Transition",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "MenuPlayButton_TTD",
+					"sid": 954678038735508,
+					"parameters": {
+						"animation": "\"Pressed\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 989362823962391,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "MenuPlayButton_TTD",
+					"sid": 158251822345219,
+					"parameters": {
+						"animation": "\"Unpressed\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 529752793664177,
+					"parameters": {
+						"seconds": "2.3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 667097764282353,
+					"parameters": {
+						"layout": "Main_TTD"
+					}
+				}
+			],
+			"sid": 306433496201139
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 668520030774586
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 268820445496577,
+					"parameters": {
+						"scale": "2.7"
+					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 987525233261889,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"MenuTheme\"",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 608361377238470
+		}
+	],
+	"sid": 766629551400493
+}

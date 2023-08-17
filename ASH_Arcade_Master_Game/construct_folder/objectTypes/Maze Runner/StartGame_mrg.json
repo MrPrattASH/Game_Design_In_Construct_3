@@ -1,0 +1,63 @@
+{
+	"name": "StartGame_mrg",
+	"plugin-id": "Sprite",
+	"sid": 904925030071049,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 799706329920438
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 441,
+						"height": 62,
+						"originX": 0.4671201814058957,
+						"originY": 0.8225806451612904,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6469164,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.4671201814058957,
+								0,
+								1,
+								0,
+								1,
+								0.8225806451612904,
+								1,
+								1,
+								0.4671201814058957,
+								1,
+								0,
+								1,
+								0,
+								0.8225806451612904
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 718894074277939,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

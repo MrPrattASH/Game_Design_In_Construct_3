@@ -1,7 +1,7 @@
 {
-	"name": "Basketball_ttd",
+	"name": "Basketball_TTD",
 	"plugin-id": "Sprite",
-	"sid": 813233045793384,
+	"sid": 234207392391010,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
@@ -9,35 +9,35 @@
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 628892252714554
+			"sid": 356369431522351
 		},
 		{
 			"name": "ystart",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 428443126500741
+			"sid": 583201547342227
 		},
 		{
 			"name": "xend",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 890226191850107
+			"sid": 393694606214980
 		},
 		{
 			"name": "yend",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 129583248319384
+			"sid": 304061651456500
 		},
 		{
 			"name": "t",
 			"type": "number",
 			"desc": "",
 			"show": true,
-			"sid": 748325534071434
+			"sid": 384825865560297
 		}
 	],
 	"behaviorTypes": [],
@@ -54,12 +54,12 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 261941,
+						"imageSpriteId": 6956757,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 999756494521022,
+				"sid": 973760547248817,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

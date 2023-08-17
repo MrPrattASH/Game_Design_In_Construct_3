@@ -1,7 +1,7 @@
 {
-	"name": "Biology_ttd",
+	"name": "Biology_TTD",
 	"plugin-id": "Sprite",
-	"sid": 444238944956725,
+	"sid": 214008104379162,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 830658,
+						"imageSpriteId": 4363617,
 						"collisionPoly": {
 							"points": [
 								0.07142857142857142,
@@ -50,7 +50,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9547301,
+						"imageSpriteId": 351549,
 						"collisionPoly": {
 							"points": [
 								0.07142857142857142,
@@ -75,7 +75,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 934456871674216,
+				"sid": 148965554669679,
 				"name": "Idle",
 				"isLooping": true,
 				"isPingPong": false,
@@ -93,7 +93,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 745409,
+						"imageSpriteId": 3733650,
 						"collisionPoly": {
 							"points": [
 								0.07142857142857142,
@@ -125,7 +125,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8120588,
+						"imageSpriteId": 1387552,
 						"collisionPoly": {
 							"points": [
 								0.07142857142857142,
@@ -157,7 +157,7 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6745243,
+						"imageSpriteId": 2969905,
 						"collisionPoly": {
 							"points": [
 								0.07142857142857142,
@@ -182,7 +182,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 520260784571462,
+				"sid": 666410922938463,
 				"name": "Throw",
 				"isLooping": false,
 				"isPingPong": false,
