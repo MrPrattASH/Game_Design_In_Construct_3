@@ -6,6 +6,9 @@ Prior to moving on to any more tutorials, it will be helpful for us to learn sev
 - Strings 
 - Booleans
 - Loops
+- Methods
+
+All of these concepts are fundamental to all programming languages (sans methods), such as Python, C++, Java, Javascript, and Construct 3. If you already know what an integer, float, string, boolean, loop, and methods are, there is no need to read though this terminology section and you are free to move forward onto the next module.  
 
 ## Integers & Random Number Generation
 In Code, number variables are called "integers" (I'm sure you know this from your previous math lessons in elementary school). 
