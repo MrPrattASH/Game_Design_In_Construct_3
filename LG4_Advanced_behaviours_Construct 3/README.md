@@ -1,4 +1,4 @@
-# Advanced Behaviours in Construct 3
+# Basic Programming Terminology
 
 Prior to moving on to any more tutorials, it will be helpful for us to learn several new terminologies used in programming. Let's learn about:
 - Integers
