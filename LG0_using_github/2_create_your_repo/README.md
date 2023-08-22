@@ -13,7 +13,7 @@ Head over to this courses' main Github repository ("repo" for short) [here](http
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 44 12" src="https://user-images.githubusercontent.com/101632496/203083541-caee5593-666a-4303-bef4-ccb3235cab31.png">
 
-This section is our repo title. It will have UserName/RepoName in it's title. Coincidentally, this is also the URL for your repository! if you go to www.https://github.com/MrPrattASH/Game_Design_In_Construct_3 in your web browser, you'll also return back to this page. The main heading tab " <> code " is what we'll use for the majority of this course, we wont be using issues, branches, wikis, or pull requests. Though if you know how to use these features already, go ahead and use them to their fullest extents. 
+This section is our repo title. It will have UserName/RepoName in it's title. Coincidentally, this is also the URL for your repository! if you go to "https://github.com/MrPrattASH/Game_Design_In_Construct_3" in your web browser, you'll also return back to this page. The main heading tab " <> code " is what we'll use for the majority of this course, we wont be using issues, branches, wikis, or pull requests. Though if you know how to use these features already, go ahead and use them to their fullest extents. 
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 44 35" src="https://user-images.githubusercontent.com/101632496/203083615-c6c0b231-a272-4e45-afa0-89f8d66af916.png">
 
