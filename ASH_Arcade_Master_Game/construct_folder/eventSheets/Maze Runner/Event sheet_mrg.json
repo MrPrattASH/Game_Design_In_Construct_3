@@ -201,6 +201,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-enabled",
+							"objectClass": "PlayerBoxBossFight_mrg",
+							"sid": 676819421723486,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "End_mrg",
 							"sid": 947506663025094,
@@ -563,9 +572,19 @@
 									"sid": 406376867000614
 								},
 								{
+									"id": "set-enabled",
+									"objectClass": "PlayerBoxBossFight_mrg",
+									"sid": 151353925015559,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
 									"id": "set-time-scale",
 									"objectClass": "System",
 									"sid": 944769616714531,
+									"disabled": true,
 									"parameters": {
 										"time-scale": "0"
 									}

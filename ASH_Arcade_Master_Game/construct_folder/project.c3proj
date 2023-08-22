@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 34402,
+	"savedWithRelease": 35000,
 	"name": "Arcade_Master_Game",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -1879,7 +1879,8 @@
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
 		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "folders"
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1280,
 	"viewportHeight": 720,

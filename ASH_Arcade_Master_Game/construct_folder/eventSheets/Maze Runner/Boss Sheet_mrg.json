@@ -306,6 +306,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-enabled",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 955003339658780,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
 					"id": "set-instvar-value",
 					"objectClass": "BossBox_mrg",
 					"sid": 262214855041633,
@@ -650,14 +659,6 @@
 			],
 			"actions": [
 				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 848853544088650,
-					"parameters": {
-						"time-scale": "0"
-					}
-				},
-				{
 					"id": "set-visible",
 					"objectClass": "gameOverText_mrg",
 					"sid": 560782260192458,
@@ -683,6 +684,15 @@
 					"id": "destroy",
 					"objectClass": "ProgressBar2_mrg",
 					"sid": 145618582388326
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "PlayerBoxBossFight_mrg",
+					"sid": 977392373712087,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "disabled"
+					}
 				}
 			],
 			"sid": 665910264486239
