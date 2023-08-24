@@ -1,17 +1,28 @@
 # Installing Github Desktop
 
-1. Head over to [github.com](www.github.com) and create a GitHub account using "Sign up". Be sure to use your ASH google account. (If you already have a personal Github account, skip this step). 
+1. Head over to [github.com](www.github.com) and create a GitHub account using "Sign up". Notes:
+* If you already have a personal Github account, skip this step. 
+* Be sure to use your ASH google account. 
+* This is a *public website*. Do not use your real name in your username
+* This can easily become a future portfolio piece where you share your code with future employers/schools. Keep your username semi-professional. 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 25 29" src="https://user-images.githubusercontent.com/101632496/203079259-6888d3d3-e03a-46a3-a9c0-e3f580b2c831.png">
 
-2. Head over to [this site](https://desktop.github.com/) and download the GitHub Desktop App.
+2. Head over to [this site](https://desktop.github.com/) and download the GitHub Desktop App. Be sure you are downloading the MacOS version, **not** the windows version. (your file will be a .zip file, not a .exe file)
 <img width="500" alt="Screen Shot 2022-11-21 at 15 27 10" src="https://user-images.githubusercontent.com/101632496/203079596-370547a1-a5ce-490b-9163-92c80ad011af.png">
 
-3. To install, you cannot drag into your applications folder. You must instead drag into your personal Applications folder, this is different from your main root folder. With a finder window selected, in your menu bar, select "Go > Home"
+3. Once you have this file downloaded, you need to unzip it (simple open the file, and you'll see a new program showup in your downloads). 
+
+However, simply opening a zip file is not equivalent to installing the program correctly. To install, we have to add this to *your personal applications folder*. 
+* Your computer has 2 different applications folder. 
+1. Your main root folder. This is managed by ASH, and where all your school applications are. you don't have access to installing things here. 
+2. Your *personal* applications folder. You are able to install programs here. 
+
+With a finder window selected, in your menu bar (top of your screen, not finder window), select "Go > Home"
 <img width="500" alt="Screen Shot 2022-11-21 at 15 27 10" src="https://user-images.githubusercontent.com/101632496/203079673-cd542923-ce4d-40e7-af0f-0db3a1314b7b.png">
 
-4. From Home, go to your Applications Folder.
+4. With your finder window still open, go to your Applications Folder.
 <img width="500" alt="Screen Shot 2022-11-21 at 15 27 10" src="https://user-images.githubusercontent.com/101632496/203079858-b7fec36a-bddb-4081-bb61-4aa631ad03e1.png">
 
-4. Unzip your downloaded program file. Then, Drag amd drop the GitHub Desktop App into this applications folder.
+4. Unzip your downloaded program file if you haven't done so yet. Then, Drag and drop the GitHub Desktop App into this personal applications folder. *Github desktop will not function properly if you open the program from downloads, desktop, etc.* 
 
-5. After installing, open GitHub Desktop, and sign in to your GitHub account. Your GitHub desktop is now setup!
+5. After installing, open GitHub Desktop, and sign in to your GitHub account. Your GitHub desktop is now setup! 
