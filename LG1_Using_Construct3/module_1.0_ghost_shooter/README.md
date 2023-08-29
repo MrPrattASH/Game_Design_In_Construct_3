@@ -20,12 +20,5 @@ By the end of this tutorial, you'll be able to make a 8-directional movement, to
 # Tutorial
 We're going to follow through one of the official construct 3 tutorials to start. You can find this tutorial on the construct forums. Be sure to save your work as a construct folder inside of your local git repo path. Suggested completion time: 2 classes. 
 
-You have 2 options for making this game. 
-
-### Option #1
-You may follow through a text based tutorial here. [Ghost Shooter Tutorial](https://www.construct.net/en/tutorials/beginners-guide-construct-1)
-
-### Option #2
-You may complete a guided tour, similar to the simple platformer you made, by navigating to [editor.constuct.net](http://editor.construct.net) and selecting "Menu - Guided tour - Beginners guide"
-![Screenshot 2022-12-06 at 14 48 32](https://user-images.githubusercontent.com/101632496/205930119-b74c7651-fa24-4fb0-80c0-8c308f5cef65.png)
+Follow through a text based tutorial here. [Ghost Shooter Tutorial](https://www.construct.net/en/tutorials/beginners-guide-construct-1)
 
