@@ -25,7 +25,7 @@ Construct 3 has an "example browser", a collection of fully commented games that
 
 <img width="500" alt="Screenshot 2022-12-08 at 10 51 49" src="https://user-images.githubusercontent.com/101632496/206417349-5417f836-ba95-4e79-a8ca-85fd2bb4dc66.png">
 
-2. In the search bar, search for "Detecting User Input".
+2. In the search bar, search for "Detecting Input Method". (Be sure to turn *off* your "recommended" filter
 
 <img width="500" alt="Screenshot 2022-12-08 at 10 52 15" src="https://user-images.githubusercontent.com/101632496/206417471-11a5e820-bb5c-4677-9c81-8afff846d47a.png">
 
