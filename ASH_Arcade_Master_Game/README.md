@@ -38,4 +38,5 @@
 
 # Keyboard
 Need to edit the .py file on the custom keyboard? plug the M4 board into your computer, then hold the esc. key (game select)
+* On the prototype board: Hold Q instead. (P1 Black) 
 on the arcade keyboard. this will boot the keyboard into safe-mode where you can now access the files. 
