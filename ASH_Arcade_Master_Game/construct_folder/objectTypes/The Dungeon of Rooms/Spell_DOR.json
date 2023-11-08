@@ -38,7 +38,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 611979361252959,
@@ -61,7 +62,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 5504506,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 250,
@@ -73,7 +75,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 7483917,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 346793108383932,

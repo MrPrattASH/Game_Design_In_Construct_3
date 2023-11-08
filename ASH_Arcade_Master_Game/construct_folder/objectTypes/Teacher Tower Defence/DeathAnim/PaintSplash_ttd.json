@@ -26,7 +26,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2105666,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 20,
@@ -38,7 +39,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 1586181,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 30,
@@ -50,7 +52,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8094677,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 36,
@@ -62,7 +65,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2912989,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -74,7 +78,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8982889,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -86,7 +91,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 5668399,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -98,7 +104,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 794955,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -110,7 +117,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 3363431,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -122,7 +130,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 9677015,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -146,7 +155,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -170,7 +180,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 694172981270274,
@@ -193,7 +204,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 774946,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 20,
@@ -205,7 +217,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 6374044,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 30,
@@ -217,7 +230,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 1337404,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 36,
@@ -229,7 +243,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8711789,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -241,7 +256,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 7549586,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -253,7 +269,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 9566535,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -265,7 +282,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8826249,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -277,7 +295,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 6492453,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -289,7 +308,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 9070721,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -313,7 +333,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 60,
@@ -337,7 +358,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 985189729505645,

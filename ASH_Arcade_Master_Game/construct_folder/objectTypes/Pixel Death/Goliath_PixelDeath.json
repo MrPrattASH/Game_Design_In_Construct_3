@@ -40,7 +40,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 96,
@@ -52,7 +53,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 212785,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 96,
@@ -64,7 +66,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 778847,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 86,
@@ -96,7 +99,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 96,
@@ -108,7 +112,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4569160,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 96,
@@ -120,7 +125,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2842993,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 155044271815853,

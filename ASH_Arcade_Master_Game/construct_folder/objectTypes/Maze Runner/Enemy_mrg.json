@@ -46,7 +46,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -70,7 +71,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 20,
@@ -94,7 +96,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -118,7 +121,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 437480480886287,
@@ -153,7 +157,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -177,7 +182,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 20,
@@ -201,7 +207,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -225,7 +232,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 549028401235037,
@@ -248,7 +256,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 3522900,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -260,7 +269,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2718265,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 20,
@@ -272,7 +282,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 1427647,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -284,7 +295,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 5946413,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 978405493346749,
@@ -307,7 +319,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4778712,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -319,7 +332,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8974870,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 20,
@@ -331,7 +345,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4359658,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 21,
@@ -343,7 +358,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8767660,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 240862469980523,

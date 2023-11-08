@@ -26,7 +26,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8855523,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 904795774016579,
@@ -49,7 +50,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 9757416,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 773268119143306,
@@ -72,7 +74,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 7773619,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 732649277980797,
@@ -95,7 +98,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 7907648,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 888943698711452,

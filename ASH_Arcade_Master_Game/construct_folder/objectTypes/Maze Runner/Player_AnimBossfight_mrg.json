@@ -173,7 +173,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -197,7 +198,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -221,7 +223,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -245,7 +248,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 978101306306887,
@@ -268,7 +272,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 5779503,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -280,7 +285,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 5625018,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -292,7 +298,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2958240,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -304,7 +311,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 3756994,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 593285608236469,
@@ -339,7 +347,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -363,7 +372,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -387,7 +397,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -411,7 +422,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 402869915731194,
@@ -434,7 +446,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 1594223,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -446,7 +459,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 7297321,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -458,7 +472,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 6241761,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 32,
@@ -470,7 +485,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8396211,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 530183888273447,
@@ -493,7 +509,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 6341688,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 48,
@@ -505,7 +522,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 2478266,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 348476232841795,
@@ -528,7 +546,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 771821,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					},
 					{
 						"width": 48,
@@ -540,7 +559,8 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4441857,
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 713077285473361,
@@ -575,7 +595,8 @@
 							]
 						},
 						"useCollisionPoly": true,
-						"duration": 1
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 818911598264950,

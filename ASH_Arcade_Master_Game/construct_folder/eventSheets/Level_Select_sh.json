@@ -1161,20 +1161,48 @@
 					"text": "reset afk"
 				},
 				{
-					"id": "start-timer",
-					"objectClass": "Game_Image",
-					"sid": 233014162699677,
-					"behaviorType": "Timer",
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 869907747894833,
 					"parameters": {
-						"duration": "60",
-						"type": "once",
-						"tag": "\"Background_music_title\""
+						"variable": "afk",
+						"value": "false"
 					}
 				}
 			],
 			"sid": 967015023176926,
-			"disabled": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "choose only 1 of the game_images to make a timer on (middle instance) "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Game_Image",
+							"sid": 949300332014486,
+							"parameters": {
+								"unique-id": "58"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "Game_Image",
+							"sid": 820380178523054,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "30",
+								"type": "once",
+								"tag": "\"Background_music_title\""
+							}
+						}
+					],
+					"sid": 177263880907400
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1202,34 +1230,7 @@
 							}
 						}
 					],
-					"sid": 891141506130130,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 863252077890405,
-							"parameters": {
-								"variable": "afk"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 243389645281661,
-							"parameters": {
-								"variable": "afk",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 407007097085967,
-					"disabled": true
+					"sid": 891141506130130
 				}
 			]
 		},
@@ -1258,6 +1259,15 @@
 					"parameters": {
 						"tag": "\"Background_music_title\"",
 						"state": "pause"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 640098246763747,
+					"parameters": {
+						"variable": "afk",
+						"value": "true"
 					}
 				}
 			],

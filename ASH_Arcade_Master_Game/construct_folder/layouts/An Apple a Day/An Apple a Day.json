@@ -375,6 +375,7 @@
 						"horizontal-alignment": "left",
 						"vertical-alignment": "center",
 						"wrapping": "word",
+						"icon-set": -1,
 						"initially-visible": true,
 						"origin": "left",
 						"read-aloud": false
@@ -454,6 +455,7 @@
 						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
+						"icon-set": -1,
 						"initially-visible": true,
 						"origin": "center",
 						"read-aloud": false
@@ -854,6 +856,16 @@
 			"type": "high_scores",
 			"properties": {},
 			"uid": 40,
+			"instanceVariables": {}
+		},
+		{
+			"type": "ban_names",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 1830,
 			"instanceVariables": {}
 		}
 	],

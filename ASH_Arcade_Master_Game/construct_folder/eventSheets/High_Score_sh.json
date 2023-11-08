@@ -22,6 +22,16 @@
 			"sid": 385273237343850
 		},
 		{
+			"eventType": "variable",
+			"name": "high_score_text",
+			"type": "string",
+			"initialValue": "AAA",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 400006816464784
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -396,6 +406,127 @@
 				}
 			],
 			"sid": 298954318852057
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "High Score text validation",
+			"description": "check if banned name exists",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "get ban names"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 362199818156654
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 574070438903166,
+							"parameters": {
+								"tag": "\"ban_names\"",
+								"file": "ban_names.json"
+							}
+						}
+					],
+					"sid": 280169068061606
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 541645852671002,
+							"parameters": {
+								"tag": "\"ban_names\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "ban_names",
+							"sid": 186309063756991,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 980159543265806
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 191385718203481,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [],
+					"sid": 407030236709708,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "is_banned",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 582093451386046
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 888738149060323,
+									"parameters": {
+										"count": "ban_names.Height"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 933204500624348,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 990067803820359,
+											"parameters": {
+												"first-value": "uppercase(high_score_text)",
+												"comparison": 0,
+												"second-value": "Games.At(loopindex)"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 106892951758887
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 360441656823770
 		}
 	],
 	"sid": 453234132338650

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 35000,
+	"savedWithRelease": 35800,
 	"name": "Arcade_Master_Game",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -381,7 +381,8 @@
 					"EscConfirmText",
 					"high_score",
 					"high_scores",
-					"Main_Background_Bg"
+					"Main_Background_Bg",
+					"ban_names"
 				],
 				"subfolders": [],
 				"name": "Globals"
@@ -1808,6 +1809,14 @@
 					"name": "high_scores.json",
 					"type": "application/json",
 					"sid": 304090842276307,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ban_names.json",
+					"type": "application/json",
+					"sid": 434585644138120,
 					"file-info": {
 						"purpose": "none"
 					}

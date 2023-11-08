@@ -46,6 +46,7 @@
 				0.9850746268656717
 			]
 		},
-		"useCollisionPoly": true
+		"useCollisionPoly": true,
+		"tag": ""
 	}
 }

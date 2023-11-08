@@ -116,38 +116,7 @@
 					}
 				}
 			],
-			"sid": 714743478425692,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "rotate the monster towards the player each frame"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 727333075722776,
-							"parameters": {
-								"object": "GreenMonster"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle-toward-position",
-							"objectClass": "GreenMonster",
-							"sid": 822817284226595,
-							"parameters": {
-								"x": "Player.X",
-								"y": "Player.Y"
-							}
-						}
-					],
-					"sid": 243147865232411
-				}
-			]
+			"sid": 714743478425692
 		},
 		{
 			"eventType": "comment",
