@@ -19,11 +19,12 @@ This section is our repo title. It will have UserName/RepoName in it's title. Co
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 44 35" src="https://user-images.githubusercontent.com/101632496/203083615-c6c0b231-a272-4e45-afa0-89f8d66af916.png">
 
-Further below, you will find the main file structure. This is what the folders look like on Github...
+Further below, you will find the main file structure. This is what the folders look like on Github's remote server...
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 46 42" src="https://user-images.githubusercontent.com/101632496/203084115-06be594d-b75b-428e-9302-1be43728bc33.png">
 
-And if you have this repository added to your GitHub desktop app, this is what they would look like on your computer. Notice that the file structure is the same, but one is an "online" version, and the next is your "offline" or "local" version. They look the same, eh? That's because what is on your computer is the same as what is on your online github repo. 
+## Local Version
+We've just examined the "remote" version of our Github repo. What does this repo look like if it were stored locally on your computer? (Git Repo's store a copy on your computer AND online). Look at the picture below. Notice that the file structure is the same, but one is an "online" version, and the next is your "offline" or "local" version. They look the same, eh? That's because what is on your computer is the same as what is on your online github repo. 
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 47 47" src="https://user-images.githubusercontent.com/101632496/203084366-90546ddc-b81f-4684-ad78-1037897f7103.png">
 
@@ -33,18 +34,21 @@ Go ahead and click on the LG0_using_github folder.  You should notice that these
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 49 56" src="https://user-images.githubusercontent.com/101632496/203084865-a9ed4d05-2558-4ca1-908e-3a0e3052f82c.png">
 
-The difference being, GitHub's version is stored online, and can show a history of changes over time.(in the history/commits section) You'll notice that most pages include a README.md file. That's the file you're currently reading right now, and it's the way that we can type instructions or documentation for our users in each various folder. It's not necessary for you to include a README.md in ever folder, though you will see one in this current repo because I've attached instructions on each assignment here. 
+The difference being, GitHub's version is stored *online*, and can show a history of changes over time.(in the history/commits section) 
+
+You'll notice that most pages include a README.md file. That's the file you're currently reading right now, and it's the way that we can type instructions or documentation for our users in each various folder. It's not necessary for you to include a README.md in ever folder, though you will see one in this current repo because I've attached instructions on each assignment here. 
 
 ## Creating your first Repo
 
-You're going to use this next repo for all course work, so don't lose it! First, we'll create the folder on our computer, then, we'll push the folder onto our gitrepo. 
+Let's get your own repo setup. You're going to use this repo for all course work. We're going to use the folder you created to store your piggy game originally in last class in LG-1. Once we save some initial setup files for a Github repo, we'll "push" this folder onto our gitrepo remote location to store it on Github's servers. 
 
-1. In your computer's document folder, create a new folder called "Game Design". This is where we will store all course content for proper file management. Get organized from the beginning, you are not permitted to use your downloads folder or desktop for working on active files throughout this course.  
+1. In your computer's document folder, locate your folder called "Game Design" that you created last class. This is where we will store all course content for proper file management. Get organized from the beginning, *you are not permitted to use your downloads folder or desktop for working on active files throughout this course.*
 
-2. Using the Github Desktop App, create a new repository in side your Game Design folder called "Game Design Repository". (File > New Repository). In the Repo settings:
+2. Using the Github Desktop App, create a new repository in side your Game Design folder called "Game Design Repo-First-Last Initials". (File > New Repository). (In My Case, Game Design B-P)
+In the Repo settings:
 * Local path should be the folder you just created in step 1. 
 * Initialize this repository with a README.md file
-* don't ignore any files (for now)
+* Leve ignore blank for now
 * set your license to MIT
 * create your repo
 
@@ -52,13 +56,16 @@ You're going to use this next repo for all course work, so don't lose it! First,
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 55 20" src="https://user-images.githubusercontent.com/101632496/203086050-8bcadb82-5378-4b44-a37b-01bb7961ce5e.png">
 
-3. Time to ignore some files. What are the files we should ignore in our commits, and why should we ignore them? Ignored files are essentially NOT uploaded to remote, but they DO stay on your computer. They're generally used for ignoring temporary files such as: 
-* .uistate.jso: This is your User Interface setup in Construct 3, our course game engine. Things like the size of your browser page, what tabs you have open, etc. We don't want to update this everytime we save our code because these are temporary and change each time we open our game. 
+## ignoring files
+
+Why do we want Github to "ignore" some of the files that we upload? Ignored files are NOT uploaded to the remote server, but they *DO* stay on your computer. Let's say for example, you're collaborating on a final project with a partner. You work on level 1, while they code level 2. Your partner LOVES having a pink background, while you LOVE blue. this is a ui.state file, for "User Interface" (the colour of our background). Since this isnt real code, simple a theme, we want to ignore these temporary files. We ignore temporary files that shouldn't be saved, such as: 
+
+* .uistate.json: This is your User Interface setup in Construct 3, our course game engine. Things like the size of your browser page, what tabs you have open, etc. We don't want to update this everytime we save our code because these are temporary and change each time we open our game. 
 * .DS_Store: This is a local macOS file that gets updated when folders were last accessed. It's a hidden file that says a date, and is not relevant to our repo so we can safely ignore this. If we didn't, we would make a "change" to our repo every time we opened the local folder, even if we didn't change any code. 
 
-In your repository settings (Menu Bar: Repository > Repository Settings), add these 2 lines to the IgnoredFiles section:
-* *uistate.json
-* **/.DS_Store
+In your repository settings (Menu Bar: Repository > Repository Settings), add these 2 lines to the IgnoredFiles section: (*remove quotation marks*)
+* "*uistate.json"
+* "**/.DS_Store"
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 57 10" src="https://user-images.githubusercontent.com/101632496/203086448-90da3af4-21f1-437d-a601-3ec0e181a041.png">
 
@@ -66,8 +73,8 @@ In your repository settings (Menu Bar: Repository > Repository Settings), add th
  
 
 ## Pushing your Repo to "Remote"
-Presently, your repo only exists on your local computer in Documents > Game Design (or whatever local path you have presently set up). To get the benefits of Github's cloud servers, we need to "publish" this repository through the menu at the top, or through the giant blue button, same deal. For now, Keep this code private. 
+With your local repo all set up, presently, your repo only exists on your local computer in Documents > Game Design. To get the benefits of Github's cloud servers, we need to "publish" this repository through the menu at the top, or through the giant blue button, same deal. For now, Keep this code private. 
 
 <img width="500" alt="Screen Shot 2022-11-21 at 15 57 40" src="https://user-images.githubusercontent.com/101632496/203248945-f4787d85-51e5-4261-9906-7de360870dd3.png">
 
-You'll now notice that you can "view on Github" (Menu Bar: Repository > View on Github). Click that, and you should notice your (very empty) repo up on a website! If you added a description, you'll also see this in github remote now. If you compare your remote vs. your local file structure, they should look the same. 
+You'll now notice that you can "view on Github" (Menu Bar: Repository > View on Github). Click that, and you should notice your (very empty) repo up on a website! If you added a description to your Commit/Push, you'll also see this in github remote now. If you compare your remote vs. your local file structure (like we did at the start of this unit), they should look the same. 
