@@ -7,7 +7,7 @@ We'll use Github every class in this course for a few purposes:
 
 ## Basic Github workflow
 
-While we won't use every feature of github (no need for "branches" in this course, though use them if you know how) this will be our basic workflow for using Github in this course: (all steps will be further explained later on). 
+While we won't use every feature of github (there is no need for "branches" in this course, though use them if you know how) this will be our basic workflow for using Github in this course: (all steps will be further explained later on). 
 
 1. Program your game and save/make changes to your local computer file folders. This could be things like:
 * editing code in your game
@@ -28,46 +28,59 @@ It's important to note that we are only changing files LOCALLY on our computer, 
 2. Publish changes/push to remote to save your files online.
 
 ## Github workflow Practice
-Now it's your turn to practice using Github.
+Now it's your turn to practice using Github. We'll use some of these skills throughout the course. 
 
-### Task 1: Updating Your README.md
-Your readme.md is your main landing page for your Github folder, it tells the user what is happening inside each folder. You are actually currently reading the README.md for this current folder in this Github repo. Let's edit your readme.md to be more relevant to your repo. For future course work, this may be like you are editing code. 
+### Task 1: Add your Game 0 - Simple Pig Platformer to your GitHub Repo
 
-1. Locate the repository's local folder on your computer via your finder, or in the menu bar of GitHub desktop, Repository > reveal in finder. Then, right click to open the README.md file with "text edit" (Open> Open with Text Edit)(You may need to select "Other" and choose text edit as an application) and write the following:  
+If you look at your current github repo online (the website), you'll notice that your Game 0 is *not* online yet, despite being inside your "Game Design" folder. This is because it isn't in your repo yet! 
 
-` This is my first initial change to a repository! I'll be using this repo to store all of my game design files
-`
+<img width="535" alt="Screenshot 2024-01-25 at 10 32 42" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/25fe4ca9-1040-4712-8eea-b9659cd82eaa">
 
-Save the readme.md file, and close text edit. 
+Take the Game 0, and drag and drop it inside your Git Repo folder. (notice the folder/subfolder structure denoted by "v" and ">") 
 
-<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203297057-c9d19084-1bcb-45c5-9e75-3d897c8f240a.png">
+<img width="539" alt="Screenshot 2024-01-25 at 10 33 11" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/9ef90460-5a4a-428b-b735-015d7074725a">
 
-2. In the GitHub desktop app, in your repo under the "Changes" column, you'll likely notice your new changes mentioned in green. This is a "new addition" to your codebase or folder since we last published this change to remote. New files/changes/new lines of code, are in green, modifications are in yellow, deletions are in red. 
+Head over to Github Desktop. You'll now notice new changes have been added to the local repo. Green "+" are new files, Yellow "." are changed files, and red "x" are deleted files. We have LOTS of newly added files, which are all the game files from Game 0. This is a "new addition" to your codebase or folder since we last published this change to remote.
 
-<img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203297782-4b8621cb-631a-44d8-8de7-278b30d7baea.png">
+<img width="500" alt="Screenshot 2024-01-25 at 10 33 55" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/95ed6ece-b8b7-4635-980b-70fcc43052ba">
 
-3. Presently this change is only *locally on your computer*. We need to "publish" this change to our remote server so that it is saved online. To do this, we need to add 2 things in the bottom left side of Github Desktop: 
-* Summary - a title for what changes you made since your last commit. In this current case, it's "updating the README.md"
-* Descrition - point form, detailed notes of what you've changed. When you visit past commits through history, you'll see your summary/description of what has changed over time. In this case, we've "added a greeting to our readme, and explained the purpose of our repo."
+Presently this change is only *locally on your computer*. We need to "publish" this change to our remote server so that it is saved online. To do this, we need to add 2 things in the bottom left side of Github Desktop: 
+* Summary - a title for what changes you made since your last commit. In this current case, it's something along the lines of "Add Game 0"
+* Descrition - point form, detailed notes of what you've changed. When you visit past commits through history, you'll see your summary/description of what has changed over time. In this case, we've "uploaded Game 0 - Piggy platformer"
+
+*Don't skip the documentation step about what changes were made when making uploads*. This is how we keep track of our changes over time, it is our "trail of breadcrumbs" so to speak.  
 
 <img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203299786-98f03d68-6565-427d-8738-837171106137.png">
 
-4. Before commiting to remote, look at your repo on Github's website. You'll notice, in your README.md file, that the new line you wrote does **not** exist online yet. We need to push these commits now. 
-5. Press the blue button "commit to main/master". This commits it to our Github history, but not yet to remote. 
-6. Press "push Origin/push to remote". This "push" is what sends our changes to the remote file server (cloud storage) on Github. 
+Press the blue button "commit to main/master". This commits it to our Github history locally on our computer. 
+
+Then, press "Publish repository". This "publish" is what sends our first initial changes to the remote file server (cloud storage) on Github. 
 
 <img width="500" alt="Screen Shot 2022-11-22 at 13 44 48" src="https://user-images.githubusercontent.com/101632496/203300030-6cd3fcc1-46be-412c-9b96-000251582222.png">
 
-7. Now, to back to github to view your repo. You should now see your readme.md has been updated with your changes, and all of your changes are now available online, great! 
+Now, to back to github to view your repo. You should now see all of your changes are now available online, great! 
 
-### Task 2: Adding Game Artwork Sprites
-Now that you have a basic idea of github workflow, let's practice something you'll regularly do at the end of each class and throughout the semester. At the end of each class, you'll commit and push any code changes to remote. Additonally, when you add artwork to your game, sounds, etc, you'll also commit and push these changes. Let's practice adding some game artwork. 
+<img width="564" alt="Screenshot 2024-01-25 at 10 39 30" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/fc11719b-d3ab-4d56-b0de-83af21948418">
 
-1. In your repo on your computer, make a new folder called "game assets". 
-2. Download [these](https://drive.google.com/drive/folders/1FQZrd1uOHYj2w1sV_NJnRZGqQFOi6Ss4?usp=share_link) free Creative Commons game asset files from Kenny.nl. You'll be using these assets in a later game (#2). Place this downloaded folder into your github repo. 
-3. Go to Github desktop. You should notice that these files are now "staged" in the changes section. Make a relevant title & description, then commit & push these changes to remote. 
 
-Thats it, you now know how to commit and push changes to GitHub's remote server. 
+### Task 2: Modifying a Game
+Now that you have a basic idea of github workflow, let's practice something you'll regularly do at the end of each class and throughout the semester. At the end of each class, you'll commit and push any code changes to remote. 
+
+Let's pretend that we're going to program our game for the day. Head to [editor.construct.net](editor.construct.net) and select Menu > open > local folder. Select your "game 0 piggy platformer" folder. 
+
+<img width="412" alt="Screenshot 2024-01-25 at 10 41 35" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/da928e4d-d7b5-49f2-a250-cb885f564bb0">
+
+With your piggy platformer open, add in one more pickup tomatoe, and one more ground sprite. Whew, with all those changes made this class, that was a solid 80m work block making all those changes! Class is almost over, it's time to save the game as a local folder inside of the github repo. Do this now. 
+
+Next, open up Github Desktop. You should notice that a few of the files were changed, but not near as many as when we first uploaded the game. You'll have a LAYOUT.json file changed, a project.c3proj file changed, and likely a few others. Notice the yellow "." on changed files. However, you won't have any EVENTSHEET.json files changed, that's because we only modified a layout, not any code event sheets. 
+
+<img width="500" alt="Screenshot 2024-01-25 at 10 43 17" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/5e76ba3f-b800-443f-9e1f-9122c1cc29bf">
+
+Class is almost over, make another Commit and Push (with relevant descriptions and summaries!). Now your changes are up on Github. 
+
+Okay, scenario over. This is what you'll do at the end of every class session. Save, Commit, Push. Thats it, you now know how to commit and push changes to GitHub's remote server. 
+
+Why do this? 15% of students every semester save a file incorrectly by accident corrupting the file, or write some code that *breaks their entire program*. Rather than having to restart the entire project, you can go back in history and "pull" the last save, rewriting over any work done today that broke the program, but also saving any work done up to this point. Heed this warning, those who don't commit and push every class always end up losing work at some point throughout the semester and have to redo a lot of effort. 
 
 
 ## Viewing your Github History
@@ -81,10 +94,7 @@ Here, you'll be greeted with all your current commits. If you click inside one o
 
 <img width="500" alt="Screen Shot 2022-11-22 at 13 45 27" src="https://user-images.githubusercontent.com/101632496/203317488-4236bb98-3a04-4670-a87b-af6263340402.png">
 
-Here we can see that I've changed some text on a readme.md file. In yours, you'll likely see whatever new game assets you've added inside. 
-
-
-##### From now on, it is the expectation that you will be commiting and pushing your code/game changes at the end of every class. 
+Here we can see that I've changed some text on a readme.md file. In yours, you'll likely see whatever new game 0 folder & files that you've added inside. 
 
 
 
