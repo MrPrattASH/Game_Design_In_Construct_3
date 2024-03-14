@@ -6,23 +6,12 @@ Making games via a tutorial is OK, but it is so much more fun to make your own g
 Below are a list of ideas you might try to add to your game to modify and make it your own. You must:
 
 * complete the mandatory extension
-* choose at least 2 of the optional extensions. 
+* Add in at least 3 of your brainstormed features (or from one of the below)
 
 Below the list of ideas are "hint" instructions. This means that I won't tell you exactly how to complete the extension, but I will give you tips and hints for how to complete the task. All of these extension ideas build upon previous skills you learned back in the initial tutorial. It is suggested to take 1 class to complete these extensions. 
 
 ### Mandatory Extension
-Add a "Start Screen" to your game. 
-
-### Optional Extension Ideas:
-* Make the player get points for hitting monsters as well as killing them. You can adjust the score gained for each case.
-* Make the monsters slowly speed up over time, so they're harder to hit and avoid.
-* Add another kind of enemy!
-* Add an alternative kind of weapon, which uses a different mouse button or keyboard control.
-* Add the Audio object, import some sound files, and add sound effects or music.
-* Add a title screen. Use the System object Go to layout action to switch between them.
-* Introduce some scenery or obstacles in the level design.
-* Add a "Game over" screen, or make something else happen when the player dies.
-* Add your own Extensions!
+Add a "Start Screen" to your game.
 
 ## Mandatory Extension Tutorial
 1. We'll first need to add a new layout to our game. Each "layout" is like a different level for our game. We'll now have a main game layout, and a start screen layout. In your project panel, right click on the "layouts" folder and select add layout. You'll also want to add an event sheet. Each layout has it's own event sheet/code, so that our game logic events don't "transfer" between levels. We certainly wouldn't want monsters spawning on our title screen! (that said, multiple layouts can indeed *share* the same event sheet, but we don't want to do this for our start screen)

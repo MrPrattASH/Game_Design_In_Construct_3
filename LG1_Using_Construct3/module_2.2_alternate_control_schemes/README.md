@@ -85,7 +85,7 @@ Now that you know how to examine a game's code, we can use this code/setup to ad
 2. Add a global string variable for ControlMethod
 3. Add the "touch" object to one of your layouts. 
 4. Add a "TouchControls" 0x0% Parallax layer to your game level layout
-5. Add a new sprite (arrow) and add a direction string instance variable
+5. Add a new sprite (arrow) and add a direction string instance variable. (use "programmer art" and draw a simple arrow, the artwork is not supplied for you) 
 6. Add in all relevant code for controlling:
     * your player should move with WASD and arrow keys (right click an event, "make OR block"
     * <img width="298" alt="Screenshot 2022-12-08 at 11 31 48" src="https://user-images.githubusercontent.com/101632496/206424394-a08fa098-9456-4b55-8b03-3453c99a8087.png">

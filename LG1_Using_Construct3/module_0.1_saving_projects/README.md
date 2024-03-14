@@ -7,10 +7,11 @@ Well done designer, you've successfully completed your first (simple) game. Now 
 # Tutorial
 
 ## Saving Games
-1. In your git repo local path (that's the folder stored on your computer) make a new folder called "Game 0 Simple Pig Platformer". Inside this folder, make a subfolder called "construct folder". If you remember, this looks similar to what we previously created for our "Game 1 Ghost Shooter" folder back in Learning Guide 0. 
+1. On your computer's Document folder, make a new folder called "Game Design". Inside this folder, add in a sub folder called "Game 0 Simple Pig Platformer". 
 If done correctly, your folder structure should look like the following below. Note the correct main folder and subfolder structure. 
 
-<img width="500" alt="Screenshot 2022-12-01 at 14 03 20" src="https://user-images.githubusercontent.com/101632496/205059838-2f21a49d-eb2f-4bba-a625-17a903445748.png">
+<img width="538" alt="Screenshot 2024-01-25 at 09 42 03" src="https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/9adfa775-37c0-4395-8591-8e782edf6aa5">
+
 
 2. There are 2 ways to save games in construct 3. Project Files, and Project Folders. 
 * Project files store EVERYTHING inside a single file, similar to a .zip archive. 
@@ -18,7 +19,7 @@ If done correctly, your folder structure should look like the following below. N
 
 For every game in this course, we'll save it as a Project Folder. The reason being that if we happen to corrupt something in a project folder, we only corrupt a single portion of our file, rather than the ENTIRE project. Of course, saving things as files still works, but you are running a big risk by doing so. 
 
-With your editor open, choose "Menu - Project - Save as - Save as Project Folder". Select the local path "Game 0 Siome Pig Game - construct folder" that you created in step 1. 
+With your editor open, choose "Menu - Project - Save as - Save as Project Folder". Select the local path "Game 0 Simple Pig Platformer" that you created in step 1. 
 
 <img width="500" alt="Screenshot 2022-12-01 at 14 03 20" src="https://user-images.githubusercontent.com/101632496/205061433-7aafa119-20d0-4ff4-bdce-a8050b692141.png">
 

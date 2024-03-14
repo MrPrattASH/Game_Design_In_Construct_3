@@ -5,8 +5,6 @@ Time for more modding and continuing to make the game your own. Don't browse ove
 
 Below are a list of ideas you might try to add to your game to modify and make it your own. Below the list of ideas are "hint" instructions. This list is not extensive, and you are more than welcome to create your own This means that I won't tell you exactly how to complete the extension, but I will give you tips and hints for how to complete the task. All of these extension ideas build upon previous skills you learned back in the initial tutorial. 
 
-It is suggested to take 1 class to complete these extensions. You must complete at least 3 optional extensions. 
-
 ### Extension Seed Ideas:
 * add a "health" or "lives" instance variable to the player, and a text object on the HUD to inform the player of their life. 
 * make the player's animation change to "bounce" after jumping off of an enemy

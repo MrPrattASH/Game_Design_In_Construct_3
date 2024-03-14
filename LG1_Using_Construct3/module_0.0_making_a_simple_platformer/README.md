@@ -1,5 +1,4 @@
-# Knowledge Assessment:
-Each project/tutorial has a few goals in mind. Read over what you're going to learn about and then complete the tutorial. Once you've completed the tutorial, come back to this page and re-read the following questions to check that you gained the fundamental understanding of the game. 
+# Simple Platformer Intro
 
 ## By the end of this module you should know:
 1. What a *Layout* is
@@ -24,6 +23,3 @@ If you dismissed this notification, you can find the tour here in Menu > Guided 
 <img width="500" alt="Screenshot 2022-12-07 at 11 56 41" src="https://user-images.githubusercontent.com/101632496/206161393-f7b432a1-1cb1-4ddb-8436-bcfaa2ace581.png">
 
 3. When you're done, or you're almost out of time, complete the "how to save games" tutorial. 
-
-## Self-Assessment:
-Go back to the questions at the top of this page, and see if you can answer the questions on the page. 
