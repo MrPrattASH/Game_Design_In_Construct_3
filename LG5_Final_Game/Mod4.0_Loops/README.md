@@ -34,3 +34,6 @@ After completing the second video tutorial, go back to your platformer game and 
 * Somewhere on your level, create a 8x8 "grid" of coins spawned, similar to how Mario has "coin collection" bonus levels.
 ![image](https://github.com/MrPrattASH/Game_Design_In_Construct_3/assets/101632496/c1939017-d9b4-4e2a-a21f-4c5ca16715bf)
 
+
+# Advanced Example
+If you wanted to randomly generate a level on a grid, like a rogue-like level, take a look at nested loop implementations [here](https://github.com/MrPrattASH/Game_Design_In_Construct_3/blob/master/Bonus_Learning_Material/Randomly_Generated_Level_example.c3p). Download this .c3p file and open it up in the construct editor. 
