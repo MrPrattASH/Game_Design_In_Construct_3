@@ -1,0 +1,28 @@
+{
+	"name": "Anims",
+	"plugin-id": "Sprite",
+	"sid": 753995612991914,
+	"instanceVariables": [
+		{
+			"name": "Player",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 558738558429409
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 338787455421790
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Test_Anim",
+		"Adventurer_Anim",
+		"Adventurer_Anim2",
+		"TitleScreen_Adventurer_Anim"
+	]
+}

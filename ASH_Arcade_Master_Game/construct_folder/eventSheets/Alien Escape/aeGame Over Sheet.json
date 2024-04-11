@@ -1,0 +1,143 @@
+{
+	"name": "aeGame Over Sheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 843790827922182
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "aeTocontinuetxt",
+					"sid": 418483878270999,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.6",
+						"off-time": "0.6",
+						"duration": "3600"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 619167665783714,
+					"parameters": {
+						"audio-file": "Game Over by me",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"gobm\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 533262089479236,
+					"parameters": {
+						"audio-file": "Game Over background music",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"gob\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 214808579071938,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 128588633379072
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 800740026906269,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 656817198932913,
+					"parameters": {
+						"layout": "aeMenu Screen Pt.2"
+					}
+				}
+			],
+			"sid": 971534803024575
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 621338576316423,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 261309376710270,
+					"parameters": {
+						"layout": "aeCredits"
+					}
+				}
+			],
+			"sid": 589302972327135
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 688701359434877
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 665116553330384,
+					"parameters": {
+						"tag": "\"gobm\""
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 443198205416640,
+					"parameters": {
+						"tag": "\"gob\""
+					}
+				}
+			],
+			"sid": 511596032012984
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 728840989515350
+}

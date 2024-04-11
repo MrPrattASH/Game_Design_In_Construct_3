@@ -1,0 +1,17 @@
+{
+	"name": "TextsFade",
+	"plugin-id": "Text",
+	"sid": 269250579880907,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade2",
+			"sid": 313403579386427
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"aePoweruptxt"
+	]
+}

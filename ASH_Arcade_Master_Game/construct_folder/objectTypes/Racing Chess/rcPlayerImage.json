@@ -1,0 +1,102 @@
+{
+	"name": "rcPlayerImage",
+	"plugin-id": "Sprite",
+	"sid": 820939015820262,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8151450,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.75,
+								0.125,
+								0.78125,
+								0.15625,
+								0.78125,
+								0.96875,
+								0.75,
+								1,
+								0.25,
+								1,
+								0.21875,
+								0.953125,
+								0.21875,
+								0.15625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 544070504735775,
+				"name": "Player1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8896169,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.75,
+								0.125,
+								0.78125,
+								0.15625,
+								0.78125,
+								0.96875,
+								0.75,
+								1,
+								0.25,
+								1,
+								0.21875,
+								0.953125,
+								0.21875,
+								0.15625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 435036776324877,
+				"name": "Player2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

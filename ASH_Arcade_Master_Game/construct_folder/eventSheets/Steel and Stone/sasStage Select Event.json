@@ -1,0 +1,933 @@
+{
+	"name": "sasStage Select Event",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 463975484278293
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 298623079722632,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"value": "\"Mountain\""
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 224403994033846,
+					"parameters": {
+						"timeline": "Layout Intro",
+						"tags": "\"Layout Intro\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 356815454488791,
+					"parameters": {
+						"scale": ".5"
+					}
+				}
+			],
+			"sid": 437700828897619
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 302053523185414,
+					"parameters": {
+						"key": 68
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 508461666485883,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [],
+			"sid": 939349860310045,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 726703484486474,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mountain\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 757821873224365,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 793435089102747,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 257014713015798,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Forest\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Timer is used to stop the select bar from moving all the way down on one frame"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 576125028449083,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 384601727259206
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 992844628133003,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Forest\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 776981126427492,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 290659174825248,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 988392534620717,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Graveyard\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 378692310379127,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 802043184398394
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 601113263071985,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Graveyard\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 819409109347443,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 849718455314717,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 159076758902264,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Mountain\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 246219742061347,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 333594792580540
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 763314017516433,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 489898292773015,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [],
+			"sid": 748262165316512,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 328061093652269,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mountain\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 404845860381096,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 642858161785561,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 448182520207510,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Graveyard\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 701165238896205,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 936974898200786
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 628883868841092,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Graveyard\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 599730137874356,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 460542026584396,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 345986450789062,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Forest\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 248074301980436,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 604822031417112
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 839925732210699,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Forest\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 679610881120980,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 895778763615878,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 259109819198042,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Mountain\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 288677071185819,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 656994738946814
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 293663202136472,
+					"parameters": {
+						"key": 89
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 940729409400478,
+					"parameters": {
+						"key": 85
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 326877965592903,
+					"parameters": {
+						"key": 81
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 601913878176294,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [],
+			"sid": 854552879565198,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 558498135517767,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mountain\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 868718545132263,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 899066668755919,
+							"parameters": {
+								"variable": "Stage",
+								"value": "\"Mountain\""
+							}
+						},
+						{
+							"id": "play-timeline",
+							"objectClass": "TimelineController",
+							"sid": 288406575307130,
+							"parameters": {
+								"timeline": "Round Transition",
+								"tags": "\"Layout Transition\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 996365794903085,
+							"parameters": {
+								"seconds": ".5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 128164863130530,
+							"parameters": {
+								"layout": "sasGameplay"
+							}
+						}
+					],
+					"sid": 449454545826545
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 199507580497238,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Graveyard\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 159836429782341,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 216459254703710,
+							"parameters": {
+								"variable": "Stage",
+								"value": "\"Graveyard\""
+							}
+						},
+						{
+							"id": "play-timeline",
+							"objectClass": "TimelineController",
+							"sid": 587582832527374,
+							"parameters": {
+								"timeline": "Round Transition",
+								"tags": "\"Layout Transition\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 607693503320223,
+							"parameters": {
+								"seconds": ".5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 463700200266126,
+							"parameters": {
+								"layout": "sasGameplay"
+							}
+						}
+					],
+					"sid": 535902145012370
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasStageSelectIcon",
+							"sid": 861737349038412,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Forest\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 874526203308548,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 631779051981229,
+							"parameters": {
+								"variable": "Stage",
+								"value": "\"Forest\""
+							}
+						},
+						{
+							"id": "play-timeline",
+							"objectClass": "TimelineController",
+							"sid": 633553515070669,
+							"parameters": {
+								"timeline": "Round Transition",
+								"tags": "\"Layout Transition\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 612203320876174,
+							"parameters": {
+								"seconds": ".5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 827295632086336,
+							"parameters": {
+								"layout": "sasGameplay"
+							}
+						}
+					],
+					"sid": 151093929616544
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 427720211868166,
+					"parameters": {
+						"key": 73
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 401225348234031,
+					"parameters": {
+						"key": 79
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 364296668122125,
+					"parameters": {
+						"key": 90
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 445536337630469,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 434091734527939,
+					"parameters": {
+						"timeline": "Round Transition",
+						"tags": "\"Layout Transition\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 489729721133774,
+					"parameters": {
+						"seconds": ".5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 453984978306528,
+					"parameters": {
+						"layout": "Fantasy Fight"
+					}
+				}
+			],
+			"sid": 429010501622536,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 493371442902360,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"comparison": 0,
+						"value": "\"Mountain\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 894995076004174,
+					"parameters": {
+						"animation": "\"Mountain\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasMountainBackground",
+					"sid": 682027501659869,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasForest_Background",
+					"sid": 854091774243663,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasGraveyard_Layer1",
+					"sid": 168782692261592,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasGraveyard_Layer2",
+					"sid": 326170115246660,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 816517250033440
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 374085699126389,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"comparison": 0,
+						"value": "\"Graveyard\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 504873520678490,
+					"parameters": {
+						"animation": "\"Graveyard\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasMountainBackground",
+					"sid": 435922189693753,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasForest_Background",
+					"sid": 864929141167548,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasGraveyard_Layer1",
+					"sid": 363014023542621,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasGraveyard_Layer2",
+					"sid": 522588540404743,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 270649971009280
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 698626786629451,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"comparison": 0,
+						"value": "\"Forest\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "sasStageSelectIcon",
+					"sid": 620456423180352,
+					"parameters": {
+						"animation": "\"Forest\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasMountainBackground",
+					"sid": 853894770057900,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasForest_Background",
+					"sid": 285230502451184,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasGraveyard_Layer1",
+					"sid": 216757201010577,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sasGraveyard_Layer2",
+					"sid": 340542728929744,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 446458491149508
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 483181303041052
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 169850682117141
+				}
+			],
+			"sid": 967600657236806
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 299086510420479
+}

@@ -1,0 +1,68 @@
+{
+	"name": "paGem",
+	"plugin-id": "Sprite",
+	"sid": 245049066363664,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 996253267908015
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 24,
+						"height": 22,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1276836,
+						"collisionPoly": {
+							"points": [
+								0.20833333333333334,
+								0.045454545454545456,
+								0.7916666666666666,
+								0.045454545454545456,
+								1,
+								0.3181818181818182,
+								1,
+								0.5454545454545454,
+								0.875,
+								0.7272727272727273,
+								0.6666666666666666,
+								0.9545454545454546,
+								0.3333333333333333,
+								0.9545454545454546,
+								0.125,
+								0.7272727272727273,
+								0,
+								0.5454545454545454,
+								0,
+								0.3181818181818182
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 108551332294950,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

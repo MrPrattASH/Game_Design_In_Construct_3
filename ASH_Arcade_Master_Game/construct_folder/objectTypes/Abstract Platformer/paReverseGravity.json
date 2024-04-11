@@ -1,0 +1,64 @@
+{
+	"name": "paReverseGravity",
+	"plugin-id": "Sprite",
+	"sid": 812008145444275,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Current_Grav",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 585074438733555
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 710055144406692
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 350,
+						"height": 350,
+						"originX": 0.14285714285714285,
+						"originY": 0.14285714285714285,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8500712,
+						"collisionPoly": {
+							"points": [
+								0.14285714285714285,
+								0.14285714285714285,
+								0.8571428571428571,
+								0.14285714285714285,
+								0.8571428571428571,
+								0.8571428571428571,
+								0.14285714285714285,
+								0.8571428571428571
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 673972073134672,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

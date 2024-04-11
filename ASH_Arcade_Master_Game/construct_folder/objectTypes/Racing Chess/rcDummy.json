@@ -1,0 +1,73 @@
+{
+	"name": "rcDummy",
+	"plugin-id": "Sprite",
+	"sid": 968840481770483,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 835242242985280
+		},
+		{
+			"name": "Crashing",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 180164388927565
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1906760,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.75,
+								0.125,
+								0.78125,
+								0.15625,
+								0.78125,
+								0.96875,
+								0.75,
+								1,
+								0.25,
+								1,
+								0.21875,
+								0.953125,
+								0.21875,
+								0.15625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 832530249110272,
+				"name": "Player1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"name": "paDrawbridgeOpp",
+	"plugin-id": "Sprite",
+	"sid": 954592093477014,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 450,
+						"height": 449,
+						"originX": 0.5,
+						"originY": 0.5011135857461024,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8470700,
+						"collisionPoly": {
+							"points": [
+								0.43777777777777777,
+								0.4298440979955457,
+								0.5622222222222222,
+								0.4298440979955457,
+								0.5711111111111111,
+								0.43875278396436523,
+								0.5711111111111111,
+								0.5634743875278396,
+								0.5622222222222222,
+								0.5723830734966593,
+								0.43777777777777777,
+								0.5723830734966593,
+								0.4288888888888889,
+								0.5634743875278396,
+								0.4288888888888889,
+								0.43875278396436523
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 824760791536953,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

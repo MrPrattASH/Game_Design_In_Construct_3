@@ -1,0 +1,301 @@
+{
+	"name": "rcMenuSheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Winner",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 410960143281657
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 698857955668151,
+					"parameters": {
+						"key": 81
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 835992641500159,
+					"parameters": {
+						"key": 89
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 261065836629541,
+					"parameters": {
+						"layout": "rcGame"
+					}
+				}
+			],
+			"sid": 936405543749021,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 262150837695609,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 325210059501639,
+					"parameters": {
+						"key": 85
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 807749366633292,
+					"parameters": {
+						"layout": "rcTutorial"
+					}
+				}
+			],
+			"sid": 655501298490548,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 184366301476793
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 255881593190023,
+					"parameters": {
+						"scale": "1.5"
+					}
+				}
+			],
+			"sid": 436762494891132,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 680099350535961,
+							"parameters": {
+								"variable": "Winner",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "rcWinner",
+							"sid": 953695514737346,
+							"parameters": {
+								"color": "rgbEx255(139, 173, 213)"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "rcWinner",
+							"sid": 751578094732896,
+							"parameters": {
+								"text": "\"Player 1!\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "rcPlayerImage",
+							"sid": 381613966980811,
+							"parameters": {
+								"animation": "\"Player1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 726312588334952
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 576666259842689,
+							"parameters": {
+								"variable": "Winner",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "rcWinner",
+							"sid": 305873892185360,
+							"parameters": {
+								"color": "rgbEx255(152, 205, 137)"
+							}
+						},
+						{
+							"id": "typewriter-text",
+							"objectClass": "rcWinner",
+							"sid": 240788587610401,
+							"parameters": {
+								"text": "\"Player 2!\"",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "rcPlayerImage",
+							"sid": 974353617353056,
+							"parameters": {
+								"animation": "\"Player2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 486648037808283
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 570201316654970,
+							"parameters": {
+								"tag": "\"MenuLoop\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 428675994704521,
+							"parameters": {
+								"tag": "\"MenuIntro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 559344855521868
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 102404517751377,
+							"parameters": {
+								"audio-file": "MenuIntro",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"MenuIntro\""
+							}
+						}
+					],
+					"sid": 174757545872997
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 725594268410838,
+					"parameters": {
+						"key": 67
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 363077816395957,
+					"parameters": {
+						"key": 79
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 201220695248097,
+					"parameters": {
+						"layout": "Racing Chess"
+					}
+				}
+			],
+			"sid": 496069639131086,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-ended",
+					"objectClass": "Audio",
+					"sid": 174151857372118,
+					"parameters": {
+						"tag": "\"MenuIntro\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 377529495570867,
+					"parameters": {
+						"audio-file": "MenuLoop",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"MenuLoop\""
+					}
+				}
+			],
+			"sid": 184336976650815
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 363315861987753
+}

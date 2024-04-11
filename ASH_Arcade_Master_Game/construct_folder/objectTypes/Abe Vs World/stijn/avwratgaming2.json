@@ -1,0 +1,59 @@
+{
+	"name": "avwratgaming2",
+	"plugin-id": "Sprite",
+	"sid": 756252172308308,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "state",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 382181010332876
+		},
+		{
+			"name": "left",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 231300590842472
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 194619136210688
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4859157,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 482809968819906,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

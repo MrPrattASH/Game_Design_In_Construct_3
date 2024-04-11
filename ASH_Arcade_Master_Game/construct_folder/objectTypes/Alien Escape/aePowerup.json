@@ -1,0 +1,52 @@
+{
+	"name": "aePowerup",
+	"plugin-id": "Sprite",
+	"sid": 858596158734617,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "OnPowerupCollected",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 337531125455449
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 731214480839786
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 187,
+						"height": 181,
+						"originX": 0.5561497326203209,
+						"originY": 0.5138121546961326,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6029328,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 524042013342548,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

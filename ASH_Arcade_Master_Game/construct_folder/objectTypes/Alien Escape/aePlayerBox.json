@@ -1,0 +1,77 @@
+{
+	"name": "aePlayerBox",
+	"plugin-id": "Sprite",
+	"sid": 201936058321782,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 790080290746447
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 508871161283859
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 921347499458434
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 495701421938812
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 540365276253862
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 830676357840259
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 858344263366411
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5286207,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 208772886275070,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

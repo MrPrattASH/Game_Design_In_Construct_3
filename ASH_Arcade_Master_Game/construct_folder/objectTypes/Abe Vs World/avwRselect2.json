@@ -1,0 +1,56 @@
+{
+	"name": "avwRselect2",
+	"plugin-id": "Sprite",
+	"sid": 838563032897033,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "TileMovement",
+			"name": "TileMovement",
+			"sid": 601244662030379
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3033246,
+						"collisionPoly": {
+							"points": [
+								0.16181250000000003,
+								0.15196875,
+								0.8556562499999999,
+								0.128,
+								0.8928749999999999,
+								0.83490625,
+								0.1176875,
+								0.8634375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 815330401382447,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

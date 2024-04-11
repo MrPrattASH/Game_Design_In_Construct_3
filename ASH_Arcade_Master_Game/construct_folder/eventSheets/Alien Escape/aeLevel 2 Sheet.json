@@ -1,0 +1,2536 @@
+{
+	"name": "aeLevel 2 Sheet",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "To have it so that the powerup that you collected in level 1 is still having effects in level 2"
+		},
+		{
+			"eventType": "variable",
+			"name": "PowerUpCollected",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 659775913024604
+		},
+		{
+			"eventType": "variable",
+			"name": "Speed2",
+			"type": "number",
+			"initialValue": "1.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 739827715202837
+		},
+		{
+			"eventType": "variable",
+			"name": "JumpHeight",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 365903269367843
+		},
+		{
+			"eventType": "variable",
+			"name": "OnGround",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 106333444543648
+		},
+		{
+			"eventType": "variable",
+			"name": "IsKeyPicked",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 588274020574774
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Physics Code",
+			"description": "Including basic movement (overlapping particular sprites)",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 439285191799016
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "aePlayer",
+							"sid": 752539732951703,
+							"parameters": {
+								"object": "aePlayerBox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "aePlayer",
+							"sid": 306100205495404,
+							"parameters": {
+								"width": "24",
+								"height": "24"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "aePlayerBox",
+							"sid": 875801169748894,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 339372344851265,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "This is because platform behavior doesn't work well with physics behavior"
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "aePlayerBox",
+							"sid": 670314892194768,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "The gravity of all objects so that the sprites have a earth gravity type movement and gameplay "
+						},
+						{
+							"id": "set-world-gravity",
+							"objectClass": "aePlayerBox",
+							"sid": 619076399973605,
+							"behaviorType": "Physics",
+							"parameters": {
+								"gravity": "20"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "The player will move at the same speed no matter the density and as you have to push objects the denser objects will be more powerful and the less dense objects are the one to be pushed "
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 563332089621966,
+							"parameters": {
+								"variable": "Speed2",
+								"value": "Speed2*aePlayerBox.Physics.Density"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "To provide limitation to how far we can jump "
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 774244874819994,
+							"parameters": {
+								"variable": "JumpHeight",
+								"value": "JumpHeight*aePlayerBox.Physics.Density"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 360325889814494,
+							"parameters": {
+								"audio-file": "Level 2",
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"lvl2\""
+							}
+						}
+					],
+					"sid": 538734925279354
+				},
+				{
+					"eventType": "comment",
+					"text": "Jump made using the physics behavior"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 500151211449121,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 710591458733987,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [],
+					"sid": 266833829538523,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If the player is on ground, as it as an impulse, at the moment, the jump height will become negative to indicate that the player is on the ground and can jump now"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 182712993303627,
+									"parameters": {
+										"variable": "OnGround"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-impulse",
+									"objectClass": "aePlayerBox",
+									"sid": 666094505641632,
+									"behaviorType": "Physics",
+									"parameters": {
+										"impulse-x": "0",
+										"implulse-y": "-JumpHeight",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 596733176287073,
+									"parameters": {
+										"variable": "OnGround",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 846036376691824
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "We want to move the object left and right and not up and down"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 500231436617663,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-force",
+							"objectClass": "aePlayerBox",
+							"sid": 615598527857084,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force-x": "-Speed2",
+								"force-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 499102173195524
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 497260336797112,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-force",
+							"objectClass": "aePlayerBox",
+							"sid": 273566624559441,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force-x": "Speed2",
+								"force-y": "0",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 267069536863835
+				},
+				{
+					"eventType": "comment",
+					"text": "As with the physics behavior, you can jump as much as you want, this code makes it so that you can jump/overlap over specific objects preventing it from getting unlimited jump and it will check if you are on ground so that means you can overlap these objects only"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 833126351810389,
+							"parameters": {
+								"object": "aeSolidTilemap2",
+								"offset-x": "0",
+								"offset-y": "5"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 252222816875174,
+							"parameters": {
+								"object": "Boxes",
+								"offset-x": "0",
+								"offset-y": "5"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 249113278376539,
+							"parameters": {
+								"object": "aeSeeSaw",
+								"offset-x": "0",
+								"offset-y": "5"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 377226151542536,
+							"parameters": {
+								"object": "aeSecondLvlWall",
+								"offset-x": "0",
+								"offset-y": "5"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 309518887608169,
+							"parameters": {
+								"object": "aeBouncyObject",
+								"offset-x": "0",
+								"offset-y": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 440568195690472,
+							"parameters": {
+								"variable": "OnGround",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 522537960101276,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "If you are not overlapping these objects, on ground will be set to false, implying that you will always be on ground if you are overlapping these objects"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 493392264129734,
+							"parameters": {
+								"object": "aeSolidTilemap2",
+								"offset-x": "0",
+								"offset-y": "5"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 120181387216654,
+							"parameters": {
+								"object": "Boxes",
+								"offset-x": "0",
+								"offset-y": "5"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 112926921664987,
+							"parameters": {
+								"object": "aeSeeSaw",
+								"offset-x": "0",
+								"offset-y": "5"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 755012183459895,
+							"parameters": {
+								"object": "aeSecondLvlWall",
+								"offset-x": "0",
+								"offset-y": "5"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "aePlayerBox",
+							"sid": 225779247267543,
+							"parameters": {
+								"object": "aeBouncyObject",
+								"offset-x": "0",
+								"offset-y": "5"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 197378286211411,
+							"parameters": {
+								"variable": "OnGround",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 201812944841302
+				},
+				{
+					"eventType": "comment",
+					"text": "This will give the see saw a more see saw like feel and give it a sort of up and down motion as it -60 and 60 degrees will give let it move that way"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "aeSeeSaw",
+							"sid": 578213258876466,
+							"parameters": {
+								"object": "aeSeeSawHolder"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-limited-revolute-joint",
+							"objectClass": "aeSeeSaw",
+							"sid": 691931749973109,
+							"behaviorType": "Physics",
+							"parameters": {
+								"this-image-point": "0",
+								"object": "aeSeeSawHolder",
+								"lower-angle": "-60",
+								"upper-angle": "60"
+							}
+						}
+					],
+					"sid": 235773258063203
+				}
+			],
+			"sid": 859711753663701
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Lava and Water Enemy",
+			"description": "Including lavasprite and waterfall",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemieslvl2",
+							"sid": 437296186536291,
+							"parameters": {
+								"instance-variable": "position",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemieslvl2",
+							"sid": 422461592545054,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemieslvl2",
+							"sid": 852289455954570,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 834366522541875
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Enemieslvl2",
+							"sid": 988383165778803,
+							"parameters": {
+								"instance-variable": "position",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemieslvl2",
+							"sid": 387084571320148,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemieslvl2",
+							"sid": 105057963323296,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 580344265199209
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "aeLavaEnemy",
+							"sid": 733600736709278
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeLavaSprite",
+							"sid": 176148425201960
+						}
+					],
+					"sid": 210014046775399
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "aeWaterEnemy",
+							"sid": 904768114107031
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeWaterfall",
+							"sid": 588640297330062
+						}
+					],
+					"sid": 190551388865380
+				},
+				{
+					"eventType": "comment",
+					"text": "Every tick, the player will set its position to playerbox, and every tick check if lava enemy is on-screen the lava sprite will be above exactly above the playerbox and once the timer is finished the lava sprite will fall on top of the playerbox"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 891514861806917
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "aePlayer",
+							"sid": 581951446858090,
+							"parameters": {
+								"object": "aePlayerBox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "aeHealthBar",
+							"sid": 831546914366501,
+							"parameters": {
+								"width": "aePlayerBox.Health*16"
+							}
+						}
+					],
+					"sid": 828833490758456,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-screen",
+									"objectClass": "aeLavaEnemy",
+									"sid": 888368310545544
+								}
+							],
+							"actions": [],
+							"sid": 304667978736176,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "aeLavaSprite",
+											"sid": 921946299151346,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"fall\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "aeLavaSprite",
+											"sid": 258741559287444,
+											"parameters": {
+												"x": "aePlayerBox.X",
+												"y": "aePlayerBox.Y-300"
+											}
+										}
+									],
+									"sid": 723187036021707
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 433719598447721
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "aeLavaSprite",
+											"sid": 362388371059979,
+											"parameters": {
+												"x": "aeLavaSprite.X",
+												"y": "aeLavaSprite.Y+5"
+											}
+										}
+									],
+									"sid": 179223510871832
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeLavaEnemy",
+							"sid": 950774332233761,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 689861005634477,
+							"parameters": {
+								"audio-file": "Lvl 2 Enemy dead",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aeLavaEnemy",
+							"sid": 446763635506279,
+							"parameters": {
+								"object": "aeFirebox",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeLavaEnemy",
+							"sid": 677725071241078
+						}
+					],
+					"sid": 571791895033203
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeWaterEnemy",
+							"sid": 142417569850738,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 431523815738068,
+							"parameters": {
+								"audio-file": "Lvl 2 Enemy dead",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aeWaterEnemy",
+							"sid": 902631602303657,
+							"parameters": {
+								"object": "aeWaterbox",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWaterEnemy",
+							"sid": 278838249751223
+						}
+					],
+					"sid": 400068429843724
+				},
+				{
+					"eventType": "comment",
+					"text": "When lava collides with the playerbox it will destroy itself and then the player will flash, and then it will check which button the player clicked on the beginning of the menu screen, where you get less damage from one of the enemies' attacks, and give that much damage accordingly"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeLavaSprite",
+							"sid": 620907661171577,
+							"parameters": {
+								"object": "aePlayerBox"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 339680623477090,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeLavaSprite",
+							"sid": 538399992412189
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 555301830860043,
+							"parameters": {
+								"audio-file": "Playerdamage",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 834292686904452,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If the player clicked on the none button, it would set the pickednone boolean to true, and if the player collected the powerup in the first level, it will deal you 2 damage, otherwise 3 "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 145267069100766,
+									"parameters": {
+										"variable": "PickedNone"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 446798835111050,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 834903292941527,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 823334940459702,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 265300254560894
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 216994849566687
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 382465425476994,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 119371196752475
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 222237526802185,
+									"parameters": {
+										"variable": "PickedFire"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 423485663060023,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 726833382446937,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 842451569131492,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 154909455164873
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 146898057759573
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 591667172697668,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 820845589356457
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 885029326957688,
+									"parameters": {
+										"variable": "PickedWater"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 405884053515218,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 271457682646764,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 707685549847489,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 963157729024253
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 231717863088783
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 717012471356772,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 857565413289202
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeWaterfall",
+							"sid": 652667899282302,
+							"parameters": {
+								"object": "aePlayerBox"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 433002766878394,
+							"parameters": {
+								"audio-file": "Playerdamage",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWaterfall",
+							"sid": 628542072605867
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 741641645959525,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 996941948442126,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 307548364572418,
+									"parameters": {
+										"variable": "PickedNone"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 454723211603510,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 976170569457447,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 880165197915326,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 827771158864129
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 114928590838044
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 947792008064365,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 769956062856956
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 361638544193578,
+									"parameters": {
+										"variable": "PickedFire"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 689409533414220,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 607844856401241,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 171386302945547,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 876115592647924
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 310012353277454
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 533958528123216,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 724545042330670
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 271351980875364,
+									"parameters": {
+										"variable": "PickedWater"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 863107249588162,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 994709303366042,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 532080787294382,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "0.5"
+											}
+										}
+									],
+									"sid": 764097461323070
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 127220143358389
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 358146960027520,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 917142976779892
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "aeWaterfall",
+							"sid": 427690943522416,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"fall\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aeWaterEnemy",
+							"sid": 209613221694961,
+							"parameters": {
+								"animation": "\"WATERSPAWN\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 889080045623396
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 787194548342691
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aeWaterEnemy",
+							"sid": 892374102897518,
+							"parameters": {
+								"animation": "\"Animation 1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 649530792407239
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemieslvl2",
+							"sid": 128553900754800,
+							"parameters": {
+								"object": "aeEdgeMarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 139778099347492,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemieslvl2",
+									"sid": 218502183838578,
+									"parameters": {
+										"instance-variable": "position",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemieslvl2",
+									"sid": 464480742996375,
+									"parameters": {
+										"instance-variable": "position",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 801129700181506
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 403986674905001
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemieslvl2",
+									"sid": 224864399281678,
+									"parameters": {
+										"instance-variable": "position",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 615511600637404
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Whenever the lava enemy is on-screen it will create lava on top of the playerbox's head and it will trigger once or else once you defeat the lava enemy it will be gone forever, so every time it is on-screen it will start a timer and create lava sprite"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "aeLavaEnemy",
+							"sid": 417892232212187
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 640070441645251
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 850857103919467,
+							"parameters": {
+								"object-to-create": "aeLavaSprite",
+								"layer": "1",
+								"x": "aePlayerBox.X",
+								"y": "aePlayerBox.Y-300",
+								"create-hierarchy": false,
+								"template-name": "\"lavaspawn\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 688544468479372,
+							"parameters": {
+								"object-to-create": "aeLavaSprite",
+								"layer": "1",
+								"x": "aePlayerBox.X+300",
+								"y": "aePlayerBox.Y-300",
+								"create-hierarchy": false,
+								"template-name": "\"lavaspawn\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 705895843096841,
+							"parameters": {
+								"object-to-create": "aeLavaSprite",
+								"layer": "1",
+								"x": "aePlayerBox.X-600",
+								"y": "aePlayerBox.Y-300",
+								"create-hierarchy": false,
+								"template-name": "\"lavaspawn\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "aeLavaSprite",
+							"sid": 432243782303510,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.0",
+								"type": "once",
+								"tag": "\"fall\""
+							}
+						}
+					],
+					"sid": 121031788296751
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "aeLavaSprite",
+							"sid": 661638854593896,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"fall\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aeLavaEnemy",
+							"sid": 416985464204660,
+							"parameters": {
+								"animation": "\"LAVASPAWN\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 734468020512834
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 748183874881967
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aeLavaEnemy",
+							"sid": 249155191188937,
+							"parameters": {
+								"animation": "\"Animation 1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 826426619766402
+				},
+				{
+					"eventType": "comment",
+					"text": "If the lava sprite is less than 1000 on the y axis it will destroy itself to prevent lag in the game"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "aeLavaSprite",
+							"sid": 751523922240261,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeLavaSprite",
+							"sid": 584124998177649
+						}
+					],
+					"sid": 604629482886723
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "aeWaterfall",
+							"sid": 136246626804715,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeWaterfall",
+							"sid": 911888300288154
+						}
+					],
+					"sid": 363484400053155
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 111678684860656
+						}
+					],
+					"actions": [],
+					"sid": 329780013520292,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-screen",
+									"objectClass": "aeWaterEnemy",
+									"sid": 333534443768073
+								}
+							],
+							"actions": [],
+							"sid": 948700023316577,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "aeWaterfall",
+											"sid": 836187306621452,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"fall\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "aeWaterfall",
+											"sid": 514300664989101,
+											"parameters": {
+												"x": "aePlayerBox.X",
+												"y": "aePlayerBox.Y-300"
+											}
+										}
+									],
+									"sid": 677928621134646
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 706476939003563
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "aeWaterfall",
+											"sid": 210483334650922,
+											"parameters": {
+												"x": "aeWaterfall.X",
+												"y": "aeWaterfall.Y+5"
+											}
+										}
+									],
+									"sid": 253718433327917
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "aeWaterEnemy",
+							"sid": 709384861221397
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 257581117020432
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 568873054292379,
+							"parameters": {
+								"object-to-create": "aeWaterfall",
+								"layer": "1",
+								"x": "aePlayerBox.X",
+								"y": "aePlayerBox.Y-300",
+								"create-hierarchy": false,
+								"template-name": "\"lavaspawn\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 228453480528588,
+							"parameters": {
+								"object-to-create": "aeWaterfall",
+								"layer": "1",
+								"x": "aePlayerBox.X-300",
+								"y": "aePlayerBox.Y-300",
+								"create-hierarchy": false,
+								"template-name": "\"lavaspawn\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 635065302974352,
+							"parameters": {
+								"object-to-create": "aeWaterfall",
+								"layer": "1",
+								"x": "aePlayerBox.X+300",
+								"y": "aePlayerBox.Y-300",
+								"create-hierarchy": false,
+								"template-name": "\"lavaspawn\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "aeWaterfall",
+							"sid": 219277488349601,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.0",
+								"type": "once",
+								"tag": "\"fall\""
+							}
+						}
+					],
+					"sid": 131767336624162
+				}
+			],
+			"sid": 686092872414399
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Code",
+			"description": "Including water and lava enemy",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "If playerbox collides with the lava enemy, the player will flash to show that it got damaged, and then it will check whether the player has collected a powerup or not, and give damage accordingly "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 486756357185332,
+							"parameters": {
+								"object": "aeLavaEnemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 690559877426011,
+							"parameters": {
+								"audio-file": "Playerdamage",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 119865064307271,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 796211195939977,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 669710392051069,
+									"parameters": {
+										"variable": "PowerUpCollected"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "aePlayerBox",
+									"sid": 686332160841721,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 647443317305059
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 945788376697831
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "aePlayerBox",
+									"sid": 691965581497877,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 361938732930891
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 181251651435687,
+							"parameters": {
+								"object": "aeWaterEnemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 836337500501864,
+							"parameters": {
+								"audio-file": "Playerdamage",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 879780785145466,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 244000726773318,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 819213529735798,
+									"parameters": {
+										"variable": "PowerUpCollected"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "aePlayerBox",
+									"sid": 317977781992163,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 146020143030829
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 228352834466312
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "aePlayerBox",
+									"sid": 648724479328333,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 928986081456410
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aePlayerBox",
+							"sid": 991803814655509,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aePlayerBox",
+							"sid": 535168284920948
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 730360816419468,
+							"parameters": {
+								"layout": "aeGame Over Screen"
+							}
+						}
+					],
+					"sid": 340045707420635
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "aePlayerBox",
+							"sid": 358604112384241,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 580299774478634,
+							"parameters": {
+								"object": "aedust",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 248878060117960
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 927711574343485,
+							"parameters": {
+								"object": "aeSecondlvlkey"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 225674360883454,
+							"parameters": {
+								"audio-file": "KeyPickup",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 494980240218960,
+							"parameters": {
+								"variable": "IsKeyPicked",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeSecondlvlkey",
+							"sid": 179977476723453
+						}
+					],
+					"sid": 649718877199692
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 184287532128930,
+							"parameters": {
+								"object": "aeExitToLvl2"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 109906719052028,
+							"parameters": {
+								"variable": "IsKeyPicked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 985989567825188,
+							"parameters": {
+								"layout": "aeWin Screen"
+							}
+						}
+					],
+					"sid": 283505244103924
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 240670712836988,
+							"parameters": {
+								"object": "aePortal1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 641243324132195,
+							"parameters": {
+								"audio-file": "Teleport",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "aePlayerBox",
+							"sid": 567904707619250,
+							"parameters": {
+								"x": "27",
+								"y": "450"
+							}
+						}
+					],
+					"sid": 233227098860142
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 976049964039149,
+							"parameters": {
+								"object": "aePortal2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 709131877133325,
+							"parameters": {
+								"audio-file": "Teleport",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "aePlayerBox",
+							"sid": 255645978385135,
+							"parameters": {
+								"x": "27",
+								"y": "899"
+							}
+						}
+					],
+					"sid": 228204706309404
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 352644139983467,
+							"parameters": {
+								"object": "aeBackPortal"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 195386951341514,
+							"parameters": {
+								"audio-file": "Teleport",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "aePlayerBox",
+							"sid": 393403750985341,
+							"parameters": {
+								"x": "1357",
+								"y": "358"
+							}
+						}
+					],
+					"sid": 131638453717235
+				},
+				{
+					"eventType": "comment",
+					"text": "This is to help the player go back if they missed the key "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 637578175042636,
+							"parameters": {
+								"object": "aeBackPortal2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 923309840142946,
+							"parameters": {
+								"audio-file": "Teleport",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "aePlayerBox",
+							"sid": 928063071733199,
+							"parameters": {
+								"x": "1395",
+								"y": "61"
+							}
+						}
+					],
+					"sid": 860581625295296
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 486273162215343,
+							"parameters": {
+								"object": "aeBouncyObject"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 204642550387704,
+							"parameters": {
+								"audio-file": "Bouncy",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 411212357771574
+				}
+			],
+			"sid": 461706320535584
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game Cleanliness",
+			"description": "Bullet destroying code for example",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 520060375424098
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 544024845764169,
+							"parameters": {
+								"variable": "PowerUpCollected"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "aePlayerBox",
+							"sid": 538123483790835,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "5"
+							}
+						}
+					],
+					"sid": 532648518648122
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 778420985670498,
+							"parameters": {
+								"object": "Enemieslvl2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Enemieslvl2",
+							"sid": 382451667729106,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 123055996137301
+						}
+					],
+					"sid": 678855532422686
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 413189708333820,
+							"parameters": {
+								"object": "aeSecondLvlWall"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 831563640919226
+						}
+					],
+					"sid": 341036307199336
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 334748413317749,
+							"parameters": {
+								"object": "aeSeeSaw"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 458948664159423
+						}
+					],
+					"sid": 628277079921653
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 263132686394231,
+							"parameters": {
+								"object": "aeSeeSawHolder"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 395730275432971
+						}
+					],
+					"sid": 638656959671391
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 379695201214716,
+							"parameters": {
+								"object": "aeLayoutEdge"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 951253752716701
+						}
+					],
+					"sid": 338822840653863
+				},
+				{
+					"eventType": "comment",
+					"text": "If the playerbox picked the key earlier in the level it will go to the win screen or else nothing will happen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 543352251539312,
+							"parameters": {
+								"object": "Boxes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 789356081786737
+						}
+					],
+					"sid": 185861077693735
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 322013412491425,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 411942766228332
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aePlayer",
+							"sid": 423195878221773,
+							"parameters": {
+								"object": "aeBullet",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "aeBullet",
+							"sid": 180013095531722,
+							"parameters": {
+								"angle": "0"
+							}
+						}
+					],
+					"sid": 363267722533777
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 786501847209013,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 682390678475648,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aePlayer",
+							"sid": 198290214666042,
+							"parameters": {
+								"object": "aeBullet",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "aeBullet",
+							"sid": 365187306132629,
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 597300211873352
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 886074936664019,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 771838102570693,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 612655538630037
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 146868765977070,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 738242063990605,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 281729214848535
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 987208402949716
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 838534645265232
+						}
+					],
+					"sid": 202537392689576
+				}
+			],
+			"sid": 703442167252715
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 747761655297982
+}

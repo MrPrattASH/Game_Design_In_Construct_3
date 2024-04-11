@@ -1,0 +1,1299 @@
+{
+	"name": "Player1Game_eu",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Player2_eu"
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerHP2",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 156497181379096
+		},
+		{
+			"eventType": "variable",
+			"name": "PlayerHP1",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 283026138104053
+		},
+		{
+			"eventType": "variable",
+			"name": "Combonumber",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 319057811195158
+		},
+		{
+			"eventType": "variable",
+			"name": "Knockbackjump",
+			"type": "number",
+			"initialValue": "400",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 810410213490084
+		},
+		{
+			"eventType": "variable",
+			"name": "Jumpstrength",
+			"type": "number",
+			"initialValue": "650",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 642731378255256
+		},
+		{
+			"eventType": "comment",
+			"text": "At every tick the player's animations/Players will be set to the same position as their playerbox. "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 718654412667964
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Player1_eu",
+					"sid": 960960690134590,
+					"parameters": {
+						"object": "Playerbox1_eu",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "Player2_eu",
+					"sid": 904113709844732,
+					"parameters": {
+						"object": "Playerbox2_eu",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "HealthBarp2_eu",
+					"sid": 107610182466115,
+					"parameters": {
+						"width": "PlayerHP2"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "HealthBarp1_eu",
+					"sid": 481798075707475,
+					"parameters": {
+						"width": "PlayerHP1"
+					}
+				}
+			],
+			"sid": 148412794030628
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 864121669186531
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 247309146035927,
+					"parameters": {
+						"audio-file": "Game music",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 417652693159871
+		},
+		{
+			"eventType": "comment",
+			"text": "Combonumber 0 means animation idle is playing"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 434399495446029,
+					"parameters": {
+						"animation": "\"Idle\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 262837594009304,
+					"parameters": {
+						"variable": "Combonumber",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 322281703195265
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 830419922829082,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [],
+			"sid": 227703416621292,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "Player1_eu",
+							"sid": 555016918081344,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"0\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 797250313561697,
+							"parameters": {
+								"variable": "Combonumber",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 347748172708899
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "Player1_eu",
+							"sid": 945030359865027,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 659084654766262,
+							"parameters": {
+								"variable": "Combonumber",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 497342873521337,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Check if the combonumber is 0/1/2 if it is start LightAttack/HeavyAttack/Attack3. If Player presses Q again in the .5 time frame, go to the next combonumber"
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 796370544942851,
+							"parameters": {
+								"variable": "Combonumber",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player1_eu",
+							"sid": 956334483495859,
+							"parameters": {
+								"animation": "\"LightAttack\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player1_eu",
+							"sid": 350223373809286,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".5",
+								"type": "once",
+								"tag": "\"0\""
+							}
+						}
+					],
+					"sid": 413177861224642
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 314759531573422,
+							"parameters": {
+								"variable": "Combonumber",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player1_eu",
+							"sid": 705420648244582,
+							"parameters": {
+								"animation": "\"HeavyAttack\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player1_eu",
+							"sid": 267366149863600,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".5",
+								"type": "once",
+								"tag": "\"1\""
+							}
+						}
+					],
+					"sid": 246480108630454
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 499332166116141,
+							"parameters": {
+								"variable": "Combonumber",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player1_eu",
+							"sid": 595450691860300,
+							"parameters": {
+								"animation": "\"Attack3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 520484888390628
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-animation-finished",
+					"objectClass": "Player1_eu",
+					"sid": 146396330290186
+				},
+				{
+					"id": "is-falling",
+					"objectClass": "Playerbox1_eu",
+					"sid": 468802490360115,
+					"behaviorType": "Platform",
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Hitboxplayer1_eu",
+					"sid": 722743441080116
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 341961026551461,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 506233710456078
+		},
+		{
+			"eventType": "comment",
+			"text": "If Player2 is blocking while colliding with the hitbox, take 0 amount from Player2's HP otherwise subtract 5 HP from Player2 "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Hitboxplayer1_eu",
+					"sid": 697344051281752,
+					"parameters": {
+						"object": "Player2_eu"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 273097126444936,
+					"parameters": {
+						"audio-file": "OOF -NAV (1)",
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 905999533634865,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Player2_eu",
+							"sid": 513089195083521,
+							"parameters": {
+								"animation": "\"Block\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 611020131260227,
+							"parameters": {
+								"variable": "PlayerHP2",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 974232231678113
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 729167017151616
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 999201203586927,
+							"parameters": {
+								"variable": "PlayerHP2",
+								"value": "5"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player2_eu",
+							"sid": 995356794874947,
+							"parameters": {
+								"animation": "\"Getting Hit\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 548265521516749
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Playerbox1_eu",
+							"sid": 441836334121272,
+							"parameters": {
+								"comparison": 2,
+								"x-co-ordinate": "Playerbox2_eu.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-x",
+							"objectClass": "Playerbox2_eu",
+							"sid": 549794579057397,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "Self.X+100"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Playerbox2_eu",
+							"sid": 683846307084105,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "Knockbackjump"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "Playerbox2_eu",
+							"sid": 326418866085956,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 655209315707808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Playerbox1_eu",
+							"sid": 817434260892737,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "Playerbox2_eu.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-x",
+							"objectClass": "Playerbox2_eu",
+							"sid": 394096325639136,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-x": "Self.X-1000"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Playerbox2_eu",
+							"sid": 990242185510103,
+							"behaviorType": "Platform",
+							"parameters": {
+								"jump-strength": "Knockbackjump"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "Playerbox2_eu",
+							"sid": 169961696161690,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 642973751163122
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-animation-frame-tag",
+					"objectClass": "Player1_eu",
+					"sid": 133930150318406,
+					"parameters": {
+						"comparison": 0,
+						"tag": "\"Hitbox\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player1_eu",
+					"sid": 541687971192890,
+					"parameters": {
+						"object": "Hitboxplayer1_eu",
+						"layer": "0",
+						"image-point": "1",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 471130918060932
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 300884933670674,
+					"parameters": {
+						"animation": "\"LightAttack\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 208426695279554,
+					"parameters": {
+						"animation": "\"HeavyAttack\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 593307191463090,
+					"parameters": {
+						"animation": "\"Attack3\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 649081190683711,
+					"parameters": {
+						"animation": "\"Getting Hit\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 309855057730727,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 153290584947076,
+					"parameters": {
+						"key": 69
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 962380847044319,
+					"parameters": {
+						"key": 81
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Playerbox1_eu",
+					"sid": 981619640775809,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player1_eu",
+					"sid": 954498687482779,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 991549725528081,
+					"parameters": {
+						"animation": "\"Run\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 197152161079322
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 371838564319441,
+					"parameters": {
+						"animation": "\"LightAttack\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 667777560947771,
+					"parameters": {
+						"animation": "\"HeavyAttack\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 608199801374240,
+					"parameters": {
+						"animation": "\"Attack3\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 200208920365400,
+					"parameters": {
+						"animation": "\"Getting Hit\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 830371322049096,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 954691353420380,
+					"parameters": {
+						"key": 69
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 595866128882227,
+					"parameters": {
+						"key": 81
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Playerbox1_eu",
+					"sid": 391145655477425,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player1_eu",
+					"sid": 109216573973937,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 271540554158371,
+					"parameters": {
+						"animation": "\"Run\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 184207187206158
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 567907917251944,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 616207752859057,
+					"parameters": {
+						"key": 69
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-jump-strength",
+					"objectClass": "Playerbox1_eu",
+					"sid": 538260164778777,
+					"behaviorType": "Platform",
+					"parameters": {
+						"jump-strength": "Jumpstrength"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "Playerbox1_eu",
+					"sid": 114030063985224,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "jump"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 688781606646275,
+					"parameters": {
+						"animation": "\"Jump\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 602576070151424
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Player1_eu",
+					"sid": 500339980911756,
+					"parameters": {
+						"animation": "\"Jump\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 188198771673685,
+					"parameters": {
+						"animation": "\"Fall\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 243332047129613
+		},
+		{
+			"eventType": "comment",
+			"text": "If these animations are NOT playing set to animation to idle"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 325765171193049,
+					"parameters": {
+						"key": 37
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 965955904604455,
+					"parameters": {
+						"key": 39
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 346515469951956,
+					"parameters": {
+						"key": 38
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 222710999328693,
+					"parameters": {
+						"animation": "\"LightAttack\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 233126297764026,
+					"parameters": {
+						"animation": "\"Jump\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 929519698169185,
+					"parameters": {
+						"animation": "\"HeavyAttack\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 151960832989730,
+					"parameters": {
+						"animation": "\"Attack3\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 691238560652616,
+					"parameters": {
+						"animation": "\"Death\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 761952134096697,
+					"parameters": {
+						"animation": "\"Block\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 404989016193185,
+					"parameters": {
+						"animation": "\"Getting Hit\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "Player1_eu",
+					"sid": 428519296770060,
+					"parameters": {
+						"animation": "\"Fall\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 492697446568718,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 408816626939827
+		},
+		{
+			"eventType": "comment",
+			"text": "When Health becomes 0, get rid of health and start death animation"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-width",
+					"objectClass": "HealthBarp1_eu",
+					"sid": 917597700478924,
+					"parameters": {
+						"comparison": 3,
+						"width": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "HealthBarp1_eu",
+					"sid": 852031768731550,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 955767200932237,
+					"parameters": {
+						"animation": "\"Death\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 244002561973230
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-width",
+					"objectClass": "HealthBarp2_eu",
+					"sid": 303429547090455,
+					"parameters": {
+						"comparison": 3,
+						"width": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "HealthBarp2_eu",
+					"sid": 300630711574001,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player2_eu",
+					"sid": 850882743645699,
+					"parameters": {
+						"animation": "\"Death\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 986425236555975
+		},
+		{
+			"eventType": "comment",
+			"text": "After each attack finishes and the combo numbers are 0-2 set the animation idle"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Player1_eu",
+					"sid": 877090645508897,
+					"parameters": {
+						"animation": "\"LightAttack\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 420560286759239,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 790925272115531,
+							"parameters": {
+								"variable": "Combonumber",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player1_eu",
+							"sid": 123210709419233,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 380018122653048
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Player1_eu",
+					"sid": 364594877756698,
+					"parameters": {
+						"animation": "\"HeavyAttack\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 123398593973177,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 397447323782791,
+							"parameters": {
+								"variable": "Combonumber",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player1_eu",
+							"sid": 417870007638950,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 441890572937602
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Player1_eu",
+					"sid": 127106067303088,
+					"parameters": {
+						"animation": "\"Attack3\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 982013983907376,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 942063892122910,
+							"parameters": {
+								"variable": "Combonumber",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player1_eu",
+							"sid": 781468092869679,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 506263288747730
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 736157267612871,
+					"parameters": {
+						"variable": "PlayerHP2",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 503170076637862,
+					"parameters": {
+						"seconds": "2.2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 261516640006906,
+					"parameters": {
+						"layout": "Winnerp1_eu"
+					}
+				}
+			],
+			"sid": 400140319113016
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 320565659416622,
+					"parameters": {
+						"variable": "PlayerHP1",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 655487128135090,
+					"parameters": {
+						"seconds": "1.2"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 640187394238899,
+					"parameters": {
+						"layout": "Winnerp2_eu"
+					}
+				}
+			],
+			"sid": 140608005444995
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 659364001429720,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player1_eu",
+					"sid": 133756457100750,
+					"parameters": {
+						"animation": "\"Block\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 901050631612197
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 943546008941605
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 852347458503104,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 312368606841464
+		}
+	],
+	"sid": 569954012010709
+}

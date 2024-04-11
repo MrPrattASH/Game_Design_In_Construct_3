@@ -1,0 +1,21 @@
+{
+	"name": "paTiledBackground10",
+	"plugin-id": "TiledBg",
+	"sid": 356801277235181,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 640,
+		"height": 480,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 6267737,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

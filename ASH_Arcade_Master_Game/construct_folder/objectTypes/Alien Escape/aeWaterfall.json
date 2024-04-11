@@ -1,0 +1,56 @@
+{
+	"name": "aeWaterfall",
+	"plugin-id": "Sprite",
+	"sid": 503750763344997,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 656915141914521
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 185,
+						"height": 252,
+						"originX": 0.5405405405405406,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3950918,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.003968253968253968,
+								1,
+								0.003968253968253968,
+								1,
+								0.996031746031746,
+								0,
+								0.996031746031746
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 402371463335827,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"name": "P1_Healthbar_Grey",
+	"plugin-id": "Sprite",
+	"sid": 838104895867797,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Player",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 772647147050375
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 652,
+						"height": 52,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4507795,
+						"collisionPoly": {
+							"points": [
+								0.0015337423312883436,
+								0.019230769230769232,
+								0.9984662576687117,
+								0.019230769230769232,
+								0.9984662576687117,
+								0.9807692307692307,
+								0.0015337423312883436,
+								0.9807692307692307
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 541448471624746,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

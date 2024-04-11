@@ -1,0 +1,50 @@
+{
+	"name": "aePortal1",
+	"plugin-id": "Sprite",
+	"sid": 901051990428405,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 204,
+						"height": 216,
+						"originX": 0.38235294117647056,
+						"originY": 0.4166666666666667,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5475332,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.9950980392156863,
+								0,
+								0.9950980392156863,
+								0.9953703703703703,
+								0,
+								0.9953703703703703
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 858801852188439,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

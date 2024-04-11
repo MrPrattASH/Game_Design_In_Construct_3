@@ -1,0 +1,972 @@
+{
+	"name": "Fantasy Fight",
+	"layers": [
+		{
+			"name": "Background",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "sasGraveyard_Layer1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2890,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1258,
+						"y": 701,
+						"width": 2645.5376742776334,
+						"height": 1462.916240233718,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 928565105314909,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "sasSelectBar",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2891,
+					"instanceVariables": {
+						"Selecting": "",
+						"Player": "",
+						"Chosen": ""
+					},
+					"behaviors": {
+						"Flash": {
+							"properties": {}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1122.9802508933026,
+						"y": 882,
+						"width": 531.121198414353,
+						"height": 32.89029252464838,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.8
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasTitleScreenText",
+					"properties": {
+						"text": "Multiplayer",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 100,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 2892,
+					"instanceVariables": {
+						"Text_": "Multiplayer"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 772,
+						"y": 777,
+						"width": 709.8758599843217,
+						"height": 175.75849906402647,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasTitleScreenText",
+					"properties": {
+						"text": "Credits",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 60,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 2893,
+					"instanceVariables": {
+						"Text_": "Credits"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1000,
+						"y": 1082,
+						"width": 252.87585998432166,
+						"height": 101.75849906402647,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasTitleScreenText",
+					"properties": {
+						"text": "Tutorial",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 80,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 2894,
+					"instanceVariables": {
+						"Text_": "Tutorial"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1742.5,
+						"y": 828,
+						"width": 339.87585998432166,
+						"height": 125.75849906402647,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasGame_manager",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2895,
+					"instanceVariables": {
+						"P1_Combo": 0,
+						"P2_Combo": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 1419,
+						"y": -192,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Jump",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2896,
+					"instanceVariables": {
+						"Player": "Jump"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -300.71878337889393,
+						"y": 321,
+						"width": 296.82373361433525,
+						"height": 411.0555812220128,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.2813889997109635,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasTitleScreenText",
+					"properties": {
+						"text": "Tap up on the control stick to Jump\n",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 60,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 2897,
+					"instanceVariables": {
+						"Text_": "Jump Tutorial"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 237,
+						"y": -227,
+						"width": 1434.8758599843218,
+						"height": 120.75849906402647,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.27966879399447,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Block",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2898,
+					"instanceVariables": {
+						"Player": "Block"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -336,
+						"y": 821,
+						"width": 296.823734,
+						"height": 411.055581,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasTitleScreenText",
+					"properties": {
+						"text": "Controls",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 80,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 2899,
+					"instanceVariables": {
+						"Text_": "Controls"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1970,
+						"y": 329,
+						"width": 413.87585998432166,
+						"height": 125.75849906402647,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasTitleScreenText",
+					"properties": {
+						"text": "Mechanics",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 80,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 2900,
+					"instanceVariables": {
+						"Text_": "Mechanics"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1879,
+						"y": 204,
+						"width": 538.8758599843217,
+						"height": 125.75849906402647,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasControlsText",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2901,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1561,
+						"y": -770,
+						"width": 1153.7490048357013,
+						"height": 1341.2729477704295,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "LP",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2902,
+					"instanceVariables": {
+						"Player": "LP"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -714,
+						"y": 305,
+						"width": 282.6892704761905,
+						"height": 411.055581,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "HP",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2903,
+					"instanceVariables": {
+						"Player": "HP"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -714,
+						"y": 808,
+						"width": 282.6892704761905,
+						"height": 442.6752410769231,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Run",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2904,
+					"instanceVariables": {
+						"Player": "Dash"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -762,
+						"y": 1378,
+						"width": 395.76497866666665,
+						"height": 426.86541103846156,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Special",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2905,
+					"instanceVariables": {
+						"Player": "Special"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -703,
+						"y": 1920,
+						"width": 282.6892704761905,
+						"height": 426.86541103846156,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasMechanicsText",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2906,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 99,
+						"y": -944,
+						"width": 1494,
+						"height": 1239,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Air Dash",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2907,
+					"instanceVariables": {
+						"Player": "Air Dash"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -313,
+						"y": 1916,
+						"width": 353.3615880952381,
+						"height": 490.1047311923077,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "6L",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2908,
+					"instanceVariables": {
+						"Player": "6L"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -807,
+						"y": 2420,
+						"width": 339.2271245714286,
+						"height": 411.055581,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "6H",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2909,
+					"instanceVariables": {
+						"Player": "6H"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": -400,
+						"y": 2412,
+						"width": 409.8994421904762,
+						"height": 379.43592092307694,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TitleScreen_Adventurer_Anim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "LP",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2910,
+					"instanceVariables": {
+						"Player": "Cancel"
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 3026,
+						"y": 207,
+						"width": 282.6892704761905,
+						"height": 411.055581,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasSprite2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2911,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2887,
+						"y": -737,
+						"width": 489.44345117031764,
+						"height": 1282.8890459246834,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sastitle",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2927,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1227,
+						"y": 471,
+						"width": 1529,
+						"height": 205,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "sasRoundFade",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2912,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1208,
+						"y": 2409,
+						"width": 2692.794595699956,
+						"height": 1794.2107431245836,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 7
+					}
+				}
+			],
+			"sid": 910720265549500,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 818882207907954,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 2496,
+	"height": 1404,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "sasTitle Screen Event"
+}

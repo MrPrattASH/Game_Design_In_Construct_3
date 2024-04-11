@@ -1,0 +1,61 @@
+{
+	"name": "aeBouncyObject",
+	"plugin-id": "Sprite",
+	"sid": 951618203882156,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 172760231000398
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 300689189861658
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 567,
+						"height": 77,
+						"originX": 0.49559082892416223,
+						"originY": 0.5324675324675324,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5559835,
+						"collisionPoly": {
+							"points": [
+								0.2751322751322751,
+								0,
+								0.7160493827160493,
+								0,
+								0.7160493827160493,
+								1,
+								0.2751322751322751,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 379051843967397,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

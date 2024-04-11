@@ -1,0 +1,2431 @@
+{
+	"name": "sasTitle Screen Event",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "State",
+			"type": "string",
+			"initialValue": "Main Menu",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 476809746272968
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 669851964686448
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 619828335759815
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 425070841224856
+				},
+				{
+					"id": "flash",
+					"objectClass": "sasSelectBar",
+					"sid": 315611508452863,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": ".5",
+						"off-time": ".5",
+						"duration": "10000"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "sasSelectBar",
+					"sid": 698777897173754,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"value": "\"Multiplayer\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 892067910650613,
+					"parameters": {
+						"variable": "State",
+						"value": "\"Main Menu\""
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 758632456023808,
+					"parameters": {
+						"timeline": "Layout Intro",
+						"tags": "\"Layout Intro\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 347574428594523,
+					"parameters": {
+						"audio-file": "title screen",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 666109068035137,
+					"parameters": {
+						"scale": ".5"
+					}
+				}
+			],
+			"sid": 778675023866692
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 623397773058889,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Main Menu\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "sasControlsText",
+					"sid": 484618387457420,
+					"parameters": {
+						"x": "-1000",
+						"y": "-600"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 948570879036822,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasMechanicsText",
+					"sid": 199928419907591,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSprite2",
+					"sid": 375490224590725,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sastitle",
+					"sid": 623965489124828,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 837656906534918,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 910359911311244,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Multiplayer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 133598307240936,
+							"parameters": {
+								"x": "ViewportWidth(\"Layer 0\")/2",
+								"y": "800"
+							}
+						}
+					],
+					"sid": 285149531321629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 714324250521843,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 161023123898584,
+							"parameters": {
+								"x": "ViewportWidth(\"Layer 0\")/2",
+								"y": "1000"
+							}
+						}
+					],
+					"sid": 890244372366559
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 350278014822279,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 264958039949246,
+							"parameters": {
+								"x": "ViewportWidth(\"Layer 0\")/2",
+								"y": "1200"
+							}
+						}
+					],
+					"sid": 165009837552392
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 862607028361092,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 592360333614826,
+							"parameters": {
+								"x": "-500",
+								"y": "-300"
+							}
+						}
+					],
+					"sid": 656431170353256
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 751679334723164,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 177327054861224,
+							"parameters": {
+								"x": "-500",
+								"y": "300"
+							}
+						}
+					],
+					"sid": 245106820598394
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 374323504425362,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Tutorial\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 137359250174638
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "sasSelectBar",
+					"sid": 272676027271161,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"value": "\"Controls\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasControlsText",
+					"sid": 210678730818967,
+					"parameters": {
+						"x": "-1000",
+						"y": "-600"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 308307174098612,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasMechanicsText",
+					"sid": 730151689037744,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSprite2",
+					"sid": 819320725147907,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sastitle",
+					"sid": 728336524962645,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 117755380059782,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 321913711677435,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Multiplayer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 920475073243131,
+							"parameters": {
+								"x": "-500",
+								"y": "-300"
+							}
+						}
+					],
+					"sid": 946708037492165
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 967617737412422,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 252357231655970,
+							"parameters": {
+								"x": "-500",
+								"y": "-300"
+							}
+						}
+					],
+					"sid": 749784572636212
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 198449113049438,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 142926640453148,
+							"parameters": {
+								"x": "-500",
+								"y": "-300"
+							}
+						}
+					],
+					"sid": 916166180510945
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 516016515541256,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 380352925362431,
+							"parameters": {
+								"x": "1248",
+								"y": "800"
+							}
+						}
+					],
+					"sid": 366835205784465
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasTitleScreenText",
+							"sid": 237705307481695,
+							"parameters": {
+								"instance-variable": "Text_",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasTitleScreenText",
+							"sid": 153498323884936,
+							"parameters": {
+								"x": "1248",
+								"y": "1000"
+							}
+						}
+					],
+					"sid": 131856074352877
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 261571151771785,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Credits\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 709477351008113
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "sasTitleScreenText",
+					"sid": 367621855165015,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSelectBar",
+					"sid": 868140250273833,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasControlsText",
+					"sid": 995445572875337,
+					"parameters": {
+						"x": "-1000",
+						"y": "-600"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 338706057930236,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasMechanicsText",
+					"sid": 871129363734436,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSprite2",
+					"sid": 926481770900551,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sastitle",
+					"sid": 859243468625708,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 280801619389776
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 898060921062846,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Controls\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 909399724915470
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "sasSelectBar",
+					"sid": 953908378505222,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"value": "\"Controls\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasControlsText",
+					"sid": 758753364186880,
+					"parameters": {
+						"x": "600",
+						"y": "700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSelectBar",
+					"sid": 951327054320157,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasTitleScreenText",
+					"sid": 495444124367192,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasMechanicsText",
+					"sid": 437161223846674,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSprite2",
+					"sid": 555725619520176,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sastitle",
+					"sid": 831352637420523,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 249495190363988,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 583257631491616,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"Jump\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 968433030142430,
+							"parameters": {
+								"x": "1200",
+								"y": "450"
+							}
+						}
+					],
+					"sid": 411978578318343
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 247909678788186,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"Block\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 965900837751784,
+							"parameters": {
+								"x": "1500",
+								"y": "450"
+							}
+						}
+					],
+					"sid": 646821104391337
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 543806476955267,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"LP\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 877503932849628,
+							"parameters": {
+								"x": "1200",
+								"y": "1000"
+							}
+						}
+					],
+					"sid": 708634028225894
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 656627991598111,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"HP\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 245076753840181,
+							"parameters": {
+								"x": "1600",
+								"y": "1000"
+							}
+						}
+					],
+					"sid": 898635525887087
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 674940198320939,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"Special\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 227534955705598,
+							"parameters": {
+								"x": "1400",
+								"y": "1400"
+							}
+						}
+					],
+					"sid": 294933625404393
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 879656774330214,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"Dash\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 343761874584046,
+							"parameters": {
+								"x": "1800",
+								"y": "1400"
+							}
+						}
+					],
+					"sid": 406418068265503
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 551139963092892,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Mechanics\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 786840447792610
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "sasSelectBar",
+					"sid": 596558360650017,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"value": "\"Mechanics\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasControlsText",
+					"sid": 323677246253968,
+					"parameters": {
+						"x": "-1000",
+						"y": "-600"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSelectBar",
+					"sid": 579099973346141,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasTitleScreenText",
+					"sid": 153642616162361,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasMechanicsText",
+					"sid": 795946482196402,
+					"parameters": {
+						"x": "800",
+						"y": "700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSprite2",
+					"sid": 176247418202745,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sastitle",
+					"sid": 539118131377782,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 706167844078898,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 679599335300779,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"6H\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 788117105275740,
+							"parameters": {
+								"x": "2200",
+								"y": "1000"
+							}
+						}
+					],
+					"sid": 392093808028958
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 775382819139037,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"6L\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 717665440315224,
+							"parameters": {
+								"x": "1800",
+								"y": "1000"
+							}
+						}
+					],
+					"sid": 667545963739823
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 728336168801059,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"Cancel\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 870655049101708,
+							"parameters": {
+								"x": "1600",
+								"y": "500"
+							}
+						}
+					],
+					"sid": 459882642583141
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 494427697635294,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"Cancel\""
+					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 954933721793638,
+					"parameters": {
+						"comparison": 0,
+						"number": "3"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 213249541376478,
+					"parameters": {
+						"animation": "\"LP\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 534317563944590,
+					"parameters": {
+						"animation": "\"HP\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 873964334317402
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 642416246317210,
+					"parameters": {
+						"comparison": 0,
+						"number": "5"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 260783094333189,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 516342590539672,
+							"parameters": {
+								"animation": "\"HP\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 406214510432004,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"Cancel\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "TitleScreen_Adventurer_Anim",
+							"sid": 944603088392885,
+							"parameters": {
+								"animation": "\"LP\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 364087368957485
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 502981339483757,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Credits\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 220851566111985
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "sasSelectBar",
+					"sid": 612940897958719,
+					"parameters": {
+						"instance-variable": "Selecting",
+						"value": "\"Credits\""
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasControlsText",
+					"sid": 472525680348052,
+					"parameters": {
+						"x": "-1000",
+						"y": "-600"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSelectBar",
+					"sid": 434558777284416,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasTitleScreenText",
+					"sid": 982087618999344,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasMechanicsText",
+					"sid": 140832292921578,
+					"parameters": {
+						"x": "-1000",
+						"y": "-700"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "TitleScreen_Adventurer_Anim",
+					"sid": 828878437714536,
+					"parameters": {
+						"x": "-500",
+						"y": "-300"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "sasSprite2",
+					"sid": 647110317440837,
+					"parameters": {
+						"x": "ViewportWidth(\"Layer 0\")/2",
+						"y": "ViewportHeight(\"Layer 0\")/2"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "sastitle",
+					"sid": 394742876170060,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 540235587901910
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 422205956290165,
+					"parameters": {
+						"key": 83
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 194080470109092,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [],
+			"sid": 843605020774831,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 963588916786217,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Multiplayer\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 256962746435644,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 554560105519649,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 205187594911948,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Tutorial\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Timer is used to stop the select bar from moving all the way down on one frame"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 803574038418120,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 202711804331775
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 603277756918967,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 539534752919407,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 387006057993514,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 305890899628956,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Credits\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 455846443268499,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 223035972869810
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 494562829188763,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 989214924086458,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 876514180901263,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 722267450828216,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Multiplayer\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 807227803726059,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 633318679063238
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 613217723319696,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 300190724901608,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 228704662000863,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 467414927317219,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Mechanics\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Timer is used to stop the select bar from moving all the way down on one frame"
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 146689041864378,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 631756248419179
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 802387414924532,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 472113052522511,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 716133410012090,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 236983396158130,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Controls\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 754970455487921,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 982335438118640
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 335916692679651,
+					"parameters": {
+						"key": 87
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 800259240649951,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [],
+			"sid": 336511428775479,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 252533331109133,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Multiplayer\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 964798235818295,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 655867988617682,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 891838512271986,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Credits\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 754783288725659,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 567946802141790
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 366977312495847,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 936822438094407,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 691459197983170,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 747505220286009,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Multiplayer\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 558774446609599,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 665022658652691
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 150178516703843,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 117053621375760,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 843081393389176,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 304768894016965,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Tutorial\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 782190902293700,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 349184827723480
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 978707731324315,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 676637458683727,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 876768031109925,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 651255067621435,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Mechanics\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 808790283742799,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 673612929108617
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 629249738126225,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 212408579775761,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 946847336195713,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 710730503430261,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Controls\""
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "sasGame_manager",
+							"sid": 838796495422135,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".05",
+								"type": "once",
+								"tag": "\"Menu Cooldown\""
+							}
+						}
+					],
+					"sid": 477353305503578
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 204012895961333,
+					"parameters": {
+						"key": 89
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 568913195962894,
+					"parameters": {
+						"key": 85
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 114710154246639,
+					"parameters": {
+						"key": 81
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 889912337702133,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [],
+			"sid": 329249506610111,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 225639660897758,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Multiplayer\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 170393265644477,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 265993558048316,
+							"parameters": {
+								"layout": "sasStage Select"
+							}
+						}
+					],
+					"sid": 825856045095163
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 947920392800264,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 884865628963299,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 359321052021544,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"sid": 194254253265957
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 654674809020059,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 973665086171496,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Menu Cooldown\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 676275252046191,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 889085160657345,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Credits\""
+							}
+						}
+					],
+					"sid": 857996283345157
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 984550820336109,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 229862630421447,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 173446318963793,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Controls\""
+							}
+						}
+					],
+					"sid": 230728595264253
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 521436634450648,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						},
+						{
+							"id": "is-playing-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 965163929351612,
+							"parameters": {
+								"tags": "\"Layout Intro\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 434055408426383,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Mechanics\""
+							}
+						}
+					],
+					"sid": 923554233326432
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 568553464379889,
+					"parameters": {
+						"key": 73
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 253655464023904,
+					"parameters": {
+						"key": 79
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 312305270015318,
+					"parameters": {
+						"key": 90
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 202675664030158,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [],
+			"sid": 724378346567429,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 529886976434410,
+							"parameters": {
+								"variable": "State",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 996524435226675
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 451290267164058,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Main Menu\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 392659611569666,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"sid": 723177862777225
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 763301246780537,
+							"parameters": {
+								"variable": "State",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 827671068382986,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"sid": 240750984461137
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 964426095249394,
+							"parameters": {
+								"variable": "State",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 172456457163590,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"sid": 269887423259336
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 617112329679477,
+							"parameters": {
+								"variable": "State",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 307304074443095,
+							"parameters": {
+								"variable": "State",
+								"value": "\"Main Menu\""
+							}
+						}
+					],
+					"sid": 698000477958414
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 744942559413321,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Main Menu\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 836138274981134,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 134829437356578,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Multiplayer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasSelectBar",
+							"sid": 666981398097684,
+							"parameters": {
+								"x": "ViewportWidth(\"Layer 0\")/2",
+								"y": "900"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "sasSelectBar",
+							"sid": 274500894874384,
+							"parameters": {
+								"width": "630",
+								"height": "33"
+							}
+						}
+					],
+					"sid": 840120877998216
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 160010944869237,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Tutorial\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasSelectBar",
+							"sid": 795997507541586,
+							"parameters": {
+								"x": "ViewportWidth(\"Layer 0\")/2",
+								"y": "1070"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "sasSelectBar",
+							"sid": 357090107300897,
+							"parameters": {
+								"width": "280",
+								"height": "33"
+							}
+						}
+					],
+					"sid": 405805041016796
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 115907087206284,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Credits\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasSelectBar",
+							"sid": 626890907686591,
+							"parameters": {
+								"x": "ViewportWidth(\"Layer 0\")/2",
+								"y": "1270"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "sasSelectBar",
+							"sid": 968428260478860,
+							"parameters": {
+								"width": "220",
+								"height": "33"
+							}
+						}
+					],
+					"sid": 364347925836868
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 475482915837529,
+					"parameters": {
+						"variable": "State",
+						"comparison": 0,
+						"value": "\"Tutorial\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 758144918343757,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 918519612498217,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Controls\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasSelectBar",
+							"sid": 692418112081466,
+							"parameters": {
+								"x": "1248",
+								"y": "870"
+							}
+						}
+					],
+					"sid": 162450373126086
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 402454110998562,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"comparison": 0,
+								"value": "\"Mechanics\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sasSelectBar",
+							"sid": 437661856816914,
+							"parameters": {
+								"x": "1248",
+								"y": "1070"
+							}
+						}
+					],
+					"sid": 417705892032428
+				}
+			]
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 366300305287560
+}

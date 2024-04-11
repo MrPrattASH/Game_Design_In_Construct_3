@@ -1,0 +1,151 @@
+{
+	"name": "rcPlayer",
+	"plugin-id": "Sprite",
+	"sid": 590335987880463,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 681293324484001
+		},
+		{
+			"name": "PowerupHeld",
+			"type": "number",
+			"desc": "0 = No Powerup, Number = type of powerup",
+			"show": true,
+			"sid": 501452250749013
+		},
+		{
+			"name": "Crashing",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 435278347223759
+		},
+		{
+			"name": "TakingPowerup",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 788081029897286
+		},
+		{
+			"name": "CurrentCheckpoint",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 193968538691885
+		},
+		{
+			"name": "Laps",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 770669872186847
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 338485917143444
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 111335,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.75,
+								0.125,
+								0.78125,
+								0.15625,
+								0.78125,
+								0.96875,
+								0.75,
+								1,
+								0.25,
+								1,
+								0.21875,
+								0.953125,
+								0.21875,
+								0.15625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 667396284036435,
+				"name": "Player1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8917768,
+						"collisionPoly": {
+							"points": [
+								0.25,
+								0.125,
+								0.75,
+								0.125,
+								0.78125,
+								0.15625,
+								0.78125,
+								0.96875,
+								0.75,
+								1,
+								0.25,
+								1,
+								0.21875,
+								0.953125,
+								0.21875,
+								0.15625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 331175185878662,
+				"name": "Player2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

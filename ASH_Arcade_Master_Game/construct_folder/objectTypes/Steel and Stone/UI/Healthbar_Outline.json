@@ -1,0 +1,50 @@
+{
+	"name": "Healthbar_Outline",
+	"plugin-id": "Sprite",
+	"sid": 165304286172531,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 660,
+						"height": 60,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3151224,
+						"collisionPoly": {
+							"points": [
+								0.9984848484848485,
+								0.9666666666666667,
+								0.00303030303030305,
+								0.9833333333333333,
+								0.0015151515151514694,
+								0.03333333333333333,
+								0.996969696969697,
+								0.016666666666666666
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 911893403249331,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

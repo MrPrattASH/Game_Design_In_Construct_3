@@ -1,0 +1,43 @@
+{
+	"name": "Enemieslvl2",
+	"plugin-id": "Sprite",
+	"sid": 156385751367563,
+	"instanceVariables": [
+		{
+			"name": "position",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 796442736604758
+		},
+		{
+			"name": "Health",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 850207694484724
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 730324549785907
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 682436991735750
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 312879407050261
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"aeLavaEnemy",
+		"aeWaterEnemy"
+	]
+}

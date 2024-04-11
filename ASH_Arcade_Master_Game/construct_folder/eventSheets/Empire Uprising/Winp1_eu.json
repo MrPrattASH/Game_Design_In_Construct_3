@@ -1,0 +1,88 @@
+{
+	"name": "Winp1_eu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 326678525094215,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 758511759950707,
+					"parameters": {
+						"layout": "Empire Uprising"
+					}
+				}
+			],
+			"sid": 834876467213232
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 422818487832811
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 257077570125247,
+					"parameters": {
+						"tag": "\"Game music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 440016968038358,
+					"parameters": {
+						"audio-file": "PLAYER ONE WINS- NAV (1)",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 683345040198659
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 822931213448664
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 749254108773921,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 341775318829431
+		}
+	],
+	"sid": 339744928882814
+}

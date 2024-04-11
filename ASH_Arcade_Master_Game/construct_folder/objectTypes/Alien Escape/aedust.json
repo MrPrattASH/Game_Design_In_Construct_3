@@ -1,0 +1,21 @@
+{
+	"name": "aedust",
+	"plugin-id": "Particles",
+	"sid": 213687423531692,
+	"isGlobal": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 8,
+		"height": 8,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 8358888,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

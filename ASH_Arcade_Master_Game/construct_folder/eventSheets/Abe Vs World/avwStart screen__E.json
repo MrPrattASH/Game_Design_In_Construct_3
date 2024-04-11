@@ -1,0 +1,1291 @@
+{
+	"name": "avwStart screen__E",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ReadyP1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 483695898198082
+		},
+		{
+			"eventType": "variable",
+			"name": "ReadyP2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 474669724600571
+		},
+		{
+			"eventType": "variable",
+			"name": "UnreadyP1",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 854583622458528
+		},
+		{
+			"eventType": "variable",
+			"name": "UnreadyP2",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 962882197713323
+		},
+		{
+			"eventType": "variable",
+			"name": "prison",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 580878443357690
+		},
+		{
+			"eventType": "variable",
+			"name": "Forest",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 950054776475111
+		},
+		{
+			"eventType": "variable",
+			"name": "Space_backround",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 950977776572242
+		},
+		{
+			"eventType": "variable",
+			"name": "Retro_backround",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 148280051881027
+		},
+		{
+			"eventType": "variable",
+			"name": "Oliviachar_back",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 567507776174005
+		},
+		{
+			"eventType": "variable",
+			"name": "Oliviachar_back2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 855344526218488
+		},
+		{
+			"eventType": "variable",
+			"name": "Gregchar_back",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 684338468670313
+		},
+		{
+			"eventType": "variable",
+			"name": "Gregchar_back2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 560668641532571
+		},
+		{
+			"eventType": "variable",
+			"name": "ABEchar_back",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 137128790954694
+		},
+		{
+			"eventType": "variable",
+			"name": "ABEchar_back2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 621082850260163
+		},
+		{
+			"eventType": "variable",
+			"name": "UNOchar_back",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 519852263629499
+		},
+		{
+			"eventType": "variable",
+			"name": "UNOchar_back2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 615119832159973
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 783778109277987,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwLselect",
+					"sid": 374416923352065,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 908862719691710
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 230973031304346,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwLselect",
+					"sid": 320559762812997,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 651927886043143
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 424401479925897,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwLselect",
+					"sid": 959542837498926,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 953922328754881
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 825006391572758,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwLselect",
+					"sid": 778918645535420,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 166169104084083
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 280611440866443,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect",
+					"sid": 114178791657897,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 245989259442537
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 425783889836890,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect",
+					"sid": 936239148497659,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 953551659063143
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 380010991169936,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect",
+					"sid": 802796056988321,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 792809445884190
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 334164206753278,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect",
+					"sid": 185970798896424,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 695638935371852
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 441431028745505,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [],
+			"sid": 102181459314061,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 851442299826911,
+							"parameters": {
+								"first-value": "UnreadyP1",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 853713353654444,
+							"parameters": {
+								"variable": "ReadyP1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 478986000542483,
+							"parameters": {
+								"variable": "UnreadyP1",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1notready",
+							"sid": 762726447571047,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1Ready",
+							"sid": 842505379770120,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwReady_anim",
+							"sid": 303906644413694,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "avwReady_anim",
+							"sid": 928609463476750,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "avwReady_anim",
+							"sid": 471097888816185,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 251016037067818,
+							"parameters": {
+								"seconds": ".2"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwReady_anim",
+							"sid": 831917779653035,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 368156153283553
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 239151807763048
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 106086550214385,
+							"parameters": {
+								"variable": "ReadyP1",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 894976095493889,
+							"parameters": {
+								"variable": "UnreadyP1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1notready",
+							"sid": 170946982217808,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1Ready",
+							"sid": 490561968913766,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 797187006487012
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 259764412991039,
+					"parameters": {
+						"key": 73
+					}
+				}
+			],
+			"actions": [],
+			"sid": 984220727265798,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 800109980792694,
+							"parameters": {
+								"first-value": "UnreadyP2",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 282071258570513,
+							"parameters": {
+								"variable": "ReadyP2",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 824982781329760,
+							"parameters": {
+								"variable": "UnreadyP2",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_2notready",
+							"sid": 202923859099390,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_2Ready",
+							"sid": 551836947204528,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwReady_anim2",
+							"sid": 748768756756527,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "avwReady_anim2",
+							"sid": 132651605859108,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "avwReady_anim2",
+							"sid": 796252273027543,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 547570891617236,
+							"parameters": {
+								"seconds": ".2"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwReady_anim2",
+							"sid": 392744066991735,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 413562400526486
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 618857196796822
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 722596065046353,
+							"parameters": {
+								"variable": "ReadyP2",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 390195507931952,
+							"parameters": {
+								"variable": "UnreadyP2",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_2notready",
+							"sid": 475319879903837,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_2Ready",
+							"sid": 932627782379001,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 662852132325347
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 689575066858930,
+					"parameters": {
+						"first-value": "ReadyP1",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 594668873899918,
+					"parameters": {
+						"first-value": "ReadyP2",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 959164878716113,
+					"parameters": {
+						"layout": "avwStage select"
+					}
+				}
+			],
+			"sid": 441837291460024
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect",
+					"sid": 962211892004602,
+					"parameters": {
+						"object": "avwGreg_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwgreg3",
+					"sid": 601229982238886,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 513526332341294,
+					"parameters": {
+						"variable": "Gregchar_back",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 318703184214669
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 745765199715614
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwgreg3",
+					"sid": 245805912209253,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 108968657958486,
+					"parameters": {
+						"variable": "Gregchar_back",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 522433663918406
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect",
+					"sid": 458656736043243,
+					"parameters": {
+						"object": "avwOlivia_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwOlivia3",
+					"sid": 642004419128891,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 674451269799865,
+					"parameters": {
+						"variable": "Oliviachar_back",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 539845484445691
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 958802149236275
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwOlivia3",
+					"sid": 328597255987370,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 287935704803157,
+					"parameters": {
+						"variable": "Oliviachar_back",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 237208805729476
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwLselect",
+					"sid": 560587616044794,
+					"parameters": {
+						"object": "avwGreg_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwgreg2",
+					"sid": 461217251833835,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 578789860644798,
+					"parameters": {
+						"variable": "Gregchar_back2",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 170339371526087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 914247752038397
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwgreg2",
+					"sid": 444361385916439,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 531908783899358,
+					"parameters": {
+						"variable": "Gregchar_back2",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 612269378827318
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwLselect",
+					"sid": 768789181025688,
+					"parameters": {
+						"object": "avwOlivia_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwOlivia2",
+					"sid": 760441979205703,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 771394262635729,
+					"parameters": {
+						"variable": "Oliviachar_back2",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 475869165723350
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 391571709793375
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwOlivia2",
+					"sid": 267298108983658,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 641112749328239,
+					"parameters": {
+						"variable": "Oliviachar_back2",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 877581531427287
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect",
+					"sid": 188694115464224,
+					"parameters": {
+						"object": "avwABE_backroudn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwABE3",
+					"sid": 504709683205476,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 368495301969035,
+					"parameters": {
+						"variable": "ABEchar_back",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 751776978318968
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 109901232993437
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwABE3",
+					"sid": 845880431682860,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 665210753571530,
+					"parameters": {
+						"variable": "ABEchar_back",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 254294641971478
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect",
+					"sid": 683657866014961,
+					"parameters": {
+						"object": "avwUNO_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwUNO3",
+					"sid": 542558919812201,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 634419874924443,
+					"parameters": {
+						"variable": "UNOchar_back",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 778194947545763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 752170792300998
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwUNO3",
+					"sid": 841536100702713,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 882874292377318,
+					"parameters": {
+						"variable": "UNOchar_back",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 432861185811028
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwLselect",
+					"sid": 220517569490222,
+					"parameters": {
+						"object": "avwABE_backroudn"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ABE2",
+					"sid": 180087440174800,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 439204189948394,
+					"parameters": {
+						"variable": "ABEchar_back2",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 204402632150113
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 521413756130147
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ABE2",
+					"sid": 110872502821009,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 599525987353530,
+					"parameters": {
+						"variable": "ABEchar_back2",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 746705452313410
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwLselect",
+					"sid": 581459761123323,
+					"parameters": {
+						"object": "avwUNO_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwUNO2",
+					"sid": 927363556299600,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 926555520437749,
+					"parameters": {
+						"variable": "UNOchar_back2",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 160683269660587
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 782685061960272
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "avwUNO2",
+					"sid": 716440306306260,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 311991580271403,
+					"parameters": {
+						"variable": "UNOchar_back2",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 958753227501097
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 465697476996815,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 740531014097722,
+					"parameters": {
+						"layout": "avwCredit"
+					}
+				}
+			],
+			"sid": 342122887760684
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 610631712154644,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 357943749225419,
+					"parameters": {
+						"layout": "avwControlls"
+					}
+				}
+			],
+			"sid": 518407395415444
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 567808859871914
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 584143277205415,
+					"parameters": {
+						"scale": ".65"
+					}
+				}
+			],
+			"sid": 454351964830855
+		}
+	],
+	"sid": 828311474816434
+}

@@ -1,0 +1,125 @@
+{
+    "c2array": true,
+    "size": [
+        5,
+        7,
+        1
+    ],
+    "data": [
+        [
+            [
+                "Game"
+            ],
+            [
+                "Fantasy Fight"
+            ],
+            [
+                "Empire Uprising"
+            ],
+            [
+                "Racing Chess"
+            ],
+            [
+                "Abe Vs World"
+            ],
+            [
+                "Alien Escape"
+            ],
+            [
+                "Abstract Platformer"
+            ]
+        ],
+        [
+            [
+                "Description"
+            ],
+            [
+                "an adrenaline-filled game inspired by the classic Street Fighter series, where players can unleash their special fireball moves, execute intricate combos, skillfully block and dodge enemy attacks."
+            ],
+            [
+                "In the gripping and radioactive underground world of 'Empire Uprising: Fight for the Crown', a resilient peasant defies the odds to challenge a mighty king, with each player harnessing unique abilities and powerful moves"
+            ],
+            [
+                "propel into a strategic whirlwind of an arcade racing experience where players meticulously plan their moves turn by turn, harness high-octane power-ups, and conquer race tracks while surviving heart-stopping crashes"
+            ],
+            [
+                "dive into a thrilling 2-player arcade fight-off, juggling between time-riding Abe Lincoln and a medley of peculiar opponents including a future robot, an aggressive Uno card, and a shrewd Ninja."
+            ],
+            [
+                "Escape from an unknown alien planet with nothing but your feet and laser. Avoid terrifying beasts, solve challenging physics puzzles along your way to freedom"
+            ],
+            [
+                "In this thrilling platformer, players wield the power to shift gravity at will, hunt for elusive keys, confront a final boss whose motives are suspiciously ambiguous, and brave the infernal depths of hell itself."
+            ]
+        ],
+        [
+            [
+                "Game Design"
+            ],
+            [
+                "B. Hershey"
+            ],
+            [
+                "E. Conway"
+            ],
+            [
+                "H. Martin"
+            ],
+            [
+                "O. Zadeh + S. Tabak"
+            ],
+            [
+                "P. Gandhi"
+            ],
+            [
+                "P. Grimmink + L. Loeffelmann"
+            ]
+        ],
+        [
+            [
+                "Sound Design"
+            ],
+            [
+                "T. Battaglia + M. Braun + N. Costa Jorge + S. McGuinness"
+            ],
+            [
+                "N. Baker + P.  Dhalganjansing"
+            ],
+            [
+                "H. Martin"
+            ],
+            [
+                "R. Ermers + J.Y. Kim + E. Plank"
+            ],
+            [
+                "A. Frontczak + H. Mollenkramer + K. Sinha"
+            ],
+            [
+                "K. Uysal + P. van Vollenhoven"
+            ]
+        ],
+        [
+            [
+                "Players_Game Type"
+            ],
+            [
+                "2 Player Combo Fighting"
+            ],
+            [
+                "2 Player Fighting"
+            ],
+            [
+                "2 Player Turn-Based Racing"
+            ],
+            [
+                "2 Player Fighting"
+            ],
+            [
+                "1 Player Puzzle Platformer"
+            ],
+            [
+                "1 Player Platformer"
+            ]
+        ]
+    ]
+}

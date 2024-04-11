@@ -24,6 +24,11 @@
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 630802478907132
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 343628262540056
 		}
 	],
 	"effectTypes": [],
@@ -295,6 +300,222 @@
 				],
 				"sid": 455865906315615,
 				"name": "Maze Runner",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2380494,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.025210084033613446,
+								1,
+								0.025210084033613446,
+								1,
+								0.9747899159663865,
+								0,
+								0.9747899159663865
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 731153974410084,
+				"name": "Empire Uprising",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7317612,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.025210084033613446,
+								1,
+								0.025210084033613446,
+								1,
+								0.9747899159663865,
+								0,
+								0.9747899159663865
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 562275448445623,
+				"name": "Fantasy Fight",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3948135,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.025210084033613446,
+								1,
+								0.025210084033613446,
+								1,
+								0.9747899159663865,
+								0,
+								0.9747899159663865
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 299515629290062,
+				"name": "Abstract Platformer",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8855273,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.025210084033613446,
+								1,
+								0.025210084033613446,
+								1,
+								0.9747899159663865,
+								0,
+								0.9747899159663865
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 740067759019006,
+				"name": "Racing Chess",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 367753,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.025210084033613446,
+								1,
+								0.025210084033613446,
+								1,
+								0.9747899159663865,
+								0,
+								0.9747899159663865
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 432499713706689,
+				"name": "Abe Vs World",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 952,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4705462,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.025210084033613446,
+								1,
+								0.025210084033613446,
+								1,
+								0.9747899159663865,
+								0,
+								0.9747899159663865
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 557790002618725,
+				"name": "Alien Escape",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

@@ -1,0 +1,1293 @@
+{
+	"name": "sasAnims",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Anims",
+					"sid": 820615346873172,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"P1\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player_Collission_box",
+					"sid": 198754370606950,
+					"parameters": {
+						"instance-variable": "KOd"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 526683057251404,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Sets back to idle when the move ends rather than when nothing is down to stop it from stopping the anim before move_active is set false"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame-tag",
+							"objectClass": "Anims",
+							"sid": 742531146721043,
+							"parameters": {
+								"comparison": 0,
+								"tag": "\"Move_End\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 327679380377786,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CollisionBoxes",
+							"sid": 828003609671935,
+							"parameters": {
+								"instance-variable": "Move_Active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 968613816674712
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "Player_Collission_box",
+							"sid": 212270776534389,
+							"behaviorType": "Platform2"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 802896186917993,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 881280774167692
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "Player_Collission_box",
+							"sid": 581566069064768,
+							"behaviorType": "Platform2"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 713392549709977,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 743582815374260
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 900055851601050,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 400996438269903,
+							"parameters": {
+								"animation": "\"Hit\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 533264509301461
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 608381940205816,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "Player_Collission_box",
+							"sid": 955876796669896,
+							"behaviorType": "Platform2",
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 453206765854707,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 976904509107382,
+							"parameters": {
+								"instance-variable": "In_Blockstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 483479742225767,
+							"parameters": {
+								"instance-variable": "Is_Blocking"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 904285687409890,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 912206744087439
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Player_Collission_box",
+							"sid": 889286588965961,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "Player_Collission_box",
+							"sid": 546203006566010,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 399723263790430
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 767983821954591,
+							"parameters": {
+								"instance-variable": "Ground_Dash_Active"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 713864318548308,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 771757344475112,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 614228769304379
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Player_Collission_box",
+							"sid": 451920152209970,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "Player_Collission_box",
+							"sid": 505428300760174,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 840774577235426
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 342105025661757,
+							"parameters": {
+								"instance-variable": "Ground_Dash_Active"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 833321360996540,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 952819509180311,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 328893337299248
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 375030893687087,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-falling",
+							"objectClass": "Player_Collission_box",
+							"sid": 624756014705008,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 399619566223241,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 144926676659294,
+							"parameters": {
+								"animation": "\"Fall\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 415295140213898
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 549610798786350,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 654611947692210,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"P1_Airdash\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 239815948629377,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 703378374429244,
+							"parameters": {
+								"animation": "\"Air Dash\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 110772861803447
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 123499330039727,
+							"parameters": {
+								"instance-variable": "Is_Blocking"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 601207039526166,
+							"parameters": {
+								"instance-variable": "In_Blockstun"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 373648043608621,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Collission_box",
+									"sid": 578265185378175,
+									"parameters": {
+										"instance-variable": "Move_Active"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Anims",
+									"sid": 748486920116383,
+									"parameters": {
+										"animation": "\"Block\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 607223362828494
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame-tag",
+							"objectClass": "Anims",
+							"sid": 817448163689393,
+							"parameters": {
+								"comparison": 0,
+								"tag": "\"Move_End\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 678046967027503,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CollisionBoxes",
+							"sid": 293965536179859,
+							"parameters": {
+								"instance-variable": "Move_Active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 782516901936078
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 428871249798309,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 494158160135305,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 537900834701736,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Anims",
+					"sid": 440913082475614,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"P1\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player_Collission_box",
+					"sid": 360169143101875,
+					"parameters": {
+						"instance-variable": "KOd"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 388536705876717
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Anims",
+					"sid": 651978105398121,
+					"parameters": {
+						"animation": "\"Die\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 871710466961666
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Anims",
+					"sid": 427732983275008,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"P2\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player2_Collision_box",
+					"sid": 324625202900282,
+					"parameters": {
+						"instance-variable": "KOd"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 978551252214744,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Sets back to idle when the move ends rather than when nothing is down to stop it from stopping the anim before move_active is set false"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame-tag",
+							"objectClass": "Anims",
+							"sid": 860626883058031,
+							"parameters": {
+								"comparison": 0,
+								"tag": "\"Move_End\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 819613439759836,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CollisionBoxes",
+							"sid": 371229153426601,
+							"parameters": {
+								"instance-variable": "Move_Active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 136856494216667
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "Player2_Collision_box",
+							"sid": 352132904866084,
+							"behaviorType": "Platform2"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 691228544008346,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 938751882816543
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "Player2_Collision_box",
+							"sid": 894265694566375,
+							"behaviorType": "Platform2"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 650040614890800,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 570398198982467
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 336222124666490,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 304309286640768,
+							"parameters": {
+								"animation": "\"Hit\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 505570275628140
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 974960680910676,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "Player2_Collision_box",
+							"sid": 262592095982537,
+							"behaviorType": "Platform2",
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 782273437449583,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 734700660620549,
+							"parameters": {
+								"instance-variable": "In_Blockstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 803150865383818,
+							"parameters": {
+								"instance-variable": "Is_Blocking"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 707797655885591,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 156771358262674
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Player2_Collision_box",
+							"sid": 609417327804069,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "Player2_Collision_box",
+							"sid": 742322923991595,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 685507541594343
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 312412166154044,
+							"parameters": {
+								"instance-variable": "Ground_Dash_Active"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 377943952308579,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 869463839090754,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 256081688738952
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "Player2_Collision_box",
+							"sid": 852554880599077,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-moving",
+							"objectClass": "Player2_Collision_box",
+							"sid": 872349735116913,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 452133278876050,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 958846130723715
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 741947675922507,
+							"parameters": {
+								"instance-variable": "Ground_Dash_Active"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 834818637135959,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 482940246400376
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 562242733968768,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-falling",
+							"objectClass": "Player2_Collision_box",
+							"sid": 466398600744568,
+							"behaviorType": "Platform2"
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 585798921416185,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 397615457080337,
+							"parameters": {
+								"animation": "\"Fall\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 333728322811220
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 854583605342192,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "sasGame_manager",
+							"sid": 733660345445255,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"P2_Airdash\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 846155475909603,
+							"parameters": {
+								"instance-variable": "Move_Active"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 854976946930003,
+							"parameters": {
+								"animation": "\"Air Dash\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 490057049203827
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 667492290027020,
+							"parameters": {
+								"instance-variable": "Is_Blocking"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 963917292766337,
+							"parameters": {
+								"instance-variable": "In_Blockstun"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 277058139501300,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player2_Collision_box",
+									"sid": 864874330318283,
+									"parameters": {
+										"instance-variable": "Move_Active"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Anims",
+									"sid": 865789257007702,
+									"parameters": {
+										"animation": "\"Block\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 189925672593599
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame-tag",
+							"objectClass": "Anims",
+							"sid": 612048553077516,
+							"parameters": {
+								"comparison": 0,
+								"tag": "\"Move_End\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 499206866139151,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CollisionBoxes",
+							"sid": 721190789828698,
+							"parameters": {
+								"instance-variable": "Move_Active",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 429692655664274
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 359416026849089,
+							"parameters": {
+								"instance-variable": "In_Hitstun"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Anims",
+							"sid": 733292671303765,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 235269784835900,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Anims",
+					"sid": 292789658655288,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"P2\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player2_Collision_box",
+					"sid": 767884638841450,
+					"parameters": {
+						"instance-variable": "KOd"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 416314216792429
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Anims",
+					"sid": 527838538216260,
+					"parameters": {
+						"animation": "\"Die\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 413032677858489
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 925765252909267
+				}
+			],
+			"actions": [],
+			"sid": 630250630927301,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Fireball_hitbox",
+							"sid": 894205679599610,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Fireball",
+							"sid": 869701135651828,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Fireball",
+							"sid": 192702452715257,
+							"parameters": {
+								"x": "Fireball_hitbox.X"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Fireball",
+							"sid": 420227075033289,
+							"parameters": {
+								"y": "Fireball_hitbox.Y"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Fireball",
+							"sid": 843962984089555,
+							"parameters": {
+								"angle": "Fireball_hitbox.Angle"
+							}
+						}
+					],
+					"sid": 272852153668203
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Fireball_hitbox",
+							"sid": 492414437948289,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Fireball",
+							"sid": 551326057797827,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Fireball",
+							"sid": 947265746945095,
+							"parameters": {
+								"x": "Fireball_hitbox.X"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Fireball",
+							"sid": 624681694032732,
+							"parameters": {
+								"y": "Fireball_hitbox.Y"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "Fireball",
+							"sid": 936244520438239,
+							"parameters": {
+								"angle": "Fireball_hitbox.Angle"
+							}
+						}
+					],
+					"sid": 212264758442750
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Fireball",
+					"sid": 923220466755827,
+					"parameters": {
+						"animation": "\"Explosion\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Fireball",
+					"sid": 311772313247438
+				}
+			],
+			"sid": 560258807261195
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Fireball",
+					"sid": 725703090476494,
+					"parameters": {
+						"object": "sasProjectile_Destroy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Fireball",
+					"sid": 192985647697781
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Fireball_hitbox",
+					"sid": 133519664606135
+				}
+			],
+			"sid": 309542929089172
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "HitSpark",
+					"sid": 668434971821785,
+					"parameters": {
+						"animation": "\"Spark\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "HitSpark",
+					"sid": 243229082123360
+				}
+			],
+			"sid": 371188849818394
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "BlockSpark",
+					"sid": 796100494353039,
+					"parameters": {
+						"animation": "\"Spark\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "BlockSpark",
+					"sid": 656620251658070
+				}
+			],
+			"sid": 322504399584668
+		}
+	],
+	"sid": 764350176049821
+}

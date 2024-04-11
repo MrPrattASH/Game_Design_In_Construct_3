@@ -1,0 +1,73 @@
+{
+	"name": "P2_HitBox",
+	"plugin-id": "Sprite",
+	"sid": 755658696621983,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 181525570672299
+		},
+		{
+			"name": "Hitstun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 419382012980534
+		},
+		{
+			"name": "Blockstun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 673320133914060
+		},
+		{
+			"name": "HitPush",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 606193984911250
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 714410588986270
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4414002,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 717731433118520,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

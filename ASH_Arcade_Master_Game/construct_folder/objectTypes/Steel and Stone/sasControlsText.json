@@ -1,0 +1,58 @@
+{
+	"name": "sasControlsText",
+	"plugin-id": "Sprite",
+	"sid": 246468017810653,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1452,
+						"height": 1688,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5644834,
+						"collisionPoly": {
+							"points": [
+								0.011707988980716254,
+								0.008293838862559242,
+								0.1494490358126722,
+								0.01481042654028436,
+								0.6466942148760331,
+								0.08886255924170616,
+								0.7300275482093664,
+								0.1623222748815166,
+								0.9951790633608816,
+								0.8998815165876777,
+								0.9993112947658402,
+								0.9881516587677726,
+								0.07024793388429752,
+								0.9881516587677726,
+								0.0027548209366391185,
+								0.9709715639810427
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 589577033955750,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

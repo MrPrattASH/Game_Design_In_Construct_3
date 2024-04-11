@@ -1,0 +1,80 @@
+{
+	"name": "Fireball_hitbox",
+	"plugin-id": "Sprite",
+	"sid": 243027401254802,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 374075527660078
+		},
+		{
+			"name": "Hitstun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 113737363317400
+		},
+		{
+			"name": "Blockstun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 872587834668439
+		},
+		{
+			"name": "Hitpush",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 813076619386777
+		},
+		{
+			"name": "Player",
+			"type": "string",
+			"desc": "",
+			"show": false,
+			"sid": 344564458804824
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 468348992769299
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5605775,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 996601471982200,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,133 @@
+{
+	"name": "paOutsideBossEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "paMark",
+					"sid": 477335465525476,
+					"parameters": {
+						"object": "paPlayerAnim"
+					}
+				},
+				{
+					"id": "repeat",
+					"objectClass": "System",
+					"sid": 248029761007428,
+					"parameters": {
+						"count": "9"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "paPlayerBox",
+					"sid": 116050958666665,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				}
+			],
+			"sid": 145734997016906,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 604408621368241,
+							"parameters": {
+								"interval-seconds": ".5"
+							}
+						},
+						{
+							"id": "is-between-angles",
+							"objectClass": "paDrawbridge",
+							"sid": 804928053635757,
+							"parameters": {
+								"first-angle": "1",
+								"second-angle": "91"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-counter-clockwise",
+							"objectClass": "paDrawbridge",
+							"sid": 183079882584485,
+							"parameters": {
+								"degrees": "10"
+							}
+						}
+					],
+					"sid": 550747437522943
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-between-angles",
+							"objectClass": "paDrawbridge",
+							"sid": 146625535549648,
+							"parameters": {
+								"first-angle": "-1",
+								"second-angle": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "paPlayerBox",
+							"sid": 498744319565326,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						}
+					],
+					"sid": 926544438963331
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "makes everything smaller to see the whole level"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 724934190340407
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 487602271506056,
+					"parameters": {
+						"scale": ".25"
+					}
+				}
+			],
+			"sid": 601475013063863
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 591700182910469
+}

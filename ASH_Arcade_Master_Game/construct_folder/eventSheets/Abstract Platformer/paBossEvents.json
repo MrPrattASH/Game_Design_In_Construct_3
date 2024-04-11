@@ -1,0 +1,1655 @@
+{
+	"name": "paBossEvents",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "variable",
+			"name": "OpenGate",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 958651446299548
+		},
+		{
+			"eventType": "variable",
+			"name": "ArchersShoot",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 789201784156113
+		},
+		{
+			"eventType": "variable",
+			"name": "Phase",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 685884311043222
+		},
+		{
+			"eventType": "variable",
+			"name": "Animation",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 944885666981430
+		},
+		{
+			"eventType": "variable",
+			"name": "SpawnEnemies",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 937423889705070
+		},
+		{
+			"eventType": "variable",
+			"name": "EnemiesSpawned",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 427091436337238
+		},
+		{
+			"eventType": "variable",
+			"name": "EnemySpawnTime2",
+			"type": "number",
+			"initialValue": "2.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 283842731615206
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Phase Control",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Phase 0",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 475912636931999,
+									"parameters": {
+										"variable": "OpenGate"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 155888624907575,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 291570351229842,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "moves the gate upwards"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 946350446677071,
+											"parameters": {
+												"interval-seconds": ".75"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "paOuterGate",
+											"sid": 367810760646831,
+											"parameters": {
+												"y": "paOuterGate.Y-25"
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "paOuterGate",
+											"sid": 529874979470377,
+											"parameters": {
+												"instance-variable": "StopGates",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 803760583892337
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Once gate has moved 10 times, stops it from moving more."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paOuterGate",
+									"sid": 271367700104134,
+									"parameters": {
+										"instance-variable": "StopGates",
+										"comparison": 5,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 598565516915806,
+									"parameters": {
+										"variable": "OpenGate",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 118299087488425,
+									"parameters": {
+										"variable": "StopMoving",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paOuterGate",
+									"sid": 194892217193289,
+									"parameters": {
+										"instance-variable": "StopGates",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 856242994782896
+						},
+						{
+							"eventType": "comment",
+							"text": "The layout scale is the dimension of the level so you can see everything, start opening the gates, and play boss music"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 636559453344114
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 965887821847402,
+									"parameters": {
+										"variable": "OpenGate",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layout-scale",
+									"objectClass": "System",
+									"sid": 952874441511913,
+									"parameters": {
+										"scale": "128/259"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paPlayerAnim",
+									"sid": 432720770437662,
+									"parameters": {
+										"instance-variable": "PlayerHealth",
+										"value": "5"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 573945310682505,
+									"parameters": {
+										"audio-file": "game music 1",
+										"loop": "looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"Music1\""
+									}
+								},
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 325865504822525,
+									"parameters": {
+										"tag": "\"Music3\"",
+										"db": "-100",
+										"duration": "3",
+										"ending": "stop"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 794581268925381,
+									"parameters": {
+										"variable": "StopMoving",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 596383441936202
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "paPlayerAnim",
+									"sid": 916317468828031,
+									"parameters": {
+										"object": "paMark"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 998215945079425,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 940806436348702,
+									"parameters": {
+										"variable": "Phase",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 613343396228151,
+									"parameters": {
+										"variable": "StopMoving",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 592874265826642
+						}
+					],
+					"sid": 856517351859280
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Phase 1",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Changes animation on Gralin's eye so it starts looking at the player, closes both gates on the level, and makes the archers start shooting at the player."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 815368445847901,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 720701643116079
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 601271044031037,
+									"parameters": {
+										"seconds": "2.5"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "paGralinsEye",
+									"sid": 150839604185522,
+									"parameters": {
+										"animation": "\"Looking\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 523111831341369,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "paInnerGate",
+									"sid": 220215885831273,
+									"parameters": {
+										"y": "1338"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "paOuterGate",
+									"sid": 995504904170333,
+									"parameters": {
+										"y": "1337"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 754452531333102,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 570131845220816,
+									"parameters": {
+										"variable": "StopMoving",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 328200087913190,
+									"parameters": {
+										"variable": "ArchersShoot",
+										"value": "true"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 998877589978573,
+									"parameters": {
+										"seconds": "30"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 812972030029917,
+									"parameters": {
+										"variable": "ArchersShoot",
+										"value": "false"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 797021421886098,
+									"parameters": {
+										"variable": "Phase",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 180636343921025
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-shoot",
+									"objectClass": "paFireArchers",
+									"sid": 102537982903599,
+									"behaviorType": "Turret"
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "paFireArchers",
+									"sid": 126424807130027,
+									"parameters": {
+										"object": "paArrow",
+										"layer": "2",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								}
+							],
+							"sid": 790531662258801
+						},
+						{
+							"eventType": "comment",
+							"text": "Damages player"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "paArrow",
+									"sid": 124946609826942,
+									"parameters": {
+										"object": "paPlayerAnim"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "paArrow",
+									"sid": 651200284815592
+								},
+								{
+									"id": "flash",
+									"objectClass": "paPlayerAnim",
+									"sid": 130017251799777,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 199590139594605,
+									"parameters": {
+										"variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 847103161052767
+						},
+						{
+							"eventType": "comment",
+							"text": "Activates turret behavior and sets target to the player"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 695864758770763,
+									"parameters": {
+										"variable": "ArchersShoot"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "paFireArchers",
+									"sid": 280282346752913,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "paFireArchers",
+									"sid": 749832709655193,
+									"behaviorType": "Turret",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "acquire-target",
+									"objectClass": "paFireArchers",
+									"sid": 630224447849900,
+									"behaviorType": "Turret",
+									"parameters": {
+										"target": "paPlayerAnim"
+									}
+								}
+							],
+							"sid": 445774754489551
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 570950768924250
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "paFireArchers",
+									"sid": 943945458481894,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "paFireArchers",
+									"sid": 892175741724946,
+									"behaviorType": "Turret",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 426238107421812
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "paArrow",
+									"sid": 688722078225556,
+									"parameters": {
+										"object": "paWall"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "paArrow",
+									"sid": 672301514232425
+								}
+							],
+							"sid": 714100721254516
+						}
+					],
+					"sid": 654741234956717
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Phase 2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Allows enemies to spawn"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 170526721301658,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 904723338332853
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 115083243414962,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 974951525638259,
+									"parameters": {
+										"variable": "SpawnEnemies",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 872756819351414
+						}
+					],
+					"sid": 722125864990041
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Phase 3",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Allows enemies to spawn and the archers to shoot and removes half the archers to make it easier"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 151949810640035,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 337916860573572
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 238001119210151,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 937095969155731,
+									"parameters": {
+										"variable": "SpawnEnemies",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 457846040852217,
+									"parameters": {
+										"variable": "ArchersShoot",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 592003801465431,
+									"parameters": {
+										"variable": "EnemySpawnTime",
+										"value": "5"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 718629955758278,
+									"parameters": {
+										"variable": "EnemiesSpawned",
+										"value": "6"
+									}
+								}
+							],
+							"sid": 738699703645211,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "paFireArchers",
+											"sid": 730647890335496,
+											"parameters": {
+												"unique-id": "621685"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "paFireArchers",
+											"sid": 835502590924626
+										}
+									],
+									"sid": 377804200745751
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "paFireArchers",
+											"sid": 674477690222994,
+											"parameters": {
+												"unique-id": "189819"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "paFireArchers",
+											"sid": 660984738859308
+										}
+									],
+									"sid": 467127601930156
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "paFireArchers",
+											"sid": 873589361619280,
+											"parameters": {
+												"unique-id": "116110"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "paFireArchers",
+											"sid": 983246646628267
+										}
+									],
+									"sid": 101556566801350
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "paFireArchers",
+											"sid": 785719658988655,
+											"parameters": {
+												"unique-id": "803639"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "paFireArchers",
+											"sid": 328830943124316
+										}
+									],
+									"sid": 143652811814293
+								}
+							]
+						}
+					],
+					"sid": 775180468138976
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Phase 4",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 734215590460082,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "4"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 255370736904582
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "paArrow",
+									"sid": 740021792888096
+								},
+								{
+									"id": "destroy",
+									"objectClass": "paFireArchers",
+									"sid": 631621229689925
+								},
+								{
+									"id": "destroy",
+									"objectClass": "paEnemy",
+									"sid": 103916039868768
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 731539412253584,
+									"parameters": {
+										"seconds": "3"
+									}
+								}
+							],
+							"sid": 652689720721553,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "makes a little explosion of particles"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 545461613347339
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 500850568154881,
+											"parameters": {
+												"seconds": "1.0"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "paBossGralin",
+											"sid": 627184766109751,
+											"parameters": {
+												"object": "paParticles",
+												"layer": "\"Enemies\"",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 865639144317450,
+											"parameters": {
+												"seconds": "1.5"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "paParticles",
+											"sid": 402082591398193
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 684154854321425,
+											"parameters": {
+												"variable": "Phase",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 511061691474249
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 409957913218735,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 169336395211529,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-opacity",
+											"objectClass": "paBossGralin",
+											"sid": 770421072192845,
+											"parameters": {
+												"comparison": 4,
+												"opacity": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 834523779973356,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Makes it fade away"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 690234098495182,
+													"parameters": {
+														"interval-seconds": ".1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "paBossGralin",
+													"sid": 365928258059659,
+													"parameters": {
+														"opacity": "Self.Opacity-5"
+													}
+												}
+											],
+											"sid": 508055131406141
+										},
+										{
+											"eventType": "comment",
+											"text": "Makes it fade away"
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-opacity",
+											"objectClass": "paGralinsEye",
+											"sid": 266819602198270,
+											"parameters": {
+												"comparison": 4,
+												"opacity": "0"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 132350632596833,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-x-seconds",
+													"objectClass": "System",
+													"sid": 757196504142729,
+													"parameters": {
+														"interval-seconds": ".1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "paGralinsEye",
+													"sid": 729667553552591,
+													"parameters": {
+														"opacity": "Self.Opacity-5"
+													}
+												}
+											],
+											"sid": 548220559867330
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 209558725876929
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Phase 5",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Starts opening the inner gate"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 759201748140773,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "5"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 544265800261145
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 753846835226136,
+									"parameters": {
+										"variable": "OpenGate"
+									}
+								}
+							],
+							"sid": 648191245048411
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 469774296417722,
+									"parameters": {
+										"variable": "OpenGate"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 151982871457568,
+									"parameters": {
+										"variable": "Phase",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 958759680380581,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Moves the inner gate up by 25 pixels and then stops after moving 10 times"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 612386886558882,
+											"parameters": {
+												"interval-seconds": ".75"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-y",
+											"objectClass": "paInnerGate",
+											"sid": 191691584501187,
+											"parameters": {
+												"y": "Self.Y-25"
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "paOuterGate",
+											"sid": 688317721997277,
+											"parameters": {
+												"instance-variable": "StopGates",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 434267370168140
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paOuterGate",
+									"sid": 933298595872974,
+									"parameters": {
+										"instance-variable": "StopGates",
+										"comparison": 5,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 242739360978731,
+									"parameters": {
+										"variable": "OpenGate",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 592944096828843
+						},
+						{
+							"eventType": "comment",
+							"text": "Sends player to completion screen"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "paPlayerBox",
+									"sid": 775924722365515,
+									"parameters": {
+										"object": "paGateBackround3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 576394069645134,
+									"parameters": {
+										"seconds": ".25"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 856848029084976,
+									"parameters": {
+										"layout": "paLevel Completion"
+									}
+								}
+							],
+							"sid": 574132094033085
+						}
+					],
+					"sid": 611727586770722
+				}
+			],
+			"sid": 624938717124024
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Controls",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Makes the enemies look the way that they are moving"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "paEnemy",
+							"sid": 914412186369786,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "paPlayerAnim.X"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 185266331632973,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paEnemy",
+									"sid": 601853522071938,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paEnemy",
+									"sid": 868019266955746,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"left\""
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "paEnemy",
+									"sid": 488882034727530,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 611732224299491
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "paEnemy",
+							"sid": 620302571078409,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "paPlayerAnim.X"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 834823891714732,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paEnemy",
+									"sid": 727833107780086,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paEnemy",
+									"sid": 878257792194416,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"right\""
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "paEnemy",
+									"sid": 341320486203263,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 262842519035499
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paEnemy",
+							"sid": 323676898739662,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paEnemy",
+							"sid": 111441354437731,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 858655963480977
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paEnemy",
+							"sid": 109916497085858,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paEnemy",
+							"sid": 405107426323701,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 396110072890849
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 538416696862295,
+							"parameters": {
+								"variable": "SpawnEnemies"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 746997916569540,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 843955856807187,
+									"parameters": {
+										"interval-seconds": "EnemySpawnTime"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "paBossGralin",
+									"sid": 712100203859406,
+									"parameters": {
+										"object": "paEnemy",
+										"layer": "\"Enemies\"",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 596829428844483,
+									"parameters": {
+										"variable": "EnemiesSpawned",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 164844477851533
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "After 12 enemies have been spawned, stops spawning them and increases the phase by 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 614086368134418,
+							"parameters": {
+								"variable": "EnemiesSpawned",
+								"comparison": 0,
+								"value": "12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 773279741166906,
+							"parameters": {
+								"variable": "Phase",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 388941407323170,
+							"parameters": {
+								"variable": "SpawnEnemies",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 376867195263018,
+							"parameters": {
+								"variable": "ArchersShoot",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 671647845112582,
+							"parameters": {
+								"variable": "EnemiesSpawned",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 537419857269370
+				}
+			],
+			"sid": 335172451681166
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "paGralinsEye",
+					"sid": 545421559699437,
+					"parameters": {
+						"animation": "\"Looking\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 795610700267358,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "every tick, calculates the angle turning between the player and the boss to make the eye follow the player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 179414695065935
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "paGralinsEye",
+							"sid": 377438974430931,
+							"parameters": {
+								"angle": "angle(paBossGralin.X, paBossGralin.Y, paPlayerAnim.X, paPlayerAnim.Y)+270"
+							}
+						}
+					],
+					"sid": 136469997187252
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-signal",
+					"objectClass": "System",
+					"sid": 900938930835128,
+					"parameters": {
+						"tag": "\"Restart\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 239727849107395,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 937178607221188
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 744146269031882,
+					"parameters": {
+						"variable": "ArchersShoot",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 757417952979616,
+					"parameters": {
+						"variable": "Phase",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 509672171072946,
+					"parameters": {
+						"variable": "Health",
+						"value": "5"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 817348089131137,
+					"parameters": {
+						"variable": "SpawnEnemies",
+						"value": "false"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "paEnemy",
+					"sid": 727874058430135
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 210205242967338,
+					"parameters": {
+						"variable": "EnemySpawnTime",
+						"value": "2.5"
+					}
+				}
+			],
+			"sid": 800438375330915
+		}
+	],
+	"sid": 269435407106499
+}

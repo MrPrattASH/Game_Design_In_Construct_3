@@ -1,0 +1,50 @@
+{
+	"name": "avwOlivia_backround",
+	"plugin-id": "Sprite",
+	"sid": 469233791027012,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9587192,
+						"collisionPoly": {
+							"points": [
+								0.28424999999999995,
+								0.22156250000000002,
+								0.7368125000000001,
+								0.23384375,
+								0.81775,
+								0.7827500000000002,
+								0.28753125,
+								0.7270937499999999
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 301426267432766,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

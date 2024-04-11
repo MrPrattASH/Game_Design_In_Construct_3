@@ -1,0 +1,78 @@
+{
+	"name": "rcRandomPowerupPickup",
+	"plugin-id": "Sprite",
+	"sid": 956791445143952,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4314770,
+						"collisionPoly": {
+							"points": [
+								0.6875,
+								0.03125,
+								0.75,
+								0.078125,
+								0.984375,
+								0.390625,
+								0.984375,
+								0.546875,
+								0.828125,
+								0.8125,
+								0.765625,
+								0.859375,
+								0.453125,
+								0.96875,
+								0.328125,
+								0.96875,
+								0.265625,
+								0.953125,
+								0.1875,
+								0.90625,
+								0.15625,
+								0.859375,
+								0.03125,
+								0.484375,
+								0.03125,
+								0.375,
+								0.15625,
+								0.109375,
+								0.1875,
+								0.078125,
+								0.234375,
+								0.0625,
+								0.53125,
+								0.015625,
+								0.640625,
+								0.015625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 415825319518061,
+				"name": "RandomPowerup",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

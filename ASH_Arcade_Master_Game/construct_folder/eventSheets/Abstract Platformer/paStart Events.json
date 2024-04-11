@@ -1,0 +1,63 @@
+{
+	"name": "paStart Events",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 364448817824964
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 896061273061434,
+					"parameters": {
+						"seconds": ".5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 533914268850571,
+					"parameters": {
+						"layout": "paLvl 1"
+					}
+				}
+			],
+			"sid": 590494638159875
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 568279343551401
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "paStartScreenTxt",
+					"sid": 985488478528111,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "1",
+						"off-time": "1",
+						"duration": "3600"
+					}
+				}
+			],
+			"sid": 420682496023546
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 733821324964570
+}

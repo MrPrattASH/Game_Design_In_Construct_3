@@ -1,0 +1,235 @@
+{
+	"name": "paLvl 1 Events",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "variable",
+			"name": "Cur_Checkpoint",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 149652977068317
+		},
+		{
+			"eventType": "variable",
+			"name": "Cur_Info",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 336043536295933
+		},
+		{
+			"eventType": "comment",
+			"text": "when you touch the lock, if the global variable lock is = 1, it destroys the lock. otherwise you can stand on the lock."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paLock",
+					"sid": 587951468828881,
+					"parameters": {
+						"object": "paPlayerBox"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "paHUDkey",
+					"sid": 184579252230824
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "paLock",
+					"sid": 414318754358918
+				}
+			],
+			"sid": 739139772810495
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 876666470200956,
+					"parameters": {
+						"object": "paDoorway"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 440102430779709,
+					"parameters": {
+						"seconds": "2.5"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "paPlayerBox",
+					"sid": 860536769292891,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 423243559983872,
+					"parameters": {
+						"layout": "paLvl 2"
+					}
+				}
+			],
+			"sid": 554421013720016
+		},
+		{
+			"eventType": "comment",
+			"text": "Makes the enemy look the way its going"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paEnemy",
+					"sid": 567522591101022,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"left\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paEnemy",
+					"sid": 491570324891615,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "paEnemy",
+					"sid": 745078208732061,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 166337875642082
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paEnemy",
+					"sid": 739695569723167,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"right\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paEnemy",
+					"sid": 362862800078650,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "paEnemy",
+					"sid": 891227042601319,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 531883179432470
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 205185366427765
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 419943007170248,
+					"parameters": {
+						"audio-file": "game music 2",
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"Music2\""
+					}
+				}
+			],
+			"sid": 375460215961144
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 923596263926222
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paLvlTxt1",
+					"sid": 264283310447927,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 431789013245487,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "paLvlTxt1",
+					"sid": 275217991789290,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 810259404400124
+		}
+	],
+	"sid": 951826827289371
+}

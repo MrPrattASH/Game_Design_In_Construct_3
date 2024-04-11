@@ -1,0 +1,31 @@
+{
+	"name": "rcTurnOptions",
+	"plugin-id": "Text",
+	"sid": 127801384241461,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 377235960385936
+		},
+		{
+			"name": "MenuState",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 540350977828592
+		},
+		{
+			"name": "Action",
+			"type": "number",
+			"desc": "0: none, 1-4: move, 2-8: throw, 9: pickup",
+			"show": true,
+			"sid": 738363953927557
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

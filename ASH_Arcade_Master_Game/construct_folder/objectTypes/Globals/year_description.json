@@ -1,0 +1,28 @@
+{
+	"name": "year_description",
+	"plugin-id": "Text",
+	"sid": 496315837807742,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "isTitle",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 553644339134823
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 895055933626329
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 120438609563462
+		}
+	],
+	"effectTypes": []
+}

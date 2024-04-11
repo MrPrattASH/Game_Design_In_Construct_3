@@ -1,0 +1,4149 @@
+{
+	"name": "sasFinal",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "sasMovement"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "sasAttacks"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "sasAnims"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "variable",
+			"name": "Cancel_duration",
+			"type": "number",
+			"initialValue": "14",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 920848550501451
+		},
+		{
+			"eventType": "variable",
+			"name": "P1Character",
+			"type": "string",
+			"initialValue": "Test",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 327144198097001
+		},
+		{
+			"eventType": "variable",
+			"name": "P2Character",
+			"type": "string",
+			"initialValue": "Test",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 796029612375787
+		},
+		{
+			"eventType": "variable",
+			"name": "Player1_CBOX_Width",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 408037762726421
+		},
+		{
+			"eventType": "variable",
+			"name": "Player1_CBOX_Height",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 602841494231158
+		},
+		{
+			"eventType": "variable",
+			"name": "Player1_WalkSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 593569707097402
+		},
+		{
+			"eventType": "variable",
+			"name": "Player1_JumpStrength",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 481205574666238
+		},
+		{
+			"eventType": "variable",
+			"name": "Player1_DashSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 405695819288283
+		},
+		{
+			"eventType": "variable",
+			"name": "P1_Health",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 782606242391108
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_CBox_Width",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 173386818442031
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_CBox_Height",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 644946595885326
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_WalkSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 317504197797007
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_JumpStrength",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 261940233750617
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_DashSpeed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 806792522767286
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_Health",
+			"type": "number",
+			"initialValue": "100",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 443855028735901
+		},
+		{
+			"eventType": "variable",
+			"name": "Stage",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 736550145117358
+		},
+		{
+			"eventType": "variable",
+			"name": "P1_Rounds_Won",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 695131930292194
+		},
+		{
+			"eventType": "variable",
+			"name": "P2_Rounds_Won",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 211847447006257
+		},
+		{
+			"eventType": "variable",
+			"name": "Game_Round",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 866865777775434
+		},
+		{
+			"eventType": "variable",
+			"name": "RoundStart",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 615030799469071
+		},
+		{
+			"eventType": "variable",
+			"name": "RoundTransition",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 372897225487648
+		},
+		{
+			"eventType": "variable",
+			"name": "Game_Over",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 671799299466981
+		},
+		{
+			"eventType": "variable",
+			"name": "P1Chosen",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 517029247373504
+		},
+		{
+			"eventType": "variable",
+			"name": "P2Chosen",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 716208438649248
+		},
+		{
+			"eventType": "variable",
+			"name": "LayoutIntro",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 466629175234611
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 212202754076285
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 188551926337777,
+					"parameters": {
+						"scale": ".5"
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 845641978578878,
+					"parameters": {
+						"timeline": "Layout Intro",
+						"tags": "\"Layout Intro\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 378133184192017,
+					"parameters": {
+						"variable": "P1Character",
+						"value": "\"Adventurer\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 883245413746740,
+					"parameters": {
+						"variable": "P2Character",
+						"value": "\"Adventurer\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 957014978978465,
+					"disabled": true,
+					"parameters": {
+						"variable": "Game_Over",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 720032389393472,
+					"disabled": true,
+					"parameters": {
+						"variable": "Stage",
+						"value": "\"Forest\""
+					}
+				}
+			],
+			"sid": 814702204206088
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timeline-finished-by-tags",
+					"objectClass": "TimelineController",
+					"sid": 892893222343980,
+					"parameters": {
+						"tags": "\"Layout Intro\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 324980799712001,
+					"parameters": {
+						"variable": "RoundStart",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 433901559140729
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 566162128312724,
+					"parameters": {
+						"variable": "Stage",
+						"comparison": 0,
+						"value": "\"Graveyard\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 827472690791355
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 471908180113491,
+					"parameters": {
+						"object-to-create": "sasGraveyard_Layer1",
+						"layer": "\"Background\"",
+						"x": "1226",
+						"y": "572",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 617688907285749,
+					"parameters": {
+						"object-to-create": "sasGraveyard_Layer2",
+						"layer": "\"Background\"",
+						"x": "1227",
+						"y": " 592",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 209272263738762,
+					"parameters": {
+						"object-to-create": "sasGraveyard_Foreground",
+						"layer": "\"Background\"",
+						"x": "1246",
+						"y": "992",
+						"create-hierarchy": true,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 659644252241994
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 393338925920443,
+					"parameters": {
+						"variable": "Stage",
+						"comparison": 0,
+						"value": "\"Forest\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 799798307796723
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 131269377617471,
+					"parameters": {
+						"object-to-create": "sasForest_Background",
+						"layer": "\"Background\"",
+						"x": "1270",
+						"y": "-158",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 338729714201452,
+					"parameters": {
+						"object-to-create": "sasForestForeground1",
+						"layer": "\"Background\"",
+						"x": "1189",
+						"y": "121",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 676911879859795,
+					"parameters": {
+						"object-to-create": "sasForestForeground2",
+						"layer": "\"Transitions\"",
+						"x": "1290",
+						"y": "174",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 882848694849593
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 744334533002461,
+					"parameters": {
+						"variable": "Stage",
+						"comparison": 0,
+						"value": "\"Mountain\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 291915449578510
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 584101756426593,
+					"parameters": {
+						"object-to-create": "sasMountainBackground",
+						"layer": "\"Background\"",
+						"x": "1319",
+						"y": "393",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 912366557794367,
+					"parameters": {
+						"object-to-create": "sasMountainForeground",
+						"layer": "\"Background\"",
+						"x": "1325",
+						"y": "833",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 237935780785428
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Characters",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Parameters for Adventurer character"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Adventurer",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 399547491650180,
+									"parameters": {
+										"variable": "P1Character",
+										"comparison": 0,
+										"value": "\"Adventurer\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 843865150152393,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 772231545955992
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 561423138544505,
+											"parameters": {
+												"variable": "Player1_CBOX_Height",
+												"value": "400"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 513400396124515,
+											"parameters": {
+												"variable": "Player1_CBOX_Width",
+												"value": "200"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 782864906374107,
+											"parameters": {
+												"variable": "Player1_DashSpeed",
+												"value": "1550"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 947684179712430,
+											"parameters": {
+												"variable": "Player1_WalkSpeed",
+												"value": "600"
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 499671021840180,
+											"parameters": {
+												"object-name": "P1Character&\"_Anim\"",
+												"layer": "\"Gameplay\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 512823930576869,
+											"parameters": {
+												"variable": "P1_Health",
+												"value": "100"
+											}
+										}
+									],
+									"sid": 689078358445969,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 229829068688076,
+													"parameters": {
+														"object": "Anims"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Anims",
+													"sid": 646479978516658,
+													"parameters": {
+														"instance-variable": "Player",
+														"value": "\"P1\""
+													}
+												}
+											],
+											"sid": 432899899826318
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 468270050964009,
+									"parameters": {
+										"variable": "P2Character",
+										"comparison": 0,
+										"value": "\"Adventurer\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 291330758848143,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 932487220758347
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 882537644904880,
+											"parameters": {
+												"variable": "P2_CBox_Height",
+												"value": "400"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 533658506823736,
+											"parameters": {
+												"variable": "P2_CBox_Width",
+												"value": "200"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 448829072916124,
+											"parameters": {
+												"variable": "P2_DashSpeed",
+												"value": "1550"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 861598363676317,
+											"parameters": {
+												"variable": "P2_WalkSpeed",
+												"value": "600"
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 991066819005597,
+											"parameters": {
+												"object-name": "P2Character&\"_Anim2\"",
+												"layer": "\"Gameplay\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 230758385124251,
+											"parameters": {
+												"variable": "P2_Health",
+												"value": "100"
+											}
+										}
+									],
+									"sid": 126658131948256,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 270739236900825,
+													"parameters": {
+														"object": "Anims"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Anims",
+													"sid": 422739354307135,
+													"parameters": {
+														"instance-variable": "Player",
+														"value": "\"P2\""
+													}
+												}
+											],
+											"sid": 571236407366622
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 584018905865750
+				},
+				{
+					"eventType": "comment",
+					"text": "Parameters for test character"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Test",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 849225793630857,
+									"parameters": {
+										"variable": "P1Character",
+										"comparison": 0,
+										"value": "\"Test\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 858432473960435,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 731348169857073
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 921631676891617,
+											"parameters": {
+												"variable": "Player1_CBOX_Height",
+												"value": "438"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 753523542979085,
+											"parameters": {
+												"variable": "Player1_CBOX_Width",
+												"value": "210"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 993154135025075,
+											"parameters": {
+												"variable": "Player1_DashSpeed",
+												"value": "1250"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 288041099676183,
+											"parameters": {
+												"variable": "Player1_WalkSpeed",
+												"value": "450"
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 383702327624208,
+											"parameters": {
+												"object-name": "P1Character&\"_Anim\"",
+												"layer": "\"Gameplay\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 359110446545510,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 630821255640009,
+													"parameters": {
+														"object": "Anims"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Anims",
+													"sid": 818571690163139,
+													"parameters": {
+														"instance-variable": "Player",
+														"value": "\"P1\""
+													}
+												}
+											],
+											"sid": 655964590840921
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 727552928122639,
+									"parameters": {
+										"variable": "P2Character",
+										"comparison": 0,
+										"value": "\"Test\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 213240760934934,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-start-of-layout",
+											"objectClass": "System",
+											"sid": 631228696953623
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 442789514346634,
+											"parameters": {
+												"variable": "P2_CBox_Height",
+												"value": "250"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 791512140615111,
+											"parameters": {
+												"variable": "P2_CBox_Width",
+												"value": "145"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 438399886227533,
+											"parameters": {
+												"variable": "P2_DashSpeed",
+												"value": "1000"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 311521025308335,
+											"parameters": {
+												"variable": "P2_WalkSpeed",
+												"value": "350"
+											}
+										},
+										{
+											"id": "create-object-by-name",
+											"objectClass": "System",
+											"sid": 909746477412481,
+											"parameters": {
+												"object-name": "P2Character&\"_Anim\"",
+												"layer": "\"Gameplay\"",
+												"x": "0",
+												"y": "0",
+												"create-hierarchy": true,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 173970708735247,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-last-created",
+													"objectClass": "System",
+													"sid": 615836407238102,
+													"parameters": {
+														"object": "Anims"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Anims",
+													"sid": 515020539586380,
+													"parameters": {
+														"instance-variable": "Player",
+														"value": "\"P2\""
+													}
+												}
+											],
+											"sid": 626178403023367
+										}
+									]
+								}
+							]
+						}
+					],
+					"sid": 438324706401732
+				}
+			],
+			"sid": 511946503248014
+		},
+		{
+			"eventType": "comment",
+			"text": "Takes values such as health based or walk speed based on character. Can add further variables or other characters"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 660155852352684
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "Player_Collission_box",
+					"sid": 101169673793613,
+					"parameters": {
+						"width": "Player1_CBOX_Width",
+						"height": "Player1_CBOX_Height"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player_Collission_box",
+					"sid": 349010777388105,
+					"behaviorType": "Platform2",
+					"parameters": {
+						"max-speed": "Player1_WalkSpeed"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Player_Collission_box",
+					"sid": 968184174734385,
+					"parameters": {
+						"x": "ViewportWidth(\"Gameplay\")*(4.5/7)"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "Player2_Collision_box",
+					"sid": 367670371054729,
+					"parameters": {
+						"x": "ViewportWidth(\"Gameplay\")*(2.5/7)"
+					}
+				}
+			],
+			"sid": 394742623702896
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 721995774903139
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Anims",
+					"sid": 564204962959063,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"P1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Anims",
+					"sid": 814495924621147,
+					"parameters": {
+						"x": "Player_Collission_box.X"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Anims",
+					"sid": 940910388120758,
+					"parameters": {
+						"y": "Player_Collission_box.Y"
+					}
+				}
+			],
+			"sid": 497183876787999
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 774580166055838
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Anims",
+					"sid": 570728708285354,
+					"parameters": {
+						"instance-variable": "Player",
+						"comparison": 0,
+						"value": "\"P2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Anims",
+					"sid": 288051195556038,
+					"parameters": {
+						"x": "Player2_Collision_box.X"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "Anims",
+					"sid": 654455876078077,
+					"parameters": {
+						"y": "Player2_Collision_box.Y"
+					}
+				}
+			],
+			"sid": 626575831622349
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Hud3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 554078368935809
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "P1_Healthbar_Grey",
+							"sid": 293673847770901,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "P2_Healthbar_Grey",
+							"sid": 126105868090438,
+							"parameters": {
+								"width": "clamp((abs(P1_Health-100))*9.9,0,990)"
+							}
+						}
+					],
+					"sid": 112298199911095
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 869072488985774
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "P2_Healthbar_Grey",
+							"sid": 761831709752688,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "P1_Healthbar_Grey",
+							"sid": 506181969418234,
+							"parameters": {
+								"width": "clamp((abs(P2_Health-100))*9.9,0,990)"
+							}
+						}
+					],
+					"sid": 755942997745422
+				}
+			],
+			"sid": 803304620586820
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Rounds2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Most of round transition code is timeline activations to transition from one round to another"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 599776799874458,
+							"parameters": {
+								"variable": "RoundStart"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 434181622346243
+						}
+					],
+					"actions": [
+						{
+							"id": "play-timeline",
+							"objectClass": "TimelineController",
+							"sid": 609380965380218,
+							"parameters": {
+								"timeline": "Round Intro",
+								"tags": "\"Round Intro\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 451718624981535,
+							"parameters": {
+								"audio-file": "321 file pre-fight",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 798512681793362,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "rand_song",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 197760321890341
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 152745254550878,
+									"parameters": {
+										"variable": "rand_song",
+										"value": "floor(random(0,3))"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 318833488521219,
+									"parameters": {
+										"tag": "\"back\""
+									}
+								}
+							],
+							"sid": 639591494780949,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 912148330065009,
+											"parameters": {
+												"variable": "rand_song",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 413492551413264,
+											"parameters": {
+												"audio-file": "fighting scene 1",
+												"loop": "looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"back\""
+											}
+										}
+									],
+									"sid": 961524761793531
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 966782555664498,
+											"parameters": {
+												"variable": "rand_song",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 858291656342843,
+											"parameters": {
+												"audio-file": "Stage 2 video Game",
+												"loop": "looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"back\""
+											}
+										}
+									],
+									"sid": 586898163701005
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 989109370230485,
+											"parameters": {
+												"variable": "rand_song",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 773021424832959,
+											"parameters": {
+												"audio-file": "Project 8",
+												"loop": "looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"back\""
+											}
+										}
+									],
+									"sid": 142362830185472
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 788950789866275,
+							"parameters": {
+								"instance-variable": "KOd"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 543924129827308
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 873625255127369,
+							"parameters": {
+								"variable": "P2_Rounds_Won",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 412011438448822,
+							"parameters": {
+								"audio-file": "KO sound effect",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 787193852389734
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 692851785970961,
+							"parameters": {
+								"instance-variable": "KOd"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 668980785086059
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 913608180367746,
+							"parameters": {
+								"variable": "P1_Rounds_Won",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 415297944713206,
+							"parameters": {
+								"audio-file": "KO sound effect",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 319877666612913
+				},
+				{
+					"eventType": "comment",
+					"text": "Best 2 of 3"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 932439572522845,
+							"parameters": {
+								"variable": "P1_Rounds_Won",
+								"comparison": 5,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 630776374797224,
+							"parameters": {
+								"variable": "P2_Rounds_Won",
+								"comparison": 5,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 199240972863259,
+							"parameters": {
+								"variable": "Game_Over",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 229476939678414,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_Collission_box",
+							"sid": 996473238498872,
+							"parameters": {
+								"instance-variable": "KOd"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player2_Collision_box",
+							"sid": 998973536884726,
+							"parameters": {
+								"instance-variable": "KOd"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 708687266781828,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 850820823920938
+								}
+							],
+							"actions": [
+								{
+									"id": "play-timeline",
+									"objectClass": "TimelineController",
+									"sid": 293447201359637,
+									"parameters": {
+										"timeline": "KO",
+										"tags": "\"KO\""
+									}
+								}
+							],
+							"sid": 795559815943251
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 680896033474534,
+									"parameters": {
+										"variable": "Game_Over"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 262528045637936,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 563427264651475
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 217201337763721,
+											"parameters": {
+												"seconds": "2"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 998708688230627,
+											"parameters": {
+												"variable": "RoundTransition",
+												"value": "true"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 217525129885238,
+											"parameters": {
+												"variable": "Game_Round",
+												"value": "1"
+											}
+										},
+										{
+											"id": "play-timeline",
+											"objectClass": "TimelineController",
+											"sid": 305403558844196,
+											"parameters": {
+												"timeline": "Round Transition",
+												"tags": "\"Transition\""
+											}
+										}
+									],
+									"sid": 762499339367971
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Resets the positions and health at the start of each round"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 580132943395156,
+							"parameters": {
+								"variable": "RoundTransition"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 114112347175427,
+							"parameters": {
+								"seconds": ".2"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_Collission_box",
+							"sid": 591448499293774,
+							"parameters": {
+								"x": "ViewportWidth(\"Gameplay\")*(4.5/7)",
+								"y": "1253.2502174377441"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player2_Collision_box",
+							"sid": 831116878744034,
+							"parameters": {
+								"x": "ViewportWidth(\"Gameplay\")*(2.5/7)",
+								"y": "1253.2502174377441"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CollisionBoxes",
+							"sid": 380074009929859,
+							"parameters": {
+								"instance-variable": "KOd",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 256198784340260,
+							"parameters": {
+								"variable": "P1_Health",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 521468108802254,
+							"parameters": {
+								"variable": "P2_Health",
+								"value": "100"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "CollisionBoxes",
+							"sid": 164578730293530,
+							"parameters": {
+								"instance-variable": "Move_Active",
+								"value": "false"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "P1_HitBox",
+							"sid": 608374630565952
+						},
+						{
+							"id": "destroy",
+							"objectClass": "P2_HitBox",
+							"sid": 277844482416064
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Fireball_hitbox",
+							"sid": 548697908535044
+						},
+						{
+							"id": "destroy",
+							"objectClass": "LauncherBox",
+							"sid": 738402196979648
+						}
+					],
+					"sid": 301724014547475
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timeline-finished-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 700809553577116,
+							"parameters": {
+								"tags": "\"Round Intro\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 308576822410741,
+							"parameters": {
+								"variable": "RoundStart",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 289801913667497
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timeline-finished-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 870339128371814,
+							"parameters": {
+								"tags": "\"Transition\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 747961085790362,
+							"parameters": {
+								"variable": "RoundTransition",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 918169213389460,
+							"parameters": {
+								"variable": "RoundStart",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "sasRoundFade",
+							"sid": 113167545083807,
+							"parameters": {
+								"x": "1251.57685",
+								"y": "2500"
+							}
+						}
+					],
+					"sid": 933063348353250
+				},
+				{
+					"eventType": "comment",
+					"text": "Change text based on round"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 352531012430775,
+							"parameters": {
+								"variable": "Game_Round",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasRoundText",
+							"sid": 868922138770241,
+							"parameters": {
+								"animation": "\"Round 1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 158138607965519
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 723472236365917,
+							"parameters": {
+								"variable": "Game_Round",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasRoundText",
+							"sid": 391355163000114,
+							"parameters": {
+								"animation": "\"Round 2\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 905054383682004
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 555038577930848,
+							"parameters": {
+								"variable": "Game_Round",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasRoundText",
+							"sid": 417877978035787,
+							"parameters": {
+								"animation": "\"Final Round\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 434736631198141
+				},
+				{
+					"eventType": "comment",
+					"text": "Player 1 Round indicators"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 996571610056690,
+							"parameters": {
+								"variable": "P1_Rounds_Won",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RoundIndicator",
+							"sid": 468878637125530,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 450489156253113,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RoundIndicator",
+									"sid": 797392911651103,
+									"parameters": {
+										"instance-variable": "Round",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RoundIndicator",
+									"sid": 993640510954431,
+									"parameters": {
+										"animation": "\"Won\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 943038033613734
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 439839008786962,
+							"parameters": {
+								"variable": "P1_Rounds_Won",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RoundIndicator",
+							"sid": 301246174793672,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 632104682095535,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RoundIndicator",
+									"sid": 625449142265330,
+									"parameters": {
+										"instance-variable": "Round",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RoundIndicator",
+									"sid": 723362506683013,
+									"parameters": {
+										"animation": "\"Won\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 103403976244617
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Player 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 195217307902313,
+							"parameters": {
+								"variable": "P2_Rounds_Won",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RoundIndicator",
+							"sid": 605721136702045,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 951628869295832,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RoundIndicator",
+									"sid": 626641931510948,
+									"parameters": {
+										"instance-variable": "Round",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RoundIndicator",
+									"sid": 681406368543827,
+									"parameters": {
+										"animation": "\"Won\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 564988296847185
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910037974083119,
+							"parameters": {
+								"variable": "P2_Rounds_Won",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RoundIndicator",
+							"sid": 613835654491640,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 106685980807978,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RoundIndicator",
+									"sid": 729996636429056,
+									"parameters": {
+										"instance-variable": "Round",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RoundIndicator",
+									"sid": 436096667090375,
+									"parameters": {
+										"animation": "\"Won\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 104835606067274
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Changes win text depending on who won"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 592419026442895,
+							"parameters": {
+								"variable": "P1_Rounds_Won",
+								"comparison": 5,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasWinText",
+							"sid": 829804173445422,
+							"parameters": {
+								"animation": "\"P1 Wins\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 768428704630375
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 951407590481476,
+							"parameters": {
+								"variable": "P2_Rounds_Won",
+								"comparison": 5,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasWinText",
+							"sid": 368710715099331,
+							"parameters": {
+								"animation": "\"P2 Wins\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 848645706286759
+				}
+			],
+			"sid": 321532217439144
+		},
+		{
+			"eventType": "comment",
+			"text": "Disables control when the game ends"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 421270039767929,
+					"parameters": {
+						"variable": "Game_Over"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 299443227216494
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 663947903839002,
+					"parameters": {
+						"group-name": "\"Movement\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 519023202116243,
+					"parameters": {
+						"group-name": "\"Blocking\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 653451603962236,
+					"parameters": {
+						"group-name": "\"P1_attacks\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 667269321415603,
+					"parameters": {
+						"group-name": "\"P2_Attacks\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "P1_HitBox",
+					"sid": 945728839294275
+				},
+				{
+					"id": "destroy",
+					"objectClass": "P2_HitBox",
+					"sid": 369284253981562
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Fireball_hitbox",
+					"sid": 694040182643854
+				},
+				{
+					"id": "destroy",
+					"objectClass": "LauncherBox",
+					"sid": 881853851648537
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 662900742377548,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 594251746639112,
+					"parameters": {
+						"timeline": "Win Screen",
+						"tags": "\"Win Screen\""
+					}
+				},
+				{
+					"id": "play-timeline",
+					"objectClass": "TimelineController",
+					"sid": 500818857086662,
+					"parameters": {
+						"timeline": "Win Text",
+						"tags": "\"Win Text\""
+					}
+				}
+			],
+			"sid": 351099993161055
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menuing",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timeline-finished-by-tags",
+							"objectClass": "TimelineController",
+							"sid": 490313379399564,
+							"parameters": {
+								"tags": "\"Win Screen\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 990633893900441,
+							"parameters": {
+								"object-to-create": "sasSelectBar",
+								"layer": "\"Transitions\"",
+								"x": "1961.142857 ",
+								"y": "804",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 385342890964682,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Rematch\""
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "sasSelectBar",
+							"sid": 132751789065425,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": ".5",
+								"off-time": ".5",
+								"duration": "10000"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 637440311281674,
+							"parameters": {
+								"object-to-create": "sasSelectBar",
+								"layer": "\"Transitions\"",
+								"x": "534.8571430000002",
+								"y": "804",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 942658423777519,
+							"parameters": {
+								"instance-variable": "Selecting",
+								"value": "\"Rematch\""
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "sasSelectBar",
+							"sid": 771119807433507,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": ".5",
+								"off-time": ".5",
+								"duration": "10000"
+							}
+						}
+					],
+					"sid": 261435192672068
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "sasSelectBar",
+							"sid": 216989759435191,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "ViewportWidth(\"Gameplay\")/2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 265080036175133,
+							"parameters": {
+								"instance-variable": "Player",
+								"value": "\"P2\""
+							}
+						}
+					],
+					"sid": 298548729811316
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "sasSelectBar",
+							"sid": 531116811066472,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "ViewportWidth(\"Gameplay\")/2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "sasSelectBar",
+							"sid": 216315560929199,
+							"parameters": {
+								"instance-variable": "Player",
+								"value": "\"P1\""
+							}
+						}
+					],
+					"sid": 184497605243846
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 829245430190853,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 468303925210518,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 785431641662278,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sasSelectBar",
+									"sid": 160119600470664,
+									"parameters": {
+										"width": "450"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sasSelectBar",
+									"sid": 988651074559406,
+									"parameters": {
+										"x": "1961.142857",
+										"y": "640"
+									}
+								}
+							],
+							"sid": 962732834293006
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 194601635685327,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sasSelectBar",
+									"sid": 799699054106866,
+									"parameters": {
+										"width": "550"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sasSelectBar",
+									"sid": 154740034858492,
+									"parameters": {
+										"x": "1961.142857",
+										"y": "840"
+									}
+								}
+							],
+							"sid": 613943955706260
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 441052144523770,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sasSelectBar",
+									"sid": 102779230772803,
+									"parameters": {
+										"width": "500"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sasSelectBar",
+									"sid": 463216428525787,
+									"parameters": {
+										"x": "1961.142857",
+										"y": "1040"
+									}
+								}
+							],
+							"sid": 778275219692448
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 544751491913165,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [],
+					"sid": 144597441572046,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 976387211765542,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 538141753957179,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 453546590024425,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P1\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 319582677238765,
+									"parameters": {
+										"variable": "P1Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 707899387155121,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Timer is used to stop the select bar from moving all the way down on one frame"
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 864026259344323,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P1\""
+									}
+								}
+							],
+							"sid": 976127685670142
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 804067058252617,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 501456527288721,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 299199354263039,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P1\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 381588639726346,
+									"parameters": {
+										"variable": "P1Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 606371747543485,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 685997890552759,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P1\""
+									}
+								}
+							],
+							"sid": 322100809935860
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 300485333460123,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 907138368196850,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 343267502262235,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P1\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 728521423102608,
+									"parameters": {
+										"variable": "P1Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 948147400506227,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 900279097838249,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P1\""
+									}
+								}
+							],
+							"sid": 470735410170855
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 726244640582841,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [],
+					"sid": 793901168642238,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 567328961966779,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 191365692037705,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 662639229429576,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P1\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 235084056029081,
+									"parameters": {
+										"variable": "P1Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 371694074770166,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 545204991702798,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P1\""
+									}
+								}
+							],
+							"sid": 373353404349876
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 458122313750641,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 687088735357317,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 681681258474350,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P1\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 802225348859468,
+									"parameters": {
+										"variable": "P1Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 775814627606482,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 879367204914791,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P1\""
+									}
+								}
+							],
+							"sid": 756956856374581
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 743780709114331,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 776056457990124,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 657982103781379,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P1\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 373110224685181,
+									"parameters": {
+										"variable": "P1Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 751873800473916,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 612625576192923,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P1\""
+									}
+								}
+							],
+							"sid": 194257960809885
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 558962675521351,
+							"parameters": {
+								"key": 89
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 774454933720456,
+							"parameters": {
+								"key": 85
+							}
+						}
+					],
+					"actions": [],
+					"sid": 399412671674031,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 326028117360965,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 753590626992456,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 396151231457300,
+									"parameters": {
+										"variable": "P1Chosen",
+										"value": "\"Rematch\""
+									}
+								}
+							],
+							"sid": 441136331076035
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 704535350925631,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 110269481640675,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-timeline",
+									"objectClass": "TimelineController",
+									"sid": 509373194274457,
+									"parameters": {
+										"timeline": "Round Transition",
+										"tags": "\"Event Transition\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 905765223310039,
+									"parameters": {
+										"seconds": ".5"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 897219299685480,
+									"parameters": {
+										"layout": "sasStage Select"
+									}
+								}
+							],
+							"sid": 169172125922826
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 842096687648451,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 880526576254705,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-timeline",
+									"objectClass": "TimelineController",
+									"sid": 286789108978613,
+									"parameters": {
+										"timeline": "Round Transition",
+										"tags": "\"Event Transition\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 520414409924400,
+									"parameters": {
+										"seconds": ".5"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 909160289858096,
+									"parameters": {
+										"layout": "Fantasy Fight"
+									}
+								}
+							],
+							"sid": 287457503955037
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasSelectBar",
+							"sid": 566627341682941,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 151614023877091,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 808301005776600,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sasSelectBar",
+									"sid": 759989312574412,
+									"parameters": {
+										"width": "450"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sasSelectBar",
+									"sid": 588925003928218,
+									"parameters": {
+										"x": "534.8571430000002",
+										"y": "640"
+									}
+								}
+							],
+							"sid": 946053983422737
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 273625381986380,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sasSelectBar",
+									"sid": 147685730792153,
+									"parameters": {
+										"width": "550"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sasSelectBar",
+									"sid": 262068058189237,
+									"parameters": {
+										"x": "534.8571430000002",
+										"y": "840"
+									}
+								}
+							],
+							"sid": 499156449947409
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 652559031514594,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-width",
+									"objectClass": "sasSelectBar",
+									"sid": 660832661966804,
+									"parameters": {
+										"width": "500"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "sasSelectBar",
+									"sid": 735690342288693,
+									"parameters": {
+										"x": "534.8571430000002",
+										"y": "1040"
+									}
+								}
+							],
+							"sid": 775070260268338
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 230002935015307,
+							"parameters": {
+								"key": 40
+							}
+						}
+					],
+					"actions": [],
+					"sid": 199121866024999,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 394854231676046,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 514878964215760,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 826449821598731,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P2\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 308359678682391,
+									"parameters": {
+										"variable": "P2Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 947727606117706,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"type": "comment",
+									"text": "Timer is used to stop the select bar from moving all the way down on one frame"
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 479126903070461,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P2\""
+									}
+								}
+							],
+							"sid": 294812229228711
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 207386487630869,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 655266628432876,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 227034098085950,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P2\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 508864856067697,
+									"parameters": {
+										"variable": "P2Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 498399232656982,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 433750751832091,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P2\""
+									}
+								}
+							],
+							"sid": 648715589646313
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 773043261447974,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 614569456248610,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 217514030898732,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P2\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 263835279514132,
+									"parameters": {
+										"variable": "P2Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 237606719498349,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 387678350078063,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P2\""
+									}
+								}
+							],
+							"sid": 700738802081817
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 148971138744448,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [],
+					"sid": 903554739356682,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 186474329995533,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 151896109321544,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 296926418528489,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P2\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 691559146278802,
+									"parameters": {
+										"variable": "P2Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 918060621273303,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 716836453999574,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P2\""
+									}
+								}
+							],
+							"sid": 423835578285755
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 625712134224546,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 297341016370115,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 438509175026833,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P2\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 995068463749330,
+									"parameters": {
+										"variable": "P2Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 507774169158661,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 424602150137608,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P2\""
+									}
+								}
+							],
+							"sid": 798875445539235
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 782345261571433,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 864482949060220,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "sasGame_manager",
+									"sid": 549959201691791,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"Menu Cooldown P2\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 509286439398723,
+									"parameters": {
+										"variable": "P2Chosen",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "sasSelectBar",
+									"sid": 248857759053012,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "sasGame_manager",
+									"sid": 428735939225710,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": ".05",
+										"type": "once",
+										"tag": "\"Menu Cooldown P2\""
+									}
+								}
+							],
+							"sid": 724929645440562
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 245695010764510,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 418106378796344,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [],
+					"sid": 344053398302155,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 597109947133698,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Rematch\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 483614087845062,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 218820271901322,
+									"parameters": {
+										"variable": "P2Chosen",
+										"value": "\"Rematch\""
+									}
+								}
+							],
+							"sid": 979076928173638
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 654853380060810,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Stage Select\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 439366007943550,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-timeline",
+									"objectClass": "TimelineController",
+									"sid": 139023808277495,
+									"parameters": {
+										"timeline": "Round Transition",
+										"tags": "\"Event Transition\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 850157489741118,
+									"parameters": {
+										"seconds": ".5"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 808666059329230,
+									"parameters": {
+										"layout": "sasStage Select"
+									}
+								}
+							],
+							"sid": 121677217765901
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 747778058623311,
+									"parameters": {
+										"instance-variable": "Selecting",
+										"comparison": 0,
+										"value": "\"Main Menu\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "sasSelectBar",
+									"sid": 637984143700999,
+									"parameters": {
+										"instance-variable": "Player",
+										"comparison": 0,
+										"value": "\"P2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-timeline",
+									"objectClass": "TimelineController",
+									"sid": 218049483203324,
+									"parameters": {
+										"timeline": "Round Transition",
+										"tags": "\"Event Transition\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 191391624945912,
+									"parameters": {
+										"seconds": ".5"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 577918699392380,
+									"parameters": {
+										"layout": "Fantasy Fight"
+									}
+								}
+							],
+							"sid": 165847231648623
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 192380669472894,
+							"parameters": {
+								"variable": "P1Chosen",
+								"comparison": 0,
+								"value": "\"Rematch\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 361342760879016,
+							"parameters": {
+								"variable": "P2Chosen",
+								"comparison": 0,
+								"value": "\"Rematch\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 492075800468956
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 177175084380094,
+							"parameters": {
+								"variable": "P1Chosen",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 307792947871058,
+							"parameters": {
+								"variable": "P2Chosen",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 284208976043114,
+							"parameters": {
+								"variable": "P1_Rounds_Won",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 935306734203064,
+							"parameters": {
+								"variable": "P2_Rounds_Won",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 418370551502084,
+							"parameters": {
+								"variable": "Game_Over",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 109114562559751,
+							"parameters": {
+								"variable": "Game_Round",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 879342009982745
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 633969275404937,
+							"parameters": {
+								"variable": "P1Chosen",
+								"comparison": 0,
+								"value": "\"Rematch\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasWinScreenMenu",
+							"sid": 856538201523524,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasWinScreenMenu",
+							"sid": 670395614572629,
+							"parameters": {
+								"animation": "\"Rematch Chosen\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 979466263126873
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 867510184325452,
+							"parameters": {
+								"variable": "P2Chosen",
+								"comparison": 0,
+								"value": "\"Rematch\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "sasWinScreenMenu",
+							"sid": 968916188846709,
+							"parameters": {
+								"instance-variable": "Player",
+								"comparison": 0,
+								"value": "\"P2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "sasWinScreenMenu",
+							"sid": 610869103805362,
+							"parameters": {
+								"animation": "\"Rematch Chosen\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 841799959664904
+				}
+			],
+			"sid": 400446123429866
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing-by-tags",
+					"objectClass": "TimelineController",
+					"sid": 818932710167573,
+					"parameters": {
+						"tags": "\"Layout Intro\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 198275908702481,
+					"parameters": {
+						"variable": "LayoutIntro",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 526185411014630
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-playing-by-tags",
+					"objectClass": "TimelineController",
+					"sid": 226314229507378,
+					"parameters": {
+						"tags": "\"Layout Intro\""
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 852834658049815,
+					"parameters": {
+						"variable": "LayoutIntro",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 302229303354541
+		}
+	],
+	"sid": 589112377209744
+}

@@ -1,0 +1,16 @@
+{
+	"name": "aeNoneButton",
+	"plugin-id": "Button",
+	"sid": 238206004849273,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "PickedNone",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 445002632067799
+		}
+	],
+	"behaviorTypes": []
+}

@@ -1,0 +1,15 @@
+{
+	"name": "aePoweruptxt",
+	"plugin-id": "Text",
+	"sid": 496300911162999,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 929818333515480
+		}
+	],
+	"effectTypes": []
+}

@@ -1,0 +1,746 @@
+{
+	"name": "avwStage select__E",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "avw_background",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 897555754295926
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 720263719225627,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect2",
+					"sid": 198235176263185,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 394994058097528
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 204661621846875,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect2",
+					"sid": 847247004584348,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 712981041644780
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 523721641118005,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect2",
+					"sid": 234699126017719,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 120821067976382
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 417016585810722,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "avwRselect2",
+					"sid": 501601459391402,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 768975870072611
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 688662695364860,
+					"parameters": {
+						"key": 73
+					}
+				},
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 588249180618465,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [],
+			"sid": 610519918729232,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 191717767681246,
+							"parameters": {
+								"first-value": "UnreadyP1",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 638782975028491,
+							"parameters": {
+								"variable": "ReadyP1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 798190149267163,
+							"parameters": {
+								"variable": "UnreadyP1",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1notready",
+							"sid": 482097817184020,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1Ready",
+							"sid": 597852436940353,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwKabieeeeem",
+							"sid": 626486965148089,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "avwKabieeeeem",
+							"sid": 520054878712644,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "avwKabieeeeem",
+							"sid": 943778876275627,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 111556283209975,
+							"parameters": {
+								"seconds": ".2"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwKabieeeeem",
+							"sid": 924705028109271,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "go to main layout, all other layouts are not working"
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 423027066175990,
+							"parameters": {
+								"layout": "avwretro"
+							}
+						}
+					],
+					"sid": 918274660896068
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 311967808610565
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 357675257684750,
+							"parameters": {
+								"variable": "ReadyP1",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 819631614481043,
+							"parameters": {
+								"variable": "UnreadyP1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1notready",
+							"sid": 981895434440415,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "avwP_1Ready",
+							"sid": 771752972993056,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 896758912240610
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 506074446247690,
+					"parameters": {
+						"first-value": "prison",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 693482943540772,
+					"parameters": {
+						"variable": "avw_background",
+						"value": "\"avwPrison\""
+					}
+				}
+			],
+			"sid": 159337490799062
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 806068808055126,
+					"parameters": {
+						"first-value": "Forest",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 831173444908212,
+					"parameters": {
+						"variable": "avw_background",
+						"value": "\"avwForest\""
+					}
+				}
+			],
+			"sid": 151978713232857
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 447883348155152,
+					"parameters": {
+						"first-value": "Space_backround",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 570733199022609,
+					"parameters": {
+						"variable": "avw_background",
+						"value": "\"avwSpace\""
+					}
+				}
+			],
+			"sid": 667031049517292
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 274820879757659,
+					"parameters": {
+						"first-value": "Retro_backround",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 536307258277318,
+					"parameters": {
+						"variable": "avw_background",
+						"value": "\"avwRetro\""
+					}
+				}
+			],
+			"sid": 571812702951899
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect2",
+					"sid": 729942451483892,
+					"parameters": {
+						"object": "avwPrison_Backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 507134189206538,
+					"parameters": {
+						"variable": "prison",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwPrisongame",
+					"sid": 208500958256242,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 145470301427501
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 522066720621163
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 160525578615456,
+					"parameters": {
+						"variable": "prison",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwPrisongame",
+					"sid": 313842256758104,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 916721440916292
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect2",
+					"sid": 102368275444377,
+					"parameters": {
+						"object": "avwForest_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 659273890772591,
+					"parameters": {
+						"variable": "Forest",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwSprite5",
+					"sid": 390566582316609,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 229817433228534
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 579812053399957
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 419008008902522,
+					"parameters": {
+						"variable": "Forest",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwSprite5",
+					"sid": 499871915625006,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 615620101057323
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect2",
+					"sid": 858432281777775,
+					"parameters": {
+						"object": "avwPholder_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 385464043398691,
+					"parameters": {
+						"variable": "Space_backround",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwPlaceholder",
+					"sid": 909631387092530,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 887467417607463
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 197363883447246
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 344187785993368,
+					"parameters": {
+						"variable": "Space_backround",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwPlaceholder",
+					"sid": 851366073054081,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 867058326192106
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "avwRselect2",
+					"sid": 454801715172710,
+					"parameters": {
+						"object": "avwRetro_backround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 227349938010220,
+					"parameters": {
+						"variable": "Retro_backround",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwSprite7",
+					"sid": 104429825193207,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 297657514334983
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 985898722260212
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 752880914661940,
+					"parameters": {
+						"variable": "Retro_backround",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwSprite7",
+					"sid": 574306111085372,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 229610556277548
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 784547544253964
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 455400534518528,
+					"parameters": {
+						"variable": "ReadyP1",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 332502716303539
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 761985455154678
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 183721205674302,
+					"parameters": {
+						"audio-file": "Video Game loop  select screen",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Stage_Song\""
+					}
+				}
+			],
+			"sid": 833897444902386
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 150223490618680
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 804430793580507,
+					"parameters": {
+						"tag": "\"Stage_Song\""
+					}
+				}
+			],
+			"sid": 779366804505116
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 738561403847587
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 164046555278952,
+					"parameters": {
+						"scale": ".65"
+					}
+				}
+			],
+			"sid": 167484809433359
+		}
+	],
+	"sid": 652781662314407
+}

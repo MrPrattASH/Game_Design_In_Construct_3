@@ -1,0 +1,1684 @@
+{
+	"name": "paUniversal Logic",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "variable",
+			"name": "Cur_Time",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "displays current time to prevent actions repeating instantly",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 691698605079149
+		},
+		{
+			"eventType": "variable",
+			"name": "Gems",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 221918197497560
+		},
+		{
+			"eventType": "variable",
+			"name": "Key",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 955121807145195
+		},
+		{
+			"eventType": "variable",
+			"name": "ControlMethod",
+			"type": "string",
+			"initialValue": "Desktop",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 116460854438628
+		},
+		{
+			"eventType": "variable",
+			"name": "Health2",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 638182510101226
+		},
+		{
+			"eventType": "variable",
+			"name": "StopMoving",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 843705992426353
+		},
+		{
+			"eventType": "variable",
+			"name": "CompTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 349588755526718
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalDeaths",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 951456947134085
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy & Player Movement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 344519777226093,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 878598419133599,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "paPlayerAnim",
+							"sid": 981771228582801,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 430616888720608,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 564475028820943,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 544491672813703,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "paPlayerAnim",
+							"sid": 217515909332000,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 950949526228247,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "paPlayerBox",
+							"sid": 988169745903515,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paPlayerAnim",
+							"sid": 342650954395701,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 653803688768450
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "paPlayerBox",
+							"sid": 848449541716501,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paPlayerAnim",
+							"sid": 196523923015068,
+							"parameters": {
+								"animation": "\"Stand\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 399082353842385,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "paPlayerBox",
+									"sid": 817329140442792,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "paPlayerAnim",
+									"sid": 379604364316536,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 195829473718527
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "paPlayerBox",
+							"sid": 675694867965464,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paPlayerAnim",
+							"sid": 838126891496184,
+							"parameters": {
+								"animation": "\"Stand\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 825537351316508
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "paPlayerBox",
+							"sid": 258330030117627,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paPlayerAnim",
+							"sid": 869808844407113,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 884701264397137
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "paPlayerBox",
+							"sid": 808115121176421,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paPlayerAnim",
+							"sid": 676877724786080,
+							"parameters": {
+								"animation": "\"Fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 400065672404268
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 206745615623148,
+							"parameters": {
+								"object": "paEnemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 192307604589470,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If the player is above the enemy, destroy enemy"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-falling",
+									"objectClass": "paPlayerBox",
+									"sid": 885132837942831,
+									"behaviorType": "Platform"
+								},
+								{
+									"id": "compare-y",
+									"objectClass": "paPlayerBox",
+									"sid": 143404797264415,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "paEnemy.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "paEnemy",
+									"sid": 573966969065102
+								},
+								{
+									"type": "comment",
+									"text": "Player bounces off the enemy"
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "paPlayerBox",
+									"sid": 664371921865984,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "-550"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 419968950324194,
+									"parameters": {
+										"variable": "Gems",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 519886310941963
+						},
+						{
+							"eventType": "comment",
+							"text": "Damage player"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 797670204544818
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "paPlayerAnim",
+									"sid": 170468214632339,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 597824810305249,
+									"parameters": {
+										"variable": "Health",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 950171952864987
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Keeps Enemies on platforms"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paEnemy",
+							"sid": 163359917635899,
+							"parameters": {
+								"object": "paEdgeMarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 725066201347375,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paEnemy",
+									"sid": 352119102491561,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paEnemy",
+									"sid": 549106692067579,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 389092200525165
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 748223991302599
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paEnemy",
+									"sid": 381450166180637,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 530116459954280
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 623570336373098,
+							"parameters": {
+								"variable": "StopMoving"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 218446231168686,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 336932248279429,
+									"parameters": {
+										"key": 89
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 716823114219653,
+									"parameters": {
+										"key": 81
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 375568589638311,
+									"parameters": {
+										"key": 90
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 863041179154939,
+									"parameters": {
+										"key": 67
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 450295725942020,
+									"parameters": {
+										"key": 69
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 682843309116369,
+									"parameters": {
+										"key": 85
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 848088477484999,
+									"parameters": {
+										"key": 79
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 677470328108900,
+									"parameters": {
+										"key": 73
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 812733861332662,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "paPlayerBox",
+									"sid": 223968486783391,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 763857556673158,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 155256159129398,
+							"parameters": {
+								"variable": "StopMoving"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 677296790499799,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 449387511733306,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 725566778867920,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "paPlayerBox",
+									"sid": 898373168630860,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 675091263202833,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 403345005624485,
+							"parameters": {
+								"variable": "StopMoving"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 577360082236322,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 878783112235207,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 287410054605895,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "paPlayerBox",
+									"sid": 120627913714620,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 815687732066276,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 540957847605981,
+							"parameters": {
+								"variable": "StopMoving"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "paPlayerBox",
+							"sid": 127697520832668,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 358165335178930
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 358558595874007,
+							"parameters": {
+								"variable": "StopMoving"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "paPlayerBox",
+							"sid": 190273058671110,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 321745641737162
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paEnemy",
+							"sid": 963785769944509,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "paEnemy",
+							"sid": 289895233303764,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 746369011078611
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paEnemy",
+							"sid": 703324300640411,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "paEnemy",
+							"sid": 566934776343834,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 288741772495493
+				}
+			],
+			"sid": 512938698930312
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "General3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 221894354135555
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "paPlayerAnim",
+							"sid": 115962428404028,
+							"parameters": {
+								"object": "paPlayerBox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "paScore",
+							"sid": 986108768351789,
+							"parameters": {
+								"text": "\"Gems:\" & Gems"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "paHealth",
+							"sid": 249148633919829,
+							"parameters": {
+								"text": "\"Health:\" & Health"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "paScore",
+							"sid": 958365734700132,
+							"parameters": {
+								"text": "\"Gems: \" & Gems"
+							}
+						}
+					],
+					"sid": 397506071193760
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 476405706675293,
+							"parameters": {
+								"object": "paGem"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "paGem",
+							"sid": 447268562336682
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 781050750817474,
+							"parameters": {
+								"variable": "Gems",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 646318080528020,
+							"parameters": {
+								"variable": "Gems",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 638060480850856
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 104325839032712,
+							"parameters": {
+								"object": "paGem2"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "paGem2",
+							"sid": 992358128752949,
+							"parameters": {
+								"animation": "\"Normal\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "paGem2",
+							"sid": 534889952117631
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 206365091922913,
+							"parameters": {
+								"variable": "Gems",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 864798068800127
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 964461793108965,
+							"parameters": {
+								"object": "pagems3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 554953667111445,
+							"parameters": {
+								"variable": "Gems",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "pagems3",
+							"sid": 180294299296131
+						}
+					],
+					"sid": 902934578473722
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 532481476949304,
+							"parameters": {
+								"object": "paKey"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "paKey",
+							"sid": 572160755670944,
+							"parameters": {
+								"animation": "\"Key\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paKey",
+							"sid": 589224951095226,
+							"parameters": {
+								"animation": "\"KeyTaken\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 101341545658683,
+							"parameters": {
+								"variable": "Key",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "paHUDkey",
+							"sid": 674028248524322,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 773941353057778
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 749316545981632,
+							"parameters": {
+								"object": "paLvl3Key"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "paLvl3Key",
+							"sid": 663147976132912,
+							"parameters": {
+								"animation": "\"normal\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paLvl3Key",
+							"sid": 365473131572974,
+							"parameters": {
+								"animation": "\"KeyTaken\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 395809770915747,
+							"parameters": {
+								"variable": "Key",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "paHUDkey",
+							"sid": 407997528369388,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 581263012072259
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 155599273467466,
+							"parameters": {
+								"object": "paLvl2Key"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "paLvl2Key",
+							"sid": 682606674263094,
+							"parameters": {
+								"animation": "\"Normal\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "paLvl2Key",
+							"sid": 361971391158331
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 658446173269666,
+							"parameters": {
+								"variable": "Key2",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "paHUDkey",
+							"sid": 582380089867964,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 759746364533783
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 639183451293621
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 529921602824914,
+							"parameters": {
+								"variable": "Underground",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "paHUDkey",
+							"sid": 191335896083044,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 606470305190137
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 535044125666958
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 403861485648212,
+							"parameters": {
+								"variable": "Underground",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "paHUDkey",
+							"sid": 512886761692018,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 433234236512708
+				},
+				{
+					"eventType": "comment",
+					"text": "When respawning it reenables all the functions so the player doesnt fall out of map again."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 972435067903063
+						}
+					],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "paPlayerBox",
+							"sid": 162470636593375,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "stop-ignoring"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paLock",
+							"sid": 793064537128413,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "paWall",
+							"sid": 603323612314998,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "paPlayerBox",
+							"sid": 922723900088503,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "paCheckpoint",
+							"sid": 312322885645972,
+							"parameters": {
+								"animation": "\"Close\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 162948707197569
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "player collides with InfoTrigger. Global Cur_Info is set to the checkpoint's number (relative to each level)"
+						}
+					],
+					"sid": 798634619413946,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "This will set the text to the instance string \"Info\" and bring it to the player's location"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "paRelevantInfo",
+									"sid": 486170429970380,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "paRelevantInfo",
+									"sid": 796017057683993,
+									"parameters": {
+										"x": "paPlayerAnim.X",
+										"y": "paPlayerAnim.Y-35"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 236565470942681,
+									"parameters": {
+										"seconds": "15"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "paRelevantInfo",
+									"sid": 790516254247431,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 218084313078824
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Used for completion screen time. Rounds time to 3 decimal places\ncredit: https://www.construct.net/en/forum/construct-2/how-do-i-18/round-format-decimal-value-40540"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerAnim",
+							"sid": 107130611335879,
+							"parameters": {
+								"object": "paGateBackround3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 741162990617082,
+							"parameters": {
+								"variable": "CompTime",
+								"value": "round(time*1000)/1000"
+							}
+						}
+					],
+					"sid": 356409660282830
+				}
+			],
+			"sid": 994456011407334
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Checkpoints & Health ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Instant Death for the player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 649380689959664,
+							"parameters": {
+								"object": "paAcid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 338715481775124,
+							"parameters": {
+								"variable": "Health",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paGravUp",
+							"sid": 104036194534117,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paGravDown",
+							"sid": 954236339852325,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 290402926081768,
+							"parameters": {
+								"seconds": "2.5"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paGravDown",
+							"sid": 553350458129376,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paGravUp",
+							"sid": 170954825832752,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 508217569444164
+				},
+				{
+					"eventType": "comment",
+					"text": "player collides with checkpoint. Global Cur_Checkpoint is set to the checkpoint's number"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 838089159258596,
+							"parameters": {
+								"object": "paCheckpoint"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paCheckpoint",
+							"sid": 968135205508983,
+							"parameters": {
+								"animation": "\"Open\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 148437945733877,
+							"parameters": {
+								"variable": "Cur_Checkpoint",
+								"value": "paCheckpoint.Checkpoint_Number"
+							}
+						}
+					],
+					"sid": 207593513061402,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Heals the player for the first time you collide with a checkpoint flag"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "paCheckpoint",
+									"sid": 598742077619705,
+									"parameters": {
+										"instance-variable": "ResetHealth"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 123153632258780,
+									"parameters": {
+										"variable": "Health",
+										"value": "2"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "paCheckpoint",
+									"sid": 631835562983396,
+									"parameters": {
+										"instance-variable": "ResetHealth",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 775745839849636
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "These actions make the player bounce up and then fall out of the map when he has no more health similar to how Mario does in his games"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 443362542831511,
+							"parameters": {
+								"variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 961812230824266
+						}
+					],
+					"actions": [
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "paPlayerBox",
+							"sid": 643182117729148,
+							"behaviorType": "Platform",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "paWall",
+							"sid": 329779683788031,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "paPlayerBox",
+							"sid": 961842731161226,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "-550"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "paPlayerAnim",
+							"sid": 590472237716497,
+							"parameters": {
+								"animation": "\"Death\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paPlayerBox",
+							"sid": 958840251418685,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "paPlayerBox",
+							"sid": 395074010355538,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 966474378471534,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 417843565912398,
+							"parameters": {
+								"tag": "\"Restart\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 539840097402987,
+							"parameters": {
+								"variable": "TotalDeaths",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 344026766156970,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paCheckpoint",
+									"sid": 137713144608567,
+									"parameters": {
+										"instance-variable": "Checkpoint_Number",
+										"comparison": 0,
+										"value": "Cur_Checkpoint"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "paPlayerBox",
+									"sid": 226279196385278,
+									"parameters": {
+										"x": "paCheckpoint.X",
+										"y": "paCheckpoint.Y"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "paWall",
+									"sid": 828238202613514,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "paPlayerBox",
+									"sid": 325848191954374,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "paPlayerBox",
+									"sid": 355854784856499,
+									"behaviorType": "ScrollTo",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-ignoring-input",
+									"objectClass": "paPlayerBox",
+									"sid": 809194028721506,
+									"behaviorType": "Platform",
+									"parameters": {
+										"input": "stop-ignoring"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 564000100788801,
+									"parameters": {
+										"variable": "Health",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 173041840132734,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 647153060222691
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 528975874277649,
+					"parameters": {
+						"variable": "HUDKey",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paSecretKeyHUD",
+					"sid": 254825906491897,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 814920298424434
+		},
+		{
+			"eventType": "comment",
+			"text": "Artwork Credits: \nhttps://www.kenney.nl/assets/abstract-platformer\nhttps://www.kenney.nl/assets/platformer-pack-medieval"
+		}
+	],
+	"sid": 679459299942269
+}

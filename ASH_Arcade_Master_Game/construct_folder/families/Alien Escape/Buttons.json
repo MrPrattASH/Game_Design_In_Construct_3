@@ -1,0 +1,12 @@
+{
+	"name": "Buttons",
+	"plugin-id": "Button",
+	"sid": 564862858141434,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"members": [
+		"aeWaterButton",
+		"aeNoneButton",
+		"aeFireButton"
+	]
+}

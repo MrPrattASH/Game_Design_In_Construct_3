@@ -514,7 +514,7 @@
 											"parameters": {
 												"first-value": "uppercase(high_score_text)",
 												"comparison": 0,
-												"second-value": "Games.At(loopindex)"
+												"second-value": "Games_23.At(loopindex)"
 											}
 										}
 									],

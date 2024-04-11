@@ -1,0 +1,74 @@
+{
+	"name": "LauncherBox",
+	"plugin-id": "Sprite",
+	"sid": 551347488104639,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Player",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 987058630292930
+		},
+		{
+			"name": "Damage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 862016324273050
+		},
+		{
+			"name": "Hitstun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 211032634279649
+		},
+		{
+			"name": "Blockstun",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 397584255867625
+		},
+		{
+			"name": "Launch_Strength",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 198228723085816
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4873933,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 119109653762577,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

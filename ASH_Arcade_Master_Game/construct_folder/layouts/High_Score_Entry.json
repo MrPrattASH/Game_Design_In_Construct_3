@@ -1,0 +1,191 @@
+{
+	"name": "High_Score_Entry",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "high_score",
+					"properties": {
+						"text": "NEW HIGH SCORE",
+						"enable-bbcode": true,
+						"font": "nintendo-nes-font",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 33,
+					"instanceVariables": {
+						"name": "Title"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 411,
+						"y": 116,
+						"width": 448,
+						"height": 38,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "high_score",
+					"properties": {
+						"text": "HIGH SCORE",
+						"enable-bbcode": true,
+						"font": "nintendo-nes-font",
+						"size": 35,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 31,
+					"instanceVariables": {
+						"name": "game_name"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 83,
+						"y": 33,
+						"width": 1114,
+						"height": 71,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "high_score",
+					"properties": {
+						"text": "A B C D E F G H I J K L M N O P Q R S T U V Y X Y Z",
+						"enable-bbcode": true,
+						"font": "nintendo-nes-font",
+						"size": 54,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.7764705882352941,
+							0.8509803921568627,
+							0.17647058823529413,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 4,
+					"instanceVariables": {
+						"name": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 130,
+						"y": 386,
+						"width": 1018,
+						"height": 318,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 143505582163572,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 676698032755455,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1280,
+	"height": 720,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "High_Score_sh"
+}

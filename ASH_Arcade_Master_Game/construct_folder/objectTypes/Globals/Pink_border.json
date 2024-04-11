@@ -1,0 +1,109 @@
+{
+	"name": "Pink_border",
+	"plugin-id": "Sprite",
+	"sid": 370583983401280,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "border_num",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 560635972021492
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 752072743752964
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 443997015640890
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1846,
+						"height": 1457,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6900251,
+						"collisionPoly": {
+							"points": [
+								0.048212351029252434,
+								0,
+								0.9826652221018418,
+								0.016472203157172273,
+								0.9994582881906826,
+								0.05696636925188744,
+								0.9512459371614301,
+								1,
+								0,
+								0.940974605353466
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 808114349590029,
+				"name": "23",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 1846,
+						"height": 1457,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 908428,
+						"collisionPoly": {
+							"points": [
+								0.048212351029252434,
+								0,
+								0.9826652221018418,
+								0.016472203157172273,
+								0.9994582881906826,
+								0.05696636925188744,
+								0.9512459371614301,
+								1,
+								0,
+								0.940974605353466
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 742928026700315,
+				"name": "24",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

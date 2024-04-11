@@ -1,0 +1,143 @@
+{
+	"name": "CollisionBoxes",
+	"plugin-id": "Sprite",
+	"sid": 631047849931665,
+	"instanceVariables": [
+		{
+			"name": "Crouch_State",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 837800900234752
+		},
+		{
+			"name": "Ground_Dash_Active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 440050426862452
+		},
+		{
+			"name": "Jump_State",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 315277444585989
+		},
+		{
+			"name": "FacingDirection",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 805659896768273
+		},
+		{
+			"name": "Idle_State",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 956061912113458
+		},
+		{
+			"name": "Actionable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 450188356033321
+		},
+		{
+			"name": "FWD_Air_Dash_Active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 227732057104710
+		},
+		{
+			"name": "BCK_Airdash_Active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 448291144928994
+		},
+		{
+			"name": "In_Hitstun",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 272159374293235
+		},
+		{
+			"name": "Move_Active",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 192873565757208
+		},
+		{
+			"name": "Is_Blocking",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 506820122516257
+		},
+		{
+			"name": "In_Blockstun",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 749124984364736
+		},
+		{
+			"name": "Curr_State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 728360554431953
+		},
+		{
+			"name": "Cancleable",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 500640281824432
+		},
+		{
+			"name": "KOd",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 508087215364133
+		},
+		{
+			"name": "Prev_State",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 286132564221668
+		},
+		{
+			"name": "Launch",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 964596844594937
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform2",
+			"sid": 618581210346685
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 309677934404189
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"Player2_Collision_box",
+		"Player_Collission_box"
+	]
+}

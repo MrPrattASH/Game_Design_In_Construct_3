@@ -1,0 +1,50 @@
+{
+	"name": "paGateBackround",
+	"plugin-id": "Sprite",
+	"sid": 613198746772988,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 210,
+						"height": 290,
+						"originX": 0.5,
+						"originY": 0.6448275862068965,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5652163,
+						"collisionPoly": {
+							"points": [
+								0.3880952380952381,
+								0.010344827586206872,
+								0.611904761904762,
+								0.010344827586206872,
+								0.611904761904762,
+								0.996551724137931,
+								0.3880952380952381,
+								0.996551724137931
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 768010071415255,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

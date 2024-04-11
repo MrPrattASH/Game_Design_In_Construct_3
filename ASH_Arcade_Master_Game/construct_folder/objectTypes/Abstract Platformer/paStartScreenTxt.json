@@ -1,0 +1,15 @@
+{
+	"name": "paStartScreenTxt",
+	"plugin-id": "Text",
+	"sid": 981384496043930,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 571426158416120
+		}
+	],
+	"effectTypes": []
+}

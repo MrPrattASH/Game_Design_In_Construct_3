@@ -1,0 +1,39 @@
+{
+	"name": "EnvironmentEnemies",
+	"plugin-id": "Sprite",
+	"sid": 615327477461954,
+	"instanceVariables": [
+		{
+			"name": "Position",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 506586030689649
+		},
+		{
+			"name": "StartFade",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 731109313072742
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 568081917178787
+		},
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 496182859958369
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"aeEnvironmentEnemy3",
+		"aeEnvironmentEnemy",
+		"aeEnvironmentEnemy2"
+	]
+}

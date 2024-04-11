@@ -1,0 +1,170 @@
+{
+	"name": "paEaster Egg events",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 203900409405936
+				}
+			],
+			"actions": [
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 124295748476433,
+					"parameters": {
+						"tag": "\"Music3\"",
+						"db": "-10000",
+						"duration": "0.1",
+						"ending": "stop"
+					}
+				}
+			],
+			"sid": 732069302031457
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 855431125158439
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 762647210853394,
+					"parameters": {
+						"seconds": "2"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paText",
+					"sid": 738302767052140,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "paText",
+					"sid": 442322105632353,
+					"parameters": {
+						"text": "\"You are smart enough to have found my easter egg. Well done. You now have the power to shut down the game with this single button. Do you push it? It's up to you.\"",
+						"duration": "13"
+					}
+				}
+			],
+			"sid": 511383366272516
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 258992166137954
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "paPlayerBox",
+					"sid": 663795042666886,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "paPlayerBox",
+					"sid": 677014516813234,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 767452686510751,
+					"parameters": {
+						"seconds": "16"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "paPlayerBox",
+					"sid": 378866719658017,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "paPlayerBox",
+					"sid": 292094696948837,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "330"
+					}
+				}
+			],
+			"sid": 546771270210678
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 406334124264162,
+					"parameters": {
+						"object": "paFinalButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 550171958386097,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paYouChoseNothingness",
+					"sid": 244139979011760,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "paPlayerBox",
+					"sid": 480973620207389,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 840254237567761
+		}
+	],
+	"sid": 956814815914305
+}

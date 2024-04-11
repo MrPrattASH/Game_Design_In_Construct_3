@@ -1,0 +1,97 @@
+{
+	"name": "avwP1",
+	"plugin-id": "Sprite",
+	"sid": 763651515340831,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 451113862756825
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 358375782771868
+		},
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 183733893935536
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 209472,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 647162235611891,
+				"name": "IDLE",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 460,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9626157,
+						"collisionPoly": {
+							"points": [
+								0.22826086956521738,
+								0,
+								0.7717391304347826,
+								0,
+								0.7717391304347826,
+								1,
+								0.22826086956521738,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.8891304347826087,
+								"y": 0.468
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 406498288115342,
+				"name": "Punch1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

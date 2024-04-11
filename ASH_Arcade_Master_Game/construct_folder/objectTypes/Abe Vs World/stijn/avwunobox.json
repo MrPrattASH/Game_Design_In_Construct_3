@@ -1,0 +1,66 @@
+{
+	"name": "avwunobox",
+	"plugin-id": "Sprite",
+	"sid": 738532133504501,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 271693025396136
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 426213694034796
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 663101953849356
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5962678,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 1,
+								"y": 0.5
+							},
+							{
+								"name": "Image Point 2",
+								"x": 0.872,
+								"y": 0.136
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 544831464771590,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

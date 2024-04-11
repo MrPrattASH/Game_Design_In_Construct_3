@@ -1,0 +1,64 @@
+{
+	"name": "sasGame_manager",
+	"plugin-id": "Sprite",
+	"sid": 361915565618942,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "P1_Combo",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 133926903044301
+		},
+		{
+			"name": "P2_Combo",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 130057244481738
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 430044755796343
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 875480898650093
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4799749,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 789451820907135,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "paLvlTxt1",
+	"plugin-id": "Text",
+	"sid": 832629708418902,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 612149205393949
+		}
+	],
+	"effectTypes": []
+}

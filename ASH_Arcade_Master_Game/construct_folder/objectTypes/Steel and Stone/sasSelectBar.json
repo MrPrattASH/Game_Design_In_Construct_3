@@ -1,0 +1,83 @@
+{
+	"name": "sasSelectBar",
+	"plugin-id": "Sprite",
+	"sid": 257924934347713,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Selecting",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 110822789164764
+		},
+		{
+			"name": "Player",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 730131255356398
+		},
+		{
+			"name": "Chosen",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 488791201485319
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 410583599124434
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 350307699092441
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 252,
+						"height": 28,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8754597,
+						"collisionPoly": {
+							"points": [
+								0.003968253968253968,
+								0,
+								0.996031746031746,
+								0,
+								0.996031746031746,
+								1,
+								0.003968253968253968,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 429271180660787,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"name": "avwPholder_backround",
+	"plugin-id": "Sprite",
+	"sid": 267193018338850,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9174481,
+						"collisionPoly": {
+							"points": [
+								0.12315625000000002,
+								0.11928125,
+								0.8158125,
+								0.21615624999999997,
+								0.8248749999999999,
+								0.7689374999999999,
+								0.15834375,
+								0.8661562500000001
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 861450678983122,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

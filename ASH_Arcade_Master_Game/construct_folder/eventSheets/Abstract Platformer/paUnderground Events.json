@@ -1,0 +1,748 @@
+{
+	"name": "paUnderground Events",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "variable",
+			"name": "HollowGems2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 857464849496925
+		},
+		{
+			"eventType": "variable",
+			"name": "Cur_Checkpoint3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 733644971031279
+		},
+		{
+			"eventType": "variable",
+			"name": "SecretGem",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 586049171938341
+		},
+		{
+			"eventType": "variable",
+			"name": "WrongOrder",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 841766957533917
+		},
+		{
+			"eventType": "variable",
+			"name": "HUDKey",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 379414430841700
+		},
+		{
+			"eventType": "comment",
+			"text": "Makes the player unable to collect the key or gems"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 237146597984679
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "paHollowGems",
+					"sid": 322278528117714,
+					"parameters": {
+						"animation": "\"Hollow\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paLvl2Key",
+					"sid": 160033215711966,
+					"parameters": {
+						"animation": "\"Secret\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paSecretGem",
+					"sid": 152743583511298,
+					"parameters": {
+						"animation": "\"Hollow\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paSecretKey",
+					"sid": 471900388875680,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				}
+			],
+			"sid": 535303616349573
+		},
+		{
+			"eventType": "comment",
+			"text": "When the player box touches the button, it makes the gems able to be collected for 12 seconds and changes the animations"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 994779379615220,
+					"parameters": {
+						"object": "paSprite4"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "paSprite4",
+					"sid": 829079835159487,
+					"parameters": {
+						"animation": "\"Normal\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "paHollowGems",
+					"sid": 923270576095249,
+					"parameters": {
+						"animation": "\"Normal\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paSecretGem",
+					"sid": 445954063908959,
+					"parameters": {
+						"animation": "\"Normal\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paSprite4",
+					"sid": 715053671881452,
+					"parameters": {
+						"animation": "\"Pressed\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 425157357809600,
+					"parameters": {
+						"seconds": "20"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paSprite4",
+					"sid": 515030617370077,
+					"parameters": {
+						"animation": "\"Normal\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paHollowGems",
+					"sid": 788338177057671,
+					"parameters": {
+						"animation": "\"Hollow\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "paSecretGem",
+					"sid": 412881458696165,
+					"parameters": {
+						"animation": "\"Hollow\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 852867774112429,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 731767805927302,
+							"parameters": {
+								"variable": "HollowGems2",
+								"comparison": 2,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 317307962178903,
+							"parameters": {
+								"variable": "HollowGems2",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paHollowGems",
+							"sid": 194825234681030,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "paHollowGems",
+							"sid": 480973145280624,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 635520525132240
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 835409997821099,
+							"parameters": {
+								"variable": "HollowGems2",
+								"comparison": 5,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "paHollowGems",
+							"sid": 167889081874489
+						}
+					],
+					"sid": 909903616786451
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Allows the key to be collected after all the gems have been collected"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 993318343868064,
+					"parameters": {
+						"variable": "HollowGems2",
+						"comparison": 5,
+						"value": "13"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "paLvl2Key",
+					"sid": 481612344476008,
+					"parameters": {
+						"animation": "\"Normal\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "paSecretGem",
+					"sid": 683376700615811
+				}
+			],
+			"sid": 335336521003482
+		},
+		{
+			"eventType": "comment",
+			"text": "When you have 1 key, the portal fades into view"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 157246327830530,
+					"parameters": {
+						"variable": "Key2",
+						"comparison": 5,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paExitportal",
+					"sid": 227280624889755,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paExitportal",
+					"sid": 687918113619845,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "paExitportal",
+					"sid": 828556875326972,
+					"behaviorType": "Fade"
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paboxportal",
+					"sid": 579842766434501,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				}
+			],
+			"sid": 974234910857675
+		},
+		{
+			"eventType": "comment",
+			"text": "Increases gem count"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 624645229514284,
+					"parameters": {
+						"object": "paHollowGems"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "paHollowGems",
+					"sid": 381927152833077,
+					"parameters": {
+						"animation": "\"Normal\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paHollowGems",
+					"sid": 146981821928993,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paHollowGems",
+					"sid": 357646602775346,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 423570060321890,
+					"parameters": {
+						"variable": "HollowGems2",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 183861307737565,
+					"parameters": {
+						"variable": "WrongOrder",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 601875511112167
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 588927671747551
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paportaln",
+					"sid": 645296703390436,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 499438836920829,
+					"parameters": {
+						"seconds": "2"
+					}
+				}
+			],
+			"sid": 650680311691867
+		},
+		{
+			"eventType": "comment",
+			"text": "On collision with the boxportal, it sends you to the second part of lvl 2"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 449808362945938,
+					"parameters": {
+						"object": "paboxportal"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "paPlayerBox",
+					"sid": 251492931695068,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "paExitportal",
+					"sid": 966088917295450,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 284939922586836,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 920873049815719,
+					"parameters": {
+						"layout": "paLvl 2"
+					}
+				}
+			],
+			"sid": 114350378523731
+		},
+		{
+			"eventType": "comment",
+			"text": "Disables collisions on the portal and plays music"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 856275229518551
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paboxportal",
+					"sid": 452396576954971,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paExitportal",
+					"sid": 530151042531906,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "fade-volume",
+					"objectClass": "Audio",
+					"sid": 422257731051126,
+					"parameters": {
+						"tag": "\"Music2\"",
+						"db": "-100",
+						"duration": "2",
+						"ending": "stop"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 582215494590682,
+					"parameters": {
+						"audio-file": "game music 3",
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"Music 3\""
+					}
+				}
+			],
+			"sid": 218050784283413
+		},
+		{
+			"eventType": "comment",
+			"text": "Makes the player spawn farther into level 2 instead of at the beginning"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 367769386558045
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 784338538062672,
+					"parameters": {
+						"variable": "Underground",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 185942359168901
+		},
+		{
+			"eventType": "comment",
+			"text": "If 2 center top gems are collected, without collecting any other gem, the secret key is unlocked. When the key is taken to a point in level 3, the player gets put into the secret level. (most likely no one will find this)"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 301915648005466,
+					"parameters": {
+						"object": "paSecretGem"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "paSecretGem",
+					"sid": 694238434067314,
+					"parameters": {
+						"animation": "\"Normal\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 739699318070904,
+					"parameters": {
+						"variable": "WrongOrder",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paSecretGem",
+					"sid": 783271009401025,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paSecretGem",
+					"sid": 237774825181378,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 635658720156528,
+					"parameters": {
+						"variable": "HollowGems2",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 395280754724205,
+					"parameters": {
+						"variable": "SecretGem",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 400480479232603
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 553029563062866,
+					"parameters": {
+						"object": "paSecretKey"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 562094966732380,
+					"parameters": {
+						"variable": "HUDKey",
+						"value": "1"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "paSecretKey",
+					"sid": 845330699965599
+				}
+			],
+			"sid": 242170638441027
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 716266621019565,
+					"parameters": {
+						"variable": "SecretGem",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paSecretKey",
+					"sid": 452907032058170,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paSecretKey",
+					"sid": 875177141473866,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 447116742634323
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 440288401129761,
+					"parameters": {
+						"variable": "WrongOrder",
+						"comparison": 5,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "paSecretGem",
+					"sid": 394941667624726
+				}
+			],
+			"sid": 219042768387307
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 756815266733514
+}

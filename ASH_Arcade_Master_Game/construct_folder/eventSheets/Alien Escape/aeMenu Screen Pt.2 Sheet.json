@@ -1,0 +1,305 @@
+{
+	"name": "aeMenu Screen Pt.2 Sheet",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "PickedNone",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 858381125967211
+		},
+		{
+			"eventType": "variable",
+			"name": "PickedFire",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 431746094158694
+		},
+		{
+			"eventType": "variable",
+			"name": "PickedWater",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 942319989545627
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 238450476139343
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Buttons",
+					"sid": 519400794414093,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 434561061393034,
+					"parameters": {
+						"audio-file": "Menu Screen",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Pt.2 Music\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 242654420370510,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 795183994485162
+		},
+		{
+			"eventType": "comment",
+			"text": "Prevents the player from clicking every button and once clicked on one of the options, it will begin the game"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 749614935272931,
+					"parameters": {
+						"key": 90
+					}
+				},
+				{
+					"id": "on-clicked",
+					"objectClass": "aeNoneButton",
+					"sid": 138571150488044
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 258070973373603,
+					"parameters": {
+						"layout": "aeLevel 1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Buttons",
+					"sid": 814555363464250,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 783095132116945,
+					"parameters": {
+						"variable": "PickedNone",
+						"value": "true"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "You set these two global variables false so that there's only one true button clicked in the game and when it comes into effect you don't have problems with health"
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 731255439264062,
+					"parameters": {
+						"variable": "PickedFire",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 816965681399887,
+					"parameters": {
+						"variable": "PickedWater",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 594401374730728,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 901195839975778,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "on-clicked",
+					"objectClass": "aeWaterButton",
+					"sid": 466463864952967
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 253769866505210,
+					"parameters": {
+						"layout": "aeLevel 1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Buttons",
+					"sid": 431194616351249,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 458910655272313,
+					"parameters": {
+						"variable": "PickedWater",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 354277931607560,
+					"parameters": {
+						"variable": "PickedFire",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 828670477930244,
+					"parameters": {
+						"variable": "PickedNone",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 665482157137943,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 691757905441759,
+					"parameters": {
+						"key": 81
+					}
+				},
+				{
+					"id": "on-clicked",
+					"objectClass": "aeFireButton",
+					"sid": 272772546004659
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 315128339769394,
+					"parameters": {
+						"layout": "aeLevel 1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 647846153783706,
+					"parameters": {
+						"variable": "PickedNone",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 569571723039144,
+					"parameters": {
+						"variable": "PickedWater",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 117882243743788,
+					"parameters": {
+						"variable": "PickedFire",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Buttons",
+					"sid": 497881672745786,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 548448448129763,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 358452786806593
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 618506469504333,
+					"parameters": {
+						"tag": "\"Pt.2 Music\""
+					}
+				}
+			],
+			"sid": 764888651624712
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 902878588706419
+}

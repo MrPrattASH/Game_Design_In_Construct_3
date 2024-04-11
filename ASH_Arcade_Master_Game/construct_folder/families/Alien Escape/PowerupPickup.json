@@ -1,0 +1,28 @@
+{
+	"name": "PowerupPickup",
+	"plugin-id": "Sprite",
+	"sid": 986249596320987,
+	"instanceVariables": [
+		{
+			"name": "PowerupType",
+			"type": "number",
+			"desc": "0=Double Move",
+			"show": true,
+			"sid": 592844492192707
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 486994752855367
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"rcDoubleMovePickup",
+		"rcBombPickup",
+		"rcRandomPowerupPickup",
+		"rcPuddlePickup"
+	]
+}

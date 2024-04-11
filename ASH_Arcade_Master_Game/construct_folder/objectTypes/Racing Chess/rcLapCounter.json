@@ -1,0 +1,17 @@
+{
+	"name": "rcLapCounter",
+	"plugin-id": "Text",
+	"sid": 984693078342640,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 737405710845501
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

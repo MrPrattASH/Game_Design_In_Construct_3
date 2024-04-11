@@ -1,0 +1,54 @@
+{
+	"name": "sasGraveyard_Foreground",
+	"plugin-id": "Sprite",
+	"sid": 848121692163699,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1282,
+						"height": 198,
+						"originX": 0.5,
+						"originY": 0.13131313131313133,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8400713,
+						"collisionPoly": {
+							"points": [
+								0.05382215288611544,
+								0.020202020202020204,
+								0.9516380655226209,
+								0.09090909090909091,
+								0.999219968798752,
+								0.5606060606060606,
+								0.999219968798752,
+								0.9646464646464646,
+								0.00078003120124805,
+								0.9696969696969697,
+								0.00078003120124805,
+								0.6212121212121212
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 712976291428626,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

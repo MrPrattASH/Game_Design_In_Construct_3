@@ -1,0 +1,15 @@
+{
+	"name": "paStartAgain",
+	"plugin-id": "Text",
+	"sid": 130442261726419,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 456618350906400
+		}
+	],
+	"effectTypes": []
+}

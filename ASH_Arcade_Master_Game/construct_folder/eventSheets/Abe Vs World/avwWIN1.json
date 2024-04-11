@@ -1,0 +1,282 @@
+{
+	"name": "avwWIN1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "GOBACK1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 676901034033387
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 847609072699237,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 708348572825248,
+					"parameters": {
+						"variable": "GOBACK1",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 615382267903423,
+					"parameters": {
+						"variable": "Forest",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 215050162917828,
+					"parameters": {
+						"variable": "UnreadyP1",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 884653473173113,
+					"parameters": {
+						"variable": "UnreadyP2",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 410830038651809,
+					"parameters": {
+						"variable": "prison",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 280425999452138,
+					"parameters": {
+						"variable": "Retro_backround",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 302738051112189,
+					"parameters": {
+						"variable": "Space_backround",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 245629151630532,
+					"parameters": {
+						"variable": "UNOchar_back",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 883018622952776,
+					"parameters": {
+						"variable": "UNOchar_back2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 947594055536446,
+					"parameters": {
+						"variable": "ReadyP1",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 754565117366477,
+					"parameters": {
+						"variable": "ReadyP2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 566665832990419,
+					"parameters": {
+						"variable": "Oliviachar_back",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 325035693761479,
+					"parameters": {
+						"variable": "Oliviachar_back2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 937295610643197,
+					"parameters": {
+						"variable": "ABEchar_back",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 234023200166699,
+					"parameters": {
+						"variable": "ABEchar_back2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 913320761217157,
+					"parameters": {
+						"variable": "Gregchar_back2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 880779858859204,
+					"parameters": {
+						"variable": "Gregchar_back",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 188839738758076,
+					"parameters": {
+						"variable": "healthP1",
+						"value": "55"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 687868039304380,
+					"parameters": {
+						"variable": "HealthP2",
+						"value": "55"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 793558417423150,
+					"parameters": {
+						"layout": "Abe Vs World"
+					}
+				}
+			],
+			"sid": 559556686114097
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 669530526108028
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 238347078308903,
+					"parameters": {
+						"audio-file": "victory_sJDDywi",
+						"loop": "looping",
+						"volume": "1",
+						"stereo-pan": "0",
+						"tag-optional": "\"WIN1\""
+					}
+				}
+			],
+			"sid": 915577793561255
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 782997779118740
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 642018469551775,
+					"parameters": {
+						"tag": "\"WIN1\""
+					}
+				}
+			],
+			"sid": 911549352154283
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 507625120734006
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 247945073630814,
+					"parameters": {
+						"scale": ".65"
+					}
+				}
+			],
+			"sid": 474742657831681
+		}
+	],
+	"sid": 483221298179786
+}

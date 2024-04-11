@@ -1,0 +1,130 @@
+{
+	"name": "paComplete Events",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 519561329626842
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 698229630085929,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 541883704982955,
+					"parameters": {
+						"layout": "Abstract Platformer"
+					}
+				}
+			],
+			"sid": 139998633676326
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 336471661202916
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 765435813583181,
+					"parameters": {
+						"seconds": "15"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paStartAgain",
+					"sid": 439136496935624,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "flash",
+					"objectClass": "paStartAgain",
+					"sid": 478733348038863,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "1",
+						"off-time": "1",
+						"duration": "3600"
+					}
+				}
+			],
+			"sid": 173789181832918
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Scoring",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Sets the text for total deaths, gems collected and completion time in the format 1:23:456. This is acheived by rounding down time/60 for the minutes and the leftover seconds."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 589922647779371
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "paCompletionDeathTxt",
+							"sid": 905939123589604,
+							"parameters": {
+								"text": "\"Deaths: \" & TotalDeaths"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "paCompletionGemsTxt",
+							"sid": 956780798175373,
+							"parameters": {
+								"text": "\"Gems Collected: \" & Gems"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "paCompletionTimeTxt",
+							"sid": 933591133965192,
+							"parameters": {
+								"text": "\"Time: \" & floor(CompTime/60) & \":\" & (CompTime-(floor(CompTime/60)*60)) "
+							}
+						}
+					],
+					"sid": 946753605142725
+				}
+			],
+			"sid": 879033022524563
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 952655664879922
+}

@@ -1,0 +1,3740 @@
+{
+	"name": "sasMovement",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Movement4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Direction facing",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Makes the player always face the opponent when they are on the ground. Doesn't swap in the air"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Player_Collission_box",
+									"sid": 216776090484961,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Player2_Collision_box.X"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player_Collission_box",
+									"sid": 631076230522776,
+									"behaviorType": "Platform2"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Collission_box",
+									"sid": 131251423917517,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"value": "\"Right\""
+									}
+								}
+							],
+							"sid": 975470310666086
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Collission_box",
+									"sid": 157810521374078,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"comparison": 0,
+										"value": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Player_Collission_box",
+									"sid": 451009351749835,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 148804561696512,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Anims",
+											"sid": 835515714046206,
+											"parameters": {
+												"instance-variable": "Player",
+												"comparison": 0,
+												"value": "\"P1\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Anims",
+											"sid": 984203112192110,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 460256907276801
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Player_Collission_box",
+									"sid": 415678901182985,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Player2_Collision_box.X"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player_Collission_box",
+									"sid": 858139850172919,
+									"behaviorType": "Platform2"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Collission_box",
+									"sid": 380701496693000,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"value": "\"Left\""
+									}
+								}
+							],
+							"sid": 111508869145552
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Collission_box",
+									"sid": 239532724569491,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"comparison": 0,
+										"value": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Player_Collission_box",
+									"sid": 606009383632407,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 114973881890079,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Anims",
+											"sid": 304602849041314,
+											"parameters": {
+												"instance-variable": "Player",
+												"comparison": 0,
+												"value": "\"P1\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Anims",
+											"sid": 475325453224784,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 217384842978532
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Mirroring code is the same for player2 just using player 1 as the target"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Player2_Collision_box",
+									"sid": 646865996710595,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Player_Collission_box.X"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player2_Collision_box",
+									"sid": 432071270351852,
+									"behaviorType": "Platform2"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player2_Collision_box",
+									"sid": 191320008625084,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"value": "\"Right\""
+									}
+								}
+							],
+							"sid": 170222124333130
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player2_Collision_box",
+									"sid": 724558688371186,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"comparison": 0,
+										"value": "\"Right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Player2_Collision_box",
+									"sid": 899310517018359,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 549586514494711,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Anims",
+											"sid": 443286841032667,
+											"parameters": {
+												"instance-variable": "Player",
+												"comparison": 0,
+												"value": "\"P2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Anims",
+											"sid": 240387324177791,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 479317085376291
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Player2_Collision_box",
+									"sid": 852895729538763,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Player_Collission_box.X"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player2_Collision_box",
+									"sid": 862790739446719,
+									"behaviorType": "Platform2"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player2_Collision_box",
+									"sid": 562846063443254,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"value": "\"Left\""
+									}
+								}
+							],
+							"sid": 208718780833156
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player2_Collision_box",
+									"sid": 994458169766155,
+									"parameters": {
+										"instance-variable": "FacingDirection",
+										"comparison": 0,
+										"value": "\"Left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Player2_Collision_box",
+									"sid": 557704885419436,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 723696637389398,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Anims",
+											"sid": 809913799028454,
+											"parameters": {
+												"instance-variable": "Player",
+												"comparison": 0,
+												"value": "\"P2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Anims",
+											"sid": 934031515276512,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 331773900411885
+								}
+							]
+						}
+					],
+					"sid": 773292579126961
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Controls",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "P1",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 606383661573509,
+											"parameters": {
+												"instance-variable": "Move_Active"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 167464222232741,
+											"parameters": {
+												"instance-variable": "In_Hitstun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 200926216588334,
+											"parameters": {
+												"instance-variable": "In_Blockstun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 121203579814262,
+											"parameters": {
+												"instance-variable": "Is_Blocking"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 235059199248086,
+											"parameters": {
+												"instance-variable": "KOd"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 827791741371457,
+											"parameters": {
+												"variable": "RoundTransition"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 356606080400370,
+											"parameters": {
+												"variable": "LayoutIntro"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 191265457259724,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 732936205637294,
+													"parameters": {
+														"key": 68
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "Player_Collission_box",
+													"sid": 715684055062255,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 810823933980092
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 753667951181659,
+													"parameters": {
+														"key": 65
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "Player_Collission_box",
+													"sid": 341920418929216,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 849911717836222
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 561246565485669,
+													"parameters": {
+														"key": 87
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "Player_Collission_box",
+													"sid": 135639131752794,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"control": "jump"
+													}
+												}
+											],
+											"sid": 437210049714368
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 283874124695294,
+													"parameters": {
+														"key": 83
+													}
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "Player_Collission_box",
+													"sid": 147573149925218,
+													"behaviorType": "Platform2"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Player_Collission_box",
+													"sid": 620662415988344,
+													"parameters": {
+														"instance-variable": "Crouch_State",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 147978227026620,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Player_Collission_box",
+															"sid": 739239293621656,
+															"parameters": {
+																"instance-variable": "Crouch_State"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 522088735869641
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 425553429803263,
+											"parameters": {
+												"key": 83
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player_Collission_box",
+											"sid": 521177386289020,
+											"parameters": {
+												"instance-variable": "Crouch_State",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 912480176855150
+								},
+								{
+									"eventType": "comment",
+									"text": "Dash activates if the player is holding O and the direction of the opponent. Stops the player from having dash physics regardless of direction"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 610556790139151,
+											"parameters": {
+												"key": 79
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Player_Collission_box",
+											"sid": 178550726500419,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [],
+									"sid": 118035876358066,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player_Collission_box",
+													"sid": 907152228712805,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Right\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 839494444679425,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 523079865540658,
+															"parameters": {
+																"key": 68
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_Collission_box",
+															"sid": 336169483523211,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 369536362203484
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 191143567991206,
+															"parameters": {
+																"key": 68
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_Collission_box",
+															"sid": 449428724086042,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 111623111796407
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player_Collission_box",
+													"sid": 821325598981662,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Left\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 816714636474448,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 409085607301674,
+															"parameters": {
+																"key": 65
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_Collission_box",
+															"sid": 842269345162593,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 268057039968626
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 475117646973676,
+															"parameters": {
+																"key": 65
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_Collission_box",
+															"sid": 342192218910343,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 435680566209860
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 954875969762263,
+											"parameters": {
+												"key": 79
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Player_Collission_box",
+											"sid": 130041542506425,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player_Collission_box",
+											"sid": 609396622997995,
+											"parameters": {
+												"instance-variable": "Ground_Dash_Active",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 241579743857320
+								},
+								{
+									"eventType": "comment",
+									"text": "Dashing properties. Could be changed for other characters by adding other variables "
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 436363125918320,
+											"parameters": {
+												"instance-variable": "Ground_Dash_Active"
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "CollisionBoxes",
+											"sid": 346522310936582,
+											"behaviorType": "Platform2"
+										},
+										{
+											"id": "is-jumping",
+											"objectClass": "Player_Collission_box",
+											"sid": 958975383963420,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Player_Collission_box",
+											"sid": 635414134838807,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-acceleration",
+											"objectClass": "Player_Collission_box",
+											"sid": 573914920667289,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"acceleration": "10000"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player_Collission_box",
+											"sid": 793411184642955,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"max-speed": "Player1_DashSpeed"
+											}
+										},
+										{
+											"id": "set-deceleration",
+											"objectClass": "Player_Collission_box",
+											"sid": 741558750603174,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"deceleration": "2100"
+											}
+										}
+									],
+									"sid": 839667583575097,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 302693966956684
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 871302073875322,
+													"parameters": {
+														"audio-file": "dash sound effect",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 525833973277069
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Instant acceleration when walking makes the game feel more responsive"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player_Collission_box",
+											"sid": 623365298180359,
+											"parameters": {
+												"instance-variable": "Ground_Dash_Active"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "CollisionBoxes",
+											"sid": 515158435214417,
+											"behaviorType": "Platform2"
+										},
+										{
+											"id": "is-jumping",
+											"objectClass": "Player_Collission_box",
+											"sid": 953209906506369,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Player_Collission_box",
+											"sid": 684271474962547,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-acceleration",
+											"objectClass": "Player_Collission_box",
+											"sid": 137288551743597,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"acceleration": "9999"
+											}
+										},
+										{
+											"id": "set-deceleration",
+											"objectClass": "Player_Collission_box",
+											"sid": 957510232091097,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"deceleration": "9999"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player_Collission_box",
+											"sid": 364297188685382,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"max-speed": "Player1_WalkSpeed"
+											}
+										}
+									],
+									"sid": 962883825203144
+								},
+								{
+									"eventType": "comment",
+									"text": "Idle when no key is pressed"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 220478408806641,
+											"parameters": {
+												"key": 68
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 997474239018014,
+											"parameters": {
+												"key": 65
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 713602292197129,
+											"parameters": {
+												"key": 83
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 253903574646936,
+											"parameters": {
+												"key": 85
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 117826479285894,
+											"parameters": {
+												"key": 89
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 399670580186783,
+											"parameters": {
+												"key": 73
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 190807365567071,
+											"parameters": {
+												"key": 79
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player_Collission_box",
+											"sid": 590343062245791,
+											"parameters": {
+												"instance-variable": "Curr_State",
+												"value": "\"Idle\""
+											}
+										}
+									],
+									"sid": 361161100786869,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 554449796796932
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player_Collission_box",
+											"sid": 572655095773893,
+											"parameters": {
+												"instance-variable": "Idle_State",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 351380920393122,
+									"disabled": true
+								}
+							],
+							"sid": 869622772832312
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "P2",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Code generally same for P2 but the keys are changed based on arcade controls"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 170066868356027,
+											"parameters": {
+												"instance-variable": "Move_Active"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 890853209254171,
+											"parameters": {
+												"instance-variable": "In_Hitstun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 211582105313231,
+											"parameters": {
+												"instance-variable": "In_Blockstun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 157805665701299,
+											"parameters": {
+												"instance-variable": "Is_Blocking"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 542659043935031,
+											"parameters": {
+												"instance-variable": "KOd"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 534840844896927,
+											"parameters": {
+												"variable": "RoundTransition"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 976826978662450,
+											"parameters": {
+												"variable": "LayoutIntro"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 910610986543332,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 413180764067118,
+													"disabled": true,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-right"
+													}
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 644255776164901,
+													"parameters": {
+														"key": 39
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "Player2_Collision_box",
+													"sid": 556998809583668,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 481866489397664
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 684915330256825,
+													"parameters": {
+														"key": 37
+													}
+												},
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 824887775311432,
+													"disabled": true,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-left"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "Player2_Collision_box",
+													"sid": 242889771970892,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 704221263143982
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 421857294300741,
+													"parameters": {
+														"key": 38
+													}
+												},
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 600050428650101,
+													"disabled": true,
+													"parameters": {
+														"gamepad": "0",
+														"button": "d-pad-up"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "Player2_Collision_box",
+													"sid": 241874298645170,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"control": "jump"
+													}
+												}
+											],
+											"sid": 854745819304304
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 524377033040187,
+											"parameters": {
+												"instance-variable": "In_Hitstun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 373899221835184,
+											"parameters": {
+												"key": 40
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Player2_Collision_box",
+											"sid": 998600888060541,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player2_Collision_box",
+											"sid": 119954946243099,
+											"parameters": {
+												"instance-variable": "Crouch_State",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 160467844676822,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 449303043674031,
+													"parameters": {
+														"instance-variable": "Crouch_State"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 678031096116372
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 669442608382681,
+											"parameters": {
+												"key": 40
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player2_Collision_box",
+											"sid": 730474398975936,
+											"parameters": {
+												"instance-variable": "Crouch_State",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 804754099900208
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 220038387688186,
+											"parameters": {
+												"key": 67
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Player2_Collision_box",
+											"sid": 979009879786886,
+											"behaviorType": "Platform2"
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 693579729089460,
+											"disabled": true,
+											"parameters": {
+												"gamepad": "0",
+												"button": "button-b"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 843709045887254,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player2_Collision_box",
+													"sid": 826711109452851,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Right\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 144906740935060,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 241581823241360,
+															"parameters": {
+																"key": 39
+															}
+														},
+														{
+															"id": "is-button-down",
+															"objectClass": "Gamepad",
+															"sid": 421454468595386,
+															"disabled": true,
+															"parameters": {
+																"gamepad": "0",
+																"button": "d-pad-right"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player2_Collision_box",
+															"sid": 172785928049880,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 963308632545910
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 468440455996159,
+															"parameters": {
+																"key": 39
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-button-down",
+															"objectClass": "Gamepad",
+															"sid": 579200140230131,
+															"disabled": true,
+															"parameters": {
+																"gamepad": "0",
+																"button": "d-pad-right"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player2_Collision_box",
+															"sid": 464710886910276,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 499565323644695
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player2_Collision_box",
+													"sid": 892570773377377,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Left\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 572978588388070,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 637092399734747,
+															"parameters": {
+																"key": 37
+															}
+														},
+														{
+															"id": "is-button-down",
+															"objectClass": "Gamepad",
+															"sid": 775557257731933,
+															"disabled": true,
+															"parameters": {
+																"gamepad": "0",
+																"button": "d-pad-left"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player2_Collision_box",
+															"sid": 684234403517929,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 337304405750359
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 840993327143779,
+															"parameters": {
+																"key": 37
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-button-down",
+															"objectClass": "Gamepad",
+															"sid": 838376059703335,
+															"disabled": true,
+															"parameters": {
+																"gamepad": "0",
+																"button": "d-pad-left"
+															},
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player2_Collision_box",
+															"sid": 120728132488731,
+															"parameters": {
+																"instance-variable": "Ground_Dash_Active",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 798176795488914
+												}
+											]
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 958333800028740,
+											"parameters": {
+												"key": 67
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 894374584739326,
+											"disabled": true,
+											"parameters": {
+												"gamepad": "0",
+												"button": "button-b"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Player2_Collision_box",
+											"sid": 848296326614251,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player2_Collision_box",
+											"sid": 644933431271490,
+											"parameters": {
+												"instance-variable": "Ground_Dash_Active",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 346413668311236
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 875791159605455,
+											"parameters": {
+												"instance-variable": "Ground_Dash_Active"
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "CollisionBoxes",
+											"sid": 506791763763822,
+											"behaviorType": "Platform2"
+										},
+										{
+											"id": "is-jumping",
+											"objectClass": "Player2_Collision_box",
+											"sid": 317500292645079,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Player2_Collision_box",
+											"sid": 758466327232290,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-acceleration",
+											"objectClass": "Player2_Collision_box",
+											"sid": 943932339970571,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"acceleration": "10000"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player2_Collision_box",
+											"sid": 750639341972826,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"max-speed": "P2_DashSpeed"
+											}
+										},
+										{
+											"id": "set-deceleration",
+											"objectClass": "Player2_Collision_box",
+											"sid": 621797080743042,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"deceleration": "2100"
+											}
+										}
+									],
+									"sid": 320884165422481,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 738723414610726
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 413882188260316,
+													"parameters": {
+														"audio-file": "dash sound effect",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 950269479400848
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player2_Collision_box",
+											"sid": 258387065066808,
+											"parameters": {
+												"instance-variable": "Ground_Dash_Active"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "CollisionBoxes",
+											"sid": 822387126261344,
+											"behaviorType": "Platform2"
+										},
+										{
+											"id": "is-jumping",
+											"objectClass": "Player2_Collision_box",
+											"sid": 511359791783956,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Player2_Collision_box",
+											"sid": 798526695235687,
+											"behaviorType": "Platform2",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-acceleration",
+											"objectClass": "Player2_Collision_box",
+											"sid": 265277104704855,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"acceleration": "9999"
+											}
+										},
+										{
+											"id": "set-deceleration",
+											"objectClass": "Player2_Collision_box",
+											"sid": 222858226095959,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"deceleration": "9999"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player2_Collision_box",
+											"sid": 662362762239914,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"max-speed": "P2_WalkSpeed"
+											}
+										}
+									],
+									"sid": 932941937472898
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 904639323168911,
+											"parameters": {
+												"key": 39
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 843145654905681,
+											"parameters": {
+												"key": 37
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 290750861317204,
+											"parameters": {
+												"key": 40
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 894239844735103,
+											"parameters": {
+												"key": 81
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 691187475814929,
+											"parameters": {
+												"key": 69
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 770256792866787,
+											"parameters": {
+												"key": 90
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 315091897837290,
+											"parameters": {
+												"key": 67
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player2_Collision_box",
+											"sid": 315182882504208,
+											"parameters": {
+												"instance-variable": "Idle_State",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 331476916378981,
+									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 738108927182359
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player2_Collision_box",
+											"sid": 251200616100273,
+											"parameters": {
+												"instance-variable": "Idle_State",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 918972085223456,
+									"disabled": true
+								}
+							],
+							"sid": 423024833686261
+						}
+					],
+					"sid": 175050264662712
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Dash/Jump",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "P2_Jump",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-jumping",
+											"objectClass": "Player2_Collision_box",
+											"sid": 600760102749631,
+											"behaviorType": "Platform2"
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Player2_Collision_box",
+											"sid": 164243753865918,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [],
+									"sid": 962837243213825,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Adjusts air speed based on dash or walk speed."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 974681011627031,
+													"parameters": {
+														"instance-variable": "Ground_Dash_Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player2_Collision_box",
+													"sid": 300083226764368,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"max-speed": "Player1_DashSpeed+300"
+													}
+												}
+											],
+											"sid": 112120583648528
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 861160608059849,
+													"parameters": {
+														"instance-variable": "Ground_Dash_Active"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player2_Collision_box",
+													"sid": 483079872221681,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"max-speed": "Player1_WalkSpeed+300"
+													}
+												}
+											],
+											"sid": 815496444915530
+										},
+										{
+											"eventType": "comment",
+											"text": "Not instant acceleration in the air makes air drift and jumping slightly more comital as you can instantly drift out of anti air range. No deceleration makes the arc perfectly parabolic"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 720086349581642,
+													"parameters": {
+														"instance-variable": "Idle_State"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-deceleration",
+													"objectClass": "Player2_Collision_box",
+													"sid": 915286172796849,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"deceleration": "0"
+													}
+												},
+												{
+													"id": "set-acceleration",
+													"objectClass": "Player2_Collision_box",
+													"sid": 562274208282864,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"acceleration": "2500"
+													}
+												}
+											],
+											"sid": 989774764120207,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player2_Collision_box",
+															"sid": 103211341522019,
+															"parameters": {
+																"instance-variable": "FacingDirection",
+																"comparison": 0,
+																"value": "\"Right\""
+															}
+														},
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 606621346919560,
+															"parameters": {
+																"key": 39
+															}
+														},
+														{
+															"id": "is-button-down",
+															"objectClass": "Gamepad",
+															"sid": 505870482595916,
+															"disabled": true,
+															"parameters": {
+																"gamepad": "0",
+																"button": "d-pad-right"
+															}
+														},
+														{
+															"id": "is-on-floor",
+															"objectClass": "Player2_Collision_box",
+															"sid": 843173435538052,
+															"behaviorType": "Platform2"
+														}
+													],
+													"actions": [
+														{
+															"id": "set-vector-x",
+															"objectClass": "Player2_Collision_box",
+															"sid": 961722811583198,
+															"behaviorType": "Platform2",
+															"parameters": {
+																"vector-x": "Player2_Collision_box.Platform2.VectorX+300"
+															}
+														}
+													],
+													"sid": 169541935905049
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player2_Collision_box",
+															"sid": 652007616742003,
+															"parameters": {
+																"instance-variable": "FacingDirection",
+																"comparison": 0,
+																"value": "\"Left\""
+															}
+														},
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 651442800446043,
+															"parameters": {
+																"key": 37
+															}
+														},
+														{
+															"id": "is-button-down",
+															"objectClass": "Gamepad",
+															"sid": 681177364151698,
+															"disabled": true,
+															"parameters": {
+																"gamepad": "0",
+																"button": "d-pad-left"
+															}
+														},
+														{
+															"id": "is-on-floor",
+															"objectClass": "Player2_Collision_box",
+															"sid": 458617651096070,
+															"behaviorType": "Platform2"
+														}
+													],
+													"actions": [
+														{
+															"id": "set-vector-x",
+															"objectClass": "Player2_Collision_box",
+															"sid": 563858370508428,
+															"behaviorType": "Platform2",
+															"parameters": {
+																"vector-x": "Player2_Collision_box.Platform2.VectorX-300"
+															}
+														}
+													],
+													"sid": 682638012549975
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "The drift is larger if the player neutral jumps. Forward jumps should be more comittal, but neutral jumps shouldn't allow the player to drift in from an absurd range"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-jump",
+													"objectClass": "Player2_Collision_box",
+													"sid": 307984144598196,
+													"behaviorType": "Platform2"
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 166249006877023,
+													"parameters": {
+														"instance-variable": "Idle_State"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-deceleration",
+													"objectClass": "Player2_Collision_box",
+													"sid": 690220296276717,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"deceleration": "0"
+													}
+												},
+												{
+													"id": "set-acceleration",
+													"objectClass": "Player2_Collision_box",
+													"sid": 487027882241940,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"acceleration": "3500"
+													}
+												}
+											],
+											"sid": 869223215169203
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 300984470356007
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "P1_Jump",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-jumping",
+											"objectClass": "Player_Collission_box",
+											"sid": 185367212739542,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [],
+									"sid": 774637444404027,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Adjusts air speed based on dash or walk speed."
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_Collission_box",
+													"sid": 564909461772864,
+													"parameters": {
+														"instance-variable": "Ground_Dash_Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player_Collission_box",
+													"sid": 294028274348999,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"max-speed": "Player1_DashSpeed+300"
+													}
+												}
+											],
+											"sid": 591382247927010
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_Collission_box",
+													"sid": 419976872849193,
+													"parameters": {
+														"instance-variable": "Ground_Dash_Active"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-max-speed",
+													"objectClass": "Player_Collission_box",
+													"sid": 121712710892269,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"max-speed": "Player1_WalkSpeed+300"
+													}
+												}
+											],
+											"sid": 397091041134339
+										},
+										{
+											"eventType": "comment",
+											"text": "Not instant acceleration in the air makes air drift and jumping slightly more comital as you can instantly drift out of anti air range. No deceleration makes the arc perfectly parabolic"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_Collission_box",
+													"sid": 638236050746013,
+													"parameters": {
+														"instance-variable": "Idle_State"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-deceleration",
+													"objectClass": "Player_Collission_box",
+													"sid": 805237206997722,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"deceleration": "0"
+													}
+												},
+												{
+													"id": "set-acceleration",
+													"objectClass": "Player_Collission_box",
+													"sid": 546976165011940,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"acceleration": "2500"
+													}
+												}
+											],
+											"sid": 882516104653460,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player_Collission_box",
+															"sid": 498149158019511,
+															"parameters": {
+																"instance-variable": "FacingDirection",
+																"comparison": 0,
+																"value": "\"Right\""
+															}
+														},
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 460376289618455,
+															"parameters": {
+																"key": 68
+															}
+														},
+														{
+															"id": "is-on-floor",
+															"objectClass": "Player_Collission_box",
+															"sid": 220700668768044,
+															"behaviorType": "Platform2"
+														}
+													],
+													"actions": [
+														{
+															"id": "set-vector-x",
+															"objectClass": "Player_Collission_box",
+															"sid": 512847712080092,
+															"behaviorType": "Platform2",
+															"parameters": {
+																"vector-x": "Player_Collission_box.Platform2.VectorX+300"
+															}
+														}
+													],
+													"sid": 147223688541441
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Player_Collission_box",
+															"sid": 234026310938996,
+															"parameters": {
+																"instance-variable": "FacingDirection",
+																"comparison": 0,
+																"value": "\"Left\""
+															}
+														},
+														{
+															"id": "key-is-down",
+															"objectClass": "Keyboard",
+															"sid": 667174254435161,
+															"parameters": {
+																"key": 65
+															}
+														},
+														{
+															"id": "is-on-floor",
+															"objectClass": "Player_Collission_box",
+															"sid": 495677425364477,
+															"behaviorType": "Platform2"
+														}
+													],
+													"actions": [
+														{
+															"id": "set-vector-x",
+															"objectClass": "Player_Collission_box",
+															"sid": 728065602493469,
+															"behaviorType": "Platform2",
+															"parameters": {
+																"vector-x": "Player_Collission_box.Platform2.VectorX-300"
+															}
+														}
+													],
+													"sid": 415622673587636
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "The drift is larger if the player neutral jumps. Forward jumps should be more comittal, but neutral jumps shouldn't allow the player to drift in from an absurd range"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-jump",
+													"objectClass": "Player_Collission_box",
+													"sid": 665815486108939,
+													"behaviorType": "Platform2"
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_Collission_box",
+													"sid": 927022958480128,
+													"parameters": {
+														"instance-variable": "Idle_State"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-deceleration",
+													"objectClass": "Player_Collission_box",
+													"sid": 728917946354929,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"deceleration": "0"
+													}
+												},
+												{
+													"id": "set-acceleration",
+													"objectClass": "Player_Collission_box",
+													"sid": 714109684036757,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"acceleration": "3500"
+													}
+												}
+											],
+											"sid": 258913005391733
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 782595415202469
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "AirDash",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "P2_Airdash",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-floor",
+													"objectClass": "Player2_Collision_box",
+													"sid": 696097292765842,
+													"behaviorType": "Platform2",
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 451003319776801,
+													"parameters": {
+														"instance-variable": "BCK_Airdash_Active"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player2_Collision_box",
+													"sid": 904860374333908,
+													"parameters": {
+														"instance-variable": "FWD_Air_Dash_Active"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 400467169865992,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "Switch back to keyboard. On C pressed"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 915765226578439,
+															"parameters": {
+																"key": 67
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 400863117962279,
+															"parameters": {
+																"audio-file": "burst sound effect",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
+															}
+														}
+													],
+													"sid": 787340645514385,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player2_Collision_box",
+																	"sid": 886549936310868,
+																	"parameters": {
+																		"instance-variable": "FacingDirection",
+																		"comparison": 0,
+																		"value": "\"Right\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 684626578951782,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 935371219586278,
+																			"parameters": {
+																				"key": 39
+																			}
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 322682535813483,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-right"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 599148390675229,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 997298830488190
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 714966867153230,
+																			"parameters": {
+																				"key": 39
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 753661491333964,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-right"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 345334516888135,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 242507445408258
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 648724073287472,
+																			"parameters": {
+																				"key": 37
+																			}
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 527313313299247,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-left"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 619633169643551,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 577434539113065
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 636708787383391,
+																			"parameters": {
+																				"key": 37
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 339439891116859,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-left"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 303907154351915,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 739005867382427
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player2_Collision_box",
+																	"sid": 809857550650830,
+																	"parameters": {
+																		"instance-variable": "FacingDirection",
+																		"comparison": 0,
+																		"value": "\"Left\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 917663762832017,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 296076435293963,
+																			"parameters": {
+																				"key": 37
+																			}
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 286602566422431,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-left"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 312375898785752,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 356019160392486
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 230796593477756,
+																			"parameters": {
+																				"key": 37
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 961869776593107,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-left"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 501975274318980,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 591820001183903
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 730586408916567,
+																			"parameters": {
+																				"key": 39
+																			}
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 495508575769757,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-right"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 945574373857796,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 262434457935182
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 267067830890920,
+																			"parameters": {
+																				"key": 39
+																			},
+																			"isInverted": true
+																		},
+																		{
+																			"id": "is-button-down",
+																			"objectClass": "Gamepad",
+																			"sid": 748681393700619,
+																			"disabled": true,
+																			"parameters": {
+																				"gamepad": "0",
+																				"button": "d-pad-right"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player2_Collision_box",
+																			"sid": 731988956675331,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 650286147609363
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 137337442320063,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Player2_Collision_box",
+															"sid": 376283806866328,
+															"parameters": {
+																"instance-variable": "FWD_Air_Dash_Active"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 379262836262040
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "sasGame_manager",
+															"sid": 491968620695479,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": ".2",
+																"type": "once",
+																"tag": "\"P2_AirDash\""
+															}
+														}
+													],
+													"sid": 759756647496179
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Player2_Collision_box",
+															"sid": 648560138464410,
+															"parameters": {
+																"instance-variable": "BCK_Airdash_Active"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 675569626087818
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "sasGame_manager",
+															"sid": 315400499479712,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": ".2",
+																"type": "once",
+																"tag": "\"P2_AirDash\""
+															}
+														}
+													],
+													"sid": 793186723184292
+												}
+											],
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "sasGame_manager",
+													"sid": 937807068538021,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"P2_AirDash\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-y",
+													"objectClass": "Player2_Collision_box",
+													"sid": 289034370250374,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"vector-y": "0"
+													}
+												},
+												{
+													"id": "set-velocity",
+													"objectClass": "Player2_Collision_box",
+													"sid": 390817089597696,
+													"behaviorType": "Physics",
+													"parameters": {
+														"x-component": "Player2_Collision_box.Platform2.VectorX",
+														"y-component": "0"
+													}
+												}
+											],
+											"sid": 134867122002408
+										}
+									],
+									"sid": 591255289226241
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "P1_AirDash",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Conditions make it so you can only air dash once while in the air"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-floor",
+													"objectClass": "Player_Collission_box",
+													"sid": 922276394977817,
+													"behaviorType": "Platform2",
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_Collission_box",
+													"sid": 146443576276236,
+													"parameters": {
+														"instance-variable": "BCK_Airdash_Active"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_Collission_box",
+													"sid": 625662740025360,
+													"parameters": {
+														"instance-variable": "FWD_Air_Dash_Active"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [],
+											"sid": 760336935825155,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-key-pressed",
+															"objectClass": "Keyboard",
+															"sid": 614677662154577,
+															"parameters": {
+																"key": 79
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 571270246921092,
+															"parameters": {
+																"audio-file": "burst sound effect",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
+															}
+														}
+													],
+													"sid": 536854202158211,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player_Collission_box",
+																	"sid": 161530203932715,
+																	"parameters": {
+																		"instance-variable": "FacingDirection",
+																		"comparison": 0,
+																		"value": "\"Right\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 660061394949070,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 989305002028056,
+																			"parameters": {
+																				"key": 68
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 186754060431188,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 915702845153809
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 866020819409493,
+																			"parameters": {
+																				"key": 68
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 689282686209415,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 930529591371260
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 328895364021207,
+																			"parameters": {
+																				"key": 65
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 981761033353988,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 905761908466053
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 973001383539388,
+																			"parameters": {
+																				"key": 65
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 824328359838859,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 330939625711283
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Player_Collission_box",
+																	"sid": 506755416619856,
+																	"parameters": {
+																		"instance-variable": "FacingDirection",
+																		"comparison": 0,
+																		"value": "\"Left\""
+																	}
+																}
+															],
+															"actions": [],
+															"sid": 102071256291038,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 398210815410715,
+																			"parameters": {
+																				"key": 65
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 589363102405879,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 402040825003856
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 212227829058517,
+																			"parameters": {
+																				"key": 65
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 160784404910063,
+																			"parameters": {
+																				"instance-variable": "FWD_Air_Dash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 618133618752880
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 523415990959129,
+																			"parameters": {
+																				"key": 68
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 771702147490185,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "true"
+																			}
+																		}
+																	],
+																	"sid": 120813893250401
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 126203252541718,
+																			"parameters": {
+																				"key": 68
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-boolean-instvar",
+																			"objectClass": "Player_Collission_box",
+																			"sid": 219746053202919,
+																			"parameters": {
+																				"instance-variable": "BCK_Airdash_Active",
+																				"value": "false"
+																			}
+																		}
+																	],
+																	"sid": 574525602091793
+																}
+															]
+														}
+													]
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "Timer makes the airdash perfectly horizontal"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 706975406515255,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Player_Collission_box",
+															"sid": 950529647103890,
+															"parameters": {
+																"instance-variable": "FWD_Air_Dash_Active"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 302157892377305
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "sasGame_manager",
+															"sid": 930828467572778,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": ".2",
+																"type": "once",
+																"tag": "\"P1_AirDash\""
+															}
+														}
+													],
+													"sid": 151841004975097
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Player_Collission_box",
+															"sid": 160954077446576,
+															"parameters": {
+																"instance-variable": "BCK_Airdash_Active"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 200200780579038
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "sasGame_manager",
+															"sid": 508974226838786,
+															"behaviorType": "Timer",
+															"parameters": {
+																"duration": ".2",
+																"type": "once",
+																"tag": "\"P1_AirDash\""
+															}
+														}
+													],
+													"sid": 954759591347239
+												}
+											],
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "sasGame_manager",
+													"sid": 507703942157828,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"P1_AirDash\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-y",
+													"objectClass": "Player_Collission_box",
+													"sid": 374228777655519,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"vector-y": "0"
+													}
+												},
+												{
+													"id": "set-velocity",
+													"objectClass": "Player_Collission_box",
+													"sid": 649265342831597,
+													"behaviorType": "Physics",
+													"parameters": {
+														"x-component": "Player_Collission_box.Platform2.VectorX",
+														"y-component": "0"
+													}
+												}
+											],
+											"sid": 100388329088913
+										}
+									],
+									"sid": 766122561662953
+								},
+								{
+									"eventType": "comment",
+									"text": "Airdash speed properties"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "CollisionBoxes",
+											"sid": 848624143989657,
+											"parameters": {
+												"instance-variable": "FWD_Air_Dash_Active"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-max-speed",
+											"objectClass": "CollisionBoxes",
+											"sid": 190318208404841,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"max-speed": "1200"
+											}
+										}
+									],
+									"sid": 461501130984436,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "CollisionBoxes",
+											"sid": 257340899224820,
+											"parameters": {
+												"instance-variable": "BCK_Airdash_Active"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-max-speed",
+											"objectClass": "CollisionBoxes",
+											"sid": 888565165468527,
+											"behaviorType": "Platform2",
+											"parameters": {
+												"max-speed": "900"
+											}
+										}
+									],
+									"sid": 479203509482138
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "CollisionBoxes",
+											"sid": 660355275287535,
+											"parameters": {
+												"instance-variable": "FWD_Air_Dash_Active"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 245038050741327
+										}
+									],
+									"actions": [],
+									"sid": 255885449997475,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "CollisionBoxes",
+													"sid": 374187349549107,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Right\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "CollisionBoxes",
+													"sid": 768303865279970,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"vector-x": "1200"
+													}
+												}
+											],
+											"sid": 327261162621106
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "CollisionBoxes",
+													"sid": 674889653824345,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Left\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "CollisionBoxes",
+													"sid": 807156034299480,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"vector-x": "-1200"
+													}
+												}
+											],
+											"sid": 787344348197611
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "CollisionBoxes",
+											"sid": 148881142255519,
+											"parameters": {
+												"instance-variable": "BCK_Airdash_Active"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 813733214109369
+										}
+									],
+									"actions": [],
+									"sid": 835305810987125,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "CollisionBoxes",
+													"sid": 712687369467177,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Left\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "CollisionBoxes",
+													"sid": 986075321381792,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"vector-x": "900"
+													}
+												}
+											],
+											"sid": 214077773324201
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "CollisionBoxes",
+													"sid": 633965821022765,
+													"parameters": {
+														"instance-variable": "FacingDirection",
+														"comparison": 0,
+														"value": "\"Right\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-x",
+													"objectClass": "CollisionBoxes",
+													"sid": 275288432892533,
+													"behaviorType": "Platform2",
+													"parameters": {
+														"vector-x": "-900"
+													}
+												}
+											],
+											"sid": 704573106034325
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Airdash resets on contact with the ground"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-floor",
+											"objectClass": "CollisionBoxes",
+											"sid": 550599561705582,
+											"behaviorType": "Platform2"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "CollisionBoxes",
+											"sid": 502318872776407,
+											"parameters": {
+												"instance-variable": "FWD_Air_Dash_Active",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "CollisionBoxes",
+											"sid": 427032121382624,
+											"parameters": {
+												"instance-variable": "BCK_Airdash_Active",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 499751701836710
+								}
+							],
+							"sid": 785253411737678
+						},
+						{
+							"eventType": "comment",
+							"text": "Changes walk physics back to default on the ground"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-jumping",
+									"objectClass": "CollisionBoxes",
+									"sid": 115940897858557,
+									"behaviorType": "Platform2",
+									"isInverted": true
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "CollisionBoxes",
+									"sid": 783664077598683,
+									"behaviorType": "Platform2"
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "CollisionBoxes",
+									"sid": 499336193655654,
+									"parameters": {
+										"instance-variable": "Ground_Dash_Active"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-acceleration",
+									"objectClass": "CollisionBoxes",
+									"sid": 317242277256400,
+									"behaviorType": "Platform2",
+									"parameters": {
+										"acceleration": "9999"
+									}
+								},
+								{
+									"id": "set-deceleration",
+									"objectClass": "CollisionBoxes",
+									"sid": 119010662847708,
+									"behaviorType": "Platform2",
+									"parameters": {
+										"deceleration": "9999"
+									}
+								}
+							],
+							"sid": 185923232199954
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-falling",
+									"objectClass": "CollisionBoxes",
+									"sid": 335774489301338,
+									"behaviorType": "Platform2"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-gravity",
+									"objectClass": "CollisionBoxes",
+									"sid": 398938167129582,
+									"behaviorType": "Platform2",
+									"parameters": {
+										"gravity": "5000"
+									}
+								}
+							],
+							"sid": 899661060230786
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 671587671350695
+								}
+							],
+							"actions": [
+								{
+									"id": "set-gravity",
+									"objectClass": "CollisionBoxes",
+									"sid": 947973225316338,
+									"behaviorType": "Platform2",
+									"parameters": {
+										"gravity": "14000"
+									}
+								}
+							],
+							"sid": 923190456639441
+						},
+						{
+							"eventType": "comment",
+							"text": "Makes the player instantly accelerate forward if dashing after walking backward. No awkward waiting for the acceleration to override the backward velocity"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "CollisionBoxes",
+									"sid": 135417404649125,
+									"parameters": {
+										"instance-variable": "Ground_Dash_Active"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 345414182939497
+								}
+							],
+							"actions": [
+								{
+									"id": "set-vector-x",
+									"objectClass": "CollisionBoxes",
+									"sid": 118861437270031,
+									"behaviorType": "Platform2",
+									"parameters": {
+										"vector-x": "0"
+									}
+								}
+							],
+							"sid": 334778965238488
+						}
+					],
+					"sid": 774193687371182
+				}
+			],
+			"sid": 942628431701483
+		}
+	],
+	"sid": 429928547853110
+}

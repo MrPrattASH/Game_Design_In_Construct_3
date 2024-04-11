@@ -1,0 +1,49 @@
+{
+	"name": "aeSeeSaw",
+	"plugin-id": "Sprite",
+	"sid": 450359114768688,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 438574301461166
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 157280998358575
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1090,
+						"height": 265,
+						"originX": 0.5036697247706422,
+						"originY": 0.7037735849056603,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 128643,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 222498967178808,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

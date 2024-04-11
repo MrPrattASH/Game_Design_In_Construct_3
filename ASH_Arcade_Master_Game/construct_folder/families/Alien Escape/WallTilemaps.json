@@ -1,0 +1,13 @@
+{
+	"name": "WallTilemaps",
+	"plugin-id": "Tilemap",
+	"sid": 450003986463164,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"aeWallTilemap",
+		"aeWallTilemap2",
+		"aeWallTilemap3"
+	]
+}

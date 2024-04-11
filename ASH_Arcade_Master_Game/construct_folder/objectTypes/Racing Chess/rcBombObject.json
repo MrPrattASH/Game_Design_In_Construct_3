@@ -1,0 +1,66 @@
+{
+	"name": "rcBombObject",
+	"plugin-id": "Sprite",
+	"sid": 180187988115092,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7579724,
+						"collisionPoly": {
+							"points": [
+								0.695828125,
+								0.32624999999999993,
+								0.808,
+								0.684,
+								0.796,
+								0.724,
+								0.756,
+								0.804,
+								0.644,
+								0.904,
+								0.448,
+								0.948,
+								0.336,
+								0.948,
+								0.284,
+								0.924,
+								0.176,
+								0.776,
+								0.152,
+								0.716,
+								0.152,
+								0.508,
+								0.23242187500000003,
+								0.34424999999999994
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 225874877541513,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

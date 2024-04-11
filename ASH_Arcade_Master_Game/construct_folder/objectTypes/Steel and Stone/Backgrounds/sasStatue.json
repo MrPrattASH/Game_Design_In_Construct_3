@@ -1,0 +1,52 @@
+{
+	"name": "sasStatue",
+	"plugin-id": "Sprite",
+	"sid": 895625253703407,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 111,
+						"height": 227,
+						"originX": 2.981981981981982,
+						"originY": 0.8370044052863436,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9383391,
+						"collisionPoly": {
+							"points": [
+								0.5765765765765766,
+								0.03524229074889868,
+								0.7927927927927928,
+								0.19383259911894274,
+								0.954954954954955,
+								0.977973568281938,
+								0.02702702702702703,
+								0.977973568281938,
+								0.1891891891891892,
+								0.19383259911894274
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 973064541285540,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

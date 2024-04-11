@@ -1,0 +1,50 @@
+{
+	"name": "avwRetro_backround",
+	"plugin-id": "Sprite",
+	"sid": 518776024268292,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8536891,
+						"collisionPoly": {
+							"points": [
+								0.082875,
+								0.08528124999999999,
+								0.7947812500000001,
+								0.15153125,
+								0.8287187499999998,
+								0.8671562499999999,
+								0.12515625,
+								0.84796875
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 167847310616865,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,3482 @@
+{
+	"name": "rcGame Sheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "variable",
+			"name": "TileSize",
+			"type": "number",
+			"initialValue": "64",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 463899503090662
+		},
+		{
+			"eventType": "variable",
+			"name": "TurnActive",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 148202278018486
+		},
+		{
+			"eventType": "variable",
+			"name": "LapCount",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 399537052341098
+		},
+		{
+			"eventType": "variable",
+			"name": "CheckpointCount",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 878664026868002
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 140138872022958
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 105942602997538,
+					"parameters": {
+						"scale": "1.5"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 431056698812285
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 405704609080067,
+					"parameters": {
+						"audio-file": "GameIntro",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"GameIntro\""
+					}
+				},
+				{
+					"callFunction": "TurnOver",
+					"sid": 752120636224542
+				}
+			],
+			"sid": 647567600854891
+		},
+		{
+			"eventType": "comment",
+			"text": "\"Turn\" means the phase where players are choosing their action. \"Turn over\" is the phase where players are doing their chosen action"
+		},
+		{
+			"functionName": "TurnStart",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "rcPlayer",
+					"sid": 864353243131275,
+					"parameters": {
+						"instance-variable": "Crashing",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "rcDummy",
+					"sid": 446627347333738,
+					"parameters": {
+						"instance-variable": "Crashing",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "rcPlayer",
+					"sid": 508516240251096,
+					"parameters": {
+						"instance-variable": "TakingPowerup",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "rcTurnOptions",
+					"sid": 625445458627614,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "rcInputFont",
+					"sid": 124945997980923,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "rcPowerupIndicator",
+					"sid": 885062882910322,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 965729415400014,
+					"parameters": {
+						"variable": "TurnActive",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 984912946982046,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-random-instance",
+							"objectClass": "System",
+							"sid": 911113382874398,
+							"parameters": {
+								"object": "rcPowerupSpawnPoint"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "spawn random object from the PowerupPickup Family"
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "rcPowerupSpawnPoint",
+							"sid": 285378492116820,
+							"parameters": {
+								"object": "PowerupPickup",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 624008052259935
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 779355748684694,
+							"parameters": {
+								"object": "rcTurnOptions"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "SetMenuState",
+							"objectClass": "rcTurnOptions",
+							"sid": 901886938702827,
+							"parameters": [
+								"\"Home\"",
+								"rcTurnOptions.ID"
+							]
+						}
+					],
+					"sid": 453098956370689
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 353750101868262,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"callFunction": "TurnOver",
+							"sid": 416511685255777
+						}
+					],
+					"sid": 936463978416340
+				}
+			]
+		},
+		{
+			"functionName": "TurnOver",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 604872181476065,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 929884193013981,
+							"parameters": {
+								"object": "rcPlayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"customAction": "DoAction",
+							"objectClass": "rcPlayer",
+							"sid": 105532209134284
+						}
+					],
+					"sid": 772969898342823
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-parent",
+							"objectClass": "rcParticles",
+							"sid": 393348925492828,
+							"parameters": {
+								"parent": "MovingObjects",
+								"which": "own"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-timeout",
+							"objectClass": "rcParticles",
+							"sid": 145756026097011,
+							"parameters": {
+								"timeout": "distance(0,0, MovingObjects.XVelocity, MovingObjects.YVelocity)*0.3"
+							}
+						}
+					],
+					"sid": 831982044433405
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 411742082650105,
+							"parameters": {
+								"object": "MovingObjects"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "MovingObjects",
+							"sid": 151725142002627,
+							"parameters": {
+								"x": "round(Self.X/TileSize)*TileSize",
+								"y": "round(Self.Y/TileSize)*TileSize"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "MovingObjects",
+							"sid": 658092564153255,
+							"parameters": {
+								"angle": "angle(0,0,Self.XVelocity, Self.YVelocity) + 90"
+							}
+						}
+					],
+					"sid": 649649512028188
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Round Position to nearest tile, incase slight differences in movement add up"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "rcTurnOptions",
+							"sid": 271401439567437,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "rcInputFont",
+							"sid": 531277564276676,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "rcPowerupIndicator",
+							"sid": 197804770393369,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 108246654539952,
+							"parameters": {
+								"variable": "TurnActive",
+								"value": "false"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 259068853473156,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"callFunction": "TurnStart",
+							"sid": 299808324280119
+						}
+					],
+					"sid": 104102595767072
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Input",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 979618777202017,
+							"parameters": {
+								"variable": "TurnActive"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 880544672130496,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "ID = 0 filters for only Player 1 menu"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 991578402340783,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 395357176921094,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 169006062815462,
+											"parameters": {
+												"key": 69
+											}
+										}
+									],
+									"actions": [],
+									"sid": 349929705442244,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 925982422166056,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 9 = Take Powerup"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 464921880591363,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "9"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 763159290991417,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 758052117895515
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 833984729526230,
+											"parameters": {
+												"key": 90
+											}
+										}
+									],
+									"actions": [],
+									"sid": 287532972892813,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 755611559628882,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 220626153253130,
+													"parameters": [
+														"\"UsePowerup\"",
+														"0"
+													]
+												}
+											],
+											"sid": 805855742763274
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "C is always back"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 963805142427508,
+											"parameters": {
+												"key": 67
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "SetMenuState",
+											"objectClass": "rcTurnOptions",
+											"sid": 191719864131652,
+											"parameters": [
+												"\"Home\"",
+												"0"
+											]
+										}
+									],
+									"sid": 119877373957777
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 709621792967674,
+											"parameters": {
+												"key": 38
+											}
+										}
+									],
+									"actions": [],
+									"sid": 228889800795230,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 714510682849458,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 5 = Use Powerup Up"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 365392497892236,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "5"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 784985983528875,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 303321804781622
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 246824087097226,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 1 = Move Up"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 206562390722700,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "1"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 876595616686212,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 732644411619068
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 145648931466064,
+											"parameters": {
+												"key": 37
+											}
+										}
+									],
+									"actions": [],
+									"sid": 246642215482703,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 281684353725800,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 7 = Use Powerup Left"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 637949158122474,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "7"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 761679569575194,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 120880682472654
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 207891021195471,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 3 = Move Left"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 205390803141098,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "3"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 218137977221380,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 776605181012855
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 511260408969822,
+											"parameters": {
+												"key": 40
+											}
+										}
+									],
+									"actions": [],
+									"sid": 348619550257463,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 613038321821177,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 6 = Use Powerup Down"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 984777435101622,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "6"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 643871434377671,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 654602757098593
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 617662808743251,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 2 = Move Down"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 657924228055615,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "2"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 230995299745066,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 673494239312216
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 432934705758547,
+											"parameters": {
+												"key": 39
+											}
+										}
+									],
+									"actions": [],
+									"sid": 611932995906787,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 332359960608745,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 8 = Use Powerup Right"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 507911497215239,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "8"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 217907790648233,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 620064431949810
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 589819868587080,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 4 = Move Right"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 695423437847380,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "4"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 819616618422190,
+													"parameters": [
+														"\"ActionSelected\"",
+														"0"
+													]
+												}
+											],
+											"sid": 699629306575714
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "ID = 1 filters for only Player 2 menu"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 840875276138914,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 396301005098517,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 995144526948118,
+											"parameters": {
+												"key": 85
+											}
+										}
+									],
+									"actions": [],
+									"sid": 583741689084796,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 311754010735428,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 9 = Take Powerup"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 477035832279667,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "9"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 494420394442577,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 165158950091992
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 111731132171284,
+											"parameters": {
+												"key": 73
+											}
+										}
+									],
+									"actions": [],
+									"sid": 697976102670110,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 924833759207712,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 829449339849912,
+													"parameters": [
+														"\"UsePowerup\"",
+														"1"
+													]
+												}
+											],
+											"sid": 820256977049859
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "O is always back"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 513440376830238,
+											"parameters": {
+												"key": 79
+											}
+										}
+									],
+									"actions": [
+										{
+											"customAction": "SetMenuState",
+											"objectClass": "rcTurnOptions",
+											"sid": 520879794860354,
+											"parameters": [
+												"\"Home\"",
+												"1"
+											]
+										}
+									],
+									"sid": 115546040753594
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 268335870870318,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [],
+									"sid": 706144717404924,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 568505506000994,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 5 = Use Powerup Up"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 903188558584680,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "5"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 950938007602487,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 974388345296588
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 909345658001327,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 1 = Move Up"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 762201182204738,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "1"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 634374702188809,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 167103388278877
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 760390883667507,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 406707501421286,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 341846439404138,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 7 = Use Powerup Left"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 138407451424693,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "7"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 584402284420029,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 956450487546235
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 636014476590972,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 3 = Move Left"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 728597472279529,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "3"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 398637033417525,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 455504857790813
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 647527832993761,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [],
+									"sid": 659298925912238,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 491528849673354,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 6 = Use Powerup Down"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 686120527792934,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "6"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 511203604978326,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 144541376606607
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 533542648037892,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 2 = Move Down"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 652359264463536,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "2"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 444769224789124,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 908939641428994
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 427138569989249,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 557049948170666,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 523765498245129,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"UsePowerup\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 8 = Use Powerup Right"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 496193504366640,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "8"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 305470350611484,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 241885105027853
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "rcTurnOptions",
+													"sid": 568255019780852,
+													"parameters": {
+														"instance-variable": "MenuState",
+														"comparison": 0,
+														"value": "\"Home\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"type": "comment",
+													"text": "Action 4 = Move Right"
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "rcTurnOptions",
+													"sid": 290521271836216,
+													"parameters": {
+														"instance-variable": "Action",
+														"value": "4"
+													}
+												},
+												{
+													"customAction": "SetMenuState",
+													"objectClass": "rcTurnOptions",
+													"sid": 532448342590375,
+													"parameters": [
+														"\"ActionSelected\"",
+														"1"
+													]
+												}
+											],
+											"sid": 410421293827707
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 318065349544172
+		},
+		{
+			"aceType": "action",
+			"aceName": "SetMenuState",
+			"objectClass": "rcTurnOptions",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "NewMenuState",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 444056993206271
+				},
+				{
+					"name": "ID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 638629746587922
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "rcTurnOptions",
+					"sid": 968444140530771,
+					"parameters": {
+						"instance-variable": "MenuState",
+						"value": "NewMenuState"
+					}
+				}
+			],
+			"sid": 826048627082869,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 249144432093092,
+							"parameters": {
+								"variable": "NewMenuState",
+								"comparison": 0,
+								"value": "\"Home\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "rcTurnOptions",
+							"sid": 127911306022651,
+							"parameters": {
+								"instance-variable": "Action",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 171547480964762,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Get matching player and input font"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcPlayer",
+									"sid": 631934646143340,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "ID"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcInputFont",
+									"sid": 707693761847113,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "ID"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 420364053558354,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 773378373721367,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "rcTurnOptions",
+											"sid": 388093735089089,
+											"parameters": {
+												"text": "\"Choose Action:\"&newline&\"(   ) Take Powerup\"&newline&\"(   ) Up  (   ) Left  (   ) Down  (   ) Right\""
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "rcInputFont",
+											"sid": 816808795212353,
+											"parameters": {
+												"text": "\"p\"&newline&\"^                <                   v                         >\""
+											}
+										}
+									],
+									"sid": 642728424740343
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 365170971386642,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "0"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "rcTurnOptions",
+											"sid": 638961322568319,
+											"parameters": {
+												"text": "\"Choose Action:\"&newline&\"(   ) Take Powerup (   ) Use Powerup\"&newline&\"(   ) Up  (   ) Left  (   ) Down  (   ) Right\""
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "rcInputFont",
+											"sid": 101258496878296,
+											"parameters": {
+												"text": "\"p                                                u\"&newline&\"^                <                   v                         >\""
+											}
+										}
+									],
+									"sid": 734265188033799
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 824679072968555
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 690421942987467,
+							"parameters": {
+								"variable": "NewMenuState",
+								"comparison": 0,
+								"value": "\"ActionSelected\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "rcTurnOptions",
+							"sid": 901550837712490,
+							"parameters": {
+								"text": "\"Action Selected: \"&chooseindex(Self.Action, \"None\", \"Accelerate Up\", \"Accelerate Down\", \"Accelerate Left\", \"Accelerate Right\", \"Throw Powerup Up\", \"Throw Powerup Down\", \"Throw Powerup Left\", \"Throw Powerup Right\", \"Pick up Powerup\")&newline&(\"(   ) Redo\")"
+							}
+						}
+					],
+					"sid": 113937151891876,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "get matching input font"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcInputFont",
+									"sid": 322527250830199,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "ID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "rcInputFont",
+									"sid": 434943518818459,
+									"parameters": {
+										"text": "\"y\""
+									}
+								}
+							],
+							"sid": 103086784855100
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 226190974676703
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 489464092549491,
+							"parameters": {
+								"variable": "NewMenuState",
+								"comparison": 0,
+								"value": "\"UsePowerup\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "rcTurnOptions",
+							"sid": 492025233255208,
+							"parameters": {
+								"text": "\"Choose Direction:\"&newline&\n\"(   ) Up  (   ) Left  (   ) Down  (   ) Right\"&newline&\n\"(   ) Back\""
+							}
+						}
+					],
+					"sid": 426387565153822,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Get matching input font"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcInputFont",
+									"sid": 911287550748989,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "ID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "rcInputFont",
+									"sid": 812608713161259,
+									"parameters": {
+										"text": "\"^                <                   v                         >\"&newline&\n\"y\""
+									}
+								}
+							],
+							"sid": 335872604632330
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 185305935808157
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 645584963615528,
+					"parameters": {
+						"variable": "TurnActive"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "change position by velocity * tilesize * dt"
+				},
+				{
+					"type": "comment",
+					"text": "velocity                              would move: pixels each frame"
+				},
+				{
+					"type": "comment",
+					"text": "velocity * tilesize              would move: tiles each frame"
+				},
+				{
+					"type": "comment",
+					"text": "velocity * tilesize * dt                 moves: tiles each second     <- we want this"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "MovingObjects",
+					"sid": 404183890711151,
+					"parameters": {
+						"x": "Self.X +Self.XVelocity * TileSize * dt",
+						"y": "Self.Y + Self.YVelocity *TileSize* dt"
+					}
+				}
+			],
+			"sid": 966564735043192,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "rcPlayer",
+							"sid": 602993145683880,
+							"parameters": {
+								"instance-variable": "Crashing"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "rcPlayer",
+							"sid": 333780765320653,
+							"parameters": {
+								"degrees": "360*dt"
+							}
+						}
+					],
+					"sid": 496770168095159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "rcDummy",
+							"sid": 713344762643239,
+							"parameters": {
+								"instance-variable": "Crashing"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "rotate-clockwise",
+							"objectClass": "rcDummy",
+							"sid": 889922169308634,
+							"parameters": {
+								"degrees": "360*dt"
+							}
+						}
+					],
+					"sid": 597784557852327
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcPlayer",
+					"sid": 583522252878748,
+					"parameters": {
+						"object": "rcTilemap"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcPlayer",
+					"sid": 820134770802605,
+					"parameters": {
+						"object": "rcExplosion"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "Crash",
+					"objectClass": "rcPlayer",
+					"sid": 313495040442342
+				}
+			],
+			"sid": 111831582703749,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcPlayer",
+					"sid": 571702642858610,
+					"parameters": {
+						"object": "rcPuddleObject"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "Crash",
+					"objectClass": "rcPlayer",
+					"sid": 925000180553582
+				},
+				{
+					"id": "destroy",
+					"objectClass": "rcPuddleObject",
+					"sid": 667121466920615
+				}
+			],
+			"sid": 329616652335699
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcDummy",
+					"sid": 436398755917086,
+					"parameters": {
+						"object": "rcExplosion"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "rcDummy",
+					"sid": 906900509266087,
+					"parameters": {
+						"instance-variable": "Crashing",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 944199847428231,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "rcPlayer",
+					"sid": 439795308418643,
+					"parameters": {
+						"object": "PowerupPickup"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "rcPlayer",
+					"sid": 652725630570021,
+					"parameters": {
+						"instance-variable": "TakingPowerup"
+					}
+				}
+			],
+			"actions": [
+				{
+					"customAction": "ChangePowerup",
+					"objectClass": "rcPlayer",
+					"sid": 169053121379754,
+					"parameters": [
+						"PowerupPickup.PowerupType"
+					]
+				},
+				{
+					"id": "destroy",
+					"objectClass": "PowerupPickup",
+					"sid": 328902909550869
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 908512506565209,
+					"parameters": {
+						"audio-file": "PowerupSound",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 445817610466928
+		},
+		{
+			"aceType": "action",
+			"aceName": "Crash",
+			"objectClass": "rcPlayer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "rcPlayer",
+					"sid": 275774237801943,
+					"parameters": {
+						"instance-variable": "Crashing",
+						"value": "true"
+					}
+				},
+				{
+					"type": "comment",
+					"text": "moves player in the opposite direction a little, then rounds position. This ensures the player's new position isn't inside a wall"
+				},
+				{
+					"id": "set-position",
+					"objectClass": "MovingObjects",
+					"sid": 493668450810943,
+					"parameters": {
+						"x": "(round(Self.X/TileSize - sign(Self.XVelocity)/2))*TileSize ",
+						"y": "(round(Self.Y/TileSize - sign(Self.YVelocity)/2))*TileSize"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "rcPlayer",
+					"sid": 699857727025615,
+					"parameters": {
+						"instance-variable": "XVelocity",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "rcPlayer",
+					"sid": 951534422740542,
+					"parameters": {
+						"instance-variable": "YVelocity",
+						"value": "0"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 926711192123144,
+					"parameters": {
+						"audio-file": "Crash Sound",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 195426151550437
+		},
+		{
+			"aceType": "action",
+			"aceName": "ChangePowerup",
+			"objectClass": "rcPlayer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "NewPowerup",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 711230713469125
+				}
+			],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "rcPlayer",
+					"sid": 159111359814923,
+					"parameters": {
+						"instance-variable": "PowerupHeld",
+						"value": "NewPowerup"
+					}
+				}
+			],
+			"sid": 283515711513560,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "rcPowerupIndicator",
+							"sid": 904490170874201,
+							"parameters": {
+								"instance-variable": "ID",
+								"comparison": 0,
+								"value": "rcPlayer.ID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "rcPowerupIndicator",
+							"sid": 923792787301043,
+							"parameters": {
+								"frame-number": "NewPowerup"
+							}
+						}
+					],
+					"sid": 375668056484461
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcBombObject",
+					"sid": 647526432444761,
+					"parameters": {
+						"object": "rcTilemap"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcBombObject",
+					"sid": 398313711007670,
+					"parameters": {
+						"object": "rcPlayer"
+					}
+				},
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcBombObject",
+					"sid": 959999626568992,
+					"parameters": {
+						"object": "rcDummy"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "rcBombObject",
+					"sid": 291377018285828,
+					"parameters": {
+						"object": "rcExplosion",
+						"layer": "1",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "rcBombObject",
+					"sid": 481612587516117
+				}
+			],
+			"sid": 992529222326964,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-animation-finished",
+					"objectClass": "rcExplosion",
+					"sid": 117034808058191
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "rcExplosion",
+					"sid": 828548730356830
+				}
+			],
+			"sid": 804297219714795
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "rcPuddleObject",
+					"sid": 126916789416795,
+					"parameters": {
+						"object": "rcTilemap"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "rcPuddleObject",
+					"sid": 796623261804990
+				}
+			],
+			"sid": 356024905516111
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "rcPlayer",
+					"sid": 682313509555528,
+					"parameters": {
+						"object": "rcCheckpoint"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 663014652722077,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "(CurrentCheckpoint+1)%CheckpointCount will equal 0 when CurrentCheckpoint is the max, rather than going over the max"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "rcCheckpoint",
+							"sid": 308163793995811,
+							"parameters": {
+								"instance-variable": "Number",
+								"comparison": 0,
+								"value": "(rcPlayer.CurrentCheckpoint + 1)%CheckpointCount"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "rcPlayer",
+							"sid": 934113590611200,
+							"parameters": {
+								"instance-variable": "CurrentCheckpoint",
+								"value": "(rcPlayer.CurrentCheckpoint+1)%CheckpointCount"
+							}
+						}
+					],
+					"sid": 909079851090850,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcPlayer",
+									"sid": 132999763660310,
+									"parameters": {
+										"instance-variable": "CurrentCheckpoint",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "rcPlayer",
+									"sid": 435206263521910,
+									"parameters": {
+										"instance-variable": "Laps",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 442928341600695,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 350939320335535,
+											"parameters": {
+												"instance-variable": "Laps",
+												"comparison": 0,
+												"value": "LapCount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 558511866623838,
+											"parameters": {
+												"variable": "Winner",
+												"value": "rcPlayer.ID"
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 300292269593078,
+											"parameters": {
+												"layout": "rcWinner"
+											}
+										}
+									],
+									"sid": 380146276074518
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcLapCounter",
+									"sid": 625100563624589,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 0,
+										"value": "rcPlayer.ID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "rcLapCounter",
+									"sid": 576790800522454,
+									"parameters": {
+										"text": "\"Lap \"&rcPlayer.Laps&\"  Checkpoint \"&rcPlayer.CurrentCheckpoint"
+									}
+								}
+							],
+							"sid": 769299215811038
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 104468454592402
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "Pitch shift car sounds based on speed"
+				},
+				{
+					"id": "set-playback-rate",
+					"objectClass": "Audio",
+					"sid": 343210581024650,
+					"parameters": {
+						"tag": "\"Car1\"",
+						"playback-rate": "0.5 + sqrt(rcPlayer(0).xVelocity^2 + rcPlayer(0).yVelocity^2)/2"
+					}
+				}
+			],
+			"sid": 297688159357298,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "2 players in game but not tutorial, so camera scaling is only necessary in the game"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 471181853073503,
+							"parameters": {
+								"first-value": "LayoutName",
+								"comparison": 0,
+								"second-value": "\"Game\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "make camera zoom out to show both players (can't zoom in, minimum value is one)"
+						},
+						{
+							"id": "set-layout-scale",
+							"objectClass": "System",
+							"sid": 276830724416102,
+							"parameters": {
+								"scale": "min(\n0.8/(abs(rcPlayer(0).x - rcPlayer(1).x)/LayoutWidth), \n0.8/(abs(rcPlayer(0).y - rcPlayer(1).y)/LayoutHeight),\n1\n)"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "make sure ui doesn't scale due to zoom"
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 982810564283085,
+							"parameters": {
+								"layer": "2",
+								"scale": "1/LayoutScale"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Car 2 only exists for game layout"
+						},
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 191559711406174,
+							"parameters": {
+								"tag": "\"Car2\"",
+								"playback-rate": "0.5 + sqrt(rcPlayer(1).xVelocity^2 + rcPlayer(1).yVelocity^2)/2"
+							}
+						}
+					],
+					"sid": 463438955746414
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "rcRandomPowerupPickup",
+					"sid": 864261107954918
+				}
+			],
+			"actions": [],
+			"sid": 180983985075299,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "if PowerupType ≠ 0, then that means it's pre-placed value is preserved"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "rcRandomPowerupPickup",
+							"sid": 349852911294772,
+							"parameters": {
+								"instance-variable": "PowerupType",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "rcRandomPowerupPickup",
+							"sid": 836376433179135,
+							"parameters": {
+								"instance-variable": "PowerupType",
+								"value": "choose(1,2,3)"
+							}
+						}
+					],
+					"sid": 508105260011950
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When a random powerup pickup is spawned, if there is already one there, it will destroy the one there instead. This means that around half of powerup spots will be filled at a given time."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "PowerupPickup",
+					"sid": 737673122369087,
+					"parameters": {
+						"object": "PowerupPickup"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "PowerupPickup",
+					"sid": 803980908710211
+				}
+			],
+			"sid": 612725076047970
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 761823154203525,
+					"parameters": {
+						"first-value": "LayoutName",
+						"comparison": 0,
+						"second-value": "\"Tutorial\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 352310235094703,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "rcPlayer",
+							"sid": 258584325936970,
+							"parameters": {
+								"object": "rcFinishLine"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 951558176197042,
+							"parameters": {
+								"layout": "Racing Chess"
+							}
+						}
+					],
+					"sid": 138878808932723
+				}
+			]
+		},
+		{
+			"aceType": "action",
+			"aceName": "DoAction",
+			"objectClass": "rcPlayer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "custom-ace-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 218369446904890,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Filter for correct TurnOptions instance"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "rcTurnOptions",
+							"sid": 985100513122442,
+							"parameters": {
+								"instance-variable": "ID",
+								"comparison": 0,
+								"value": "rcPlayer.ID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 812093895863565,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "move up"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 589430947621744,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "rcPlayer",
+									"sid": 741078169643434,
+									"parameters": {
+										"instance-variable": "YVelocity",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 357656364405015
+						},
+						{
+							"eventType": "comment",
+							"text": "move down"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 948828061779544,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "rcPlayer",
+									"sid": 123798512148208,
+									"parameters": {
+										"instance-variable": "YVelocity",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 924652298357401
+						},
+						{
+							"eventType": "comment",
+							"text": "move left"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 581168524802276,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "rcPlayer",
+									"sid": 318963907588751,
+									"parameters": {
+										"instance-variable": "XVelocity",
+										"value": "-1"
+									}
+								}
+							],
+							"sid": 781530650972763
+						},
+						{
+							"eventType": "comment",
+							"text": "move right"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 610298357500577,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "rcPlayer",
+									"sid": 247994782395392,
+									"parameters": {
+										"instance-variable": "XVelocity",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 537733790448663
+						},
+						{
+							"eventType": "comment",
+							"text": "use powerup up"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 342069121756346,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 142483112332707,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 266290840540203,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "rcPlayer",
+											"sid": 457622224884263,
+											"parameters": {
+												"instance-variable": "YVelocity",
+												"value": "-2"
+											}
+										}
+									],
+									"sid": 163017346674284
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 199396714292138,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 852650631908926,
+											"parameters": {
+												"object": "rcBombObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 890702062715223,
+											"parameters": {
+												"instance-variable": "XVelocity",
+												"value": "rcPlayer.XVelocity"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 143453596433748,
+											"parameters": {
+												"instance-variable": "YVelocity",
+												"value": "rcPlayer.YVelocity -2"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcBombObject",
+											"sid": 694178060247234,
+											"parameters": {
+												"x": "rcPlayer.X",
+												"y": "rcPlayer.Y - TileSize"
+											}
+										}
+									],
+									"sid": 431360947840260
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 790813794181945,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 447835694953195,
+											"parameters": {
+												"object": "rcPuddleObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcPuddleObject",
+											"sid": 995085531812110,
+											"parameters": {
+												"x": "rcPlayer.X",
+												"y": "rcPlayer.Y  - TileSize"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "rcPuddleObject",
+											"sid": 534326878550738,
+											"parameters": {
+												"angle": "random(0, 360)"
+											}
+										}
+									],
+									"sid": 417699864241240
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"customAction": "ChangePowerup",
+											"objectClass": "rcPlayer",
+											"sid": 653401216425863,
+											"parameters": [
+												"0"
+											]
+										}
+									],
+									"sid": 778844531312342
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "use powerup down"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 882739996933022,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 933961057286533,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 650170919783466,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "rcPlayer",
+											"sid": 577448317155180,
+											"parameters": {
+												"instance-variable": "YVelocity",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 677460706521806
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 354335874225829,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 661995787251312,
+											"parameters": {
+												"object": "rcBombObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 656316587504646,
+											"parameters": {
+												"instance-variable": "XVelocity",
+												"value": "rcPlayer.XVelocity"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 718038636588057,
+											"parameters": {
+												"instance-variable": "YVelocity",
+												"value": "rcPlayer.YVelocity + 2"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcBombObject",
+											"sid": 690645558826794,
+											"parameters": {
+												"x": "rcPlayer.X",
+												"y": "rcPlayer.Y + TileSize"
+											}
+										}
+									],
+									"sid": 872883850122105
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 312966507030564,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 868910728867234,
+											"parameters": {
+												"object": "rcPuddleObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcPuddleObject",
+											"sid": 916747277396778,
+											"parameters": {
+												"x": "rcPlayer.X",
+												"y": "rcPlayer.Y  + TileSize"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "rcPuddleObject",
+											"sid": 181789360897426,
+											"parameters": {
+												"angle": "random(0, 360)"
+											}
+										}
+									],
+									"sid": 335633768761792
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"customAction": "ChangePowerup",
+											"objectClass": "rcPlayer",
+											"sid": 450381251798140,
+											"parameters": [
+												"0"
+											]
+										}
+									],
+									"sid": 171539876113201
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "use powerup left"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 182970739438559,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 777392637822236,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 339811843389621,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "rcPlayer",
+											"sid": 714566819200322,
+											"parameters": {
+												"instance-variable": "XVelocity",
+												"value": "-2"
+											}
+										}
+									],
+									"sid": 516124817264116
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 888234622890461,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 280335958885432,
+											"parameters": {
+												"object": "rcBombObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 390769657428292,
+											"parameters": {
+												"instance-variable": "XVelocity",
+												"value": "rcPlayer.XVelocity - 2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 711335519007838,
+											"parameters": {
+												"instance-variable": "YVelocity",
+												"value": "rcPlayer.YVelocity"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcBombObject",
+											"sid": 810302234659486,
+											"parameters": {
+												"x": "rcPlayer.X - TileSize",
+												"y": "rcPlayer.Y "
+											}
+										}
+									],
+									"sid": 982649284996755
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 858376164628902,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 801288920487060,
+											"parameters": {
+												"object": "rcPuddleObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcPuddleObject",
+											"sid": 553088446520335,
+											"parameters": {
+												"x": "rcPlayer.X - TileSize",
+												"y": "rcPlayer.Y "
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "rcPuddleObject",
+											"sid": 184996213050434,
+											"parameters": {
+												"angle": "random(0, 360)"
+											}
+										}
+									],
+									"sid": 978255332987925
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"customAction": "ChangePowerup",
+											"objectClass": "rcPlayer",
+											"sid": 658157304910160,
+											"parameters": [
+												"0"
+											]
+										}
+									],
+									"sid": 282698668037698
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "use powerup right"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 712257824144494,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 666686021499813,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 776787979362680,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "rcPlayer",
+											"sid": 977733875108562,
+											"parameters": {
+												"instance-variable": "XVelocity",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 383145291787642
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 458993547001746,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 377797300123192,
+											"parameters": {
+												"object": "rcBombObject",
+												"layer": "1",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 943333786893167,
+											"parameters": {
+												"instance-variable": "XVelocity",
+												"value": "rcPlayer.XVelocity + 2"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "rcBombObject",
+											"sid": 982703693417942,
+											"parameters": {
+												"instance-variable": "YVelocity",
+												"value": "rcPlayer.YVelocity"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcBombObject",
+											"sid": 678941501717238,
+											"parameters": {
+												"x": "rcPlayer.X + TileSize",
+												"y": "rcPlayer.Y "
+											}
+										}
+									],
+									"sid": 829206925374309
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "rcPlayer",
+											"sid": 705893278243019,
+											"parameters": {
+												"instance-variable": "PowerupHeld",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "rcPlayer",
+											"sid": 754951937053393,
+											"parameters": {
+												"object": "rcPuddleObject",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "rcPuddleObject",
+											"sid": 888606012643794,
+											"parameters": {
+												"x": "rcPlayer.X + TileSize",
+												"y": "rcPlayer.Y "
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "rcPuddleObject",
+											"sid": 259760240372382,
+											"parameters": {
+												"angle": "random(0, 360)"
+											}
+										}
+									],
+									"sid": 863095071970075
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"customAction": "ChangePowerup",
+											"objectClass": "rcPlayer",
+											"sid": 158204967065680,
+											"parameters": [
+												"0"
+											]
+										}
+									],
+									"sid": 113395264752600
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": ""
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "rcTurnOptions",
+									"sid": 310461477637919,
+									"parameters": {
+										"instance-variable": "Action",
+										"comparison": 0,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "rcPlayer",
+									"sid": 781514659498780,
+									"parameters": {
+										"instance-variable": "TakingPowerup",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 693436215970928
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-ended",
+					"objectClass": "Audio",
+					"sid": 770503717910618,
+					"parameters": {
+						"tag": "\"GameIntro\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 675114759792886,
+					"parameters": {
+						"audio-file": "GameLoop",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"GameLoop\""
+					}
+				}
+			],
+			"sid": 996775281919973
+		}
+	],
+	"sid": 829385049046173
+}

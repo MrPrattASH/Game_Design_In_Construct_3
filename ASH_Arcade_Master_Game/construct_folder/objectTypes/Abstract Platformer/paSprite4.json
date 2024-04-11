@@ -1,0 +1,120 @@
+{
+	"name": "paSprite4",
+	"plugin-id": "Sprite",
+	"sid": 331563042228910,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 280521241262918
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 29,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5402945,
+						"collisionPoly": {
+							"points": [
+								0.32,
+								0,
+								0.68,
+								0,
+								0.78,
+								0.034482758620689655,
+								0.92,
+								0.1724137931034483,
+								1,
+								0.6896551724137931,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0.6896551724137931,
+								0.1,
+								0.13793103448275862,
+								0.22,
+								0.034482758620689655
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 362471887155926,
+				"name": "Normal",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 17,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7368473,
+						"collisionPoly": {
+							"points": [
+								0.32,
+								0,
+								0.68,
+								0,
+								0.78,
+								0.058823529411764705,
+								0.9,
+								0.23529411764705882,
+								0.98,
+								0.4117647058823529,
+								1,
+								0.47058823529411764,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0.47058823529411764,
+								0.02,
+								0.4117647058823529,
+								0.1,
+								0.23529411764705882,
+								0.22,
+								0.058823529411764705
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 851833150197647,
+				"name": "Pressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

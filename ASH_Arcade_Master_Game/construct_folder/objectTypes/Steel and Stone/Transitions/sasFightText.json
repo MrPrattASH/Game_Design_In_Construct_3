@@ -1,0 +1,64 @@
+{
+	"name": "sasFightText",
+	"plugin-id": "Sprite",
+	"sid": 856627135292118,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 455,
+						"height": 130,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7584970,
+						"collisionPoly": {
+							"points": [
+								0.10329670329670329,
+								0,
+								0.9736263736263736,
+								0.007692307692307693,
+								1,
+								0.12307692307692308,
+								1,
+								0.17692307692307693,
+								0.8835164835164835,
+								0.8538461538461538,
+								0.389010989010989,
+								0.9923076923076923,
+								0.01978021978021978,
+								0.8846153846153846,
+								0.006593406593406593,
+								0.8384615384615385,
+								0,
+								0.7769230769230769,
+								0.006593406593406593,
+								0.5153846153846153,
+								0.07692307692307693,
+								0.06923076923076923
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 774820083474476,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

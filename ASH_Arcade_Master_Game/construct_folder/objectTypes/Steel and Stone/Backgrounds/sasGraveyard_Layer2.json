@@ -1,0 +1,56 @@
+{
+	"name": "sasGraveyard_Layer2",
+	"plugin-id": "Sprite",
+	"sid": 285771233069829,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 768,
+						"height": 416,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5485031,
+						"collisionPoly": {
+							"points": [
+								0.7135416666666666,
+								0.15865384615384615,
+								0.7786458333333334,
+								0.15865384615384615,
+								1,
+								0.5,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0.5072115384615384,
+								0.18619791666666666,
+								0.2620192307692308
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 115182046534137,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

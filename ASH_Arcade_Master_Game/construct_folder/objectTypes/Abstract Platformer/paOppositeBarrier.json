@@ -1,0 +1,56 @@
+{
+	"name": "paOppositeBarrier",
+	"plugin-id": "Sprite",
+	"sid": 560680590230295,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 502990590210334
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 952,
+						"height": 951,
+						"originX": 0.5,
+						"originY": 0.49947423764458465,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 154348,
+						"collisionPoly": {
+							"points": [
+								0.0010504201680672268,
+								0,
+								0.9989495798319328,
+								0,
+								0.9989495798319328,
+								0.9989484752891693,
+								0.0010504201680672268,
+								0.9989484752891693
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 425369036418219,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

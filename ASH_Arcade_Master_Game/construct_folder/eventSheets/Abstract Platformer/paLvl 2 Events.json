@@ -1,0 +1,1249 @@
+{
+	"name": "paLvl 2 Events",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "variable",
+			"name": "Cur_Checkpoint2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 932754258340079
+		},
+		{
+			"eventType": "variable",
+			"name": "HollowGems",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 855578709918863
+		},
+		{
+			"eventType": "variable",
+			"name": "Key2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 204085486907715
+		},
+		{
+			"eventType": "variable",
+			"name": "Underground",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 986188237795811
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gravity",
+			"description": "♪ I believe I can fly ♫",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "When player is collides with reverse gravity sprite, sets the y speed and gravity to negative"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 843551536899685,
+							"parameters": {
+								"object": "paReverseGravity"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 364416168295176,
+							"parameters": {
+								"first-value": "Cur_Time+3",
+								"comparison": 3,
+								"second-value": "time"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "paPlayerBox",
+							"sid": 679671092201949,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "-1500"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "paPlayerBox",
+							"sid": 603822039806008,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "-1*paPlayerBox.Platform.VectorY"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 665138440650072,
+							"parameters": {
+								"variable": "Cur_Time",
+								"value": "time"
+							}
+						},
+						{
+							"id": "set-flipped",
+							"objectClass": "paPlayerAnim",
+							"sid": 883905797740271,
+							"parameters": {
+								"state": "flipped"
+							}
+						}
+					],
+					"sid": 492052284476520
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 663213337461223,
+							"parameters": {
+								"object": "paNormalGravity"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 232923262341128,
+							"parameters": {
+								"first-value": "Cur_Time+3",
+								"comparison": 3,
+								"second-value": "time"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "paPlayerBox",
+							"sid": 792718789477347,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1500"
+							}
+						},
+						{
+							"id": "set-vector-y",
+							"objectClass": "paPlayerBox",
+							"sid": 897450289061850,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "-1*paPlayerBox.Platform.VectorX"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 452205033258866,
+							"parameters": {
+								"variable": "Cur_Time",
+								"value": "time"
+							}
+						},
+						{
+							"id": "set-flipped",
+							"objectClass": "paPlayerAnim",
+							"sid": 568202008931851,
+							"parameters": {
+								"state": "not-flipped"
+							}
+						}
+					],
+					"sid": 894691738651168
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 131747211138513,
+							"parameters": {
+								"object": "paGravUp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "paPlayerBox",
+							"sid": 230654903309065,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "-1500"
+							}
+						},
+						{
+							"id": "set-flipped",
+							"objectClass": "paPlayerAnim",
+							"sid": 832097081892984,
+							"parameters": {
+								"state": "flipped"
+							}
+						}
+					],
+					"sid": 871957583271977
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 849459363606733,
+							"parameters": {
+								"object": "paGravDown"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "paPlayerBox",
+							"sid": 722522555284220,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1500"
+							}
+						},
+						{
+							"id": "set-flipped",
+							"objectClass": "paPlayerAnim",
+							"sid": 911920303707952,
+							"parameters": {
+								"state": "not-flipped"
+							}
+						}
+					],
+					"sid": 746907086153029
+				}
+			],
+			"sid": 749977124805258
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 538374876659656
+				}
+			],
+			"actions": [
+				{
+					"id": "set-jump-strength",
+					"objectClass": "paPlayerBox",
+					"sid": 463206037434733,
+					"behaviorType": "Platform",
+					"parameters": {
+						"jump-strength": "650"
+					}
+				}
+			],
+			"sid": 170561220376330
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paEnemy",
+					"sid": 971343714566903,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"left\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paEnemy",
+					"sid": 826482726719612,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "paEnemy",
+					"sid": 443340801829690,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 660782917472895
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paEnemy",
+					"sid": 268955783575603,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"right\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paEnemy",
+					"sid": 184246281636090,
+					"behaviorType": "Platform",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "paEnemy",
+					"sid": 252689066174161,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 235439449896686
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paOpposition",
+					"sid": 875577955051169,
+					"parameters": {
+						"object": "paMark"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 991035984062792,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paOpposition",
+							"sid": 723051262616732,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "paOpposition",
+							"sid": 524613839941477,
+							"parameters": {
+								"instance-variable": "State",
+								"value": "\"left\""
+							}
+						}
+					],
+					"sid": 699416299308249
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 544896194733358
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "paOpposition",
+							"sid": 424762470905815,
+							"parameters": {
+								"instance-variable": "State",
+								"value": "\"right\""
+							}
+						}
+					],
+					"sid": 916008799286847
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paOpposition",
+					"sid": 470974456857896,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"left\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paOpposition",
+					"sid": 126248167126887,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 517479897473693
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paOpposition",
+					"sid": 519677641127129,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"right\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paOpposition",
+					"sid": 731820116304907,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 257149572669660
+		},
+		{
+			"eventType": "comment",
+			"text": "makes the bird \"fall\" out of the air when killed"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paOpposition",
+					"sid": 553233058652164,
+					"parameters": {
+						"instance-variable": "State",
+						"comparison": 0,
+						"value": "\"down\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "paOpposition",
+					"sid": 570716268208745,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "1200"
+					}
+				},
+				{
+					"id": "simulate-control",
+					"objectClass": "paOpposition",
+					"sid": 706367527698156,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 267089747211063
+		},
+		{
+			"eventType": "comment",
+			"text": "kills bird if player hits it from below, and kills player if from above (is reversed when gravity is reversed)"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 562036139019267,
+					"parameters": {
+						"object": "paOpposition"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 286418877819500,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "If the player is above the enemy, destroy enemy"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "paPlayerBox",
+							"sid": 681268841252883,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paOpposition",
+							"sid": 410698576023832,
+							"parameters": {
+								"animation": "\"Dying 1\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paOpposition",
+							"sid": 566889573023961,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "paOpposition",
+							"sid": 734863156494980,
+							"parameters": {
+								"instance-variable": "State",
+								"value": "\"down\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 759469533727424,
+							"parameters": {
+								"seconds": "10"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "paOpposition",
+							"sid": 713441607596062
+						}
+					],
+					"sid": 841678035272691
+				},
+				{
+					"eventType": "comment",
+					"text": "Damage player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 839677765553706
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "paPlayerAnim",
+							"sid": 418592013247165,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 998844203740317,
+							"parameters": {
+								"variable": "Health",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 137133419826061
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "fish collision markers"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paSprite",
+					"sid": 643989505150926,
+					"parameters": {
+						"object": "pawatermark"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 740157415529427,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paSprite",
+							"sid": 672464704763409,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"Up\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "paSprite",
+							"sid": 406515504784968,
+							"parameters": {
+								"instance-variable": "state",
+								"value": "\"Down\""
+							}
+						}
+					],
+					"sid": 108216208356771
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 676118253710625
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "paSprite",
+							"sid": 268611325251955,
+							"parameters": {
+								"instance-variable": "state",
+								"value": "\"Up\""
+							}
+						}
+					],
+					"sid": 724666110234696
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "makes the fish \"jump\" out of the water faster than it falling back in "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paSprite",
+					"sid": 345041232081775,
+					"parameters": {
+						"instance-variable": "state",
+						"comparison": 0,
+						"value": "\"Up\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paSprite",
+					"sid": 953061599258728,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "up"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "paSprite",
+					"sid": 186491486274391,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "270"
+					}
+				}
+			],
+			"sid": 340181984333391
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "paSprite",
+					"sid": 213598835806663,
+					"parameters": {
+						"instance-variable": "state",
+						"comparison": 0,
+						"value": "\"Down\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "paSprite",
+					"sid": 380023388334751,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "down"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "paSprite",
+					"sid": 755226917055194,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"max-speed": "140"
+					}
+				}
+			],
+			"sid": 737150032235093
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 845533842195084
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "paSprite",
+					"sid": 198211789295576,
+					"behaviorType": "Turret",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "add-object-to-target",
+					"objectClass": "paSprite",
+					"sid": 138475540703535,
+					"behaviorType": "Turret",
+					"parameters": {
+						"target": "paPlayerAnim"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "paSprite",
+					"sid": 757882966179540,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 857504320834200
+		},
+		{
+			"eventType": "comment",
+			"text": "activates fishes movement if the player is in range "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-target-acquired",
+					"objectClass": "paSprite",
+					"sid": 463515891374380,
+					"behaviorType": "Turret"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "paSprite",
+					"sid": 248769652658510,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 729049089560539
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 279367900469923,
+					"parameters": {
+						"object": "paSprite"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 113552548702432,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "If the player is above the enemy, destroy enemy"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "paPlayerBox",
+							"sid": 655970408512472,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "paEnemy.Y"
+							}
+						},
+						{
+							"id": "is-falling",
+							"objectClass": "paPlayerBox",
+							"sid": 619720770581711,
+							"disabled": true,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "paPlayerBox",
+							"sid": 129687509784883,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "-550"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "paSprite",
+							"sid": 437886384971325,
+							"parameters": {
+								"animation": "\"Death\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paSprite",
+							"sid": 353603164614195,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "paSprite",
+							"sid": 930508014302238,
+							"parameters": {
+								"instance-variable": "state",
+								"value": "\"Down\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 386664429089577,
+							"parameters": {
+								"seconds": "10"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "paSprite",
+							"sid": 988101411403268
+						}
+					],
+					"sid": 885393565894543
+				},
+				{
+					"eventType": "comment",
+					"text": "Damage player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 555261352543590
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "paPlayerAnim",
+							"sid": 385659168895451,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 175250978558292,
+							"parameters": {
+								"variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 116045478033483
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "stops player from moving and then teleports them to the underground level "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 876383551688642,
+					"parameters": {
+						"object": "paportalbox"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "paPlayerAnim",
+					"sid": 373248321214903,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "paPlayerBox",
+					"sid": 559621050441110,
+					"behaviorType": "Platform",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paportaln",
+					"sid": 423849142797564,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 583198788258926,
+					"parameters": {
+						"seconds": "1.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 241214022910158,
+					"parameters": {
+						"layout": "paUnderground"
+					}
+				}
+			],
+			"sid": 665177644209634
+		},
+		{
+			"eventType": "comment",
+			"text": "Blocks off certain area of the map (using invisible barriers) depending on if you've been underground or not"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 434316812195567
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 830055062214625,
+					"parameters": {
+						"variable": "Underground",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "paPlayerBox",
+					"sid": 435397515261807,
+					"parameters": {
+						"x": "7499",
+						"y": "448"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paTheBarrier",
+					"sid": 445255996450567,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paborderB",
+					"sid": 350324591358426,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paOppositeBarrier",
+					"sid": 803681168200941,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paborderO",
+					"sid": 229111504806342,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paSprite5",
+					"sid": 391156442127578,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "paSprite5",
+					"sid": 249615928871641,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 300351222545462
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 676132988788667
+				}
+			],
+			"actions": [
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paborderB",
+					"sid": 621961602860427,
+					"parameters": {
+						"collisions": "enabled"
+					}
+				},
+				{
+					"id": "set-collisions-enabled",
+					"objectClass": "paborderO",
+					"sid": 386535416267276,
+					"parameters": {
+						"collisions": "disabled"
+					}
+				}
+			],
+			"sid": 611148827834783
+		},
+		{
+			"eventType": "comment",
+			"text": "goes to level 3"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 591483679147439,
+					"parameters": {
+						"object": "palvl2Door"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 332668076540115,
+					"parameters": {
+						"seconds": "2.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 440086411180672,
+					"parameters": {
+						"layout": "paLvl 3"
+					}
+				}
+			],
+			"sid": 304477651753503
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paLock2",
+					"sid": 257330133521051,
+					"parameters": {
+						"object": "paPlayerBox"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "paHUDkey",
+					"sid": 877548756919431
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "paLock2",
+					"sid": 654333445007719
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paHUDkey",
+					"sid": 385987206955742,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 785996278024138,
+					"parameters": {
+						"variable": "Underground",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 160384509146853
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 627412829098447
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paLvlTxt2",
+					"sid": 412890428511397,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 725153406699311,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "paLvlTxt2",
+					"sid": 393582566989024,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 336949834237279
+		}
+	],
+	"sid": 779622068892636
+}

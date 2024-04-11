@@ -1,0 +1,178 @@
+{
+	"name": "avwretro events",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "avwgreg"
+		},
+		{
+			"eventType": "variable",
+			"name": "healthP1",
+			"type": "number",
+			"initialValue": "55",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 377807214877301
+		},
+		{
+			"eventType": "variable",
+			"name": "HealthP2",
+			"type": "number",
+			"initialValue": "55",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 617963577046871
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 657072955291588
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "avwbackground_sprite",
+					"sid": 807115070938430,
+					"parameters": {
+						"animation": "avw_background",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_3",
+					"sid": 699368261562273,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 152922254718534,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_3",
+					"sid": 673125628445545,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_2",
+					"sid": 300210282524382,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 522506240169522,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_2",
+					"sid": 954565784543475,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_1",
+					"sid": 880166526849898,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 567197778625240,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_1",
+					"sid": 744793335381167,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_fight",
+					"sid": 560064033809335,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 277189509400720,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "avwCountdown_fight",
+					"sid": 237794661334846,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 185378439957432,
+					"parameters": {
+						"audio-file": "Video Game loop digital green stage",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Retro_Song\""
+					}
+				}
+			],
+			"sid": 981063051689754
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 984615114167812
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 610199495350135
+				}
+			],
+			"sid": 868398727161806
+		}
+	],
+	"sid": 585855578452966
+}

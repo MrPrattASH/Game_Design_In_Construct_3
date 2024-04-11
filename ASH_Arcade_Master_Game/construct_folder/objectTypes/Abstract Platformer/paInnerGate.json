@@ -1,0 +1,56 @@
+{
+	"name": "paInnerGate",
+	"plugin-id": "Sprite",
+	"sid": 501106611824997,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 222741317799165
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 210,
+						"height": 288,
+						"originX": 0.5,
+						"originY": 0.6458333333333333,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6585480,
+						"collisionPoly": {
+							"points": [
+								0.3880952380952381,
+								0.00694444444444442,
+								0.611904761904762,
+								0.00694444444444442,
+								0.611904761904762,
+								1,
+								0.3880952380952381,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 256841497858043,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

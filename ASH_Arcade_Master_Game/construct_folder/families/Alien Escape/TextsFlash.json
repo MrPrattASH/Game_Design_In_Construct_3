@@ -1,0 +1,19 @@
+{
+	"name": "TextsFlash",
+	"plugin-id": "Text",
+	"sid": 333141924828665,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 479358559759043
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"aeFlashtxt",
+		"aeFlashtxtwinscreen",
+		"aeTocontinuetxt"
+	]
+}

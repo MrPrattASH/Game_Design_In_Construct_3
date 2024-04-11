@@ -1,0 +1,28 @@
+{
+	"name": "Boxes",
+	"plugin-id": "Sprite",
+	"sid": 366531918311305,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 542363814136773
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 307685099353717
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 729059666338168
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"aeWaterbox",
+		"aeFirebox"
+	]
+}

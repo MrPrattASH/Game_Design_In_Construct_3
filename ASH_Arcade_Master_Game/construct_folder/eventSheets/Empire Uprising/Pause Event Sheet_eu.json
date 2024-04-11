@@ -1,0 +1,79 @@
+{
+	"name": "Pause Event Sheet_eu",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 473626806315808,
+					"parameters": {
+						"key": 67
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 735373644992722,
+					"parameters": {
+						"layout": "Empire Uprising"
+					}
+				}
+			],
+			"sid": 423947550109701
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 180280211239125,
+					"parameters": {
+						"key": 79
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 828606940768961,
+					"parameters": {
+						"layout": "Empire Uprising"
+					}
+				}
+			],
+			"sid": 105661723311188
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 518101849420267
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 599001192470490,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 883210378630473
+		}
+	],
+	"sid": 371246107500522
+}

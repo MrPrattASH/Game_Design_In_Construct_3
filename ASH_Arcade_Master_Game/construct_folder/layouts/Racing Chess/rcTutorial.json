@@ -1,0 +1,1531 @@
+{
+	"name": "rcTutorial",
+	"layers": [
+		{
+			"name": "Background",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "rcTrack",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 2614,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -32,
+						"y": -32,
+						"width": 1793,
+						"height": 1074,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTilemap",
+					"properties": {
+						"initially-visible": true,
+						"tile-width": 64,
+						"tile-height": 64,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0,
+						"tile-x-drawing-offset": 0,
+						"tile-y-drawing-offset": 0,
+						"drawing-mode": "top-to-right"
+					},
+					"uid": 2615,
+					"instanceVariables": {},
+					"behaviors": {},
+					"ownData": {
+						"tilemapData": {
+							"width": 28,
+							"height": 16,
+							"max-width": 146,
+							"max-height": 134,
+							"data": "6,5x10,7x9,3x10,10x5,41x6,67x0,7,11,3x12,15,22,30,5x0,8,3x11,50x6,67x0,7,15,3x0,3,23,31,6x0,7,2x11,50x6,67x0,7,15,3x0,3,24,32,6x0,7,2x11,50x6,67x0,7,15,3x0,7,3x10,14,4x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,14,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,22,26,30,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,24,28,32,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,11,51x6,67x0,7,15,3x0,7,4x11,15,22,26,30,7,11,51x6,67x0,7,15,3x0,7,4x11,15,24,28,32,7,2x11,50x6,67x0,7,15,3x0,7,4x11,15,3x0,7,2x11,50x6,67x0,7,15,3x0,8,4x11,16,3x0,7,2x11,50x6,67x0,7,15,4x0,8,2x12,16,4x0,7,2x11,50x6,67x0,7,15,12x0,7,3x11,49x6,67x0,7,15,12x0,7,3x11,49x6,67x0,7,11,14,10x0,6,4x11,49x6,67x0,7,2x11,10x10,5x11,49x6,67x0,7,16x11,50x6,67x0,2,2x6,3x11,2x6,8x11,51x6,67x0,41x6,7,25x6,67x0,40x6,10,0,2,24x6,67x0,41x6,5,25x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,67x0,67x6,7973x0"
+						},
+						"tile-width": 64,
+						"tile-height": 64,
+						"tile-x-offset": 0,
+						"tile-y-offset": 0,
+						"tile-x-spacing": 0,
+						"tile-y-spacing": 0
+					},
+					"world": {
+						"x": -32,
+						"y": -32,
+						"width": 1808,
+						"height": 1038,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2616,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 407.5486227216549,
+						"y": 371.0044299098072,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.011538497753151411,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2617,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 897,
+						"y": 369,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.011538497753151411,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2618,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1318,
+						"y": 374,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.011538497753151411,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2619,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 314,
+						"y": 576,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2620,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 803,
+						"y": 574,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2621,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1224,
+						"y": 579,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2622,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1337,
+						"y": 518,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5799017393249386,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcGuidingArrow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Arrow",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2623,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 326,
+						"y": 425,
+						"width": 61.174689344590846,
+						"height": 31.333677074869243,
+						"originX": 1.3020833333333333,
+						"originY": 1.953125,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.716983943268595,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcFinishLine",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2624,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 4788.191316542706,
+						"y": 5053.767090933458,
+						"width": 151.5097351925882,
+						"height": 74.77948303496842,
+						"originX": 31.25,
+						"originY": 62.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2625,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 430.43650390175134,
+						"y": 508.9248723282816,
+						"width": 258.6681310229608,
+						"height": 76.24078691441179,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "The first to cross the finish line wins!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2626,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 314.43650390175134,
+						"y": 476.9248723282816,
+						"width": 236.1273098903206,
+						"height": 69.634365693434,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.280755086835352,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2627,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 529.6320107913064,
+						"y": 608.3255895173797,
+						"width": 258.6681310229608,
+						"height": 80.0750021583496,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "There are other powerup types as well, discover them as you play!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2628,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 413.6320107913063,
+						"y": 574.4084818954109,
+						"width": 236.1273098903206,
+						"height": 69.634365693434,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.280755086835352,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcDoubleMovePickup",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2629,
+					"instanceVariables": {
+						"PowerupType": 1
+					},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 8,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 640,
+						"y": 192,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcBombPickup",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2630,
+					"instanceVariables": {
+						"PowerupType": 2
+					},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "vertical",
+								"wave": "sine",
+								"period": 4,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 8,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 1216,
+						"y": 768,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 936470963515188,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Game",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "rcPlayer",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Player1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2631,
+					"instanceVariables": {
+						"XVelocity": 0,
+						"YVelocity": 0,
+						"ID": 0,
+						"PowerupHeld": 0,
+						"Crashing": false,
+						"TakingPowerup": false,
+						"CurrentCheckpoint": 0,
+						"Laps": 0
+					},
+					"behaviors": {
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 2631,
+						"children": [
+							{
+								"uid": 2632,
+								"flags": {
+									"x": true,
+									"y": true,
+									"z": true,
+									"w": true,
+									"h": true,
+									"a": true,
+									"o": false,
+									"v": false,
+									"d": true,
+									"sm": "normal"
+								}
+							}
+						],
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 192,
+						"y": 192,
+						"width": 40,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.5707963267948966,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcParticles",
+					"properties": {
+						"rate": 50,
+						"spray-cone": 30,
+						"type": "continuous-spray",
+						"object": -1,
+						"initially-visible": true,
+						"live-preview": false,
+						"speed": 200,
+						"size": 8,
+						"opacity": 90,
+						"grow-rate": -5,
+						"x-randomiser": 0,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": 0,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 10,
+						"opacity-randomiser": 0,
+						"destroy-mode": "timeout-expired",
+						"timeout": 0.3
+					},
+					"uid": 2632,
+					"instanceVariables": {},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": 2631,
+						"uid": 2632,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 2.220446049250313e-16,
+							"transformH": 2.220446049250313e-16,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 180,
+						"y": 192,
+						"width": 10.534588616606198,
+						"height": 24.423958533654343,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 3.141592653589793,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcDummy",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Player1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2633,
+					"instanceVariables": {
+						"ID": 0,
+						"Crashing": false
+					},
+					"behaviors": {},
+					"sceneGraphData": {
+						"parent-uid": null,
+						"uid": 2633,
+						"flags": {
+							"x": true,
+							"y": true,
+							"z": true,
+							"w": true,
+							"h": true,
+							"a": true,
+							"o": false,
+							"v": false,
+							"d": true,
+							"sm": "normal"
+						},
+						"preview": {
+							"transformX": 0,
+							"transformY": 0,
+							"transformZElevation": 0,
+							"transformW": 0,
+							"transformH": 0,
+							"transformA": 0,
+							"transformSX": 0,
+							"transformSY": 0,
+							"transformO": 0,
+							"previewSceneGraph": false
+						}
+					},
+					"world": {
+						"x": 832,
+						"y": 768,
+						"width": 40,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 1.1347433862871554,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 616028203348002,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "TutorialText",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2634,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 216.996479731787,
+						"y": -38.71684783598256,
+						"width": 223.69430270306646,
+						"height": 291.68459185787606,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "To accelerate, move your joystick in the direction you want.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2635,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 115.83846941834327,
+						"y": 36.83871749291406,
+						"width": 202.15348157042627,
+						"height": 105.63517665897344,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2636,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 628.6778678171154,
+						"y": -33.053826703109934,
+						"width": 258.6681310229608,
+						"height": 303.2407869144118,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "Pick up the powerup by selecting \"Take Powerup\" before a turn you are touching the powerup.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2637,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 511.0329433437245,
+						"y": 37.05372481393037,
+						"width": 236.1273098903206,
+						"height": 85.63436569343399,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2638,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 982,
+						"y": -27.16912245141657,
+						"width": 258.6681310229608,
+						"height": 314.90254201157865,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "This is a speed powerup.\n\nUse the powerup by selecting use powerup. Then move your joystick in the direction you want.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2639,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 864,
+						"y": 11.412249642741727,
+						"width": 236.1273098903206,
+						"height": 111.22211605069228,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2640,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1511.5,
+						"y": -37.5,
+						"width": 252.66813102296075,
+						"height": 299.2407869144118,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "When you hit a wall, you will lose all your speed. It's sometimes better to go slow than fast!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2641,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1413,
+						"y": 5,
+						"width": 207.1273098903206,
+						"height": 103.63436569343399,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2642,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1213,
+						"y": 606,
+						"width": 252.66813102296075,
+						"height": 71.16930830933609,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "Try this powerup too.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2643,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1115,
+						"y": 588,
+						"width": 207.1273098903206,
+						"height": 100.63436569343399,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTextContrast",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2644,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 913,
+						"y": 585,
+						"width": 258.6681310229608,
+						"height": 118.24078691441179,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcTutorial",
+					"properties": {
+						"text": "This is a bomb powerup.\n\nUse the powerup by selecting use powerup. Then move your joystick in the direction you want.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2645,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 797,
+						"y": 532,
+						"width": 236.1273098903206,
+						"height": 137.634365693434,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 879863032474824,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "UI",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "rcTurnOptions",
+					"properties": {
+						"text": "Choose Direction:\n(   ) Up  (   ) Left  (   ) Down  (   ) Right\n(   ) Back",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.5450980392156862,
+							0.6784313725490196,
+							0.8352941176470589,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2646,
+					"instanceVariables": {
+						"ID": 0,
+						"MenuState": "Home",
+						"Action": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 700,
+						"y": 494,
+						"width": 302.34431233470127,
+						"height": 108,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcInputFont",
+					"properties": {
+						"text": "^                <                   v                         >\nu",
+						"enable-bbcode": false,
+						"character-width": 64,
+						"character-height": 64,
+						"character-set": "><^vpyua",
+						"spacing-data": "[[8, \" \"]]",
+						"scale": 0.3,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2647,
+					"instanceVariables": {
+						"ID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 702,
+						"y": 516,
+						"width": 441.8119689096966,
+						"height": 76.94479854968193,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "rcPowerupIndicator",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "PowerupIndicator",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2648,
+					"instanceVariables": {
+						"ID": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 971,
+						"y": 460,
+						"width": 64,
+						"height": 64,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 911228193683242,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 848649099877070,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1708,
+	"height": 960,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "rcGame Sheet"
+}

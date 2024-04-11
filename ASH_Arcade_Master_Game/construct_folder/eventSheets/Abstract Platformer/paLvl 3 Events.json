@@ -1,0 +1,1281 @@
+{
+	"name": "paLvl 3 Events",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "paUniversal Logic"
+		},
+		{
+			"eventType": "variable",
+			"name": "BirdNumber",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 438365413450272
+		},
+		{
+			"eventType": "variable",
+			"name": "BirdCheck",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 191065474782614
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy movement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paEnemy",
+							"sid": 857393402276091,
+							"parameters": {
+								"object": "paMarker3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 711900923828202,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paEnemy",
+									"sid": 614906783074097,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paEnemy",
+									"sid": 815897788543173,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 560267844495950
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 355378735100818
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paEnemy",
+									"sid": 231151026375591,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 426845370976104
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paEnemy",
+							"sid": 999517657702975,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paEnemy",
+							"sid": 871274174750219,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "paEnemy",
+							"sid": 817652564751027,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 535862931165313
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paEnemy",
+							"sid": 557034286216105,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paEnemy",
+							"sid": 208072915061853,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "paEnemy",
+							"sid": 566652115170950,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 736657134556721
+				},
+				{
+					"eventType": "comment",
+					"text": "Sets fish direction based off of which tunnel it spawns in "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "pacrimsonswim",
+							"sid": 876238505538506,
+							"parameters": {
+								"object": "padirectionChanger"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "pacrimsonswim",
+							"sid": 207335978706696,
+							"parameters": {
+								"instance-variable": "state",
+								"value": "\"left\""
+							}
+						}
+					],
+					"sid": 628877181044654
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "pacrimsonswim",
+							"sid": 134839842123496,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "pacrimsonswim",
+							"sid": 762284085654581,
+							"parameters": {
+								"angle": "-180"
+							}
+						}
+					],
+					"sid": 806688288766474
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "pacrimsonswim",
+							"sid": 673610262292202,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "pacrimsonswim",
+							"sid": 162869043125515,
+							"parameters": {
+								"angle": "360"
+							}
+						}
+					],
+					"sid": 593773694623404
+				},
+				{
+					"eventType": "comment",
+					"text": "spawns fish at all 3 pipes every 9 seconds "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 100594499905794,
+							"parameters": {
+								"interval-seconds": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "pafishSpawn",
+							"sid": 206130689657504,
+							"parameters": {
+								"object": "pacrimsonswim",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 551287916770205
+				},
+				{
+					"eventType": "comment",
+					"text": "kills bird if player jumps at it from beneath"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 827848371898949,
+							"parameters": {
+								"object": "paCrimsonFly"
+							}
+						},
+						{
+							"id": "compare-y",
+							"objectClass": "paPlayerBox",
+							"sid": 299388319319513,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "paCrimsonFly.y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "paCrimsonFly",
+							"sid": 899260285660475,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "paCrimsonFly",
+							"sid": 825413843098649,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "paCrimsonFly",
+							"sid": 949244041646158,
+							"parameters": {
+								"animation": "\"dead\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 139877181695931,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "paCrimsonFly",
+							"sid": 567810596058764
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 943669571457123,
+							"parameters": {
+								"variable": "BirdNumber",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 531619287948521
+				},
+				{
+					"eventType": "comment",
+					"text": "damages player if touching bird from above"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 167924108733448,
+							"parameters": {
+								"object": "paCrimsonFly"
+							}
+						},
+						{
+							"id": "compare-y",
+							"objectClass": "paPlayerBox",
+							"sid": 527771520177411,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "paCrimsonFly.y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 859882199590953,
+							"parameters": {
+								"variable": "Health",
+								"value": "0.5"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "paPlayerAnim",
+							"sid": 717120113321420,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 254268357789208
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "paCrimsonFly",
+							"sid": 225283734017174
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "paCrimsonFly",
+							"sid": 177332273784376,
+							"parameters": {
+								"x": "paPlayerBox.x",
+								"y": "paPlayerBox.Y"
+							}
+						}
+					],
+					"sid": 387654657182103
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paCrimsonFly",
+							"sid": 422577975524438,
+							"parameters": {
+								"object": "paEnemyDestroy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "paCrimsonFly",
+							"sid": 727983993397244,
+							"parameters": {
+								"x": "paPlayerBox.x",
+								"y": "paPlayerBox.Y"
+							}
+						}
+					],
+					"sid": 994207781470917
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 137653459814488,
+							"parameters": {
+								"object": "paEnemyDestroy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 582809852129970
+						}
+					],
+					"sid": 280903037265993
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 167950065694794,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 743888969051513,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 785393578218862,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 549507233919175
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 561793733929554,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 215932091284873,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "paCrimsonEnemy",
+							"sid": 107579182537195,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 964219114042421
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paSpikey",
+							"sid": 547643555040466,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paSpikey",
+							"sid": 189597345033784,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "paSpikey",
+							"sid": 617458492457441,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 768180242591717
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "paSpikey",
+							"sid": 527097371001220,
+							"parameters": {
+								"instance-variable": "State",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "paSpikey",
+							"sid": 751293217627888,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "paSpikey",
+							"sid": 352495837610451,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 694358352463167
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 442235544100805
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "paSpikey",
+							"sid": 399039396202337,
+							"parameters": {
+								"animation": "\"normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 113689542718808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paSpikey",
+							"sid": 989328675297608,
+							"parameters": {
+								"object": "paSpikeyMark"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 102563567096259,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "paSpikey",
+									"sid": 938087292678907,
+									"parameters": {
+										"instance-variable": "State",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paSpikey",
+									"sid": 786447143245842,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 145494029837377
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 483894171325020
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "paSpikey",
+									"sid": 655909846818393,
+									"parameters": {
+										"instance-variable": "State",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 137969098532215
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Extends spikey and his hitbox if player is higher than him, and if the player is close enough to spikey"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "paPlayerBox",
+							"sid": 671380449240936,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "paSpikey.Y"
+							}
+						},
+						{
+							"id": "has-los-to-object",
+							"objectClass": "paSpikey",
+							"sid": 122418595808753,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "paPlayerBox",
+								"image-point": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-max-speed",
+							"objectClass": "paSpikey",
+							"sid": 740083775542420,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "4"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "paSpikey",
+							"sid": 603165404976432,
+							"parameters": {
+								"animation": "\"extended\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "paSpikey",
+							"sid": 237234329814751,
+							"parameters": {
+								"width": "45 ",
+								"height": "200"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 931282303990550,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "paSpikey",
+							"sid": 541113716421059,
+							"behaviorType": "Platform",
+							"parameters": {
+								"max-speed": "25"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "paSpikey",
+							"sid": 934907202320721,
+							"parameters": {
+								"width": "45 ",
+								"height": "59"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "paSpikey",
+							"sid": 982742154162190,
+							"parameters": {
+								"animation": "\"normal\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 783595309168539
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "paPlayerBox",
+							"sid": 143031731500383,
+							"parameters": {
+								"object": "paSpikey"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "paPlayerAnim",
+							"sid": 722742592781183,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 596842303649568,
+							"parameters": {
+								"variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 566727611788257
+				}
+			],
+			"sid": 390554546198643
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 512789480267774
+				}
+			],
+			"actions": [],
+			"sid": 283109384692417
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 923796685839636
+				}
+			],
+			"actions": [
+				{
+					"id": "set-jump-strength",
+					"objectClass": "paPlayerBox",
+					"sid": 171919060229773,
+					"behaviorType": "Platform",
+					"parameters": {
+						"jump-strength": "760"
+					}
+				}
+			],
+			"sid": 443692105709563
+		},
+		{
+			"eventType": "comment",
+			"text": "Spawns a crimson enemy at 1 of the 2 tunnels at random, and also sets their direction to random"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-random-instance",
+					"objectClass": "System",
+					"sid": 429025815669610,
+					"parameters": {
+						"object": "paEnemySpawn2"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 164757424659569,
+					"parameters": {
+						"interval-seconds": "0.89"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "paEnemySpawn2",
+					"sid": 161831872206404,
+					"parameters": {
+						"object": "paCrimsonEnemy",
+						"layer": "2",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "paCrimsonEnemy",
+					"sid": 856085810535439,
+					"parameters": {
+						"instance-variable": "State",
+						"value": "\"left or right\""
+					}
+				}
+			],
+			"sid": 815335742419888
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 346809536475623,
+					"parameters": {
+						"interval-seconds": "3.2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "paCrimsonEnemy",
+					"sid": 729680667596818,
+					"parameters": {
+						"instance-variable": "State",
+						"value": "\"left\""
+					}
+				}
+			],
+			"sid": 695816582772382
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 677655707503220,
+					"parameters": {
+						"interval-seconds": "2.7"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "paCrimsonEnemy",
+					"sid": 468469375116384,
+					"parameters": {
+						"instance-variable": "State",
+						"value": "\"right\""
+					}
+				}
+			],
+			"sid": 905329224465793
+		},
+		{
+			"eventType": "comment",
+			"text": "Makes it so that there can only be 6 birds in the air at a time, and they can only spawn if the player is at the moving platform section"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 916585453790685,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 295642325763978,
+					"parameters": {
+						"variable": "BirdNumber",
+						"comparison": 3,
+						"value": "5"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 648800020400373,
+					"parameters": {
+						"variable": "BirdCheck",
+						"comparison": 5,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 839783613044751,
+					"parameters": {
+						"object-to-create": "paCrimsonFly",
+						"layer": "1",
+						"x": "-288",
+						"y": "4520",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 686180272179811,
+					"parameters": {
+						"variable": "BirdNumber",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 894729779739088
+		},
+		{
+			"eventType": "comment",
+			"text": "activates birds, and allows them to spawn in "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 142020981837168,
+					"parameters": {
+						"object": "paBirdCheck"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 580537134175266,
+					"parameters": {
+						"variable": "BirdCheck",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 777120370940788
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 913096101936280,
+					"parameters": {
+						"object": "paBirdCheckDone"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 144507482806250,
+					"parameters": {
+						"variable": "BirdCheck",
+						"value": "100"
+					}
+				}
+			],
+			"sid": 120276145363484
+		},
+		{
+			"eventType": "comment",
+			"text": "Kills birds when player is done with section, and also makes it so that the birds don't spawn again if the player does the section again "
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 809526199520493,
+					"parameters": {
+						"variable": "BirdCheck",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "paCrimsonFly",
+					"sid": 280832146757729
+				}
+			],
+			"sid": 224317278229580
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 979497891528691,
+					"parameters": {
+						"object": "paLock3"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "paHUDkey",
+					"sid": 476909539722806
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "paLock3",
+					"sid": 490408332922859
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "paHUDkey",
+					"sid": 777767277114117,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 884049744219235
+		},
+		{
+			"eventType": "comment",
+			"text": "goes to boss layout if it has been touched"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 491990231353675,
+					"parameters": {
+						"object": "paFinalGate"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 657384880805171,
+					"parameters": {
+						"seconds": "1.8"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 228903962776584,
+					"parameters": {
+						"layout": "paBoss"
+					}
+				}
+			],
+			"sid": 174169986676898
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paPlayerBox",
+					"sid": 162525685282283,
+					"parameters": {
+						"object": "paSecretLock"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "paSecretKeyHUD",
+					"sid": 133870828207124
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 369553441438754,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 508286307559197,
+					"parameters": {
+						"layout": "paThe Secret"
+					}
+				}
+			],
+			"sid": 304451161902546
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 544266032341027
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "paLvlTxt3",
+					"sid": 938864749666412,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 825541390270718,
+					"parameters": {
+						"seconds": "3"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "paLvlTxt3",
+					"sid": 315798194779072,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 713673896794570
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "paCrimsonEnemy",
+					"sid": 858579850291899,
+					"parameters": {
+						"object": "paPlayerBox"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 424373881334762,
+					"parameters": {
+						"variable": "Health",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 361150039889822
+		}
+	],
+	"sid": 323313333808677
+}

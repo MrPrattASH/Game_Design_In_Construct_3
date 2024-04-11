@@ -1,0 +1,56 @@
+{
+	"name": "sasMechanicsText",
+	"plugin-id": "Sprite",
+	"sid": 997302860100336,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 1494,
+						"height": 1239,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7018259,
+						"collisionPoly": {
+							"points": [
+								0.0033467202141900937,
+								0.014527845036319613,
+								0.17603748326639893,
+								0.022598870056497175,
+								0.7168674698795181,
+								0.21146085552865213,
+								1,
+								0.3954802259887006,
+								0.857429718875502,
+								0.9200968523002422,
+								0.7536813922356091,
+								0.9991928974979822,
+								0.002008032128514056,
+								0.9774011299435028
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 655488425835941,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "aeWaterButton",
+	"plugin-id": "Button",
+	"sid": 658476073146813,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "PickedWater",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 636189501548053
+		}
+	],
+	"behaviorTypes": []
+}

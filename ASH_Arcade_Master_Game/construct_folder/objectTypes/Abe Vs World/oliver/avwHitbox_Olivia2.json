@@ -1,0 +1,61 @@
+{
+	"name": "avwHitbox_Olivia2",
+	"plugin-id": "Sprite",
+	"sid": 902436066936977,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 548233744625715
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 218884000033910
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 968407839383478
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4111305,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0,
+								"y": 0
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 865323300489731,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

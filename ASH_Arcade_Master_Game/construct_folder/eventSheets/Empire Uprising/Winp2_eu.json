@@ -1,0 +1,88 @@
+{
+	"name": "Winp2_eu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 737012461503895,
+					"parameters": {
+						"key": 79
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 407978644381961,
+					"parameters": {
+						"layout": "Empire Uprising"
+					}
+				}
+			],
+			"sid": 276082328545603
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 595612282373090
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 132024137510911,
+					"parameters": {
+						"tag": "\"Game music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 111273437440794,
+					"parameters": {
+						"audio-file": "PLAYER TWO WINS- PRY (1)",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 896770073600970
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 452597540675228
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 578148777103121,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 477239188433198
+		}
+	],
+	"sid": 153403725304779
+}

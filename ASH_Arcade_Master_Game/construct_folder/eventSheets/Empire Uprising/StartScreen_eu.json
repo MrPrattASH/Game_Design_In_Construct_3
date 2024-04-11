@@ -1,0 +1,127 @@
+{
+	"name": "StartScreen_eu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 391983501733357,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 561636855289421,
+					"parameters": {
+						"layout": "Game_eu"
+					}
+				}
+			],
+			"sid": 512664515358763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 194216531221464,
+					"parameters": {
+						"key": 73
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 127571687267191,
+					"parameters": {
+						"layout": "Game_eu"
+					}
+				}
+			],
+			"sid": 239290491096957
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 200111258393446,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 709382009225215,
+					"parameters": {
+						"layout": "Pause_eu"
+					}
+				}
+			],
+			"sid": 370524156000046
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 970732438027640,
+					"parameters": {
+						"key": 89
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 193819965544876,
+					"parameters": {
+						"layout": "Pause_eu"
+					}
+				}
+			],
+			"sid": 190854648655039
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 504102985911964
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 344804584962832,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 290385680787208
+		}
+	],
+	"sid": 252595296923663
+}

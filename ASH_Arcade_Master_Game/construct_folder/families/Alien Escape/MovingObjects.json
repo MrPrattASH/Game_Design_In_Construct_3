@@ -1,0 +1,27 @@
+{
+	"name": "MovingObjects",
+	"plugin-id": "Sprite",
+	"sid": 356833639485155,
+	"instanceVariables": [
+		{
+			"name": "XVelocity",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 612635077832836
+		},
+		{
+			"name": "YVelocity",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 914085287044251
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"rcPlayer",
+		"rcBombObject"
+	]
+}

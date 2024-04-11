@@ -1,0 +1,103 @@
+{
+	"name": "HitSpark",
+	"plugin-id": "Sprite",
+	"sid": 240696743440570,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 21,
+						"height": 44,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3832101,
+						"collisionPoly": {
+							"points": [
+								1,
+								0,
+								1,
+								0.8036020583190393,
+								1,
+								1,
+								1,
+								1,
+								1,
+								1,
+								0,
+								1,
+								0,
+								1,
+								0,
+								0.7692967409948541,
+								0,
+								0,
+								0.7111111111111112,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 5,
+						"tag": ""
+					},
+					{
+						"width": 29,
+						"height": 47,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8539231,
+						"useCollisionPoly": true,
+						"duration": 5,
+						"tag": ""
+					},
+					{
+						"width": 23,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6312275,
+						"useCollisionPoly": true,
+						"duration": 5,
+						"tag": ""
+					},
+					{
+						"width": 36,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2806477,
+						"useCollisionPoly": true,
+						"duration": 4,
+						"tag": ""
+					}
+				],
+				"sid": 992087394609044,
+				"name": "Spark",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 60
+			}
+		],
+		"subfolders": []
+	}
+}

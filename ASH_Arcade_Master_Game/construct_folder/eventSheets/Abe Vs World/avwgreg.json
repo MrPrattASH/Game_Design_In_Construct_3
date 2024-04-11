@@ -1,0 +1,7217 @@
+{
+	"name": "avwgreg",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "greg2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 820753108307892,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwgregbox",
+							"sid": 300093314048997,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 881321723854497
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 435553394774190,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwgregbox",
+							"sid": 998593348526940,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 517271563604041
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 594571352428322,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwgregbox",
+							"sid": 400782080088972,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 403102840090096
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 573971713685498,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwgregbox",
+							"sid": 723194881220851,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"punch\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwgregbox",
+							"sid": 534421285675716,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"punch\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwgregbox",
+							"sid": 724831448391053,
+							"parameters": {
+								"object": "avwgregPunch",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 207254016560621,
+							"parameters": {
+								"animation": "\"punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 648716455680354,
+							"parameters": {
+								"audio-file": "Punches for robot sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GPunch\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 376450854637451,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgregPunch",
+							"sid": 339103778331105
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 287167678566782,
+							"parameters": {
+								"tag": "\"GPunch\""
+							}
+						}
+					],
+					"sid": 261583365100413
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwgregPunch",
+							"sid": 156256779449864,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 516806646303200,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 644796441758452
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 989908555316511,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwgregbox",
+							"sid": 458338185095610,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"laser\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 574567143020884,
+							"parameters": {
+								"animation": "\"laser\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwgregbox",
+							"sid": 661916965561883,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"laser\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "avwgregbox",
+							"sid": 382880388382434,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 113234073692468,
+							"parameters": {
+								"audio-file": "Laser eyes robot sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GLaser\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 813843135171887,
+							"parameters": {
+								"tag": "\"GLaser\""
+							}
+						}
+					],
+					"sid": 651014384946941
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "avwgregbox",
+							"sid": 626797138475900,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"laser\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwgreg",
+							"sid": 340955541334943,
+							"parameters": {
+								"object": "avwlaser",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "avwgregbox",
+							"sid": 106086379846833,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 630583618991351,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwgreg",
+									"sid": 218182920759384
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwlaser",
+									"sid": 753391303275881,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 436144963180115
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwlaser",
+							"sid": 958643596632622,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 385153563262413,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "8"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwlaser",
+							"sid": 978553880411530
+						}
+					],
+					"sid": 946142211288917
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 881569915548877,
+							"parameters": {
+								"key": 67
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwgregbox",
+							"sid": 726404593206283,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"kick\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwgregbox",
+							"sid": 790547378686147,
+							"parameters": {
+								"object": "avwkick",
+								"layer": "0",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 360046067525390,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 886937615685172,
+							"parameters": {
+								"audio-file": "Robot Kick sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GKick\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 102535704773228,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwkick",
+							"sid": 260824166559089
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwgregbox",
+							"sid": 182922408144309,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"kick\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 861386302335200,
+							"parameters": {
+								"tag": "\"GKick\""
+							}
+						}
+					],
+					"sid": 148479495928714
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwkick",
+							"sid": 293343077197101,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 428093834978706,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 358964554781570
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwgregbox",
+							"sid": 994600756449783,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 795228606416339,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 939407287328070,
+							"parameters": {
+								"audio-file": "Robot walking sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GWalk\""
+							}
+						}
+					],
+					"sid": 909622926131373
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwgregbox",
+							"sid": 994529211752261,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 813505837117306,
+							"parameters": {
+								"tag": "\"GWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 845652242837969,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 894697319374306
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "avwgregbox",
+							"sid": 872696988071181,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 352783989556375,
+							"parameters": {
+								"tag": "\"GWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 107639526142767,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 617598328946303,
+							"parameters": {
+								"audio-file": "Jet Pack robot sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GJump\""
+							}
+						}
+					],
+					"sid": 922539202842287
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "avwgregbox",
+							"sid": 621809894466822,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 180676234283351,
+							"parameters": {
+								"tag": "\"GWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 517450906198548,
+							"parameters": {
+								"animation": "\"air\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 400088904754670
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwgregbox",
+							"sid": 352754513582734,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 538622878977369,
+							"parameters": {
+								"tag": "\"GWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 927367663890798,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 221715719567004,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwgregbox",
+									"sid": 962088165005180,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwgreg",
+									"sid": 756327923656776,
+									"parameters": {
+										"animation": "\"walk\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 867873714091116,
+									"parameters": {
+										"audio-file": "Robot walking sfx",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"GWalk\""
+									}
+								}
+							],
+							"sid": 631754387444372
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 613484141428944,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg",
+							"sid": 485034980089058,
+							"parameters": {
+								"animation": "\"block\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 714927475623833
+				}
+			],
+			"sid": 851214183679942
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "greg3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 259383523089983,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwgregbox2",
+							"sid": 862130611101679,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 541825682482004
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 436580019502284,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwgregbox2",
+							"sid": 387823862322579,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 860356177014428
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 978011823580761,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwgregbox2",
+							"sid": 399823377531594,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 364298520899323
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 958341553371370,
+							"parameters": {
+								"key": 85
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwgregbox2",
+							"sid": 692978050589344,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"punch2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwgregbox2",
+							"sid": 438448111416391,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"punch2\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwgregbox2",
+							"sid": 957705559363715,
+							"parameters": {
+								"object": "avwgregPunch2",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 374280827555665,
+							"parameters": {
+								"animation": "\"punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 463818016421056,
+							"parameters": {
+								"audio-file": "Punches for robot sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GPunch1\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 762971338976368,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgregPunch2",
+							"sid": 884948936584363
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 448584026753935,
+							"parameters": {
+								"tag": "\"GPunch1\""
+							}
+						}
+					],
+					"sid": 718851482246877
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwgregPunch2",
+							"sid": 984223284828758,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 598921915881688,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 284942883175867
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 914736149502851,
+							"parameters": {
+								"key": 73
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwgregbox2",
+							"sid": 287031449090930,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"laser2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 521528817892511,
+							"parameters": {
+								"animation": "\"laser\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwgregbox2",
+							"sid": 325867534523674,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"laser2\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "avwgregbox2",
+							"sid": 371217861900003,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 241595971842998,
+							"parameters": {
+								"audio-file": "Laser eyes robot sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GLaser1\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 392484875381851,
+							"parameters": {
+								"tag": "\"GLaser1\""
+							}
+						}
+					],
+					"sid": 623589626778839
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "avwgregbox2",
+							"sid": 862113403891102,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"laser2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwgreg2",
+							"sid": 158642505965117,
+							"parameters": {
+								"object": "avwlaser2",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "avwgregbox2",
+							"sid": 495587591871966,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 467399299949939,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwgreg2",
+									"sid": 965797886903446
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwlaser2",
+									"sid": 177099881520192,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 241846330095948
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwlaser2",
+							"sid": 150492048293534,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 942516651344867,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "8"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwlaser2",
+							"sid": 990696816716673
+						}
+					],
+					"sid": 896241106318441
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 220465701676047,
+							"parameters": {
+								"key": 79
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwgregbox2",
+							"sid": 191220111120121,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"kick2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwgregbox2",
+							"sid": 894056960496966,
+							"parameters": {
+								"object": "avwkick2",
+								"layer": "0",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 466733949985225,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 432298958937561,
+							"parameters": {
+								"audio-file": "Robot Kick sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GKick1\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 671350726661380,
+							"parameters": {
+								"seconds": "0.3"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwkick2",
+							"sid": 697442289616315
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwgregbox2",
+							"sid": 326541878597855,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"kick2\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 236304873161676,
+							"parameters": {
+								"tag": "\"GKick1\""
+							}
+						}
+					],
+					"sid": 377183139363327
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwkick2",
+							"sid": 822081891411152,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 955826002589128,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 613014255457830
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwgregbox2",
+							"sid": 566883275470896,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 392534606268509,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 511946631628023,
+							"parameters": {
+								"audio-file": "Robot walking sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GWalk1\""
+							}
+						}
+					],
+					"sid": 438094490914252
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwgregbox2",
+							"sid": 603596486316964,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 470427776127345,
+							"parameters": {
+								"tag": "\"GWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 755357495205581,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 691745969811026
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "avwgregbox2",
+							"sid": 877813388200490,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 626659011249298,
+							"parameters": {
+								"tag": "\"GWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 658873620649400,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 500239042184530,
+							"parameters": {
+								"audio-file": "Jet Pack robot sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"GJump\""
+							}
+						}
+					],
+					"sid": 422902898831746
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "avwgregbox2",
+							"sid": 700243089601451,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 309592629982056,
+							"parameters": {
+								"tag": "\"GWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 769611310249367,
+							"parameters": {
+								"animation": "\"air\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 314914900321918
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwgregbox2",
+							"sid": 175207027862743,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 778586871521848,
+							"parameters": {
+								"tag": "\"GWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 855037232652633,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 569106624120871,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwgregbox2",
+									"sid": 105792703423038,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwgreg2",
+									"sid": 940640758830428,
+									"parameters": {
+										"animation": "\"walk\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 693594648299740,
+									"parameters": {
+										"audio-file": "Robot walking sfx",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"GWalk1\""
+									}
+								}
+							],
+							"sid": 487388610326441
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 389855322422412,
+							"parameters": {
+								"key": 80
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwgreg2",
+							"sid": 296794623402713,
+							"parameters": {
+								"animation": "\"block\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 629914866547407
+				}
+			],
+			"sid": 174167675377661
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "uno2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwunobox",
+							"sid": 777239507181116,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 317649179356730,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 771903664391773
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwunobox",
+							"sid": 276432169975040,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 544297079996350,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 666954044864939
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "avwunobox",
+							"sid": 873737843786623,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 756550049315677,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 417939911682155
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "avwunobox",
+							"sid": 358864355422667,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 230256219712211,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 738063094513009
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwunobox",
+							"sid": 291810257966296,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 223639510061550,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 394523299700654,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwunobox",
+									"sid": 187283079788504,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwUNO",
+									"sid": 932554294408838,
+									"parameters": {
+										"animation": "\"walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 426491936695376
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 452464934120567,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwunobox",
+							"sid": 536246301708385,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"upunch\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwunobox",
+							"sid": 417159970380540,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"upunch\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 479327923799086,
+							"parameters": {
+								"animation": "\"punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwunobox",
+							"sid": 642270258436010,
+							"parameters": {
+								"object": "avwunopunch",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 293084391455965,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunopunch",
+							"sid": 958455839281823
+						}
+					],
+					"sid": 613958090046768
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 805694743905630,
+							"parameters": {
+								"key": 67
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwunobox",
+							"sid": 131921982806705,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"ukick\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 955526575476602,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwunobox",
+							"sid": 693394887619799,
+							"parameters": {
+								"object": "avwukickbox",
+								"layer": "0",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 697747302590587,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwukickbox",
+							"sid": 852651073630224
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwunobox",
+							"sid": 855338086486756,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"ukick\""
+							}
+						}
+					],
+					"sid": 182485347746296
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 698157783491457,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwunobox",
+							"sid": 852640595706472,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"card\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwunobox",
+							"sid": 814983891134060,
+							"parameters": {
+								"object": "avwunoskip",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwunoskip",
+							"sid": 397539556017085,
+							"parameters": {
+								"animation": "\"spin\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwunobox",
+							"sid": 127675215671766,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"card\""
+							}
+						}
+					],
+					"sid": 288022408232637,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwunobox",
+									"sid": 769544229991194
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwunoskip",
+									"sid": 765296682594070,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 216609847939049
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwunopunch",
+							"sid": 360275944998823,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 197696917884858,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 884080988997121
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwukickbox",
+							"sid": 842255020172126,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 466953235744429,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "6"
+							}
+						}
+					],
+					"sid": 894544124588856
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwunoskip",
+							"sid": 270343697359383,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 966013366085324,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "4"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunoskip",
+							"sid": 679349817004434
+						}
+					],
+					"sid": 318706036184905
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 697881854218828,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO",
+							"sid": 950898972401218,
+							"parameters": {
+								"animation": "\"BLock\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 365155552227789
+				}
+			],
+			"sid": 945248179197319
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "uno3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwunobox2",
+							"sid": 671459107647298,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 987005576308766,
+							"parameters": {
+								"animation": "\"walk\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 193556623113370
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwunobox2",
+							"sid": 993586494908089,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 363582544957975,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 249074993920740
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "avwunobox2",
+							"sid": 781917714091438,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 898729187344745,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 938201849241102
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "avwunobox2",
+							"sid": 834840167208384,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 894325411355604,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 531633364242704
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwunobox2",
+							"sid": 678204664872281,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 859399186384321,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 906151666829786,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwunobox2",
+									"sid": 366970370517590,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwUNO2",
+									"sid": 555020968644810,
+									"parameters": {
+										"animation": "\"walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 821456779292433
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 331209113112988,
+							"parameters": {
+								"key": 85
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwunobox2",
+							"sid": 286024893520671,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"upunch2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwunobox2",
+							"sid": 490334771691388,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"upunch2\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 476926240309883,
+							"parameters": {
+								"animation": "\"punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwunobox2",
+							"sid": 139058067823274,
+							"parameters": {
+								"object": "avwunopunch2",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 152525213355832,
+							"parameters": {
+								"seconds": "0.2"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunopunch2",
+							"sid": 803564835016053
+						}
+					],
+					"sid": 221777821655853
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 159606648935164,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwunobox2",
+							"sid": 998841009022217,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 335413099382421
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 238116455083978,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwunobox2",
+							"sid": 830378800806419,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 691123748031610
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 227726756597519,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwunobox2",
+							"sid": 546488967628668,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 476525974498936
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 280235393420726,
+							"parameters": {
+								"key": 79
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwunobox2",
+							"sid": 223126962612890,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"ukick2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 229206896284910,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwunobox2",
+							"sid": 611034906233568,
+							"parameters": {
+								"object": "avwukickbox2",
+								"layer": "0",
+								"image-point": "2",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 121682425350721,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwukickbox2",
+							"sid": 813827000428284
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwunobox2",
+							"sid": 120559093790831,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"ukick2\""
+							}
+						}
+					],
+					"sid": 678721938884051
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 535481680057327,
+							"parameters": {
+								"key": 73
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwunobox2",
+							"sid": 495226269501529,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"card2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwunobox2",
+							"sid": 693382800285124,
+							"parameters": {
+								"object": "avwunoskip2",
+								"layer": "1",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwunoskip2",
+							"sid": 834417975420524,
+							"parameters": {
+								"animation": "\"spin\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwunobox2",
+							"sid": 280442875850772,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1",
+								"type": "once",
+								"tag": "\"card2\""
+							}
+						}
+					],
+					"sid": 342854206296146,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwunobox2",
+									"sid": 953506858418320,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwunoskip2",
+									"sid": 559565038178767,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 406924833600943
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 395233973027376
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwunoskip2",
+									"sid": 343303325103464,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 957017640698973
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwunopunch2",
+							"sid": 744292279614860,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 913070177184717,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 685159978297043
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwukickbox2",
+							"sid": 715746493604231,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 928495768953607,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "6"
+							}
+						}
+					],
+					"sid": 141713336682745
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwunoskip2",
+							"sid": 212500664184578,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 723783244238385,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "4"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunoskip2",
+							"sid": 768435231532170
+						}
+					],
+					"sid": 244777118481038
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 432719221892294,
+							"parameters": {
+								"key": 80
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwUNO2",
+							"sid": 615032111667952,
+							"parameters": {
+								"animation": "\"BLock\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 448074457196104
+				}
+			],
+			"sid": 870588901366097
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "olivia2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 890645830661999
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwOlivia",
+							"sid": 718651335150380,
+							"parameters": {
+								"object": "avwHitbox_Olivia",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 390612642744794
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 352886925245918,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 903366355325106,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 403524908641961
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 859824017704297,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 935988001117139,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 743102913748494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 496218760517364,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 596007276641363,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 252600270814058
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 229660592729136,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 338398455724013,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Freeze\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 465684659865915,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".5",
+								"type": "once",
+								"tag": "\"Freeze\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 214277960479900,
+							"parameters": {
+								"object": "avwPunch",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 431751039420770,
+							"parameters": {
+								"animation": "\"punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 317477435454251,
+							"parameters": {
+								"audio-file": "Sword attack for girl sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"OPunch\""
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwPunch",
+							"sid": 530107476722214,
+							"parameters": {
+								"object": "avwHitbox_Olivia",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 857607580125996,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwPunch",
+							"sid": 394659309789350
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 697984801304183,
+							"parameters": {
+								"tag": "\"OPunch\""
+							}
+						}
+					],
+					"sid": 737921931028752
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 231602346139812,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 190025759306296,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 513515695528343,
+							"parameters": {
+								"audio-file": "Girl walking sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"OWalk\""
+							}
+						}
+					],
+					"sid": 582114476819751
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-jumping",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 813240484830400,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 550824113805428,
+							"parameters": {
+								"tag": "\"OWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 482219382782240,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 971348015963989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 997876010303328,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 299222205082116,
+							"parameters": {
+								"tag": "\"OWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 440126214153832,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 114292814683577
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 369735778323643,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 186301246242342,
+							"parameters": {
+								"tag": "\"OWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 737350052911144,
+							"parameters": {
+								"animation": "\"IDLE\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 491647060159008
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 663576649310497,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 958092931123374,
+							"parameters": {
+								"tag": "\"OWalk\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 570849668821652,
+							"parameters": {
+								"animation": "\"IDLE\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 612522500607068,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwHitbox_Olivia",
+									"sid": 504572799031507,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwOlivia",
+									"sid": 549168464696498,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 108853465671836,
+									"parameters": {
+										"audio-file": "Girl walking sfx",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"OWalk\""
+									}
+								}
+							],
+							"sid": 496927949869100
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 505960815965181
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwOlivia",
+							"sid": 513201186968418,
+							"parameters": {
+								"object": "avwHitbox_Olivia",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 956596339446963
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwPunch",
+							"sid": 943765701340253,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 785675570632652,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 726365111800973,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 829460125641106,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 319344614489198,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"bomb\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwOlivia",
+							"sid": 804922840742433,
+							"parameters": {
+								"object": "avwbomb",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 266295478094599,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "4",
+								"type": "once",
+								"tag": "\"bomb\""
+							}
+						}
+					],
+					"sid": 634520733337658,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwOlivia",
+									"sid": 190352178337705
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwbomb",
+									"sid": 635431653385540,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 665708140673347
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 706432057008063
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwbomb",
+									"sid": 648262323108210,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 477174268405898
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwbomb",
+							"sid": 757652644493762,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwbomb",
+							"sid": 557825329642780
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 664324823298447,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "8"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwbomb",
+							"sid": 156007000644919,
+							"parameters": {
+								"object": "avwSprite6",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 466267302966266,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwSprite6",
+							"sid": 966665184407377
+						}
+					],
+					"sid": 261945159995792,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 712045762674522,
+							"parameters": {
+								"key": 67
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 465947461345703,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"rat\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwOlivia",
+							"sid": 125104168023519,
+							"parameters": {
+								"object": "avwratgaming",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 170501944885938,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "11",
+								"type": "once",
+								"tag": "\"rat\""
+							}
+						}
+					],
+					"sid": 208729605973984,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwOlivia",
+									"sid": 313004209256424
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "avwratgaming",
+									"sid": 712579528137282,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 338307922422605
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 953462204866209,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia",
+							"sid": 907324037463811,
+							"parameters": {
+								"animation": "\"Block\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 690423032535866
+				}
+			],
+			"sid": 362196008648509
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "olivia3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 665489984227575
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwOlivia2",
+							"sid": 928507424903043,
+							"parameters": {
+								"object": "avwHitbox_Olivia2",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 515293739360701
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 367255928205201,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 782008051783704,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 808579716209526
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 108928882333730,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 367246633976220,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 642311834833836
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 537899783528378,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 141100203109885,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 859696715672517
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 978099019586531,
+							"parameters": {
+								"key": 85
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 387079885051509,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"Freeze2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 563766489300638,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": ".5",
+								"type": "once",
+								"tag": "\"Freeze2\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 621239262251995,
+							"parameters": {
+								"object": "avwPunch2",
+								"layer": "1",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 517005001637700,
+							"parameters": {
+								"animation": "\"punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 722007763665236,
+							"parameters": {
+								"audio-file": "Sword attack for girl sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"OPunch1\""
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwPunch2",
+							"sid": 723491172394410,
+							"parameters": {
+								"object": "avwHitbox_Olivia2",
+								"image-point-optional": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 716306776211334,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwPunch2",
+							"sid": 251371277713479
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 642395109872154,
+							"parameters": {
+								"tag": "\"OPunch1\""
+							}
+						}
+					],
+					"sid": 207587662687460
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 901796358229279,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 344696488185402,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 333417164452965,
+							"parameters": {
+								"audio-file": "Girl walking sfx",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"OWalk1\""
+							}
+						}
+					],
+					"sid": 479899089052915
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-jumping",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 852137735454256,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 312753213502813,
+							"parameters": {
+								"tag": "\"OWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 234295433904799,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 871513471344120
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 386538437058462,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 211966107830316,
+							"parameters": {
+								"tag": "\"OWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 514882349088236,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 303890387549785
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 146935146446050,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 395119282894705,
+							"parameters": {
+								"tag": "\"OWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 362013930789193,
+							"parameters": {
+								"animation": "\"IDLE\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 876876835495665
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 245044890995589,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 353894501886359,
+							"parameters": {
+								"tag": "\"OWalk1\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 438071439268960,
+							"parameters": {
+								"animation": "\"IDLE\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 499177165484556,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwHitbox_Olivia2",
+									"sid": 823401800664440,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwOlivia2",
+									"sid": 346962542688865,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 266497484397041,
+									"parameters": {
+										"audio-file": "Girl walking sfx",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"OWalk1\""
+									}
+								}
+							],
+							"sid": 790285105158322
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 838905598925760
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwOlivia2",
+							"sid": 214687835778070,
+							"parameters": {
+								"object": "avwHitbox_Olivia2",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 876100549267606
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwPunch2",
+							"sid": 582631185809931,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 366325442820280,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 587266233557848,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 129196760046985,
+							"parameters": {
+								"key": 73
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 224545942568051,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"bomb2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwOlivia2",
+							"sid": 977648896323241,
+							"parameters": {
+								"object": "avwbomb2",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 809706501384766,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "4",
+								"type": "once",
+								"tag": "\"bomb2\""
+							}
+						}
+					],
+					"sid": 336641255896026,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwOlivia2",
+									"sid": 160720106750495
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwbomb2",
+									"sid": 542147146566464,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "0"
+									}
+								}
+							],
+							"sid": 267397696642661
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 898778274905255
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwbomb2",
+									"sid": 187071198661235,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								}
+							],
+							"sid": 163133645799405
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwbomb2",
+							"sid": 144219228119530,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwbomb2",
+							"sid": 491020481694515
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 836691930439137,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "8"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwbomb2",
+							"sid": 974154325764344,
+							"parameters": {
+								"object": "avwSprite6",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 872363962173058,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwSprite6",
+							"sid": 174108558271514
+						}
+					],
+					"sid": 817305440300457,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 533307519069714,
+							"parameters": {
+								"key": 79
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 358381503751868,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"rat\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwOlivia2",
+							"sid": 258715386856998,
+							"parameters": {
+								"object": "avwratgaming2",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 703212238968391,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "11",
+								"type": "once",
+								"tag": "\"rat\""
+							}
+						}
+					],
+					"sid": 836329820910146,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwOlivia2",
+									"sid": 828952819223045
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "avwratgaming2",
+									"sid": 662420044452904,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 168190911005268
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 297708324115573,
+							"parameters": {
+								"key": 80
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwOlivia2",
+							"sid": 829677232803372,
+							"parameters": {
+								"animation": "\"Block\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 482087751247901
+				}
+			],
+			"sid": 175276815110938
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RATGAMING2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwratgaming",
+							"sid": 333557893421489,
+							"parameters": {
+								"object": "avwedgemarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 863061326888579,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "avwratgaming",
+									"sid": 982996837714915,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "avwratgaming",
+									"sid": 401395733163483,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 426281557183134
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 751303562049925
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "avwratgaming",
+									"sid": 752821649632764,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 763270525773829
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "avwratgaming",
+							"sid": 322523393443641,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwratgaming",
+							"sid": 229448745635878,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwratgaming",
+							"sid": 968426113979761,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 904102444973462
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "avwratgaming",
+							"sid": 386090450584755,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwratgaming",
+							"sid": 842863535931913,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwratgaming",
+							"sid": 384714552616366,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 721920951753520
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwratgaming",
+							"sid": 612648348278932,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwratgaming",
+							"sid": 428337159445873
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 770743983455790,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "10"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwratgaming",
+							"sid": 372771511761335,
+							"parameters": {
+								"object": "avwSprite6",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 861015384429179,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwSprite6",
+							"sid": 448193435334846
+						}
+					],
+					"sid": 696344409400092,
+					"isOrBlock": true
+				}
+			],
+			"sid": 148195966737967
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RATGAMING3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwratgaming2",
+							"sid": 716026983931245,
+							"parameters": {
+								"object": "avwedgemarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 180961397878170,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "avwratgaming2",
+									"sid": 725628044382687,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "avwratgaming2",
+									"sid": 291096667480189,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 360920444899709
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 750856176293666
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "avwratgaming2",
+									"sid": 370394976851290,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 471065204528341
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "avwratgaming2",
+							"sid": 604452007512923,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwratgaming2",
+							"sid": 422354119772043,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwratgaming2",
+							"sid": 388080354128564,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 639718143133268
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "avwratgaming2",
+							"sid": 673450384621727,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwratgaming2",
+							"sid": 159950855134147,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwratgaming2",
+							"sid": 189660269453349,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 334689890565016
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwratgaming2",
+							"sid": 274387779511145,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwratgaming2",
+							"sid": 172179851965629
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 824972485910074,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "10"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwratgaming2",
+							"sid": 672005366061712,
+							"parameters": {
+								"object": "avwSprite6",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 148111657571940,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwSprite6",
+							"sid": 775442532372962
+						}
+					],
+					"sid": 630010332759174,
+					"isOrBlock": true
+				}
+			],
+			"sid": 572324826667374
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ABE",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 982782488096717,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 970393788353036,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 979878028404667
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 776224218201417,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 589389265572743,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 779515223036524
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 350470967515572,
+							"parameters": {
+								"key": 38
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 537908572533037,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 293604918755061
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 430293229775854,
+							"parameters": {
+								"key": 90
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 479480982972908,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"gun\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 571971574497930,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 271554829769476,
+							"parameters": {
+								"animation": "\"Gun\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 865791793531233,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"gun\""
+							}
+						}
+					],
+					"sid": 408948792229041
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 813207542374987,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"gun\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwABE",
+							"sid": 335954296126222,
+							"parameters": {
+								"object": "avwabebullet",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 785436701933524,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 787824515418649,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "avwABE",
+									"sid": 850386612028018,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwabebullet",
+									"sid": 292153256213604,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "avwabebullet",
+									"sid": 956962305098533,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 651933084599922
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 426695918220880
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwabebullet",
+									"sid": 335122884363694,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "avwabebullet",
+									"sid": 922065701024085,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 506628181538384
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 648394197634113,
+							"parameters": {
+								"key": 67
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 509218503100815,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"abekick\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 413136482276583,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwABE",
+							"sid": 377742358898769,
+							"parameters": {
+								"object": "avwabekick",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 555124972186424,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwabekick",
+							"sid": 481924371407308
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 210556531899010,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"abekick\""
+							}
+						}
+					],
+					"sid": 977034721554533
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 264869973359501,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 734281258811838,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"abepunch\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 108175762801341,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"abepunch\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 689282052961993,
+							"parameters": {
+								"animation": "\"Punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "avwABE",
+							"sid": 630050983034429,
+							"parameters": {
+								"object": "avwabepunch",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 109783433625956,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwabepunch",
+							"sid": 851407877597505
+						}
+					],
+					"sid": 441532722292534
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 692094533840594,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 687517161968865,
+							"parameters": {
+								"animation": "\"BLOZZ\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 577785253710292
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 654115311055362,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 601500830003597,
+							"parameters": {
+								"animation": "\"Walking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 799689159457842
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 138118401965067,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 377952550458383,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 934526347559384
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 223723675035968,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 819025188898366,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 526856463497387,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwHitbox_ABE",
+									"sid": 717048341202425,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "avwABE",
+									"sid": 145298577833093,
+									"parameters": {
+										"animation": "\"Walking\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 899172106972022
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 755833331988781,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "avwABE",
+							"sid": 124509811710906,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 342756898586641
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwabebullet",
+							"sid": 470815396698244,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwabebullet",
+							"sid": 323380782701538
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 432567858581271,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "5"
+							}
+						}
+					],
+					"sid": 827706598354008
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwabepunch",
+							"sid": 359158940943476,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 414942542764001,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 910011578165946
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwabekick",
+							"sid": 523320613272867,
+							"parameters": {
+								"object": "avwplayer2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 658278954308617,
+							"parameters": {
+								"variable": "HealthP2",
+								"value": "7"
+							}
+						}
+					],
+					"sid": 791513941451829
+				}
+			],
+			"sid": 319848432337567
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ABE2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 263606085351980,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 907522284201352,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 714982255517124
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 824732051507820,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 566630586376022,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 360524918176715
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 957693102820626,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 820450584873991,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 802459447856158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 274805412660218,
+							"parameters": {
+								"key": 73
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 573266255756702,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"gun2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 189318223070760,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 366376406964094,
+							"parameters": {
+								"animation": "\"Gun\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 929874364472395,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"gun2\""
+							}
+						}
+					],
+					"sid": 363701219440801
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 279344321797223,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"gun2\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ABE2",
+							"sid": 474127881689665,
+							"parameters": {
+								"object": "avwabebullet2",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 785842618284082,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 844924782315806,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-mirrored",
+									"objectClass": "ABE2",
+									"sid": 702736222843019
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwabebullet2",
+									"sid": 639278951613090,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "avwabebullet2",
+									"sid": 954158042357080,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 504394076664356
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 370217670903123
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "avwabebullet2",
+									"sid": 723101321880008,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "180"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "avwabebullet2",
+									"sid": 927658785617888,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 485144734811644
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 877587294596052,
+							"parameters": {
+								"key": 79
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 866547147659635,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"abekick2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 392723836533165,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ABE2",
+							"sid": 398924889535794,
+							"parameters": {
+								"object": "avwabekick2",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 906028537830893,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwabekick2",
+							"sid": 776242340109971
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 449322233885562,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"abekick2\""
+							}
+						}
+					],
+					"sid": 814235975346011
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 262772771471533,
+							"parameters": {
+								"key": 85
+							}
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 681882173090942,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"abepunch2\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 151506887753745,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "0.5",
+								"type": "once",
+								"tag": "\"abepunch2\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 596551061383726,
+							"parameters": {
+								"animation": "\"Punch\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ABE2",
+							"sid": 494896365909797,
+							"parameters": {
+								"object": "avwabepunch2",
+								"layer": "0",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 608081273655628,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwabepunch2",
+							"sid": 290621508374719
+						}
+					],
+					"sid": 810203553925444
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 974620272155605,
+							"parameters": {
+								"key": 80
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 272833140683926,
+							"parameters": {
+								"animation": "\"BLOZZ\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 700176134792078
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 656947409284321,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 449721352642476,
+							"parameters": {
+								"animation": "\"Walking\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 317396407851138
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 880729669014134,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 852865160439635,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 699555853462188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 234857829964136,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 475268750313427,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 711455585275114,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "avwHitbox_ABE2",
+									"sid": 250727809049523,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "ABE2",
+									"sid": 755876726377966,
+									"parameters": {
+										"animation": "\"Walking\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 194935625742553
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-falling",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 808805164794147,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 306050229937997,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 211620058360647
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwabebullet2",
+							"sid": 676043086462871,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwabebullet2",
+							"sid": 376888776665175
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 822526688464842,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "5"
+							}
+						}
+					],
+					"sid": 444650880255446
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwabepunch2",
+							"sid": 458504751647372,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 304474402752976,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 538636206410210
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "avwabekick2",
+							"sid": 286838216606327,
+							"parameters": {
+								"object": "avwplayer1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 183621007834889,
+							"parameters": {
+								"variable": "healthP1",
+								"value": "7"
+							}
+						}
+					],
+					"sid": 653380368815579
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 887730410826130,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 569648918694177,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "ABE2",
+							"sid": 103386819997970,
+							"parameters": {
+								"animation": "\"OMNI\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 666454322011833
+				}
+			],
+			"sid": 918296883893688
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "health stuff2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 623500915322530,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwplayer2",
+							"sid": 692318023354140
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwOlivia2",
+							"sid": 645011630728291
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 365312209832740
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgreg2",
+							"sid": 535111272618234
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgregbox2",
+							"sid": 998889777000965
+						},
+						{
+							"id": "destroy",
+							"objectClass": "ABE2",
+							"sid": 850553380370048
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 934262420709789
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwUNO2",
+							"sid": 885031561830874
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunobox2",
+							"sid": 684958167856002
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 501276820747692,
+							"parameters": {
+								"layout": "avwplayer1dub"
+							}
+						}
+					],
+					"sid": 524047417138332
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 261119356555779,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 2,
+								"value": "55"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP21",
+							"sid": 336552550380295,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP21",
+							"sid": 957069436710286,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 424591471252481
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 511288723530297,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "45"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP22",
+							"sid": 366194452809336,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP22",
+							"sid": 922726401633739,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 529664223614023
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 767830223102561,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "40"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP23",
+							"sid": 796262089443462,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP23",
+							"sid": 389952090203600,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 251141946779436
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 417565871000888,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "35"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP24",
+							"sid": 898546312041229,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP24",
+							"sid": 928286779052261,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 776719654868338
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 636626853364016,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP25",
+							"sid": 371337916920077,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP25",
+							"sid": 646141916773681,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 455531646268029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 466233146413848,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP26",
+							"sid": 590464958062920,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP26",
+							"sid": 847714713022194,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 409453317191137
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 865329720442512,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP27",
+							"sid": 985359008058704,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP27",
+							"sid": 162182507043278,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 658851621963274
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 704106575357491,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP28",
+							"sid": 117451575236842,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP28",
+							"sid": 458536432716469,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 776420831247072
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 463996080220126,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP29",
+							"sid": 169220970436897,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP29",
+							"sid": 283147415978494,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 215728718334871
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 713985515464721,
+							"parameters": {
+								"variable": "HealthP2",
+								"comparison": 3,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP210",
+							"sid": 932001597609481,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP210",
+							"sid": 907496493092067,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 866495707245672
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 697724927970926,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwOlivia",
+							"sid": 715362212699819
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 442392439812463
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgreg",
+							"sid": 107424645228876
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgregbox",
+							"sid": 872112633763273
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwABE",
+							"sid": 298984619903620
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 864056106806969
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwUNO",
+							"sid": 163898686261376
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunobox",
+							"sid": 647855353307405
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwplayer1",
+							"sid": 405128831144138
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 268885430200475,
+							"parameters": {
+								"layout": "avwplayer2dub"
+							}
+						}
+					],
+					"sid": 616844042443460
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 197086677123105,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 2,
+								"value": "55"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP11",
+							"sid": 676777561024690,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP11",
+							"sid": 620204912510436,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 268152900122579
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 258139164423879,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "45"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarp12",
+							"sid": 355570117450605,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarp12",
+							"sid": 361630325826133,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 852183257919095
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910064187264057,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "40"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP13",
+							"sid": 337578147781216,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP13",
+							"sid": 619632997689877,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 590545490269505
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 760393554834755,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "35"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP14",
+							"sid": 636459807926900,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP14",
+							"sid": 111539602581652,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 760606569636387
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 964955170841151,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP15",
+							"sid": 444907277660546,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP15",
+							"sid": 411920706456095,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 119367096451577
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910080540906721,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "25"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP16",
+							"sid": 453063559053175,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP16",
+							"sid": 344461503404772,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 903605679029356
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 796120006366807,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "20"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP17",
+							"sid": 383483265385868,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP17",
+							"sid": 962382021267510,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 299425593067360
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 557621238324925,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP18",
+							"sid": 549309689205642,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP18",
+							"sid": 261030724956108,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 308780608268340
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 646022147035882,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP19",
+							"sid": 967783065792685,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP19",
+							"sid": 940141874891362,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 396464468954204
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 782679615902561,
+							"parameters": {
+								"variable": "healthP1",
+								"comparison": 3,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-fade-out-time",
+							"objectClass": "avwhealthbarP110",
+							"sid": 450415880882980,
+							"behaviorType": "Fade",
+							"parameters": {
+								"fade-out-time": "0.1"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "avwhealthbarP110",
+							"sid": 368428161881098,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 814860608278671
+				}
+			],
+			"sid": 640334266582513
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "general4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 715324058226886,
+							"parameters": {
+								"first-value": "avwplayer1.X",
+								"comparison": 4,
+								"second-value": "avwplayer2.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgregbox",
+							"sid": 801254090222958,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 636397409904515,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgreg",
+							"sid": 522385790443018,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwOlivia",
+							"sid": 708938934178665,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwunobox",
+							"sid": 257773142854408,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwUNO",
+							"sid": 422884947447066,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 714347452348303,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwABE",
+							"sid": 280360170292634,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgregbox2",
+							"sid": 770119793369226,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 562625790288359,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgreg2",
+							"sid": 648825450226822,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwOlivia2",
+							"sid": 515713549868481,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwunobox2",
+							"sid": 809906757400458,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwUNO2",
+							"sid": 730470183149053,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 725938438033264,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "ABE2",
+							"sid": 614238576748955,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwukickbox",
+							"sid": 334345417671046,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwukickbox2",
+							"sid": 430116549385721,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 402563952743632
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 468888744967918,
+							"parameters": {
+								"first-value": "avwplayer2.X",
+								"comparison": 4,
+								"second-value": "avwplayer1.X"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgregbox",
+							"sid": 206116456411873,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 245031652206944,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgreg",
+							"sid": 969335609741752,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwOlivia",
+							"sid": 250534109998925,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwunobox",
+							"sid": 208579454027071,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwUNO",
+							"sid": 360971891871543,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 646123314123461,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwABE",
+							"sid": 568760785277129,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgregbox2",
+							"sid": 120346224561565,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 958029766853587,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwgreg2",
+							"sid": 415796384915431,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwOlivia2",
+							"sid": 847349983425256,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwunobox2",
+							"sid": 222594529763742,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwUNO2",
+							"sid": 767164112105239,
+							"parameters": {
+								"state": "mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 819496070645724,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "ABE2",
+							"sid": 803484914022362,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwukickbox",
+							"sid": 389806100175796,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "avwukickbox2",
+							"sid": 371792655697679,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 440716150836029
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 291999894169421
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwgreg",
+							"sid": 626728233107529,
+							"parameters": {
+								"object": "avwgregbox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwUNO",
+							"sid": 492799208751298,
+							"parameters": {
+								"object": "avwunobox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwOlivia",
+							"sid": 606753944044080,
+							"parameters": {
+								"object": "avwHitbox_Olivia",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwABE",
+							"sid": 279893170271519,
+							"parameters": {
+								"object": "avwHitbox_ABE",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 706713140767801
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 225894573484206
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer1",
+							"sid": 406778232248130,
+							"parameters": {
+								"object": "avwgregbox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer1",
+							"sid": 266310159028678,
+							"parameters": {
+								"object": "avwunobox",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer1",
+							"sid": 877701430870590,
+							"parameters": {
+								"object": "avwHitbox_Olivia",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer1",
+							"sid": 208625096973074,
+							"parameters": {
+								"object": "avwHitbox_ABE",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 430067965359057
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 547896811207450
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwgreg2",
+							"sid": 235827429674785,
+							"parameters": {
+								"object": "avwgregbox2",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwUNO2",
+							"sid": 606077412528267,
+							"parameters": {
+								"object": "avwunobox2",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwOlivia2",
+							"sid": 720601825254317,
+							"parameters": {
+								"object": "avwHitbox_Olivia2",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "ABE2",
+							"sid": 640749052509715,
+							"parameters": {
+								"object": "avwHitbox_ABE2",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 385821020217792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 871729817972395
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer2",
+							"sid": 367098011215052,
+							"parameters": {
+								"object": "avwgregbox2",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer2",
+							"sid": 740137364163954,
+							"parameters": {
+								"object": "avwunobox2",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer2",
+							"sid": 917361054000114,
+							"parameters": {
+								"object": "avwHitbox_Olivia2",
+								"image-point-optional": "0"
+							}
+						},
+						{
+							"id": "set-position-to-another-object",
+							"objectClass": "avwplayer2",
+							"sid": 827746195260620,
+							"parameters": {
+								"object": "avwHitbox_ABE2",
+								"image-point-optional": "0"
+							}
+						}
+					],
+					"sid": 385793225573159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 979147515381177,
+							"parameters": {
+								"variable": "ABEchar_back",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 170075668684570
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 420477589655814
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwABE",
+							"sid": 613142659386485
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_ABE",
+							"sid": 607881208158559
+						}
+					],
+					"sid": 836058567158050
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 245142798663678,
+							"parameters": {
+								"variable": "ABEchar_back2",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 879896084337579
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 417153098433552
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "ABE2",
+							"sid": 544856075591119
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_ABE2",
+							"sid": 842482019807802
+						}
+					],
+					"sid": 744352390710751
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 735598142082170,
+							"parameters": {
+								"variable": "Oliviachar_back",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 344717153169379
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 813282038083344
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwOlivia",
+							"sid": 374210329809678
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_Olivia",
+							"sid": 287069600301859
+						}
+					],
+					"sid": 945315267068494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 714735195484057,
+							"parameters": {
+								"variable": "Oliviachar_back2",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 371979113317374
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 532031383251035
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwOlivia2",
+							"sid": 674289221588555
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwHitbox_Olivia2",
+							"sid": 700943125822326
+						}
+					],
+					"sid": 564532955006007
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 195106076544162,
+							"parameters": {
+								"variable": "Gregchar_back",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 447553754307554
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 897665963379819
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwgreg",
+							"sid": 371089801068561
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgregbox",
+							"sid": 785210919611619
+						}
+					],
+					"sid": 818987199538703
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 217211695211655,
+							"parameters": {
+								"variable": "Gregchar_back2",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 984409143389899
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 392244676693845
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwgreg2",
+							"sid": 745026019479806
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwgregbox2",
+							"sid": 929787220947996
+						}
+					],
+					"sid": 518940142401782
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 622744046485117,
+							"parameters": {
+								"variable": "UNOchar_back",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 439136138908055
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 691770277698829
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwUNO",
+							"sid": 613699418642665
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunobox",
+							"sid": 920990144533391
+						}
+					],
+					"sid": 523228946258817
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 523335121134675,
+							"parameters": {
+								"variable": "UNOchar_back2",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 819416467059944
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 778249691246337
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "avwUNO2",
+							"sid": 762614720836050
+						},
+						{
+							"id": "destroy",
+							"objectClass": "avwunobox2",
+							"sid": 308517990925401
+						}
+					],
+					"sid": 305274210237498
+				}
+			],
+			"sid": 154740220993087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 892360642584170
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 292590180007232
+				}
+			],
+			"sid": 162026796667701
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 330646860789785
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 832164923037215,
+					"parameters": {
+						"scale": ".65"
+					}
+				}
+			],
+			"sid": 698296381830112
+		}
+	],
+	"sid": 165814035586588
+}

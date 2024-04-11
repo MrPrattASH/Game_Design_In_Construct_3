@@ -1,0 +1,164 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 111320814090435
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Ball",
+					"sid": 163772248820376,
+					"parameters": {
+						"x": "Paddle.X",
+						"y": "Paddle.Y"
+					}
+				}
+			],
+			"sid": 631386783243509,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "x_position",
+					"type": "number",
+					"initialValue": "50",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 294308258767228
+				},
+				{
+					"eventType": "variable",
+					"name": "y_position",
+					"type": "number",
+					"initialValue": "30",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 947987418955373
+				},
+				{
+					"eventType": "comment",
+					"text": "This is a special nested loop. It repeats a nested loop 4 different times to create 4 rows of bricks. \n\nx_position sets our first brick back to the left side of the screen. "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 872222461900563,
+							"parameters": {
+								"count": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 244579357142201,
+							"parameters": {
+								"variable": "x_position",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 641955891436542,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Create a single horizontal row. \nfirst we make a brick at our x/y positions\nThen we add a brick's width + spacing to our x_position, so that the next brick that is placed at x_position is offset to the right of the previous brick. "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 494965201301844,
+									"parameters": {
+										"count": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 319952108798120,
+									"parameters": {
+										"object-to-create": "Brick",
+										"layer": "0",
+										"x": "x_position",
+										"y": "y_position",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 260966462403535,
+									"parameters": {
+										"variable": "x_position",
+										"value": "Brick.Width * 1.5"
+									}
+								}
+							],
+							"sid": 461092801124668
+						},
+						{
+							"eventType": "comment",
+							"text": "Once we've made an entire horizontal row, we need to add a vertical spacing to our next row of bricks, otherwise our bricks would overlap one another. "
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 117155188407239,
+									"parameters": {
+										"variable": "y_position",
+										"value": "Brick.Height*2"
+									}
+								}
+							],
+							"sid": 177425625010804
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Ball",
+					"sid": 715070991383669,
+					"parameters": {
+						"object": "Brick"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Brick",
+					"sid": 348545288723827
+				}
+			],
+			"sid": 572035242858391
+		}
+	],
+	"sid": 274490781457455
+}

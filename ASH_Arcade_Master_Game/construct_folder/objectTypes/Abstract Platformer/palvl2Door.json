@@ -1,0 +1,50 @@
+{
+	"name": "palvl2Door",
+	"plugin-id": "Sprite",
+	"sid": 617809497579506,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 175,
+						"height": 130,
+						"originX": 0.72,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5308059,
+						"collisionPoly": {
+							"points": [
+								0.005714285714285714,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0.005714285714285714,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 289088470561891,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,336 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "Pin the player to their collision box so they always stay on top of it."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 240746146491862
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object",
+					"objectClass": "Player_Mask",
+					"sid": 349520793091011,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "Player_Box",
+						"mode": "position-only"
+					}
+				}
+			],
+			"sid": 433498049324638,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Coin_Placed",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 757372478535834
+				},
+				{
+					"eventType": "comment",
+					"text": "Local boolean keeps track of it a coin was placed in a \"free\" unoccupied location, or if it was overlapping another object\n\nWe repeat 30x for placing a coin. We initially set coin_placed to false to regulate that we have yet to place one of 30 coins. \nThen, we repeat WHILE we have not placed a coin. \n1. place coin.\n2. check if coin is overlapping any solid objects (and thus the player would be unable to grab the coin). \n    If it is overlapping, destroy it. Repeat loop. \n    else: set coin placed true and break out of the while loop. \nrepeat 30x. "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 824513472540330,
+							"parameters": {
+								"count": "30"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 798148341590527,
+							"parameters": {
+								"variable": "Coin_Placed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 593609788030081,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "while",
+									"objectClass": "System",
+									"sid": 837010656160468
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 729019990161278,
+									"parameters": {
+										"variable": "Coin_Placed"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 724443317155419,
+									"parameters": {
+										"object-to-create": "Coin",
+										"layer": "\"Main\"",
+										"x": "random(0,LayoutWidth)",
+										"y": "random(0,LayoutHeight)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 360278424531792,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Coin",
+											"sid": 644096969639962,
+											"parameters": {
+												"object": "SolidTilemap"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Coin",
+											"sid": 531842494887191
+										}
+									],
+									"sid": 565754982263154
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 386544873551961
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 575443419947346,
+											"parameters": {
+												"variable": "Coin_Placed",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 228589597673308
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_Box",
+					"sid": 528274635531612,
+					"parameters": {
+						"object": "Coin"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Coin",
+					"sid": 152398148926676
+				}
+			],
+			"sid": 851227152929325
+		},
+		{
+			"eventType": "comment",
+			"text": "Remember the direction the last direction the player was facing, to show the right animation."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player_Box",
+					"sid": 733068093843123,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "left"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_Mask",
+					"sid": 348950355040939,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "\"Left\""
+					}
+				}
+			],
+			"sid": 422736218813183
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player_Box",
+					"sid": 784534936377574,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "up"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_Mask",
+					"sid": 881114489820482,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "\"Up\""
+					}
+				}
+			],
+			"sid": 889455102137447
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player_Box",
+					"sid": 920240289493757,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "right"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_Mask",
+					"sid": 536942390690011,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "\"Right\""
+					}
+				}
+			],
+			"sid": 962544564249824
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving-direction",
+					"objectClass": "Player_Box",
+					"sid": 764417943396306,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"direction": "down"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_Mask",
+					"sid": 243484948285203,
+					"parameters": {
+						"instance-variable": "Direction",
+						"value": "\"Down\""
+					}
+				}
+			],
+			"sid": 598846760990857
+		},
+		{
+			"eventType": "comment",
+			"text": "Set either a walk or idle animation depending on if the player is moving, and using their current direction."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Player_Box",
+					"sid": 526650000117110,
+					"behaviorType": "TileMovement"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_Mask",
+					"sid": 901554847466961,
+					"parameters": {
+						"animation": "\"Walk_\" & Self.Direction",
+						"from": "current-frame"
+					}
+				}
+			],
+			"sid": 683801460748506
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-moving",
+					"objectClass": "Player_Box",
+					"sid": 796237120263937,
+					"behaviorType": "TileMovement",
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_Mask",
+					"sid": 740380053343982,
+					"parameters": {
+						"animation": "\"Idle_\" & Self.Direction",
+						"from": "current-frame"
+					}
+				}
+			],
+			"sid": 528136795685058
+		}
+	],
+	"sid": 341736185103793
+}

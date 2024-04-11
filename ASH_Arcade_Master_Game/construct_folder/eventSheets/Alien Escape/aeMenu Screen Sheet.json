@@ -1,0 +1,99 @@
+{
+	"name": "aeMenu Screen Sheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 536893904715624
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "TextsFlash",
+					"sid": 185017637167724,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.6",
+						"off-time": "0.6",
+						"duration": "3600"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 157535242573732,
+					"parameters": {
+						"audio-file": "Menu Screen",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"menuscreenmusic\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 955628177781932,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 341355292946443
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 636627718301158,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 358319502752855,
+					"parameters": {
+						"layout": "aeMenu Screen Pt.2"
+					}
+				}
+			],
+			"sid": 284050738407027
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 469828297615385
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 986503457862869,
+					"parameters": {
+						"tag": "\"menuscreenmusic\""
+					}
+				}
+			],
+			"sid": 690008398485102
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 966574032848608
+}

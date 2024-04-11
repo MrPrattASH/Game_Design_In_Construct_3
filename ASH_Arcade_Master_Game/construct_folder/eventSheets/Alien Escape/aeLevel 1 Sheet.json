@@ -1,0 +1,1780 @@
+{
+	"name": "aeLevel 1 Sheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 342473355940981
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "aePlayer",
+					"sid": 711889674224657,
+					"parameters": {
+						"object": "aePlayerBox",
+						"image-point-optional": "0"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "aeHealthBar",
+					"sid": 941609291697783,
+					"parameters": {
+						"width": "aePlayerBox.Health*16"
+					}
+				}
+			],
+			"sid": 611466108011418
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-landed",
+					"objectClass": "aePlayerBox",
+					"sid": 781899052978701,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "aePlayerBox",
+					"sid": 469686400236181,
+					"parameters": {
+						"object": "aedust",
+						"layer": "0",
+						"image-point": "0",
+						"create-hierarchy": false
+					}
+				}
+			],
+			"sid": 635186032103245
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 294067586884810
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 325254161813211,
+					"parameters": {
+						"audio-file": "Level 1 Music",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"lvl1\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "aePlayerBox",
+					"sid": 730415781291797,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 116644696865438,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 740485553285933
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 834556875134294
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 508115273965986,
+					"parameters": {
+						"tag": "\"lvl1\""
+					}
+				}
+			],
+			"sid": 746057687484107
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "aePlayerBox",
+					"sid": 569622984274605,
+					"parameters": {
+						"instance-variable": "Health",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "aePlayerBox",
+					"sid": 658283156422092
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 501582371538137,
+					"parameters": {
+						"layout": "aeGame Over Screen"
+					}
+				}
+			],
+			"sid": 256021596535345
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Anim and Movement",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 971623947046516,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 895462599804957,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 354317557305075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 413771767913250,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 104013270181850,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 771466060272438
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "aePlayerBox",
+							"sid": 896517102332371,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aePlayer",
+							"sid": 729769721395513,
+							"parameters": {
+								"animation": "\"Moving\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 109165907420962
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "aePlayerBox",
+							"sid": 936789893287693,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aePlayer",
+							"sid": 747049831408974,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 173568317054061
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "aePlayerBox",
+							"sid": 337244607635218,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aePlayer",
+							"sid": 569077265626810,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 977768810374534
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "aePlayerBox",
+							"sid": 496644021058607,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "aePlayer",
+							"sid": 234437212461343,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 763473194649813,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "aePlayerBox",
+									"sid": 404134307940227,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "aePlayer",
+									"sid": 290723502718178,
+									"parameters": {
+										"animation": "\"Walk\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 300237026456061
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 118698363236749,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 600419564451796
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aePlayer",
+							"sid": 457033296454262,
+							"parameters": {
+								"object": "aeBullet",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "aeBullet",
+							"sid": 834646022476437,
+							"parameters": {
+								"angle": "0"
+							}
+						}
+					],
+					"sid": 964208815485314
+				},
+				{
+					"eventType": "comment",
+					"text": "If the player is looking towards the left and spawn a bullet, the bullet will spawn on an angle of 180 degrees, meaning it just flipped itself and changes its direction"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 915759888467138,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-mirrored",
+							"objectClass": "aePlayer",
+							"sid": 284596289261632,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "aePlayer",
+							"sid": 818319578856151,
+							"parameters": {
+								"object": "aeBullet",
+								"layer": "0",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "aeBullet",
+							"sid": 957226288245762,
+							"parameters": {
+								"angle": "180"
+							}
+						}
+					],
+					"sid": 441166569865455
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 672298552111552,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "aePlayerBox",
+							"sid": 715359763564362,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 881956200084092
+				}
+			],
+			"sid": 956425550575354
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy Anim and Movement",
+			"description": "Big and Small (Environment) Enemies",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "This will give the player a bounce effect when they collide with the big enemy and kill it, and the playerbox kills the enemy if its y axis less than the big enemy as that means they are jumping on it, and then the big enemy destroys itself "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 514427417364542,
+							"parameters": {
+								"object": "aeBigEnemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 915937731611942,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "aePlayerBox",
+									"sid": 759214356712424,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "aeBigEnemy.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 745041284901760,
+									"parameters": {
+										"audio-file": "BigEnemydead",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "aeBigEnemy",
+									"sid": 559007285873424
+								},
+								{
+									"id": "set-vector-y",
+									"objectClass": "aePlayerBox",
+									"sid": 628235099730813,
+									"behaviorType": "Platform",
+									"parameters": {
+										"vector-y": "-400"
+									}
+								}
+							],
+							"sid": 277768957118551
+						},
+						{
+							"eventType": "comment",
+							"text": "if the playerbox is not falling and it will flash and if the powerup is collected it will subtract 3 from health and if the powerup is not collected subtract 1 from health"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 649608090505449
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "aePlayer",
+									"sid": 410903598544765,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 121083488015068,
+									"parameters": {
+										"audio-file": "Playerdamage",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 785076998836541,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 883498012929499,
+											"parameters": {
+												"variable": "PowerUpCollected"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 542386744503407,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 824454223705378
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 132233154062898
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "aePlayerBox",
+											"sid": 483892904190926,
+											"parameters": {
+												"instance-variable": "Health",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 628370793583343
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBigEnemy",
+							"sid": 666995235015090,
+							"parameters": {
+								"object": "aeEdgeMarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 966501029637234,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "aeBigEnemy",
+									"sid": 255402047265341,
+									"parameters": {
+										"instance-variable": "Position",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "aeBigEnemy",
+									"sid": 271997874348614,
+									"parameters": {
+										"instance-variable": "Position",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 163725165257572
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 834604214432959
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "aeBigEnemy",
+									"sid": 211611651109539,
+									"parameters": {
+										"instance-variable": "Position",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 475956275110433
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "This way the big enemy changes its position without any controls as when it collides with the edge marker it moves left or right depending on its initial position, and the platform behavior is simulating its movement"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeBigEnemy",
+							"sid": 734107584372509,
+							"parameters": {
+								"instance-variable": "Position",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "aeBigEnemy",
+							"sid": 625019114180696,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "aeBigEnemy",
+							"sid": 812406241047879,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 498046690977474
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeBigEnemy",
+							"sid": 752401134770414,
+							"parameters": {
+								"instance-variable": "Position",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "aeBigEnemy",
+							"sid": 588483794783977,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "aeBigEnemy",
+							"sid": 478491891575110,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 716225284147025
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 351515513610830,
+							"parameters": {
+								"object": "aeEdgeMarker"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 580994663003246,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnvironmentEnemies",
+									"sid": 680844832272217,
+									"parameters": {
+										"instance-variable": "Position",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnvironmentEnemies",
+									"sid": 387397580816506,
+									"parameters": {
+										"instance-variable": "Position",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 413531292157714
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 436002817262136
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnvironmentEnemies",
+									"sid": 522665207084417,
+									"parameters": {
+										"instance-variable": "Position",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 459732638023192
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 520607719953899,
+							"parameters": {
+								"instance-variable": "Position",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 437926474336962,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 298109162115970,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 432712688955553
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 676245491145612,
+							"parameters": {
+								"instance-variable": "Position",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 542082304324378,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 886836239576705,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 865974486000608
+				}
+			],
+			"sid": 508889426674657
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Collision Code",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "To prevent overflow of bullets in the layout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 413670846611385,
+							"parameters": {
+								"object": "aeKey"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 822358739829860,
+							"parameters": {
+								"audio-file": "KeyPickup",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "aeKey",
+							"sid": 879747873605029,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "aeKey",
+							"sid": 464213167790633,
+							"parameters": {
+								"instance-variable": "Picked",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 239571456781038
+				},
+				{
+					"eventType": "comment",
+					"text": "If the boolean picked is true, you will move on to the next level"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 596803604970315,
+							"parameters": {
+								"object": "aeExitToLvl1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "aeKey",
+							"sid": 221665670709533,
+							"parameters": {
+								"instance-variable": "Picked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 527086584253323,
+							"parameters": {
+								"layout": "aeLevel 2"
+							}
+						}
+					],
+					"sid": 923246732521523
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 890746770961831,
+							"parameters": {
+								"object": "aeSolidTilemap"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 211687647488395
+						}
+					],
+					"sid": 668882382987928
+				},
+				{
+					"eventType": "comment",
+					"text": "When bullet collides with the environment enemy, the environment enemy will spawn a wall in the game that you have destroy using your bullets, and the wall will be spawned in a particular position, and the playerbox will be set to a particular position because if the playerbox is in front of the wall it will get stuck from progressing "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 719992644158963,
+							"parameters": {
+								"object": "aeEnvironmentEnemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 728293724602803,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "The wall won't spawn when it is fading, as that causes the wall to spawn the second time"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "aeEnvironmentEnemy",
+									"sid": 622761613631554,
+									"parameters": {
+										"instance-variable": "StartFade"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "aeEnvironmentEnemy",
+									"sid": 712837212784841,
+									"parameters": {
+										"object": "aeWall1",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "aeWall1",
+									"sid": 241322072105870,
+									"parameters": {
+										"x": "548",
+										"y": "332"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "aePlayerBox",
+									"sid": 573886462585285,
+									"parameters": {
+										"x": "505 ",
+										"y": "154"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "aeWall1",
+									"sid": 331440635083795,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 771829809131773
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 139210739870478,
+							"parameters": {
+								"object": "aeEnvironmentEnemy2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 367872006956699,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "aeEnvironmentEnemy2",
+									"sid": 389030389851323,
+									"parameters": {
+										"instance-variable": "StartFade"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "aeEnvironmentEnemy2",
+									"sid": 711064852802942,
+									"parameters": {
+										"object": "aeWall2",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "aeWall2",
+									"sid": 629690273370866,
+									"parameters": {
+										"x": "741",
+										"y": "328"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "aePlayerBox",
+									"sid": 888630406353661,
+									"parameters": {
+										"x": "582 ",
+										"y": "295"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "aeWall2",
+									"sid": 223747279289893,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 677695774627937
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 255161246431860,
+							"parameters": {
+								"object": "aeEnvironmentEnemy3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 368791017490824,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "aeEnvironmentEnemy3",
+									"sid": 580583509014455,
+									"parameters": {
+										"instance-variable": "StartFade"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "aeEnvironmentEnemy3",
+									"sid": 779110859948380,
+									"parameters": {
+										"object": "aeWall3",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "aeWall3",
+									"sid": 212674165646979,
+									"parameters": {
+										"x": "1394",
+										"y": "332"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "aePlayerBox",
+									"sid": 767235870658549,
+									"parameters": {
+										"x": "1195 ",
+										"y": "111"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "aeWall3",
+									"sid": 733169625787756,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 925311116414045
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 286050660930464,
+							"parameters": {
+								"object": "aeWall1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "aeWall1",
+							"sid": 268648544271321,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 731868363422544
+						}
+					],
+					"sid": 257332141953046
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 819598335304387,
+							"parameters": {
+								"object": "aeWall2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 161211099868389
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "aeWall2",
+							"sid": 820965004356128,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 761780511183688,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 952050035369046,
+									"parameters": {
+										"variable": "PowerUpCollected"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "aeWall2",
+									"sid": 420558677792537,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 472020804670520
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 140346749615153,
+							"parameters": {
+								"object": "aeWall3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 844208777323704
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "aeWall3",
+							"sid": 766723453487666,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 283510416637391,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If powerup is collected the wall will subtract 5 from its health, indicating that the power-up is really important and powerful "
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 573794022970388,
+									"parameters": {
+										"variable": "PowerUpCollected"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "aeWall3",
+									"sid": 244114755199433,
+									"parameters": {
+										"instance-variable": "Health",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 352364190847472
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 200440052245490,
+							"parameters": {
+								"object": "aePowerup"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 400155449143029,
+							"parameters": {
+								"variable": "PowerUpCollected",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "aePowerup",
+							"sid": 927627449247278,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 728998536314523,
+							"parameters": {
+								"audio-file": "Power-up",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aePowerup",
+							"sid": 194466896505621
+						}
+					],
+					"sid": 770805872221344
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 507239382064024,
+							"parameters": {
+								"object": "aeBigEnemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 514289849580688
+						}
+					],
+					"sid": 664252819534208
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 936825328123711,
+							"parameters": {
+								"object": "EnvironmentEnemies"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 834676823038242
+						}
+					],
+					"sid": 874902974230863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 867925760161858,
+							"parameters": {
+								"object": "aeLayoutEdge"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 253642780415754
+						}
+					],
+					"sid": 712340994912314
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aeBullet",
+							"sid": 106052986547766,
+							"parameters": {
+								"object": "WallTilemaps"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "aeBullet",
+							"sid": 349972879592251
+						}
+					],
+					"sid": 840159661646411
+				},
+				{
+					"eventType": "comment",
+					"text": "When the player box collides and it is not doing the fade animation which means that its dying, it will deal damage"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "aePlayerBox",
+							"sid": 166439230745117,
+							"parameters": {
+								"object": "EnvironmentEnemies"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "EnvironmentEnemies",
+							"sid": 164935256508600,
+							"parameters": {
+								"instance-variable": "StartFade"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "aePlayerBox",
+							"sid": 692835133299857,
+							"parameters": {
+								"instance-variable": "Health",
+								"value": "2"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 996256259973583,
+							"parameters": {
+								"audio-file": "Playerdamage",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 860538644972605,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 971435417717096
+				}
+			],
+			"sid": 277948199613349
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Health Code",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeWall1",
+							"sid": 750712177418529,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "The player won't get damage because if the fade is true you won't get damage"
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "aeEnvironmentEnemy",
+							"sid": 403191780331680,
+							"parameters": {
+								"instance-variable": "StartFade",
+								"value": "true"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "This gives the environment enemy a dying effect rather than just disappearing "
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "aeEnvironmentEnemy",
+							"sid": 260906507791761,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 630105310135913,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 929856365727254,
+							"parameters": {
+								"audio-file": "kedr_sfx_ui_computer_complex_lowend_11",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"environmentdead\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWall1",
+							"sid": 275655694599909
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWallTilemap",
+							"sid": 757754597741202
+						}
+					],
+					"sid": 290254349812267
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeWall2",
+							"sid": 476609040054974,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "aeEnvironmentEnemy2",
+							"sid": 848115286855172,
+							"parameters": {
+								"instance-variable": "StartFade",
+								"value": "true"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 864770572028031,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 897761117650462,
+							"parameters": {
+								"audio-file": "kedr_sfx_ui_computer_complex_lowend_11",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"environmentdead\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWallTilemap2",
+							"sid": 650737736909643
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWall2",
+							"sid": 293255558950871
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "aeEnvironmentEnemy2",
+							"sid": 401122816666572,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 390753493561309
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "aeWall3",
+							"sid": 212413915443842,
+							"parameters": {
+								"instance-variable": "Health",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "aeEnvironmentEnemy3",
+							"sid": 704843538920103,
+							"parameters": {
+								"instance-variable": "StartFade",
+								"value": "true"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "aePlayer",
+							"sid": 965901211195463,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 403661091895385,
+							"parameters": {
+								"audio-file": "kedr_sfx_ui_computer_complex_lowend_11",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"environmentdead\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWall3",
+							"sid": 103555795914646
+						},
+						{
+							"id": "destroy",
+							"objectClass": "aeWallTilemap3",
+							"sid": 952744563383652
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "aeEnvironmentEnemy3",
+							"sid": 413746656879705,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 896125683866227
+				}
+			],
+			"sid": 357527201858502
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 356239177514569
+}

@@ -1,0 +1,39 @@
+{
+	"name": "paCompletion Events",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 329861212598268
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 851540142423333,
+					"parameters": {
+						"seconds": "5.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 330268568674397,
+					"parameters": {
+						"layout": "Abstract Platformer"
+					}
+				}
+			],
+			"sid": 596143291175464
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		}
+	],
+	"sid": 582641780746399
+}

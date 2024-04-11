@@ -1,0 +1,163 @@
+{
+	"name": "paBossGralin",
+	"plugin-id": "Sprite",
+	"sid": 785369568014903,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 864641561245851
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3160092,
+						"collisionPoly": {
+							"points": [
+								0.023809523809523808,
+								0,
+								1,
+								0.025,
+								0.9761904761904762,
+								1,
+								0.023809523809523808,
+								0.975
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 55,
+						"height": 55,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4685897,
+						"collisionPoly": {
+							"points": [
+								0.509090909090909,
+								0,
+								1,
+								0.5272727272727272,
+								0.4727272727272727,
+								1,
+								0,
+								0.4909090909090909
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 137595555019236,
+				"name": "MobThrowing",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 42,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6682304,
+						"collisionPoly": {
+							"points": [
+								0.023809523809523808,
+								0,
+								1,
+								0.025,
+								0.9761904761904762,
+								1,
+								0.023809523809523808,
+								0.975
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 544362841622001,
+				"name": "Dead",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 40,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1992139,
+						"collisionPoly": {
+							"points": [
+								0.45,
+								0,
+								0.55,
+								0,
+								1,
+								0.45,
+								1,
+								0.55,
+								0.55,
+								1,
+								0.45,
+								1,
+								0.025,
+								0.6,
+								0,
+								0.55,
+								0,
+								0.45
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 644295750438801,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

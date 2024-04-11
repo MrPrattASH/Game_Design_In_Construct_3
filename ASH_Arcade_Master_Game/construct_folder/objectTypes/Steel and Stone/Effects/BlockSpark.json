@@ -1,0 +1,116 @@
+{
+	"name": "BlockSpark",
+	"plugin-id": "Sprite",
+	"sid": 467218250328952,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2008345,
+						"collisionPoly": {
+							"points": [
+								0.625,
+								0.0625,
+								0.6875,
+								0.0625,
+								0.9375,
+								0.8125,
+								0.84375,
+								0.9375,
+								0.71875,
+								0.9375,
+								0.5625,
+								0.90625,
+								0.09375,
+								0.25,
+								0.1875,
+								0.125
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 6,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1135623,
+						"collisionPoly": {
+							"points": [
+								0.75,
+								0.03125,
+								0.8125,
+								0.1875,
+								0.9375,
+								0.75,
+								0.84375,
+								0.9375,
+								0.09375,
+								0.21875,
+								0.1875,
+								0.09375
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 5,
+						"tag": ""
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7981883,
+						"collisionPoly": {
+							"points": [
+								0.8125,
+								0,
+								0.9375,
+								0.125,
+								1,
+								0.5,
+								0.9375,
+								0.5,
+								0.0625,
+								0.1875,
+								0.15625,
+								0.0625
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 5,
+						"tag": ""
+					}
+				],
+				"sid": 184821829797520,
+				"name": "Spark",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 60
+			}
+		],
+		"subfolders": []
+	}
+}

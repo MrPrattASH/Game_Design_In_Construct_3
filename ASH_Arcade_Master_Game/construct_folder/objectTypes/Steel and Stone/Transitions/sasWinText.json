@@ -1,0 +1,90 @@
+{
+	"name": "sasWinText",
+	"plugin-id": "Sprite",
+	"sid": 829844120567415,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 977,
+						"height": 120,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 897704,
+						"collisionPoly": {
+							"points": [
+								0.9907881269191402,
+								0.008333333333333333,
+								0.9457523029682702,
+								0.9416666666666667,
+								0.2661207778915046,
+								0.9916666666666667,
+								0.009211873080859774,
+								0.9416666666666667,
+								0.0368474923234391,
+								0.03333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 548767182781336,
+				"name": "P1 Wins",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 1023,
+						"height": 120,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3325361,
+						"collisionPoly": {
+							"points": [
+								0.9912023460410557,
+								0.008333333333333333,
+								0.9481915933528837,
+								0.9416666666666667,
+								0.2541544477028348,
+								0.9916666666666667,
+								0.008797653958944282,
+								0.9416666666666667,
+								0.03519061583577713,
+								0.03333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 840202658005935,
+				"name": "P2 Wins",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

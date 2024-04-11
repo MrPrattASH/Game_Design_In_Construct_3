@@ -1,0 +1,123 @@
+{
+	"name": "aeWin Screen Sheet",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 532994142965000
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "aeFlashtxtwinscreen",
+					"sid": 906062538713761,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.6",
+						"off-time": "0.6",
+						"duration": "3600"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 148060815317426,
+					"parameters": {
+						"audio-file": "Win",
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"WWWWW\""
+					}
+				},
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 736897199858583,
+					"parameters": {
+						"scale": "2"
+					}
+				}
+			],
+			"sid": 639789029894500
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 220198269075805,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 974967520993608,
+					"parameters": {
+						"layout": "aeMenu Screen Pt.2"
+					}
+				}
+			],
+			"sid": 962743947437080
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 823155106747837,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 612974803919772,
+					"parameters": {
+						"layout": "aeCredits"
+					}
+				}
+			],
+			"sid": 476209302883467
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 194489231703416
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 512875320303406,
+					"parameters": {
+						"tag": "\"WWWWW\""
+					}
+				}
+			],
+			"sid": 709684995577083
+		}
+	],
+	"sid": 786669526213229
+}

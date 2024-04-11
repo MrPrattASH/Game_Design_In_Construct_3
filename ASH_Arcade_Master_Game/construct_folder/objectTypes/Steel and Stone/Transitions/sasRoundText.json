@@ -1,0 +1,138 @@
+{
+	"name": "sasRoundText",
+	"plugin-id": "Sprite",
+	"sid": 350639443454942,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 547,
+						"height": 113,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2618035,
+						"collisionPoly": {
+							"points": [
+								0.7477148080438757,
+								0,
+								0.9908592321755028,
+								0.10619469026548672,
+								0.9396709323583181,
+								0.9646017699115044,
+								0.1480804387568556,
+								1,
+								0.014625228519195612,
+								0.8938053097345132,
+								0.06764168190127971,
+								0.035398230088495575
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 982132356038776,
+				"name": "Round 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 591,
+						"height": 114,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9948803,
+						"collisionPoly": {
+							"points": [
+								0.6920473773265652,
+								0,
+								0.9678510998307953,
+								0.16666666666666666,
+								0.9983079526226735,
+								0.7543859649122807,
+								0.9475465313028765,
+								0.8245614035087719,
+								0.8646362098138748,
+								0.8947368421052632,
+								0.1353637901861252,
+								1,
+								0.011844331641285956,
+								0.8947368421052632,
+								0.06260575296108291,
+								0.03508771929824561
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 898544021492683,
+				"name": "Round 2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 880,
+						"height": 120,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1790641,
+						"collisionPoly": {
+							"points": [
+								0.9397727272727273,
+								0,
+								0.9886363636363636,
+								0.19166666666666668,
+								0.9227272727272727,
+								0.8833333333333333,
+								0.5772727272727273,
+								0.95,
+								0.0125,
+								0.9916666666666667,
+								0.053409090909090906,
+								0.008333333333333333
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 429573113915222,
+				"name": "Final Round",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,214 @@
+{
+	"name": "aeCredits",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "aeCreditsBackground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 2720,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -5.470947418708079,
+						"y": -11.84036826775639,
+						"width": 658.3037417967955,
+						"height": 386.0169125035844,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "aeCreditsHeading",
+					"properties": {
+						"text": "CREDITS",
+						"enable-bbcode": false,
+						"font": "Valorax-lg25V",
+						"size": 30,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.9215686274509803,
+							0.0196078431372549,
+							0.0196078431372549,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2721,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -3.827697405133563,
+						"y": -8.66242878526296,
+						"width": 641.742146713606,
+						"height": 61.031382490096945,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "aeCredits",
+					"properties": {
+						"text": "Fonts:\n\nFor fonts go to https://www.fontspace.com/\n\nAssets:\n\nAssets can be found on https://www.kenney.nl/\nBackground, Tilemaps and Characters found from https://www.kenney.nl/assets/pixel-platformer (Pixel Platformer)\n\nMusic and Sound Effects:\n\nSound effects obtained from https://www.zapsplat.com\nAdditional sound effects from https://www.zapsplat.com\nCREDITS TO KRISHNA (ksinha2022@ash.nl)\nAVERY (afrontczak@ash.nl) AND \nHANNAH (hmollenkramer@ash.nl) \nFOR THE MENU SCREEN, AND MENU SCREEN PT.2 MUSIC LOOPS",
+						"enable-bbcode": true,
+						"font": "Valorax-lg25V",
+						"size": 9,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.06274509803921569,
+							0.6588235294117647,
+							0.9176470588235294,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 2722,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2,
+						"y": 48,
+						"width": 638.093405071151,
+						"height": 312.01415731910504,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 6.282764377781452,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "scroll_to_sprite_scaling",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2729,
+					"instanceVariables": {},
+					"behaviors": {
+						"ScrollTo": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 240,
+						"y": 133,
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 760905779412379,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		}
+	],
+	"sid": 698308931058528,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 640,
+	"height": 360,
+	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
+	"eventSheet": "aeGame Over Sheet"
+}

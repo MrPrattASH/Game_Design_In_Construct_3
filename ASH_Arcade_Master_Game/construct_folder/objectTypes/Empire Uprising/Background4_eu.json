@@ -1,0 +1,56 @@
+{
+	"name": "Background4_eu",
+	"plugin-id": "Sprite",
+	"sid": 458859862842790,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 213,
+						"height": 142,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7425370,
+						"collisionPoly": {
+							"points": [
+								0.27699530516431925,
+								0,
+								0.9671361502347418,
+								0.07746478873239436,
+								1,
+								0.14084507042253522,
+								1,
+								1,
+								0,
+								1,
+								0,
+								0.2112676056338028,
+								0.028169014084507043,
+								0.15492957746478872
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 607648870280274,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"name": "avwConnntrolls",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 871493646719741
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 269413883586376,
+					"parameters": {
+						"layout": "Abe Vs World"
+					}
+				}
+			],
+			"sid": 170805391563841
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 389354123231396
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 953232341090804,
+					"parameters": {
+						"scale": ".65"
+					}
+				}
+			],
+			"sid": 396965011428522
+		}
+	],
+	"sid": 888392923284859
+}

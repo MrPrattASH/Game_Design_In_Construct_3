@@ -1,0 +1,17 @@
+{
+	"name": "sasTitleScreenText",
+	"plugin-id": "Text",
+	"sid": 203380733068992,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Text_",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 418914780278280
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

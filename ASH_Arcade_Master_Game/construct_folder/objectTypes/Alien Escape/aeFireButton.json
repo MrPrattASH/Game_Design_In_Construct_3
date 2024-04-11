@@ -1,0 +1,16 @@
+{
+	"name": "aeFireButton",
+	"plugin-id": "Button",
+	"sid": 469419685014117,
+	"isGlobal": true,
+	"instanceVariables": [
+		{
+			"name": "PickedFire",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 412669059061305
+		}
+	],
+	"behaviorTypes": []
+}

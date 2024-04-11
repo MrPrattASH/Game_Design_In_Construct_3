@@ -1,0 +1,18 @@
+{
+	"name": "game_arrays",
+	"plugin-id": "Arr",
+	"sid": 492162699969430,
+	"instanceVariables": [
+		{
+			"name": "game_year",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 480058152017944
+		}
+	],
+	"members": [
+		"Games_23",
+		"Games_24"
+	]
+}

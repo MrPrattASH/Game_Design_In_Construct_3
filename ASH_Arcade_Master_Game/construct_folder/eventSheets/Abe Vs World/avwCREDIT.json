@@ -1,0 +1,52 @@
+{
+	"name": "avwCREDIT",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 407343416832883
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 842273266318512,
+					"parameters": {
+						"layout": "Abe Vs World"
+					}
+				}
+			],
+			"sid": 935113880231773
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Level_Switch_Button_funcs"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 412086155221701
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 226357712457980,
+					"parameters": {
+						"scale": ".65"
+					}
+				}
+			],
+			"sid": 842883233285959
+		}
+	],
+	"sid": 992684885833739
+}
