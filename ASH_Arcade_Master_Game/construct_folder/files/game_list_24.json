@@ -1,7 +1,7 @@
 {
     "c2array": true,
     "size": [
-        5,
+        6,
         7,
         1
     ],
@@ -119,6 +119,29 @@
             ],
             [
                 "1 Player Platformer"
+            ]
+        ],
+        [
+            [
+                "High_Score_Type"
+            ],
+            [
+                "False"
+            ],
+            [
+                "False"
+            ],
+            [
+                "Time"
+            ],
+            [
+                "False"
+            ],
+            [
+                "Time"
+            ],
+            [
+                "Time"
             ]
         ]
     ]

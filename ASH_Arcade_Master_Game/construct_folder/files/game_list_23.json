@@ -1,7 +1,7 @@
 {
     "c2array": true,
     "size": [
-        5,
+        6,
         9,
         1
     ],
@@ -149,6 +149,35 @@
             ],
             [
                 "Single Player Maze Runner"
+            ]
+        ],
+        [
+            [
+                "High_Score_Type"
+            ],
+            [
+                "Score"
+            ],
+            [
+                "Time"
+            ],
+            [
+                "Time"
+            ],
+            [
+                "Time"
+            ],
+            [
+                "Time"
+            ],
+            [
+                "False"
+            ],
+            [
+                "Score"
+            ],
+            [
+                "Time"
             ]
         ]
     ]

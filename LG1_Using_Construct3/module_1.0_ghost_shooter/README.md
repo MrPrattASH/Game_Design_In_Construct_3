@@ -22,3 +22,13 @@ We're going to follow through one of the official construct 3 tutorials to start
 
 Follow through a text based tutorial here. [Ghost Shooter Tutorial](https://www.construct.net/en/tutorials/beginners-guide-construct-1)
 
+## Game Assets
+
+You'll need the following assets. (right click & save image as) 
+
+![back](game_assets/tiled_background.png)
+![player](game_assets/player_image.webp)
+![monster](game_assets/monster_image.webp)
+![bullet](game_assets/bullet_image.webp)
+![explostion](game_assets/explosion_image.webp)
+
