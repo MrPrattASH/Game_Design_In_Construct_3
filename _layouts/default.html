@@ -12,68 +12,84 @@
   {% include head-custom.html %}
   <style>
     /* Ensure code blocks wrap text */
-    pre, code {
-      white-space: pre-wrap; /* CSS3 */
-      white-space: -moz-pre-wrap; /* Firefox */
-      white-space: -pre-wrap; /* Opera */
-      white-space: -o-pre-wrap; /* Opera */
-      word-wrap: break-word; /* IE */
-    }
-    /* Specifically target code inside <pre> tags produced by Markdown */
-    pre {
-      overflow: auto; /* Enable scrolling if needed */
-      code {
-        white-space: pre-wrap; /* Ensure code inside pre wraps as well */
-        word-break: break-word; /* Break long words */
-      }
-    }
-    /* Add a margin to the main content to make room for the TOC */
-    body {
-      margin-right: 180px;
-    }
-    .side-toc {
-      position: fixed;
-      right: 10px;
-      top: 100px;
-      width: 200px;
-      overflow: auto;
-      border: 1px solid #ccc;
-      padding: 10px;
-      background: #fff;
-    }
-    .side-toc h2 {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-    .side-toc ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .side-toc li {
-      margin-bottom: 5px;
-    }
-    .side-toc a {
-      text-decoration: none;
-      color: #0366d6;
-    }
-    .side-toc a:hover {
-      text-decoration: underline;
-    }
-    /* Responsive adjustments */
-    @media (max-width: 1200px) {
-      .side-toc {
-        right: 5px;
-        width: 180px;
-      }
-    }
-    @media (max-width: 768px) {
-      body {
-        margin-right: 0;
-      }
-      .side-toc {
-        display: none;
-      }
-    }
+pre, code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+pre {
+  overflow: auto;
+  code {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+/* Add padding to the content section */
+section {
+  padding-top: 50px; /* Adjust as needed */
+}
+
+/* Adjust header styles */
+header {
+  margin-bottom: 20px; /* Adds space between header and content */
+}
+
+/* Add a margin to the main content to make room for the TOC */
+body {
+  margin-right: 180px;
+}
+
+.side-toc {
+  position: fixed;
+  right: 10px;
+  top: 100px;
+  width: 200px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+}
+
+.side-toc h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.side-toc ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-toc li {
+  margin-bottom: 5px;
+}
+
+.side-toc a {
+  text-decoration: none;
+  color: #0366d6;
+}
+
+.side-toc a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .side-toc {
+    right: 5px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin-right: 0;
+  }
+
+  .side-toc {
+    display: none;
+  }
+}
   </style>
 </head>
 <body class="dark">
@@ -89,7 +105,7 @@
         <!-- Custom Navigation Links -->
         <nav>
           <ul>
-            <li><a href="{{ site.baseurl }}/LG0_using_github/README.html">0: GitHub Tutorials</a></li>
+            <li><a href="{{ site.baseurl }}/LG0_using_github/using_github.html">0: GitHub Tutorials</a></li>
             <li><a href="{{ site.baseurl }}/LG1_Using_Construct3/top_down_shooters.html">1: Top Down Shooter</a></li>
             <li><a href="{{ site.baseurl }}/LG1_Using_Construct3/traditional_platformers.html">2: Traditional Platformers</a></li>
             <li><a href="{{ site.baseurl }}/LG5_Final_Game/ASHCADE.html">3: ASHCADE</a></li>
