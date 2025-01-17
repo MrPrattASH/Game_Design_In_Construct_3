@@ -74,12 +74,17 @@
         display: none;
       }
     }
-
+    /* prevent overlapping text */
     header h1 {
       max-width: 100%;
       word-wrap: break-word; /* Ensure long text will wrap */
       overflow-wrap: break-word; /* For newer browsers */
     }
+    /* maybe show line breaks? */
+    hr {
+  border: 1px solid #ccc; /* Adjust color and thickness as needed */
+  margin: 20px 0; /* Adjust space around the lines */
+}
   </style>
 </head>
 <body class="dark">
