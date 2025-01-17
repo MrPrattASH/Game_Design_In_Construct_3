@@ -1,7 +1,6 @@
 ## Unit 1: Top Down Shooters Lessons
 
-- [Mod 0.0.0: Construct Tour with a Simple Platformer](module_0.0_making_a_simple_platformer/README.md)
-- [Mod 0.0.1: Saving Projects](module_0.1_saving_projects/README.md)
+- [Mod 0.0: Paid Access Code](module_0.2_construct_3_access_code/README.md)
 - [Mod 0.1: Ghost Shooter](module_1.0_ghost_shooter/README.md)
 - [Mod 2.0: The Debugger](module_1.2_the_debugger_tool/README.md)
 - [Mod 2.1: Chasing Bugs Practice](module_1.3_chasing_bugs_practice/README.md)
