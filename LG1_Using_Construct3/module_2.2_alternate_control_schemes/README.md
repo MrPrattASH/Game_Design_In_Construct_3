@@ -90,7 +90,7 @@ Now that you know how to examine a game's code, we can use this code/setup to ad
     * your player should move with WASD and arrow keys (right click an event, "make OR block"
     * <img width="298" alt="Screenshot 2022-12-08 at 11 31 48" src="https://user-images.githubusercontent.com/101632496/206424394-a08fa098-9456-4b55-8b03-3453c99a8087.png">
     * your player should move with touch controls, provided your user is using a touch screen device.
-    * Note: The example above uses 8-direction control. You'll need to adapt the actions to suit your game's needs.  
+    * *Note: The example above uses 8-direction control. You'll need to adapt the actions to suit your game's needs.*  
 
 After you're done, your game should dynamically show/hide touch screen controls, depending on what sort of device your player is using. Test your game in keyboard preview & remote preview to be sure your game functions as intended. 
 

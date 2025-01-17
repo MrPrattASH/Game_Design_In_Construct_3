@@ -1,16 +1,5 @@
-# What is Github?
+## Unit 2: Traditional Platformers
 
-By the end of this module, you should be able to answer the following questions:
-* What is GitHub?
-* What is Version Control, and why is it useful when programming?
-* What is a Repository?
-* What is a Commit?
-* What is a Pull?
-* What is "Remote"?
-
-## Lessons
-
-* 1: [Github Desktop Overview](0_GitHub_desktop_app_overview/README.md)
-* 2: [Install Github Desktop](1_how_to_install_github_desktop/README.md)
-* 3: [Creating Yor First Repo](2_create_your_repo/README.md)
-* 4: [Cloning a Repo](4_cloning_a_repo/README.md)
+- [Mod 0.0: Make a Platformer Game](module_2.0_basic_platformer/README.md)
+- [Mod 2.2: Alternate Controls](module_2.2_alternate_control_schemes/README.md)
+- [Mod 3.1: NPC Dialogue](../LG4_Advanced_behaviours_Construct%203/module_0_Tile_Based_NPC_Dialogues/README.md)

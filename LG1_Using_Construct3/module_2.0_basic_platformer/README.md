@@ -21,4 +21,4 @@ We've all played platformers before. Mario, Banjo Kazooie, Jack and Daxter, and 
 # Tutorial
 It's time to start working through text-based tutorials now. This tutorial builds upon skills you already have, and introduces some new behaviours. Suggested completion time: 2 clases. 
 
-[Basic Platformer Tutorial on construct forums](https://www.construct.net/en/tutorials/platformer-game-2329)
+[Basic Platformer Tutorial on construct forums](https://www.construct.net/en/tutorials/platformer-game-2329) (*you may need to Right click > "Open in new tab"*)
