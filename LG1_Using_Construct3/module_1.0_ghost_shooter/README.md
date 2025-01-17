@@ -20,7 +20,7 @@ By the end of this tutorial, you'll be able to make a 8-directional movement, to
 # Tutorial
 We're going to follow through one of the official construct 3 tutorials to start. You can find this tutorial on the construct forums. Be sure to save your work as a construct folder inside of your local git repo path. Suggested completion time: 2 classes. 
 
-Follow through a text based tutorial here. [Ghost Shooter Tutorial](https://www.construct.net/en/tutorials/beginners-guide-construct-1)
+Follow through a text based tutorial here. (*You may need to `right click > "Open in a new tab"`*) [Ghost Shooter Tutorial](https://www.construct.net/en/tutorials/beginners-guide-construct-1)
 
 ## Game Assets
 
