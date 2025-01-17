@@ -1,4 +1,11 @@
-# Using Github Desktop
+# GitHub Repositories
+
+## Video Tutorial
+
+{% include youtube.html id="tOeCvZV9uXE-M" %}
+
+---
+## Text Tutorial
 
 Now that you have GitHub desktop installed, let's learn how to use the program. This module will first teach you about some features of GitHub, then you'll practice them further down. 
 

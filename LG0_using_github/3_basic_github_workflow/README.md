@@ -1,4 +1,11 @@
-# Using Github in Game Design
+# GitHub and Construct 3
+
+## Video Tutorial
+{% include youtube.html id="DpCbrGgRkY0" %}
+
+---
+## Text Tutorial
+
 
 We'll use Github every class in this course for a few purposes:
 1. It is an online backup of our work so we never lose any days of programming, designing, etc. 

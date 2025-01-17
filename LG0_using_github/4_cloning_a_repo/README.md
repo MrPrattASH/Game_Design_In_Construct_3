@@ -1,5 +1,11 @@
 # Cloning Repos
 
+## Video Tutorial
+{% include youtube.html id="LuyT4_bRWOM" %}
+
+---
+## Text Tutorial
+
 Another great thing about Github is the ability to clone repos. Essentially, you can take someone elses code base, and "clone" it to your own github account/computer. If your computer gets broken, you can download github desktop on any computer and "clone" your own work as well! 
 
 The repo that you're currently working on can be cloned and added to your own computer as well, giving you access to all of these tutorials, etc, locally on your computer. It also gives you access to all course files, game images, assets, etc, that you'll need in the course. Later on in Learning Guide 1, you will be using many of these games inside this repo as a template for your own games, and you'll need to have local access to the different sprite sheets & game engine files for your own work. By the end of this module, you'll have all the necessary files you'll need to create games in Learning Guide 1 stored locally on your computer. 
