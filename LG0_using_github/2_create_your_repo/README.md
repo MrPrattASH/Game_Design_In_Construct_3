@@ -2,7 +2,7 @@
 
 ## Video Tutorial
 
-{% include youtube.html id="tOeCvZV9uXE-M" %}
+{% include youtube.html id="tOeCvZV9uXE" %}
 
 ---
 ## Text Tutorial
